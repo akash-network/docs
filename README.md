@@ -1,0 +1,3 @@
+# econ-paper
+
+[economics](econ)

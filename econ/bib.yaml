@@ -1,0 +1,44 @@
+references:
+- type: article-journal
+  id: cosmosEcon
+  author:
+  - family: Aggarwal
+    given: Sankalp
+  title: 'Cosmos Multi-Token Proof of Stake Token Model'
+  URL: 'https://github.com/cosmos/cosmos/blob/master/Cosmos_Token_Model.pdf'
+- type: article-journal
+  id: tendermint
+  author:
+  - given: Ethan
+    family: Buchman
+  - given: Jae
+    family: Kwon
+  - given: Zarko
+    family: Milsosevic
+  title: 'The latest gossip on BFT consensus'
+  URL: 'https://arxiv.org/abs/1807.04938'
+- type: article-journal
+  id: nucypher
+  author:
+  - given: Michael
+    family: Egorov
+  - given: MacLane
+    family: Wilkinson
+  - issued:
+    date-parts:
+    - - 2018
+      - 07
+      - 30
+  title: 'NuCypher: Mining & Staking Economics'
+  URL: https://www.nucypher.com/static/whitepapers/mining-paper.pdf
+- id: dash
+  author:
+  - given: Evan
+    family: Duffield
+  - given: Daniel
+    family: Diaz
+  title: 'Dash: A Payments-Focussed Cryptocurrency'
+  URL: https://github.com/dashpay/dash/wiki/Whitepaper
+- id: zcash
+  title: 'ZCash Emmission Rate'
+  URL: https://z.cash/technology/
