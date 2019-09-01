@@ -60,12 +60,12 @@ The slashing condition and the respective attributable byzantine faults and puni
 
 Akash's blockchain is based on Tendermint consensus which gets slower with more validators due to the increased communication complexity. Fortunately, we can support enough validators to make for a robust globally distributed blockchain with very fast transaction confirmation times, and, as bandwidth, storage, and parallel compute capacity increases, we will be able to support more validators in the future.
 
-On Genesis day, the number of validators $V$ is set to $V(0)=V_0=64$ and the number of validators at time $t year$ will be:
+On Genesis day, the number of validators $V_i$ is set to $V_i(0) = V_{i,0} = 64$ and the number of validators at time $t~year$ will be:
 
 $$
-V(t) = | \log_2(t) \cdot V_0 |
+V_n(t) = | \log_2(t) \cdot V_{i,0} |
 $$
 
-So, in $10~years$, there will be $t(10) = 213$ total number of validators.
+So, in $10~years$, there will be $V_n(10) = 213$ total number of validators.
 
 

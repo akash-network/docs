@@ -5,8 +5,7 @@ HTML_OUT = out/akash-econ.html
 FILTERS = -F support/plugins/pandoc-crossref -F pandoc-citeproc
 BIB = bib.yaml
 
-
-pdf: $(SOURCES)
+pdf: $(SOURCES) dirs
 	pandoc -s -N --template=support/template.latex $(SOURCES) -o $(PDF_OUT) $(FILTERS) --bibliography $(BIB)
 	open ${PDF_OUT}
 
@@ -25,10 +24,12 @@ clean:
 	rm -rf $(TEX_OUT)
 	rm -rf .$(TEX_OUT)
 
+dirs:
+	mkdir -p support/plugins out
+
 deps:
+	brew install pandoc librsvg pandoc-citeproc homebrew/cask/mactex
 	pip install pandoc-eqnos --upgrade --pre --user
-	brew install librsvg
-	mkdir -p support/plugins
 	cd support/plugins
 	curl -L https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.4.1a/macos-pandoc_2_7_3.tar.gz | tar xz
 
