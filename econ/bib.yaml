@@ -42,3 +42,18 @@ references:
 - id: zcash
   title: 'ZCash Emmission Rate'
   URL: https://z.cash/technology/
+- id: neo
+  title: 'NEO Whitepaper'
+  URL: 'http://docs.neo.org/docs/en-us/basic/whitepaper.html'
+- id: ethereum
+  author:
+  - given: Gavin
+    family: Wood
+  title: 'Ethereum: A Secure Decentralised Generalised Transaction Ledger'
+  URL: 'https://gavwood.com/paper.pdf'
+- id: bitcoin
+  author:
+  - given: Nakamoto
+    family: Satoshi
+  title: 'Bitcoin: A Peer-to-Peer Electronic Cash System'
+  URL: https://bitcoin.org/bitcoin.pdf

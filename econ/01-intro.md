@@ -8,19 +8,19 @@ Akash is a permission-less marketplace trade compute cycles. In this paper, we p
 
 Akash Token (AKT)
 
-:  AKT is the native token of the Akash Network. The core utility of AKT is to act as a staking mechanism to secure the network. The amount of AKTs staked towards a validator defines the frequency by which the validator may propose a new block and its weight in votes to commit a block. In return for bonding (staking) to a validator, an AKT holder becomes eligible for block rewards (paid in Akash Tokens) as well as a proportion of transaction fees (paid in any of the whitelisted tokens).
+:  AKT is the native token of the Akash Network. The core utility of AKT is to act as a staking mechanism to secure the network and normalize compute prices for the marketplace auction. The amount of AKTs staked towards a validator defines the frequency by which the validator may propose a new block and its weight in votes to commit a block. In return for bonding (staking) to a validator, an AKT holder becomes eligible for block rewards (paid in AKT) as well as a proportion of transaction fees (paid in any of the whitelisted tokens).
 
 Validator 
 
-:   Validators secure the Akash network by validating and relaying transactions, proposing, verifying and finalizing blocks. There will be a limited set of validators, initially 100, that are required to maintain a high standard of automated signing infrastructure. Validators will charge Providers a commission fee in Akash Tokens.
+:   Validators secure the Akash network by validating and relaying transactions, proposing, verifying and finalizing blocks. There will be a limited set of validators, initially 64, that are required to maintain a high standard of automated signing infrastructure. Validators charge *delegators* a commission fee in AKT.
 
 Delegator
 
-:   Delegators are holders of the AKT and use some or all of their tokens to secure the Akash chain. While there is no minimum amount of tokens required in order to stake, providers are required to maintain a stake in Akash tokens proportional to the hourly income earned. In return, providers earn a proportion of the transaction fee as well as block rewards.
+:   Delegators are holders of the AKT and use some or all of their tokens to secure the Akash chain. In return, delegators earn a proportion of the transaction fee as well as block rewards.
 
 Provider
 
-:  Providers offer computing cycles (usually unused) on the Akash network and earn a fee for their contributions.
+:  Providers offer computing cycles (usually unused) on the Akash network and earn a fee for their contributions. Providers are required to maintain a stake in AKT as a collateral proportional to the hourly income earned, hence every provider is either a *delegator* or a *validator*.
 
 Tenants
 
@@ -28,17 +28,15 @@ Tenants
 
 ## Marketplace Overview
 
-Akash provides a novel spot market to lease containers. A container is a unit of computing ($U \equiv {CPU, Memory, Disk}$) that can run any type of cloud application. With Akash, early adopters can enjoy over 8x lower cost than the market. 
+Akash provides a novel spot market to lease containers. A container is a unit of computing ($U \equiv \{ CPU, Memory, Disk \}$) that can run any type of cloud application. With Akash, early adopters can enjoy over 8x lower cost than the market. 
 
-All marketplace transactions are persisted on the Akash blockchain. To lease a container, the tenant (developer) requests a deployment by specifying the type of unit(s), quantity of each unit and attributes to match [*like region (US) or privacy features like (SGX)*]. The fee can be paid in any currency of choice from a set of whitelisted currencies.
+All marketplace transactions are persisted on the Akash blockchain. To lease a container, the tenant (developer) requests a deployment by specifying the type of unit(s), the quantity of each unit, attributes to match [*like region (US) or privacy features like (SGX)*], and the maximum price they're willing to pay for the unit.
 
-Each type of workload in the deployment is defined as a compute unit. For example, if a user’s stack contains a web app, a database and a cache server, the user specifies three compute units. 
+An order is created in the order book (upon acceptance by a validator).
 
-The compute units are grouped into placements with attributes (such as region). The tenant specifies the maximum price they’re willing to pay $l_u$ for each compute unit per unit time, defined as $T_u=1$ second in each placement group $p$. The tenant also specifies the number of compute units required, $U_req$ for the placement group.
+The provider(s) that match all the requirements of the order then place a bid by competing on price using a `SubmitFulfillment` transaction. The provider that bid for lowest amount in the `Order` wins upon which a `Lease` is created between the tenant and the provider for the order.
 
-An `Order` $\mathcal{O}$ is created for each placement group when a validator accepts the deployment. Each order contains the maximum price the tenant is willing to pay, $l_{max}=l_{u} \cdot U_{req}$
 
-The provider(s) $p$ that match all the requirements of the order then place a bid $l_{p,b}$, where $l_{p,b} \leq l_{max}$ by competing on price using a `SubmitFulfillment` transaction. The provider that bid for lowest amount $\min(l_{i,b})$ in the `Order` wins upon which a `Lease` is created between the tenant and the provider for the order.
 
 ## Proof of Stake using Tendermint Consensus
 
@@ -67,5 +65,4 @@ V_n(t) = | \log_2(t) \cdot V_{i,0} |
 $$
 
 So, in $10~years$, there will be $V_n(10) = 213$ total number of validators.
-
 
