@@ -12,9 +12,9 @@ For example, suppose a lease is set to $10~AKTs$ and locks an exchange rate of $
 		
 ## Fees Using a Multitude of Tokens
 
-In order to avoid issues of network abuse (e.g. DOS attacks), all *transactions* and *leases* on Akash are subject to a fee. Every transaction has a specific associated fee, `GasLimit`, for processing the transaction, as long as it does not exceed `BlockGasLimit.`
+In order to avoid issues of network abuse (e.g. DOS attacks), all transactions and leases on Akash are subject to fees. Every transaction has a specific associated fee, `GasLimit`, for processing the transaction, as long as it does not exceed `BlockGasLimit.`
 
-The `GasLimit` is the amount of gas (AKT) which is deducted from the sender’s account balance to issue a transaction. All leases (purchases) require the tenant (buyer) to pay `TakeFee` and the seller (provider) to pay a `MakeFee.` 
+The `GasLimit` is the amount of gas which is deducted from the sender’s account balance to issue a transaction. All leases (purchases) require the tenant (buyer) to pay `TakeFee` and the seller (provider) to pay a `MakeFee.` 
 
 Unlike most other blockchain platforms, such as Ethereum [@ethereum], Bitcoin [@bitcoin], and Neo [@neo], Akash accepts a multitude of tokens for fees, whereas the mentioned platforms require fees to be paid in the platform's native cryptocurrency. Each validator and provider on Akash can choose to accept any currency or a combination of currencies as fees.
 
@@ -66,7 +66,7 @@ $$
 
 where $L(t)$ is the aggregate trade activity of the network and ${T_a = 30~days}$. 
 
-Given that $\mathcal{P}_l = 0.5$ is the *fee distribution factor*, the maker fee $R_{mk}(l)$ will be:
+Assuming that $\mathcal{P}_l = 0.5$ is the *fee distribution factor*, the maker fee $R_{mk}(l)$ will be:
 
 $$
 R_{mk}(l) 

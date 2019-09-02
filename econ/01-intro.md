@@ -34,7 +34,7 @@ All marketplace transactions are persisted on the Akash blockchain. To lease a c
 
 An order is created in the order book (upon acceptance by a validator).
 
-The provider(s) that match all the requirements of the order then place a bid by competing on price using a `SubmitFulfillment` transaction. The provider that bids for lowest amount on the `Order` wins upon which a `Lease` is created between the tenant and the provider for the order.
+The provider(s) that match all the requirements of the order then place a bid by competing on price using a `SubmitFulfillment` transaction. The provider that bids the lowest amount on the `Order` wins, upon which a `Lease` is created between the tenant and the provider for the order.
 
 
 
