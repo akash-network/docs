@@ -2,31 +2,31 @@
 
 ## Native Token (AKT)
 
-The primary utility for AKT is staking (providing security to the network) and act as a base denominator for the marketplace. Although AKT can be used for settlement in marketplace, it is not intended to be used to pay a fee or used as a currency because of the highly illiquid nature. AKT however gives you the ability to earn transaction fees and the block rewards. The income stakers generate is proportional to the tokens staked and length of staking commitment.
+The primary functions of AKT are in staking (which provides security to the network) and in acting as a unit of measure for pricing all currencies supported by the marketplace. AKT is expected to have very low liquidity because of the high earning potential of staking rewards. Although AKT can be used for settling transactions in the marketplace, it is not intended to be used to pay a fee or to be used as a currency, because of its highly illiquid nature. However, transaction fees and block rewards are denominated in AKT. The income stakers earn is proportional to the tokens staked and length of staking commitment.
 
 ## Settlement & Price Volatility Protection
 
-The lease fee is denominated in AKT tokens but can be settled using any whitelisted tokens along with an option to lock-in an exchange rate between AKT and settlement currency. This way providers and tenants are protected from the price volatility of AKT (considering AKT will be increasing illiquid due to earning potential from staking rewards)
+The lease fees are denominated in AKT, but they can be settled using any whitelisted tokens. There is an option to lock in an exchange rate between AKT and the settlement currency. This way providers and tenants are protected from the price volatility of AKT expected to result from its low liquidity.
 
-For example, if the lease is set to $10~AKTs$ and locks an exchange rate of $1~AKT = 0.2~BTC$. If the price of AKT doubles, i.e., $1~AKT = 0.4~BTC$, the tenant is required to pay $5~AKT$. Conversely, if the price of BTC doubles while keeping the price of AKT same, i.e., $1~AKT = 0.1~BTC$, then the tenant is required to pay $20~AKT$.
+For example, suppose a lease is set to $10~AKTs$ and locks an exchange rate of $1~AKT = 0.2~BTC$. If the price of AKT doubles, i.e., $1~AKT = 0.4~BTC$, the tenant is required to pay $5~AKT$. Conversely, if the price of BTC doubles while keeping the price of AKT same, i.e., $1~AKT = 0.1~BTC$, then the tenant is required to pay $20~AKT$.
 		
-## Fees using Multitude of Tokens
+## Fees Using a Multitude of Tokens
 
-In order to avoid issues of network abuse (spam), all *transactions* and *leases* on Akash are subject to a fee. Every transaction has a specific amount of gas associated with it: `GasLimit` for processing the transaction as long as it does not exceed `BlockGasLimit.`
+In order to avoid issues of network abuse (e.g. DOS attacks), all *transactions* and *leases* on Akash are subject to a fee. Every transaction has a specific associated fee, `GasLimit`, for processing the transaction, as long as it does not exceed `BlockGasLimit.`
 
-The `GasLimit` is the amount of gas which is implicitly purchased from the sender’s account balance. All leases (purchases) require the tenant (buyer) to pay `TakeFee` and the seller (provider) to pay a `MakeFee.` 
+The `GasLimit` is the amount of gas (AKT) which is deducted from the sender’s account balance to issue a transaction. All leases (purchases) require the tenant (buyer) to pay `TakeFee` and the seller (provider) to pay a `MakeFee.` 
 
-Unlike, most other platforms such as ETH in Ethereum [@ethereum], BTC in Bitcoin [@bitcoin], and GAS in Neo [@neo], Akash accepts a multitude of tokens for fees. Each validator and provider on Akash can choose to accept any currency or a combination of currencies as fees.
+Unlike most other blockchain platforms, such as Ethereum [@ethereum], Bitcoin [@bitcoin], and Neo [@neo], Akash accepts a multitude of tokens for fees, whereas the mentioned platforms require fees to be paid in the platform's native cryptocurrency. Each validator and provider on Akash can choose to accept any currency or a combination of currencies as fees.
 
-Resulting transaction fees, minus a network tax that goes into a reserve pool are split among validators and delegators based on their stake (amount and length).
+The resulting transaction fees, minus a network tax that goes into a reserve pool, are split among validators and delegators based on their stake (amount and length).
 
 ## Transaction Ordering using Consensus Weighted Median
 
-In order to prioritize transactions, validators need a mechanism to determine the *relative value* of the transaction fee (when multiple tokens are used). For example, let us assume we had a perfect oracle to inform us of a relative value of BTC is 200, and ETH is 0.4. Let us say, we have two transactions of equal gas cost, and the transaction fee on them are 10 BTC and 6000 ETH. The first transaction's fee is worth 2000 (10 x 200) and the second transaction's value will be 2400 (6000 x 0.4). Then, the second transaction will have a higher priority.
+In order to prioritize transactions when multiple tokens are used, validators need a mechanism to determine the *relative value* of the transaction fee. For example, let us assume we had a perfect oracle to inform us that the relative value of BTC is 200 AKT, and that of ETH is 0.4 AKT. Suppose we have two transactions of equal gas cost, and the transaction fees on them are 10 BTC and 6000 ETH, respectively. The first transaction's fee is equivalent to 2000 (10 x 200) AKT and the second transaction's fee is equivalent to 2400 (6000 x 0.4) AKT. Then the second transaction will have a higher priority.
 
-In order to get these relative values with out using an oracle, we can employ a *Consensus Weighted Median using Localized Validator Configuration* [@cosmosEcon] mechanism.
+In order to get these relative values without using an oracle, we can employ a *Consensus Weighted Median using Localized Validator Configuration* [@cosmosEcon] mechanism.
 
-In this method, each validator maintains a local view of the relative values of the tokens (in a config file that is periodically updated) and the relative value is achieved by using a weighted mean, meaning they submit their "votes" for the value of each token on-chain as a transaction.
+In this method, each validator maintains a local view of the relative values of the tokens in a config file which is periodically updated, and the relative value is achieved by using a weighted mean, meaning they submit their "votes" for the value of each token on-chain as a transaction.
 
 Lets say for example, there are five validators $\{A,B,C,D,E$} with powers $\{0.3,0.3,0.1,0.1,0.2\}$ respectively. They submit the following votes for their personal views of each token:
 
@@ -46,7 +46,7 @@ $\mathsf{AKT}: [1_\mathbf{A},1.5_\mathbf{E},2_\mathbf{B},4_\mathbf{D},12_\mathbf
 
 $\mathsf{BTC}: [0.2_\mathbf{A},0.4_\mathbf{B},0.5_\mathbf{E},1_\mathbf{D},2_\mathbf{C}]$
 
-The proposer takes a weighted mean  (by stake) of the votes for each fee token to determined an in-consensus relative value of each token, where $\bar{w}(x_n) = WeightedMean(x_n)$ :
+The proposer takes a weighted mean (by stake) of the votes for each whitelisted token to determine a consensus relative value of each token, where $\bar{w}(x_n) = WeightedMean(x_n)$ :
 
 $\mathsf{AKT}: \bar{w}([1,0.3],[1.5,0.2],[2,0.3],[4,0.1],[12,0.1])$
 
@@ -56,7 +56,7 @@ which give us the relative value for each token: $\mathsf{AKT}= 2.8$ and $\maths
 
 ## Maker and Taker Fee Schedule
 
-Leasing compute is either zero-fee or a small fee depending on the user's activity in the last 30 days. Lease fees have a distinction of a `Maker` fee or a `Taker` fee. A ***maker fee*** is paid when you add computing capacity to Akash network by fulfilling an order in the order book when the lease is created. A ***taker fee*** is paid when you remove computing capacity from Akash by placing an order in the book when the lease is created.
+Leasing compute is either zero-fee or for a small fee, depending on the user's activity in the last 30 days. Lease fees have a distinction of a `Maker` fee or a `Taker` fee. A ***taker fee*** is paid when you add computing capacity to Akash network by fulfilling an order in the order book when the lease is created. A ***maker fee*** is paid when you request computing capacity from Akash by placing an order in the book when the lease is created.
 
 For a lease $l$, the *aggregate trade activity factor* of the a stakeholder of the lease for a  given time $t$ is defined by:
 
@@ -66,7 +66,7 @@ $$
 
 where $L(t)$ is the aggregate trade activity of the network and ${T_a = 30~days}$. 
 
-Given, $\mathcal{P}_l = 0.5$ is the *fee distribution factor*, for that, the maker fee $R_{mk}(l)$ will be:
+Given that $\mathcal{P}_l = 0.5$ is the *fee distribution factor*, the maker fee $R_{mk}(l)$ will be:
 
 $$
 R_{mk}(l) 
