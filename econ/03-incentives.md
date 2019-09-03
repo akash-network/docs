@@ -41,7 +41,7 @@ $$
     I^* = \frac{I}{1-\lambda},
 $$
 
-Considering that ZCash [@zcash] had $I^* = 350\%$ (turn around point during the overall bull market), which makes $I=140\% APR$, it is reasonably safe to                                                                                       set the initial inflation to be $I_0 = 100\% APR$ (meaning $1/365$ per day).
+Considering that ZCash [@zcash] had $I^* = 350\%$ (turn around point during the overall bull market), which makes $I=140\%~APR$, it is reasonably safe to                                                                                       set the initial inflation to be $I_0 = 100\%~APR$ (meaning $1/365$ per day).
 
 ### Inflation Decay
 
