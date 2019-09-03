@@ -78,3 +78,12 @@ references:
     family: Goodman
   title: 'Tezos: a self-amending crypto-ledger'
   URL: 'https://tezos.com/static/white_paper-2dc8c02267a8fb86bd67a108199441bf.pdf'
+- id: eos
+  author:
+  - given: Dan
+    family: Larimer
+  title: 'EOS: Technical Whitepaper'
+  URL: 'https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md'
+- id: eosram
+  title: 'EOS RAM 101: Non-Technical Guidebook for Beginners'
+  URL: 'https://medium.com/coinmonks/eos-ram-101-non-technical-guidebook-for-beginners-6f971322042e'
