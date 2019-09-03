@@ -136,19 +136,19 @@ In this scenario, all stakers in the pool are liquidating all their earnings eve
 Assume all the delegators have equal amounts of stake bound to the pool. The amount of stake stays constant in this case, and equal to $m_i = s$, making $m_v = s_v$ and $\gamma = \overline{\gamma_v}$ where, ${\overline{\gamma_v}}$ is the mean staking parameter of the pool. Then, the pool mining rate (i.e. the cumulative pool reward) is:
 
 $$
-\frac{dr_v}{dt} =  \overline{\gamma_v}\, \frac{l}{\lambda M(t)} \frac{\ln{2}}{T_{1/2}} \left( M_{\max} - M(t)\right).
+\frac{dr_v}{dt} =  \overline{\gamma_v}\, \frac{S_v}{\lambda M(t)} \frac{\ln{2}}{T_{1/2}} \left( M_{\max} - M(t)\right).
 $$
 
 When we substitute $M(t)$ from [@eq:adjusted-supply-time] and integrate over time, we find total pool compensation:
 
 $$
-r_v(t) = l \frac{\gamma}{\gamma^* \lambda} \ln\frac{M(t)}{M_0},
+r_v(t) = S_v \frac{\overline{\gamma}}{\gamma^* \lambda} \ln\frac{M(t)}{M_0},
 $$
 
 If $\Delta r_v(t) = r_v(t) - \mathcal{C}$ where $\mathcal{C}$ is validator's commission, that brings individual staker's compensation to be:
 
 $$
-r(t) = \kappa \cdot \Delta r_v(t).
+r(t) = \kappa \cdot \Delta r_v(t) = \frac{1}{2} \left(\frac{\gamma}{\gamma_v} + \frac{s}{S_v}\right) \cdot \Delta r_v(t)
 $$
 
 If $\gamma=1$ (staking for $1~year$) and $\lambda=60\%$ ($60\%$ of all AKT are staked). With $\mathcal{C}=0.1 \cdot r(t)$, staker compensation in AKT starts from $0.45\%~per~day$, or $101.6\%$ during the first year of staking. 
