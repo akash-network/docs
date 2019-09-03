@@ -183,7 +183,7 @@ When the node spins down, the miner doesn't extend the time for end of staking $
 We'll start with $1~billion$ tokens, and the maximum amount of tokens ever created will be $3.89~billion$.
 
 ##### What's the inflation rate?
-The inflation rate will depend on how many short-term miners and long-term miners are working in the system. Depending on this, the initial inflation will be between $50\%$~APR (if all miners are very short term) and $100\%$~APR (if all miners commit for a long term). The inflation will decay exponentially every day, halving sometime between $2$~years (if all the miners are long term) and $4$~years (if all the miners are short term).
+The inflation rate will depend on how many short-term miners and long-term miners are working in the system. Depending on this, the initial inflation will be between $50\%~\text{APR}$ (if all miners are very short term) and $100\%~\text{APR}$ (if all miners commit for a long term). The inflation will decay exponentially every day, halving sometime between $2$~years (if all the miners are long term) and $4$~years (if all the miners are short term).
 
 ******
 
