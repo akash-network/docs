@@ -57,3 +57,24 @@ references:
     family: Satoshi
   title: 'Bitcoin: A Peer-to-Peer Electronic Cash System'
   URL: https://bitcoin.org/bitcoin.pdf
+- id: eth20
+  title: 'Ethereum 2.0 White Paper'
+  URL: 'https://github.com/ethereum/wiki/wiki/White-Paper'
+- id: cardano
+  title: 'Ouroboros: A Provably Secure Proof of Stake Blockchain Protocol'
+  author:
+  - given: Aggelos
+    family: Kiayias
+  - given: Alexander
+    family: Russell
+  - given: Bernardo 
+    family: David
+  - given: Roman
+    family: Oliynykov
+  URL: 'https://iohk.io/research/papers/#ouroboros-a-provably-secure-proof-of-stake-blockchain-protocol'
+- id: tezos
+  author:
+  - given: L.M
+    family: Goodman
+  title: 'Tezos: a self-amending crypto-ledger'
+  URL: 'https://tezos.com/static/white_paper-2dc8c02267a8fb86bd67a108199441bf.pdf'

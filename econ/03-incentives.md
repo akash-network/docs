@@ -185,8 +185,3 @@ We'll start with $1~\text{billion}$ tokens, and the maximum amount of tokens eve
 The inflation rate will depend on how many short-term miners and long-term miners are working in the system. Depending on this, the initial inflation will be between $50\%~\text{APR}$ (if all miners are very short term) and $100\%~\text{APR}$ (if all miners commit for a long term). The inflation will decay exponentially every day, halving sometime between $2~\text{years}$ (if all the miners are long term) and $4~\text{years}$ (if all the miners are short term). [@fig:annual-inflation]
 
 ![Annual inflation over the years when tokens are locked with long and short commitments](support/annual-inflation.png)
-
-******
-
-::: {#refs}
-:::

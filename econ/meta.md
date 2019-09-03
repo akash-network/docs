@@ -11,7 +11,9 @@ author:
 - name: Greg Osuri
   email: greg@akash.network
   affiliation: Akash Network
-documentclass: scrartcl
+documentclass:
+- scrartcl
+- longbibliography
 linestretch: 1.3
 fontsize: 9pt
 papersize: a4

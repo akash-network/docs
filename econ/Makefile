@@ -1,12 +1,13 @@
-SOURCES = meta.md 01-intro.md 02-token.md 03-incentives.md 
+SOURCES = meta.md 01-intro.md 02-token.md 03-incentives.md 010-related-work.md 020-conclusion.md
 PDF_OUT = out/akash-econ.pdf
 TEX_OUT = out/akash-econ.tex
 HTML_OUT = out/akash-econ.html
 FILTERS = -F support/plugins/pandoc-crossref -F pandoc-citeproc
 BIB = bib.yaml
+CSL = support/ieee-with-url.csl
 
 pdf: $(SOURCES) dirs
-	pandoc -s -N --template=support/template.latex $(SOURCES) -o $(PDF_OUT) $(FILTERS) --bibliography $(BIB)
+	pandoc -s -N --template=support/template.latex $(SOURCES) -o $(PDF_OUT) $(FILTERS) --csl $(CSL) --bibliography $(BIB)
 	open ${PDF_OUT}
 
 html: $(SOURCES)
