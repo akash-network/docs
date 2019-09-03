@@ -48,7 +48,7 @@ Considering that ZCash [@zcash] had $I^* = 350\%$ (turn around point during the 
 Assume that all miners have the maximum compensation rate. We define the inflation decay factor (time to halve the inflation rate) to be $T_{1/2} = 2~years$ in this case. Inflation depending on the time passed from the Genesis $t$, then looks like:
 
 $$
-    I(t) = I_0 \cdot 2^{-\frac{t}{T_{1/2}}} = I_0 \exp\left[ -\ln{2} \frac{t}{T_{1/2}} \right].
+I(t) = I_0 \cdot 2^{-\frac{t}{T_{1/2}}} = I_0 \exp\left[ -\ln{2} \frac{t}{T_{1/2}} \right],
 $$
 
 In this case, the dependence of the token supply on the time $t$ is:
@@ -65,7 +65,8 @@ $$
 
 where $M_0$ is initial number of tokens.
 
-![Token Supply Over Years. It takes 89 years to reach the maximum supply of 3.89B tokens with inflation reaching near 0% APR in 15 years when initial inflation is 100% APR, halving every 2 years](support/token-supply.svg){#fig:token-supply}
+
+![Token supply and tokens locked over years with an initial inflation of 100% APR that is halving every 2 years](support/token-supply.png){#fig:token-supply}
 
 ### Staking Time and Token Creation
 
@@ -91,8 +92,6 @@ $$
 M(t) = M_0 \left[1 + \frac{i_0 \gamma^* T_{1/2}^*}{\ln{2}}\left(1 - 2^{-\frac{t}{T_{1/2}^*}} \right) \right].
 $$ {#eq:adjusted-supply-time}
 
-![Inflation over the Years when $\gamma=0.75$. The rate reaches near 0% in 15 years and single digits by 5th year](support/annual-inflation.svg){#fig:annual-inflation}
-
 ## Delegate Pool Distribution
 
 The exponential is a solution of a differential equation where inflation is proportional to the amount of not yet mined tokens:
@@ -117,14 +116,13 @@ $$
 
 where $s_v$ is the number of tokens bound to the validator's delegate pool $v$ and $S$ is the total number of tokens locked. Instead of calculating all the sum over $v$, each validator can add their portion $\delta m_{v,t}$.
 
-The distribution factor for a delegate bound to pool $p$ is:
+The distribution factor for a delegate bound to pool $v$ is:
 
 $$
 \kappa = \frac{1}{2} \left(\frac{\gamma}{\gamma_v} + \frac{s}{S_v}\right),
 $$
 
 $\gamma_v$ is the aggregate stake compensation factor for the pool and $S_v$ is the sum of all tokens bound to the pool.
-
 
 ## Mining strategies and expected compensation
 
@@ -137,24 +135,26 @@ In this scenario, all stakers in the pool are liquidating all their earnings eve
 Assume all the delegators have equal amounts of stake bound to the pool. The amount of stake stays constant in this case, and equal to $m_i = s$, making $m_v = s_v$ and $\gamma = \overline{\gamma_v}$ where, ${\overline{\gamma_v}}$ is the mean staking parameter of the pool. Then, the pool mining rate (i.e. the cumulative pool reward) is:
 
 $$
-\frac{dr_p}{dt} =  \overline{\gamma_v}\, \frac{l}{\lambda M(t)} \frac{\ln{2}}{T_{1/2}} \left( M_{\max} - M(t)\right).
+\frac{dr_v}{dt} =  \overline{\gamma_v}\, \frac{S_v}{\lambda M(t)} \frac{\ln{2}}{T_{1/2}} \left( M_{\max} - M(t)\right).
 $$
 
 When we substitute $M(t)$ from [@eq:adjusted-supply-time] and integrate over time, we find total pool compensation:
 
 $$
-r_p(t) = l \frac{\gamma}{\gamma^* \lambda} \ln\frac{M(t)}{M_0},
+r_v(t) = S_v \frac{\overline{\gamma}}{\gamma^* \lambda} \ln\frac{M(t)}{M_0},
 $$
 
-If $\Delta r_p(t) = r_p(t) - \mathcal{C}$ where $\mathcal{C}$ is validator's commission, that brings individual staker's compensation to be:
+If $\Delta r_v(t) = r_v(t) - \mathcal{C}$ where $\mathcal{C}$ is validator's commission, that brings individual staker's compensation to be:
 
 $$
-r(t) = \kappa \cdot \Delta r_p(t).
+r(t) = \kappa \cdot \Delta r_v(t) = \frac{1}{2} \left(\frac{\gamma}{\gamma_v} + \frac{s}{S_v}\right) \cdot \Delta r_v(t)
 $$
 
-If $\gamma=1$ (staking for $1~year$) and $\lambda=60\%$ ($60\%$ of all AKT are staked). With $\mathcal{C}=0.1 \cdot r(t)$, staker compensation in AKT starts from $0.45\%~per~day$, or $99.2\%$ during the first year of staking. 
+If $\gamma=1$ (staking for $1~year$) and $\lambda=60\%$ ($60\%$ of all AKT are staked). With $\mathcal{C}=0.1 \cdot r(t)$, staker compensation in AKT starts from $0.45\%~per~day$, or $101.6\%$ during the first year of staking. 
 
 We should note that if other miners stake for less than a year ($\gamma^* < 1$), the inflation rate decays slower, and the compensation over a given period will be higher.
+
+![Daily compensation over time assuming 60% tokens locked for lock times of 1 year and 1 month](support/daily-emission.png)
 
 ### Re-stake mining compensation
 
@@ -174,8 +174,7 @@ Assuming the validator commission is 1\%, if $\gamma=1$ (staking for $1~year+$) 
 
 ### Take mining compensation and spindown
 
-When the node spins down, the miner doesn't extend the time for end of staking $t_1$, and the compensation is constantly decreasing as the time left to unlock becomes smaller and smaller, effectively decreasing $\gamma$ gradually towards $0.5$. That's the default behavior. To avoid that, the miner should set $t_1$ large enough, or increase $t_1$ periodically.
-
+When the node spins down, the staker doesn't extend the time for end of staking $t_1$, and the compensation is constantly decreasing as the time left to unlock becomes smaller and smaller, effectively decreasing $\gamma$ gradually towards $0.5$. That's the default behavior. To avoid that, the staker should set $t_1$ large enough, or increase $t_1$ periodically.
 
 ### FAQ
 
@@ -183,7 +182,7 @@ When the node spins down, the miner doesn't extend the time for end of staking $
 We'll start with $1~\text{billion}$ tokens, and the maximum amount of tokens ever created will be $3.89~\text{billion}$.
 
 ##### What's the inflation rate?
-The inflation rate will depend on how many short-term miners and long-term miners are working in the system. Depending on this, the initial inflation will be between $50\%~\text{APR}$ (if all miners are very short term) and $100\%~\text{APR}$ (if all miners commit for a long term). The inflation will decay exponentially every day, halving sometime between $2~\text{years}$ (if all the miners are long term) and $4~\text{years}$ (if all the miners are short term).
+The inflation rate will depend on how many short-term miners and long-term miners are working in the system. Depending on this, the initial inflation will be between $50\%~\text{APR}$ (if all miners are very short term) and $100\%~\text{APR}$ (if all miners commit for a long term). The inflation will decay exponentially every day, halving sometime between $2~\text{years}$ (if all the miners are long term) and $4~\text{years}$ (if all the miners are short term). [@fig:annual-inflation]
 
 ******
 
