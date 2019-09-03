@@ -61,7 +61,9 @@ Akash's blockchain is based on Tendermint consensus which gets slower with more 
 On Genesis day, the number of validators $V_i$ is set to $V_i(0) = V_{i,0} = 64$ and the number of validators at time $t~year$ will be:
 
 $$
-V_n(t) = | \log_2(t) \cdot V_{i,0} |
+V_n(t) = | \log_2(t+1) \cdot V_{i,0} |
 $$
 
-So, in $10~years$, there will be $V_n(10) = 213$ validators.
+So, in $10~years$, there will be $V_n(10) = 442$ validators as illustrated in [@fig:validator-count]
+
+![Validators limit over the years](support/validator-count.png){#fig:validator-count}

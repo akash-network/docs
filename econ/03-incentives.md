@@ -65,6 +65,7 @@ $$
 
 where $M_0$ is initial number of tokens.
 
+
 ![Token supply and tokens locked over years with an initial inflation of 100% APR that is halving every 2 years](support/token-supply.png){#fig:token-supply}
 
 ### Staking Time and Token Creation
