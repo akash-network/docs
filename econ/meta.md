@@ -1,13 +1,10 @@
 ---
-title: 'Akash: Token Model & Mining Economics'
-headertext: CONFIDENTIAL. Internal Distribution Only
-header: CONFIDENTIAL. Internal Distribution Only.
-footer: This paper is a work in progress and intended for PRIVATE distribution only.
+title: 'Akash: Network, Token & Mining Economics'
 header-includes: |
   \usepackage{fancyhdr}
   \pagestyle{fancy}
   \fancyhead[CO,CE]{}
-  \fancyfoot[CO,CE]{CONFIDENTIAL. Internal Distribution Only}
+  \fancyfoot[CO,CE]{Akash: Network, Token \& Mining Economics}
   \fancyfoot[LE,RO]{\thepage}
 indent: 5
 author:

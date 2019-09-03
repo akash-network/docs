@@ -1,7 +1,4 @@
 
-> NOTE: This paper is a work in progress and intended for PRIVATE distribution only.
-
-
 # Introduction
 
 Akash is a permissionless marketplace trade compute cycles. In this paper, we present the Akash Token (AKT) model that’s designed to a) maintain ecosystem sovereignty, b) provide economic security, and c) encourage early adoption. Some definitions:
