@@ -41,7 +41,7 @@ $$
     I^* = \frac{I}{1-\lambda},
 $$
 
-Considering that ZCash [@zcash] had $I^* = 350%$ (turn around point during the overall bull market), which makes $I=140\% APR$, it is reasonably safe to                                                                                       set the initial inflation to be $I_0 = 100\% APR$ (meaning $1/365$ per day).
+Considering that ZCash [@zcash] had $I^* = 350\%$ (turn around point during the overall bull market), which makes $I=140\% APR$, it is reasonably safe to                                                                                       set the initial inflation to be $I_0 = 100\% APR$ (meaning $1/365$ per day).
 
 ### Inflation Decay
 
@@ -81,7 +81,7 @@ $$
 
 where the unlocking time $T_i$ means the time left to unlock the tokens: $T_i = t_1 - t$. $t_1$ is the time when the tokens will be unlocked, and $t$ is the current time. The initial $T_i$ cannot be set smaller than $T_{min} = 1~month$, but it eventually becomes smaller than that as time passes and $t$ gets closer to $t_1$.
 
-Shorter stake periods (for lower rewards) result in a lower daily token emission. Considering, miners will most likely stake for short periods during a bear market; lower emissions will provide much better price and stability as a result.
+Shorter stake periods (for lower rewards) result in a lower daily token emission. Considering that miners will most likely stake for short periods during a bear market, we can expect token emission to decline during a bear market, which will help to boost the price. Therefore we can expect this mechanism to support price stability.
 
 The emission half decay time $T_{1/2}^*=T_{1/2}/\gamma^*$, where $\gamma^*$ is the mean staking parameter, is also prolonged when $\gamma < 1$. $T_{1/2}$ prolongs to 4 years instead of 2 if all stakers have $\gamma^* = \gamma = 0.5$.
 
@@ -105,15 +105,14 @@ $$
 dM = I(t)\, dt.
 $$
 
-where $M(t)$ is the current token supply with $M(0) = M_0$ and $dt$ can be equal to the mining period (1 day). Each validator can trivially calculate its $dM$ using few operations using the token supply $M$ from the last period. So, the amount of mined tokens for the validator pool $p$ in the time $t$ will be:
+where $M(t)$ is the current token supply with $M(0) = M_0$ and $dt$ can be equal to the mining period (1 day). Each validator can trivially calculate its $dM$ using few operations using the token supply $M$ from the last period. The amount of mined tokens for the validator pool $p$ in the time $t$ can be calculated according to the formula:
 
 $$
-   \delta m_{v,t} = \frac{s_v}{S} \frac{\ln{2}}{T_{1/2}}
-   \left( M_{\max} - M_{t-1}\right),
+   \delta m_{v,t} = \frac{s_v}{S} \frac{\ln{2}}{T_{1/2}} \delta M(t),
 $$
 
 $$
-   dM_t = \sum_v dm_{v,t},
+   \delta M_t = \sum_v \delta m_{v,t},
 $$
 
 where $s_v$ is the number of tokens bound to the validator's delegate pool $v$ and $S$ is the total number of tokens locked. Instead of calculating all the sum over $v$, each validator can add their portion $\delta m_{v,t}$.

@@ -4,7 +4,7 @@
 
 # Introduction
 
-Akash is a permissionless marketplace trade compute cycles. In this paper, we present the Akash Token (AKT) model that’s designed to a) maintain ecosystem sovereignty, b) provide economic security, and c) encourage early adoption. Some definitions:
+Akash is a permissionless marketplace for trading compute cycles. In this paper, we present the Akash Token (AKT) model, which is designed to a) maintain ecosystem sovereignty, b) provide economic security, and c) encourage early adoption. Some definitions:
 
 Akash Token (AKT)
 
@@ -38,7 +38,7 @@ The provider(s) that match all the requirements of the order then place a bid by
 
 
 
-## Proof of Stake using Tendermint Consensus
+## Proof of Stake Using Tendermint Consensus
 
 Akash employs a blockchain secured by a *Proof-of-Stake* consensus model as a Sybil resistance mechanism for determining participation in its consensus protocol and implements the Tendermint [@tendermint] algorithm for Byzantine fault-tolerant consensus. Tendermint was designed to address the speed, scalability, and environmental concerns with Proof of Work with the below set of properties:
 

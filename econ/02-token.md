@@ -58,7 +58,7 @@ which give us the relative value for each token: $\mathsf{AKT}= 2.8$ and $\maths
 
 Leasing compute is either zero-fee or for a small fee, depending on the user's activity in the last 30 days. Lease fees have a distinction of a `Maker` fee or a `Taker` fee. A ***taker fee*** is paid when you add computing capacity to Akash network by fulfilling an order in the order book when the lease is created. A ***maker fee*** is paid when you request computing capacity from Akash by placing an order in the book when the lease is created.
 
-For a lease $l$, the *aggregate trade activity factor* of the a stakeholder of the lease for a  given time $t$ is defined by:
+For a lease $l$, the *aggregate trade activity factor* of the stakeholder of the lease for a given time $t$ is defined by:
 
 $$
 \kappa_l = \frac{\sum_{t=1}^{T_a} l(1-t)}{\sum_{t=1}^{T_a} L(1-t)},
