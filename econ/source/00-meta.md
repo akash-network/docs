@@ -1,10 +1,10 @@
 ---
-title: 'Akash: Network, Token & Mining Economics'
+title: 'AKT: Akash Network, Token & Mining Economics'
 header-includes: |
   \usepackage{fancyhdr}
   \pagestyle{fancy}
   \fancyhead[CO,CE]{}
-  \fancyfoot[CO,CE]{Akash: Network, Token \& Mining Economics}
+  \fancyfoot[CO,CE]{AKT: Akash Network, Token \& Mining Economics}
   \fancyfoot[LE,RO]{\thepage}
 indent: 5
 thanks: We thank Morgan Thomas (*Co-Founder, Kassir*), and Brandon Goldman *(Frm. Lead Architect, Blockfolio)* for providing valuable comments that significantly improved the manuscript.

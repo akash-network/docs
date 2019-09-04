@@ -11,7 +11,7 @@ $$
 UnitCost(t) = \frac{ServerCost(t)}{UnitYield \times Utilization(t)}
 $$
 
-where `ServerCost` is the capital and operational expenditure for the server and `Utilization` the amount of resources consumed without the operating overheard. 
+where `ServerCost` is the capital and operational expenditure for the server and `Utilization` is the amount of resources consumed (without the operating overheard). 
 
 As of the writing of this paper, the current prices to lease a *container-unit* (1 GB Memory and 1 CPU) for an hour are as follows:
 
@@ -27,7 +27,7 @@ Lets us now determine a provider's cost-benefit to offer containers by consideri
  
 ### At Cost: Capital Recovery on Server Cabinet
 
-In this scenario, consider {Provider_A} has a fleet of underutilized servers and intends to recover deployed capital and subsidize operating expenditure. These servers -- also referred to as "rack units" -- are enclosed in a *cabinet* hosted at a datacenter. A server cabinet also referred to as a "rack," is a standardized enclosure for mounting multiple servers. Datacenter providers typically charge by cabinet for electricity, real estate, and high-performance internet connectivity.
+In this scenario, consider $Provider_A$ has a fleet of underutilized servers and intends to recover deployed capital and subsidize operating expenditure. These servers (also referred to as "rack units") are enclosed in a *cabinet* hosted at a datacenter. A server cabinet (also referred to as a "rack") is a standardized enclosure for mounting multiple servers. Datacenter providers typically charge by cabinet for electricity, real estate, and high-performance internet connectivity.
 
 Considering a typical cabinet costs around USD *559,176* in capital expenditure and USD *1,800* in operating expenditure as illustrated in [@fig:cabinet-cost] with a shelf life (time for performance deprecation to sub-optimal levels) of *3 years*, the provider needs to earn $559,176 + 1800 \times 3 \times 12 = 688,776$ USD (or 229,592 USD / Year) for full capital recovery.
 
@@ -51,4 +51,6 @@ By capitalizing on AKT's staking incentives along with employing *re-stake minin
 
 ![Staked income for providers over three years when re-staking on the initial stake for three years](figures/stake-income.png){#fig:stake-income}
 
-By taking a year's cost, and by re-staking the mining compensation for three years, $Provider_A$ will earn 166,377 USD, and $Provider_B$ will earn 7,008 USD in net profit respectively.
+By staking a year's cost, and by re-staking the mining compensation for three years, $Provider_A$ will earn 166,377 USD, and $Provider_B$ will earn 7,008 USD in net profit respectively.
+
+There is however an implicit limit on earnings that is imposed by the market value of AKT.
