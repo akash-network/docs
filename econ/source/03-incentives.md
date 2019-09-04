@@ -156,7 +156,7 @@ We should note that if other miners stake for less than a year ($\gamma^* < 1$),
 
 ![Daily compensation over time assuming 60% tokens locked for lock times of 1 year and 1 month](figures/daily-emission.png)
 
-### Re-stake mining compensation
+### Re-stake mining compensation {#sec:restake-mining}
 
 Instead of liquidating mining compensation, it could be re-staked into the pool in order to increase the delegator's stake. In this case, the actual stake $s$ is constantly increasing with time:
 

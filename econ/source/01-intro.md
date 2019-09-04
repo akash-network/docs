@@ -1,7 +1,7 @@
 
 # Introduction
 
-Akash is a permission-less marketplace for trading compute cycles where early adopters can enjoy upto **8x** *lower cost* than the current market.
+Akash is a permission-less marketplace for trading compute cycles where early adopters can enjoy upto **10x** *lower cost* than the current market.
 
 In this paper, we present the economics of the Akash Network by introducing the Akash Token (AKT) model, which is designed to a) maintain ecosystem sovereignty, b) provide economic security, and c) encourage early adoption. Let us begin by reviewing some definitions:
 

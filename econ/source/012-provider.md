@@ -47,8 +47,8 @@ The utilization risk combined with a low-value proposition is a reason why provi
 
 ## Akash Advantage
 
-By capitalizing on AKT's staking rewards, both Provider A and Provider B will be to offer an exponentially 
+By capitalizing on AKT's staking incentives along with employing *re-stake mining strategy* described in [@sec:restake-mining], both $Provider_A$ and $Provider_B$ can offer to compute at ***10x*** lower cost than AWS while earning a profit as illustrated in [@fig:stake-income]
 
-![Tenant savings over AWS unit price of $0.0045 / Hr for a provider offering a server cabinet and a provider offering a bare metal cloud instance at 100% and 40% utilization](figures/provider-util.png)
+![Staked income for providers over three years when re-staking on the initial stake for three years](figures/stake-income.png){#fig:stake-income}
 
-![Staked income for providers over 3 year when re-staking on the initial stake for 3 years](figures/stake-income.png)
+By taking a year's cost, and by re-staking the mining compensation for three years, $Provider_A$ will earn 166,377 USD, and $Provider_B$ will earn 7,008 USD in net profit respectively.
