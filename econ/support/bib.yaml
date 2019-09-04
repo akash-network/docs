@@ -87,3 +87,6 @@ references:
 - id: eosram
   title: 'EOS RAM 101: Non-Technical Guidebook for Beginners'
   URL: 'https://medium.com/coinmonks/eos-ram-101-non-technical-guidebook-for-beginners-6f971322042e'
+- id: container
+  title: 'What is a Container?'
+  URL: 'https://www.docker.com/resources/what-container'
