@@ -66,7 +66,7 @@ $$
 where $M_0$ is initial number of tokens.
 
 
-![Token supply and tokens locked over years with an initial inflation of 100% APR that is halving every 2 years](support/token-supply.png){#fig:token-supply}
+![Token supply and tokens locked over years with an initial inflation of 100% APR that is halving every 2 years](figures/token-supply.png){#fig:token-supply}
 
 ### Staking Time and Token Creation
 
@@ -154,7 +154,7 @@ If $\gamma=1$ (staking for $1~year$) and $\lambda=60\%$ ($60\%$ of all AKT are s
 
 We should note that if other miners stake for less than a year ($\gamma^* < 1$), the inflation rate decays slower, and the compensation over a given period will be higher.
 
-![Daily compensation over time assuming 60% tokens locked for lock times of 1 year and 1 month](support/daily-emission.png)
+![Daily compensation over time assuming 60% tokens locked for lock times of 1 year and 1 month](figures/daily-emission.png)
 
 ### Re-stake mining compensation
 
@@ -184,4 +184,4 @@ We'll start with $1~\text{billion}$ tokens, and the maximum amount of tokens eve
 ##### What's the inflation rate?
 The inflation rate will depend on how many short-term miners and long-term miners are working in the system. Depending on this, the initial inflation will be between $50\%~\text{APR}$ (if all miners are very short term) and $100\%~\text{APR}$ (if all miners commit for a long term). The inflation will decay exponentially every day, halving sometime between $2~\text{years}$ (if all the miners are long term) and $4~\text{years}$ (if all the miners are short term). [@fig:annual-inflation]
 
-![Annual inflation over the years when tokens are locked with long and short commitments](support/annual-inflation.png){#fig:annual-inflation}
+![Annual inflation over the years when tokens are locked with long and short commitments](figures/annual-inflation.png){#fig:annual-inflation}

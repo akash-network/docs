@@ -63,4 +63,4 @@ $$
 
 So, in $10~years$, there will be $V_n(10) = 442$ validators as illustrated in [@fig:validator-count]
 
-![Number of validators over the years](support/validator-count.png){#fig:validator-count}
+![Number of validators over the years](figures/validator-count.png){#fig:validator-count}
