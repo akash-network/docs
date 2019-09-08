@@ -1,6 +1,6 @@
 # Provider Economics
 
-In section, we present economics for a provider offering computing services on Akash. 
+In this section, we present economics for a provider offering computing services on Akash. 
 
 First, let us examine the current pricing model on popular cloud infrastructure providers, Amazon Web Services (AWS), Google Compute Platform (GCP), and Microsoft Azure. Most providers now offer virtualized computing packaged as *containers*.
 
@@ -11,7 +11,7 @@ $$
 UnitCost(t) = \frac{ServerCost(t)}{UnitYield \times Utilization(t)}
 $$
 
-where `ServerCost` is the capital and operational expenditure for the server and `Utilization` is the amount of resources consumed (without the operating overheard). 
+where $ServerCost$ is the capital and operational expenditure for the server and $Utilization$ is the amount of resources consumed (without the operating overheard). 
 
 As of the writing of this paper, the current prices to lease a *container-unit* (1 GB Memory and 1 CPU) for an hour are as follows:
 
@@ -29,7 +29,7 @@ Lets us now determine a provider's cost-benefit to offer containers by consideri
 
 In this scenario, consider $Provider_A$ has a fleet of underutilized servers and intends to recover deployed capital and subsidize operating expenditure. These servers (also referred to as "rack units") are enclosed in a *cabinet* hosted at a datacenter. A server cabinet (also referred to as a "rack") is a standardized enclosure for mounting multiple servers. Datacenter providers typically charge by cabinet for electricity, real estate, and high-performance internet connectivity.
 
-Considering a typical cabinet costs around USD *559,176* in capital expenditure and USD *1,800* in operating expenditure as illustrated in [@fig:cabinet-cost] with a shelf life (time for performance deprecation to sub-optimal levels) of *3 years*, the provider needs to earn $559,176 + 1800 \times 3 \times 12 = 688,776$ USD (or 229,592 USD / Year) for full capital recovery.
+A typical cabinet costs around USD *559,176* in capital expenditure and USD *1,800* in operating expenditure as illustrated in [@fig:cabinet-cost] with a shelf life (time for performance deprecation to sub-optimal levels) of *3 years*, the provider needs to earn: $559,176 + 1800 \times 3 \times 12 = 688,776$ USD (or 229,592 USD / Year) for full capital recovery.
 
 Considering a unit yield of *3,192 per Cabinet*, at 100% utilization, the provider can offer a container for no less than *0.013* USD and, at 40% utilization, the price will be *0.034* USD.
 
@@ -47,7 +47,7 @@ The utilization risk combined with a low-value proposition is a reason why provi
 
 ## Akash Advantage
 
-By capitalizing on AKT's staking incentives along with employing *re-stake mining strategy* described in [@sec:restake-mining], both $Provider_A$ and $Provider_B$ can offer to compute at ***10x*** lower cost than AWS while earning a profit as illustrated in [@fig:stake-income]
+By capitalizing on AKT's staking incentives along with employing *re-stake mining strategy* described in [@sec:restake-mining], both $Provider_A$ and $Provider_B$ can offer to compute at/up to ***10x*** lower cost than AWS while earning a profit as illustrated in [@fig:stake-income]
 
 ![Staked income for providers over three years when re-staking on the initial stake for three years](figures/stake-income.png){#fig:stake-income}
 
