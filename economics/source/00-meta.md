@@ -28,5 +28,5 @@ autoEqnLabels: true
 geometry:
  - a4paper
  - columnsep=0.3in
-abstract: This paper covers the economics of the Akash Network and introduces the Akash Token (AKT). In this paper, we present various incentives for ensuring the economic security of the Akash ecosystem as well as drive adoption. We propose an inflationary mechanism to achieve economic goals along with estimates for mining rewards and inflation rates. Additionally, we also present mechanisms for allowing a multitude of fee tokens, which will improve the user experience of using the blockchain.
+abstract: Akash is a marketplace for cloud compute resources which is designed to reduce waste, thereby cutting costs for consumers and increasing revenue for providers. This paper covers the economics of the Akash Network and introduces the Akash Token (AKT). We describe an economic incentive structure designed to drive adoption and ensure the economic security of the Akash ecosystem. We propose an inflationary mechanism to achieve economic goals. We provide calculations for mining rewards and inflation rates. We also present mechanisms for allowing a multitude of fee tokens.
 ---
