@@ -1,20 +1,17 @@
 ---
 title: 'AKT: Akash Network, Token & Mining Economics'
-header-includes: |
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhead[CO,CE]{}
-  \fancyfoot[CO,CE]{AKT: Akash Network, Token \& Mining Economics}
-  \fancyfoot[LE,RO]{\thepage}
 indent: 5
 thanks: We thank Morgan Thomas (*Co-Founder, Kassir*), and Brandon Goldman *(Frm. Lead Architect, Blockfolio)* for providing valuable comments that significantly improved the manuscript.
 author:
 - name: Greg Osuri
   email: greg@akash.network
   affiliation: Akash Network
-documentclass: scrartcl
+documentclass: revtex4-2
+header-includes:
+  - "\\newcommand{\\pcdoc}{Pandoc-crossref documentation}"
+  - "\\newcommand{\\listfigurename}{List of Figures}"
+  - "\\newcommand{\\listtablename}{List of Tables}"
 linestretch: 1.3
-fontsize: 9pt
 papersize: a4
 date: \today
 secnumdepth: 4
@@ -23,7 +20,10 @@ version:
  - 0.1
  - DRAFT
 link-citations: true
-classoption: twocolumn
+classoption: 
+ - twocolumn
+ - longbibliography
+ - nofootinbib
 autoEqnLabels: true
 geometry:
  - a4paper

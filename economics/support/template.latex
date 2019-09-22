@@ -39,7 +39,6 @@ $if(background-image)$
   \includegraphics[width=\paperwidth]{$background-image$}%
 }
 $endif$
-\usepackage{titlesec,titlecaps}
 \usepackage{pgfpages}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
@@ -206,6 +205,9 @@ $endif$
 $if(author-meta)$
   pdfauthor={$author-meta$},
 $endif$
+$if(lang)$
+  pdflang={$lang$},
+$endif$
 $if(subject)$
   pdfsubject={$subject$},
 $endif$
@@ -227,7 +229,11 @@ $if(verbatim-in-note)$
 \VerbatimFootnotes % allow verbatim text in footnotes
 $endif$
 $if(geometry)$
+$if(beamer)$
+\geometry{$for(geometry)$$geometry$$sep$,$endfor$}
+$else$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+$endif$
 $endif$
 $if(beamer)$
 \newif\ifbibliography
@@ -354,8 +360,9 @@ $for(bibliography)$
 $endfor$
 $endif$
 
+\begin{document}
 $if(title)$
-\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+\title{$title$}
 $endif$
 $if(subtitle)$
 $if(beamer)$
@@ -369,17 +376,12 @@ $else$
 $endif$
 \subtitle{$subtitle$}
 $endif$
-$if(author)$
-\author{
-$for(author)$
-$if(author.name)$
-$author.name$$if(author.affiliation)$ ($author.affiliation$)$endif$
-$else$
-$author$
-$endif$
-$endfor$
-}
-$endif$
+
+\author{$for(author)$$author.name$$sep$, $endfor$}
+\email{$for(author)$$author.email$$sep$, $endfor$}
+\affiliation{$for(author)$$author.affiliation$$sep$, $endfor$}
+
+
 \date{$date$}
 $if(beamer)$
 $if(institute)$
@@ -393,7 +395,12 @@ $if(logo)$
 $endif$
 $endif$
 
-\begin{document}
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
 $if(has-frontmatter)$
 \frontmatter
 $endif$
@@ -402,11 +409,6 @@ $if(beamer)$
 \frame{\titlepage}
 $else$
 \maketitle
-$endif$
-$if(abstract)$
-\begin{abstract}
-$abstract$
-\end{abstract}
 $endif$
 $endif$
 
@@ -447,6 +449,12 @@ $endif$
 $if(has-frontmatter)$
 \mainmatter
 $endif$
+$if(thanks)$
+\begin{acknowledgments}
+  {$thanks$}
+\end{acknowledgments}
+$endif$
+
 $body$
 
 $if(has-frontmatter)$
