@@ -1,10 +1,19 @@
-# The Akash Token Model
+# AKT: The Akash Network Token
 
-## Native Token (AKT)
+The primary functions of AKT are in staking (which provides security to the network) and in acting as a unit of measure for pricing all currencies supported by the marketplace. AKT is expected to have very low liquidity because of the high earning potential of staking rewards. Although AKT can be used for settling transactions in the marketplace, it is not intended to be used to pay a fee or to be used as a currency, because of its highly illiquid nature. However, transaction fees and block rewards are denominated in AKT. The income stakers earn is proportional to the tokens staked and length of staking commitment. That said, AKT performs three main functions: Resolve, Reward, and Reserve.
 
-The primary functions of AKT are in staking (which provides security to the network) and in acting as a unit of measure for pricing all currencies supported by the marketplace. AKT is expected to have very low liquidity because of the high earning potential of staking rewards. Although AKT can be used for settling transactions in the marketplace, it is not intended to be used to pay a fee or to be used as a currency, because of its highly illiquid nature. However, transaction fees and block rewards are denominated in AKT. The income stakers earn is proportional to the tokens staked and length of staking commitment.
+## Resolve
+Akash relies on a blockchain where a set of validators vote on proposals. Each proposal is weighed by the proposer’s voting power, which is the total tokens they staked and the tokens bonded to them (stakers can delegate voting power to validators). 
 
-## Settlement & Price Volatility Protection
+## Reward
+Providers on Akash stake tokens to subsidize operating and capital expenditures. Stakers are rewarded proportional to the number of tokens staked, the length of lockup time, and the overall tokens staked in the system. Lock up times can vary anywhere from one month to one year. Flexibility in lockup encourages stakers that stake for shorter periods (bear markets), in a self-adjusting inflationary system that is designed to optimize for lower price pressure during bear markets.
+
+## Reserve
+Fees on Akash can be settled using a multitude of currencies, however, the market order book uses Akash Token (AKT) as the reserve currency of the ecosystem. AKT provides a novel settlement option to lock in an exchange rate between AKT and the settlement currency. This way, providers and tenants are protected from the price volatility of AKT expected to result from its low liquidity. In this section, we also present a mechanism “Transaction Ordering using Consensus Weighted Median” to establish exchange rates without the need for an oracle.
+
+# Settlement 
+
+## Price Volatility Protection
 
 The lease fees are denominated in AKT, but they can be settled using any whitelisted tokens. There is an option to lock in an exchange rate between AKT and the settlement currency. This way providers and tenants are protected from the price volatility of AKT expected to result from its low liquidity.
 
