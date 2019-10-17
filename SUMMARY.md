@@ -5,10 +5,13 @@
 ## Overview
 
 * [Akash Intro](overview/README.md)
+* [Design](design/README.md)
 
 ## Guides
 
 * [Deployment](guides/deploy.md)
+
+
 
 ## Usage
 
