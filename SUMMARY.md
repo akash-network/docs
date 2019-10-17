@@ -4,7 +4,7 @@
 
 ## Overview
 
-* [Akash Intro](overview/overview.md)
+* [Akash Intro](overview/README.md)
 
 ## Guides
 
@@ -13,9 +13,12 @@
 ## Usage
 
 * [Command Line](usage/cli/README.md)
-
-## Whitepapers
-
-* [Akash Network Theorotical Paper](whitepapers/akash-network-theorotical-paper.md)
-* [AKT: Token Economics Whitepaper](whitepapers/akt-token-economics-whitepaper.md)
-
+  * [Manage deployments](usage/cli/deployments.md)
+  * [Service logs](usage/cli/logs.md)
+  * [Manage keys](usage/cli/keys.md)
+  * [Monitor marketplace](usage/cli/marketplace.md)
+  * [Manage provider](usage/cli/provider.md)
+  * [Query things that need querying](usage/cli/query.md)
+  * [Send tokens to an account](usage/cli/send.md)
+  * [Get remote node status] (usage/cli/status.md)
+  * [Print Akash version](usage/cli/version.md)

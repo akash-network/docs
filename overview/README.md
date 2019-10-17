@@ -1,6 +1,8 @@
 # Akash Intro
 
-The Akash is a secure, transparent, and decentralized cloud computing marketplace that connects those who need computing resources (tenents) with those that have computing capacity to lease (providers).
+## Overview
+
+The Akash is a secure, transparent, and decentralized cloud computing marketplace that connects those who need computing resources \(tenents\) with those that have computing capacity to lease \(providers\).
 
 Akash acts as a _super cloud_ platform - providing a unified layer above all providers on the marketplace so as to present clients with a single cloud platform, regardless of which particular provider they may be using.
 
@@ -20,23 +22,17 @@ To support running workloads on procured resources, Akash includes a peer-to-pee
 
 Workloads in Akash are defined as Docker containers. Docker containers allow for highly-isolated and configurable execution environments, and are already part of many cloud-based deployments today.
 
-![Illustration of on-chain and off-chain interactions amongst various participants in the Akash network](./images/overview.svg) 
+![Illustration of on-chain and off-chain interactions amongst various participants in the Akash network](../.gitbook/assets/overview%20%282%29.svg)
 
-## AKT: The Akash Network Token
+### Actors
 
-The primary functions of AKT are in staking \(which provides security to the network\) and in acting as a unit of measure for pricing all currencies supported by the marketplace. AKT is expected to have very low liquidity because of the high earning potential of staking rewards. Although AKT can be used for settling transactions in the marketplace, it is not intended to be used to pay a fee or to be used as a currency, because of its highly illiquid nature. However, transaction fees and block rewards are denominated in AKT. The income stakers earn is proportional to the tokens staked and length of staking commitment. That said, AKT performs three main functions: Resolve, Reward, and Reserve.
+* Tenant: _tenant_ hosting an application on the Akash network.
+* Provider: Each _provider_ will host an agent which is a mediator between the with the Akash Network and datecenter-local infrastructure. The datacenter agent is responsible for:
+  * Bidding on orders fulfillable by the datacenter.
+  * Managing managing active leases it is a provider for.
+* Validator: An Akash node that is elected to be a _validator_ in the _DPoS_ consensus scheme.
 
-### Resolve
-
-Akash relies on a blockchain where a set of validators vote on proposals. Each proposal is weighed by the proposer’s voting power, which is the total tokens they staked and the tokens bonded to them (stakers can delegate voting power to validators).
-
-### Reward
-
-Providers on Akash stake tokens to subsidize operating and capital expenditures. Stakers are rewarded proportional to the number of tokens staked, the length of lockup time, and the overall tokens staked in the system. Lock up times can vary anywhere from one month to one year. Flexibility in lockup encourages stakers that stake for shorter periods \(bear markets\), in a self-adjusting inflationary system that is designed to optimize for lower price pressure during bear markets.
-
-### Reserve
-
-Fees on Akash can be settled using a multitude of currencies, however, the market order book uses Akash Token (_AKT_) as the reserve currency of the ecosystem. AKT provides a novel settlement option to lock in an exchange rate between AKT and the settlement currency. This way, providers and tenants are protected from the price volatility of AKT expected to result from its low liquidity. In this section, we also present a mechanism “Transaction Ordering using Consensus Weighted Median” to establish exchange rates without the need for an oracle.
+## Akash Market
 
 ### Protocol
 
@@ -48,8 +44,6 @@ Fees on Akash can be settled using a multitude of currencies, however, the marke
 6. Datacenter deploy workloads and allow connectivity as specified by the tenant.
 7. If a datacenter fails to maintain lease, collateral is transferred to tenant, and a new order is crated for the desired resources.
 8. A tenant can close any active deployment at any time
-
-## Marketplace
 
 ![Summary of procurement from Marketplace. \(1\) User&apos;s deployment order is posted to the orderbook \(2\) Datacenters posts eligible fulfillment orders for the deployment order \(3\) The best fulfillment order is matched with the deployment order, creating a new lease. ](../.gitbook/assets/marketplace.svg)
 
@@ -65,14 +59,19 @@ Businesses and individual consumers will want and need to protect how they are p
 
 A _lease_ is created when a match occurs between a deployment and fulfillment order. The lease contains references to the deployment and fulfilment orders. Leases will be the binding agent in fulfilling a deployment.
 
-### Actors
+## AKT: The Akash Network Token
 
-- Tenant: _tenant_ hosting an application on the Akash network.
+The primary functions of AKT are in staking \(which provides security to the network\) and in acting as a unit of measure for pricing all currencies supported by the marketplace. AKT is expected to have very low liquidity because of the high earning potential of staking rewards. Although AKT can be used for settling transactions in the marketplace, it is not intended to be used to pay a fee or to be used as a currency, because of its highly illiquid nature. However, transaction fees and block rewards are denominated in AKT. The income stakers earn is proportional to the tokens staked and length of staking commitment. That said, AKT performs three main functions: Resolve, Reward, and Reserve.
 
-- Provider: Each _provider_ will host an agent which is a mediator between the with the Akash Network and datecenter-local infrastructure.
-The datacenter agent is responsible for:
-  * Bidding on orders fulfillable by the datacenter.
-  * Managing managing active leases it is a provider for.
+### Resolve
 
-- Validator: An Akash node that is elected to be a _validator_ in the _DPoS_ consensus scheme.
+Akash relies on a blockchain where a set of validators vote on proposals. Each proposal is weighed by the proposer’s voting power, which is the total tokens they staked and the tokens bonded to them \(stakers can delegate voting power to validators\).
+
+### Reward
+
+Providers on Akash stake tokens to subsidize operating and capital expenditures. Stakers are rewarded proportional to the number of tokens staked, the length of lockup time, and the overall tokens staked in the system. Lock up times can vary anywhere from one month to one year. Flexibility in lockup encourages stakers that stake for shorter periods \(bear markets\), in a self-adjusting inflationary system that is designed to optimize for lower price pressure during bear markets.
+
+### Reserve
+
+Fees on Akash can be settled using a multitude of currencies, however, the market order book uses Akash Token \(_AKT_\) as the reserve currency of the ecosystem. AKT provides a novel settlement option to lock in an exchange rate between AKT and the settlement currency. This way, providers and tenants are protected from the price volatility of AKT expected to result from its low liquidity. In this section, we also present a mechanism “Transaction Ordering using Consensus Weighted Median” to establish exchange rates without the need for an oracle.
 

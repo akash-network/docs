@@ -45,7 +45,7 @@ Use `akash deployment` to create, manage, and query your deployments.
 | status | Get deployment status. |
 | validate | Validate deployment file. |
 
-### `close`
+## `close`
 
 > **Usage**
 
@@ -76,7 +76,7 @@ Close one of your deployments. Deletes the pod\(s\) containing your container\(s
 | -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
 |  | --nonce | uint | N | Nonce. |
 
-### `create`
+## `create`
 
 > **Usage**
 
@@ -122,7 +122,7 @@ In the example:
 | -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
 |  | --nonce | uint | N | Nonce |
 
-### `sendmani`
+## `sendmani`
 
 > **Usage**
 
@@ -152,7 +152,7 @@ Sends manifest directly to a deployment's provider\(s\), using data from the dep
 | -k | --key | string | Y | Name of one of your keys, for authentication. |
 | -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
 
-### `status`
+## `status`
 
 > **Usage**
 
@@ -190,7 +190,7 @@ Get the lease and service URI\(s\) for an open deployment.
 | :--- | :--- | :--- | :--- | :--- |
 | -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
 
-### `validate`
+## `validate`
 
 Validate the syntax and structure of a deployment file.
 

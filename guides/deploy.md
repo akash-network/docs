@@ -4,7 +4,7 @@
 
 The Akash testnet is a fully-functioning decentralized cloud, with support for requesting, deploying, and paying for cloud deployments. Server capacity is being kindly provided by Packet, the world's leading bare-metal provider. Access is **free** for registered users. As a free service, capacity is tightly managed, so please treat testnet capacity as the scarce community resource it is. In other words, please play nicely in our sandbox.
 
-We want your feedback! Please message us [on Telegram](https://t.me/AkashNW) with any and all of your feedback. We're putting our in-progess platform out there so that we can get real-world feedback, so don't be shy!
+We want your feedback! Please message us [on chat](https://akash.network/chat) with any and all of your feedback. We're putting our in-progess platform out there so that we can get real-world feedback, so don't be shy!
 
 Finally, some warnings. The Akash testnet is at an alpha-level stage of development and so **not intended for production use.** New functionality and capacity is being added constantly, but is always presented to you as-is, so use at your own risk. Use is at our discretion and we reserve the right to bring down deployments or to re-initialize the chain at any time for any reason.
 
@@ -14,7 +14,7 @@ Fundamentally, the Akash testnet is a deployment platform with a CLI and intende
 
 ### Getting help
 
-First of course, [RTFM](deploy.md#client-usage), then please feel free to ask questions in our [Telegram](http://t.me/akashnw).
+First of course, [RTFM](../usage/cli), then please feel free to ask questions in our [chat](http://akash.network/chat).
 
 ### Constraints
 
