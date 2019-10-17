@@ -1,9 +1,15 @@
-# docs
+# Akash Network Documentation
 
-This repository contains documentation (including research) for [Akash](https://akash.network) network.
+## Getting Started
 
-## Contents
+- [Akash Intro](overview/intro): High-level overview of the Akash Network
+- [Deployment tutorial](guides/deploy): A tutorial to deploy on Akash. It showcases how to deploy a riot chat client and explains the basic principles in the process.
 
-1. [Akash Network Theorotical Paper](whitepaper)
-2. [AKT: Token Economics Whitepaper](economics)
-3. [Usage Docs](usage)
+## Usage Documentation
+
+- [Command Line Usage](usage)
+
+## Whitepapers
+
+1. [Akash Network Theorotical Paper](whitepapers/akash)
+2. [AKT: Token Economics Whitepaper](whitepapers/akt)

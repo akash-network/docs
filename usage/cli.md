@@ -1,4 +1,4 @@
-# Client Usage
+# CLI Usage
 
 This section describes usage of the Akash client for requesting and managing deployments to the Akash Network.
 
@@ -7,7 +7,60 @@ This section describes usage of the Akash client for requesting and managing dep
 Installation instructions for the client binary may be found [here](#installation). Each of these package managers will install both `akashd` (the server) and `akash` (the client). This document describes client usage only.
 
 ### The Akash TestNet
-The Akash testnet is available for public use.A description of the testnet, registration instructions, and a getting-started guide may be found [here](#testnet).
+
+The Akash testnet is available for public use.
+
+Sign up to recive tokens
+A description of the testnet, registration instructions, and a getting-started guide may be found [here](../guides/testnet).
+
+## Modes
+
+Akash CLI provides an `interactive` mode designed for human usage and `json` and `shell` optimized for machine usage. Mode is using `--mode` or `-m`.
+
+### Interactive
+
+[![asciicast](https://asciinema.org/a/kfgNylCa0BhLu5AT2kvGHbg3m.svg)](https://asciinema.org/a/kfgNylCa0BhLu5AT2kvGHbg3m?autoplay=1)
+
+### Shell
+
+Shell mode is optimized for using Akash with shell programs. For examples:
+
+```
+$ akash key create alice -m shell | tee -a alice
+
+akash_create_key_0_name="alice"
+akash_create_key_0_public_key="10ee882d643c645fd793a7b2dcb1380cbaf2de40"
+akash_create_key_0_recovery_codes="basic creek call choose swim run horror globe argue bunker rent harvest forum excuse carpet boil toward pride alter bronze already neck body humor"
+
+$ source alice
+
+$ echo $akash_create_key_0_public_key
+10ee882d643c645fd793a7b2dcb1380cbaf2de40
+```
+
+### JSON
+
+Example using json mode and jq
+```
+$ akash key create alice -m json  | jq
+
+{
+  "create_key": [
+    {
+      "name": "alice",
+      "public_key": "d57d1f91ee04a283ed7150ed6700ea03508090f3",
+      "recovery_codes": "spike erosion glue head cool network city flavor frequent tube soda funny hen outer bag pause diesel else brick toy list skirt art vacuum"
+    }
+  ]
+}
+{
+  "raw": {
+    "name": "alice",
+    "pubkey": [ 2, 183, 238, 17, 107, 252, 161, 155, 151, 213, 43, 236, 145, 193, 171, 10, 17, 105, 141, 207, 226, 227, 220, 59, 56, 211, 30, 235, 169, 179, 228, 210, 216 ],
+    "privkey.armor": "-----BEGIN TENDERMINT PRIVATE KEY-----\nkdf: bcrypt\nsalt: C06BE82D0FAF06C3877361DFFA51F510\n\nYbNEF8iXqWLxbc2oGKoOXohWP8w0hr5BJV9kQWw9OBTPnp3Ym+caCW+Ipe7zgIAR\ndaJzRpc6dVtwoyvAyhSL1870Q1ea5AeU8gYHWkY=\n=+HTx\n-----END TENDERMINT PRIVATE KEY-----"
+  }
+}
+```
 
 ## Top-level commands
 
@@ -22,28 +75,33 @@ $ akash help
 > Outputs:
 
 ```
-Akash client
+Akash CLI Utility.
+
+Akash is a peer-to-peer marketplace for computing resources and
+a deployment platform for heavily distributed applications.
+Find out more at https://akash.network
 
 Usage:
   akash [command]
 
 Available Commands:
-  deployment  manage deployments
+  deployment  Manage deployments
   help        Help about any command
-  key         Key commands
-  logs        service logs
-  marketplace monitor marketplace
-  provider    manage provider
-  query       query something
-  send        send tokens
-  status      get remote node status
-  version     Print version
+  key         Manage keys
+  logs        Service logs
+  marketplace Monitor marketplace
+  provider    Manage provider
+  query       Query something
+  send        Send tokens
+  status      Display node status
+  version     Display version
 
 Flags:
-  -d, --data string   data directory (default "~/.akash")
+  -d, --data string   data directory (default "/Users/gosuri/.akash")
   -h, --help          help for akash
+  -m, --mode string   output mode (interactive|shell|json) (default "interactive")
 
-Use "akash [command] --help" for more information about a command
+Use "akash [command] --help" for more information about a command.
 ```
 
 | Command | Description |
@@ -172,7 +230,7 @@ Service URIs for provider: 5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4e
 Create a new deployment. Posts your requested to the chain for bidding and subsequent lease creation. Your manifest(s) are then sent to the winning provider(s), pod(s) created, and token transfer from your account to provider(s) initiated.
 
 In the example:
- 
+
  - **deployment-id**: `619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450`
  - **lease**: `619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44` (in the form [deployment id]/[deployment group number]/[order number]/[provider address])
  - **service URI**: `webapp.48bc1ea9-c2aa-4de3-bbfb-5e8d409ae334.147-75-193-181.aksh.io`
@@ -276,7 +334,7 @@ $ akash deployment validate <deployment-file> [flags]
 > File passes validation
 
 ```shell
-$ akash deployment validate testnet-deployment.yml 
+$ akash deployment validate testnet-deployment.yml
 ok
 ```
 
@@ -329,7 +387,7 @@ Global Flags:
 Use "akash key [command] --help" for more information about a command.
 ```
 
-Use `akash key` to create and manage your keys. 
+Use `akash key` to create and manage your keys.
 
 **Available Commands**
 
@@ -770,7 +828,7 @@ $ akash query fulfillment
 
 > In the example above, `"state": 2` indicates a closed fulfillment.
 
-Retrieve the details for one or more fulfillments made for your deployments. A fulfillment represents a provider's bid on your deployments. 
+Retrieve the details for one or more fulfillments made for your deployments. A fulfillment represents a provider's bid on your deployments.
 
 **Arguments**
 
@@ -898,7 +956,7 @@ Retrieve the details for one or more of your orders.  An order is an internal re
 
 In the example:
 
-- **"state": 2**: indicates a closed order. 
+- **"state": 2**: indicates a closed order.
 - **endAt**: indicates the block number upon which all fulfillments must be issued, prior to awarding a lease
 
 **Arguments**
