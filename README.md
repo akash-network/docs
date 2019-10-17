@@ -7,4 +7,5 @@
 
 ## Usage Documentation
 
-* [Command Line](usage/cli/)
+* [SDL](sdl/README.md): Using SDL to orchestrate deployments on Akash
+* [Command Line](usage/cli/): Using the terminal tool to interface with Akash Network

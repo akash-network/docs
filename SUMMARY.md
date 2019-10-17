@@ -12,6 +12,7 @@
 
 ## Usage
 
+* [Deployment Configuration (SDL)](sdl/README.md)
 * [Command Line](usage/cli/README.md)
   * [Manage deployments](usage/cli/deployments.md)
   * [Service logs](usage/cli/logs.md)
