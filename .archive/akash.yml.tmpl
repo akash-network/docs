@@ -1,0 +1,32 @@
+---
+version: "1.0"
+
+services:
+  web:
+    image: quay.io/ovrclk/akash-docs
+    expose:
+      - port: 80
+        as: 80
+        accept:
+          - docs.akash.network
+          - akash.network
+          - w3.akash.network
+        to:
+          - global: true
+
+profiles:
+  compute:
+    web:
+      cpu: "100m"
+      memory: "512Mi"
+      disk: "256Mi"
+  placement:
+    global:
+      pricing:
+        web: .0012
+
+deployment:
+  web:
+    global:
+      profile: web
+      count: 1
