@@ -1,6 +1,6 @@
 # Deployment
 
-## TestNet
+## Testnet
 
 The Akash testnet is a fully-functioning decentralized cloud, with support for requesting, deploying, and paying for cloud deployments. Server capacity is being kindly provided by Packet, the world's leading bare-metal provider. Access is **free** for registered users. As a free service, capacity is tightly managed, so please treat testnet capacity as the scarce community resource it is. In other words, please play nicely in our sandbox.
 
