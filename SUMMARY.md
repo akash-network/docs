@@ -1,14 +1,21 @@
-# Summary
+# Table of contents
+
+* [Introduction](README.md)
 
 ## Overview
-* [Akash Intro](overview/README.md)
+
+* [Akash Intro](overview/overview.md)
 
 ## Guides
-* [Deployment](guides/deploy/README.md)
+
+* [Deployment](guides/deploy.md)
 
 ## Usage
-* [Command Line](usage/cli/README.md)
+
+* [Command Line](usage/cli.md)
 
 ## Whitepapers
+
 * [Akash Network Theorotical Paper](whitepapers/akash-network-theorotical-paper.md)
 * [AKT: Token Economics Whitepaper](whitepapers/akt-token-economics-whitepaper.md)
+
