@@ -1,16 +1,14 @@
 # Akash Intro
 
-## Akash Introduction
+The Akash is a secure, transparent, and decentralized cloud computing marketplace that connects those who need computing resources (tenents) with those that have computing capacity to lease (providers).
 
-The Akash Network \(_Akash_\) is a secure, transparent, and decentralized cloud computing marketplace that connects those who need computing resources \(_clients_\) with those that have computing capacity to lease \(_providers_\).
-
-Akash acts as a \"super\" cloud platform \(_supercloud_\) - providing a unified layer above all providers on the marketplace so as to present clients with a single cloud platform, regardless of which particular provider they may be using.
+Akash acts as a _super cloud_ platform - providing a unified layer above all providers on the marketplace so as to present clients with a single cloud platform, regardless of which particular provider they may be using.
 
 Clients use Akash because of its cost advantage, usability, and flexibility to move between cloud providers, and the performance benefits of global deployments. Providers use Akash because it allows them to earn profits from either dedicated or temporarily-unused capacity.
 
 The foundational design objective of the Akash Network is to maintain a low barrier to entry for providers while at the same time ensuring that clients can trust the resources that the platform offers them. To achieve this, the system requires a publicly-verifiable record of transactions within the network. To that end, the Akash Network is implemented using blockchain technologies as a means of achieving consensus on the veracity of a distributed database.
 
-Akash is, first and foremost, a platform that allows clients to procure resources from providers. This is enabled by a blockchain-powered distributed exchange where clients post their desired resources for providers to bid on. The currency of this marketplace is a digital token, the Akash \(AKASH\), whose ledger is stored on a blockchain.
+Akash is, first and foremost, a platform that allows clients to procure resources from providers. This is enabled by a blockchain-powered distributed exchange where clients post their desired resources for providers to bid on. The currency of this marketplace is a digital token, the [AKT](http://akash.network/l/econ-paper), whose ledger is stored on a blockchain.
 
 Akash is a cloud platform for real-world applications. The requirements of such applications include:
 
@@ -22,15 +20,15 @@ To support running workloads on procured resources, Akash includes a peer-to-pee
 
 Workloads in Akash are defined as Docker containers. Docker containers allow for highly-isolated and configurable execution environments, and are already part of many cloud-based deployments today.
 
-![Illustration of on-chain and off-chain interactions amongst various participants in the Akash network](../.gitbook/assets/overview%20%283%29.svg) ![](../.gitbook/assets/overview%20%282%29.svg)
+![Illustration of on-chain and off-chain interactions amongst various participants in the Akash network](./images/overview.svg) 
 
-### AKT: The Akash Network Token
+## AKT: The Akash Network Token
 
 The primary functions of AKT are in staking \(which provides security to the network\) and in acting as a unit of measure for pricing all currencies supported by the marketplace. AKT is expected to have very low liquidity because of the high earning potential of staking rewards. Although AKT can be used for settling transactions in the marketplace, it is not intended to be used to pay a fee or to be used as a currency, because of its highly illiquid nature. However, transaction fees and block rewards are denominated in AKT. The income stakers earn is proportional to the tokens staked and length of staking commitment. That said, AKT performs three main functions: Resolve, Reward, and Reserve.
 
 ### Resolve
 
-Akash relies on a blockchain where a set of validators vote on proposals. Each proposal is weighed by the proposer’s voting power, which is the total tokens they staked and the tokens bonded to them \(stakers can delegate voting power to validators\).
+Akash relies on a blockchain where a set of validators vote on proposals. Each proposal is weighed by the proposer’s voting power, which is the total tokens they staked and the tokens bonded to them (stakers can delegate voting power to validators).
 
 ### Reward
 
@@ -38,7 +36,7 @@ Providers on Akash stake tokens to subsidize operating and capital expenditures.
 
 ### Reserve
 
-Fees on Akash can be settled using a multitude of currencies, however, the market order book uses Akash Token \(AKT\) as the reserve currency of the ecosystem. AKT provides a novel settlement option to lock in an exchange rate between AKT and the settlement currency. This way, providers and tenants are protected from the price volatility of AKT expected to result from its low liquidity. In this section, we also present a mechanism “Transaction Ordering using Consensus Weighted Median” to establish exchange rates without the need for an oracle.
+Fees on Akash can be settled using a multitude of currencies, however, the market order book uses Akash Token (_AKT_) as the reserve currency of the ecosystem. AKT provides a novel settlement option to lock in an exchange rate between AKT and the settlement currency. This way, providers and tenants are protected from the price volatility of AKT expected to result from its low liquidity. In this section, we also present a mechanism “Transaction Ordering using Consensus Weighted Median” to establish exchange rates without the need for an oracle.
 
 ### Protocol
 
@@ -69,18 +67,12 @@ A _lease_ is created when a match occurs between a deployment and fulfillment or
 
 ### Actors
 
-Tenant
+- Tenant: _tenant_ hosting an application on the Akash network.
 
-: _tenant_ hosting an application on the Akash network.
+- Provider: Each _provider_ will host an agent which is a mediator between the with the Akash Network and datecenter-local infrastructure.
+The datacenter agent is responsible for:
+  * Bidding on orders fulfillable by the datacenter.
+  * Managing managing active leases it is a provider for.
 
-Provider
-
-: Each _provider_ will host an agent which is a mediator between the with the Akash Network and datecenter-local infrastructure. The datacenter agent is responsible for:
-
-* Bidding on orders fulfillable by the datacenter.
-* Managing managing active leases it is a provider for.
-
-Validator
-
-: An Akash node that is elected to be a _validator_ in the _DPoS_ consensus scheme.
+- Validator: An Akash node that is elected to be a _validator_ in the _DPoS_ consensus scheme.
 
