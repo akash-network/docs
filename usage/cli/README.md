@@ -6,38 +6,11 @@ This section describes usage of the Akash client for requesting and managing dep
 
 ### Installation
 
-The Akash Suite is composed of a full node `akashd` and the client `akash`. The full node \(`akashd`\) is the \(tendermint-based\) blockchain node that implements the decentralized exchange. `akash` is the client used to access the exchange and network in general.
-
+The Akash Suite is composed of a full node `akashd` and the client `akash`. The full node `akashd` is the tendermint-based blockchain node that implements the decentralized exchange. `akash` is the client used to access the exchange and network in general.
 
 
 {% tabs %}
-{% tab title="Mac O" %}
-**Using Homebrew**
-
-```text
-brew install ovrclk/tap/akash
-```
-
-If you dont have Homebrew installed, run the below to install:
-
-```text
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-{% endtab %}
-
-{% tab title="Linux" %}
-Download the latest release from  [release page](https://github.com/ovrclk/akash/releases). 
-
-The final step is to make sure that the akash binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.
-{% endtab %}
-
-{% tab title="Windows" %}
-Download the [windows archive](https://github.com/ovrclk/akash/releases/download/v0.3.6/akash_0.3.6_windows_amd64.tar.gz) from the [release page](https://github.com/ovrclk/akash/releases). The latest release is `0.3.6` as of writing of this document, please make sure to check the releases page for the latest version.
-
-The final step is to make sure that the akash binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows) contains instructions for setting the PATH on Windows.
-{% endtab %}
-{% endtabs %}
-
+{% tab title="Mac OS" %}
 ### MacOS
 
 > Install Homebrew
@@ -55,20 +28,26 @@ $ brew install ovrclk/tap/akash
 The simplest way to install is by using [homebrew](https://brew.sh). Install `akash` client by running `brew install ovrclk/tap/akash`. Once installed, verify the installation by running `akash version`.
 
 Alternatively, you can manually download the [binaries](https://github.com/ovrclk/akash/releases/download/v0.3.6/akash_0.3.6_darwin_amd64.tar.gz) from the [releases page](https://github.com/ovrclk/akash/releases). The latest release is `0.3.6` as of writing of this document, please make sure to check the releases page for the latest version. The final step is to make sure that the akash binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on MacOS.
-
+{% endtab %}
+{% tab title="Linux" %}
 ### Linux
 
 Download the [linux archive](https://github.com/ovrclk/akash/releases/download/v0.3.6/akash_0.3.6_linux_amd64.tar.gz) from the [release page](https://github.com/ovrclk/akash/releases). The latest release is `0.3.6` as of writing of this document, please make sure to check the releases page for the latest version.
 
 The final step is to make sure that the terraform binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.
+{% endtab %}
 
+{% tab title="Windows" %}
 ### Windows
 
 Download the [windows archive](https://github.com/ovrclk/akash/releases/download/v0.3.6/akash_0.3.6_windows_amd64.tar.gz) from the [release page](https://github.com/ovrclk/akash/releases). The latest release is `0.3.6` as of writing of this document, please make sure to check the releases page for the latest version.
 
 The final step is to make sure that the akash binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows) contains instructions for setting the PATH on Windows.
 
-### Others \(From Source\)
+{% endtab %}
+
+{% tab title="Others" %}
+### Others (From Source)
 
 > Installing akash suite from source
 
@@ -96,19 +75,22 @@ Most golang libraries will be packaged in the local `vendor/` directory via [gli
 
 Once you have the dependencies properly setup, download and build `akash` and `akashd` using `make install`
 
-### The Akash TestNet
+{% endtab %}
+{% endtabs %}
 
-The Akash testnet is available for public use. A description of the testnet, registration instructions, and a getting-started guide may be found [here](https://github.com/ovrclk/docs/tree/85e4b806da57673f6c5577754d41aa8b543a0f8c/usage/guides/testnet/README.md).
+## The Akash TestNet
 
-### Modes
+The Akash testnet is available for public use. A description of the testnet, registration instructions, and a getting-started guide may be found [here](../guides/testnet.md)
+
+## Interaction Modes
 
 Akash CLI provides an `interactive` mode designed for human usage and `json` and `shell` optimized for machine usage. Mode is using `--mode` or `-m`.
 
-#### Interactive
+### Interactive
 
 [![asciicast](https://asciinema.org/a/kfgNylCa0BhLu5AT2kvGHbg3m.svg)](https://asciinema.org/a/kfgNylCa0BhLu5AT2kvGHbg3m?autoplay=1)
 
-#### Shell
+### Shell
 
 Shell mode is optimized for using Akash with shell programs. For examples:
 
@@ -125,7 +107,7 @@ $ echo $akash_create_key_0_public_key
 10ee882d643c645fd793a7b2dcb1380cbaf2de40
 ```
 
-#### JSON
+### JSON
 
 Example using json mode and jq
 
@@ -150,7 +132,7 @@ $ akash key create alice -m json  | jq
 }
 ```
 
-### Top-level commands
+## Top-level commands
 
 > You can access help using `akash help`:
 
@@ -211,235 +193,9 @@ Every command accepts the following flags. For brevity, they are omitted from th
 | Short | Verbose | Argument | Required | Description |
 | :--- | :--- | :--- | :--- | :--- |
 | -h | --help | None | N | Help for any command. |
-| -d | --data | String | N | User data directory \(defaults to `~/.akash`\). |
+| -m | --mode | String | N | output mode (interactive|shell|json) (default "interactive") |
+| -d | --data | String | N | User data directory (defaults to ~/.akash). |
 
-## Manage Deployments
-
-> **Usage**
-
-```text
-$ akash deployment [command]
-```
-
-> **Example**
-
-```text
-$ akash deployment help
-
-manage deployments
-
-Usage:
-  akash deployment [command]
-
-Available Commands:
-  close       close a deployment
-  create      create a deployment
-  sendmani    send manifest to all deployment providers
-  status      get deployment status
-  update      update a deployment (*EXPERIMENTAL*)
-  validate    validate deployment file
-
-Flags:
-  -h, --help   help for deployment
-
-Global Flags:
-  -d, --data string   data directory (default "~/.akash")
-
-Use "akash deployment [command] --help" for more information about a command.
-```
-
-Use `akash deployment` to create, manage, and query your deployments.
-
-**Available Commands**
-
-| Command | Description |
-| :--- | :--- |
-| close | Close a deployment. |
-| create | Create a deployment. |
-| sendmani | Send manifest to all deployment providers. |
-| status | Get deployment status. |
-| validate | Validate deployment file. |
-
-### `close`
-
-> **Usage**
-
-```text
-$ akash deployment close <deployment-id> [flags]
-```
-
-> **Example**
-
-```text
-$ akash deployment close 3be771d6ce0a9e0b5b8caa35d674cdd790f94500226433ab2794ee46d8886f42 -k my-key-name
-Closing deployment
-```
-
-Close one of your deployments. Deletes the pod\(s\) containing your container\(s\) and stops token transfer.
-
-**Arguments**
-
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| deployment-id | string | Y | ID of the deployment to close, returned by \(`akash query deployment`\) |
-
-**Flags**
-
-| Short | Verbose | Argument | Required | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| -k | --key | string | Y | Name of one of your keys, for authentication. Tokens will be transferred from the account associated with this key. |
-| -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
-|  | --nonce | uint | N | Nonce. |
-
-### `create`
-
-> **Usage**
-
-```text
-$ akash deployment create <deployment-file> [flags]
-```
-
-> **Example**
-
-```text
-$ akash deployment create testnet-deployment.yml -k my-key-name
-619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450
-Waiting...
-Group 1/1 Fulfillment: 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44 [price=57]
-Group 1/1 Fulfillment: 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/d56f1a59caabe9facd684ae7f1c887a2f0d0b136c9c096877188221e350e4737 [price=70]
-Group 1/1 Lease: 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44 [price=57]
-Sending manifest to http://provider.ewr.salusa.akashtest.net...
-Service URIs for provider: 5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44
-    webapp: webapp.48bc1ea9-c2aa-4de3-bbfb-5e8d409ae334.147-75-193-181.aksh.io
-```
-
-Create a new deployment. Posts your requested to the chain for bidding and subsequent lease creation. Your manifest\(s\) are then sent to the winning provider\(s\), pod\(s\) created, and token transfer from your account to provider\(s\) initiated.
-
-In the example:
-
-* **deployment-id**: `619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450`
-* **lease**: `619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44` \(in the form \[deployment id\]/\[deployment group number\]/\[order number\]/\[provider address\]\)
-* **service URI**: `webapp.48bc1ea9-c2aa-4de3-bbfb-5e8d409ae334.147-75-193-181.aksh.io`
-* **price**: Given in microAKSH \(AKSH \* 10^-6\).
-
-**Arguments**
-
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| deployment-file | string | Y | Absolute or relative path to your deployment file. |
-
-**Flags**
-
-| Short | Verbose | Argument | Required | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| -k | --key | string | Y | Name of one of your keys, for authentication. |
-|  | --no-wait | none | N | Exit before waiting for lease creation. |
-| -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
-|  | --nonce | uint | N | Nonce |
-
-### `sendmani`
-
-> **Usage**
-
-```text
-$ akash deployment sendmani <deployment-file> <deployment-id> [flags]
-```
-
-> **Example**
-
-```text
-$ akash deployment sendmani testnet-deployment.yml 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450 -k my-key-name
-```
-
-Sends manifest directly to a deployment's provider\(s\), using data from the deployment file. Use this command after creating a deployment using the `--no-wait` flag.
-
-**Arguments**
-
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| manifest | String | Y | **?** |
-| deployment-id | string | Y | ID of the deployment to for which to send the manifest, returned by \(`akash query deployment`. |
-
-**Flags**
-
-| Short | Verbose | Argument | Required | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| -k | --key | string | Y | Name of one of your keys, for authentication. |
-| -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
-
-### `status`
-
-> **Usage**
-
-```text
-$ akash deployment status <deployment-id> [flags]
-```
-
-> **Example**
->
-> Deployment is open
-
-```text
-$ akash deployment status 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450
-lease: 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44
-    webapp: webapp.9060b8ae-1b62-47ff-a247-164f2f081681.147-75-193-181.aksh.io
-```
-
-> Deployment is closed
-
-```text
-$ akash deployment close 3be771d6ce0a9e0b5b8caa35d674cdd790f94500226433ab2794ee46d8886f42 -k my-key-name
-```
-
-Get the lease and service URI\(s\) for an open deployment.
-
-**Arguments**
-
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| deployment-id | string | Y | ID of the deployment to check, returned by `akash query deployment` |
-
-**Flags**
-
-| Short | Verbose | Argument | Required | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
-
-### `validate`
-
-Validate the syntax and structure of a deployment file.
-
-> **Usage**
-
-```text
-$ akash deployment validate <deployment-file> [flags]
-```
-
-> **Example**
->
-> File passes validation
-
-```text
-$ akash deployment validate testnet-deployment.yml
-ok
-```
-
-> File does not pass validation \(min price too low\)
-
-```text
-$ akash deployment validate badfile.yml
-Error: group specs: group san-jose: price too low (1 >= 25 fails)
-```
-
-**Arguments**
-
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| deployment-file | string | Y | Absolute or relative path to your deployment file. |
-
-**Flags**
-
-None
 
 ## Manage Keys
 

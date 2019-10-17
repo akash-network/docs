@@ -12,7 +12,7 @@
 
 ## Usage
 
-* [Command Line](usage/cli.md)
+* [Command Line](usage/cli/README.md)
 
 ## Whitepapers
 
