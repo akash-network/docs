@@ -7,7 +7,7 @@
 * [Deployment](guides/deploy/README.md)
 
 ## Usage
-* [Command Line Usage](usage/cli/README.md)
+* [Command Line](usage/cli/README.md)
 
 ## Whitepapers
 * [Akash Network Theorotical Paper](whitepapers/akash-network-theorotical-paper.md)
