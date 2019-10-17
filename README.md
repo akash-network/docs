@@ -3,7 +3,7 @@
 ## Getting Started
 
 * [Akash Intro](overview/README.md): High-level overview of the Akash Network
-* [Deployment tutorial](guides/deploy.md): A tutorial to deploy on Akash. It showcases how to deploy a riot chat client an
+* [Deployment tutorial](guides/deploy.md): A tutorial to deploy on Akash. It showcases how to deploy a riot chat web client.
 
 ## Usage Documentation
 
