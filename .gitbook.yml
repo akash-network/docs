@@ -1,4 +1,5 @@
 structure:
-  summary: README.md
+  readme: README.md
+  summary: SUMMARY.md
 redirects:
   help: https://akash.network/chat
