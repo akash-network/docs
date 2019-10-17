@@ -1,0 +1,6 @@
+root ./
+
+structure:
+  summary: README.md
+redirects:
+  help: https://akash.network/chat
