@@ -9,8 +9,8 @@
 
 ## Guides
 
-* [Deployment](guides/deploy.md)
-
+* [Deploy an app](guides/deploy.md)
+* [Selling compute](guides/provider.md)
 
 
 ## Usage
