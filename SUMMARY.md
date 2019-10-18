@@ -10,7 +10,7 @@
 ## Guides
 
 * [Deployment](guides/deploy.md)
-
+* [Provider](guides/provider.md)
 
 
 ## Usage
