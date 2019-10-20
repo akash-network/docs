@@ -4,19 +4,20 @@
 
 ## Overview
 
-* [Akash Intro](overview/README.md)
+* [Introduction](overview/README.md)
 * [Design](design/README.md)
 
 ## Guides
 
+* [Installation](guides/install.md)
 * [Deployments](guides/deploy.md)
-  * [Setup a Private Secure Matrix Chat on Akash](guides/deploy/matrix.md)
+  * [Private Matrix Chat](guides/deploy/matrix.md)
 * [Providers](guides/provider.md)
 
 ## Usage
 
-* [Deployment Configuration (SDL)](sdl/README.md)
-* [Command Line](usage/cli/README.md)
+* [Stack Definition Language](sdl/README.md)
+* [Akash Client](usage/cli/README.md)
   * [Manage deployments](usage/cli/deployments.md)
   * [Service logs](usage/cli/logs.md)
   * [Manage keys](usage/cli/keys.md)
