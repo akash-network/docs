@@ -1,5 +1,7 @@
 structure:
   readme: README.md
   summary: SUMMARY.md
+akash:
+  version: 0.5.2
 redirects:
   help: https://akash.network/chat
