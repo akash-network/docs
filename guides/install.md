@@ -2,6 +2,10 @@
 
 The Akash Suite is composed of a full node `akashd` and the client `akash`. The full node `akashd` is the tendermint-based blockchain node that implements the decentralized exchange. `akash` is the client used to access the exchange and network in general.
 
+
+
+Version: {{ book.vars.akash.version }}
+
 {% tabs %} {% tab title="MacOS" %}
 
 ### MacOS
