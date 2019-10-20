@@ -20,7 +20,7 @@ $ brew install ovrclk/tap/akash
 
 The simplest way to install is by using [homebrew](https://brew.sh). Install `akash` client by running `brew install ovrclk/tap/akash`. Once installed, verify the installation by running `akash version`.
 
-Alternatively, you can manually download the [binaries](https://github.com/ovrclk/akash/releases/download/v0.3.6/akash_0.3.6_darwin_amd64.tar.gz) from the [releases page](https://github.com/ovrclk/akash/releases). The latest release is `{ book.akash.version }` as of writing of this document, please make sure to check the releases page for the latest version. The final step is to make sure that the akash binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on MacOS.
+Alternatively, you can manually download the [binaries](https://github.com/ovrclk/akash/releases/download/v0.3.6/akash_0.3.6_darwin_amd64.tar.gz) from the [releases page](https://github.com/ovrclk/akash/releases). The latest release is {{ book.akash.version }} as of writing of this document, please make sure to check the releases page for the latest version. The final step is to make sure that the akash binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on MacOS.
 
 {% endtab %} {% tab title="Linux" %}
 
