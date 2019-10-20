@@ -9,9 +9,9 @@
 
 ## Guides
 
-* [Deploy an app](guides/deploy.md)
-* [Selling compute](guides/provider.md)
-
+* [Deployments](guides/deploy.md)
+  * [Setup a Private Secure Matrix Chat on Akash](guides/deploy/matrix.md)
+* [Providers](guides/provider.md)
 
 ## Usage
 
