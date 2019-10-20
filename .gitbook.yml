@@ -1,11 +1,5 @@
 structure:
   readme: README.md
   summary: SUMMARY.md
-plugins:
-  - variables
-pluginsConfig:
-  variables:
-    files:
-      vars: data.json
 redirects:
   help: https://akash.network/chat
