@@ -1,8 +1,8 @@
 ## Before we begin
 
-In this step, you actually use the testnet to deploy an simple web app, paying with your testnet ATK tokens.
+In this step, you actually use the testnet to deploy a simple web app, paying with your testnet ATK tokens.
 
-To request tokens, please create an account on you local machine and ping us on our [matrix chat room](http://akash.network/chat) with your public key. The message should be:
+To request tokens, please create an account on you local machine and ping us on our [matrix chat room](http://akash.network/chat) with your public key. 
 
 To create a key, please make sure you installed Akash client on your workstation and run the below:
 
