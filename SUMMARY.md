@@ -11,7 +11,7 @@
 
 * [Installation](guides/install.md)
 * [Deployments](guides/deploy.md)
-  * [Private Matrix Chat](guides/deploy/matrix.md)
+  * [Simple Web Application](guides/deploy/simple.md)
 * [Providers](guides/provider.md)
 
 ## Usage
