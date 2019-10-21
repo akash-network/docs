@@ -220,7 +220,11 @@ For example, given a service named `webapp`, the lease in the previous has the b
 | order | 2 |
 | provider | 49877504638723665f08dd57c2b0fbae79bd2abf65fe0d397e20880953b9befc |
 
-So, the lease id would be `66809b2c537fcdd79bc6b5b6d28bbf2d51fbe59133a4ba0119b9e0160ab16357/1/2/49877504638723665f08dd57c2b0fbae79bd2abf65fe0d397e20880953b9be`
+So, the lease id would be:
+
+```
+66809b2c537fcdd79bc6b5b6d28bbf2d51fbe59133a4ba0119b9e0160ab16357/1/2/49877504638723665f08dd57c2b0fbae79bd2abf65fe0d397e20880953b9be
+```
 
 ## 5. Close your deployment
 
