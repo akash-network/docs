@@ -4,19 +4,20 @@
 
 ## Overview
 
-* [Akash Intro](overview/README.md)
+* [Introduction](overview/README.md)
 * [Design](design/README.md)
 
 ## Guides
 
-* [Deploy an app](guides/deploy.md)
-* [Selling compute](guides/provider.md)
-
+* [Installation](guides/install.md)
+* [Deployments](guides/deploy.md)
+  * [Simple Web Application](guides/deploy/simple.md)
+* [Providers](guides/provider.md)
 
 ## Usage
 
-* [Deployment Configuration (SDL)](sdl/README.md)
-* [Command Line](usage/cli/README.md)
+* [Stack Definition Language](sdl/README.md)
+* [Akash Client](usage/cli/README.md)
   * [Manage deployments](usage/cli/deployments.md)
   * [Service logs](usage/cli/logs.md)
   * [Manage keys](usage/cli/keys.md)

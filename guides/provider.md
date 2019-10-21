@@ -139,12 +139,23 @@ Make sure `$address` environment is populated with provider address from `akash 
 Simplest way to install Akash is using Helm. Install Akash Provider chart by:
 
 ```shell
+<<<<<<< HEAD
+curl https://helm.akash.network/dist/akash-provider-0.1.0.tgz | tar xvz
+
+helm install akash-provider -n $key   \
+  --set "ingress.domain=$ingress"     \
+  --set "provider.address=$address"
+```
+
+
+=======
 helm install akash-provider --repo helm.akash.network \
   --name $key \
   --set "ingress.domain=$ingress" \
   --set "provider.address=$address"
 ```
 
+>>>>>>> master
 {% endtab %} {% tab title="kubectl" %}
 
 ### Using kubectl
