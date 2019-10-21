@@ -59,7 +59,7 @@ akash provider add $key.provider.yml -key $key
 Optionally, you can save the address to a file by piping the output using:
 
 ```shell
-akash provider add $key.provider.yml | grep Key | awk '{print $2}' | tee -a $key.address
+akash provider add $key.provider.yml -k $key | grep Key | awk '{print $2}' | tee -a $key.address
 
 export address=$(cat $key.address)
 ```
@@ -139,6 +139,7 @@ Make sure `$address` environment is populated with provider address from `akash 
 Simplest way to install Akash is using Helm. Install Akash Provider chart by:
 
 ```shell
+<<<<<<< HEAD
 curl https://helm.akash.network/dist/akash-provider-0.1.0.tgz | tar xvz
 
 helm install akash-provider -n $key   \
@@ -147,6 +148,14 @@ helm install akash-provider -n $key   \
 ```
 
 
+=======
+helm install akash-provider --repo helm.akash.network \
+  --name $key \
+  --set "ingress.domain=$ingress" \
+  --set "provider.address=$address"
+```
+
+>>>>>>> master
 {% endtab %} {% tab title="kubectl" %}
 
 ### Using kubectl
