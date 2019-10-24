@@ -13,6 +13,7 @@
 * [Deployments](guides/deploy.md)
   * [Simple Web Application](guides/deploy/simple.md)
 * [Providers](guides/provider.md)
+* [Validators](guides/validators/README.md)
 
 ## Usage
 
