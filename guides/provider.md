@@ -8,6 +8,10 @@ Throughout the tutorial, we will be using environment variables to simplify conf
 
 You will require a publicly reachable IP address and a [Kubernetes](https://kubernetes.io) (v1.15.4 and above) cluster. For instructions on setting up a Kubernetes cluster for Akash, please see [stack](https://github.com/ovrclk/stack) for details.
 
+## Before we begin
+
+
+
 ## Adding a provider to the network
 
 First, lets create a key locally that we'll use as an identifier.

@@ -14,9 +14,7 @@ Fundamentally, the Akash testnet is a deployment platform with a CLI and intende
 
 First of course, [RTFM](../usage/cli), then please feel free to ask questions in our [chat](http://akash.network/chat).
 
-### Constraints
-
-#### Supported regions
+### Supported regions
 
 These regions are currently supported by the testnet. More will come online, so check back frequently.
 
@@ -25,12 +23,42 @@ These regions are currently supported by the testnet. More will come online, so 
 * SJC \(San Jose, California, USA\)
 * EWR \(New Jersey, USA\)
 
-#### Uptime and availability
+### Uptime and availability
 
 The Akash testnet is at an alpha-level stage of development and so **not intended for production use.** New functionality and capacity is being added constantly, but is always presented to you as-is, so use at your own risk. Use is at our discretion and we reserve the right to bring down deployments or to re-initialize the chain at any time for any reason.
 
-## Getting Started
+## Get Started
 
-- [Install Akash Suite](install.md)
-- [Deploy a Simple Web application](deploy/simple.md)
-- [Become an Akash Provider](provider.md)
+
+To request tokens, please create an account on you local machine and ping us on our [matrix chat room](http://akash.network/chat) with your public key. 
+
+To create a key, please make sure you installed Akash client on your workstation and run the below:
+
+```
+akash key create
+```
+
+You should see a response, similar to:
+
+```
+Key Name (required): bob
+(info)  [key] key created
+
+Create Key
+==========
+
+Name:           	bob
+Public Key:     	44fc42cfff72666bbb02fc3a08545e89b35ea1ff
+Recovery Codes: 	main nerve normal hill analyst iron weapon ordinary evoke sniff kitchen pyramid address apple direct inform skirt ozone stage market clown home fit height
+
+(warn)  [Important] Write these Recovery codes in a safe place. It is the only way to recover your account.
+```
+
+The public key address in the above example is `44fc42cfff72666bbb02fc3a08545e89b35ea1ff`
+
+
+Now, login to https://akash.network/chat and send a message, similar to:
+
+```text
+i want disco! 44fc42cfff72666bbb02fc3a08545e89b35ea1ff
+```

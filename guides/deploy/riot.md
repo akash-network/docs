@@ -1,39 +1,6 @@
 ## Before we begin
 
-In this step, you actually use the testnet to deploy a simple web app, paying with your testnet ATK tokens.
-
-To request tokens, please create an account on you local machine and ping us on our [matrix chat room](http://akash.network/chat) with your public key. 
-
-To create a key, please make sure you installed Akash client on your workstation and run the below:
-
-```
-akash key create
-```
-
-You should see a response, similar to:
-
-```
-Key Name (required): bob
-(info)  [key] key created
-
-Create Key
-==========
-
-Name:           	bob
-Public Key:     	44fc42cfff72666bbb02fc3a08545e89b35ea1ff
-Recovery Codes: 	main nerve normal hill analyst iron weapon ordinary evoke sniff kitchen pyramid address apple direct inform skirt ozone stage market clown home fit height
-
-(warn)  [Important] Write these Recovery codes in a safe place. It is the only way to recover your account.
-```
-
-The public key address in the above example is `44fc42cfff72666bbb02fc3a08545e89b35ea1ff`
-
-
-Now, login to https://akash.network/chat and send a message, similar to:
-
-```text
-i want disco! 44fc42cfff72666bbb02fc3a08545e89b35ea1ff
-```
+In this step, you actually use the testnet to deploy a simple web app, paying with your testnet ATK tokens. Check out the [testnet guide](../testnet.md) to request tokens.
 
 ## 1. Check your balance
 
@@ -66,33 +33,37 @@ List your keys using `akash key list` command and query your balance using `akas
 
 ## 2. Create the deployment configuration and modify it if desired.
 
-Create a deployment configuration to deploy a simple web app:
+Create a deployment configuration [riot.yml](riot.yml) to deploy the `bubuntux/riot-web` container:
 
-```
-cat > deploy.yml <<EOF
-heredoc> ---
+```shell
+cat > riot.yml <<EOF
+---
 version: "1.0"
+
 services:
-  webapp:
-    image: quay.io/ovrclk/demo-app
+  web:
+    image: bubuntux/riot-web
     expose:
       - port: 80
-        as: 80
         to:
           - global: true
+
 profiles:
   compute:
     web:
-      cpu: "100m"
+      cpu: "0.25"
       memory: "512Mi"
-      disk: "512Mi"
+      disk: "1G"
+
   placement:
+    attributes:
+      sgx: enabled
     global:
       pricing:
-        web: 200u
+        web: 500u
 
 deployment:
-  webapp:
+  web:
     global:
       profile: web
       count: 1
@@ -101,20 +72,20 @@ EOF
 
 Alternatively, you can use cURL to download:
 
-```text
-curl -s https://raw.githubusercontent.com/ovrclk/akash/master/_docs/testnet/testnet-deployment.yml > deploy.yml
+```shell
+curl -s https://raw.githubusercontent.com/ovrclk/docs/blob/master/guides/deploy/riot.yml > riot.yml
 ```
 
 The sample deployment file specifies a small webapp container running a simple demo site we created.
 
-You may use the sample deployment file as-is or modify it for your own needs as desscribed in our [SDL \(Stack Definition Language\) documentation](../../sdl/README.md). A typical modification would be to reference your own image instead of our demo app image. Note that you are limited in the amount of testnet resources you may request. Please see the [constraints section](deploy.md#constraints).
+You may use the sample deployment file as-is or modify it for your own needs as desscribed in our [SDL \(Stack Definition Language\) documentation](../../sdl/README.md). A typical modification would be to reference your own image instead of our demo app image. Note that you are limited in the amount of testnet resources you may request. Please see the [constraints section](../testnet.md).
 
 ## 3. Create the deployment
 
 To deploy on Akash, run:
 
 ```shell
-akash deployment create deploy.yml
+akash deployment create riot.yml
 ```
 
 You should a response, similar to this:

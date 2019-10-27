@@ -9,11 +9,16 @@
 
 ## Guides
 
-* [Installation](guides/install.md)
-* [Deployments](guides/deploy.md)
-  * [Simple Web Application](guides/deploy/simple.md)
-* [Providers](guides/provider.md)
-* [Validators](guides/validators/README.md)
+* [Install Akash Suite](guides/install.md)
+* [Get Started on Testnet](guides/testnet.md)
+* [Deploy a Riot Chat Client](guides/deploy/riot.md)
+* [Sell Your Spare Capacity](guides/provider.md)
+* [Run Validator on Testnet](guides/validators/README.md)
+* [Setup Kubernetes using DISCO](guides/disco/README.md)
+  * [Setup](guides/disco/getting-started.md)
+  * [Layer 0: Bare Metal Infrastrucutre](guides/disco/layer0/README.md)
+  * [Layer 1: Kubernetes Cluster](guides/disco/layer1/README.md)
+  * [Layer 2: Observabilty](guides/disco/layer2/README.md)
 
 ## Usage
 
