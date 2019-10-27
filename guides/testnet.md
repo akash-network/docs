@@ -54,11 +54,18 @@ Recovery Codes: 	main nerve normal hill analyst iron weapon ordinary evoke sniff
 (warn)  [Important] Write these Recovery codes in a safe place. It is the only way to recover your account.
 ```
 
+## Request Tokens
+
 The public key address in the above example is `44fc42cfff72666bbb02fc3a08545e89b35ea1ff`
 
-
-Now, login to https://akash.network/chat and send a message, similar to:
+Now, login to [Matrix Room](https://akash.network/chat) and send a message with the format:
 
 ```text
-i want disco! 44fc42cfff72666bbb02fc3a08545e89b35ea1ff
+i want disco! <address> <amount>
+```
+
+For example:
+
+```text
+i want disco! 44fc42cfff72666bbb02fc3a08545e89b35ea1ff 5000
 ```
