@@ -7,7 +7,7 @@ services:
     expose:
       - port: 80
         accept:
-          - chat.akash.network
+          - chat.dentacoin.com
         to:
           - global: true
 
