@@ -197,7 +197,82 @@ So, the lease id would be:
 66809b2c537fcdd79bc6b5b6d28bbf2d51fbe59133a4ba0119b9e0160ab16357/1/2/49877504638723665f08dd57c2b0fbae79bd2abf65fe0d397e20880953b9be
 ```
 
-## 5. Close your deployment
+## 5. Update the deployment by adding a custom hostname
+
+Optionally, we can add a custom hostname to share with others. Edit the `riot.yml` and add a hostname you have DNS access to under `expose.accept`
+
+```shell
+$(EDITOR) riot.yml
+```
+
+add a hostname under `expose.accept`
+
+```yaml
+...
+services:
+  web:
+    image: <image>
+    expose:
+      - port: <port>
+        accept:
+          - <host>
+        to:
+          - global: true
+...
+```
+
+For example, here's a sample [riot-domain.yml](riot-domain.yml) if we want the riot client to have a domain `chat.dentacoin.com`
+
+To update the deploment, use the `akash deployment update` command:
+
+```shell
+akash deployment update <config> <deployment>
+```
+
+For example:
+
+```shell
+akash deployment update riot.yml 66809b2c537fcdd79bc6b5b6d28bbf2d51fbe59133a4ba0119b9e0160ab16357
+
+(wait)  [deploy.update] upload manifest for deployment (66809b2c537fcdd79bc6b5b6d28bbf2d51fbe59133a4ba0119b9e0160ab16357)
+(wait)  [deploy.sendmani] upload manifest to provider (e014d0e903e0d82a2058be384e21efa5552aad49078f0471447020fc238e3bd7)
+(done)  [deploy.sendmani] manifest received by provider (e014d0e903e0d82a2058be384e21efa5552aad49078f0471447020fc238e3bd7)
+
+Lease(s)
+========
+
+Lease ID: 	79b88e8fb3e0c4e55c3b5d3eb6d78527f8565a26d284c9b69ebf34bff0027a53/1/2/e014d0e903e0d82a2058be384e21efa5552aad49078f0471447020fc238e3bd7
+Price:    	60
+State:    	ACTIVE
+Provider: 	Address:           	e014d0e903e0d82a2058be384e21efa5552aad49078f0471447020fc238e3bd7
+          	Owner:             	38f05967bba460d15b8b5e15559284ea9b56b7cd
+          	Host URI:          	http://marx.akashtest.net
+          	Attributes:        	region: ewr | region_name: Parsippany, NJ | sgx: enabled | tier: 5
+          	Received Manifest: 	Yes
+```
+
+Verify the update by checking for the hostname using cURL:
+
+```shell
+curl -H 'HOST: chat.dentacoin.com' wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net
+```
+
+Optionally, add a CNAME dns record on your provider to map,
+`chat.dentacoin.com` with `wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net`. For example:
+
+```text
+CNAME chat.dentacoin.com wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net
+```
+
+Once that's complete, you can simply share `chat.dentacoin.com` with your community.
+
+{% hint style='warning' %}
+
+If you're hosting your DNS on Cloudflare, please make sure your SSL/TLS encryption mode is Flexible for DNS to work.
+
+{% endhint %}
+
+## 6. Close your deployment
 
 Close deployment using `deployment close` command:
 

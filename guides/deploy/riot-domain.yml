@@ -1,0 +1,32 @@
+---
+version: "1.0"
+
+services:
+  web:
+    image: bubuntux/riot-web
+    expose:
+      - port: 80
+        accept:
+          - chat.akash.network
+        to:
+          - global: true
+
+profiles:
+  compute:
+    web:
+      cpu: "0.25"
+      memory: "512Mi"
+      disk: "1G"
+
+  placement:
+    attributes:
+      sgx: enabled
+    global:
+      pricing:
+        web: 500u
+
+deployment:
+  web:
+    global:
+      profile: web
+      count: 1
