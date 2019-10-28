@@ -27,27 +27,27 @@ Workloads in Akash are defined as Docker containers. Docker containers allow for
 ### Actors
 
 * Tenant: _tenant_ hosting an application on the Akash network.
-* Provider: Each _provider_ will host an agent which is a mediator between the with the Akash Network and datecenter-local infrastructure. The datacenter agent is responsible for:
+* Provider: Each _provider_ will host an agent which is a mediator between the Akash Network and the datacenter-local infrastructure. The datacenter agent is responsible for:
   * Bidding on orders fulfillable by the datacenter.
-  * Managing managing active leases it is a provider for.
+  * Managing the provided active leases.
 * Validator: An Akash node that is elected to be a _validator_ in the _DPoS_ consensus scheme.
 
 ## Akash Market
 
 ### Protocol
 
-1. Tenants define desired infrastructure, workloads to run on infrastructure, and how workloads can connect to one another. Desired lifetime of resources is expressed via collateral requirements.
+1. Tenants define desired infrastructure, workloads to run on infrastructure and how workloads can connect to one another. Desired lifetime of resources is expressed via collateral requirements.
 2. Orders are generated from the tenant's definition.
 3. Datacenters bid on open orders.
 4. The bid with lowest price gets matched with order to create a lease.
-5. Once lease is reached, workloads and topology are delivered to datacenter.
-6. Datacenter deploy workloads and allow connectivity as specified by the tenant.
-7. If a datacenter fails to maintain lease, collateral is transferred to tenant, and a new order is crated for the desired resources.
+5. Once a lease is reached, workloads and topology are delivered to datacenter.
+6. Datacenter deploys workloads and allows connectivity as specified by the tenant.
+7. If a datacenter fails to maintain a lease, collateral is transferred to the tenant and a new order is created for the desired resources.
 8. A tenant can close any active deployment at any time
 
 ![Summary of procurement from Marketplace. \(1\) User&apos;s deployment order is posted to the orderbook \(2\) Datacenters posts eligible fulfillment orders for the deployment order \(3\) The best fulfillment order is matched with the deployment order, creating a new lease. ](../.gitbook/assets/marketplace.svg)
 
-Infrastructure procurement --- the process through which clients lease infrastructure from providers --- on Akash is implemented through a decentralized exchange \(_marketplace_\).
+Infrastructure procurement --- the process through which clients lease infrastructure from providers --- on Akash it is implemented through a decentralized exchange \(_marketplace_\).
 
 The marketplace consists of a public order book and a matching algorithm. Clients place _deployment_ orders, which contain a specification of the client's service needs, and datacenters place _fulfillment_ orders to bid on deployment orders. Deployment orders include the maximum amount the client is willing to pay for a fixed number of computing units \(as measured by memory, cpu, storage, and bandwidth\) for a specific amount of time; fulfillment orders declare the price that the provider will provide the resources for.
 
