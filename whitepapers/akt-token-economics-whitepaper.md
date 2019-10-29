@@ -1,2 +1,0 @@
-# AKT: Token Economics Whitepaper
-
