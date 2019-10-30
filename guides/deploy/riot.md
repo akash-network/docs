@@ -2,6 +2,8 @@
 
 In this step, you actually use the testnet to deploy a simple web app, paying with your testnet ATK tokens. Check out the [testnet guide](../testnet.md) to request tokens.
 
+Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) for instructions.
+
 ## 1. Check your balance
 
 To list your keys, run:
