@@ -18,9 +18,23 @@ Mainnet with spot computing marketplace, staking rewards and developer-friendly 
 ### Scalability with Interoperability
 This milestone improves scalability and interoperability on the Akash Network by providing a mechanism for tenants to limit the deployment to a specific set of providers (and data centers) with an ability to scale the number of instances (containers) for deployment within a single provider. Interledger support for Interoperability with various ledger based systems and allows for frictionless integration with major cloud providers to increase compute supply and remove barriers for enterprise adoption.
 
+### Backend Services (BaaS)
+A serverless platform is only as good as the managed backend services it supports. Most modern applications stacks comprise of a multi-tier application-services stack (such as databases, caches, etc). We propose the dPaaS provide BaaS support with the below goals:
+
+- Primitives for frictionless integration with - backend services
+- Provide a pragmatic set of services at early phases to drive adoption
+- Provide a federated experience by extending identity, operational, and user interface support to a diverse set of managed services that include services from decentralized and managed infrastructure ecosystems
+- Provide a standard mechanism to decouple services from data to enable maximum possible portability such as [DTP](https://datatransferproject.dev)
+- Provide necessary technical and operational support 
+
 
 ### Trusted Providers with Reputation
-This milestone improves Provider Trust with the introduction of provider accreditation features reduces spam with a staking based reputation system. Akash is a permission-less network where any tenant (with a valid key) can consume computing services from any provider that has sufficient computing power in a peer-to-peer manner disintermediating a broker. This provides a challenge for filtering out bad actors. With this milestone, tenants can delegate the attestation to a trusted third-party (Oracle) with an ability for tenants to selectively deploy to such trusted providers. 
+This milestone improves Provider Trust with the introduction of provider accreditation features reduces spam with a staking based reputation system. Akash is a permission-less network where any tenant (with a valid key) can consume computing services from any provider that has sufficient computing power in a peer-to-peer manner disintermediating a broker. This provides a challenge for filtering out bad actors. With this milestone, tenants can delegate the attestation to a trusted third-party (Oracle) with an ability for tenants to selectively deploy to such trusted providers.
+
+### Functional Abstraction (FaaS)
+Function as a service (FaaS) services provide a platform allowing developers to develop, run, and manage application functionalities without the complexity of building and maintaining the containers associated with developing and launching an app. Building an application following this model is one way of achieving a true "serverless" architecture, and is typically used when building microservices applications.
+
+We propose adopting an open and framework-agnostic FaaS framework, such as OpenFaaS that is optimized to run a heavily distributed computing footprint provided by Akash
 
 
 ### Private Containers
