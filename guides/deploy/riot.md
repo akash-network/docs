@@ -75,7 +75,7 @@ EOF
 Alternatively, you can use cURL to download:
 
 ```shell
-curl -s https://raw.githubusercontent.com/ovrclk/docs/blob/master/guides/deploy/riot.yml > riot.yml
+curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/riot.yml > riot.yml
 ```
 
 The sample deployment file specifies a small webapp container running a simple demo site we created.
@@ -182,9 +182,9 @@ $ akash logs web e7f1117820510fa781435c2e3aca80f6d7c08c49d7e2411f1148ba7b0b85d16
 [web-cd56977cb-pmkfv] 2019-10-21T19:46:01.021583795Z 10.42.0.6 - - [21/Oct/2019:19:46:01 +0000] "GET /images/favicon.png HTTP/1.1" 200 1825 "http://wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36" "10.42.0.1"
 ```
 
-You may also view your application logs with `akash logs <service name> <lease>`. The lease id is constructed as `[deployment]/[group]/[order]/[provider]`
+The lease id is constructed as `[deployment]/[group]/[order]/[provider]`
 
-For example, given a service named `webapp`, the lease in the previous has the below properties:
+For example, given a service named `webapp`, a lease has the following properties:
 
 | Attribute | Value |
 | :--- | :--- |
