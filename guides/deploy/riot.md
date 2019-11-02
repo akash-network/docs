@@ -73,7 +73,7 @@ EOF
 Alternatively, you can use cURL to download:
 
 ```shell
-curl -s https://raw.githubusercontent.com/ovrclk/docs/blob/master/guides/deploy/riot.yml > riot.yml
+curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/riot.yml > riot.yml
 ```
 
 The sample deployment file specifies a small webapp container running a simple demo site we created.
