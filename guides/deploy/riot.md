@@ -172,7 +172,7 @@ akash logs <service> <lease>
 For example:
 
 ```
-$ akash logs web e7f1117820510fa781435c2e3aca80f6d7c08c49d7e2411f1148ba7b0b85d161/1/2/43781206bcc5f8b676ada3eb56234b48568c22bbb4936d85cb5d5569d737a9c9            
+$ akash logs web e7f1117820510fa781435c2e3aca80f6d7c08c49d7e2411f1148ba7b0b85d161/1/2/43781206bcc5f8b676ada3eb56234b48568c22bbb4936d85cb5d5569d737a9c9
 
 [web-cd56977cb-pmkfv] 2019-10-21T19:46:00.252704424Z 10.42.0.6 - - [21/Oct/2019:19:46:00 +0000] "GET / HTTP/1.1" 200 3583 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36" "10.42.0.1"
 [web-cd56977cb-pmkfv] 2019-10-21T19:46:00.451634109Z 10.42.0.6 - - [21/Oct/2019:19:46:00 +0000] "GET /css/main.css HTTP/1.1" 200 195072 "http://wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36" "10.42.0.1"
@@ -188,15 +188,15 @@ For example, given a service named `webapp`, a lease has the following propertie
 
 | Attribute | Value |
 | :--- | :--- |
-| deployment | 66809b2c537fcdd79bc6b5b6d28bbf2d51fbe59133a4ba0119b9e0160ab16357 |
+| deployment | e7f1117820510fa781435c2e3aca80f6d7c08c49d7e2411f1148ba7b0b85d161 |
 | group | 1 |
 | order | 2 |
-| provider | 49877504638723665f08dd57c2b0fbae79bd2abf65fe0d397e20880953b9befc |
+| provider | 43781206bcc5f8b676ada3eb56234b48568c22bbb4936d85cb5d5569d737a9c9 |
 
 So, the lease id would be:
 
 ```
-66809b2c537fcdd79bc6b5b6d28bbf2d51fbe59133a4ba0119b9e0160ab16357/1/2/49877504638723665f08dd57c2b0fbae79bd2abf65fe0d397e20880953b9be
+e7f1117820510fa781435c2e3aca80f6d7c08c49d7e2411f1148ba7b0b85d161/1/2/43781206bcc5f8b676ada3eb56234b48568c22bbb4936d85cb5d5569d737a9c9
 ```
 
 ## 5. Update the deployment by adding a custom hostname
@@ -234,9 +234,9 @@ akash deployment update <config> <deployment>
 For example:
 
 ```shell
-akash deployment update riot.yml 66809b2c537fcdd79bc6b5b6d28bbf2d51fbe59133a4ba0119b9e0160ab16357
+akash deployment update riot.yml e7f1117820510fa781435c2e3aca80f6d7c08c49d7e2411f1148ba7b0b85d161
 
-(wait)  [deploy.update] upload manifest for deployment (66809b2c537fcdd79bc6b5b6d28bbf2d51fbe59133a4ba0119b9e0160ab16357)
+(wait)  [deploy.update] upload manifest for deployment (e7f1117820510fa781435c2e3aca80f6d7c08c49d7e2411f1148ba7b0b85d161)
 (wait)  [deploy.sendmani] upload manifest to provider (e014d0e903e0d82a2058be384e21efa5552aad49078f0471447020fc238e3bd7)
 (done)  [deploy.sendmani] manifest received by provider (e014d0e903e0d82a2058be384e21efa5552aad49078f0471447020fc238e3bd7)
 
