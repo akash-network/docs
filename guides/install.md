@@ -6,7 +6,13 @@ The Akash Suite is composed of a full node `akashd` and the client `akash`. The 
 
 ### MacOS
 
-The simplest way to install is by using [homebrew](https://brew.sh). Install `akash` client and `akashd` daemon using homebrew:
+The simplest way to install is by using [homebrew](https://brew.sh). If you do not have homebrew, you can install homebrew using:
+
+```shell
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Install `akash` client and `akashd` daemon using homebrew:
 
 ```shell
 brew install ovrclk/tap/akash
@@ -14,11 +20,6 @@ brew install ovrclk/tap/akash
 
 Once installed, verify the installation by running `akash version`.
 
-If you do not have homebrew, you can install homebrew using:
-
-```text
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
 
 Alternatively, you can manually download the [binaries](https://github.com/ovrclk/akash/releases/download/v0.5.2/akash_0.5.2_darwin_amd64.tar.gz) from the [releases page](https://github.com/ovrclk/akash/releases). The latest release is `0.5.2` as of writing of this document, please make sure to check the releases page for the latest version. The final step is to make sure that the akash binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on MacOS.
 
