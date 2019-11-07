@@ -64,11 +64,11 @@ The public key address in the above example is `44fc42cfff72666bbb02fc3a08545e89
 Now, login to [Matrix Room](https://akash.network/chat) and send a message with the format:
 
 ```text
-i want disco! <address> <amount>
+i want disco! <amount> <address>
 ```
 
 For example:
 
 ```text
-i want disco! 44fc42cfff72666bbb02fc3a08545e89b35ea1ff 5000
+i want disco! 5000 44fc42cfff72666bbb02fc3a08545e89b35ea1ff
 ```
