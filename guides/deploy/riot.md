@@ -223,7 +223,21 @@ services:
 ...
 ```
 
-For example, here's a sample [riot-domain.yml](riot-domain.yml) if we want the riot client to have a domain `chat.dentacoin.com`
+For example:
+```yaml
+...
+  web:
+    image: bubuntux/riot-web
+    expose:
+      - port: 80
+        accept:
+          - chat.dentacoin.com
+        to:
+          - global: true
+...
+```
+
+Here's a complete sample [riot-domain.yml](riot-domain.yml) if we want the riot client to have a domain `chat.dentacoin.com`.
 
 To update the deploment, use the `akash deployment update` command:
 
