@@ -6,7 +6,7 @@ The Akash Network is a secure, transparent, and decentralized cloud computing ma
 
 Akash acts as a _super cloud_ platform - providing a unified layer above all providers on the marketplace so as to present clients with a single cloud platform, regardless of which particular provider they may be using.
 
-Clients use Akash because of its cost advantage, usability, and flexibility to move between cloud providers, and the performance benefits of global deployments. Providers use Akash because it allows them to earn profits from either dedicated or temporarily-unused capacity.
+Clients use Akash because of its cost advantage, usability, and flexibility to move between cloud providers, and the performance benefits of global deployments. Providers use Akash because it allows them to earn revenue from either dedicated or temporarily-unused capacity.
 
 The foundational design objective of the Akash Network is to maintain a low barrier to entry for providers while at the same time ensuring that clients can trust the resources that the platform offers them. To achieve this, the system requires a publicly-verifiable record of transactions within the network. To that end, the Akash Network is implemented using blockchain technologies as a means of achieving consensus on the veracity of a distributed database.
 
