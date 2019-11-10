@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Akash is a secure, transparent, and decentralized cloud computing marketplace that connects those who need computing resources \(tenents\) with those that have computing capacity to lease \(providers\).
+The Akash Network is a secure, transparent, and decentralized cloud computing marketplace that connects those who need computing resources \(tenents\) with those that have computing capacity to lease \(providers\).
 
 Akash acts as a _super cloud_ platform - providing a unified layer above all providers on the marketplace so as to present clients with a single cloud platform, regardless of which particular provider they may be using.
 
