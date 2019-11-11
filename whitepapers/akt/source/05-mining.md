@@ -179,7 +179,7 @@ When the node spins down, the staker doesn't extend the time for end of staking 
 ### FAQ
 
 ##### How many tokens will ever be in existence?
-We'll start with $1~\text{billion}$ tokens, and the maximum amount of tokens ever created will be $3.89~\text{billion}$, as illustrated in [@fig:token-supply]
+We'll start with $100~\text{million}$ tokens, and the maximum amount of tokens ever created will be $389~\text{million}$, as illustrated in [@fig:token-supply]
 
 ##### What's the inflation rate?
 The inflation rate will depend on how many short-term miners and long-term miners are working in the system. Depending on this, the initial inflation will be between $50\%~\text{APR}$ (if all miners are very short term) and $100\%~\text{APR}$ (if all miners commit for a long term). The inflation will decay exponentially every day, halving sometime between $2~\text{years}$ (if all the miners are long term) and $4~\text{years}$ (if all the miners are short term). [@fig:annual-inflation]
