@@ -20,13 +20,13 @@ If you do not have homebrew, you can install homebrew using:
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Alternatively, you can manually download the [binaries](https://github.com/ovrclk/akash/releases/download/v0.5.2/akash_0.5.2_darwin_amd64.tar.gz) from the [releases page](https://github.com/ovrclk/akash/releases). The latest release is `0.5.2` as of writing of this document, please make sure to check the releases page for the latest version. The final step is to make sure that the akash binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on MacOS.
+Alternatively, you can manually download the [binaries](https://github.com/ovrclk/akash/releases/download/v0.5.2/akash_0.5.2_darwin_amd64.zip) from the [releases page](https://github.com/ovrclk/akash/releases). The latest release is `0.5.2` as of writing of this document, please make sure to check the releases page for the latest version. The final step is to make sure that the akash binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on MacOS.
 
 {% endtab %} {% tab title="Linux" %}
 
 ### Linux
 
-Download the [linux archive](https://github.com/ovrclk/akash/releases/download/v0.5.2/akash_0.5.2_linux_amd64.tar.gz) from the [release page](https://github.com/ovrclk/akash/releases). The latest release is `0.5.2` as of writing of this document, please make sure to check the releases page for the latest version.
+Download the [linux archive](https://github.com/ovrclk/akash/releases/download/v0.5.2/akash_0.5.2_linux_amd64.zip) from the [release page](https://github.com/ovrclk/akash/releases). The latest release is `0.5.2` as of writing of this document, please make sure to check the releases page for the latest version.
 
 The final step is to make sure that the terraform binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.
 
