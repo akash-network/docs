@@ -1,8 +1,10 @@
-## Private Matrix Messaging Server
+# Private Matrix Messaging Server
 
-In the previous tutorial, we learned how to deploy a simple [Riot chat](../deploy/riot.md) client to access a hosted Matrix server on matrix.org
+In the previous tutorial, we learned how to deploy a simple [Riot chat](../deploy/riot.md) client to access a hosted Matrix server on matrix.org. In this tutorial, we'll deploying a private [Matrix](https://matrix.org) messaging server on Akash under your domain instead of using the hosted matrix.org server.
 
-In this tutorial, we'll deploying a private [Matrix](https://matrix.org) messaging server on Akash under your domain instead of using the hosted matrix.org server.
+This is an advanced tutorial as we'll learn how to securely share sensitive information using encrypted Git. For an introduction, please check out the previous guide.
+
+## About Matrix Messaging
 
 Matrix is an open network for secure, decentralized communication; an ambitious new ecosystem for open federated Instant Messaging and VoIP.  
 
@@ -10,11 +12,12 @@ Matrix is really a decentralized conversation store rather than a messaging prot
 
 ## Before we Begin
 
-You'll need a domain name you have DNS control over. We will be using `dentacoin.dev` as an example in this tutorial. For DNS, we recommend [Cloudflare](https://www.cloudflare.com) (free).
+You'll need a domain name you have DNS control over. We will be using `dentacoin.dev` as an example in this tutorial. For DNS, we recommend [Cloudflare](https://www.cloudflare.com), its free to use.
 
-### Software Dependencies
+In this step, you actually use the testnet to deploy a simple web app, paying with your testnet ATK tokens. Check out the [testnet guide](../testnet.md) to request tokens. Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) for instructions.
 
-- [Akash Suite](https://docs.akash.network/guides/install): Akash Client used to interact the Akash blockchain and network in general.
+### Additional Software Dependencies
+
 - [Keybase](https://keybase.io/download): Keybase is used as the git hosting platform for various sensitive data we will be sharing on the cloud.
 - [Docker](https://www.docker.com/products/docker-desktop): Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. Deployments on Akash are done using Docker.
 
