@@ -189,7 +189,10 @@ Since we'll be sharing the configuration and private keys, commit the configurat
 cd data
 git add .
 git commit -am 'add home server configuration'
+git push
 ```
+
+
 
 ### 4. Deploy on Akash
 
