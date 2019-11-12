@@ -1,2 +1,0 @@
-# Akash Network Theorotical Paper
-
