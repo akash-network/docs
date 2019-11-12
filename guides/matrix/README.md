@@ -209,7 +209,7 @@ Here is your secret paper key phrase:
 Write it down and keep somewhere safe.
 ```
 
-Create a SDL file that looks like the below, replase the values for `KEYBASE_PAPERKEY`, `KEYBASE_USERNAME` and `CONFIG_REPO` with your values. And replace `matrix.dentacoin.dev` with your domain name.
+Create a [SDL](sdl/README.md) file that looks like the below, replase the values for `KEYBASE_PAPERKEY`, `KEYBASE_USERNAME` and `CONFIG_REPO` with your values. And replace `matrix.dentacoin.dev` with your domain name.
 
 Export the below environment variables:
 
@@ -219,6 +219,8 @@ export KEYBASE_USERNAME=kn0tch
 export CONFIG_REPO=keybase://team/dentacoin/matrix
 export HOST=matrix.dentacoin.dev
 ```
+
+Generate a deployment config using the below, here you're passing the Paper key and username using Environment variables as well as setting command line arguments the `synapse` container:
 
 ```shell                                     
 cat > deploy.yml <<EOF                       
