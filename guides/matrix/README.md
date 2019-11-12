@@ -97,14 +97,21 @@ data
 └── matrix.dentacoin.dev.signing.key
 ```
 
-Modify the `homeserver.yaml` configuration to allow for signups. uncomment `enable_registration: true`. A minimal configuration will look something like the below. Your configuration will have different `server_name`and secret keys.  For a full sample file, see Matrix [sample_config.yaml](https://github.com/matrix-org/synapse/blob/master/docs/sample_config.yaml).
+Replace the `data/homeserver.yaml` with the below configuration, (the generated configuration has imporper port listening configuration besides other issues). Ideally, you should replace `registration_shared_secret` `form_secret` `macaroon_secret_key` with the generated values but not required for the this tutorial.
 
+For a full configuration sample, see Matrix [sample_config.yaml](https://github.com/matrix-org/synapse/blob/master/docs/sample_config.yaml).
+
+Ensure `HOST` variable is set
+
+```shell
+export HOST=matrix.dentacoin.dev 
 ```
-$(EDITOR) data/homeserver.yaml
-```
+
+Create `homeserver.yaml` configuration
 
 ```toml
-server_name: "matrix.dentacoin.dev"
+cat > data/homeserver.yaml <<EOF
+server_name: "${HOST}"
 enable_registration: true
 pid_file: /synapse/homeserver.pid
 federation_ip_range_blacklist:
@@ -133,7 +140,7 @@ acme:
   port: 80
   bind_addresses: ['::', '0.0.0.0']
   reprovision_threshold: 30
-  domain: matrix.example.com
+  domain: ${HOST}
   account_key_file: /synapse/acme_account.key
 
 database:
@@ -141,7 +148,7 @@ database:
   args:
     database: "/synapse/homeserver.db"
 
-log_config: "/data/matrix.dentacoin.dev.log.config"
+log_config: "/data/${HOST}.log.config"
 
 media_store_path: "/synapse/media_store"
 
@@ -160,7 +167,7 @@ report_stats: true
 macaroon_secret_key: "Oyy*=k5Ogwkx;oCZx7e;j@bC_iD,P^H-O3#AnszmRFEMm_lxu6"
 form_secret: "P-qZnkpZpT4Y-kAH7ycH0;a#zVz#q#:.-0CD=0*B7;.3#zI&Yq"
 
-signing_key_path: "/data/matrix.dentacoin.dev.signing.key"
+signing_key_path: "/data/${HOST}.signing.key"
 
 trusted_key_servers:
   - server_name: "matrix.org"
@@ -171,8 +178,8 @@ password_config:
 user_directory:
   enabled: true
 search_all_users: false
+EOF
 ```
-
 
 ### 3. Commit and Push your Configuration
 
@@ -181,14 +188,14 @@ Since we'll be sharing the configuration and private keys, commit the configurat
 ```shell
 cd data
 git add .
-git commit -am 'save config'
+git commit -am 'add home server configuration'
 ```
 
 ### 4. Deploy on Akash
 
 #### 4.1 Authenticating Keybase on the Cluster
 
-We'll be using `keybase oneshot` for logging into keybase from the cluster. "keybase oneshot" is used to establish a temporary device that will be thrown away after the corresponding "keybase service" process exits (or logout is called).
+We'll be using `keybase oneshot` for logging into keybase from the cluster. `keybase oneshot` is used to establish a temporary device that will be thrown away after the corresponding "keybase service" process exits (or logout is called).
 
 We'll need to create a paper key that'll be shared using an environment variable along with your Keybase username and the configuration repository.
 
@@ -228,7 +235,7 @@ cat > deploy.yml <<EOF
 version: "1.0"
 
 services:
-  web:
+  synapse:
     image: ovrclk/synapse
     env:
       - "KEYBASE_PAPERKEY=${KEYBASE_PAPERKEY}"
@@ -247,7 +254,7 @@ services:
 
 profiles:
   compute:
-    web:
+    synapse:
       cpu: "1"
       memory: "1Gi"
       disk: "1G"
@@ -257,12 +264,12 @@ profiles:
       sgx: enabled
     global:
       pricing:
-        web: 500u
+        synapse: 500u
 
 deployment:
-  web:
+  synapse:
     global:
-      profile: web
+      profile: synapse
       count: 1
 EOF
 ```
