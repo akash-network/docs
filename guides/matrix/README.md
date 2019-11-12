@@ -209,7 +209,7 @@ Here is your secret paper key phrase:
 Write it down and keep somewhere safe.
 ```
 
-Create a [SDL](sdl/README.md) file that looks like the below, replase the values for `KEYBASE_PAPERKEY`, `KEYBASE_USERNAME` and `CONFIG_REPO` with your values. And replace `matrix.dentacoin.dev` with your domain name.
+Create a [SDL](../../sdl/README.md) file that looks like the below, replase the values for `KEYBASE_PAPERKEY`, `HOST`, `KEYBASE_USERNAME` and `CONFIG_REPO` with your values, like replace `matrix.dentacoin.dev` with your domain name.
 
 Export the below environment variables:
 
@@ -272,11 +272,13 @@ Here's a sample of full [SDL file](./deploy.yml) for your reference.
 
 Create a deployment on Akash using:
 
+
 ```shell
 akash deployment create deploy.yml
 ```
 
 You should see a response similar to:
+
 ```
 (wait)  [deploy] begin deployment from config: (...)
 (wait)  [broadcast] request deployment for group(s): global
