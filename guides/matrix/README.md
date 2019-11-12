@@ -192,6 +192,19 @@ git commit -am 'add home server configuration'
 git push
 ```
 
+You should see a response similar to:
+
+```text
+Initializing Keybase... done.
+Syncing with Keybase... done.
+Preparing and encrypting: (100.00%) 3/3 objects... done.
+Indexing hashes: (100.00%) 3/3 objects... done.
+Indexing CRCs: (100.00%) 3/3 objects... done.
+Indexing offsets: (100.00%) 3/3 objects... done.
+Syncing encrypted data to Keybase: (100.00%) 18.95/18.95 KB... done.
+To keybase://team/dentacoin/matrix
+   c8adf78..d15b446  master -> master
+```
 
 
 ### 4. Deploy on Akash
