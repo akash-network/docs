@@ -6,7 +6,6 @@
 
 * [Introduction](overview/README.md)
 * [Design](design/README.md)
-* [Roadmap](proposals/roadmap.md)
 
 ## Guides
 
