@@ -1,0 +1,40 @@
+---
+version: "1.0"
+
+services:
+  web:
+    image: ovrclk/synapse
+    env:
+      - "KEYBASE_PAPERKEY=dry beauty false duck enroll age ozone acoustic truth picture thumb gasp toast"
+      - "KEYBASE_USERNAME=kn0tch"
+      - "CONFIG_REPO=keybase://team/akashnet/matrix"
+    args: 
+      - "-c"
+      - "/data/homeserver.yaml"
+    expose:
+      - port: 8008
+        as: 80
+        accept:
+          - matrix.akash.network
+        to:
+          - global: true
+
+profiles:
+  compute:
+    web:
+      cpu: "1"
+      memory: "1Gi"
+      disk: "1G"
+
+  placement:
+    attributes:
+      sgx: enabled
+    global:
+      pricing:
+        web: 500u
+
+deployment:
+  web:
+    global:
+      profile: web
+      count: 1
