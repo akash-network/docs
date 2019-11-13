@@ -232,7 +232,7 @@ Here is your secret paper key phrase:
 Write it down and keep somewhere safe.
 ```
 
-Create a [SDL](../../sdl/README.md) file that looks like the below, replase the values for `KEYBASE_PAPERKEY`, `HOST`, `KEYBASE_USERNAME` and `CONFIG_REPO` with your values, like replace `matrix.dentacoin.dev` with your domain name.
+Create a [SDL](../../sdl/README.md) file that looks like the below, replace the values for `KEYBASE_PAPERKEY`, `HOST`, `KEYBASE_USERNAME` and `CONFIG_REPO` with your values, like replace `matrix.dentacoin.dev` with your domain name.
 
 Export the below environment variables:
 
