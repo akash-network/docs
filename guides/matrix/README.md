@@ -63,7 +63,7 @@ warning: You appear to have cloned an empty repository
 
 ## 2. Generate Matrix Configuration
 
-In this step, you'll create a configuration for synapse server for your hostname. For example, if your domain is `matrix.dentacoin.dev':
+In this step, you'll create a configuration for synapse server for your hostname. For example, if your domain is `matrix.dentacoin.dev`:
 
 ```shell
 export HOST=matrix.dentacoin.dev
