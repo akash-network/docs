@@ -12,7 +12,7 @@
 * [Install Akash Suite](guides/install.md)
 * [Get Started on Testnet](guides/testnet.md)
 * [Deploy a Riot Chat Client](guides/deploy/riot.md)
-* [Deploy Matrix Messsaging Server](guides/matrix/README.md)
+* [Deploy Matrix Messaging Server](guides/matrix/README.md)
 * [Sell Your Spare Capacity](guides/provider.md)
 * [Run Validator on Testnet](guides/validators/README.md)
 * [Setup Kubernetes using DISCO](guides/disco/README.md)
