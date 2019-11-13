@@ -31,7 +31,7 @@ To easily and securely share sensitive data with your team and the clusters, cre
 keybase team create <team>
 ```
 
-and create a repo called `matrix` for that team using:
+And create a repo called `matrix` for that team using:
 
 ```shell
 keybase git create matrix --team <team>
@@ -45,7 +45,7 @@ keybase team create dentacoin
 keybase git create matrix --team dentacoin
 ```
 
-clone the empty repo to `data` directory:
+Clone the empty repo to `data` directory:
 
 ```shell
 git clone keybase://team/dentacoin/matrix data
