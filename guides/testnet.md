@@ -12,15 +12,6 @@ The Akash testnet is a deployment platform with a CLI and intended for relativel
 
 First of course, [RTFM](../usage/cli), then please feel free to ask questions in our [chat](http://akash.network/chat).
 
-### Supported regions
-
-These regions are currently supported by the testnet. More will come online, so check back frequently.
-
-* AMS \(Amsterdam, Netherlands\)
-* NRT \(Tokyo, Japan\)
-* SJC \(San Jose, California, USA\)
-* EWR \(New Jersey, USA\)
-
 ### Uptime and availability
 
 The Akash testnet is at an alpha-level stage of development and so **not intended for production use.** New functionality and capacity is being added constantly, but is always presented to you as-is, so use at your own risk. Use is at our discretion and we reserve the right to bring down deployments or to re-initialize the chain at any time for any reason.
@@ -61,7 +52,7 @@ Recovery Codes: 	main nerve normal hill analyst iron weapon ordinary evoke sniff
 
 The public key address in the above example is `44fc42cfff72666bbb02fc3a08545e89b35ea1ff`
 
-Now, login to [Matrix Room](https://akash.network/chat) and send a message with the format:
+Now, login to our [developer chat](https://akash.network/chat) and send a message with the format:
 
 ```text
 i want disco! <amount> <address>
