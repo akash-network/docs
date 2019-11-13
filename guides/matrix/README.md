@@ -31,7 +31,7 @@ To easily and securely share sensitive data with your team and the clusters, cre
 keybase team create <team>
 ```
 
-and create a repo called `matrix` for that team using:
+And create a repo called `matrix` for that team using:
 
 ```shell
 keybase git create matrix --team <team>
@@ -45,7 +45,7 @@ keybase team create dentacoin
 keybase git create matrix --team dentacoin
 ```
 
-clone the empty repo to `data` directory:
+Clone the empty repo to `data` directory:
 
 ```shell
 git clone keybase://team/dentacoin/matrix data
@@ -63,7 +63,7 @@ warning: You appear to have cloned an empty repository
 
 ## 2. Generate Matrix Configuration
 
-In this step, you'll create a configuration for synapse server for your hostname. For example, if your domain is `matrix.dentacoin.dev':
+In this step, you'll create a configuration for synapse server for your hostname. For example, if your domain is `matrix.dentacoin.dev`:
 
 ```shell
 export HOST=matrix.dentacoin.dev
@@ -232,7 +232,7 @@ Here is your secret paper key phrase:
 Write it down and keep somewhere safe.
 ```
 
-Create a [SDL](../../sdl/README.md) file that looks like the below, replase the values for `KEYBASE_PAPERKEY`, `HOST`, `KEYBASE_USERNAME` and `CONFIG_REPO` with your values, like replace `matrix.dentacoin.dev` with your domain name.
+Create a [SDL](../../sdl/README.md) file that looks like the below, replace the values for `KEYBASE_PAPERKEY`, `HOST`, `KEYBASE_USERNAME` and `CONFIG_REPO` with your values, like replace `matrix.dentacoin.dev` with your domain name.
 
 Export the below environment variables:
 
