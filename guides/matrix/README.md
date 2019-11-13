@@ -104,7 +104,7 @@ For a full configuration sample, see Matrix [sample_config.yaml](https://github.
 Ensure `HOST` variable is set
 
 ```shell
-export HOST=matrix.dentacoin.dev 
+export HOST=matrix.dentacoin.dev
 ```
 
 Create `homeserver.yaml` configuration
@@ -361,7 +361,27 @@ If you're hosting your DNS on Cloudflare, please make sure your SSL/TLS encrypti
 
 {% endhint %}
 
-
 ### 6. Login To Your Private Matrix Server using Riot
 
-Open [riot client](https://riot.im/app) new window in private mode. You could also use the client that you created in the [Deploy Riot Chat on Akash](../deploy/riot.md) guide.
+Set up the Riot Web client for Matrix by following this [Guide](../deploy/riot.md). Alternatively, you could use the hosted [riot client](https://riot.im/app).
+
+![step 1](img/matrix1.png)
+
+#### Create Account
+
+Create a new Account by selecting the option and chose **Advanced**. Provide the url to your matrix server for `Homeserver URL`. Ignore the errors on screen if any as they are mostly configuration related.
+
+The below example will create a user `greg` at `matrix.akash.network`:
+
+```
+@greg:matrix.akash.network
+```
+![step 2](img/matrix8.png)
+
+#### Create a Room
+
+And invite our community by showing what you built, [join our chat](https://akash.network/chat)
+
+![step 4](img/matrix3.png)
+
+If you enjoyed this article, don't forget to [subscribe to our newsletter](https://akash.network/newsletter), we have exciting things coming every week!
