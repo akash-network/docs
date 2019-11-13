@@ -347,14 +347,13 @@ Services(s): 	NAME	HOST(S) / IP(S)                        	AVAILABLE	TOTAL
 
 ### 5. Update DNS by adding a CNAME
 
-Add a CNAME dns record on your DNS provider to map,
-`matrix.dentacoin.dev` with `ghudphwn2h2yj8mj7gkt6.roy.akashtest.net`. For example:
+Add a CNAME dns record on your DNS provider to map, `matrix.dentacoin.dev` with `ghudphwn2h2yj8mj7gkt6.roy.akashtest.net`. For example:
 
 ```text
-CNAME matrix.dentacoin.dev wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net
+CNAME matrix.dentacoin.dev ghudphwn2h2yj8mj7gkt6.roy.akashtest.net
 ```
 
-Once that's complete, you can simply share `matrix.dentacoin.com` with your community.
+Once that's complete, you can simply share `matrix.dentacoin.dev` with your community.
 
 {% hint style='warning' %}
 
