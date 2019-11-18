@@ -98,7 +98,7 @@ Service URIs for provider: 5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4e
     webapp: webapp.48bc1ea9-c2aa-4de3-bbfb-5e8d409ae334.147-75-193-181.aksh.io
 ```
 
-Create a new deployment. Posts your requested to the chain for bidding and subsequent lease creation. Your manifest\(s\) are then sent to the winning provider\(s\), pod\(s\) created, and token transfer from your account to provider\(s\) initiated.
+Create a new deployment. Posts your request to the chain for bidding and subsequent lease creation. Your manifest\(s\) are then sent to the winning provider\(s\), pod\(s\) created, and token transfer from your account to provider\(s\) initiated.
 
 In the example:
 
