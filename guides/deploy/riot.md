@@ -140,14 +140,14 @@ Services(s): 	NAME	HOST(S) / IP(S)                         	AVAILABLE	TOTAL
 ```
 In this step, you post your deployment, the Akash marketplace matches you with a provider via auction, and your image is deployed. To create a deployment use `akash deployment`. The syntax for the deployment is `akash deployment create <config-path> -k <key-name>`. As you see in the above example, we have two providers bid on your workload.
 
-The client will print the deployment id, bid, lease, and deployment data to console. Alternatively, you may also query your leases with `akash query lease -k <key-name>`.
+The client will print the deployment id, bid, lease, and deployment data to console. Alternatively, you may also query your leases with `akash query lease -k <key-name>` to list all the leases associated with the key.
 
 You can access the application by visiting the hostnames mapped to your deployment. In above example, its http://wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net
 
 ### Check the status of the lease
 
 ```shell
-akash query lease
+akash query lease <lease>
 ```
 
 Should display a response similar to:
