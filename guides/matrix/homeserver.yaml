@@ -1,0 +1,67 @@
+server_name: "matrix.dentacoin.dev"
+enable_registration: true
+pid_file: /synapse/homeserver.pid
+federation_ip_range_blacklist:
+  - '127.0.0.0/8'
+  - '10.0.0.0/8'
+  - '172.16.0.0/12'
+  - '192.168.0.0/16'
+  - '100.64.0.0/10'
+  - '169.254.0.0/16'
+  - '::1/128'
+  - 'fe80::/64'
+  - 'fc00::/7'
+
+listeners:
+  - port: 8008
+    tls: false
+    type: http
+    x_forwarded: true
+    bind_addresses: ['::']
+
+    resources:
+      - names: [client, federation]
+        compress: false
+acme:
+  enabled: false
+  port: 80
+  bind_addresses: ['::', '0.0.0.0']
+  reprovision_threshold: 30
+  domain: matrix.example.com
+  account_key_file: /synapse/acme_account.key
+
+database:
+  name: "sqlite3"
+  args:
+    database: "/synapse/homeserver.db"
+
+log_config: "/data/matrix.dentacoin.dev.log.config"
+
+media_store_path: "/synapse/media_store"
+
+uploads_path: "/synapse/uploads"
+
+registration_shared_secret: "FdvX6=Zl^criYPibk+=VkyS:_f*K#=kl#NZ0d;BE#3kL1YNSuE"
+
+trusted_third_party_id_servers:
+  - matrix.org
+  - vector.im
+
+autocreate_auto_join_rooms: false
+
+report_stats: true
+
+macaroon_secret_key: "Oyy*=k5Ogwkx;oCZx7e;j@bC_iD,P^H-O3#AnszmRFEMm_lxu6"
+form_secret: "P-qZnkpZpT4Y-kAH7ycH0;a#zVz#q#:.-0CD=0*B7;.3#zI&Yq"
+
+signing_key_path: "/data/matrix.dentacoin.dev.signing.key"
+
+trusted_key_servers:
+  - server_name: "matrix.org"
+
+password_config:
+  enabled: true
+
+user_directory:
+  enabled: true
+search_all_users: false
