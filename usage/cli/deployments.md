@@ -57,7 +57,17 @@ $ akash deployment close <deployment-id> [flags]
 
 ```text
 $ akash deployment close 3be771d6ce0a9e0b5b8caa35d674cdd790f94500226433ab2794ee46d8886f42 -k my-key-name
-Closing deployment
+
+(wait)  request close deployment
+(done)  deployment closed
+
+Close Deployment
+================
+
+Deployment ID:  3be771d6ce0a9e0b5b8caa35d674cdd790f94500226433ab2794ee46d8886f42
+Reason:         TENANT_CLOSE
+Height:         1447314
+Hash:           0565e7b4f0ad8462f40e30184969d3b19431b6806d961666904ed7bc3cf9fa34
 ```
 
 Close one of your deployments. Deletes the pod\(s\) containing your container\(s\) and stops token transfer.
@@ -88,14 +98,45 @@ $ akash deployment create <deployment-file> [flags]
 
 ```text
 $ akash deployment create testnet-deployment.yml -k my-key-name
-619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450
-Waiting...
-Group 1/1 Fulfillment: 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44 [price=57]
-Group 1/1 Fulfillment: 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/d56f1a59caabe9facd684ae7f1c887a2f0d0b136c9c096877188221e350e4737 [price=70]
-Group 1/1 Lease: 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44 [price=57]
-Sending manifest to http://provider.ewr.salusa.akashtest.net...
-Service URIs for provider: 5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44
-    webapp: webapp.48bc1ea9-c2aa-4de3-bbfb-5e8d409ae334.147-75-193-181.aksh.io
+(wait)  [deploy] begin deployment from config: (...)
+(wait)  [broadcast] request deployment for group(s): global
+(done)  [broadcast] request accepted, deployment created with id: 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450
+(wait)  [auction] waiting to create buy orders(s) for 1 deployment groups(s)
+(wait)  [auction] buy order (1) created with id: 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2
+(wait)  [auction] waiting on fulfillment(s)
+(wait)  [auction] received fulfillment (1/1) with id:
+        619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44
+(wait)  [lease] waiting on lease(s)
+(done)  [auction] complete; received 1 fulfillment(s) for 1 order(s)
+(wait)  [lease] received lease (1) for group (1/1) [price 56] [id
+        619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44]
+(wait)  [lease] send manifest to provider at http://marx.akashtest.net
+(done)  [lease] manifest accepted by provider at http://marx.akashtest.net
+(done)  [lease] complete; received 1 lease(s) for 1 groups(s)
+(done)  [deploy] deployment complete
+
+Deployment
+==========
+
+Deployment ID:          619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450
+Deployment Groups(s):   Group:        	global
+                        Requirements:
+                        Resources:    	Count:  	1
+                                        Price:  	500
+                                        CPU:    	250
+                                        Memory: 	536870912
+                                        Disk:   	1000000000
+Fulfillment(s):         Group:    	1
+                        Price:    	56
+                        Provider: 	5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44
+
+Lease(s)
+========
+
+Lease ID:     619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44
+Services(s):  NAME	HOST(S) / IP(S)                          	AVAILABLE	TOTAL
+              web 	niwjqcrwaqzzm8xsxhejpv.marx.akashtest.net	0        	1
+              web 	147.75.39.127                            	0        	1
 ```
 
 Create a new deployment. Posts your request to the chain for bidding and subsequent lease creation. Your manifest\(s\) are then sent to the winning provider\(s\), pod\(s\) created, and token transfer from your account to provider\(s\) initiated.
@@ -103,8 +144,17 @@ Create a new deployment. Posts your request to the chain for bidding and subsequ
 In the example:
 
 * **deployment-id**: `619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450`
+* **deployment-group(s)**:
+* ***Group***: `2` (Group Number)
+* ***Requiremetns***:
+* ***Resources***:
+* *** - Count ***: `1` (Number of pods)
+* *** - Price ***: `500` (Given in microAKSH) \(AKSH \* 10^-6\)
+* *** - CPU ***: `250`
+* *** - Memory ***: `536870912` (Memory in bytes, => 512M)
+* *** - Disk ***: `1000000000` (Disk memory size)
 * **lease**: `619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44` \(in the form \[deployment id\]/\[deployment group number\]/\[order number\]/\[provider address\]\)
-* **service URI**: `webapp.48bc1ea9-c2aa-4de3-bbfb-5e8d409ae334.147-75-193-181.aksh.io`
+* **service URI**: `niwjqcrwaqzzm8xsxhejpv.marx.akashtest.net`
 * **price**: Given in microAKSH \(AKSH \* 10^-6\).
 
 **Arguments**
@@ -134,6 +184,21 @@ $ akash deployment sendmani <deployment-file> <deployment-id> [flags]
 
 ```text
 $ akash deployment sendmani testnet-deployment.yml 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450 -k my-key-name
+(wait)  [deploy] upload manifest for deployment (619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450)
+(wait)  [deploy.sendmani] upload manifest to provider (5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44)
+(done)  [deploy.sendmani] manifest received by provider (5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44)
+
+Lease(s)
+========
+
+Lease ID: 	619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44
+Price:      56
+State:      ACTIVE
+Provider:   Address:           	5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44
+            Owner:             	38f05967bba460d15b8b5e15559284ea9b56b7cd
+            Host URI:          	http://marx.akashtest.net
+            Attributes:        	region: ewr | region_name: Parsippany, NJ | sgx: enabled | tier: 5
+            Received Manifest: 	Yes
 ```
 
 Sends manifest directly to a deployment's provider\(s\), using data from the deployment file. Use this command after creating a deployment using the `--no-wait` flag.
@@ -166,17 +231,29 @@ $ akash deployment status <deployment-id> [flags]
 
 ```text
 $ akash deployment status 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450
-lease: 619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44
-    webapp: webapp.9060b8ae-1b62-47ff-a247-164f2f081681.147-75-193-181.aksh.io
+Lease(s)
+========
+
+Lease ID:   	619d25a730f8451b1ba3bf9c1bfabcb469068ad7d8da9a0d4b9bcd1080fb2450/1/2/5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44
+Price:        56
+State:        ACTIVE
+Service(s):   NAME	HOST(S) / IP(S)                          	AVAILABLE	TOTAL
+              web 	gerb2bwatxtxsy48age6f7.marx.akashtest.net	1        	1
+              web 	147.75.39.127                            	1        	1
 ```
 
 > Deployment is closed
 
 ```text
 $ akash deployment close 3be771d6ce0a9e0b5b8caa35d674cdd790f94500226433ab2794ee46d8886f42 -k my-key-name
+Lease(s)
+========
+
+Lease ID:       3be771d6ce0a9e0b5b8caa35d674cdd790f94500226433ab2794ee46d8886f42/1/2/0565e7b4f0ad8462f40e30184969d3b19431b6806d961666904ed7bc3cf9fa34
+Price:          60
 ```
 
-Get the lease and service URI\(s\) for an open deployment.
+Get the state and service URI\(s\) for an open deployment.
 
 **Arguments**
 
