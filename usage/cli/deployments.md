@@ -283,7 +283,10 @@ $ akash deployment validate <deployment-file> [flags]
 
 ```text
 $ akash deployment validate testnet-deployment.yml
-ok
+Validate Deployment Config
+==========================
+
+Result: 	Valid
 ```
 
 > File does not pass validation \(min price too low\)
