@@ -267,14 +267,15 @@ Provider: 	Address:           	e014d0e903e0d82a2058be384e21efa5552aad49078f04714
           	Received Manifest: 	Yes
 ```
 
-Verify the update by checking for the hostname using cURL:
+Verify the update by checking for the hostname using cURL, for example:
 
 ```shell
 curl -H 'HOST: chat.dentacoin.com' wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net
 ```
 
-Optionally, add a CNAME dns record on your provider to map,
-`chat.dentacoin.com` with `wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net`. For example:
+The above is an example, replace `chat.dentacoin.com` and `wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net` with the values for your application.
+
+Optionally, add a CNAME dns record on your provider to map, `chat.dentacoin.com` with `wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net`. For example:
 
 ```text
 CNAME chat.dentacoin.com wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net
