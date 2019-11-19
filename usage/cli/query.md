@@ -11,7 +11,7 @@ $ akash query [command]
 ```text
 $ akash query help
 
-query something
+Query something
 
 Usage:
   akash query [command]
@@ -31,6 +31,7 @@ Flags:
 
 Global Flags:
   -d, --data string   data directory (default "~/.akash")
+  -m, --mode string   output mode (interactive|shell|json) (default "interactive")
 
 Use "akash query [command] --help" for more information about a command.
 ```
@@ -61,11 +62,14 @@ akash query account [account ...] [flags]
 
 ```text
 $ akash query account -k my-key-name
-{
-  "address": "8d2cb35f05ec35666bbc841331718e31415926a1",
-  "balance": 90351025,
-  "nonce": 7
-}
+(warn)  please note, the token balance is denominated in microAKASH (AKASH * 10^-6)
+
+Account Query
+=============
+
+Public Key Address:   8d2cb35f05ec35666bbc841331718e31415926a1
+Balance:              97,264,568
+Nonce:                4
 ```
 
 In the example above, token balance is given in microAKSH `(AKSH * 10^-6)`.
@@ -74,7 +78,9 @@ Retrieve the details for one or more of your accounts, including token balance.
 
 **Arguments**
 
-Argument \| Type \| Required \| Description \| \|:--\|:--\|:--\|:--\| \| account \| string \| N \| One or more account addresses to query. Omitting this argument returns all your accounts for the provided key. \|
+| Argument | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| account | string | N | One or more account addresses to query. Omitting this argument returns all your accounts for the provided key. |
 
 **Flags**
 
@@ -96,36 +102,29 @@ akash query deployment [deployment ...] [flags]
 ```text
 $ akash query deployment -k alpha
 
-{
-  "items": [
-    {
-      "address": "3be771d6ce0a9e0b5b8caa35d674cdd790f94500226433ab2794ee46d8886f42",
-      "tenant": "8d2cb35f05ec35666bbc841331718e31415926a1",
-      "state": 2,
-      "version": "8e02ba39187cbd2de194a7ac3b31ffe9889856d4b817fc039669e569fde6c647"
-    },
-    {
-      "address": "4b24d14fe47d1b360fb6cebd883a5ba65f9876e62ba1ac27ace79001b42475e8",
-      "tenant": "8d2cb35f05ec35666bbc841331718e31415926a1",
-      "version": "8e02ba39187cbd2de194a7ac3b31ffe9889856d4b817fc039669e569fde6c647"
-    },
+Deployment(s)
+=============
+
+Deployment ID                                                     Tenant ID                                 State   Version
+-------------                                                     ---------                                 -----   -------
+
+127846f78612fffdacb1c6b595faaeb724ce622ff205a79c18dd68c2d0df9f54  259d3831b178ef71545e992da9ea7b580032c9dd  ACTIVE  a1085e366605fc370961ebcd0651025e3e1ca2d206e094c7bdc89a388ecc2f3a
+598e8e16520fb78762c50324d5babeabc20974566743c7316522d698301de85a  259d3831b178ef71545e992da9ea7b580032c9dd  ACTIVE  a1085e366605fc370961ebcd0651025e3e1ca2d206e094c7bdc89a388ecc2f3a
 ...
-  ]
-}
 ```
 
 Retrieve the details for one or more of your deployments. A deployment represents a request for provider resources.
 
 In the example:
 
-* **"state": 2**: indicates a closed deployment.  
+* **"State": CLOSED**: indicates a closed deployment.  
 * **version**: is a hash of the manifest, used by provider to verify incoming manifest content
 
 **Arguments**
 
 | Argument | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| deployment | string | N | One or more deployment ids to query. Omitting this argument returns all your deployments. |
+| deployment | string | N | One or more deployment ids to query. Omitting this argument returns all your deployments associated with the key provided |
 
 **Flags**
 
@@ -146,33 +145,21 @@ akash query fulfillment [fulfillment ...] [flags]
 
 ```text
 $ akash query fulfillment
-{
-  "items": [
-    {
-      "id": {
-        "deployment": "2a15e3d0a5ed9201f46f9d4c8e0a80579d202b6bee90ff7fac613f1b289bdf9d",
-        "group": 1,
-        "order": 2,
-        "provider": "4be226880fce4efd19f81c87cebc86bf001e05a7aae7b862d421f3ec36f9e345"
-      },
-      "price": 71
-    },
-    {
-      "id": {
-        "deployment": "3be771d6ce0a9e0b5b8caa35d674cdd790f94500226433ab2794ee46d8886f42",
-        "group": 1,
-        "order": 2,
-        "provider": "5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44"
-      },
-      "price": 73,
-      "state": 2
-    },
+
+Fulfillment(s)
+==============
+
+Fulfillment ID                                                                                                                          Price State
+--------------                                                                                                                          ----- -----
+
+01e4a443878f9eaf9b05d536e3d3322c1ecb608bc4d4930c6a8eb8502b06618c/1/2/f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7   104   CLOSED
+02bff9baad284a2be88791dbf31dcde10f01bf646ceffd46cf214365adfafb67/1/2/e014d0e903e0d82a2058be384e21efa5552aad49078f0471447020fc238e3bd7   46    CLOSED
+036b70a355038b9389b4dc2de72335b9e8b91a11f5193aba1061ea061a83752c/1/2/f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7   60    CLOSED
+03b6f6912f88ee8854fac7b4a37ea9af1c3e95116512afc961684ca66e82944b/1/2/f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7   73    OPEN
 ...
-  ]
-}
 ```
 
-> In the example above, `"state": 2` indicates a closed fulfillment.
+> In the example above, `"state": CLOSED` indicates a closed fulfillment.
 
 Retrieve the details for one or more fulfillments made for your deployments. A fulfillment represents a provider's bid on your deployments.
 
@@ -200,46 +187,32 @@ $ akash query lease [lease ...] [flags]
 
 ```text
 $ akash query lease -k my-key-name
-{
-  "items": [
-    {
-      "id": {
-        "deployment": "3be771d6ce0a9e0b5b8caa35d674cdd790f94500226433ab2794ee46d8886f42",
-        "group": 1,
-        "order": 2,
-        "provider": "d56f1a59caabe9facd684ae7f1c887a2f0d0b136c9c096877188221e350e4737"
-      },
-      "price": 52,
-      "state": 2
-    },
-    {
-      "id": {
-        "deployment": "4b24d14fe47d1b360fb6cebd883a5ba65f9876e62ba1ac27ace79001b42475e8",
-        "group": 1,
-        "order": 2,
-        "provider": "5ed78fbc526270c3501d09f88a3c442cf1bc6c869eb2d4d6c4f4eb4d41ee3f44"
-      },
-      "price": 48
-    },
+
+Lease(s)
+========
+
+Lease: 	9f5b7326f3b5b37d1cb2ab43ecdc0410c89e14e4f44fe12ed376879bcf0900c6/1/2/e014d0e903e0d82a2058be384e21efa5552aad49078f0471447020fc238e3bd7
+Price: 	56
+State: 	ACTIVE
+
+Lease: 	01e4a443878f9eaf9b05d536e3d3322c1ecb608bc4d4930c6a8eb8502b06618c/1/2/f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7
+Price: 	104
+State: 	CLOSED
+
 ...
-  ]
-}
+
 ```
 
-> In the example above, `"state": 2` indicates a closed lease.
+> In the example above, `"state": CLOSED` indicates a closed lease.
 
 ```text
-$ akash query lease 3be771d6ce0a9e0b5b8caa35d674cdd790f94500226433ab2794ee46d8886f42/1/2/d56f1a59caabe9facd684ae7f1c887a2f0d0b136c9c096877188221e350e4737
-{
-  "id": {
-    "deployment": "3be771d6ce0a9e0b5b8caa35d674cdd790f94500226433ab2794ee46d8886f42",
-    "group": 1,
-    "order": 2,
-    "provider": "d56f1a59caabe9facd684ae7f1c887a2f0d0b136c9c096877188221e350e4737"
-  },
-  "price": 52,
-  "state": 2
-}
+$ akash query lease 01e4a443878f9eaf9b05d536e3d3322c1ecb608bc4d4930c6a8eb8502b06618c/1/2/f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7
+
+
+Lease: 	01e4a443878f9eaf9b05d536e3d3322c1ecb608bc4d4930c6a8eb8502b06618c/1/2/f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7
+Price: 	104
+State: 	CLOSED
+
 ```
 
 > In the example above, the lease is specified in the form `[deployment id]/[deployment group number]/[order number]/[provider address]` and the `-k` flag is not required.
@@ -271,37 +244,25 @@ $ akash query order [order ...] [flags]
 
 ```text
 $ akash query order
-{
-  "items": [
-    {
-      "id": {
-        "deployment": "16bfd04ba37ca64ba675e47d2fb5fcab6c5c3c3e949d71f0012cd65a81dd6507",
-        "group": 1,
-        "seq": 2
-      },
-      "endAt": 3519,
-      "state": 2
-    },
-    {
-      "id": {
-        "deployment": "2a15e3d0a5ed9201f46f9d4c8e0a80579d202b6bee90ff7fac613f1b289bdf9d",
-        "group": 1,
-        "seq": 2
-      },
-      "endAt": 204,
-      "state": 1
-    },
+
+Orders(s)
+=========
+
+Order                                                                 	End At (Block)	State
+-----                                                                 	--------------	-----
+
+01e4a443878f9eaf9b05d536e3d3322c1ecb608bc4d4930c6a8eb8502b06618c/1/2  	1082995       	CLOSED
+03b6f6912f88ee8854fac7b4a37ea9af1c3e95116512afc961684ca66e82944b/1/2  	1000789       	MATCHED
+04759181a06e18bf33aa97ea0139d99629530398121b84a613dcc518a4a4caca/1/2  	1165374       	OPEN
 ...
-  ]
-}
 ```
 
 Retrieve the details for one or more of your orders. An order is an internal representation of a deplyoyment group: the resources from your deployment that may be fulfilled by a single provider.
 
 In the example:
 
-* **"state": 2**: indicates a closed order.
-* **endAt**: indicates the block number upon which all fulfillments must be issued, prior to awarding a lease
+* **"State": CLOSED**: indicates a closed order.
+* **End At (Block)**: indicates the block number upon which all fulfillments must be issued, prior to awarding a lease
 
 **Arguments**
 
@@ -327,33 +288,18 @@ $ akash query provider [provider ...] [flags]
 
 ```text
 $ akash query provider
-{
-  "providers": [
-    {
-      "address": "0253c080e189825da0e072ed8213947bb5d9386f4504ab9c15a15f5776600e83",
-      "owner": "73ff91326664be3dad53b3b58e9d1fe08dfbec74",
-      "hostURI": "http://provider.ewr.caladan.akashtest.net",
-      "attributes": [
-        {
-          "name": "region",
-          "value": "ewr"
-        }
-      ]
-    },
-    {
-      "address": "4be226880fce4efd19f81c87cebc86bf001e05a7aae7b862d421f3ec36f9e345",
-      "owner": "e6956171534f8ffbcf47c6830788df4ebbb165a9",
-      "hostURI": "http://provider.sjc.arrakis.akashtest.net",
-      "attributes": [
-        {
-          "name": "region",
-          "value": "sjc"
-        }
-      ]
-    },
+
+Provider(s)
+===========
+
+Address                                                         	Owner                                   	Host URI                   	Attributes
+-------                                                         	-----                                   	--------                   	----------
+
+be41ebb7499055a204ef74af75301b1dffb44aedc9bbe48ebaaa59ac6419fe29	932573d4d03b56da1b394f2293cf49a802a8dc8d	http://akash.chainvibes.com	region: nl
+
+e014d0e903e0d82a2058be384e21efa5552aad49078f0471447020fc238e3bd7	38f05967bba460d15b8b5e15559284ea9b56b7cd	http://marx.akashtest.net  	region: ewr | region_name: Parsippany, NJ | sgx: enabled | tier: 5
+f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7	7939d05bb2737bd209eb2ea2841d8aabc6406ee1	http://roy.akashtest.net   	region: sjc | region_name: Sunnyvale, US | sgx: enabled | tier: 5 
 ...
-  ]
-}
 ```
 
 Retrieve the attributes of one or more providers.
