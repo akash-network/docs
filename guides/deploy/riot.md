@@ -267,18 +267,17 @@ Provider: 	Address:           	e014d0e903e0d82a2058be384e21efa5552aad49078f04714
           	Received Manifest: 	Yes
 ```
 
-Verify the update by checking for the hostname using cURL:
+Verify the update by checking for the hostname using cURL, for example:
 
 ```shell
 curl -H 'HOST: chat.dentacoin.com' wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net
 ```
 
-Optionally, add a CNAME dns record on your provider to map,
-`chat.dentacoin.com` with `wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net`. For example:
+The above is an example, replace `chat.dentacoin.com` and `wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net` with the values for your application.
 
-```text
-CNAME chat.dentacoin.com wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net
-```
+### 5.1 Add a CNAME record
+
+Optionally, add a CNAME dns record on your provider to map. For instruction on updating the DNS record, please check out this [guide](https://support.google.com/a/answer/47610?hl=en). For example, the CNAME `chat.dentacoin.com` should be mapped to `wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net`. 
 
 Once that's complete, you can simply share `chat.dentacoin.com` with your community.
 
