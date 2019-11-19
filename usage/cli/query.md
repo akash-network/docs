@@ -117,7 +117,7 @@ Retrieve the details for one or more of your deployments. A deployment represent
 
 In the example:
 
-* **"state": 2**: indicates a closed deployment.  
+* **"State": CLOSED**: indicates a closed deployment.  
 * **version**: is a hash of the manifest, used by provider to verify incoming manifest content
 
 **Arguments**
