@@ -275,11 +275,9 @@ curl -H 'HOST: chat.dentacoin.com' wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net
 
 The above is an example, replace `chat.dentacoin.com` and `wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net` with the values for your application.
 
-Optionally, add a CNAME dns record on your provider to map, `chat.dentacoin.com` with `wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net`. For example:
+### 5.1 Add a CNAME record
 
-```text
-CNAME chat.dentacoin.com wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net
-```
+Optionally, add a CNAME dns record on your provider to map. For instruction on updating the DNS record, please check out this [guide](https://support.google.com/a/answer/47610?hl=en). For example, the CNAME `chat.dentacoin.com` should be mapped to `wks5jlm8ykf3v6dzadtrrf.roy.akashtest.net`. 
 
 Once that's complete, you can simply share `chat.dentacoin.com` with your community.
 
