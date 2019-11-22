@@ -1,4 +1,4 @@
-### Setting up Kubernetes for Akash Providers
+## Setting up Kubernetes for Akash Providers
 
 In this guide, we'll set up a Kubernetes cluster using [Disco](https://disco.akash.network) required to offer computing on the Akash Marketplace.
 
@@ -23,7 +23,7 @@ Disco makes it extremely simple to set up and manage kubernetes and gives you am
 - Layer 2: Observability (Prometheus and Graphana) and Key Management (Vault).
 - Layer 3: Akash Provider Client.
 
-### Requirements
+### Before We Begin
 
 **Domain name**: You will require a publically available Domain name that you control; meaning can update Nameservers and DNS records.
 
@@ -187,7 +187,7 @@ make db-commit db-push
 First ensure you have the environment variables setup from the previous section, replace `akash.sjc1.ovrclk2.com` and `147.75.70.201` with your values:
 
 ```shell
-export HOST=akash.sjc1.ovrclk2.com
+export HOST=akash.ovrclk2.com
 export MASTER_IP=147.75.70.201
 ```
 
@@ -275,9 +275,7 @@ Login using `admin` for username and `insecure` for password. Navigate to Dashbo
 First, create a key locally that we'll use as an identifier.
 
 ```shell
-export KEY=$USER
-
-akash key create $KEY
+akash key create provider
 ```
 
 You should see a response similar to, for the user `alice`:
@@ -288,15 +286,10 @@ You should see a response similar to, for the user `alice`:
 Create Key
 ==========
 
-Name:           	alice
+Name:           	provider
 Public Key:     	4fbe42a0f09ed555ef36566d148a15bae5a694db
 Recovery Codes: 	album return owner forget top scissors kangaroo escape panther history liberty industry raise surge trigger jealous fit erase horn era hero dust weekend slim
 ```
-{% hint style="warn" %}
-
-Write these Recovery codes in a safe place. It is the only way to recover your account.
-
-{% endhint %}
 
 #### Add the Provider to the Network
 
