@@ -181,7 +181,6 @@ Commit and save your changes using:
 make db-commit db-push
 ```
 
-
 ## Layer 1: Setup Kubernetes
 
 First ensure you have the environment variables setup from the previous section, replace `akash.sjc1.ovrclk2.com` and `147.75.70.201` with your values:
@@ -189,6 +188,20 @@ First ensure you have the environment variables setup from the previous section,
 ```shell
 export HOST=akash.ovrclk2.com
 export MASTER_IP=147.75.70.201
+```
+
+Please note, if you are using a domain not automated by the previous step (cloudflare), make sure to map your `$HOST` and wildcard to the host, `*.$HOST` mapped to the `$MASTER_IP`. For example, for the above values:
+
+```text
+A akash.ovrclk2.com 147.75.70.201
+A *.akash.ovrclk2.com 147.75.70.201
+```
+
+Verify using dig:
+
+```sh
+dig +short akash.ovrclk2.com
+dig +short foo.akash.ovrclk2.com
 ```
 
 Install Kubernetes by running the below:
