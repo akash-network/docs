@@ -204,6 +204,13 @@ dig +short akash.ovrclk2.com
 dig +short foo.akash.ovrclk2.com
 ```
 
+Should your `$MASTER_IP`, example:
+
+```
+147.75.70.201
+147.75.70.201
+```
+
 Install Kubernetes by running the below:
 
 ```shell
