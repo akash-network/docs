@@ -335,7 +335,6 @@ If you're hosting your DNS on Cloudflare, please make sure your SSL/TLS encrypti
 
 {% endhint %}
 
-
 ### 6. Login To Your Private Matrix Server using Riot
 
 Open [riot client](https://riot.im/app) new window in private mode. You could also use the client that you created in the [Deploy Riot Chat on Akash](../deploy/riot.md) guide.
