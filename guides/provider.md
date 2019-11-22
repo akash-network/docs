@@ -8,20 +8,17 @@ Throughout the tutorial, we will be using environment variables to simplify conf
 
 You will require a publicly reachable IP address and a [Kubernetes](https://kubernetes.io) (v1.15.4 and above) cluster. For instructions on setting up a Kubernetes cluster for Akash, please see [stack](https://github.com/ovrclk/stack) for details.
 
-## Before we begin
-
-
 
 ## Adding a provider to the network
 
-First, lets create a key locally that we'll use as an identifier.
+First, create a key locally that we'll use as an identifier.
 
 ```shell
 export key=$USER
 
 akash key create $key
 ```
-You should see a response similar to:
+You should see a response similar to, for the user `alice`:
 
 ```text
 (info)  [key] key created
@@ -120,7 +117,6 @@ akash key show $key --private > $key.private.key
 Create a kubernetes from literal using:
 
 ```shell
-
 kubectl create secret generic $key-akash-provider-private-key \
   --from-literal=keyname=$key \
   --from-literal=key="$(cat $key.private.key)"
@@ -128,7 +124,7 @@ kubectl create secret generic $key-akash-provider-private-key \
 
 Confirm using `kubectl describe secret $key-akash-provider-private-key`
 
-### Deploy to kubernetes
+### Deploy to Kubernetes
 
 {% hint style="warn" %}
 
