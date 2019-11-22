@@ -317,6 +317,7 @@ Create a config file with various attributes to your offering, such as `region`.
 
 ```shell
 export INGRESS="akash.$(cat data/db/index/MACHINE_ZONE)"
+export MONIKER=${USER}
 ```
 
 ```shell
@@ -325,6 +326,8 @@ hostURI: http://${INGRESS}
 attributes:
   - name: region
     value: sfo
+  - name: moniker
+    value: ${MONIKER}
 EOF
 ```
 
