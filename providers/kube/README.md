@@ -150,7 +150,7 @@ echo $CLOUDFLARE_API_TOKEN > data/db/keys/cloudflare.api.token
 
 ### Provision Resources using Terraform
 
-In this step you are provisioning a Bare metal server on Packet that costs $0.40/Hr. You will need it for less than an hour to complete this tutorial.
+In this step you are provisioning a Bare metal server on Packet (t1.small.x86) that costs $0.07/Hr. You will need it for less than an hour to complete this tutorial.
 
 ```shell
 make layer0-init layer0-apply
