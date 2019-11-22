@@ -296,8 +296,7 @@ Recovery Codes: 	album return owner forget top scissors kangaroo escape panther 
 Create a config file with various attributes to your offering, such as `region`. By running  `akash provider status` , you can get an idea of what attributes to use. In our example, we set the region to `sfo`.
 
 ```shell
-export MACHINE_ZONE=$(cat data/db/index/MACHINE_ZONE)
-export INGRESS="akash.${MACHINE_ZONE}"
+export INGRESS="akash.$(cat data/db/index/MACHINE_ZONE)"
 ```
 
 ```shell
@@ -312,7 +311,7 @@ EOF
 To register, run the below and save the key as this is your unique identifier.
 
 ```shell
-akash provider add data/db/config/providers/provider.yml --key $KEY
+akash provider add data/db/config/providers/provider.yml --key provider
 ```
 
 You will see an output similar to:
@@ -366,18 +365,9 @@ Message(s):  	error=Get
 
 To create a secret for the private key,  first export the private key to a file using `key show --private` and then create a kubernetes secret.
 
-{% hint style="info" %}
-
-Make sure `KEY` is set:
 
 ```shell
-export KEY=$USER
-```
-{% endhint %}
-
-
-```shell
-akash key show $KEY --private > data/db/keys/akash-provider.private
+akash key show provider --private > data/db/keys/akash-provider.private
 ```
 
 ```shell
@@ -402,17 +392,6 @@ keyname:  5 bytes
 
 ##### Deploy to Kubernetes
 
-{% hint style="warn" %}
-
-Ensure the environment variable `PROVIDER` is set that you got from `akash provider add` along with `INGRESS` and `KEY` variables:
-
-```
-export INGRESS="akash.$(cat data/db/index/MACHINE_ZONE)"
-export KEY=$USER
-```
-
-{% endhint %}
-
 {% tabs %} {% tab title="Helm" %}
 
 ###### Using Helm
@@ -420,12 +399,16 @@ export KEY=$USER
 Simplest way to install Akash is using Helm. Add the Akash Network Helm repo:
 
 ```shell
-helm repo add akash https://helm.akash.network && helm repo update
+helm repo add akash https://helm.akash.network
+helm repo update
 ```
 
 Install Akash Provider Chart by:
 
 ```shell
+INGRESS="akash.$(cat data/db/index/MACHINE_ZONE)"
+PROVIDER=$(cat data/db/keys/provider.address)
+
 helm install akash/akash-provider \
   --name akash-provider \
   --set "ingress.domain=$INGRESS" \
@@ -588,4 +571,13 @@ Alternatively, you can use cURL as well
 curl http://akash.ovrclk2.com/status
 ```
 
-Congratulations, you are now an Akash Provider!
+## Conclusion
+
+Congratulations, you are now an Akash Provider! Finally, make sure to save your changes to db and share with your team.
+
+```
+make db-commit
+make db-push
+```
+
+We hope you found this guide useful. We gave our best to keep the it accurate and updated. If there is any part of the guide that you felt could use improvement, make your updates in a [fork](http://github.com/ovrclk/docs) and send me a pull request. We will attend to it promptly.
