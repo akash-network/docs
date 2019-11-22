@@ -1,4 +1,4 @@
-## Setting up Kubernetes for Akash Providers
+# Setting up Kubernetes for Akash Providers
 
 In this guide, we'll set up a Kubernetes cluster using [Disco](https://disco.akash.network) required to offer computing on the Akash Marketplace.
 
@@ -23,11 +23,11 @@ Disco makes it extremely simple to set up and manage kubernetes and gives you am
 - Layer 2: Observability (Prometheus and Graphana) and Key Management (Vault).
 - Layer 3: Akash Provider Client.
 
-### Before We Begin
+## Before We Begin
 
 **Domain name**: You will require a publically available Domain name that you control; meaning can update Nameservers and DNS records.
 
-#### Services
+### Services
 
 Akash can run on any computer with Kubernetes. This guide, however, uses [Packet](https://packet.com) as the bare metal provider and [Cloudflare](https://cloudflare.com) for DNS. Please signup to the below services as you'll be using them to complete the tutorial:
 
@@ -35,7 +35,7 @@ Akash can run on any computer with Kubernetes. This guide, however, uses [Packet
 - [Cloudflare](https://cloudflare.com) - Cloudflare is the DNS provider used for the demo deployment. DISCO can also be used with any of the cloud providers [listed here](https://www.terraform.io/docs/providers/index.html). You will need a `CLOUDFLARE_API_TOKEN` with `Zone.Zone` and `Zone.DNS` permissions.
 - [Keybase](https://keybase.io) - Keybase is used as the git hosting platform for `terraform` state and other sensitive data.
 
-#### Software
+### Software
 
 Install the below required software:
 
@@ -45,9 +45,9 @@ Install the below required software:
 - [`k3sup`](https://github.com/alexellis/k3sup#download-k3sup-tldr) - A great utility for `kubectl config` management! Also makes installing and spinning up a kubernets cluster easy!
 - [Helm](https://helm.sh/docs/using_helm/#installing-helm) - The package manager for Kubernetes.  Helm is the best way to find, share, and use software built for Kubernetes.c
 
-### Setup Your Workstation
+## Setup Your Workstation
 
-#### Clone Disco
+### Clone Disco
 
 ```shell
 git clone https://github.com/ovrclk/disco
@@ -89,7 +89,7 @@ Or add it as a remote to an existing repo with:
   git remote add origin keybase://team/akashnet/devnet
 ```
 
-#### Setup the directory structure
+### Setup the directory structure
 
 ```shell
 make db-setup
@@ -113,13 +113,13 @@ Define the machine stack dns zones, these domains have to be root level.
 echo mydomain.net > data/db/index/MACHINE_ZONE
 ```
 
-### Layer 0: Provision Machines and DNS
+## Layer 0: Provision Machines and DNS
 
 You can skip to Layer 2 if you have a functioning Kubernetes cluster setup on a server with DNS mapped to your `MACHINE_ZONE`
 
-#### Setup Credentials
+### Setup Credentials
 
-##### Packet
+### Packet
 
 Grab the Packet API Key from [dashboard](https://app.packet.net) under your "User settings > API Keys" and Project ID by clicking on "Project Settings" in the navigaiton bar. Define them in the environment:
 
@@ -128,7 +128,7 @@ export PACKET_TOKEN='zaEGf8iSE...'
 export PACKET_PROJECT_ID='48e3616c..'
 ```
 
-##### Cloudflare
+### Cloudflare
 
 Grab you Cloudflare API keys from the [dashboard](https://dash.cloudflare.com) under "My Profile" > "API Tokens".  Set the permissions to `Zone.Zone, Zone.DNS` for `All Zones`, similar to:
 
@@ -148,7 +148,7 @@ echo $PACKET_PROJECT_ID > data/db/keys/packet.project.id
 echo $CLOUDFLARE_API_TOKEN > data/db/keys/cloudflare.api.token
 ```
 
-#### Provision Resources using Terraform
+### Provision Resources using Terraform
 
 In this step you are provisioning a Bare metal server on Packet that costs $0.40/Hr. You will need it for less than an hour to complete this tutorial.
 
@@ -182,7 +182,7 @@ make db-commit db-push
 ```
 
 
-### Layer 1: Setup Kubernetes
+## Layer 1: Setup Kubernetes
 
 First ensure you have the environment variables setup from the previous section, replace `akash.sjc1.ovrclk2.com` and `147.75.70.201` with your values:
 
@@ -233,7 +233,7 @@ kube-system   csi-packet-controller-0          3/3     Running     0          6m
 ```
 
 
-### Layer 2: Deploy Observability Stack
+## Layer 2: Deploy Observability Stack
 
 ```
 make layer2-install HOST=$HOST MASTER_IP=$MASTER_IP
@@ -268,9 +268,9 @@ Login using `admin` for username and `insecure` for password. Navigate to Dashbo
 
 ![Grafana Node Metrics](grafana-node.png)
 
-### Layer 3: Install Akash Provider Client
+## Layer 3: Setup Akash Provider
 
-#### Create a Key for the Provider
+### Create a Key for the Provider
 
 First, create a key locally that we'll use as an identifier.
 
@@ -291,7 +291,7 @@ Public Key:     	4fbe42a0f09ed555ef36566d148a15bae5a694db
 Recovery Codes: 	album return owner forget top scissors kangaroo escape panther history liberty industry raise surge trigger jealous fit erase horn era hero dust weekend slim
 ```
 
-#### Add the Provider to the Network
+### Add the Provider to the Network
 
 Create a config file with various attributes to your offering, such as `region`. By running  `akash provider status` , you can get an idea of what attributes to use. In our example, we set the region to `sfo`.
 
@@ -359,9 +359,9 @@ Message(s):  	error=Get
              	such host
 ```
 
-#### Deploy Akash Provider Service on Kubernetes
+### Deploy Akash Provider Service on Kubernetes
 
-##### Create a Kubernetes Secret for your Private Key
+#### Create a Kubernetes Secret for your Private Key
 
 To create a secret for the private key,  first export the private key to a file using `key show --private` and then create a kubernetes secret.
 
@@ -390,11 +390,11 @@ key:      505 bytes
 keyname:  5 bytes
 ```
 
-##### Deploy to Kubernetes
+#### Deploy to Kubernetes
 
 {% tabs %} {% tab title="Helm" %}
 
-###### Using Helm
+##### Using Helm
 
 Simplest way to install Akash is using Helm. Add the Akash Network Helm repo:
 
@@ -417,7 +417,7 @@ helm install akash/akash-provider \
 
 {% endtab %} {% tab title="kubectl" %}
 
-###### Using kubectl
+##### Using kubectl
 
 First, create kubernetes deployment configuration using:
 
