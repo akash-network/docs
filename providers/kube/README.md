@@ -107,11 +107,10 @@ data
     └── keys
 ```
 
-Define the machine and stack dns zones, these domains have to be root level. Both of the above domains can be the same one.
+Define the machine stack dns zones, these domains have to be root level.
 
 ```shell
-echo mydomain.net > data/db/index/STACK_ZONE
-echo mydomain1.net > data/db/index/MACHINE_ZONE
+echo mydomain.net > data/db/index/MACHINE_ZONE
 ```
 
 ### Layer 0: Provision Machines and DNS
