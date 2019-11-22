@@ -144,13 +144,8 @@ CLOUDFLARE_API_TOKEN='68d3616c..'
 Set these values in the secure data repository:
 
 ```shell
-# packet api keys in profile
 echo $PACKET_TOKEN > data/db/keys/packet.api.token
-
-# packet project id in project home URL
 echo $PACKET_PROJECT_ID > data/db/keys/packet.project.id
-
-## cloudflare api keys in profile
 echo $CLOUDFLARE_API_TOKEN > data/db/keys/cloudflare.api.token
 ```
 
@@ -158,9 +153,9 @@ echo $CLOUDFLARE_API_TOKEN > data/db/keys/cloudflare.api.token
 
 In this step you are provisioning a Bare metal server on Packet that costs $0.40/Hr. You will need it for less than an hour to complete this tutorial.
 
+```shell
+make layer0-init layer0-apply
 ```
- make layer0-apply
- ```
 
 You will see an output similar to when your `MACHINE_ZONE` variable is set to `ovrclk2.com`
 
@@ -283,7 +278,7 @@ First, create a key locally that we'll use as an identifier.
 ```shell
 export KEY=$USER
 
-akash key create $USER
+akash key create $KEY
 ```
 
 You should see a response similar to, for the user `alice`:
@@ -314,7 +309,7 @@ export INGRESS="akash.${MACHINE_ZONE}"
 ```
 
 ```shell
-cat > provider.yml <<EOF
+cat > data/db/config/providers/provider.yml <<EOF
 hostURI: http://${INGRESS}
 attributes:
   - name: region
@@ -325,7 +320,7 @@ EOF
 To register, run the below and save the key as this is your unique identifier.
 
 ```shell
-akash provider add provider.yml --key $KEY
+akash provider add data/db/config/providers/provider.yml --key $KEY
 ```
 
 You will see an output similar to:
@@ -339,16 +334,16 @@ Add Provider
 Key: 	7e99e953d23570c2350ae6eee6937d00b6accc258f1904c4547b7aabd900b1dd
 ```
 
-Grab the `Key` from the output and store in an environment variable `PROVIDER`
+Save the `Key` from the output and store in the db `PROVIDER`
 
 ```
-export PROVIDER=7e99e953d23570c2350ae6eee6937d00b6accc258f1904c4547b7aabd900b1dd
+echo 7e99e953d23570c2350ae6eee6937d00b6accc258f1904c4547b7aabd900b1dd > data/db/keys/provider.address
 ```
 
 Verify by running the below. Ignore the 'no such host' will see an error:
 
 ```
-akash provider status $PROVIDER
+akash provider status $(cat data/db/keys/provider.address)
 ```
 
 For example:
@@ -379,8 +374,9 @@ Message(s):  	error=Get
 
 To create a secret for the private key,  first export the private key to a file using `key show --private` and then create a kubernetes secret.
 
-{% hint style="warn" %}
-First, make sure `KEY` is set:
+{% hint style="info" %}
+
+Make sure `KEY` is set:
 
 ```shell
 export KEY=$USER
@@ -393,7 +389,7 @@ akash key show $KEY --private > data/db/keys/akash-provider.private
 ```
 
 ```shell
-kubectl create secret generic akash-provider-private-key --from-file=data/db/keys/$KEY.private
+kubectl create secret generic akash-provider-private-key --from-file=data/db/keys/akash-provider.private
 ```
 
 Confirm using `kubectl describe secret akash-provider-private-key`. You should see a response similar to:
@@ -419,10 +415,10 @@ keyname:  5 bytes
 Ensure the environment variable `PROVIDER` is set that you got from `akash provider add` along with `INGRESS` and `KEY` variables:
 
 ```
-export PROVIDER=7e99e953d23570c2350ae6eee6937d00b6accc258f1904c4547b7aabd900b1dd
 export INGRESS="akash.$(cat data/db/index/MACHINE_ZONE)"
 export KEY=$USER
 ```
+
 {% endhint %}
 
 {% tabs %} {% tab title="Helm" %}
