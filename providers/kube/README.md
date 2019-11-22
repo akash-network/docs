@@ -115,7 +115,7 @@ echo mydomain.net > data/db/index/MACHINE_ZONE
 
 ## Layer 0: Provision Machines and DNS
 
-You can skip to [Layer 2](#layer-1-setup-kubernetes) if you have a bare metal server with DNS mapped to you `$MACHINE_ZONE`.
+You can skip to [Layer 1](#layer-1-setup-kubernetes) if you have a bare metal server with DNS mapped to you `$MACHINE_ZONE`.
 
 ### Setup Credentials
 
