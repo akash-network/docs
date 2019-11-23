@@ -10,11 +10,12 @@ This is a technical guide best suited for an audience with server management exp
 
 - Server management experience using Linux.
 - Working knowledge of Docker.
-- Working knowledge of Kubernetes is preferred, but not manditory.
+- Working knowledge of Kubernetes is preferred, but not mandatory.
 
 ### About Disco
 
-Disco (Decentralized Infrastructure for Serverless Computing Operations) is a secure, scalable, standardized software stack for developing, delivering, and debugging decentralized networks.
+Disco (Decentralized Infrastructure for Serverless Computing Operations) is a secure, scalable, standardized softw
+are stack for developing, delivering, and debugging decentralized networks.
 
 Disco makes it extremely simple to set up and manage kubernetes and gives you amazing tools to manage a production cluster. Disco is highly customizable and takes a layered approach, meaning each layer can be replaced with an implementation of your choice. In this guide, the layers we'll setup are as follows:
 
