@@ -6,13 +6,13 @@ Although the primary goal fo this guide is educated on you on Akash, you can exp
 
 ### Intended Audience
 
-This is a technical guide best suited for an Audience with server management experience, comfortable working with the Linux command line. This guide is best suited for a reader that has
+This is a technical guide best suited for an audience with server management experience, comfortable working with the Linux command line. The reader is expected to have:
 
-- Server management experience using Linux
-- Working knowledge of Docker
-- Working knowledge of Kubernetes is preferred
+- Server management experience using Linux.
+- Working knowledge of Docker.
+- Working knowledge of Kubernetes is preferred, but not manditory.
 
-### Disco
+### About Disco
 
 Disco (Decentralized Infrastructure for Serverless Computing Operations) is a secure, scalable, standardized software stack for developing, delivering, and debugging decentralized networks.
 
@@ -20,7 +20,7 @@ Disco makes it extremely simple to set up and manage kubernetes and gives you am
 
 - Layer 0: Bare metal servers on Packet, provisioned using Terraform.
 - Layer 1: Kubernetes Cluster with Helm, and Container Storage Interfaces (CSI).
-- Layer 2: Observability (Prometheus and Graphana) and Key Management (Vault).
+- Layer 2: Observability (Prometheus and Grafana).
 - Layer 3: Akash Provider Client.
 
 ## Before We Begin
@@ -54,7 +54,7 @@ git clone https://github.com/ovrclk/disco
 cd disco
 ```
 
-### Setting up Keybase git repository
+### Setting up Keybase Git Repository
 
 DISCO is built using Keybase Teams. When creating systems like this, there is senstitive local data that is needed to create the clusters and the applications on top of them. Keybase teams offers an easy programatic way to securely version, store and share this data.
 
@@ -95,7 +95,7 @@ Or add it as a remote to an existing repo with:
 make db-setup
 ```
 
-The db setup task will create the below folder stucture:
+The `db-setup` task will create the below folder stucture:
 
 ```text
 data
@@ -115,7 +115,7 @@ echo mydomain.net > data/db/index/MACHINE_ZONE
 
 ## Layer 0: Provision Machines and DNS
 
-You can skip to [Layer 1](#layer-1-setup-kubernetes) if you have a bare metal server with DNS mapped to you `$MACHINE_ZONE`.
+You can skip to [Layer 1](#layer-1-setup-kubernetes) if you have root access to a bare metal server with DNS mapped to you `$MACHINE_ZONE`.
 
 ### Setup Credentials
 
