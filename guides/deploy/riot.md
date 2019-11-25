@@ -58,8 +58,6 @@ profiles:
       disk: "1G"
 
   placement:
-    attributes:
-      sgx: enabled
     global:
       pricing:
         web: 500u
