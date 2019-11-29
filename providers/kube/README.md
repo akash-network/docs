@@ -366,7 +366,7 @@ akash provider status $(cat data/db/keys/provider.address)
 For example:
 
 ```
-$ akash provider status 7e99e953d23570c2350ae6eee6937d00b6accc258f1904c4547b7aabd900b1dd
+$ akash provider status 7e99e953d23570c2350ae6eee6937d00b6accc258f1904c4547b7aabd900b1dd --status passive
 
 Passive Provider(s) Status
 ==========================
