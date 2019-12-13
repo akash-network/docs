@@ -357,34 +357,6 @@ Save the `Key` from the output and store in the db `PROVIDER`
 echo 7e99e953d23570c2350ae6eee6937d00b6accc258f1904c4547b7aabd900b1dd > data/db/keys/provider.address
 ```
 
-Verify by running the below. Ignore the 'no such host' will see an error:
-
-```
-akash provider status $(cat data/db/keys/provider.address)
-```
-
-For example:
-
-```
-$ akash provider status 7e99e953d23570c2350ae6eee6937d00b6accc258f1904c4547b7aabd900b1dd --status passive
-
-Passive Provider(s) Status
-==========================
-
-Provider:    	7e99e953d23570c2350ae6eee6937d00b6accc258f1904c4547b7aabd900b1dd
-Attributes:  	region: sfo
-Version:
-Leases:
-Deployments:
-Orders:
-Available:
-Message(s):  	error=Get
-             	http://akash.ovrclk2.com/status:
-             	dial tcp: lookup
-             	akash.ovrclk2.com: no
-             	such host
-```
-
 ### Deploy Akash Provider Service on Kubernetes
 
 #### Create a Kubernetes Secret for your Private Key
