@@ -39,4 +39,4 @@ The *provider(s)* that match all the requirements of the order then place a *bid
 
 ### Take Rate
 
-For every successful lease created, a portion of the lease amount (*Take Fee*) goes to a *Take Income Pool*. The Take income is later distributed to stakers based on their stake weight (amount stake and lock up). The *Take Rate* depends on currency used for settlement. The proposed rates at Genesis when using AKT is 10% and 20% when any other currencies are used. The *Take Rate* parameters is subject to community consensus managed by the governance.
+For every successful lease, a portion of the lease amount (*Take Fee*) goes to a *Take Income Pool*. The Take income is later distributed to stakers based on their stake weight (amount stake and lock up). The *Take Rate* depends on currency used for settlement. The proposed rates at Genesis when using AKT is 10% and 20% when any other currencies are used. The *Take Rate* parameters is subject to community consensus managed by the governance.
