@@ -7,7 +7,7 @@ Akash Token (AKT)
 
 :  AKT is the native token of the Akash Network. The core utility of AKT acts as a staking mechanism to secure the network and normalize compute prices for the marketplace auction. The amount of AKTs staked towards a validator defines the frequency by which the validator may propose a new block and its weight in votes to commit a block. In return for bonding (staking) to a validator, an AKT holder becomes eligible for block rewards (paid in AKT) as well as a proportion of transaction fees and service fees (paid in any of the whitelisted tokens).
 
-Validator 
+Validator
 
 :   Validators secure the Akash network by validating and relaying transactions, proposing, verifying and finalizing blocks. There will be a limited set of validators, initially 64, which are required to maintain a high standard of automated signing infrastructure. Validators charge *delegators* a commission fee in AKT.
 
@@ -25,7 +25,7 @@ Tenant
 
 ## Marketplace Overview
 
-A unit of computing (*CPU, Memory, Disk*) is leased as a container on Akash. A container [@container] is a standard unit of software that packages up code and all its dependencies, so the application runs quickly and reliably from one computing environment to another. A container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings. 
+A unit of computing (*CPU, Memory, Disk*) is leased as a container on Akash. A container [@container] is a standard unit of software that packages up code and all its dependencies, so the application runs quickly and reliably from one computing environment to another. A container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings.
 
 Any one with a physical machine (ie, computer, server) can slice the machine's resources into containers using a process called virtualization. Docker is a company that provides widely adopted container virtualization technology, and it is common to refer to containers as "docker images." The relation between a physical computer and a container is illustrated in [@fig:containers]).
 
@@ -36,3 +36,7 @@ An *order* is created in the order book (upon acceptance by a validator).
 The *provider(s)* that match all the requirements of the order then place a *bid* by competing on price. The provider that bids the lowest amount on the order wins, upon which a *lease* is created between the tenant and the provider for the order.
 
 ![A simple illustration of containerized applications in relation to the physical servers](figures/containers.svg){#fig:containers}
+
+### Take Rate
+
+For every successful lease, a portion of the lease amount (*Take Fee*) goes to a *Take Income Pool*. The Take Income Pool is later distributed to stakers based on their stake weight (amount staked and time remaining to unlock, described in detail in the following sections). The *Take Rate* depends on currency used for settlement. The proposed rates at Genesis when using AKT is 10%, but 20% when any other currencies are used. The *Take Rate* parameters is subject to community consensus managed by the governance.
