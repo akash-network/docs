@@ -1,11 +1,15 @@
 ---
 title: 'AKT: Akash Network, Token & Mining Economics'
 indent: 5
-thanks: We thank Morgan Thomas (*Co-Founder, Kassir*), and Brandon Goldman *(Frm. Lead Architect, Blockfolio)* for providing valuable comments that significantly improved the manuscript.
+thanks: We thank Sunny Aggarwal (*Research Scientist, Tendermint*), Gautier Marin (*Tendermint*), Morgan Thomas (*Co-Founder, Kassir*), and Brandon Goldman (*Frm. Lead Architect, Blockfolio*) for providing valuable comments that significantly improved the manuscript.
 author:
 - name: Greg Osuri
   email: greg@akash.network
   affiliation: Akash Network
+- name: Adam Bozanich
+  email: adam@akash.network
+  affiliation: Akash Network
+
 documentclass: revtex4-2
 header-includes:
   - "\\newcommand{\\pcdoc}{Pandoc-crossref documentation}"
@@ -17,10 +21,10 @@ date: \today
 secnumdepth: 4
 interlinespace: 4ex
 version:
- - 0.1
+ - 0.3
  - DRAFT
 link-citations: true
-classoption: 
+classoption:
  - twocolumn
  - longbibliography
  - nofootinbib

@@ -1,5 +1,38 @@
 references:
 - type: article-journal
+  id: gartner
+  title: 'Worldwide Market Share Analysis: IaaS and IUS'
+  URL: https://www.gartner.com/en/newsroom/press-releases/2019-07-29-gartner-says-worldwide-iaas-public-cloud-services-market-grew-31point3-percent-in-2018
+- type: article-journal
+  id: marketsandmarkets
+  title: Cloud Infrastructure Market - Global Forecast to 2022
+  URL: https://www.marketsandmarkets.com/PressReleases/cloud-infrastructure.asp
+- type: article-journal
+  id: mckinsey
+  title: Revolutionizing Data Center Efficiency McKinsey and Company.
+  author:
+  - family: Kaplan
+    given: James
+  - family: Kindler
+    given: Noah
+  - family: William
+    given: Forrest
+  URL: https://www.sallan.org/pdf-docs/McKinsey_Data_Center_Efficiency.pdf
+- type: article-journal
+  id: cisco
+  title: 'Cisco Global Cloud Index: Forecast and Methodology, 2016–2021 White Paper'
+  URL: 'https://www.cisco.com/c/en/us/solutions/collateral/service-provider/global-cloud-index-gci/white-paper-c11-738085.html'
+- id: nytimes
+  type: article-journal
+  title: 'Prime Leverage: How Amazon Wields Power in the Technology World'
+  URL: 'https://www.nytimes.com/2019/12/15/technology/amazon-aws-cloud-competition.html'
+- id: rightscale
+  URL: https://www.flexera.com/about-us/press-center/rightscale-2019-state-of-the-cloud-report-from-flexera-identifies-cloud-adoption-trends.html
+  title: RightScale 2019 State of the Cloud Report
+- id: comatose
+  URL: https://uptimeinstitute.com/resources/asset/comatose-server-savings-calculator
+  title: Uptime Institute Comatose Server Savings Calculator
+- type: article-journal
   id: cosmosEcon
   author:
   - family: Aggarwal
@@ -67,7 +100,7 @@ references:
     family: Kiayias
   - given: Alexander
     family: Russell
-  - given: Bernardo 
+  - given: Bernardo
     family: David
   - given: Roman
     family: Oliynykov
