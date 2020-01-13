@@ -1,19 +1,19 @@
 
 # Introduction
 
-The cloud infrastructure is a $32.4 billion industry[@gartner] and is predicted to reach $210 billion by 2022[@marketsandmarkets].
+Cloud infrastructure is a $32.4 billion industry[@gartner] and is predicted to reach $210 billion by 2022[@marketsandmarkets].
 
-By 2021, ninety-four percent of all internet applications and compute instances are expected to be processed by *Cloud Service Providers* (CSP) with only six percent processed by traditional data centers[@cisco]. The primary driver for this growth is poor utilization rates of IT resources provisioned in traditional data centers that rarely exceeds six percent (i.e, they deliver no more than six percent of their maximum computing output on average over the course of the year)[@mckinsey] and up to thirty percent of servers are comatose[@comatose] – using electricity but delivering no useful information services.
+By 2021, 94% of all internet applications and compute instances are expected to be processed by *Cloud Service Providers* (CSP) with only 6% processed by traditional data centers[@cisco]. The primary driver for this growth is poor utilization rates of IT resources provisioned in traditional data centers as no more than 6% of their maximum computing output is delivered on average over the course of the year [@mckinsey], and up to 30% of servers are comatose[@comatose] – using electricity but delivering no useful information services.
 
-With 8.4 million data centers, an estimated 96% of server capacity underutilized, and accelerated global demand for cloud computing, the leading four cloud service providers — Amazon Web Services (AWS), Google Cloud, and Microsoft Azure — dominate the cloud computing market with 71 percent market share[@gartner] and this figure is expected to increase. These providers are complicated, inflexible, and restrictive, and come at a high recurring cost with lock-in agreements[@nytimes]. Increased cloud usage has made cloud cost optimization the top priority of cloud service users for three consecutive years[@rightscale].
+With 8.4 million data centers globally, an estimated 96% of server capacity underutilized, and accelerated global demand for cloud computing, the three leading cloud service providers — Amazon Web Services (AWS), Google Cloud, and Microsoft Azure — dominate the cloud computing market with 71% market share[@gartner] and this figure is expected to increase. These providers are complicated, inflexible, and restrictive, and come at a high recurring cost with vendor lock-in agreements[@nytimes]. Increased cloud usage has made cloud cost optimization the top priority of cloud service users for three consecutive years[@rightscale].
 
-Outside of the large incumbent providers, organizations do not have many options for cloud computing. Akash aims to create efficiencies in the cloud hosting market through algorithms for allocating compute resources that go to waste in the current market.
+Outside of the large incumbent providers, organizations do not have many options for cloud computing. Akash aims to create efficiencies in the cloud hosting market by repurposing compute resources that go to waste in the current market.
 
-With the introduction of a blockchain, Akash injects decentralization into an industry currently controlled by monopolies. The result is that cloud computing becomes a commodity, fueled by competition, available anywhere in the world, at a fraction of current costs.
+With the introduction of a blockchain, Akash injects decentralization and transparency into an industry currently controlled by monopolies. The result is that cloud computing becomes a commodity, fueled by competitive free market, available and accessible anywhere in the world, at a fraction of current costs.
 
 Akash is the world’s first and only *Supercloud* for *serverless* computing, enabling anyone with a computer to become a cloud provider by offering their unused compute cycles in a safe and frictionless marketplace.
 
-In this paper, we present an economic system that uses a native currency, AKT, to achieve economic sovereignty in the decentralized computing ecosystem. We also propose an inflation design for mitigating inherent adoption challenges that face an early market economy — lack of sufficient demand from the tenants (consumers of computing), which in turn hurts demand because of lack of supply. We also present a mechanism for a stable medium of exchange by solving for token volatility (one of the biggest challenges for adoption of decentralized ecosystems).
+In this paper, we present an economic system that uses Akash Networks native currency, AKT, to achieve economic sovereignty in our decentralized computing ecosystem. We also propose an inflation design for mitigating inherent adoption challenges that face an early market economy — lack of sufficient demand from the tenants (consumers of computing), which negatively impacts demand due to lack of supply. We also present a mechanism for a stable medium of exchange by solving for token volatility, a major challenges for adoption of decentralized ecosystems.
 
 **Note:** This whitepaper represents a continuous work in progress. We will endeavor to keep this document current with the latest development progress. As a result of the ongoing and iterative nature of the Akash development process, the resulting code and implementation will likely differ from what this paper represents.
 
@@ -40,13 +40,13 @@ Provider
 
 Tenant
 
-:   Tenants lease computing cycles offered by providers for a market-driven price (set using a reverse auction process described in below section).
+:   Tenants lease computing cycles offered by providers for a market-driven price set using a reverse auction process (described in section below).
 
 ## Marketplace Overview
 
 A unit of computing (*CPU, Memory, Disk*) is leased as a container on Akash. A container [@container] is a standard unit of software that packages up code and all its dependencies, so the application runs quickly and reliably from one computing environment to another. A container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings.
 
-Any one with a physical machine (ie, computer, server) can slice the machine's resources into containers using a process called virtualization. Docker is a company that provides widely adopted container virtualization technology, and it is common to refer to containers as "docker images." The relation between a physical computer and a container is illustrated in [@fig:containers]).
+Any one with a physical machine (ie, computer, server) can divide the machine's resources into containers using a process called virtualization. Docker is a company that provides widely adopted container virtualization technology, and it is common to refer to containers as "docker images." The relation between a physical computer and a container is illustrated in [@fig:containers]).
 
 All marketplace transactions are on the Akash blockchain. To lease a container, the *tenant* (developer) requests a deployment by specifying the type(s) of unit(s), and the quantity of each type of unit. To specify a type of unit, the tenant specifies attributes to match, such as region (e.g. US) or privacy features (e.g. Intel SGX). The tenant also specifies the maximum price they are willing to pay for each type of unit.
 
