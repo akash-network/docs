@@ -3,7 +3,7 @@
 
 The cloud infrastructure is a $32.4 billion industry[@gartner] and is predicted to reach $210 billion by 2022[@marketsandmarkets].
 
-By 2021, 94 percent of all internet applications and compute instances are expected to be processed by *Cloud Service Providers (CSP)* with only 6 percent processed by traditional data centers[@cisco]. The primary driver for this growth is poor utilization rates of IT resources provisioned in traditional data centers. Utilization of servers in business and enterprise data centers rarely exceeds 6% (i.e, they deliver no more than six percent of their maximum computing output on average over the course of the year)[@mckinsey] and up to 30% of servers are comatose[@comatose] – using electricity but delivering no useful information services.
+By 2021, ninety-four percent of all internet applications and compute instances are expected to be processed by *Cloud Service Providers* (CSP) with only six percent processed by traditional data centers[@cisco]. The primary driver for this growth is poor utilization rates of IT resources provisioned in traditional data centers that rarely exceeds six percent (i.e, they deliver no more than six percent of their maximum computing output on average over the course of the year)[@mckinsey] and up to thirty percent of servers are comatose[@comatose] – using electricity but delivering no useful information services.
 
 With 8.4 million data centers, an estimated 96% of server capacity underutilized, and accelerated global demand for cloud computing, the leading four cloud service providers — Amazon Web Services (AWS), Google Cloud, and Microsoft Azure — dominate the cloud computing market with 71 percent market share[@gartner] and this figure is expected to increase. These providers are complicated, inflexible, and restrictive, and come at a high recurring cost with lock-in agreements[@nytimes]. Increased cloud usage has made cloud cost optimization the top priority of cloud service users for three consecutive years[@rightscale].
 
@@ -13,11 +13,7 @@ With the introduction of a blockchain, Akash injects decentralization into an in
 
 Akash is the world’s first and only *Supercloud* for *serverless* computing, enabling anyone with a computer to become a cloud provider by offering their unused compute cycles in a safe and frictionless marketplace.
 
-In this paper, we present an economic system that uses a native currency, AKT, to achieve economic sovereignty in the decentralized computing ecosystem.
-
-We also propose an inflation design for mitigating inherent adoption challenges that face an early market economy — lack of sufficient demand from the tenants (consumers of computing), which in turn hurts demand because of lack of supply.
-
-We also present mechanims for a stable medium of exchange by solving for token volatility (one of the biggest challenges for adoption of decentralized ecosystems).
+In this paper, we present an economic system that uses a native currency, AKT, to achieve economic sovereignty in the decentralized computing ecosystem. We also propose an inflation design for mitigating inherent adoption challenges that face an early market economy — lack of sufficient demand from the tenants (consumers of computing), which in turn hurts demand because of lack of supply. We also present a mechanism for a stable medium of exchange by solving for token volatility (one of the biggest challenges for adoption of decentralized ecosystems).
 
 **Note:** This whitepaper represents a continuous work in progress. We will endeavor to keep this document current with the latest development progress. As a result of the ongoing and iterative nature of the Akash development process, the resulting code and implementation will likely differ from what this paper represents.
 
