@@ -1,5 +1,5 @@
 ---
-title: 'AKT: Akash Network, Token & Mining Economics'
+title: 'AKT: Akash Network Token & Mining Economics'
 indent: 5
 thanks: We thank Sunny Aggarwal (*Research Scientist, Tendermint*), Gautier Marin (*Tendermint*), Morgan Thomas (*Co-Founder, Kassir*), and Brandon Goldman (*Frm. Lead Architect, Blockfolio*) for providing valuable comments that significantly improved the manuscript.
 author:
@@ -15,7 +15,7 @@ header-includes:
   - "\\newcommand{\\pcdoc}{Pandoc-crossref documentation}"
   - "\\newcommand{\\listfigurename}{List of Figures}"
   - "\\newcommand{\\listtablename}{List of Tables}"
-linestretch: 1.3
+linestretch: 1.2
 papersize: a4
 date: \today
 secnumdepth: 4

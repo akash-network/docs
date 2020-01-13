@@ -367,15 +367,22 @@ Set up the Riot Web client for Matrix by following this [Guide](../deploy/riot.m
 
 ![step 1](img/matrix1.png)
 
+<<<<<<< Updated upstream
 #### Create Account
 
 Create a new Account by selecting the option and chose **Advanced**. Provide the url to your matrix server for `Homeserver URL`. Ignore the errors on screen if any as they are mostly configuration related.
+=======
+#### 6.1 Create Account
+
+Create a new Account by selecting the option and chose 'Advanced'. Provide the url to your matrix server for 'Homeserver URL'. Ignore the errors on screen if any as they are mostly configuration related.
+>>>>>>> Stashed changes
 
 The below example will create a user `greg` at `matrix.akash.network`:
 
 ```
 @greg:matrix.akash.network
 ```
+<<<<<<< Updated upstream
 ![step 2](img/matrix8.png)
 
 #### Create a Room
@@ -385,3 +392,11 @@ And invite our community by showing what you built, [join our chat](https://akas
 ![step 4](img/matrix3.png)
 
 If you enjoyed this article, don't forget to [subscribe to our newsletter](https://akash.network/newsletter), we have exciting things coming every week!
+=======
+
+![step 2](img/matrix8.png)
+
+
+![step 4](img/matrix3.png)
+![step 5](img/matrix4.png)
+>>>>>>> Stashed changes
