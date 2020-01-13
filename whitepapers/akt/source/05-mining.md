@@ -131,7 +131,7 @@ a staker liquidating all the compensation while extending the lock time (Liquida
 
 ### Liquidate Mining Compensation
 
-In this scenario, all stakers in the pool are liquidating all their earnings every $T_{comp}$ period. The total amount of tokens staked in the network can be expressed as $S=\lambda M$. 
+In this scenario, all stakers in the pool are liquidating all their earnings every $T_{comp}$ period. The total amount of tokens staked in the network can be expressed as $S=\lambda M$.
 Assume all the delegators have equal amounts of stake bound to the pool. The amount of stake stays constant in this case, and equal to $m_i = s$, making $m_v = s_v$ and $\gamma = \overline{\gamma_v}$ where, ${\overline{\gamma_v}}$ is the mean staking parameter of the pool. Then, the pool mining rate (i.e. the cumulative pool reward) is:
 
 $$
@@ -150,7 +150,7 @@ $$
 r(t) = \kappa \cdot \Delta r_v(t) = \frac{1}{2} \left(\frac{\gamma}{\gamma_v} + \frac{s}{S_v}\right) \cdot \Delta r_v(t)
 $$
 
-If $\gamma=1$ (staking for $1~year$) and $\lambda=60\%$ ($60\%$ of all AKT are staked). With $\mathcal{C}=0.1 \cdot r(t)$, staker compensation in AKT starts from $0.45\%~per~day$, or $101.6\%$ during the first year of staking. 
+If $\gamma=1$ (staking for $1~year$) and $\lambda=60\%$ ($60\%$ of all AKT are staked). With $\mathcal{C}=0.1 \cdot r(t)$, staker compensation in AKT starts from $0.45\%~per~day$, or $101.6\%$ during the first year of staking.
 
 We should note that if other miners stake for less than a year ($\gamma^* < 1$), the inflation rate decays slower, and the compensation over a given period will be higher.
 

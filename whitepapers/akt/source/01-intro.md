@@ -1,7 +1,30 @@
 
 # Introduction
 
-Akash is a permissionless marketplace for trading compute cycles. It aims to create efficiencies in the cloud hosting market through algorithms for allocating compute resources which go to waste in the current market. In this paper, we present the economics of the Akash Network by introducing the Akash Token (AKT) model, which is designed to a) maintain ecosystem sovereignty, b) provide economic security, and c) encourage early adoption by offering *10x lower* cost than current market solutions. Here are some definitions:
+The cloud infrastructure is a $32.4 billion industry[@gartner] and is predicted to reach $210 billion by 2022[@marketsandmarkets].
+
+By 2021, 94 percent of all internet applications and compute instances are expected to be processed by *Cloud Service Providers (CSP)* with only 6 percent processed by traditional data centers[@cisco]. The primary driver for this growth is poor utilization rates of IT resources provisioned in traditional data centers. Utilization of servers in business and enterprise data centers rarely exceeds 6% (i.e, they deliver no more than six percent of their maximum computing output on average over the course of the year)[@mckinsey] and up to 30% of servers are comatose[@comatose] – using electricity but delivering no useful information services.
+
+With 8.4 million data centers, an estimated 96% of server capacity underutilized, and accelerated global demand for cloud computing, the leading four cloud service providers — Amazon Web Services (AWS), Google Cloud, and Microsoft Azure — dominate the cloud computing market with 71 percent market share[@gartner] and this figure is expected to increase. These providers are complicated, inflexible, and restrictive, and come at a high recurring cost with lock-in agreements[@nytimes]. Increased cloud usage has made cloud cost optimization the top priority of cloud service users for three consecutive years[@rightscale].
+
+Outside of the large incumbent providers, organizations do not have many options for cloud computing. Akash aims to create efficiencies in the cloud hosting market through algorithms for allocating compute resources that go to waste in the current market.
+
+With the introduction of a blockchain, Akash injects decentralization into an industry currently controlled by monopolies. The result is that cloud computing becomes a commodity, fueled by competition, available anywhere in the world, at a fraction of current costs.
+
+Akash is the world’s first and only *Supercloud* for *serverless* computing, enabling anyone with a computer to become a cloud provider by offering their unused compute cycles in a safe and frictionless marketplace.
+
+In this paper, we present an economic system that uses a native currency, AKT, to achieve economic sovereignty in the decentralized computing ecosystem.
+
+We also propose an inflation design for mitigating inherent adoption challenges that face an early market economy — lack of sufficient demand from the tenants (consumers of computing), which in turn hurts demand because of lack of supply.
+
+We also present mechanims for a stable medium of exchange by solving for token volatility (one of the biggest challenges for adoption of decentralized ecosystems).
+
+**Note:** This whitepaper represents a continuous work in progress. We will endeavor to keep this document current with the latest development progress. As a result of the ongoing and iterative nature of the Akash development process, the resulting code and implementation will likely differ from what this paper represents.
+
+We invite the interested reader to peruse the Akash GitHub repo at https://github.com/ovrclk as we continue to open-source various components of the system over time.
+
+
+## Definitions
 
 Akash Token (AKT)
 
@@ -33,10 +56,6 @@ All marketplace transactions are on the Akash blockchain. To lease a container, 
 
 An *order* is created in the order book (upon acceptance by a validator).
 
-The *provider(s)* that match all the requirements of the order then place a *bid* by competing on price. The provider that bids the lowest amount on the order wins, upon which a *lease* is created between the tenant and the provider for the order.
+The *provider(s)* that match all the requirements of the order then place a *bid* by competing on price. The provider that bids the lowest amount on the order wins, upon which a *lease* is created between the tenant and the provider for the order. For every successful lease, a portion of the lease amount (*Take Fee*) is paid to the stakers as describe in [@sec:take-fee].
 
 ![A simple illustration of containerized applications in relation to the physical servers](figures/containers.svg){#fig:containers}
-
-### Take Rate
-
-For every successful lease, a portion of the lease amount (*Take Fee*) goes to a *Take Income Pool*. The Take Income Pool is later distributed to stakers based on their stake weight (amount staked and time remaining to unlock, described in detail in the following sections). The *Take Rate* depends on currency used for settlement. The proposed rates at Genesis when using AKT is 10%, but 20% when any other currencies are used. The *Take Rate* parameters is subject to community consensus managed by the governance.

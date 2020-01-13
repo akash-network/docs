@@ -1,5 +1,5 @@
 
-# Proof of Stake Using Tendermint Consensus
+# Consensus: Proof of Stake Using Tendermint {#sec:consensus}
 
 Akash employs a blockchain secured by a *Proof-of-Stake* consensus model as a Sybil resistance mechanism for determining participation in its consensus protocol and implements the Tendermint [@tendermint] algorithm for Byzantine fault-tolerant consensus. Tendermint was designed to address the speed, scalability, and environmental concerns with Proof of Work with the below set of properties:
 
@@ -19,13 +19,12 @@ The slashing condition and the respective attributable Byzantine faults and puni
 
 Akash's blockchain is based on Tendermint consensus which gets slower with more validators due to the increased communication complexity. Fortunately, we can support enough validators to make for a robust globally distributed blockchain with very fast transaction confirmation times, and, as bandwidth, storage, and parallel compute capacity increases, we will be able to support more validators in the future.
 
-On Genesis day, the number of validators $V_i$ is set to $V_i(0) = V_{i,0} = 128$ and the number of validators at time $t~year$ will be:
+On Genesis day, the number of validators $V_i$ is set to $V_i(0) = V_{i,0} = 64$ and the number of validators at time $t~year$ will be:
 
 $$
-V_n(t) = | \log_2(t+1) \cdot V_{i,0} |
+V_n(t) = \lceil \log_2(2t) \cdot V_{i,0} \rceil
 $$
 
-So, in $10~years$, there will be $V_n(10) = 442$ validators as illustrated in [@fig:validator-count]
+So, in $10~years$, there will be $V_n(10) = 277$ validators as illustrated in [@fig:validator-count]
 
 ![Number of validators over the years](figures/validator-count.png){#fig:validator-count}
-
