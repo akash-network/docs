@@ -15,7 +15,7 @@ In this section, we describe the economics of mining and Akash Network's inflati
 
 ## Motivation
 
-Akash Network intends to gain early adoption by offering exponential cost savings as a value proposition for tenants, and the efficiency of a serverless infrastructure as an additional value proposition for tenants and providers. These value propositions are extremely compelling, especially for data and compute intensive applications such as machine learning.
+Akash Network aims to secure early adoption by offering exponential cost savings as a value proposition for tenants, and the efficiency of a serverless infrastructure as an additional value proposition for tenants and providers. These value propositions are extremely compelling, especially for data and compute intensive applications such as machine learning.
 
 ## Stake and Bind: Mining Protocol
 
@@ -174,14 +174,14 @@ Assuming the validator commission is 1\%, if $\gamma=1$ (staking for $1~year+$) 
 
 ### Take mining compensation and spindown
 
-When the node spins down, the staker doesn't extend the time for end of staking $t_1$, and the compensation is constantly decreasing as the time left to unlock becomes smaller and smaller, effectively decreasing $\gamma$ gradually towards $0.5$. That's the default behavior. To avoid that, the staker should set $t_1$ large enough, or increase $t_1$ periodically.
+When the node spins down, the staker does not extend the time for end of staking $t_1$, and the compensation is constantly decreasing as the time left to unlock becomes smaller and smaller, effectively decreasing $\gamma$ gradually towards $0.5$. This is the default behavior. To avoid this, the staker should set $t_1$ large enough, or increase $t_1$ periodically.
 
 ### FAQ
 
 ##### How many tokens will ever be in existence?
-We'll start with $100~\text{million}$ tokens, and the maximum amount of tokens ever created will be $389~\text{million}$, as illustrated in [@fig:token-supply]
+We will start with $100~\text{million}$ tokens, and the maximum amount of tokens ever created will be $389~\text{million}$, as illustrated in [@fig:token-supply]
 
-##### What's the inflation rate?
-The inflation rate will depend on how many short-term miners and long-term miners are working in the system. Depending on this, the initial inflation will be between $50\%~\text{APR}$ (if all miners are very short term) and $100\%~\text{APR}$ (if all miners commit for a long term). The inflation will decay exponentially every day, halving sometime between $2~\text{years}$ (if all the miners are long term) and $4~\text{years}$ (if all the miners are short term). [@fig:annual-inflation]
+##### What is the inflation rate?
+The inflation rate will depend on how many short-term miners and long-term miners are working in the system. Depending on this, the initial inflation will be between $50\%~\text{APR}$ (if all miners are very short term) and $100\%~\text{APR}$ (if all miners commit for a long term). The inflation will decay exponentially every day, halving some time between $2~\text{years}$ (if all the miners are long term) and $4~\text{years}$ (if all the miners are short term). [@fig:annual-inflation]
 
 ![Annual inflation over the years when tokens are locked with long and short commitments](figures/annual-inflation.png){#fig:annual-inflation}
