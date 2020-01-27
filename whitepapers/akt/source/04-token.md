@@ -3,17 +3,17 @@
 The primary functions of AKT are in staking (which provides security to the network), lease settlement, and in acting as a unit of measure for pricing all currencies supported by the marketplace. Although AKT can be used for settling transactions in the marketplace, the leases can be settled using a multitude of tokens as described in later sections of this paper. However, transaction fees and block rewards are denominated in AKT. The income stakers earn is proportional to the tokens staked and length of staking commitment. That said, AKT performs three main functions: Resolve, Reward, and Reserve.
 
 ## Resolve
-Akash relies on a blockchain where a set of validators vote on proposals. Each proposal is weighed by the proposer’s voting power, which is the total tokens they staked and the tokens bonded to them (stakers can delegate voting power to validators).
+Akash relies on a blockchain in which a set of validators vote on proposals. Each proposal is weighed by the proposer’s voting power, which is the total tokens they staked and the tokens bonded to them (stakers can delegate voting power to validators).
 
 ## Reward
-Users of AKT stake tokens to subsidize operating and capital expenditures. Stakers are rewarded proportional to the number of tokens staked, the length of lockup time, and the overall tokens staked in the system. Lock up times can vary anywhere from one month to one year. Flexibility in lockup encourages stakers that stake for shorter periods (bear markets), in a self-adjusting inflationary system that is designed to optimize for lower price pressure during bear markets.
+Users of AKT stake tokens to subsidize operating and capital expenditures. Stakers are rewarded proportional to the number of tokens staked, the length of lockup time, and the overall tokens staked in the system. Lockup times can vary anywhere from one month to one year. Flexibility in lockup encourages stakers who stake for shorter periods (bear markets), in a self-adjusting inflationary system that is designed to optimize for lower price pressure during bear markets.
 
 ## Reserve
-Fees on Akash can be settled using a multitude of currencies along with AKT, however, the market order book uses Akash Token (AKT) as the reserve currency of the ecosystem. AKT provides a novel settlement option to lock in an exchange rate between AKT and the settlement currency. This way, providers and tenants are protected from the price volatility of AKT expected to result from its low liquidity. In this section, we also present a mechanism “Transaction Ordering using Consensus Weighted Median” as described in [@sec:txordering] to establish exchange rates without the need for an oracle.
+Fees on Akash can be settled using a multitude of currencies along with AKT. However, the market order book uses Akash Token (AKT) as the reserve currency of the ecosystem. AKT provides a novel settlement option to lock in an exchange rate between AKT and the settlement currency. This way, providers and tenants are protected from the price volatility of AKT expected to result from its low liquidity. In this section, we also present a mechanism “Transaction Ordering using Consensus Weighted Median” as described in [@sec:txordering] to establish exchange rates without the need for an oracle.
 
 # Settlement and Fees {#sec:settlement}
 
-This section describes various fees the incurred by users of Akash Network.
+This section describes various fees incurred by users of Akash Network.
 
 ## Take Fee {#sec:take-fee}
 
@@ -21,7 +21,7 @@ For every successful lease, a portion of the lease amount (*Take Fee*) goes to a
 
 ## Settlement with Exchange Rate Lockin
 
-The lease fees are denominated in AKT, but they can be settled using any whitelisted tokens. There is an option to lock in an exchange rate between AKT and the settlement currency. This way providers and tenants are protected from the price volatility of AKT expected to result from its low liquidity.
+The lease fees are denominated in AKT, but they can be settled using any whitelisted tokens. There is an option to lock in an exchange rate between AKT and the settlement currency. This protects providers and tenants from the price volatility of AKT expected to result from its low liquidity.
 
 For example, suppose a lease is set to $10~AKTs$ and locks an exchange rate of $1~AKT = 0.2~BTC$. If the price of AKT doubles, i.e., $1~AKT = 0.4~BTC$, the tenant is required to pay $5~AKT$. Conversely, if the price of BTC doubles while keeping the price of AKT same, i.e., $1~AKT = 0.1~BTC$, then the tenant is required to pay $20~AKT$.
 
@@ -31,13 +31,13 @@ In order to avoid issues of network abuse (e.g. DOS attacks), all transactions a
 
 The `GasLimit` is the amount of gas which is deducted from the sender’s account balance to issue a transaction.
 
-Unlike most other blockchain platforms, such as Ethereum [@ethereum], Bitcoin [@bitcoin], and Neo [@neo], Akash accepts a multitude of tokens for fees, whereas the mentioned platforms require fees to be paid in the platform's native cryptocurrency. Each validator and provider on Akash can choose to accept any currency or a combination of currencies as fees.
+Unlike most other blockchain platforms that require fees to be paid in the platform's native cryptocurrency, such as Ethereum [@ethereum], Bitcoin [@bitcoin], and Neo [@neo], Akash accepts a multitude of tokens for fees. Each validator and provider on Akash can choose to accept any currency or a combination of currencies as fees.
 
 The resulting transaction fees, minus a network tax that goes into a reserve pool, are split among validators and delegators based on their stake (amount and length).
 
 ## Transaction Ordering using Consensus Weighted Median {#sec:txordering}
 
-In order to prioritize transactions when multiple tokens are used, validators need a mechanism to determine the *relative value* of the transaction fee. For example, let us assume we had a perfect oracle to inform us that the relative value of BTC is 200 AKT, and that of ETH is 0.4 AKT. Suppose we have two transactions of equal gas cost, and the transaction fees on them are 10 BTC and 6000 ETH, respectively. The first transaction's fee is equivalent to 2000 (10 x 200) AKT and the second transaction's fee is equivalent to 2400 (6000 x 0.4) AKT. Then the second transaction will have a higher priority.
+In order to prioritize transactions when multiple tokens are used, validators need a mechanism to determine the *relative value* of the transaction fee. For example, let us assume we had an oracle to inform us that the relative value of BTC is 200 AKT, and that of ETH is 0.4 AKT. Suppose we have two transactions of equal gas cost, and the transaction fees on them are 10 BTC and 6000 ETH, respectively. The first transaction's fee is equivalent to 2000 (10 x 200) AKT and the second transaction's fee is equivalent to 2400 (6000 x 0.4) AKT. The second transaction will have a higher priority.
 
 In order to get these relative values without using an oracle, we can employ a *Consensus Weighted Median using Localized Validator Configuration* [@cosmosEcon] mechanism.
 
