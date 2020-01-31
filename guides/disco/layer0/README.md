@@ -1,6 +1,17 @@
 # Layer 0
 
-Core Infrastructure scripts for managing physical machines. This module includes terraform and related scripts.
+Layer 0 includes core infrastructure scripts for managing physical machines such as terraform and related scripts. Layer 0 is organized in **profiles**.
+
+The default profile `packet` provisions a single node on Packet and configures the DNS using Cloudflare.
+
+To add profile create a directory under `layer0` with the name of the profile and create a `Make` file with the below tasks:
+
+```
+layer0-init
+layer0-plan
+layer0-apply
+layer0-destroy
+```
 
 ## Commands
 
@@ -12,7 +23,7 @@ make layer0-<action>-[stack]
 
 Examples:
 
- - Initiallize default stack, `packet`:
+- Initiallize default stack, `packet`:
     ```shell
     make layer0-init
     ```

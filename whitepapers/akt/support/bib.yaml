@@ -22,6 +22,10 @@ references:
   id: cisco
   title: 'Cisco Global Cloud Index: Forecast and Methodology, 2016–2021 White Paper'
   URL: 'https://www.cisco.com/c/en/us/solutions/collateral/service-provider/global-cloud-index-gci/white-paper-c11-738085.html'
+- type: article-journal
+  id: computerworld
+  title: 'Data centers decline as users turn to rented servers'
+  URL: 'https://www.computerworld.com/article/3188885/data-centers-decline-as-users-turn-to-rented-servers.html'
 - id: nytimes
   type: article-journal
   title: 'Prime Leverage: How Amazon Wields Power in the Technology World'

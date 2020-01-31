@@ -42,10 +42,6 @@ EOF
 
 The `tfstate` and other sensitive information is stored in a database that holds data specific to this `STACK`. To setup the database then run the following:
 
-```
-git clone keybase://team/akashnet/dentacoin-dev data
-```
-
 ### Setup the directory structure:
 
 ```shell

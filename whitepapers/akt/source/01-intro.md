@@ -41,17 +41,3 @@ Provider
 Tenant
 
 :   Tenants lease computing cycles offered by providers for a market-driven price set using a reverse auction process (described in section below).
-
-## Marketplace Overview
-
-A unit of computing (*CPU, Memory, Disk*) is leased as a container on Akash. A container [@container] is a standard unit of software that packages up code and all its dependencies, so the application runs quickly and reliably from one computing environment to another. A container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings.
-
-Any one with a physical machine (ie, computer, server) can divide the machine's resources into containers using a process called virtualization. Docker is a company that provides widely adopted container virtualization technology, and it is common to refer to containers as "docker images." The relation between a physical computer and a container is illustrated in [@fig:containers]).
-
-All marketplace transactions are on the Akash blockchain. To lease a container, the *tenant* (developer) requests a deployment by specifying the type(s) of unit(s), and the quantity of each type of unit. To specify a type of unit, the tenant specifies attributes to match, such as region (e.g. US) or privacy features (e.g. Intel SGX). The tenant also specifies the maximum price they are willing to pay for each type of unit.
-
-An *order* is created in the order book (upon acceptance by a validator).
-
-The *provider(s)* that match all the requirements of the order then place a *bid* by competing on price. The provider that bids the lowest amount on the order wins, upon which a *lease* is created between the tenant and the provider for the order. For every successful lease, a portion of the lease amount (*Take Fee*) is paid to the stakers as describe in [@sec:take-fee].
-
-![A simple illustration of containerized applications in relation to the physical servers](figures/containers.svg){#fig:containers}
