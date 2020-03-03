@@ -1,12 +1,16 @@
 # Running a Node
 
-## Generate Genesis by Initiating the Chain
+## Initiating the Chain
 
-```
-akashd init moniker --chain-id devnet
+Initiating the chain by providing a moniker and chain id will generate a genesis file using the below command
+
+
+```sh
+akashd init node-0 --chain-id akash-testnet
 ```
 
-outputs:
+You will see an output similar to:
+
 
 Genesis file is generated to `$HOME/.akashd/genesis.json`
 
