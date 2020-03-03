@@ -1,142 +1,177 @@
-# Running a Node
+# Akash Incentivized Testnet
+
+This section contains instructions to participate in the upcoming Akash Incentivized Testnet. 
+
+Note: This section is a work in progress and expect significant changes as we approach the release version.
+
+## Installation
+
+Install the pre-release version by compiling from the source code. For details on dependencies, please see [README.md](https://github.com/ovrclk/akash#dependencies). Fetch the source repo using:
+
+```sh
+go get -u github.com/ovrclk/akash
+```
+
+Install using make:
+
+```
+cd $GOPATH/src/github.com/ovrclk/akash
+make install
+```
+
+Please ensure `$GOPATH/bin` in in your path where the binaries will be installed to.
 
 ## Initiating the Chain
 
 Initiating the chain by providing a moniker and chain id will generate a genesis file using the below command
 
-
 ```sh
-akashd init node-0 --chain-id akash-testnet
+akashd init node0 --chain-id devnet
 ```
 
-You will see an output similar to:
+The above command will create the necessary configurations under `$HOME/.akashd` with the below structure:
 
+```
+├── config
+│   ├── app.toml
+│   ├── config.toml
+│   ├── genesis.json
+│   ├── node_key.json
+│   └── priv_validator_key.json
+└── data
+    └── priv_validator_state.json
+```
 
-Genesis file is generated to `$HOME/.akashd/genesis.json`
+The Genesis file is generated under `$HOME/.akashd/config/genesis.json` will have a structure similar to:
 
 ```json
 {
-  "genesis_time": "2020-03-03T03:17:05.784224Z",
-  "chain_id": "devnet",
-  "consensus_params": {
-    "block": {
-      "max_bytes": "22020096",
-      "max_gas": "-1",
-      "time_iota_ms": "1000"
-    },
-    "evidence": {
-      "max_age_num_blocks": "100000",
-      "max_age_duration": "172800000000000"
-    },
-    "validator": {
-      "pub_key_types": [
-        "ed25519"
-      ]
-    }
-  },
-  "app_hash": "",
-  "app_state": {
+  "app_message": {
     "auth": {
+      "accounts": [],
       "params": {
         "max_memo_characters": "256",
-        "tx_sig_limit": "7",
-        "tx_size_cost_per_byte": "10",
         "sig_verify_cost_ed25519": "590",
-        "sig_verify_cost_secp256k1": "1000"
-      },
-      "accounts": []
-    },
-    "supply": {
-      "supply": []
-    },
-    "distribution": {
-      "params": {
-        "community_tax": "0.020000000000000000",
-        "base_proposer_reward": "0.010000000000000000",
-        "bonus_proposer_reward": "0.040000000000000000",
-        "withdraw_addr_enabled": true
-      },
-      "fee_pool": {
-        "community_pool": []
-      },
-      "delegator_withdraw_infos": [],
-      "previous_proposer": "",
-      "outstanding_rewards": [],
-      "validator_accumulated_commissions": [],
-      "validator_historical_rewards": [],
-      "validator_current_rewards": [],
-      "delegator_starting_infos": [],
-      "validator_slash_events": []
-    },
-    "deployment": {
-      "deployments": null
+        "sig_verify_cost_secp256k1": "1000",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10"
+      }
     },
     "bank": {
       "send_enabled": true
     },
-    "staking": {
-      "params": {
-        "unbonding_time": "1814400000000000",
-        "max_validators": 100,
-        "max_entries": 7,
-        "historical_entries": 0,
-        "bond_denom": "stake"
-      },
-      "last_total_power": "0",
-      "last_validator_powers": null,
-      "validators": null,
-      "delegations": null,
-      "unbonding_delegations": null,
-      "redelegations": null,
-      "exported": false
+    "deployment": {
+      "deployments": null
     },
-    "slashing": {
-      "params": {
-        "signed_blocks_window": "100",
-        "min_signed_per_window": "0.500000000000000000",
-        "downtime_jail_duration": "600000000000",
-        "slash_fraction_double_sign": "0.050000000000000000",
-        "slash_fraction_downtime": "0.010000000000000000"
+    "distribution": {
+      "delegator_starting_infos": [],
+      "delegator_withdraw_infos": [],
+      "fee_pool": {
+        "community_pool": []
       },
-      "signing_infos": {},
-      "missed_blocks": {}
+      "outstanding_rewards": [],
+      "params": {
+        "base_proposer_reward": "0.010000000000000000",
+        "bonus_proposer_reward": "0.040000000000000000",
+        "community_tax": "0.020000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "previous_proposer": "",
+      "validator_accumulated_commissions": [],
+      "validator_current_rewards": [],
+      "validator_historical_rewards": [],
+      "validator_slash_events": []
     },
     "genutil": {
       "gentxs": []
     },
-    "params": null,
+    "market": {
+      "leases": null,
+      "orders": null
+    },
     "mint": {
       "minter": {
-        "inflation": "0.130000000000000000",
-        "annual_provisions": "0.000000000000000000"
+        "annual_provisions": "0.000000000000000000",
+        "inflation": "0.130000000000000000"
       },
       "params": {
-        "mint_denom": "stake",
-        "inflation_rate_change": "0.130000000000000000",
+        "blocks_per_year": "6311520",
+        "goal_bonded": "0.670000000000000000",
         "inflation_max": "0.200000000000000000",
         "inflation_min": "0.070000000000000000",
-        "goal_bonded": "0.670000000000000000",
-        "blocks_per_year": "6311520"
+        "inflation_rate_change": "0.130000000000000000",
+        "mint_denom": "stake"
       }
     },
-    "market": {
-      "orders": null,
-      "leases": null
-    },
+    "params": null,
     "provider": {
       "providers": null
+    },
+    "slashing": {
+      "missed_blocks": {},
+      "params": {
+        "downtime_jail_duration": "600000000000",
+        "min_signed_per_window": "0.500000000000000000",
+        "signed_blocks_window": "100",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.010000000000000000"
+      },
+      "signing_infos": {}
+    },
+    "staking": {
+      "delegations": null,
+      "exported": false,
+      "last_total_power": "0",
+      "last_validator_powers": null,
+      "params": {
+        "bond_denom": "stake",
+        "historical_entries": 0,
+        "max_entries": 7,
+        "max_validators": 100,
+        "unbonding_time": "1814400000000000"
+      },
+      "redelegations": null,
+      "unbonding_delegations": null,
+      "validators": null
+    },
+    "supply": {
+      "supply": []
     }
-  }
+  },
+  "chain_id": "devnet",
+  "gentxs_dir": "",
+  "moniker": "node0",
+  "node_id": "ce0f230d7f3223fa48f6a070f813bfea33bfa27d"
 }
-
 ```
 
-## Create Key
+### Configure defaults
+
+```sh
+akash config chain-id devnet 
+akash config output json
+akash config indent true
+akash config trust-node true
+```
+
+The above commands will customize the `akash` utility with configuration saved under `$HOME/.akash/config/config.toml` and looks similar to:
+
+```toml
+chain-id = "devnet"
+indent = true
+output = "json"
+trust-node = true
+```
+
+## Add a Master Account to Genesis
+
+Generate a key using:
 
 ```sh
 akash keys add master
 ```
-outputs:
+
+Output looks similar to:
 
 ```
 - name: master
@@ -154,39 +189,224 @@ It is the only way to recover your account if you ever forget your password.
 average move castle eager beauty focus sugar gesture method biology brick lonely spice grunt clay sniff sketch artist cigar burden occur spider shiver exit
 ```
 
-## Attach Genesis Account
-
-Add 100M tokens to genesis master account
+Add 100M tokens to genesis Master account
 
 ```sh
-akashd add-genesis-account master 100000000stake
+akashd add-genesis-account master 100000000akash,100000000stake
 ```
 
-## Generate Transaction
+## Create a Validator
+
+Create a genesis transaction to create a validator.
 
 ```sh
 akashd gentx --name master
 ```
 
-Outputs:
+Output will be similar to:
 
 ```
 Genesis transaction written to "/Users/gosuri/.akashd/config/gentx/gentx-53f9f81b76c350196cfc816b8cdf001e199e88ee.json
 ```
 
-## Collect Transaction
+## Collect The Genesis Transaction
 
 ```sh
 akashd collect-gentxs
 ```
 
-## Start the Node
+Output will be similar to:
+
+```json
+{
+  "app_message": {
+    "auth": {
+      "accounts": [
+        {
+          "type": "cosmos-sdk/Account",
+          "value": {
+            "account_number": 0,
+            "address": "akash12hs4sudwjxvucjd204uug8vv2zu3z2fqz3jlqz",
+            "coins": [
+              {
+                "amount": "100000000",
+                "denom": "akash"
+              },
+              {
+                "amount": "100000000",
+                "denom": "stake"
+              }
+            ],
+            "public_key": "",
+            "sequence": 0
+          }
+        }
+      ],
+      "params": {
+        "max_memo_characters": "256",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10"
+      }
+    },
+    "bank": {
+      "send_enabled": true
+    },
+    "deployment": {
+      "deployments": null
+    },
+    "distribution": {
+      "delegator_starting_infos": [],
+      "delegator_withdraw_infos": [],
+      "fee_pool": {
+        "community_pool": []
+      },
+      "outstanding_rewards": [],
+      "params": {
+        "base_proposer_reward": "0.010000000000000000",
+        "bonus_proposer_reward": "0.040000000000000000",
+        "community_tax": "0.020000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "previous_proposer": "",
+      "validator_accumulated_commissions": [],
+      "validator_current_rewards": [],
+      "validator_historical_rewards": [],
+      "validator_slash_events": []
+    },
+    "genutil": {
+      "gentxs": [
+        {
+          "type": "cosmos-sdk/StdTx",
+          "value": {
+            "fee": {
+              "amount": [],
+              "gas": "200000"
+            },
+            "memo": "ce0f230d7f3223fa48f6a070f813bfea33bfa27d@10.0.1.9:26656",
+            "msg": [
+              {
+                "type": "cosmos-sdk/MsgCreateValidator",
+                "value": {
+                  "commission": {
+                    "max_change_rate": "0.010000000000000000",
+                    "max_rate": "0.200000000000000000",
+                    "rate": "0.100000000000000000"
+                  },
+                  "delegator_address": "akash12hs4sudwjxvucjd204uug8vv2zu3z2fqz3jlqz",
+                  "description": {
+                    "details": "",
+                    "identity": "",
+                    "moniker": "node0",
+                    "security_contact": "",
+                    "website": ""
+                  },
+                  "min_self_delegation": "1",
+                  "pubkey": "akashvalconspub1zcjduepq285g7q754xtqa38cwxnkmmqzkfvy4e0zhu3mkelswp3d6j8rx8pq9ag7h3",
+                  "validator_address": "akashvaloper12hs4sudwjxvucjd204uug8vv2zu3z2fqgnuesg",
+                  "value": {
+                    "amount": "100000000",
+                    "denom": "stake"
+                  }
+                }
+              }
+            ],
+            "signatures": [
+              {
+                "pub_key": {
+                  "type": "tendermint/PubKeySecp256k1",
+                  "value": "AtMoRg/d8LeEa0WY0FlQKs2gEMOZ8jKlEVaf4hN7AXRJ"
+                },
+                "signature": "HN4TaaSvl5BSDP6jadiAXhkVXbOzNSr/JyQPYFJoChlR/4pXYQ6yr1POupXkduXJL0TxtjNVq5K9CSuxJO5iaQ=="
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "market": {
+      "leases": null,
+      "orders": null
+    },
+    "mint": {
+      "minter": {
+        "annual_provisions": "0.000000000000000000",
+        "inflation": "0.130000000000000000"
+      },
+      "params": {
+        "blocks_per_year": "6311520",
+        "goal_bonded": "0.670000000000000000",
+        "inflation_max": "0.200000000000000000",
+        "inflation_min": "0.070000000000000000",
+        "inflation_rate_change": "0.130000000000000000",
+        "mint_denom": "stake"
+      }
+    },
+    "params": null,
+    "provider": {
+      "providers": null
+    },
+    "slashing": {
+      "missed_blocks": {},
+      "params": {
+        "downtime_jail_duration": "600000000000",
+        "min_signed_per_window": "0.500000000000000000",
+        "signed_blocks_window": "100",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.010000000000000000"
+      },
+      "signing_infos": {}
+    },
+    "staking": {
+      "delegations": null,
+      "exported": false,
+      "last_total_power": "0",
+      "last_validator_powers": null,
+      "params": {
+        "bond_denom": "stake",
+        "historical_entries": 0,
+        "max_entries": 7,
+        "max_validators": 100,
+        "unbonding_time": "1814400000000000"
+      },
+      "redelegations": null,
+      "unbonding_delegations": null,
+      "validators": null
+    },
+    "supply": {
+      "supply": []
+    }
+  },
+  "chain_id": "devnet",
+  "gentxs_dir": "/Users/gosuri/.akashd/config/gentx",
+  "moniker": "node0",
+  "node_id": "ce0f230d7f3223fa48f6a070f813bfea33bfa27d"
+}
+```
+
+## Validate Genesis and Start the Node
+
+Finally, validate the genesis file and start the akash node
+
+```sh
+akashd validate-genesis
+```
+
+You should see an output similar to:
+
+```
+validating genesis file at /Users/gosuri/.akashd/config/genesis.json
+File at /Users/gosuri/.akashd/config/genesis.json is a valid genesis file
+```
+
+Start the node using:
 
 ```sh
 akashd start
 ```
 
-Outputs:
+Output should be similar to:
 
 ```
 I[2020-03-02|20:07:59.087] starting ABCI with Tendermint                module=main
@@ -202,4 +422,51 @@ I[2020-03-02|20:08:14.519] Committed state                              module=s
 I[2020-03-02|20:08:19.570] processed active leases                      module=main count=0
 I[2020-03-02|20:08:19.570] Executed block                               module=state height=4 validTxs=0 invalidTxs=0
 I[2020-03-02|20:08:19.581] Committed state                              module=state height=4 txs=0 appHash=A7D6DE44F9120351708DECF3B2E4DC8A55F94E0DBB27C887EED7085AFD07DFC8
+```
+
+## Check Status
+
+In a separate terminal, run the below to check status of the chain:
+
+```
+akash status
+```
+
+You should see a response similar to:
+
+```json
+{
+  "node_info": {
+    "protocol_version": {
+      "p2p": "7",
+      "block": "10",
+      "app": "0"
+    },
+    "id": "ce0f230d7f3223fa48f6a070f813bfea33bfa27d",
+    "listen_addr": "tcp://0.0.0.0:26656",
+    "network": "devnet",
+    "version": "0.33.0",
+    "channels": "4020212223303800",
+    "moniker": "node0",
+    "other": {
+      "tx_index": "on",
+      "rpc_address": "tcp://127.0.0.1:26657"
+    }
+  },
+  "sync_info": {
+    "latest_block_hash": "421502A91936647AEBDC9D69B2C453954797AA126EB1CD474608332109E17FFA",
+    "latest_app_hash": "28C2215A4AE011FD0D5A51CEE5A99CAF3D4364DCBB34CCC9C259C10BE1BDCA11",
+    "latest_block_height": "59",
+    "latest_block_time": "2020-03-03T21:04:42.676534Z",
+    "catching_up": false
+  },
+  "validator_info": {
+    "address": "9D8D54A645B0FE913612C187A72F287532E9220D",
+    "pub_key": {
+      "type": "tendermint/PubKeyEd25519",
+      "value": "UeiPA9Splg7E+HGnbewCslhK5eK/I7tn8HBi3UjjMcI="
+    },
+    "voting_power": "100"
+  }
+}
 ```

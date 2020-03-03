@@ -19,9 +19,9 @@
 
 * [Sell Your Spare Capacity using Kubernetes](providers/kube/README.md)
 
-## Testnet 2
+## Incentivized Testnet 
 
-* [Docs](testnet2/README.md)
+* [Usage](testnet2/README.md)
 
 ## Usage
 
