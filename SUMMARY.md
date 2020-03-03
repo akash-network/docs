@@ -7,6 +7,7 @@
 * [Introduction](overview/README.md)
 * [Design](design/README.md)
 
+
 ## Guides
 
 * [Install Akash Suite](guides/install.md)
@@ -17,6 +18,10 @@
 ## Providers
 
 * [Sell Your Spare Capacity using Kubernetes](providers/kube/README.md)
+
+## Testnet 2
+
+* [Docs](testnet2/README.md)
 
 ## Usage
 
