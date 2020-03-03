@@ -11,7 +11,7 @@
 ## Guides
 
 * [Install Akash Suite](guides/install.md)
-* [Get Started on Testnet](guides/testnet.md)
+* [Get Started on Devnet](guides/devnet.md)
 * [Deploy a Riot Chat Client](guides/deploy/riot.md)
 * [Deploy Matrix Messaging Server](guides/matrix/README.md)
 
@@ -21,7 +21,7 @@
 
 ## Incentivized Testnet 
 
-* [Usage](testnet2/README.md)
+* [Running a Validator Node](testnet2/README.md)
 
 ## Usage
 
