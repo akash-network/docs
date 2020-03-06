@@ -45,25 +45,12 @@ Global Flags:
 Sign and send tokens to other account.
 >**Usage**
 
-`akash tx send <from-account> <to-account> <amount-with-denom>`
+`akash tx send <from-account> <to-account> <amount-with-denom> -y -o json`
 > **Example**
 ```
-$ akash tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000stake
-{"chain_id":"akashchain","account_number":"3","sequence":"1","fee":{"amount":[],"gas":"200000"},"msgs":[{"type":"cosmos-sdk/MsgSend","value":{"from_address":"akash1qgjla78dk2yk2eh6dmjeejz6m374ykdtt20r66","to_address":"akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax","amount":[{"denom":"stake","amount":"10000000"}]}}],"memo":""}
+$ akash tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000stake -y -o json
 
-confirm transaction before signing and broadcasting [y/N]: y
-height: 0
-txhash: 116ED246AFF9F9B58036AECAA5EFE81AA7A788CC625CC2A4ADAFC68378834413
-codespace: ""
-code: 0
-data: ""
-rawlog: '[]'
-logs: []
-info: ""
-gaswanted: 0
-gasused: 0
-tx: null
-timestamp: ""
+{"height":"0","txhash":"116ED246AFF9F9B58036AECAA5EFE81AA7A788CC625CC2A4ADAFC68378834413","raw_log":"[]"}
 ```
 >**More Info**
 ```
@@ -104,26 +91,13 @@ Global Flags:
 Delegate some tokens to validator i.e., bonding tokens.
 > **Usage**
 ```
-$ akash tx staking delegate <validator-address> <amout-with-denom> --from <from-account>
+$ akash tx staking delegate <validator-address> <amount-with-denom> --from <from-account> -y -o json
 ```
 > **Example**
 ```
-$ akash tx staking delegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000stake --from alice
-{"chain_id":"akashchain","account_number":"6","sequence":"0","fee":{"amount":[],"gas":"200000"},"msgs":[{"type":"cosmos-sdk/MsgDelegate","value":{"delegator_address":"akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax","validator_address":"akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s","amount":{"denom":"stake","amount":"1000000"}}}],"memo":""}
+$ akash tx staking delegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000stake --from alice -y -o json
 
-confirm transaction before signing and broadcasting [y/N]: y
-height: 0
-txhash: F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7
-codespace: ""
-code: 0
-data: ""
-rawlog: '[]'
-logs: []
-info: ""
-gaswanted: 0
-gasused: 0
-tx: null
-timestamp: ""
+{"height":"0","txhash":"F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7","raw_log":"[]"}
 ```
 
 > **More info**
@@ -161,6 +135,237 @@ Global Flags:
       --trace             print out full stack trace on errors
 ```
 
+### Redelegate Tokens
+Redelegate some tokens from one validator to another.
+> **Usage**
+```
+$ akash tx staking redelegate <src-validator-address> <dest-validator-address> <amount-with-denom> --from <from-account> -y -o json
+```
+> **Example**
+```
+$ akash tx staking redelegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr 1000000stake --from alice -y -o json
+
+{"height":"0","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","raw_log":"[]"}
+```
+
+> **More info**
+```
+$ akash tx staking redelegate -h
+Redelegate an amount of illiquid staking tokens from one validator to another.
+
+Example:
+$ akash tx staking redelegate cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj cosmosvaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 100stake --from mykey
+
+Usage:
+  akash tx staking redelegate [src-validator-addr] [dst-validator-addr] [amount] [flags]
+
+Flags:
+  -a, --account-number uint      The account number of the signing account (offline mode only)
+  -b, --broadcast-mode string    Transaction broadcasting mode (sync|async|block) (default "sync")
+      --dry-run                  ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it
+      --fees string              Fees to pay along with transaction; eg: 10uatom
+      --from string              Name or address of private key with which to sign
+      --gas string               gas limit to set per-transaction; set to "auto" to calculate required gas automatically (default 200000) (default "200000")
+      --gas-adjustment float     adjustment factor to be multiplied against the estimate returned by the tx simulation; if the gas limit is set manually this flag is ignored  (default 1)
+      --gas-prices string        Gas prices to determine the transaction fee (e.g. 10uatom)
+      --generate-only            Build an unsigned transaction and write it to STDOUT (when enabled, the local Keybase is not accessible and the node operates offline)
+  -h, --help                     help for redelegate
+      --indent                   Add indent to JSON response
+      --keyring-backend string   Select keyring's backend (os|file|test) (default "os")
+      --ledger                   Use a connected Ledger device
+      --memo string              Memo to send along with transaction
+      --node string              <host>:<port> to tendermint rpc interface for this chain (default "tcp://localhost:26657")
+  -s, --sequence uint            The sequence number of the signing account (offline mode only)
+      --trust-node               Trust connected full node (don't verify proofs for responses) (default true)
+  -y, --yes                      Skip tx broadcasting prompt confirmation
+
+Global Flags:
+  -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
+      --home string       directory for config and data (default "/home/vitwit/.akash")
+  -o, --output string     Output format (text|json) (default "text")
+      --trace             print out full stack trace on errors
+```
+
+### Undelegate(unbond) Tokens
+Undelegate some tokens from validator i.e., unbonding tokens.
+> **Usage**
+```
+$ akash tx staking unbond <validator-address> <amount-with-denom> --from <from-account> -y -o json
+```
+> **Example**
+```
+$ akash tx staking unbond akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000stake --from alice -y -o json
+
+{"height":"0","txhash":"F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7","raw_log":"[]"}
+```
+
+> **More info**
+```
+$ akash tx staking unbond -h
+Unbond an amount of bonded shares from a validator.
+
+Example:
+$ akash tx staking unbond cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 100stake --from mykey
+
+Usage:
+  akash tx staking unbond [validator-addr] [amount] [flags]
+
+Flags:
+  -a, --account-number uint      The account number of the signing account (offline mode only)
+  -b, --broadcast-mode string    Transaction broadcasting mode (sync|async|block) (default "sync")
+      --dry-run                  ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it
+      --fees string              Fees to pay along with transaction; eg: 10uatom
+      --from string              Name or address of private key with which to sign
+      --gas string               gas limit to set per-transaction; set to "auto" to calculate required gas automatically (default 200000) (default "200000")
+      --gas-adjustment float     adjustment factor to be multiplied against the estimate returned by the tx simulation; if the gas limit is set manually this flag is ignored  (default 1)
+      --gas-prices string        Gas prices to determine the transaction fee (e.g. 10uatom)
+      --generate-only            Build an unsigned transaction and write it to STDOUT (when enabled, the local Keybase is not accessible and the node operates offline)
+  -h, --help                     help for unbond
+      --indent                   Add indent to JSON response
+      --keyring-backend string   Select keyring's backend (os|file|test) (default "os")
+      --ledger                   Use a connected Ledger device
+      --memo string              Memo to send along with transaction
+      --node string              <host>:<port> to tendermint rpc interface for this chain (default "tcp://localhost:26657")
+  -s, --sequence uint            The sequence number of the signing account (offline mode only)
+      --trust-node               Trust connected full node (don't verify proofs for responses) (default true)
+  -y, --yes                      Skip tx broadcasting prompt confirmation
+
+Global Flags:
+  -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
+      --home string       directory for config and data (default "/home/vitwit/.akash")
+  -o, --output string     Output format (text|json) (default "text")
+      --trace             print out full stack trace on errors
+```
+
+### Withdraw Rewards
+Withdraw rewards from validator
+> **Usage**
+```
+$ akash tx distribution withdraw-rewards <validator-address> <amount-with-denom> --from <from-account> -y -o json
+```
+> **Example**
+```
+$ akash tx distribution withdraw-rewards akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr --from alice -y -o json
+
+{"height":"0","txhash":"1BBB4A7A4D245C7534F366BABCE5BDD73776FB0430B3A241BFEEEF99445C52C3","raw_log":"[]"}
+```
+
+> **More info**
+```
+$ akash tx distribution withdraw-rewards -h
+Withdraw rewards from a given delegation address,
+and optionally withdraw validator commission if the delegation address given is a validator operator.
+
+Example:
+$ akash tx distribution withdraw-rewards cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj --from mykey
+
+### Withdraw commission
+$ akash tx distribution withdraw-rewards cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj --from mykey --commission
+
+Usage:
+  akash tx distribution withdraw-rewards [validator-addr] [flags]
+
+Flags:
+  -a, --account-number uint      The account number of the signing account (offline mode only)
+  -b, --broadcast-mode string    Transaction broadcasting mode (sync|async|block) (default "sync")
+      --commission               also withdraw validator's commission
+      --dry-run                  ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it
+      --fees string              Fees to pay along with transaction; eg: 10uatom
+      --from string              Name or address of private key with which to sign
+      --gas string               gas limit to set per-transaction; set to "auto" to calculate required gas automatically (default 200000) (default "200000")
+      --gas-adjustment float     adjustment factor to be multiplied against the estimate returned by the tx simulation; if the gas limit is set manually this flag is ignored  (default 1)
+      --gas-prices string        Gas prices to determine the transaction fee (e.g. 10uatom)
+      --generate-only            Build an unsigned transaction and write it to STDOUT (when enabled, the local Keybase is not accessible and the node operates offline)
+  -h, --help                     help for withdraw-rewards
+      --indent                   Add indent to JSON response
+      --keyring-backend string   Select keyring's backend (os|file|test) (default "os")
+      --ledger                   Use a connected Ledger device
+      --memo string              Memo to send along with transaction
+      --node string              <host>:<port> to tendermint rpc interface for this chain (default "tcp://localhost:26657")
+  -s, --sequence uint            The sequence number of the signing account (offline mode only)
+      --trust-node               Trust connected full node (don't verify proofs for responses) (default true)
+  -y, --yes                      Skip tx broadcasting prompt confirmation
+
+Global Flags:
+  -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
+      --home string       directory for config and data (default "/home/vitwit/.akash")
+  -o, --output string     Output format (text|json) (default "text")
+      --trace             print out full stack trace on errors
+```
+
+### Query Rewards
+Query all rewards earned by a delegator, optionally restrict to rewards from a single validator.
+> **Usage**
+```
+$ akash query distribution rewards <delegator-address> [<validator-address>] -o json
+```
+> **Examples**
+```
+$ akash query distribution rewards akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr -o json
+
+[{"denom":"stake","amount":"69009.444000000000000000"}]
+
+$ akash query distribution rewards akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
+
+{"rewards":[{"validator_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","reward":[{"denom":"stake","amount":"1089622.800000000000000000"}]}],"total":[{"denom":"stake","amount":"1089622.800000000000000000"}]}
+```
+
+> **More info**
+```
+$ akash query distribution rewards -h
+
+Usage:
+  akash query distribution rewards [delegator-addr] [<validator-addr>] [flags]
+
+Flags:
+      --height int    Use a specific height to query state at (this can error if the node is pruning state)
+  -h, --help          help for rewards
+      --indent        Add indent to JSON response
+      --ledger        Use a connected Ledger device
+      --node string   <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657")
+      --trust-node    Trust connected full node (don't verify proofs for responses)
+
+Global Flags:
+  -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
+      --home string       directory for config and data (default "/home/vitwit/.akash")
+  -o, --output string     Output format (text|json) (default "text")
+      --trace             print out full stack trace on errors
+```
+
+### Query Balance
+Query account balance of given account address.
+> **Usage**
+```
+$ akash query account <account-address> -o json
+```
+> **Examples**
+```
+$ akash query account akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
+
+{"type":"cosmos-sdk/Account","value":{"address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","coins":[{"denom":"stake","amount":"99870156179"}],"public_key":"akashpub1addwnpepq05y9ye9nhsutpks5rlp5q93r3pefnjew4e9u4d7sxsqaa2gcpwug9szhl2","account_number":3,"sequence":5}}
+```
+
+> **More info**
+```
+$ akash query account -h
+
+Usage:
+  akash query account [address] [flags]
+
+Flags:
+      --height int    Use a specific height to query state at (this can error if the node is pruning state)
+  -h, --help          help for account
+      --indent        Add indent to JSON response
+      --ledger        Use a connected Ledger device
+      --node string   <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657")
+      --trust-node    Trust connected full node (don't verify proofs for responses)
+
+Global Flags:
+  -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
+      --home string       directory for config and data (default "/home/vitwit/.akash")
+  -o, --output string     Output format (text|json) (default "text")
+      --trace             print out full stack trace on errors
+```
 
 ### Recover Key
 Provide seed phrase to recover existing key instead of creating.
