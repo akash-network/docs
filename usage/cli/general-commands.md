@@ -87,6 +87,38 @@ Global Flags:
       --trace             print out full stack trace on errors
 ```
 
+### Query Transaction
+Query for a transaction by hash in a committed block.
+> **Usage**
+```
+$ akash query tx <txhash> -o json
+```
+> **Examples**
+```
+$ akash query tx 295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E -o json
+
+{"height":"338","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","codespace":"staking","code":3,"raw_log":"validator does not exist: failed to execute message; message index: 0","gas_wanted":"200000","gas_used":"35496","tx":{"type":"cosmos-sdk/StdTx","value":{"msg":[{"type":"cosmos-sdk/MsgBeginRedelegate","value":{"delegator_address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","validator_src_address":"akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s","validator_dst_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","amount":{"denom":"stake","amount":"10000"}}}],"fee":{"amount":[],"gas":"200000"},"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"A+hCkyWd4cWG0KD+GgCxHEOUzll1cl5VvoGgDvVIwF3E"},"signature":"XI1XhIXlSCPnQVHQamu+sbqiZxAxLM8OnXSF2gqNVkkpP1bi6Au3v8N4EUAaPrZGYigechb2ekt6MUEjrFWdgw=="}],"memo":""}},"timestamp":"2020-03-06T10:39:57Z"}
+```
+
+> **More info**
+```
+$ akash query tx -h
+
+Usage:
+  akash query tx [hash] [flags]
+
+Flags:
+  -h, --help          help for tx
+  -n, --node string   Node to connect to (default "tcp://localhost:26657")
+      --trust-node    Trust connected full node (don't verify proofs for responses)
+
+Global Flags:
+  -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
+      --home string       directory for config and data (default "/home/vitwit/.akash")
+  -o, --output string     Output format (text|json) (default "text")
+      --trace             print out full stack trace on errors
+```
+
 ### Bond(Stake) Tokens
 Delegate some tokens to validator i.e., bonding tokens.
 > **Usage**
