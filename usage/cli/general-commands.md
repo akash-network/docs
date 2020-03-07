@@ -48,7 +48,7 @@ Sign and send tokens to other account.
 `akash tx send <from-account> <to-account> <amount-with-denom> -y -o json`
 > **Example**
 ```
-$ akash tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000stake -y -o json
+$ akash tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000akt -y -o json
 
 {"height":"0","txhash":"116ED246AFF9F9B58036AECAA5EFE81AA7A788CC625CC2A4ADAFC68378834413","raw_log":"[]"}
 ```
@@ -97,7 +97,7 @@ $ akash query tx <txhash> -o json
 ```
 $ akash query tx 295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E -o json
 
-{"height":"338","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","codespace":"staking","code":3,"raw_log":"validator does not exist: failed to execute message; message index: 0","gas_wanted":"200000","gas_used":"35496","tx":{"type":"cosmos-sdk/StdTx","value":{"msg":[{"type":"cosmos-sdk/MsgBeginRedelegate","value":{"delegator_address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","validator_src_address":"akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s","validator_dst_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","amount":{"denom":"stake","amount":"10000"}}}],"fee":{"amount":[],"gas":"200000"},"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"A+hCkyWd4cWG0KD+GgCxHEOUzll1cl5VvoGgDvVIwF3E"},"signature":"XI1XhIXlSCPnQVHQamu+sbqiZxAxLM8OnXSF2gqNVkkpP1bi6Au3v8N4EUAaPrZGYigechb2ekt6MUEjrFWdgw=="}],"memo":""}},"timestamp":"2020-03-06T10:39:57Z"}
+{"height":"338","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","codespace":"staking","code":3,"raw_log":"validator does not exist: failed to execute message; message index: 0","gas_wanted":"200000","gas_used":"35496","tx":{"type":"cosmos-sdk/StdTx","value":{"msg":[{"type":"cosmos-sdk/MsgBeginRedelegate","value":{"delegator_address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","validator_src_address":"akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s","validator_dst_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","amount":{"denom":"akt","amount":"10000"}}}],"fee":{"amount":[],"gas":"200000"},"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"A+hCkyWd4cWG0KD+GgCxHEOUzll1cl5VvoGgDvVIwF3E"},"signature":"XI1XhIXlSCPnQVHQamu+sbqiZxAxLM8OnXSF2gqNVkkpP1bi6Au3v8N4EUAaPrZGYigechb2ekt6MUEjrFWdgw=="}],"memo":""}},"timestamp":"2020-03-06T10:39:57Z"}
 ```
 
 > **More info**
@@ -127,7 +127,7 @@ $ akash tx staking delegate <validator-address> <amount-with-denom> --from <from
 ```
 > **Example**
 ```
-$ akash tx staking delegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000stake --from alice -y -o json
+$ akash tx staking delegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000akt --from alice -y -o json
 
 {"height":"0","txhash":"F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7","raw_log":"[]"}
 ```
@@ -175,7 +175,7 @@ $ akash tx staking redelegate <src-validator-address> <dest-validator-address> <
 ```
 > **Example**
 ```
-$ akash tx staking redelegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr 1000000stake --from alice -y -o json
+$ akash tx staking redelegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr 1000000akt --from alice -y -o json
 
 {"height":"0","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","raw_log":"[]"}
 ```
@@ -186,7 +186,7 @@ $ akash tx staking redelegate -h
 Redelegate an amount of illiquid staking tokens from one validator to another.
 
 Example:
-$ akash tx staking redelegate cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj cosmosvaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 100stake --from mykey
+$ akash tx staking redelegate cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj cosmosvaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 100akt --from mykey
 
 Usage:
   akash tx staking redelegate [src-validator-addr] [dst-validator-addr] [amount] [flags]
@@ -226,7 +226,7 @@ $ akash tx staking unbond <validator-address> <amount-with-denom> --from <from-a
 ```
 > **Example**
 ```
-$ akash tx staking unbond akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000stake --from alice -y -o json
+$ akash tx staking unbond akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000akt --from alice -y -o json
 
 {"height":"0","txhash":"F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7","raw_log":"[]"}
 ```
@@ -237,7 +237,7 @@ $ akash tx staking unbond -h
 Unbond an amount of bonded shares from a validator.
 
 Example:
-$ akash tx staking unbond cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 100stake --from mykey
+$ akash tx staking unbond cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 100akt --from mykey
 
 Usage:
   akash tx staking unbond [validator-addr] [amount] [flags]
@@ -335,11 +335,11 @@ $ akash query distribution rewards <delegator-address> [<validator-address>] -o 
 ```
 $ akash query distribution rewards akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr -o json
 
-[{"denom":"stake","amount":"69009.444000000000000000"}]
+[{"denom":"akt","amount":"69009.444000000000000000"}]
 
 $ akash query distribution rewards akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
 
-{"rewards":[{"validator_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","reward":[{"denom":"stake","amount":"1089622.800000000000000000"}]}],"total":[{"denom":"stake","amount":"1089622.800000000000000000"}]}
+{"rewards":[{"validator_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","reward":[{"denom":"akt","amount":"1089622.800000000000000000"}]}],"total":[{"denom":"akt","amount":"1089622.800000000000000000"}]}
 ```
 
 > **More info**
@@ -374,7 +374,7 @@ $ akash query account <account-address> -o json
 ```
 $ akash query account akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
 
-{"type":"cosmos-sdk/Account","value":{"address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","coins":[{"denom":"stake","amount":"99870156179"}],"public_key":"akashpub1addwnpepq05y9ye9nhsutpks5rlp5q93r3pefnjew4e9u4d7sxsqaa2gcpwug9szhl2","account_number":3,"sequence":5}}
+{"type":"cosmos-sdk/Account","value":{"address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","coins":[{"denom":"akt","amount":"99870156179"}],"public_key":"akashpub1addwnpepq05y9ye9nhsutpks5rlp5q93r3pefnjew4e9u4d7sxsqaa2gcpwug9szhl2","account_number":3,"sequence":5}}
 ```
 
 > **More info**
@@ -418,4 +418,38 @@ close super rare vicious core supreme collect fatigue maid cupboard throw surge 
   mnemonic: ""
   threshold: 0
   pubkeys: []
+```
+
+### Export Key
+Export a private key from the local keybase in ASCII-armored encrypted format. Export key with entering new password.
+> **Usage**
+```
+$ akash keys export <key-name>
+```
+> **Example**
+```
+$ akash keys export provider
+Enter passphrase to decrypt your key:
+Enter passphrase to encrypt the exported key:
+-----BEGIN TENDERMINT PRIVATE KEY-----
+kdf: bcrypt
+salt: FC01B9FACA831E315C867E07A586AEF7
+type: secp256k1
+
+VmSk+mQl2tpra7dHt2Dm2z4S2unH2kbjXaOZTK/9NGQsw3TSb6GkwBU7WizTCmN/
+3dxPu/wdDa1uBLYg+zgYhTtK6HlPDrulxlDDQjg=
+=KGDA
+-----END TENDERMINT PRIVATE KEY-----
+```
+
+### Import Key
+Import a file with ASCII armored private key into the local keybase. Required key password to import key.
+> **Usage**
+```
+$ akash keys import <key-name> <keyfile>
+```
+> **Example**
+```
+$ akash keys import provider key
+Enter passphrase to decrypt your key:
 ```
