@@ -66,12 +66,12 @@ Use "akash [command] --help" for more information about a command.
 
 **Global Flags**
 
-TODO: Update
-
 Every command accepts the following flags. For brevity, they are omitted from the following documentation.
 
-| Short | Verbose | Argument | Required | Description |  |  |
+| Short | Verbose | Argument | Required | Description |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| -h | --help | None | N | Help for any command. |  |  |
-| -m | --mode | String | N | output mode \(interactive | shell | json\) \(default "interactive"\) |
-| -d | --data | String | N | User data directory \(defaults to ~/.akash\). |  |  |
+|   -e |  --encoding | string | N | Binary encoding (hex, b64, btc) (default "hex") |
+|   -h |  --help     | bool   | N | help for akash |
+|      |  --home     | string | N | directory for config and data (default "/Users/gosuri/.akash") |
+|   -o |  --output   | string | N | Output format (text, json) (default "text") |
+|      |  --trace    | bool   | N | print out full stack trace on errors |
