@@ -1,4 +1,4 @@
-# Manage keys
+# Manage Keys
 
 Keys allows you to manage your local keystore for Akash. These keys may be in any format supported by go-crypto and can be used by light-clients, full nodes, or any other application that needs to sign with a private key.
 
@@ -56,7 +56,7 @@ Use "akash keys [command] --help" for more information about a command.
 |  show      |  Show key info for the given name |
 
 
-## add
+## `add`
 
 **Usage**
 
