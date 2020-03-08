@@ -26,7 +26,8 @@
 ## Usage
 
 * [Stack Definition Language](sdl/README.md)
-* [Akash Client](usage/cli/README.md)
+* [Akash Client (New)](usage/cli/general-commands.md)
+* [Akash Client (Old)](usage/cli/README.md)
   * [Manage deployments](usage/cli/deployments.md)
   * [Service logs](usage/cli/logs.md)
   * [Manage keys](usage/cli/keys.md)
