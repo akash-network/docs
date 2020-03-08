@@ -1,10 +1,15 @@
 # General Commands
-### Start Akash Light Client
-> **Usage**
+
+## Start Akash Light Client
+
+**Usage**
+
+```shell
+akash rest-server [flags]
 ```
-$ akash rest-server [flags]
-```
-> **Example**
+
+**Example**
+
 ```
 $ akash rest-server --node tcp://localhost:26657 --laddr tcp://127.0.0.1:1319
 I[2020-02-27|16:25:57.343] Starting application REST service (chain-id: "")...  module=rest-server 
@@ -13,9 +18,11 @@ I[2020-02-27|16:25:57.343] Starting RPC HTTP server on 127.0.0.1:1319   module=r
 
 Use `akash rest-server` to start light client.
 
-> **More info**
-```
-$ akash rest-server --help
+**More info**
+
+```text
+akash rest-server --help
+
 Start LCD (light-client daemon), a local REST server
 
 Usage:
@@ -40,19 +47,26 @@ Global Flags:
       --trace             print out full stack trace on errors
 ```
 
-### Send Tokens
+## Send Tokens
 
 Sign and send tokens to other account.
->**Usage**
 
-`akash tx send <from-account> <to-account> <amount-with-denom> -y -o json`
-> **Example**
+**Usage**
+
+```
+akash tx send [from_key_or_address] [to_address] [amount] [flags]
+```
+
+ **Example**
+
 ```
 $ akash tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000akt -y -o json
 
 {"height":"0","txhash":"116ED246AFF9F9B58036AECAA5EFE81AA7A788CC625CC2A4ADAFC68378834413","raw_log":"[]"}
 ```
->**More Info**
+
+**More Info**
+
 ```
 $ akash tx send -h
 Create and sign a send tx
@@ -87,20 +101,25 @@ Global Flags:
       --trace             print out full stack trace on errors
 ```
 
-### Query Transaction
+## Query Transaction
+
 Query for a transaction by hash in a committed block.
-> **Usage**
+
+**Usage**
 ```
 $ akash query tx <txhash> -o json
 ```
-> **Examples**
+
+**Examples**
+
 ```
 $ akash query tx 295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E -o json
 
 {"height":"338","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","codespace":"staking","code":3,"raw_log":"validator does not exist: failed to execute message; message index: 0","gas_wanted":"200000","gas_used":"35496","tx":{"type":"cosmos-sdk/StdTx","value":{"msg":[{"type":"cosmos-sdk/MsgBeginRedelegate","value":{"delegator_address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","validator_src_address":"akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s","validator_dst_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","amount":{"denom":"akt","amount":"10000"}}}],"fee":{"amount":[],"gas":"200000"},"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"A+hCkyWd4cWG0KD+GgCxHEOUzll1cl5VvoGgDvVIwF3E"},"signature":"XI1XhIXlSCPnQVHQamu+sbqiZxAxLM8OnXSF2gqNVkkpP1bi6Au3v8N4EUAaPrZGYigechb2ekt6MUEjrFWdgw=="}],"memo":""}},"timestamp":"2020-03-06T10:39:57Z"}
 ```
 
-> **More info**
+**More info**
+
 ```
 $ akash query tx -h
 
@@ -119,20 +138,26 @@ Global Flags:
       --trace             print out full stack trace on errors
 ```
 
-### Bond(Stake) Tokens
+## Bond(Stake) Tokens
+
 Delegate some tokens to validator i.e., bonding tokens.
-> **Usage**
+
+**Usage**
+
 ```
 $ akash tx staking delegate <validator-address> <amount-with-denom> --from <from-account> -y -o json
 ```
-> **Example**
+
+**Example**
+
 ```
 $ akash tx staking delegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000akt --from alice -y -o json
 
 {"height":"0","txhash":"F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7","raw_log":"[]"}
 ```
 
-> **More info**
+**More info**
+
 ```
 $ akash tx staking delegate -h
 Delegate an amount of liquid coins to a validator from your wallet.
@@ -167,20 +192,26 @@ Global Flags:
       --trace             print out full stack trace on errors
 ```
 
-### Redelegate Tokens
+## Redelegate Tokens
+
 Redelegate some tokens from one validator to another.
-> **Usage**
+
+**Usage**
+
 ```
 $ akash tx staking redelegate <src-validator-address> <dest-validator-address> <amount-with-denom> --from <from-account> -y -o json
 ```
-> **Example**
+
+**Example**
+
 ```
 $ akash tx staking redelegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr 1000000akt --from alice -y -o json
 
 {"height":"0","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","raw_log":"[]"}
 ```
 
-> **More info**
+**More info**
+
 ```
 $ akash tx staking redelegate -h
 Redelegate an amount of illiquid staking tokens from one validator to another.
@@ -218,20 +249,23 @@ Global Flags:
       --trace             print out full stack trace on errors
 ```
 
-### Undelegate(unbond) Tokens
+## Undelegate(unbond) Tokens
+
 Undelegate some tokens from validator i.e., unbonding tokens.
-> **Usage**
+
+**Usage**
 ```
 $ akash tx staking unbond <validator-address> <amount-with-denom> --from <from-account> -y -o json
 ```
-> **Example**
+
+**Example**
 ```
 $ akash tx staking unbond akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000akt --from alice -y -o json
 
 {"height":"0","txhash":"F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7","raw_log":"[]"}
 ```
 
-> **More info**
+**More info**
 ```
 $ akash tx staking unbond -h
 Unbond an amount of bonded shares from a validator.
@@ -269,20 +303,23 @@ Global Flags:
       --trace             print out full stack trace on errors
 ```
 
-### Withdraw Rewards
+## Withdraw Rewards
+
 Withdraw rewards from validator
-> **Usage**
+
+**Usage**
 ```
 $ akash tx distribution withdraw-rewards <validator-address> <amount-with-denom> --from <from-account> -y -o json
 ```
-> **Example**
+
+**Example**
 ```
 $ akash tx distribution withdraw-rewards akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr --from alice -y -o json
 
 {"height":"0","txhash":"1BBB4A7A4D245C7534F366BABCE5BDD73776FB0430B3A241BFEEEF99445C52C3","raw_log":"[]"}
 ```
 
-> **More info**
+**More info**
 ```
 $ akash tx distribution withdraw-rewards -h
 Withdraw rewards from a given delegation address,
@@ -325,13 +362,15 @@ Global Flags:
       --trace             print out full stack trace on errors
 ```
 
-### Query Rewards
+## Query Rewards
 Query all rewards earned by a delegator, optionally restrict to rewards from a single validator.
-> **Usage**
+
+**Usage**
 ```
 $ akash query distribution rewards <delegator-address> [<validator-address>] -o json
 ```
-> **Examples**
+
+**Examples**
 ```
 $ akash query distribution rewards akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr -o json
 
@@ -342,7 +381,7 @@ $ akash query distribution rewards akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf 
 {"rewards":[{"validator_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","reward":[{"denom":"akt","amount":"1089622.800000000000000000"}]}],"total":[{"denom":"akt","amount":"1089622.800000000000000000"}]}
 ```
 
-> **More info**
+**More info**
 ```
 $ akash query distribution rewards -h
 
@@ -364,20 +403,22 @@ Global Flags:
       --trace             print out full stack trace on errors
 ```
 
-### Query Balance
+## Query Balance
 Query account balance of given account address.
-> **Usage**
+
+**Usage**
 ```
 $ akash query account <account-address> -o json
 ```
-> **Examples**
+
+**Examples**
 ```
 $ akash query account akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
 
 {"type":"cosmos-sdk/Account","value":{"address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","coins":[{"denom":"akt","amount":"99870156179"}],"public_key":"akashpub1addwnpepq05y9ye9nhsutpks5rlp5q93r3pefnjew4e9u4d7sxsqaa2gcpwug9szhl2","account_number":3,"sequence":5}}
 ```
 
-> **More info**
+**More info**
 ```
 $ akash query account -h
 
@@ -399,13 +440,16 @@ Global Flags:
       --trace             print out full stack trace on errors
 ```
 
-### Recover Key
+## Recover Key
+
 Provide seed phrase to recover existing key instead of creating.
-> **Usage**
+
+**Usage**
 ```
 $ akash keys add <key-name> --recover
 ```
-> **Example**
+
+**Example**
 ```
 $ akash keys add alice --recover
 > Enter your bip39 mnemonic
@@ -420,13 +464,16 @@ close super rare vicious core supreme collect fatigue maid cupboard throw surge 
   pubkeys: []
 ```
 
-### Export Key
+## Export Key
+
 Export a private key from the local keybase in ASCII-armored encrypted format. Export key with entering new password.
-> **Usage**
+
+**Usage**
 ```
-$ akash keys export <key-name>
+akash keys export <key-name>
 ```
-> **Example**
+
+**Example**
 ```
 $ akash keys export provider
 Enter passphrase to decrypt your key:
@@ -442,13 +489,16 @@ VmSk+mQl2tpra7dHt2Dm2z4S2unH2kbjXaOZTK/9NGQsw3TSb6GkwBU7WizTCmN/
 -----END TENDERMINT PRIVATE KEY-----
 ```
 
-### Import Key
+## Import Key
+
 Import a file with ASCII armored private key into the local keybase. Required key password to import key.
-> **Usage**
+
+**Usage**
 ```
 $ akash keys import <key-name> <keyfile>
 ```
-> **Example**
+
+**Example**
 ```
 $ akash keys import provider key
 Enter passphrase to decrypt your key:
