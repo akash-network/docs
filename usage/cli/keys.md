@@ -42,10 +42,10 @@ Global Flags:
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 
-Use "akash key [command] --help" for more information about a command.
+Use "akash keys [command] --help" for more information about a command.
 ```
 
-Use `akash key` to create and manage your keys.
+Use `akash keys` to create and manage your keys.
 
 **Available Commands**
 
@@ -60,7 +60,6 @@ Use `akash key` to create and manage your keys.
 | mnemonic | Compute the bip39 mnemonic for some input entropy
 | parse | Parse address from hex to bech32 and vice versa
 | show | Show key info for the given name
-
 
 ## add
 
@@ -136,7 +135,7 @@ private keys stored in a ledger device cannot be deleted with the CLI.
 **Usage**
 
 ```text
-$ akash keys delete <name>... [flags]
+$ akash keys delete <name> [flags]
 ```
 
 **Example**
