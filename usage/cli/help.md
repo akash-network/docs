@@ -26,7 +26,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/vitwit/.akash")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 
@@ -39,7 +39,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/vitwit/.akash")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 
