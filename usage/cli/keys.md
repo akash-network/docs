@@ -1,4 +1,6 @@
-# Manage keys
+# Manage Keys
+
+Keys allows you to manage your local keystore for Akash. These keys may be in any format supported by go-crypto and can be used by light-clients, full nodes, or any other application that needs to sign with a private key.
 
 Keys allows you to manage your local keystore for tendermint.
 
@@ -15,12 +17,13 @@ $  akash keys [command]
 **Example**
 
 ```shell
-Manage keys
+$ akash help keys
 
 Usage:
   akash keys [command]
 
 Available Commands:
+
   add         Add an encrypted private key (either newly generated or recovered), encrypt it, and save to disk
   delete      Delete the given keys
   export      Export private keys
@@ -31,9 +34,8 @@ Available Commands:
   parse       Parse address from hex to bech32 and vice versa
   show        Show key info for the given name
 
-
 Flags:
-  -h, --help   help for keys
+  -h, --help                     help for keys
       --keyring-backend string   Select keyring's backend (os|file|test) (default "os")
 
 Global Flags:
@@ -309,6 +311,7 @@ Create a bip39 mnemonic, sometimes called a seed phrase, by reading from the sys
 ```text
 $ akash keys mnemonic [flags]
 ```
+$ akash keys add alice
 
 **Example**
 
