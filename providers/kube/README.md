@@ -214,10 +214,13 @@ Should your `$MASTER_IP`, example:
 147.75.70.201
 ```
 
-Install Kubernetes by running below commands:
+Install Kubernetes by running the below:
 
 ```shell
 make layer1-install HOST=$HOST MASTER_IP=$MASTER_IP
+```
+(Optional) Run below command, only for providers with CSI - like packet
+```
 make kube-csi-install HOST=$HOST MASTER_IP=$MASTER_IP
 ```
 
