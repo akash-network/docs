@@ -1,4 +1,6 @@
-# Manage keys
+# Manage Keys
+
+Keys allows you to manage your local keystore for Akash. These keys may be in any format supported by go-crypto and can be used by light-clients, full nodes, or any other application that needs to sign with a private key.
 
 **Usage**
 
@@ -9,245 +11,118 @@ $  akash key [command]
 **Example**
 
 ```shell
-Manage keys
+$ akash help keys
 
 Usage:
-  akash key [command]
+  akash keys [command]
 
 Available Commands:
-  create      create a new key locally
-  import      import a private key
-  list        list all the keys stored locally
-  recover     recover a key using recovery codes
-  remove      remove key locally
-  show        display a key
+
+  add         Add an encrypted private key (either newly generated or recovered), encrypt it, and save to disk
+  delete      Delete the given keys
+  export      Export private keys
+  import      Import private keys into the local keybase
+  list        List all keys
+  migrate     Migrate keys from the legacy (db-based) Keybase
+  mnemonic    Compute the bip39 mnemonic for some input entropy
+  parse       Parse address from hex to bech32 and vice versa
+  show        Show key info for the given name
 
 Flags:
-  -h, --help   help for key
+  -h, --help                     help for keys
+      --keyring-backend string   Select keyring's backend (os|file|test) (default "os")
 
 Global Flags:
-  -d, --data string   data directory (default "/Users/gosuri/.akash")
-  -m, --mode string   output mode (interactive|shell|json) (default "interactive")
+  -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
+      --home string       directory for config and data (default "/Users/gosuri/.akash")
+  -o, --output string     Output format (text|json) (default "text")
+      --trace             print out full stack trace on errors
 
-Use "akash key [command] --help" for more information about a command.
+Use "akash keys [command] --help" for more information about a command.
 ```
-
-Use `akash key` to create and manage your keys.
 
 **Available Commands**
 
 | Command | Description |
 | :--- | :--- |
-| create  | create a new key locally
-| import  | import a private key
-| list    | list all the keys stored locally
-| recover | recover a key using recovery codes
-| remove  | remove key locally
-| show    | display a key
+|  add       |  Add an encrypted private key (either newly generated or recovered), encrypt it, and save to disk |
+|  delete    |  Delete the given keys |
+|  export    |  Export private keys |
+|  import    |  Import private keys into the local keybase |
+|  list      |  List all keys |
+|  migrate   |  Migrate keys from the legacy (db-based) Keybase |
+|  mnemonic  |  Compute the bip39 mnemonic for some input entropy |
+|  parse     |  Parse address from hex to bech32 and vice versa |
+|  show      |  Show key info for the given name |
 
-## create
+
+## `add`
+
+Derive a new private key and encrypt to disk.
+Optionally specify a BIP39 mnemonic, a BIP39 passphrase to further secure the mnemonic, and a bip32 HD path to derive a specific account. 
+The key will be stored under the given name and encrypted with the given password.
+The only input that is required is the encryption password.
+
+If run with `-i`, it will prompt the user for BIP44 path, BIP39 mnemonic, and passphrase.
+The flag `--recover` allows one to recover a key from a seed passphrase.
+If run with `--dry-run`, a key would be generated (or recovered) but not stored to the
+local keystore.
+
+Use the `--pubkey` flag to add arbitrary public keys to the keystore for constructing
+multisig transactions.
+
+You can add a multisig key by passing the list of key names you want the public
+key to be composed of to the `--multisig` flag and the minimum number of signatures
+required through `--multisig-threshold`. The keys are sorted by address, unless
+the flag `--nosort` is set.
 
 **Usage**
 
-```text
-$ akash key create <name> [flags]
+```shell
+akash keys add <name> [flags]
 ```
 
 **Example**
 
-Create a key with the name 'greg':
-
-```shell
-$ akash key create greg
-
-Successfully created key for 'greg'
-===================================
-
-Public Key:    	f4e03226c054b1adafaa2739bad720c095500a49
-Recovery Codes:	figure share industry canal...
 ```
+$ akash keys add alice
 
-Create a new key to use in the Akash Network. A key links to an Akash account and is used to authenticate to the network.
+- name: alice
+  type: local
+  address: akash1k74uuwnw8hlsk0dchpcamn833d6hfk4u56ymaf
+  pubkey: akashpub1addwnpepqtf7r8vqu4x4nyg68hnj83tqfrrw5m3fkt7zzj2jysepnezh8x36wum8qnt
+  mnemonic: ""
+  threshold: 0
+  pubkeys: []
+
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+must wish dog episode column dust dizzy fashion acid grid blush foam road inhale security ten unfold loan gather elite hip easy useless kit
+```
 
 **Arguments**
 
 | Argument | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| name | string | Y | A meaningful-to-you name for your key. |
+| name | string | Y | Name of the key |
 
 **Flags**
 
 | Short | Verbose | Argument | Required | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| -t | --type | \(ed25519\|secp256k1\|ledger\) | N | Type of key \(default "ed25519"\). |
-
-## import
-
-**Usage**
-
-```text
-$ akash key import <name> [flags]
-```
-
-**Example**
-
-Import a private key with the name 'alice':
-
-```shell
-$ akash key import alice ./private.key
-(info)  [key] key imported
-
-Import Key
-==========
-
-Name: 	alice
-Path: 	./private.key
-```
-
-**Arguments**
-
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| name | string | Y | A meaningful-to-you name for your key. |
-| path | string | Y | Path to the private key |
-
-**Flags**
-
-| Short | Verbose | Argument | Required | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| -t | --type | \(ed25519\|secp256k1\|ledger\) | N | Type of key \(default "ed25519"\). |
-
-## list
-
-**Usage**
-
-```shell
-$ akash key list [flags]
-```
-
-**Example**
-
-```shell
-$ akash key list
-
-Key List
-========
-
-Name  	Public Key (Address)
-----  	--------------------
-
-alice 	c7597a64f203a881f6b3944dae849846a2c6b2bf
-master	981cf6d142550449c315b2e6fbd5424fb1230c56
-```
-
-List all your local keys.
-
-**Arguments**
-
-None
-
-**Flags**
-
-None
-
-## remove
-
-**Usage**
-
-```text
-$ akash key remove <name> [flags]
-```
-
-**Example**
-
-```shell
-$ akash key remove alice
-(info)  [key] key removed
-
-Remove Key
-==========
-
-Name: 	alice
-```
-
-Remove the key value belonging to a key name.
-
-**Arguments**
-
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| name | string | Y | Name of the key to remove. |
-
-**Flags**
-
-None
-
-## recover
-
-**Usage**
-
-```shell
-$ akash key recover <name> <recovery-codes> [flags]
-```
-
-**Example**
-
-Recover a key with the name _alice_:
-```shell
-$ akash key recover alice soldier stuff bullet february bargain cage elegant intact across man obvious coral salmon scan use demise device purse fire length museum slow opera essence
-
-(info)  Successfully recovered key, stored locally as 'alice'
-
-Recover Key
-===========
-
-Name:                 	alice
-Public Key (Address): 	c7597a64f203a881f6b3944dae849846a2c6b2bf
-```
-
-Recover a key using the recovery code generated during key creation and store it locally. For help with creating a key, see 'akash help key create'
-
-**Arguments**
-
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| name | string | Y | Name of the key to remove. |
-| recovery-codes | list | Y | list of recovery code. |
-
-**Flags**
-
-None
-
-## show
-
-**Usage**
-
-```shell
-$ akash key show <name> [flags]
-```
-
-**Example**
-
-```shell
-$ akash key show alice
-Display Key
-===========
-
-Name:                 	alice
-Public Key (Address): 	c7597a64f203a881f6b3944dae849846a2c6b2bf
-```
-
-Show the key value belonging to a key name.
-
-**Arguments**
-
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| name | string | Y | Name of the key to display. |
-
-**Flags**
-
-| Short | Verbose | Argument | Required | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| | --public| bool | N | Display public key
-| | --private| bool | N | Display private key
+|      |  --account            | uint32 | N | Account number for HD derivation |
+|      |  --algo               | string | N | Key signing algorithm to generate keys for (default "secp256k1") |
+|      |  --dry-run            | bool   | N | Perform action, but don't add key to local keystore |
+|      |  --hd-path            | string | N | Manual HD Path derivation (overrides BIP44 config) |
+|      |  --indent             | bool   | N | Add indent to JSON response |
+|      |  --index              | uint32 | N | Address index number for HD derivation |
+|   -i |  --interactive        | bool   | N | Interactively prompt user for BIP39 passphrase and mnemonic |
+|      |  --ledger             | bool   | N | Store a local reference to a private key on a Ledger device |
+|      |  --multisig           | strings| N | Construct and store a multisig public key (implies --pubkey) |
+|      |  --multisig-threshold | uint   | N | K out of N required signatures. For use in conjunction with --multisig (default 1) |
+|      |  --no-backup          | bool   | N | Don't print out seed phrase (if others are watching the terminal) |
+|      |  --nosort             | bool   | N | Keys passed to --multisig are taken in the order they're supplied |
+|      |  --pubkey             | string | N | Parse a public key in bech32 format and save it to disk |
+|      |  --recover            | bool   | N | Provide seed phrase to recover existing key instead of creating |

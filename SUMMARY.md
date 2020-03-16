@@ -27,9 +27,11 @@
 
 * [Stack Definition Language](sdl/README.md)
 * [Akash Client](usage/cli/README.md)
+  * [Common Commands](usage/cli/general-commands.md)
+  * [Run Light Client](usage/cli/rest-server.md)
+  * [Manage keys](usage/cli/keys.md)
   * [Manage deployments](usage/cli/deployments.md)
   * [Service logs](usage/cli/logs.md)
-  * [Manage keys](usage/cli/keys.md)
   * [Monitor marketplace](usage/cli/marketplace.md)
   * [Manage provider](usage/cli/provider.md)
   * [Query network](usage/cli/query.md)
