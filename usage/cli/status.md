@@ -11,13 +11,28 @@ akash status [flags]
 ```text
 $ akash status
 
-Status
-======
-
-Node Version:        	0.32.6
-Latest Block Height: 	1499248
-Latest Block Hash:   	451944008e7ce8a1e23fb64107eab377f60adb3f321ecf6ff9c9114e4e5a693b
-Last Block Created:  	3 seconds ago
+{
+    "node_info":{
+        "protocol_version":{
+            "p2p":"7","block":"10","app":"0"
+            },
+        "id":"e4f0a97eacc3222ea97c42bf93c50afcc98f6341",
+        "listen_addr":"tcp://0.0.0.0:26656",
+        "network":"mychain",
+        "version":"0.33.0",
+        "channels":"4020212223303800",
+        "moniker":"mychain",
+        "other":{"tx_index":"on","rpc_address":"tcp://127.0.0.1:26657"}
+    },
+    "sync_info":{
+        "latest_block_hash":"781035A4F2F1FB97ACF0C127C2296623BBC82EEC9FDF8C00FE26CE58D363DF68","latest_app_hash":"BF27325B8BB1002D0F458F37D792E6E45D8F422B4B99A8B599A653CDAAE39145","latest_block_height":"10595","latest_block_time":"2020-03-12T09:51:12.171716104Z","catching_up":false
+    },
+    "validator_info":{
+        "address":"15A9E2C091AED0734D0BCB47781E54CF81F0F4F8",
+        "pub_key":{
+            "type":"tendermint/PubKeyEd25519","value":"IupzNoyVFg24D7KloPBbqHvwf0AFNS4mt99kZOUzQ6w="},"voting_power":"100"
+    }
+}
 
 ```
 

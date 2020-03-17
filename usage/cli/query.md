@@ -11,307 +11,584 @@ $ akash query [command]
 ```text
 $ akash query help
 
-Query something
+Querying subcommands
 
 Usage:
   akash query [command]
 
+Aliases:
+  query, q
+
 Available Commands:
-  account          query account
-  deployment       query deployment
-  deployment-group query deployment groups
-  fulfillment      query fulfillment
-  lease            query lease
-  order            query order
-  provider         query provider
+  account                  Query account balance
+  auth                     Querying commands for the auth module
+  block                    Get verified data for a the block at given height
+  deployment               Deployment query commands
+  distribution             Querying commands for the distribution module
+  market                   Market query commands
+  mint                     Querying commands for the minting module
+  provider                 Provider query commands
+  slashing                 Querying commands for the slashing module
+  staking                  Querying commands for the staking module
+  supply                   Querying commands for the supply module
+  tendermint-validator-set Get the full tendermint validator set at given height
+  tx                       Query for a transaction by hash in a committed block
+  txs                      Query for paginated transactions that match a set of events
 
 Flags:
   -h, --help          help for query
-  -n, --node string   node host (default "http://api.akashtest.net:80")
 
 Global Flags:
-  -d, --data string   data directory (default "~/.akash")
-  -m, --mode string   output mode (interactive|shell|json) (default "interactive")
+  -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
+  -o, --output string     Output format (text|json) (default "text")
+      --trace             print out full stack trace on errors
 
 Use "akash query [command] --help" for more information about a command.
+
 ```
 
 Use `akash query` to query all the things that need querying.
 
 **Available Commands**
 
-| Command | Description |
-| :--- | :--- |
-| account | Query account details. |
-| deployment | Query deployment details. |
-| deployment-group | Query deployment-group details. |
-| fulfillment | Query fulfillment details. |
-| lease | Query lease details. |
-| order | Query order details. |
-| provider | Query provider details. |
+| Command                 | Description                                                    |
+| :--------------------   | :------------------------------------------------------        |
+| account                 | Query account balance.                                         |
+| auth                    | Querying commands for the auth module.                         |
+| block                   | Get verified data for a the block at given height.             |
+| deployment              | Deployment query commands.                                     |
+| distribution            | Querying commands for the distribution module                  |
+| market                  | Market query commands.                                         |
+| mint                    | Querying commands for the minting module.                      |
+| provider                | Provider query commands.                                       |
+| slashing                | Querying commands for the slashing module.                     |
+| staking                 | Querying commands for the staking module.                      |
+| supply                  | Querying commands for the supply module.                       |
+| tendermint-validator-set | Get the full tendermint validator set at given height.        |
+| tx                       | Query for a transaction by hash in a committed block.         |
+| txs                      | Query for paginated transactions that match a set of events   |
 
 # `account`
 
 **Usage**
 
+Query account balance
+
 ```text
-akash query account [account ...] [flags]
+akash query account [address] [flags]
 ```
 
 **Example**
 
 ```text
-$ akash query account -k my-key-name
-(warn)  please note, the token balance is denominated in microAKASH (AKASH * 10^-6)
-
-Account Query
-=============
-
-Public Key Address:   8d2cb35f05ec35666bbc841331718e31415926a1
-Balance:              97,264,568
-Nonce:                4
+$ akash query account akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
+|
+  address: akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
+  coins:
+  - denom: akt
+    amount: "1000000000"
+  - denom: stake
+    amount: "900000000"
+  public_key: akashpub1addwnpepq02ew0t8fs7qlfu6awxk6xemwvhyg0jt0jw9l9k5my52xr7n0286kqqnhgc
+  account_number: 3
+  sequence: 1
 ```
-
-In the example above, token balance is given in microAKSH `(AKSH * 10^-6)`.
-
-Retrieve the details for one or more of your accounts, including token balance.
 
 **Arguments**
 
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| account | string | N | One or more account addresses to query. Omitting this argument returns all your accounts for the provided key. |
+| Argument | Type   | Required | Description                                                |
+| :------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------- |
+| account  | string | Y        | Account addresses to query. Omitting this argument returns error. |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| -k | --key | string | Y | Name of one of your keys, for authentication. |
-| -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+|       | --height   | int   | N        | Use a specific height to query state at (this can error if the node is pruning state).                                           |
+| -h    | --help     |        | N       | help for account |
+|       | --indent   |        | N       | Add indent to JSON response |
+|       | --ledger   |        | N       | Use a connected Ledger device |
+|       | --node     | string | N       | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node  |     | N       | Trust connected full node (don't verify proofs for responses) |
+
+**Global Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
+|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
+|       | --trace    |        | N       | print out full stack trace on errors |
+
+
+
+# `auth`
+
+Querying commands for the auth module
+
+**Usage**
+
+Query account balance
+
+```text
+  akash query auth [flags]
+  akash query auth [command]
+```
+
+**Example**
+
+```text
+$ akash query auth account akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
+|
+  address: akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
+  coins:
+  - denom: akt
+    amount: "1000000000"
+  - denom: stake
+    amount: "900000000"
+  public_key: akashpub1addwnpepq02ew0t8fs7qlfu6awxk6xemwvhyg0jt0jw9l9k5my52xr7n0286kqqnhgc
+  account_number: 3
+  sequence: 1
+
+```
+
+**Arguments**
+
+| Argument | Type   | Required | Description                                                |
+| :------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------- |
+| account  | string | Y        | Account addresses to query. Omitting this argument returns error. |
+
+**Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+|       | --height   | int   | N        | Use a specific height to query state at (this can error if the node is pruning state).                                           |
+| -h    | --help     |        | N       | help for auth |
+|       | --indent   |        | N       | Add indent to JSON response |
+|       | --ledger   |        | N       | Use a connected Ledger device |
+|       | --node     | string | N       | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node  |     | N       | Trust connected full node (don't verify proofs for responses) |
+
+**Global Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
+|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
+|       | --trace    |        | N       | print out full stack trace on errors |
+
+
 
 ## `deployment`
 
+Deployment query commands
+
 **Usage**
 
 ```text
-akash query deployment [deployment ...] [flags]
+  akash query deployment [flags]
+  akash query deployment [command]
 ```
 
 **Example**
 
 ```text
-$ akash query deployment -k alpha
+$ akash query deployment deployments -o json
 
-Deployment(s)
-=============
+[{"deployment":{"id":{"owner":"akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84","dseq":"875"},"state":0,"version":null},"groups":[{"id":{"owner":"akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84","dseq":"875","gseq":1},"state":1,"spec":{"name":"global","requirements":null,"resources":[{"unit":{"cpu":10,"memory":"134217728","storage":"536870912"},"count":1,"price":{"denom":"akash","amount":"30"}}]}}]}]
 
-Deployment ID                                                     Tenant ID                                 State   Version
--------------                                                     ---------                                 -----   -------
-
-127846f78612fffdacb1c6b595faaeb724ce622ff205a79c18dd68c2d0df9f54  259d3831b178ef71545e992da9ea7b580032c9dd  ACTIVE  a1085e366605fc370961ebcd0651025e3e1ca2d206e094c7bdc89a388ecc2f3a
-598e8e16520fb78762c50324d5babeabc20974566743c7316522d698301de85a  259d3831b178ef71545e992da9ea7b580032c9dd  ACTIVE  a1085e366605fc370961ebcd0651025e3e1ca2d206e094c7bdc89a388ecc2f3a
-...
 ```
-
-Retrieve the details for one or more of your deployments. A deployment represents a request for provider resources.
-
-In the example:
-
-* **"State": CLOSED**: indicates a closed deployment.  
-* **version**: is a hash of the manifest, used by provider to verify incoming manifest content
-
 **Arguments**
 
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| deployment | string | N | One or more deployment ids to query. Omitting this argument returns all your deployments associated with the key provided |
+| Argument   | Type   | Required | Description                                                                                                               |
+| :--------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------ |
+| deployments | string | N        | all deployments to query.|
+| deployment  | string | N        | specific deployment to query.|
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| -k | --key | string | Y | Name of one of your keys, for authentication. |
-| -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -h    | --help   | string   | N        | help for deployment.                                           |
 
-## `fulfillment`
+**Global Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
+|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
+|       | --trace    |        | N       | print out full stack trace on errors |
+
+## `market`
+
+Market query commands.
 
 **Usage**
 
 ```text
-akash query fulfillment [fulfillment ...] [flags]
+  akash query market [flags]
+  akash query market [command]
+```
+
+**Available Commands**
+
+```text
+  bids        
+  leases      
+  orders
+```
+
+**Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+
+| -h    | --help   | string   | N        | help for market.                             |
+
+**Global Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
+|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
+|       | --trace    |        | N       | print out full stack trace on errors |
+
+
+## `bids`
+
+**Usage**
+
+```text
+  akash query market bids [flags]
 ```
 
 **Example**
 
 ```text
-$ akash query fulfillment
+$ akash query market bids
 
-Fulfillment(s)
-==============
-
-Fulfillment ID                                                                                                                          Price State
---------------                                                                                                                          ----- -----
-
-01e4a443878f9eaf9b05d536e3d3322c1ecb608bc4d4930c6a8eb8502b06618c/1/2/f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7   104   CLOSED
-02bff9baad284a2be88791dbf31dcde10f01bf646ceffd46cf214365adfafb67/1/2/e014d0e903e0d82a2058be384e21efa5552aad49078f0471447020fc238e3bd7   46    CLOSED
-036b70a355038b9389b4dc2de72335b9e8b91a11f5193aba1061ea061a83752c/1/2/f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7   60    CLOSED
-03b6f6912f88ee8854fac7b4a37ea9af1c3e95116512afc961684ca66e82944b/1/2/f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7   73    OPEN
-...
+[]
 ```
-
-> In the example above, `"state": CLOSED` indicates a closed fulfillment.
-
-Retrieve the details for one or more fulfillments made for your deployments. A fulfillment represents a provider's bid on your deployments.
-
 **Arguments**
 
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| fulfillment | string | N | One or more fulfillment ids to query. Omitting this argument returns all fulfillments that resulted in leases. |
+| Argument   | Type   | Required | Description                                                                                                               |
+| :--------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------ |
+| bids | string | Y        | array of bids.|
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
+| -h    | --help   | string   | N        | help for bids.                                           |
+|       | --indent  |         | N        | Add indent to JSON response |
+|       | --ledger  |         | N        | Use a connected Ledger device |
+|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
 
-## `lease`
+**Global Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
+|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
+|       | --trace    |        | N       | print out full stack trace on errors |
+
+## `leases`
 
 **Usage**
 
 ```text
-$ akash query lease [lease ...] [flags]
+  akash query market leases [flags]
 ```
 
 **Example**
 
 ```text
-$ akash query lease -k my-key-name
+$ akash query market leases
 
-Lease(s)
-========
-
-Lease: 	9f5b7326f3b5b37d1cb2ab43ecdc0410c89e14e4f44fe12ed376879bcf0900c6/1/2/e014d0e903e0d82a2058be384e21efa5552aad49078f0471447020fc238e3bd7
-Price: 	56
-State: 	ACTIVE
-
-Lease: 	01e4a443878f9eaf9b05d536e3d3322c1ecb608bc4d4930c6a8eb8502b06618c/1/2/f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7
-Price: 	104
-State: 	CLOSED
-
-...
-
+[]
 ```
-
-> In the example above, `"state": CLOSED` indicates a closed lease.
-
-```text
-$ akash query lease 01e4a443878f9eaf9b05d536e3d3322c1ecb608bc4d4930c6a8eb8502b06618c/1/2/f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7
-
-
-Lease: 	01e4a443878f9eaf9b05d536e3d3322c1ecb608bc4d4930c6a8eb8502b06618c/1/2/f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7
-Price: 	104
-State: 	CLOSED
-
-```
-
-> In the example above, the lease is specified in the form `[deployment id]/[deployment group number]/[order number]/[provider address]` and the `-k` flag is not required.
-
-Retrieve the details for one or more of your leases. A lease represents an agreement between you and the lowest-bidding provider to provide resources as for the price specified in their fullfillment.
-
 **Arguments**
 
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| lease | string | N | One or more leases to query. Omitting this argument returns all your leases. |
+| Argument   | Type   | Required | Description                                                                                                               |
+| :--------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------ |
+| leases | string | Y        | array of leases.|
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| -k | --key | string | Conditional | Name of one of your keys, for authentication. Required when fetching all an account's leases, but not when fetching one lease. |
-| -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
+| -h    | --help   | string   | N        | help for leases.                                           |
+|       | --indent  |         | N        | Add indent to JSON response |
+|       | --ledger  |         | N        | Use a connected Ledger device |
+|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
 
-## `order`
+**Global Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
+|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
+|       | --trace    |        | N       | print out full stack trace on errors |
+
+## `orders`
 
 **Usage**
 
 ```text
-$ akash query order [order ...] [flags]
+  akash query market orders [flags]
 ```
 
 **Example**
 
 ```text
-$ akash query order
+$ akash query market orders
 
-Orders(s)
-=========
-
-Order                                                                 	End At (Block)	State
------                                                                 	--------------	-----
-
-01e4a443878f9eaf9b05d536e3d3322c1ecb608bc4d4930c6a8eb8502b06618c/1/2  	1082995       	CLOSED
-03b6f6912f88ee8854fac7b4a37ea9af1c3e95116512afc961684ca66e82944b/1/2  	1000789       	MATCHED
-04759181a06e18bf33aa97ea0139d99629530398121b84a613dcc518a4a4caca/1/2  	1165374       	OPEN
-...
+- orderid:
+    owner: akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
+    dseq: 875
+    gseq: 1
+    oseq: 1
+  state: 0
+  startat: 880
+  spec:
+    name: global
+    requirements: []
+    resources:
+    - unit:
+        cpu: 10
+        memory: 134217728
+        storage: 536870912
+      count: 1
+      price:
+        denom: akash
+        amount: "30"
 ```
-
-Retrieve the details for one or more of your orders. An order is an internal representation of a deplyoyment group: the resources from your deployment that may be fulfilled by a single provider.
-
-In the example:
-
-* **"State": CLOSED**: indicates a closed order.
-* **End At (Block)**: indicates the block number upon which all fulfillments must be issued, prior to awarding a lease
-
 **Arguments**
 
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| order | string | N | One or more order ids to query. Omitting this argument returns all your orders. |
+| Argument   | Type   | Required | Description                                                                                                               |
+| :--------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------ |
+| orders | string | Y        | array of orders.|
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
+| -h    | --help   | string   | N        | help for orders.                                           |
+|       | --indent  |         | N        | Add indent to JSON response |
+|       | --ledger  |         | N        | Use a connected Ledger device |
+|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+
+**Global Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
+|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
+|       | --trace    |        | N       | print out full stack trace on errors |
+
+
+## `provider`
+
+Provider query commands
+
+**Usage**
+
+```text
+  akash query provider [flags]
+  akash query provider [command]
+```
+
+**Available Commands**
+
+```text
+  provider    
+  providers
+```
+
+**Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+
+| -h    | --help   | string   | N        | help for provider.                           |
+
+**Global Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
+|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
+|       | --trace    |        | N       | print out full stack trace on errors |
+
 
 ## `provider`
 
 **Usage**
 
 ```text
-$ akash query provider [provider ...] [flags]
+ akash query provider provider <address> [flags]
 ```
 
 **Example**
 
 ```text
-$ akash query provider
-
-Provider(s)
-===========
-
-Address                                                         	Owner                                   	Host URI                   	Attributes
--------                                                         	-----                                   	--------                   	----------
-
-be41ebb7499055a204ef74af75301b1dffb44aedc9bbe48ebaaa59ac6419fe29	932573d4d03b56da1b394f2293cf49a802a8dc8d	http://akash.chainvibes.com	region: nl
-
-e014d0e903e0d82a2058be384e21efa5552aad49078f0471447020fc238e3bd7	38f05967bba460d15b8b5e15559284ea9b56b7cd	http://marx.akashtest.net  	region: ewr | region_name: Parsippany, NJ | sgx: enabled | tier: 5
-f1695acb26884111d87e91d655fddc511a961987c846a61b62ce42f5ba1d90e7	7939d05bb2737bd209eb2ea2841d8aabc6406ee1	http://roy.akashtest.net   	region: sjc | region_name: Sunnyvale, US | sgx: enabled | tier: 5 
-...
+TODO
 ```
-
-Retrieve the attributes of one or more providers.
-
 **Arguments**
 
-| Argument | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| provider | string | N | One or more provider ids to query. Omitting this argument returns all providers in the network. |
+| Argument   | Type   | Required | Description                                                                                                               |
+| :--------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------ |
+| provider | string | Y        | Provider address. |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| -n | --node | string | N | Node host \(defaults to [https://api.akashtest.net:80](https://api.akashtest.net:80)\). |
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
+| -h    | --help   | string   | N        | help for provider.                                           |
+|       | --indent  |         | N        | Add indent to JSON response |
+|       | --ledger  |         | N        | Use a connected Ledger device |
+|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+
+**Global Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
+|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
+|       | --trace    |        | N       | print out full stack trace on errors |
+
+
+## `providers`
+
+**Usage**
+
+```text
+ akash query provider providers [flags]
+```
+
+**Example**
+
+```text
+  $ akash query provider providers -o json
+
+  [{
+    "owner":"akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84",
+    "host-uri":"http://akash.sahithnarahari.com",
+    "attributes":[{
+      "key":"cmVnaW9u","value":"c2Zv"
+      },{
+        "key":"bW9uaWtlcg==","value":"YWtoaWw="
+        }]
+    }]
+```
+**Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
+| -h    | --help   | string   | N        | help for providers.                                           |
+|       | --indent  |         | N        | Add indent to JSON response |
+|       | --ledger  |         | N        | Use a connected Ledger device |
+|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+
+**Global Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
+|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
+|       | --trace    |        | N       | print out full stack trace on errors |
+
+
+
+## `tx`
+
+Query for a transaction by hash in a committed block
+
+**Usage**
+
+```text
+  akash query tx [hash] [flags]
+```
+
+**Example**
+
+```text
+    TODO
+```
+
+**Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -h    | --help   | string   | N        | help for tx.                                           |
+|  -n   | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+
+**Global Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
+|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
+|       | --trace    |        | N       | print out full stack trace on errors |
+
+
+## `txs`
+
+Search for transactions that match the exact given events where results are paginated.
+Each event takes the form of '{eventType}.{eventAttribute}={value}'. Please refer
+to each module's documentation for the full set of events to query for. Each module
+documents its respective events under 'xx_events.md'.
+
+**Usage**
+
+```text
+  akash query txs [flags]
+```
+
+**Example**
+
+```text
+    TODO
+```
+
+**Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+|       |  --events | string  | list of transaction events in the form of {eventType}.{eventAttribute}={value} |
+| -h    | --help   | string   | N        | help for tx.                                 |
+|       | --limit  | uint32   | N        | Query number of transactions results per page returned (default 30) |
+|  -n   | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --page    | uint32  | N         | Query a specific page of paginated results (default 1) |
+|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+
+**Global Flags**
+
+| Short | Verbose | Argument | Required | Description                                                                             |
+| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
+| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
+|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
+|       | --trace    |        | N       | print out full stack trace on errors |
