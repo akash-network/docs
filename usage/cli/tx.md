@@ -126,7 +126,7 @@ timestamp: ""
 **Flags**
 
 | Short | Verbose           | Required | Type   | Description                                                                                                                                               |
-|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-|
+|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | -a,   | --account-number  | N        | uint   | The account number of the signing account (offline mode only)                                                                                             |
 | -b,   | --broadcast-mode  | N        | string | Transaction broadcasting mode (sync/async/block) (default "sync")                                                                                         |
 |       | --dry-run         | N        |        | ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it                                                                   |
@@ -169,7 +169,7 @@ confirm transaction before signing and broadcasting [y/N]: y
 **Flags**
 
 | Short | Verbose           | Required | Type   | Description                                                                                                                                               |
-|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-|
+|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | -a,   | --account-number  | N        | uint   | The account number of the signing account (offline mode only)                                                                                             |
 | -b,   | --broadcast-mode  | N        | string | Transaction broadcasting mode (sync/async/block) (default "sync")                                                                                         |
 |       | --dry-run         | N        |        | ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it                                                                   |
@@ -215,7 +215,7 @@ confirm transaction before signing and broadcasting [y/N]: y
 **Flags**
 
 | Short | Verbose           | Required | Type   | Description                                                                                                                                               |
-|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-|
+|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | -a,   | --account-number  | N        | uint   | The account number of the signing account (offline mode only)                                                                                             |
 | -b,   | --broadcast-mode  | N        | string | Transaction broadcasting mode (sync/async/block) (default "sync")                                                                                         |
 |       | --dry-run         | N        |        | ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it                                                                   |
@@ -286,7 +286,7 @@ confirm transaction before signing and broadcasting [y/N]: y
 **Flags**
 
 | Short | Verbose           | Required | Type   | Description                                                                                                                                               |
-|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-|
+|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | -a,   | --account-number  | N        | uint   | The account number of the signing account (offline mode only)                                                                                             |
 | -b,   | --broadcast-mode  | N        | string | Transaction broadcasting mode (sync/async/block) (default "sync")                                                                                         |
 |       | --dry-run         | N        |        | ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it                                                                   |
@@ -348,7 +348,7 @@ Close bid
 **Flags**
 
 | Short | Verbose           | Required | Type   | Description                                                                                                                                               |
-|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-|
+|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | -a,   | --account-number  | N        | uint   | The account number of the signing account (offline mode only)                                                                                             |
 | -b,   | --broadcast-mode  | N        | string | Transaction broadcasting mode (sync/async/block) (default "sync")                                                                                         |
 |       | --dry-run         | N        |        | ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it                                                                   |
@@ -397,7 +397,7 @@ $ akash tx market order-close --owner akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qt
 **Flags**
 
 | Short | Verbose           | Required | Type   | Description                                                                                                                                               |
-|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-|
+|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | -a,   | --account-number  | N        | uint   | The account number of the signing account (offline mode only)                                                                                             |
 | -b,   | --broadcast-mode  | N        | string | Transaction broadcasting mode (sync/async/block) (default "sync")                                                                                         |
 |       | --dry-run         | N        |        | ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it                                                                   |
@@ -488,7 +488,7 @@ timestamp: ""
 **Flags**
 
 | Short | Verbose           | Required | Type   | Description                                                                                                                                               |
-|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-|
+|:------|:------------------|:---------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | -a,   | --account-number  | N        | uint   | The account number of the signing account (offline mode only)                                                                                             |
 | -b,   | --broadcast-mode  | N        | string | Transaction broadcasting mode (sync/async/block) (default "sync")                                                                                         |
 |       | --dry-run         | N        |        | ignore the --gas flag and perform a simulation of a transaction, but don't broadcast it                                                                   |
