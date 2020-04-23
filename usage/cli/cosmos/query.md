@@ -39,9 +39,9 @@ Flags:
   -h, --help          help for query
 
 Global Flags:
-  -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
+  -e, --encoding string   Binary encoding (hex/b64/btc) (default "hex")
       --home string       directory for config and data (default "/home/vitwit/.akash")
-  -o, --output string     Output format (text|json) (default "text")
+  -o, --output string     Output format (text/json) (default "text")
       --trace             print out full stack trace on errors
 
 Use "akash query [command] --help" for more information about a command.
@@ -52,22 +52,22 @@ Use `akash query` to query all the things that need querying.
 
 **Available Commands**
 
-| Command                 | Description                                                    |
-| :--------------------   | :------------------------------------------------------        |
-| account                 | Query account balance.                                         |
-| auth                    | Querying commands for the auth module.                         |
-| block                   | Get verified data for a the block at given height.             |
-| deployment              | Deployment query commands.                                     |
-| distribution            | Querying commands for the distribution module                  |
-| market                  | Market query commands.                                         |
-| mint                    | Querying commands for the minting module.                      |
-| provider                | Provider query commands.                                       |
-| slashing                | Querying commands for the slashing module.                     |
-| staking                 | Querying commands for the staking module.                      |
-| supply                  | Querying commands for the supply module.                       |
-| tendermint-validator-set | Get the full tendermint validator set at given height.        |
-| tx                       | Query for a transaction by hash in a committed block.         |
-| txs                      | Query for paginated transactions that match a set of events   |
+| Command                  | Description                                                 |
+|:-------------------------|:------------------------------------------------------------|
+| account                  | Query account balance.                                      |
+| auth                     | Querying commands for the auth module.                      |
+| block                    | Get verified data for a the block at given height.          |
+| deployment               | Deployment query commands.                                  |
+| distribution             | Querying commands for the distribution module               |
+| market                   | Market query commands.                                      |
+| mint                     | Querying commands for the minting module.                   |
+| provider                 | Provider query commands.                                    |
+| slashing                 | Querying commands for the slashing module.                  |
+| staking                  | Querying commands for the staking module.                   |
+| supply                   | Querying commands for the supply module.                    |
+| tendermint-validator-set | Get the full tendermint validator set at given height.      |
+| tx                       | Query for a transaction by hash in a committed block.       |
+| txs                      | Query for paginated transactions that match a set of events |
 
 ## `account`
 
@@ -102,29 +102,29 @@ $ akash query account akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
 
 **Arguments**
 
-| Argument | Type   | Required | Description                                                |
-| :------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------- |
+| Argument | Type   | Required | Description                                                     |
+|:---------|:-------|:---------|:----------------------------------------------------------------|
 | address  | string | Y        | Account address to query. Omitting this argument returns error. |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height   | int   | N        | Use a specific height to query state at (this can error if the node is pruning state).                                           |
-| -h    | --help     |        | N       | help for account |
-|       | --indent   |        | N       | Add indent to JSON response |
-|       | --ledger   |        | N       | Use a connected Ledger device |
-|       | --node     | string | N       | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node  |     | N       | Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state). |
+| -h    | --help       |          | N        | help for account                                                                       |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ## `auth`
@@ -163,29 +163,29 @@ $ akash query auth account akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
 
 **Arguments**
 
-| Argument | Type   | Required | Description                                                |
-| :------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------- |
+| Argument | Type   | Required | Description                                                     |
+|:---------|:-------|:---------|:----------------------------------------------------------------|
 | account  | string | Y        | Account address to query. Omitting this argument returns error. |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height   | int   | N        | Use a specific height to query state at (this can error if the node is pruning state).                                           |
-| -h    | --help     |        | N       | help for auth |
-|       | --indent   |        | N       | Add indent to JSON response |
-|       | --ledger   |        | N       | Use a connected Ledger device |
-|       | --node     | string | N       | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node  |     | N       | Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state). |
+| -h    | --help       |          | N        | help for auth                                                                          |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ## `block`
 
@@ -209,27 +209,27 @@ $ akash query block 100 -o json
 ```
 **Arguments**
 
-| Argument | Type   | Required | Description                                                |
-| :------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------- |
-| height  | int | Y       | To get block data at given height. |
+| Argument | Type | Required | Description                        |
+|:---------|:-----|:---------|:-----------------------------------|
+| height   | int  | Y        | To get block data at given height. |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -h    | --help     |        | N       | help for block |
-| -n    | --node     | string | N       | Node to connect to (default "tcp://localhost:26657") |
-|       | --trust-node |      | N       | Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                   |
+|:------|:-------------|:---------|:---------|:--------------------------------------------------------------|
+| -h    | --help       |          | N        | help for block                                                |
+| -n    | --node       | string   | N        | Node to connect to (default "tcp://localhost:26657")          |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses) |
 
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ## `distribution`
@@ -276,29 +276,29 @@ $ akash query distribution commission akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description                                                                                                               |
-| :--------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------ |
-| validator | string | Y        | validator commission rewards from delegators to that validator.|
+| Argument  | Type   | Required | Description                                                     |
+|:----------|:-------|:---------|:----------------------------------------------------------------|
+| validator | string | Y        | validator commission rewards from delegators to that validator. |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for commision.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for commision.                                                                    |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `community-pool`
 
@@ -327,23 +327,23 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for community-pool.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for community-pool.                                                               |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `params`
 
@@ -372,23 +372,23 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for params.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for params.                                                                       |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ### `rewards`
@@ -427,30 +427,30 @@ $ akash query distribution rewards akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description  |
-| :--------- | :----- | :------- | :--------------------------------------------- |
-| delegator-addr | string | Y        | Query all rewards earned by a delegator.|
-| validator-addr | string | N       | Query all rewards earned by a delegator with given validator.|
+| Argument       | Type   | Required | Description                                                   |
+|:---------------|:-------|:---------|:--------------------------------------------------------------|
+| delegator-addr | string | Y        | Query all rewards earned by a delegator.                      |
+| validator-addr | string | N        | Query all rewards earned by a delegator with given validator. |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for rewards.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for rewards.                                                                      |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `slashes`
 
@@ -470,32 +470,32 @@ null
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description      |
-| :--------- | :----- | :------- | :------------------------------------------- |
-| validator | string | Y        | Validator address to query slashes|
-| start-height | int | Y        | Start height of block range|
-| end-height | int | Y        | End height of block range|
+| Argument     | Type   | Required | Description                        |
+|:-------------|:-------|:---------|:-----------------------------------|
+| validator    | string | Y        | Validator address to query slashes |
+| start-height | int    | Y        | Start height of block range        |
+| end-height   | int    | Y        | End height of block range          |
 
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for slashes.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for slashes.                                                                      |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ### `validator-outstanding-rewards`
@@ -522,29 +522,29 @@ $ akash query distribution validator-outstanding-rewards akashvaloper16q6s0tauc3
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description   |
-| :--------- | :----- | :------- | :------------------------------------------- |
-| validator | string | Y        | validator address|
+| Argument  | Type   | Required | Description       |
+|:----------|:-------|:---------|:------------------|
+| validator | string | Y        | validator address |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for validator-outstading-rewards.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for validator-outstading-rewards.                                                 |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ## `gov`
 
@@ -574,18 +574,18 @@ Querying commands for the governance module
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :------------------------------- |
-| -h    | --help   | string   | N        | help for gov.                                           |
+| Short | Verbose | Argument | Required | Description   |
+|:------|:--------|:---------|:---------|:--------------|
+| -h    | --help  | string   | N        | help for gov. |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `deposit`
 
@@ -614,30 +614,30 @@ $ akash query gov deposit 1 akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| proposal-id | int | Y        | ID of proposal|
-| depositor-addr | string | Y        | Address of the depositor|
+| Argument       | Type   | Required | Description              |
+|:---------------|:-------|:---------|:-------------------------|
+| proposal-id    | int    | Y        | ID of proposal           |
+| depositor-addr | string | Y        | Address of the depositor |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for annual provisions.                                                            |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `deposits`
 
@@ -668,29 +668,29 @@ $ akash query gov deposits 1
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| proposal-id | int | Y        | ID of proposal|
+| Argument    | Type | Required | Description    |
+|:------------|:-----|:---------|:---------------|
+| proposal-id | int  | Y        | ID of proposal |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for annual provisions.                                                            |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `param`
 
@@ -712,29 +712,29 @@ $ akash query gov param voting
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| param-type | string | Y        | Type of param (voting/tallying/deposit)|
+| Argument   | Type   | Required | Description                             |
+|:-----------|:-------|:---------|:----------------------------------------|
+| param-type | string | Y        | Type of param (voting/tallying/deposit) |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for annual provisions.                                                            |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `params`
 
@@ -776,23 +776,23 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for annual provisions.                                                            |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `proposal`
 
@@ -838,29 +838,29 @@ $ akash query gov proposal 1
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| proposal-id | int | Y        | ID of proposal|
+| Argument    | Type | Required | Description    |
+|:------------|:-----|:---------|:---------------|
+| proposal-id | int  | Y        | ID of proposal |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for annual provisions.                                                            |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `proposals`
 
@@ -912,28 +912,28 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --depositor| string | N        | (optional) filter by proposals deposited on by depositor |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --limit   | int     | N        | pagination limit of proposals to query for (default 100) |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --page    |  int    | N        | pagination page of proposals to to query for (default 1) |
-|       | --status  | string  | N        | (optional) filter proposals by proposal status, status: deposit_period/voting_period/passed/rejected |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
-|       | --voter   | string  | N        | (optional) filter by proposals voted on by voted |
+| Short | Verbose      | Argument | Required | Description                                                                                          |
+|:------|:-------------|:---------|:---------|:-----------------------------------------------------------------------------------------------------|
+|       | --depositor  | string   | N        | (optional) filter by proposals deposited on by depositor                                             |
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)                |
+| -h    | --help       | string   | N        | help for annual provisions.                                                                          |
+|       | --indent     |          | N        | Add indent to JSON response                                                                          |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                                        |
+|       | --limit      | int      | N        | pagination limit of proposals to query for (default 100)                                             |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657")               |
+|       | --page       | int      | N        | pagination page of proposals to to query for (default 1)                                             |
+|       | --status     | string   | N        | (optional) filter proposals by proposal status, status: deposit_period/voting_period/passed/rejected |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                                        |
+|       | --voter      | string   | N        | (optional) filter by proposals voted on by voted                                                     |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `proposer`
 
@@ -956,29 +956,29 @@ $ akash query gov proposer 1
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| proposal-id | int | Y        | ID of proposal|
+| Argument    | Type | Required | Description    |
+|:------------|:-----|:---------|:---------------|
+| proposal-id | int  | Y        | ID of proposal |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for annual provisions.                                                            |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `deposits`
 
@@ -1003,29 +1003,29 @@ $ akash query gov tally 1
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| proposal-id | int | Y        | ID of proposal|
+| Argument    | Type | Required | Description    |
+|:------------|:-----|:---------|:---------------|
+| proposal-id | int  | Y        | ID of proposal |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for annual provisions.                                                            |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `vote`
 
@@ -1045,30 +1045,30 @@ ERROR: address 'akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf' did not vote on pr
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| proposal-id | int | Y        | ID of proposal |
-| voter-addr | string | Y        | Voted Address |
+| Argument    | Type   | Required | Description    |
+|:------------|:-------|:---------|:---------------|
+| proposal-id | int    | Y        | ID of proposal |
+| voter-addr  | string | Y        | Voted Address  |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for annual provisions.                                                            |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `votes`
 
@@ -1088,31 +1088,31 @@ null
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| proposal-id | int | Y        | ID of proposal|
+| Argument    | Type | Required | Description    |
+|:------------|:-----|:---------|:---------------|
+| proposal-id | int  | Y        | ID of proposal |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --limit   | int     | N        | pagination limit of votes to query for (default 100) |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --page    |  int    | N        | pagination page of votes to to query for (default 1) |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for annual provisions.                                                            |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --limit      | int      | N        | pagination limit of votes to query for (default 100)                                   |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --page       | int      | N        | pagination page of votes to to query for (default 1)                                   |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ## `mint`
 
@@ -1135,18 +1135,18 @@ Querying commands for the minting module.
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -h    | --help   | string   | N        | help for mint.                                           |
+| Short | Verbose | Argument | Required | Description    |
+|:------|:--------|:---------|:---------|:---------------|
+| -h    | --help  | string   | N        | help for mint. |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 
@@ -1174,23 +1174,23 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for annual provisions.                                                            |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 
@@ -1218,23 +1218,23 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for inflation.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for inflation.                                                                    |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `params`
 
@@ -1265,23 +1265,23 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for params.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for params.                                                                       |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ## `slashing`
 
@@ -1303,19 +1303,18 @@ Querying commands for the slashing module
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-
-| -h    | --help   | string   | N        | help for slashing.                          |
+| Short | Verbose | Argument | Required | Description        |
+|:------|:--------|:---------|:---------|:-------------------|
+| -h    | --help  | string   | N        | help for slashing. |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ### `params`
@@ -1344,23 +1343,23 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for params.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for params.                                                                       |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `signing-info`
 
@@ -1387,29 +1386,29 @@ Use a validators' consensus public key to find the signing-info for that validat
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| validator-conspub | string | Y | Consensus pubkey of validator |
+| Argument          | Type   | Required | Description                   |
+|:------------------|:-------|:---------|:------------------------------|
+| validator-conspub | string | Y        | Consensus pubkey of validator |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for signing-info.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for signing-info.                                                                 |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ## `staking`
 
@@ -1443,19 +1442,18 @@ Querying commands for the staking module
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-
-| -h    | --help   | string   | N        | help for staking.                          |
+| Short | Verbose | Argument | Required | Description       |
+|:------|:--------|:---------|:---------|:------------------|
+| -h    | --help  | string   | N        | help for staking. |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `delegation`
 
@@ -1483,30 +1481,30 @@ $ akash query staking delegation akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf ak
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| delegator-addr | string | Y | Delegator address of validator |
-| validator-addr | string | Y | Operator address of validator |
+| Argument       | Type   | Required | Description                    |
+|:---------------|:-------|:---------|:-------------------------------|
+| delegator-addr | string | Y        | Delegator address of validator |
+| validator-addr | string | Y        | Operator address of validator  |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for delegation.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for delegation.                                                                   |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `delegations`
 
@@ -1529,29 +1527,29 @@ Query delegations for an individual delegator on all validators.
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| delegator-addr | string | Y | Delegator address of validator |
+| Argument       | Type   | Required | Description                    |
+|:---------------|:-------|:---------|:-------------------------------|
+| delegator-addr | string | Y        | Delegator address of validator |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for delegations.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for delegations.                                                                  |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ### `delegations-to`
@@ -1582,29 +1580,29 @@ Query delegations on an individual validator.
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| validator-addr | string | Y | Operator address of validator |
+| Argument       | Type   | Required | Description                   |
+|:---------------|:-------|:---------|:------------------------------|
+| validator-addr | string | Y        | Operator address of validator |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for delegations-to.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for delegations-to.                                                               |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ### `historical-info`
@@ -1625,29 +1623,29 @@ ERROR: no historical info found
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| height | int | Y | Block height |
+| Argument | Type | Required | Description  |
+|:---------|:-----|:---------|:-------------|
+| height   | int  | Y        | Block height |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for historical-info.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for historical-info.                                                              |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ### `params`
@@ -1678,23 +1676,23 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for params.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for params.                                                                       |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 
@@ -1723,23 +1721,23 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for pool.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for pool.                                                                         |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `redelegation`
 
@@ -1759,31 +1757,31 @@ ERROR: no redelegation found
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| delegator-addr | string | Y | Delegator address of validator |
-| src-validator-addr | string | Y | Source validator address |
-| dst-validator-addr | string | Y | Destination validator address |
+| Argument           | Type   | Required | Description                    |
+|:-------------------|:-------|:---------|:-------------------------------|
+| delegator-addr     | string | Y        | Delegator address of validator |
+| src-validator-addr | string | Y        | Source validator address       |
+| dst-validator-addr | string | Y        | Destination validator address  |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for redelegation.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for redelegation.                                                                 |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ### `redelegations`
@@ -1804,29 +1802,29 @@ null
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| delegator-addr | string | Y | Delegator address of validator |
+| Argument       | Type   | Required | Description                    |
+|:---------------|:-------|:---------|:-------------------------------|
+| delegator-addr | string | Y        | Delegator address of validator |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for redelegations.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for redelegations.                                                                |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ### `redelegations-from`
@@ -1847,29 +1845,29 @@ null
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| validator-addr | string | Y | Operator address of validator |
+| Argument       | Type   | Required | Description                   |
+|:---------------|:-------|:---------|:------------------------------|
+| validator-addr | string | Y        | Operator address of validator |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for redelegations-from.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for redelegations-from.                                                           |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `unbonding-delegation`
 
@@ -1890,30 +1888,30 @@ ERROR: no unbonding delegation found
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| delegator-addr | string | Y | Delegator address of validator |
-| validator-addr | string | Y | Operator address of validator |
+| Argument       | Type   | Required | Description                    |
+|:---------------|:-------|:---------|:-------------------------------|
+| delegator-addr | string | Y        | Delegator address of validator |
+| validator-addr | string | Y        | Operator address of validator  |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for unbonding-delegation.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for unbonding-delegation.                                                         |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `unbonding-delegations`
 
@@ -1933,29 +1931,29 @@ null
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| delegator-addr | string | Y | Delegator address of validator |
+| Argument       | Type   | Required | Description                    |
+|:---------------|:-------|:---------|:-------------------------------|
+| delegator-addr | string | Y        | Delegator address of validator |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for unbonding-delegations.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for unbonding-delegations.                                                        |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ### `unbonding-delegations-from`
@@ -1976,29 +1974,29 @@ null
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| validator-addr | string | Y | Operator address of validator |
+| Argument       | Type   | Required | Description                   |
+|:---------------|:-------|:---------|:------------------------------|
+| validator-addr | string | Y        | Operator address of validator |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for unbonding-delegations-from.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for unbonding-delegations-from.                                                   |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ### `validator`
@@ -2044,29 +2042,29 @@ $ akash query staking validator akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dw
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| validator-addr | string | Y | Operator address of validator |
+| Argument       | Type   | Required | Description                   |
+|:---------------|:-------|:---------|:------------------------------|
+| validator-addr | string | Y        | Operator address of validator |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for validator.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for validator.                                                                    |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `validators`
 
@@ -2091,23 +2089,23 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for validators.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for validators.                                                                   |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ## `supply`
@@ -2129,19 +2127,18 @@ Querying commands for the supply module
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-
-| -h    | --help   | string   | N        | help for supply.                          |
+| Short | Verbose | Argument | Required | Description      |
+|:------|:--------|:---------|:---------|:-----------------|
+| -h    | --help  | string   | N        | help for supply. |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ### `total`
@@ -2163,29 +2160,29 @@ Query total supply of coins that are held by accounts in the chain.
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| denom | string | N | Name of Denom |
+| Argument | Type   | Required | Description   |
+|:---------|:-------|:---------|:--------------|
+| denom    | string | N        | Name of Denom |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for total.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for total.                                                                        |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 
@@ -2208,29 +2205,29 @@ Get the full tendermint validator set at given height
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| height | int | N | Block height |
+| Argument | Type | Required | Description  |
+|:---------|:-----|:---------|:-------------|
+| height   | int  | N        | Block height |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for tendermint-validator-set.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for tendermint-validator-set.                                                     |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ## `tx`
 
@@ -2251,26 +2248,26 @@ $ akash query tx 295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| hash | string | N | Transaction hash |
+| Argument | Type   | Required | Description      |
+|:---------|:-------|:---------|:-----------------|
+| hash     | string | N        | Transaction hash |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -h    | --help   | string   | N        | help for tx.                                           |
-|  -n   | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+| -h    | --help       | string   | N        | help for tx.                                                                           |
+| -n    | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 
 ## `txs`
@@ -2305,23 +2302,23 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       |  --events | string  | list of transaction events in the form of {eventType}.{eventAttribute}={value} |
-| -h    | --help   | string   | N        | help for tx.                                 |
-|       | --limit  | uint32   | N        | Query number of transactions results per page returned (default 30) |
-|  -n   | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --page    | uint32  | N         | Query a specific page of paginated results (default 1) |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --events     | string   | Y        | list of transaction events in the form of eventType.eventAttribute=value               |
+| -h    | --help       | string   | N        | help for tx.                                                                           |
+|       | --limit      | uint32   | N        | Query number of transactions results per page returned (default 30)                    |
+| -n    | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --page       | uint32   | N        | Query a specific page of paginated results (default 1)                                 |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ## `upgrade`
 
@@ -2343,18 +2340,18 @@ Querying commands for the upgrade module
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :------------------------------- |
-| -h    | --help   | string   | N        | help for gov.                                           |
+| Short | Verbose | Argument | Required | Description   |
+|:------|:--------|:---------|:---------|:--------------|
+| -h    | --help  | string   | N        | help for gov. |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `applied`
 
@@ -2375,29 +2372,29 @@ ERROR: no upgrade found
 ```
 **Arguments**
 
-| Argument   | Type   | Required | Description |
-| :--------- | :----- | :------- | :-------------------------------- |
-| upgrade-name | string | Y      | Name of upgrade |
+| Argument     | Type   | Required | Description     |
+|:-------------|:-------|:---------|:----------------|
+| upgrade-name | string | Y        | Name of upgrade |
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for annual provisions.                                                            |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    |  --output  | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
 
 ### `plan`
 
@@ -2421,20 +2418,20 @@ None
 
 **Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-|       | --height | int      | N        | Use a specific height to query state at (this can error if the node is pruning state) |
-| -h    | --help   | string   | N        | help for annual provisions.                                           |
-|       | --indent  |         | N        | Add indent to JSON response |
-|       | --ledger  |         | N        | Use a connected Ledger device |
-|       | --node    | string  | N        | <host>:<port> to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
-|       | --trust-node |      | N        |  Trust connected full node (don't verify proofs for responses) |
+| Short | Verbose      | Argument | Required | Description                                                                            |
+|:------|:-------------|:---------|:---------|:---------------------------------------------------------------------------------------|
+|       | --height     | int      | N        | Use a specific height to query state at (this can error if the node is pruning state)  |
+| -h    | --help       | string   | N        | help for annual provisions.                                                            |
+|       | --indent     |          | N        | Add indent to JSON response                                                            |
+|       | --ledger     |          | N        | Use a connected Ledger device                                                          |
+|       | --node       | string   | N        | host:port to Tendermint RPC interface for this chain (default "tcp://localhost:26657") |
+|       | --trust-node |          | N        | Trust connected full node (don't verify proofs for responses)                          |
 
 **Global Flags**
 
-| Short | Verbose | Argument | Required | Description                                                                             |
-| :---- | :------ | :------- | :------- | :-------------------------------------------------------------------------------------- |
-| -e    | --encoding | string | N       | Binary encoding (hex|b64|btc) (default "hex").   |
-|       | --home     | string | N       | directory for config and data (default "/home/ubuntu/.akash") |
-| -o    | --output   | string | N       | Output format (text|json) (default "text")|
-|       | --trace    |        | N       | print out full stack trace on errors |
+| Short | Verbose    | Argument | Required | Description                                                   |
+|:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
+| -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
+| -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
+|       | --trace    |          | N        | print out full stack trace on errors                          |
