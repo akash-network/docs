@@ -20,6 +20,7 @@ Available Commands:
   deployment   Deployment transaction subcommands
   distribution Distribution transactions subcommands
   encode       Encode transactions generated offline
+  gov          Governance transactions subcommands
   market       Transaction subcommands
   multisign    Generate multisig signatures for transactions generated offline
   provider     Deployment transaction subcommands
@@ -53,6 +54,7 @@ Use `akash tx` to create transactions.
 | deployment   | Deployment transaction subcommands                              |
 | distribution | Distribution transactions subcommands                           |
 | encode       | Encode transactions generated offline                           |
+| gov          | Governance transactions subcommands                             |
 | market       | Transaction subcommands                                         |
 | multisign    | Generate multisig signatures for transactions generated offline |
 | provider     | Deployment transaction subcommands                              |
