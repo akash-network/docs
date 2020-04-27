@@ -219,6 +219,10 @@ Install Kubernetes by running the below:
 ```shell
 make layer1-install HOST=$HOST MASTER_IP=$MASTER_IP
 ```
+(Optional) Run below command, only for providers with CSI - like packet
+```
+make kube-csi-install HOST=$HOST MASTER_IP=$MASTER_IP
+```
 
 Set up `KUBECONFIG` environment variable:
 
@@ -297,21 +301,20 @@ Login using `admin` for username and `insecure` for password. Navigate to Dashbo
 
 First, create a key locally that we'll use as an identifier.
 
-```shell
-akash key create provider
+```sh
+akash keys add provider
 ```
 
-You should see a response similar to, for the user `alice`:
+Output looks similar to:
 
-```text
-(info)  [key] key created
-
-Create Key
-==========
-
-Name:           	provider
-Public Key:     	4fbe42a0f09ed555ef36566d148a15bae5a694db
-Recovery Codes: 	album return owner forget top scissors kangaroo escape panther history liberty industry raise surge trigger jealous fit erase horn era hero dust weekend slim
+```
+{
+  "name": provider
+  "type": "local",
+  "address": "akash1xlad27y4dk96edfa370p7m39jee2jhmrreypar",
+  "pubkey": "akashpub1addwnpepqt0jtcykt7xpfslktnf359r4rsetxycysy0r45q86ck4ylm3nn2ywzaqes9",
+  "mnemonic": "material believe leaf goddess diary render swing day climb choose bundle scatter final curve climb cruel wave artefact derive swing mesh oil average alarm"
+}
 ```
 
 ### Add the Provider to the Network
@@ -325,11 +328,11 @@ export MONIKER=${USER}
 
 ```shell
 cat > data/db/config/providers/provider.yml <<EOF
-hostURI: http://${INGRESS}
+host: http://${INGRESS}
 attributes:
-  - name: region
+  - key: region
     value: sfo
-  - name: moniker
+  - key: moniker
     value: ${MONIKER}
 EOF
 ```
@@ -337,18 +340,17 @@ EOF
 To register, run the below and save the key as this is your unique identifier.
 
 ```shell
-akash provider add data/db/config/providers/provider.yml --key provider
+akash tx provider create data/db/config/providers/provider.yml --from provider -y
 ```
 
 You will see an output similar to:
 
 ```
-(info)  [provider] provider added
-
-Add Provider
-============
-
-Key: 	7e99e953d23570c2350ae6eee6937d00b6accc258f1904c4547b7aabd900b1dd
+{
+  "height": "0",
+  "txhash": "B028B718D43A666F3827E995C8C57168413787735FF608A140C7491E78E6ABEF",
+  "raw_log": "[]"
+}
 ```
 
 Save the `Key` from the output and store in the db `PROVIDER`
