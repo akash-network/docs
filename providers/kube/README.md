@@ -42,7 +42,7 @@ Install the below required software:
 
 | Tool | Version | Description |
 | -- | -- | -- |
-| [Akash](https://docs.akash.network/guides/install) | 0.5.4+ |  The Akash Suite is composed of a full node `akashd` and the client `akash` |
+| [Akash](https://docs.akash.network/guides/install) | 0.5.4+ |  The Akash Suite is composed of a full node `akashd` and the client `akashctl` |
 | [Keybase](https://keybase.io/download) | 5.0.0 | Keybase is used as the git hosting platform for `terraform` state and other sensitive data |
 | [Terraform](https://www.terraform.io) | 0.12.9 | `terraform` is used to provision resources on Packet |
 |  [`k3sup`](https://github.com/alexellis/k3sup#download-k3sup-tldr) | 0.3.1 | A great utility for `kubectl config` management! Also makes installing and spinning up a kubernets cluster easy!
@@ -219,6 +219,10 @@ Install Kubernetes by running the below:
 ```shell
 make layer1-install HOST=$HOST MASTER_IP=$MASTER_IP
 ```
+(Optional) Run below command, only for providers with CSI - like packet
+```
+make kube-csi-install HOST=$HOST MASTER_IP=$MASTER_IP
+```
 
 Set up `KUBECONFIG` environment variable:
 
@@ -297,26 +301,25 @@ Login using `admin` for username and `insecure` for password. Navigate to Dashbo
 
 First, create a key locally that we'll use as an identifier.
 
-```shell
-akash key create provider
+```sh
+akashctl keys add provider
 ```
 
-You should see a response similar to, for the user `alice`:
+Output looks similar to:
 
-```text
-(info)  [key] key created
-
-Create Key
-==========
-
-Name:           	provider
-Public Key:     	4fbe42a0f09ed555ef36566d148a15bae5a694db
-Recovery Codes: 	album return owner forget top scissors kangaroo escape panther history liberty industry raise surge trigger jealous fit erase horn era hero dust weekend slim
+```
+{
+  "name": provider
+  "type": "local",
+  "address": "akash1xlad27y4dk96edfa370p7m39jee2jhmrreypar",
+  "pubkey": "akashpub1addwnpepqt0jtcykt7xpfslktnf359r4rsetxycysy0r45q86ck4ylm3nn2ywzaqes9",
+  "mnemonic": "material believe leaf goddess diary render swing day climb choose bundle scatter final curve climb cruel wave artefact derive swing mesh oil average alarm"
+}
 ```
 
 ### Add the Provider to the Network
 
-Create a config file with various attributes to your offering, such as `region`. By running  `akash provider status` , you can get an idea of what attributes to use. In our example, we set the region to `sfo`.
+Create a config file with various attributes to your offering, such as `region`. By running  `akashctl provider status` , you can get an idea of what attributes to use. In our example, we set the region to `sfo`.
 
 ```shell
 export INGRESS="akash.$(cat data/db/index/MACHINE_ZONE)"
@@ -325,11 +328,11 @@ export MONIKER=${USER}
 
 ```shell
 cat > data/db/config/providers/provider.yml <<EOF
-hostURI: http://${INGRESS}
+host: http://${INGRESS}
 attributes:
-  - name: region
+  - key: region
     value: sfo
-  - name: moniker
+  - key: moniker
     value: ${MONIKER}
 EOF
 ```
@@ -337,18 +340,17 @@ EOF
 To register, run the below and save the key as this is your unique identifier.
 
 ```shell
-akash provider add data/db/config/providers/provider.yml --key provider
+akashctl tx provider create data/db/config/providers/provider.yml --from provider -y
 ```
 
 You will see an output similar to:
 
 ```
-(info)  [provider] provider added
-
-Add Provider
-============
-
-Key: 	7e99e953d23570c2350ae6eee6937d00b6accc258f1904c4547b7aabd900b1dd
+{
+  "height": "0",
+  "txhash": "B028B718D43A666F3827E995C8C57168413787735FF608A140C7491E78E6ABEF",
+  "raw_log": "[]"
+}
 ```
 
 Save the `Key` from the output and store in the db `PROVIDER`
@@ -365,7 +367,7 @@ To create a secret for the private key,  first export the private key to a file 
 
 
 ```shell
-akash key show provider --private > data/db/keys/akash-provider.private
+akashctl key show provider --private > data/db/keys/akash-provider.private
 ```
 
 ```shell
@@ -397,7 +399,7 @@ keyname:  5 bytes
 Simplest way to install Akash is using Helm. Add the Akash Network Helm repo:
 
 ```shell
-helm repo add akash https://helm.akash.network
+helm repo add akashctl https://helm.akash.network
 helm repo update
 ```
 
@@ -542,7 +544,7 @@ kubectl apply -f akash-provider.yml
 Verify by cURL and by checking status
 
 ```shell
-akash provider status $PROVIDER
+akashctl provider status $PROVIDER
 ```
 
 You should see a response similar to:

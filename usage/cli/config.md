@@ -1,30 +1,33 @@
-# Check Version
+# Manage Config
+
+Create or query an application CLI configuration file
 
 **Usage**
 
-```text
-$ akashctl version [flags]
+```shell
+$  akashctl config <key> [value] [flags]
 ```
 
 **Example**
 
-```text
-$ akashctl version
-version:  0.3.4
-commit:   8e90774b47cc3791603d443301038e4dbf49c748
-date:     2018-08-01T06:45:59Z
-```
+```shell
 
-Use `akashctl version` to get the client version.
+$ akashctl config chain-id my-chain
+
+configuration saved to /home/ubuntu/.akashctl/config/config.toml
+
+```
 
 ```text
 Flags:
-  -h, --help   help for version
-      --long   Print long version information
+      --get    print configuration value or its default if unset
+  -h, --help   help for config
+
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
       --home string       directory for config and data (default "/home/ubuntu/.akashctl")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
+
 ```

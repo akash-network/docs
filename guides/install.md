@@ -1,6 +1,6 @@
 # Akash Client Installation
 
-The Akash Suite is composed of a full node `akashd` and the client `akash`. The full node `akashd` is the tendermint-based blockchain node that implements the decentralized exchange. `akash` is the client used to access the exchange and network in general.
+The Akash Suite is composed of a full node `akashd` and the client `akashctl`. The full node `akashd` is the tendermint-based blockchain node that implements the decentralized exchange. `akashctl` is the client used to access the exchange and network in general.
 
 {% tabs %} {% tab title="MacOS" %}
 
@@ -12,7 +12,7 @@ The simplest way to install is by using [homebrew](https://brew.sh). If you do n
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Install `akash` client and `akashd` daemon using homebrew:
+Install `akashctl` client and `akashd` daemon using homebrew:
 
 ```shell
 brew install ovrclk/tap/akash
@@ -55,4 +55,4 @@ Most golang libraries will be packaged in the local `vendor/` directory via [gli
 * [gogoprotobuf](https://github.com/gogo/protobuf): Golang protobuf compiler plugin.
 * [mockery](https://github.com/vektra/mockery): Mock generator.
 
-Once you have the dependencies properly setup, download and build `akash` and `akashd` using `make install`
+Once you have the dependencies properly setup, download and build `akashctl` and `akashd` using `make install`
