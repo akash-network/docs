@@ -42,7 +42,7 @@ Install the below required software:
 
 | Tool | Version | Description |
 | -- | -- | -- |
-| [Akash](https://docs.akash.network/guides/install) | 0.5.4+ |  The Akash Suite is composed of a full node `akashd` and the client `akash` |
+| [Akash](https://docs.akash.network/guides/install) | 0.5.4+ |  The Akash Suite is composed of a full node `akashd` and the client `akashctl` |
 | [Keybase](https://keybase.io/download) | 5.0.0 | Keybase is used as the git hosting platform for `terraform` state and other sensitive data |
 | [Terraform](https://www.terraform.io) | 0.12.9 | `terraform` is used to provision resources on Packet |
 |  [`k3sup`](https://github.com/alexellis/k3sup#download-k3sup-tldr) | 0.3.1 | A great utility for `kubectl config` management! Also makes installing and spinning up a kubernets cluster easy!
@@ -302,7 +302,7 @@ Login using `admin` for username and `insecure` for password. Navigate to Dashbo
 First, create a key locally that we'll use as an identifier.
 
 ```sh
-akash keys add provider
+akashctl keys add provider
 ```
 
 Output looks similar to:
@@ -319,7 +319,7 @@ Output looks similar to:
 
 ### Add the Provider to the Network
 
-Create a config file with various attributes to your offering, such as `region`. By running  `akash provider status` , you can get an idea of what attributes to use. In our example, we set the region to `sfo`.
+Create a config file with various attributes to your offering, such as `region`. By running  `akashctl provider status` , you can get an idea of what attributes to use. In our example, we set the region to `sfo`.
 
 ```shell
 export INGRESS="akash.$(cat data/db/index/MACHINE_ZONE)"
@@ -340,7 +340,7 @@ EOF
 To register, run the below and save the key as this is your unique identifier.
 
 ```shell
-akash tx provider create data/db/config/providers/provider.yml --from provider -y
+akashctl tx provider create data/db/config/providers/provider.yml --from provider -y
 ```
 
 You will see an output similar to:
@@ -367,7 +367,7 @@ To create a secret for the private key,  first export the private key to a file 
 
 
 ```shell
-akash key show provider --private > data/db/keys/akash-provider.private
+akashctl key show provider --private > data/db/keys/akash-provider.private
 ```
 
 ```shell
@@ -399,7 +399,7 @@ keyname:  5 bytes
 Simplest way to install Akash is using Helm. Add the Akash Network Helm repo:
 
 ```shell
-helm repo add akash https://helm.akash.network
+helm repo add akashctl https://helm.akash.network
 helm repo update
 ```
 
@@ -544,7 +544,7 @@ kubectl apply -f akash-provider.yml
 Verify by cURL and by checking status
 
 ```shell
-akash provider status $PROVIDER
+akashctl provider status $PROVIDER
 ```
 
 You should see a response similar to:

@@ -148,13 +148,13 @@ The Genesis file is generated under `$HOME/.akashd/config/genesis.json` will hav
 ### Configure defaults
 
 ```sh
-akash config chain-id devnet 
-akash config output json
-akash config indent true
-akash config trust-node true
+akashctl config chain-id devnet 
+akashctl config output json
+akashctl config indent true
+akashctl config trust-node true
 ```
 
-The above commands will customize the `akash` utility with configuration saved under `$HOME/.akash/config/config.toml` and looks similar to:
+The above commands will customize the `akashctl` utility with configuration saved under `$HOME/.akashctl/config/config.toml` and looks similar to:
 
 ```toml
 chain-id = "devnet"
@@ -168,7 +168,7 @@ trust-node = true
 Generate a key using:
 
 ```sh
-akash keys add master
+akashctl keys add master
 ```
 
 Output looks similar to:
@@ -387,7 +387,7 @@ Output will be similar to:
 
 ## Validate Genesis and Start the Node
 
-Finally, validate the genesis file and start the akash node
+Finally, validate the genesis file and start the akashctl node
 
 ```sh
 akashd validate-genesis
@@ -429,7 +429,7 @@ I[2020-03-02|20:08:19.581] Committed state                              module=s
 In a separate terminal, run the below to check status of the chain:
 
 ```
-akash status
+akashctl status
 ```
 
 You should see a response similar to:

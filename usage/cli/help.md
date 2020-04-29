@@ -1,24 +1,24 @@
 # Manage Help
 
 Help provides help for any command in the application.
-Simply type akash help [path to command] for full details.
+Simply type akashctl help [path to command] for full details.
 
 **Usage**
 
 ```shell
-$  akash help [command] [flags]
+$  akashctl help [command] [flags]
 ```
 
 **Example**
 
 ```shell
 
-$ akash help config
+$ akashctl help config
 
 Create or query an application CLI configuration file
 
 Usage:
-  akash config <key> [value] [flags]
+  akashctl config <key> [value] [flags]
 
 Flags:
       --get    print configuration value or its default if unset
@@ -26,7 +26,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akash")
+      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 
@@ -39,7 +39,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akash")
+      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 

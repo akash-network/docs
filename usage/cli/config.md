@@ -5,16 +5,16 @@ Create or query an application CLI configuration file
 **Usage**
 
 ```shell
-$  akash config <key> [value] [flags]
+$  akashctl config <key> [value] [flags]
 ```
 
 **Example**
 
 ```shell
 
-$ akash config chain-id my-chain
+$ akashctl config chain-id my-chain
 
-configuration saved to /home/ubuntu/.akash/config/config.toml
+configuration saved to /home/ubuntu/.akashctl/config/config.toml
 
 ```
 
@@ -26,7 +26,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akash")
+      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 
