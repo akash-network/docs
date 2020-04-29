@@ -3,13 +3,13 @@
 > **Usage**
 
 ```text
-akash send <amount> <to-account> [flags]
+akashctl send <amount> <to-account> [flags]
 ```
 
 > **Example**
 
 ```text
-$ akash send 1.1 3d79b93370b8283d9b7399607efc29f589bba6f7 -k alpha
+$ akashctl send 1.1 3d79b93370b8283d9b7399607efc29f589bba6f7 -k alpha
 
 Send Token(s)
 =============
@@ -24,7 +24,7 @@ Hash:   	f01084f53fef96f1a8aebc5464ae49faa4c8a614a6e15542914bc1c55c0b4ed0
 
 > In the example above, the amount is given in AKSH. You may also specify the amount in microAKSH \(AKSH \* 10^-6\) using the `u` unit suffix \(e.g. `100u` for 100 microAKSH\).
 
-Use `akash send` to send tokens from one account to another.
+Use `akashctl send` to send tokens from one account to another.
 
 **Arguments**
 
@@ -45,5 +45,5 @@ Use `akash send` to send tokens from one account to another.
 
 | Short | Verbose | Argument | Required | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| -d | --data | string | N | data directory (default "~/.akash") |
+| -d | --data | string | N | data directory (default "~/.akashctl") |
 | -m | --mode | string | N | output mode (interactive|shell|json) (default "interactive") |

@@ -5,14 +5,14 @@ Start LCD (light-client daemon), a local REST server
 **Usage**
 
 ```shell
-$  akash rest-server [flags]
+$  akashctl rest-server [flags]
 ```
 
 **Example**
 
 ```shell
 
-$ akash rest-server
+$ akashctl rest-server
 
 I[2020-03-12|15:18:05.969] Starting application REST service (chain-id: "my-chain")... module=rest-server 
 I[2020-03-12|15:18:05.969] Starting RPC HTTP server on 127.0.0.1:1317   module=rest-server
@@ -35,7 +35,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akash")
+      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 

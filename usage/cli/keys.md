@@ -11,16 +11,16 @@ Keys allows you to manage your local keystore for tendermint.
 **Usage**
 
 ```shell
-$  akash keys [command]
+$  akashctl keys [command]
 ```
 
 **Example**
 
 ```shell
-$ akash help keys
+$ akashctl help keys
 
 Usage:
-  akash keys [command]
+  akashctl keys [command]
 
 Available Commands:
 
@@ -40,14 +40,14 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akash")
+      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 
-Use "akash keys [command] --help" for more information about a command.
+Use "akashctl keys [command] --help" for more information about a command.
 ```
 
-Use `akash keys` to create and manage your keys.
+Use `akashctl keys` to create and manage your keys.
 
 **Available Commands**
 
@@ -85,13 +85,13 @@ the flag --nosort is set.
 **Usage**
 
 ```text
-$ akash keys add <name> [flags]
+$ akashctl keys add <name> [flags]
 ```
 
 **Example**
 
 ```shell
-  $ akash keys add john -o json
+  $ akashctl keys add john -o json
 
   {
     "name":"john",
@@ -137,13 +137,13 @@ private keys stored in a ledger device cannot be deleted with the CLI.
 **Usage**
 
 ```text
-$ akash keys delete <name> [flags]
+$ akashctl keys delete <name> [flags]
 ```
 
 **Example**
 
 ```shell
-  $ akash keys delete john 
+  $ akashctl keys delete john 
 
   Key deleted forever (uh oh!)
 ```
@@ -169,13 +169,13 @@ Export a private key from the local keybase in ASCII-armored encrypted format.
 **Usage**
 
 ```text
-$ akash keys export <name> [flags]
+$ akashctl keys export <name> [flags]
 ```
 
 **Example**
 
 ```shell
-  $ akash keys export john
+  $ akashctl keys export john
 
   Enter passphrase to decrypt your key:
   Enter passphrase to encrypt the exported key:
@@ -211,7 +211,7 @@ Import a ASCII armored private key into the local keybase.
 **Usage**
 
 ```text
-$ akash keys import <name> <keyfile> [flags]
+$ akashctl keys import <name> <keyfile> [flags]
 ```
 
 **Example**
@@ -241,13 +241,13 @@ along with their associated name and address.
 **Usage**
 
 ```text
-$ akash keys list [flags]
+$ akashctl keys list [flags]
 ```
 
 **Example**
 
 ```shell
-  $ akash keys list -o json
+  $ akashctl keys list -o json
 
   [{
     "name":"john",
@@ -285,7 +285,7 @@ It is recommended to run in 'dry-run' mode first to verify all key migration mat
 **Usage**
 
 ```text
-$ akash keys migrate [flags]
+$ akashctl keys migrate [flags]
 ```
 
 **Example**
@@ -309,14 +309,14 @@ Create a bip39 mnemonic, sometimes called a seed phrase, by reading from the sys
 **Usage**
 
 ```text
-$ akash keys mnemonic [flags]
+$ akashctl keys mnemonic [flags]
 ```
-$ akash keys add alice
+$ akashctl keys add alice
 
 **Example**
 
 ```shell
-  $ akash keys mnemonic
+  $ akashctl keys mnemonic
 
   pepper mosquito slab coral tornado taxi raw sheriff service tube brain search neither hire skin put vintage glance purity assume piano invite immune blame
 ```
@@ -337,13 +337,13 @@ hexadecimal into bech32 cosmos prefixed format and vice versa.
 **Usage**
 
 ```text
-$ akash keys parse <hex-or-bech32-address> [flags]
+$ akashctl keys parse <hex-or-bech32-address> [flags]
 ```
 
 **Example**
 
 ```shell
-  $ akash keys parse akash1y8608rk8phlze8qtcchxue3cqf2wt8t6tqn8u2
+  $ akashctl keys parse akash1y8608rk8phlze8qtcchxue3cqf2wt8t6tqn8u2
 
   human: akash
   bytes: 21F4F38EC70DFE2C9C0BC62E6E66380254E59D7A
@@ -366,13 +366,13 @@ consisting of all the keys provided by name and multisig threshold.
 **Usage**
 
 ```text
-$ akash keys show [name [name...]] [flags]
+$ akashctl keys show [name [name...]] [flags]
 ```
 
 **Example**
 
 ```shell
-  $ akash keys show john -o json
+  $ akashctl keys show john -o json
 
   {
     "name":"john",
