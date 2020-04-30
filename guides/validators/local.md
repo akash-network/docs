@@ -1,25 +1,10 @@
 # Akash Incentivized Testnet
 
-This section contains instructions to participate in the upcoming Akash Incentivized Testnet. 
+This section contains instructions to run a Akash node locally in your workstation
 
-Note: This section is a work in progress and expect significant changes as we approach the release version.
+## Before We Begin
 
-## Installation
-
-Install the pre-release version by compiling from the source code. For details on dependencies, please see [README.md](https://github.com/ovrclk/akash#dependencies). Fetch the source repo using:
-
-```sh
-go get -u github.com/ovrclk/akash
-```
-
-Install using make:
-
-```
-cd $GOPATH/src/github.com/ovrclk/akash
-make install
-```
-
-Please ensure `$GOPATH/bin` in in your path where the binaries will be installed to.
+Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) for instructions.
 
 ## Initiating the Chain
 

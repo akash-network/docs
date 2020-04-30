@@ -6,15 +6,16 @@
 
 * [What is Akash?](overview/README.md)
 
-## Akashian Challenge
+## Akashian
 
-* [Introduction to Akashian](akashian/README.md)
+* [The Challenge](akashian/README.md)
 * [Phase 1: Node Operations](akashian/phase1.md)
 
 ## Guides
 
 * [Install Akash Suite](guides/install.md)
-* [Running a Validator Node](testnet2/README.md)
+* Running a Validator Node
+  * [Local](guides/validators/local.md)
 
 ## Usage
 

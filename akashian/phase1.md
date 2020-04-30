@@ -38,19 +38,12 @@ Genesis transaction written to "/Users/gosuri/.akashd/config/gentx/gentx-0519098
 
 1. Fork the [networks repository](https://github.com/ovrclk/net) to your GitHub.
 2. Clone the networks repository to your workstation. For example, where <user> is your GitHub username:
-
-```sh
-git clone https://github.com/<user>/net.git
-```
-
-Copy the generated GenTx from the `akashd` home directory at `~/.akashd/config/gentx/' to `net/centauri/gentxs`.
-
-For the below example, replace `<your-gentx-file>` with your local value
-
-```sh
-cp /Users/gosuri/.akashd/config/gentx/<your-gentx-file>.json net/centauri/gentxs/$TEAM.json
-```
-
-3. Commit and push your repository.
-
-4. Create a pull request to [networks repository](https://github.com/ovrclk/net) with your team name.
+  ```sh
+  git clone https://github.com/<user>/net.git
+  ```
+3. Copy the generated GenTx from the `akashd` home directory at `~/.akashd/config/gentx/` to `net/centauri/gentxs`. For the below example, replace `<your-gentx-file>` with your local value.
+  ```sh
+  cp /Users/gosuri/.akashd/config/gentx/<your-gentx-file>.json net/centauri/gentxs/$TEAM.json
+  ```
+4. Commit and push your repository.
+5. Create a pull request to [networks repository](https://github.com/ovrclk/net) with your team name.
