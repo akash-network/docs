@@ -25,8 +25,8 @@ Please store the menonic keys in a safe place
 
 ```sh
 curl -s https://raw.githubusercontent.com/ovrclk/net/master/centauri/genesis.json > ~/.akashd/config/genesis.json
-akashd add-genesis-account $(akashctl keys show gosuri -a) 10000000uakt # other values will be removed.
-akashd gentx --name gosuri --amount 9000000uakt
+akashd add-genesis-account $(akashctl keys show $TEAM -a) 10000000uakt # other values will be removed.
+akashd gentx --name $TEAM --amount 9000000uakt
 ```
 
 You should see a response similar to:
