@@ -12,7 +12,7 @@ Our Testnet Beta and Akashian Challenge program is inspired by ecosystem project
 
 ## Token Rewards
 
-To incentivize participants in the Akashian Challenge, we’re allocating 3% (3,000,000 AKTs!) of the 100,000,000 tokens that will ever be pre-mined at genesis. 
+To incentivize participants in the Akashian Challenge, we’re allocating 3% (3,000,000 AKTs!) of the 100,000,000 tokens that will ever be pre-mined at genesis. Phase 1 Reward schedule is avaialble [here](https://akash.network/akashian/phase1/rewards)
 
 ## Registration
 
