@@ -6,11 +6,11 @@ This section describes usage of the Akash client for requesting and managing dep
 
 ### Installation
 
-For instructions on installing the `akashctl` client, please check out the [install guide](../guides/install.md)
+For instructions on installing the `akashctl` client, please check out the [install guide](../../guides/install.md)
 
-### Akash Testnet
+<!-- ### Akash Testnet
 
-The Akash testnet is available for public use. A description of the testnet, registration instructions, and a getting-started guide may be found [here](../guides/testnet.md).
+The Akash testnet is available for public use. A description of the testnet, registration instructions, and a getting-started guide may be found [here](../guides/testnet.md). -->
 
 ## Top-level commands
 

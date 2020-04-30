@@ -18,7 +18,7 @@ Install `akashctl` client and `akashd` daemon using homebrew:
 brew install ovrclk/tap/akash
 ```
 
-Once installed, verify the installation by running `akash version`.
+Once installed, verify the installation by running `akashctl version`.
 
 
 Alternatively, you can manually download the [binaries](https://github.com/ovrclk/akash/releases/download/v0.6.1/akash_0.6.1_darwin_amd64.zip) from the [releases page](https://github.com/ovrclk/akash/releases). The latest release is `0.6.1` as of writing of this document, please make sure to check the releases page for the latest version. The final step is to make sure that the akash binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on MacOS.
