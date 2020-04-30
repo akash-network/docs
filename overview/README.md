@@ -59,6 +59,10 @@ Businesses and individual consumers will want and need to protect how they are p
 
 A _lease_ is created when a match occurs between a deployment and fulfillment order. The lease contains references to the deployment and fulfilment orders. Leases will be the binding agent in fulfilling a deployment.
 
+## DSC: Decentralized Cloud Standards 
+
+Visit [DCS](https://dcs.akash.network) to learn about Akash system design. Decentralized Cloud Standards (DCSs) describe standards for the Akash Decentralized Cloud platform, including core protocol specifications, client APIs, and SDL standards. 
+
 ## AKT: The Akash Network Token
 
 The primary functions of AKT are in staking \(which provides security to the network\) and in acting as a unit of measure for pricing all currencies supported by the marketplace. AKT is expected to have very low liquidity because of the high earning potential of staking rewards. Although AKT can be used for settling transactions in the marketplace, it is not intended to be used to pay a fee or to be used as a currency, because of its highly illiquid nature. However, transaction fees and block rewards are denominated in AKT. The income stakers earn is proportional to the tokens staked and length of staking commitment. That said, AKT performs three main functions: Resolve, Reward, and Reserve.
@@ -74,4 +78,3 @@ Providers on Akash stake tokens to subsidize operating and capital expenditures.
 ### Reserve
 
 Fees on Akash can be settled using a multitude of currencies, however, the market order book uses Akash Token \(_AKT_\) as the reserve currency of the ecosystem. AKT provides a novel settlement option to lock in an exchange rate between AKT and the settlement currency. This way, providers and tenants are protected from the price volatility of AKT expected to result from its low liquidity. In this section, we also present a mechanism “Transaction Ordering using Consensus Weighted Median” to establish exchange rates without the need for an oracle.
-

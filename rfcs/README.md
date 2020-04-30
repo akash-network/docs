@@ -1,1 +1,0 @@
-This section contains a collection of various specifications and documentation related to the Akash Network. These documents or requests-for-comment (RFCs) are published by various authors and publication here does not imply official status unless otherwise specified in the document.

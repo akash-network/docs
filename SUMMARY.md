@@ -4,23 +4,16 @@
 
 ## Overview
 
-* [Introduction](overview/README.md)
-* [Design](design/README.md)
+* [What is Akash?](overview/README.md)
 
+## Akashian Challenge
+
+* [Introduction to Akashian](akashian/README.md)
+* [Phase 1: Node Operations](akashian/phase1.md)
 
 ## Guides
 
 * [Install Akash Suite](guides/install.md)
-* [Get Started on Devnet](guides/devnet.md)
-* [Deploy a Riot Chat Client](guides/deploy/riot.md)
-* [Deploy Matrix Messaging Server](guides/matrix/README.md)
-
-## Providers
-
-* [Sell Your Spare Capacity using Kubernetes](providers/kube/README.md)
-
-## Incentivized Testnet 
-
 * [Running a Validator Node](testnet2/README.md)
 
 ## Usage
