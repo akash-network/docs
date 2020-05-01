@@ -24,6 +24,7 @@ Please store the menonic keys in a safe place
 ### 2. Generate Genesis Transaction
 
 ```sh
+akashd init <moniker> --chain-id centauri
 curl -s https://raw.githubusercontent.com/ovrclk/net/master/centauri/genesis.json > ~/.akashd/config/genesis.json
 akashd add-genesis-account $(akashctl keys show $TEAM -a) 10000000uakt # other values will be removed.
 akashd gentx --name $TEAM --amount 9000000uakt
