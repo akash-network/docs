@@ -40,6 +40,7 @@ Installing Akash suite from source
 ```shell
 $ go get -d github.com/ovrclk/akash
 $ cd $GOPATH/src/github.com/ovrclk/akash
+$ git checkout v0.6.1
 $ make deps-install
 $ make install
 ```
