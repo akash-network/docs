@@ -87,9 +87,7 @@ persistent_peers = "8054c84b1571831bf0e744da3af3a647bcaddecf@157.82.22.217:26656
 
 ### **Method 1** - With `systemd`
 
-#### Get `akashd` path
-
-Get `akashd` location path and use it in next step.
+Fetch `akashd` location path and use it in next step.
 
 ```
 $ which akashd
