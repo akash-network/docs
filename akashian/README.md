@@ -16,8 +16,8 @@ To incentivize participants in the Akashian Challenge, we’re allocating 3% (3,
 
 ## Registration
 
-- **Registration**: Submit the form here. Once the form is submitted, our team will review the information and insert the information into a publicly viewable spreadsheet for tracking.
-- **KYC/AML**: Complete KYC/AML here.
+- **Registration**: Submit the form [here](https://docs.google.com/a/akash.network/forms/d/1oM8eQcaWkpt3nRLh_H0tvQ2AeLpgjkdLn6rfhKyrsJk/edit?usp=sharing). Once the form is submitted, our team will review the information and insert the information into a publicly viewable spreadsheet for tracking.
+- **KYC/AML**: Complete KYC/AML [here](https://app.akash.network/verifications).
 Tax Documents: W-8 BEN or W9 Once your KYC application is approved, our team will send either a W-8 BEN for international participants or a W9 via HelloSign.
 - **Status**: The status of your participation agreement will be tracked along with the other registration information. We’ll also notify you upon completion or rejection of any submitted participation agreements.
 
