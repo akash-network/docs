@@ -75,12 +75,12 @@ $ nano ~/.akashd/config/config.toml
 Find the following section and add the seed nodes.
 ```
 # Comma separated list of seed nodes to connect to
-seeds = "15ee12ae5fe8256ee94d1065e0000893e52532d9@akash.ovrclk.com:36656,ca130fd7ca16a957850a96ee9bdb74a351c4929f@akash.ovrclk.com:36656"
+seeds = "331db71f20be13da096a8c2e4fbb8106cd7077e8@147.75.62.73:26656,cf9b4ab767f245062f664cf3cc6aa06c082af106@67.207.70.48:26656"
 ```
 
 ```
 # Comma separated list of persistent peers to connect to
-persistent_peers = "8054c84b1571831bf0e744da3af3a647bcaddecf@157.82.22.217:26656,6efc92719561aa8fb4728696f63b16634e5291b4@akash.ovrclk.com:26656"
+persistent_peers = "b29c405d575b76795150cf9b26e44a7b51e72dd8@157.245.119.72:26656,c7c3f86b35dee13958190b301f7f3b8de137fa9e@167.71.138.117:26656"
 ```
 
 ## Start Your Node
