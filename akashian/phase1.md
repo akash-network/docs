@@ -75,7 +75,7 @@ $ nano ~/.akashd/config/config.toml
 Find the following section and add the seed nodes.
 ```
 # Comma separated list of seed nodes to connect to
-seeds = "331db71f20be13da096a8c2e4fbb8106cd7077e8@147.75.62.73:26656,cf9b4ab767f245062f664cf3cc6aa06c082af106@67.207.70.48:26656"
+seeds = "331db71f20be13da096a8c2e4fbb8106cd7077e8@147.75.62.73:26656,cf9b4ab767f245062f664cf3cc6aa06c082af106@67.207.70.48:26656,e58583366339344c92161e92602f40fa4163edf9@86.109.15.49:26656"
 ```
 
 ```
