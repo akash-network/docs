@@ -27,9 +27,15 @@ Alternatively, you can manually download the [binaries](https://github.com/ovrcl
 
 ### Linux
 
-Download the [linux archive](https://github.com/ovrclk/akash/releases/download/v0.6.1/akash_0.6.1_linux_amd64.zip) from the [release page](https://github.com/ovrclk/akash/releases). The latest release is `0.6.1` as of writing of this document, please make sure to check the releases page for the latest version.
+Download the [linux archive](https://github.com/ovrclk/akash/releases/download/v0.6.1/akash_0.6.1_linux_amd64.zip) from the [release page](https://github.com/ovrclk/akash/releases). The latest release is `0.6.2` as of writing of this document, please make sure to check the releases page for the latest version.
 
-The final step is to make sure that the terraform binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.
+Alternatively, install the latest version via [`godownloader`](https://github.com/goreleaser/godownloader) with:
+
+```sh
+curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh
+```
+
+The final step is to make sure that the akash binaries are available in your shell `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.
 
 {% endtab %} {% endtabs %}
 
@@ -45,15 +51,10 @@ $ make deps-install
 $ make install
 ```
 
-Akash is developed and tested with [golang 1.13.1+](https://golang.org/). Building requires a working [golang](https://golang.org/) installation, a properly set `GOPATH`, and `$GOPATH/bin` present in `$PATH`.
+Akash is developed and tested with [golang 1.14+](https://golang.org/). Building requires a working [golang](https://golang.org/) installation, a properly set `GOPATH`, and `$GOPATH/bin` present in `$PATH`.
 
-For development environments, requirements include:
+Most golang libraries will be installed via `go mod`, however the following packages will be installed globally with their binaries placed in `$GOPATH/bin` by `make devdeps-install`:
 
-* [protocol buffers](https://developers.google.com/protocol-buffers/): Protobuf compiler.
-
-Most golang libraries will be packaged in the local `vendor/` directory via [glide](https://github.com/Masterminds/glide), however the following packages will be installed globally with their binaries placed in `$GOPATH/bin` by `make devdeps-install`:
-
-* [gogoprotobuf](https://github.com/gogo/protobuf): Golang protobuf compiler plugin.
 * [mockery](https://github.com/vektra/mockery): Mock generator.
 
 Once you have the dependencies properly setup, download and build `akashctl` and `akashd` using `make install`
