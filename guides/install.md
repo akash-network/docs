@@ -27,7 +27,7 @@ Alternatively, you can manually download the [binaries](https://github.com/ovrcl
 
 ### Linux
 
-Download the [linux archive](https://github.com/ovrclk/akash/releases/download/v0.6.1/akash_0.6.1_linux_amd64.zip) from the [release page](https://github.com/ovrclk/akash/releases). The latest release is `0.6.2` as of writing of this document, please make sure to check the releases page for the latest version.
+Download the [linux archive](https://github.com/ovrclk/akash/releases/download/v0.6.1/akash_0.6.1_linux_amd64.zip) from the [release page](https://github.com/ovrclk/akash/releases). The latest release is `0.6.1` as of writing of this document, please make sure to check the releases page for the latest version.
 
 Alternatively, install the latest version via [`godownloader`](https://github.com/goreleaser/godownloader) with:
 
