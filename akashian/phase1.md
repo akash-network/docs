@@ -59,7 +59,7 @@ Get to know your fellow Akash community members as they're vital for your succes
 
 This section is applicable only after the genesis is released.
 
-### Genesis & Seeds
+### Download the Genesis and Sync with Seeds
 
 Fetch released genesis into `akashd`'s `config` directory.
 
@@ -68,36 +68,67 @@ curl -s https://raw.githubusercontent.com/ovrclk/net/master/centauri/genesis.jso
 ```
 
 Add seed nodes and persistent peers in `config.toml`.
+
 ```
-$ nano ~/.akashd/config/config.toml
+$EDITOR ~/.akashd/config/config.toml
 ```
 
-Find the following section and add the seed nodes.
+Find the following section and add the _seed_ and _persistent peer_ nodes, the values should be seperated by a comma (`,`) for each key:
+
 ```
-# Comma separated list of seed nodes to connect to
 seeds = "331db71f20be13da096a8c2e4fbb8106cd7077e8@147.75.62.73:26656,cf9b4ab767f245062f664cf3cc6aa06c082af106@67.207.70.48:26656,e58583366339344c92161e92602f40fa4163edf9@86.109.15.49:26656"
 ```
-
 ```
 # Comma separated list of persistent peers to connect to
 persistent_peers = "b29c405d575b76795150cf9b26e44a7b51e72dd8@157.245.119.72:26656,c7c3f86b35dee13958190b301f7f3b8de137fa9e@167.71.138.117:26656"
 ```
 
+The above configuraiton will sync your node with below set of seeds nodes and peristent peers:
+
+**Seed nodes:**
+- `331db71f20be13da096a8c2e4fbb8106cd7077e8@147.75.62.73:26656`
+- `cf9b4ab767f245062f664cf3cc6aa06c082af106@67.207.70.48:26656`
+- `e58583366339344c92161e92602f40fa4163edf9@86.109.15.49:26656`
+
+**Persistent peers:**
+- `b29c405d575b76795150cf9b26e44a7b51e72dd8@157.245.119.72:26656`
+- `c7c3f86b35dee13958190b301f7f3b8de137fa9e@167.71.138.117:26656`
+
+
 ## Start Your Node
 
-### **Method 1** - With `systemd`
+### Option #1: Simple
+
+To start the node, simple run `start command`, and check node status by running `status`.
+
+```sh
+akashd start --pruning nothing
+```
+
+```sh
+akashctl status
+```
+
+{% hint style='warning' %}
+
+**Note: Please make sure to add the ```--pruning ``` flag after the start command**
+
+{% endhint %}
+
+### Option #2: Using `systemd`
 
 Fetch `akashd` location path and use it in next step.
 
 ```
-$ which akashd
+which akashd
 ```
 
 #### Make `akashd` a System Service
 
 ```
-$ sudo nano /lib/systemd/system/akashd.service
+sudo $(EDITOR) /lib/systemd/system/akashd.service
 ```
+
 Paste in the following:
 ```
 [Unit]
@@ -115,27 +146,27 @@ LimitNOFILE=4096
 WantedBy=multi-user.target
 ```
 
-##### Note: Please make sure to add the ```--pruning ``` flag after the start command
+{% hint style='warning' %}
+
+**Note: Please make sure to add the ```--pruning ``` flag after the start command**
+
+{% endhint %}
+
+Enable and start the systemd service using:
 
 ```
-$ sudo systemctl enable akashd
-$ sudo systemctl start akashd
-```
-Check node status
-```
-$ akashctl status
-```
-Check logs
-```
-$ sudo journalctl -u akashd -f
+sudo systemctl enable akashd
+sudo systemctl start akashd
 ```
 
-### **Method 2** - Without `systemd`
+Finally, check node status
+
 ```
-$ akashd start --pruning nothing
+akashctl status
 ```
-Check node status
+
+Check Logs using:
+
 ```
-$ akashctl status
+sudo journalctl -u akashd -f
 ```
-##### Note: Please make sure to add the ```--pruning ``` flag after the start command

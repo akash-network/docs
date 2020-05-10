@@ -6,19 +6,15 @@
 
 * [What is Akash?](overview/README.md)
 
-## Akashian
+## Guides
+* [Install Akash Suite](guides/install.md)
+* [Running a Local Testnet](guides/validators/local.md)
 
+## Akashian
 * [The Challenge](akashian/README.md)
 * [Phase 1: Node Operations](akashian/phase1.md)
 
-## Guides
-
-* [Install Akash Suite](guides/install.md)
-* Running a Validator Node
-  * [Local](guides/validators/local.md)
-
 ## Usage
-
 * [Stack Definition Language](sdl/README.md)
 * [Akash Client](usage/cli/README.md)
   * [Common Commands](usage/cli/general-commands.md)
