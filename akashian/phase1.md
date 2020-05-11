@@ -178,9 +178,9 @@ sudo journalctl -u akashd -f
 Centauri network launch was smooth, the first block was produced within 2 seconds and that's remarkable. Later the day, a few validators reported the issues with block rewards and querying distributions. There was a bug in distribution module integration and all the jailed (previously) validators were facing the issues due to that. A new version is released and Sirius upgrade is to upgrade the network to new binary (v0.6.4)
 
 ## Schedule
-- Upgrade proposal time: 11 May, 00:19 UTC
-- Binary release : 11 May, 16:00 UTC
-- Voting Period : 11, May - 13 May, 16:00 UTC
+- Upgrade proposal time: 12 May, 16:00 UTC
+- Binary release : 12 May, 16:00 UTC
+- Voting Period : 12, May - 14 May, 16:00 UTC
 - Network Upgrade Time: 15 May, 16:00 UTC
 
 ## Proposal Details
@@ -190,11 +190,11 @@ Centauri network launch was smooth, the first block was produced within 2 second
 | Name |    sirius   |
 | Title | Sirius Upgrade | 
 | Description | The first ever on-chain upgrade on Akash Network. Sirius upgrade fixes the issues with withdraw rewards txs and double-sign slashing |
-| Proposal Time | 2020-05-11 00:19 UTC |
+| Proposal Time | 2020-05-12 16:00 UTC |
 | Voting Start Time | 2020-05-12 16:00 UTC |
-| Voting End Time | 2020-05-13 16:00 UTC |
+| Voting End Time | 2020-05-14 16:00 UTC |
 | Network Upgrade Time | 15 May, 16:00 UTC |
-| Link | https://akash.aneka.io/proposals/2 |   
+| Link(s) | https://akash.aneka.io/proposals/2, https://testnet.akash.bigdipper.live/proposals/2 |
 
 ## Querying the proposal
 
