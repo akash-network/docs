@@ -214,7 +214,7 @@ akashctl query gov votes 2 --chain-id centauri --node http://akash-rpc.vitwit.co
 
 Use the following command to vote on the proposal.
 ```sh
-akashctl tx gov vote 2 yes --chain-id centauri --node http://akash-rpc.vitwit.com:26657 --from <key-name>
+akashctl tx gov vote 2 yes --chain-id centauri --node http://akash-rpc.vitwit.com:26657 --from <akash-address>
 ```
 
 Though you have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recommended to choose only `yes` option as this will fix existing bugs on the network.
