@@ -53,11 +53,9 @@ Your full node has been initialized!
 
 ## Configure Node
 
-This section is applicable only after the genesis is released.
-
 ### Download the Genesis and Sync with Seeds
 
-Fetch released genesis into `akashd`'s `config` directory.
+Fetch genesis into `akashd`'s `config` directory.
 
 ```
 curl -s https://raw.githubusercontent.com/ovrclk/net/master/centauri/genesis.json > ~/.akashd/config/genesis.json
