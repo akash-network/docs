@@ -42,7 +42,7 @@ You can edit the `~/.akashd/config/app.toml` file in order to enable the anti sp
 minimum-gas-prices = ""
 ```
 
-Your full node has been initialized!
+Your node has been initialized!
 
 ## Configure and Start Node
 
