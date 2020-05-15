@@ -6,7 +6,7 @@ Make sure to have Akash client installed on your workstation, check [install gui
 
 ## Add a Key
 
-Create a key locally with any random name using below command:
+Create a key (account) using below command:
 
 ```
 akashctl keys add <key-name>
@@ -20,7 +20,7 @@ Please store the menonic keys in a safe place
 
 ## Setting Up a New Node
 
-These instructions are for setting up a brand new full node from scratch.
+Following instructions are for setting up a node.
 
 First, initialize the node and create the necessary config files:
 
@@ -95,3 +95,9 @@ Don't use more `uakt` than you have.
 * `Min-self-delegation` is a stritly positive integer that represents the minimum amount of self-delegated voting power your validator must always have. A `min-self-delegation` of 1 means your validator will never have a self-delegation lower than `1akt`, or `1000000uakt`.
 
 You can confirm that you are in the validator set by using any akash block explorer.
+
+Or, you can query validators using:
+
+```sh
+akashctl query staking validators --trust-node --node http://localhost:26657 --chain-id centauri -o json | jq '.[] | select(.jailed==false) | {operator_address, jailed, status, moniker:.description.moniker}'
+```
