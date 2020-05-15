@@ -28,13 +28,6 @@ First, initialize the node and create the necessary config files:
 akashd init <your_moniker> --chain-id centauri
 ```
 
-You can edit this `moniker` later, in the `~/.akashd/config/config.toml` file:
-
-```
-# A custom human readable name for this node
-moniker = "<your_moniker>"
-```
-
 You can edit the `~/.akashd/config/app.toml` file in order to enable the anti spam mechanism and reject incoming transactions with less than the minimum gas prices:
 
 ```
