@@ -35,7 +35,7 @@ You can edit this `moniker` later, in the `~/.akashd/config/config.toml` file:
 moniker = "<your_moniker>"
 ```
 
-You can edit the ~/.akashd/config/app.toml file in order to enable the anti spam mechanism and reject incoming transactions with less than the minimum gas prices:
+You can edit the `~/.akashd/config/app.toml` file in order to enable the anti spam mechanism and reject incoming transactions with less than the minimum gas prices:
 
 ```
 # This is a TOML config file.
@@ -168,13 +168,13 @@ sudo journalctl -u akashd -f
 
 ## Become a Validator
 
-To create validator, you need to have some tokens.
+To create validator, you need to have some `uakt`.
 
-### Request some tokens
+### Request some `uakt`
 
-Join our [riot](https://matrix.to/#/!QOQfggNBhPYxvbQdNm:matrix.org?via=matrix.org&via=fedi.io&via=librem.one) group and  request some tokens there by sharing address of your key created in beginning.
+Join our [riot](https://riot.im/app/#/room/#akashnet:matrix.org) group and request some tokens there by sharing address of your key created in the beginning.
 
-Check tokens balance of your key using:
+Check `uakt` balance with your address using:
 
 ```
 akashctl query account <key-address>
@@ -206,4 +206,6 @@ Don't use more `uakt` than you have.
 
 * When specifying commission parameters, the `commission-max-change-rate` is used to measure *% point* change over the `commission-rate`. E.g. 1% to 2% is a 100% rate increase, but only 1 percentage point.
 
-* `Min-self-delegation` is a stritly positive integer that represents the minimum amount of self-delegated voting power your validator must always have. A `min-self-delegation` of 1 means your validator will never have a self-delegation lower than `1akt`, or 1000000uakt.
+* `Min-self-delegation` is a stritly positive integer that represents the minimum amount of self-delegated voting power your validator must always have. A `min-self-delegation` of 1 means your validator will never have a self-delegation lower than `1akt`, or `1000000uakt`.
+
+You can confirm that you are in the validator set by using any akash block explorer.
