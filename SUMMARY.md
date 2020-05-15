@@ -13,6 +13,7 @@
 ## Akashian
 * [The Challenge](akashian/README.md)
 * [Phase 1: Node Operations](akashian/phase1.md)
+* [Run a Validator](akashian/validator.md)
 
 ## Usage
 * [Stack Definition Language](sdl/README.md)
