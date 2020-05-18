@@ -267,7 +267,7 @@ The goal of Eridani release is to tets resilience of the network against corrupt
 ## Schedule
 - Upgrade proposal time: 19 May, 16:00 UTC
 - Binary release : 19 May, 16:00 UTC
-- Voting Period : 21, May - 14 May, 16:00 UTC
+- Voting Period : 19 May - 21 May, 16:00 UTC
 - Network Upgrade Time: 22 May, 16:00 UTC
 
 ## Proposal Details
