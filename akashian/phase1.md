@@ -187,7 +187,7 @@ Centauri network launch was smooth, the first block was produced within 2 second
 |    |            |
 |----------|:-------------:|
 | Proposal ID |  2 |
-| Name |    sirius   |
+| Name |    sirius-upgrade   |
 | Title | Sirius Upgrade | 
 | Description | The first ever on-chain upgrade on Akash Network. Sirius upgrade fixes the issues with withdraw rewards txs and double-sign slashing |
 | Proposal Time | 2020-05-12 16:00 UTC |
@@ -257,3 +257,55 @@ Most golang libraries will be installed via `go mod`, however the following pack
 * [mockery](https://github.com/vektra/mockery): Mock generator.
 
 Once you have the dependencies properly setup, download and build `akashctl` and `akashd` using `make install`
+
+
+# Eridani upgrade
+
+## Context - Why Eridani Upgrade?
+The goal of Eridani release is to tets resilience of the network against corrupted upgrades. There might be a case where the upgrade binaries will be available only after the proposal is passed. What if something is wrong with the new binary? Skipping the upgrade is the best way to handle such cases.
+
+## Schedule
+- Upgrade proposal time: 19 May, 16:00 UTC
+- Binary release : 19 May, 16:00 UTC
+- Voting Period : 21, May - 14 May, 16:00 UTC
+- Network Upgrade Time: 22 May, 16:00 UTC
+
+## Proposal Details
+|    |            |
+|----------|:-------------:|
+| Proposal ID |  3 |
+| Name |    eridani   |
+| Title | Eridani Upgrade | 
+| Description | Software upgrades are critical and decides the future of the network. In a PoS network, validators are responsible for deciding on upgrades. Every node operator needs to validate upgrades for the health of the ecosystem. Securing the network with decision-making is vital to the governance process. |
+| Proposal Time | 2020-05-19 16:00 UTC |
+| Voting Start Time | 2020-05-19 16:00 UTC |
+| Voting End Time | 2020-05-21 16:00 UTC |
+| Network Upgrade Time | 22 May, 16:00 UTC |
+| Link(s) | https://akash.aneka.io/proposals/3, https://testnet.akash.bigdipper.live/proposals/3, https://look.ping.pub/#/governance/3 |
+
+## Querying the proposal
+
+Use the following command to query the proposal
+
+```sh
+akashctl query gov proposal 3 --chain-id centauri -o json
+```
+
+You can query the votes using following command.
+
+```sh
+akashctl query gov votes 3 --chain-id centauri -o json
+```
+
+## Voting for proposal
+
+Use the following command to vote on the proposal.
+```sh
+akashctl tx gov vote 3 <option> --chain-id centauri --from <key-name>
+```
+
+You have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recommended to choose your vote carefully as the governance decision will change the network state forever.
+Note: You can always change your vote before voting endtime.
+
+## How to Upgrade
+[TBD]
