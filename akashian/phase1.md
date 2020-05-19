@@ -175,7 +175,7 @@ sudo journalctl -u akashd -f
 # Sirius upgrade
 
 ## Context - Why Sirius Upgrade?
-Centauri network launch was smooth, the first block was produced within 2 seconds and that's remarkable. Later the day, a few validators reported the issues with block rewards and querying distributions. There was a bug in distribution module integration and all the jailed (previously) validators were facing the issues due to that. A new version is released and Sirius upgrade is to upgrade the network to new binary (v0.6.4)
+Centauri network launch was smooth, the first block was produced within 2 seconds and that's remarkable. Later in the day, a few validators reported issues with block rewards and querying distributions. There was a bug in the distribution module integration and all the jailed (previously) validators were facing issues due to that. A new version was released and Sirius will upgrade the network to a new binary (v0.6.4).
 
 ## Schedule
 - Upgrade proposal time: 12 May, 16:00 UTC
@@ -198,13 +198,13 @@ Centauri network launch was smooth, the first block was produced within 2 second
 
 ## Querying the proposal
 
-Use the following command to query the proposal
+Use the following command to query the proposal:
 
 ```sh
 akashctl query gov proposal 2 --chain-id centauri --node http://akash-rpc.vitwit.com:26657 -o json
 ```
 
-You can query the votes using following command.
+You can query the votes using the following command:
 
 ```sh
 akashctl query gov votes 2 --chain-id centauri --node http://akash-rpc.vitwit.com:26657 -o json
@@ -212,12 +212,12 @@ akashctl query gov votes 2 --chain-id centauri --node http://akash-rpc.vitwit.co
 
 ## Voting for proposal
 
-Use the following command to vote on the proposal.
+Use the following command to vote on the proposal:
 ```sh
 akashctl tx gov vote 2 yes --chain-id centauri --node http://akash-rpc.vitwit.com:26657 --from <key-name>
 ```
 
-Though you have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recommended to choose only `yes` option as this will fix existing bugs on the network.
+Though you have multiple ( `yes`/`no`/`abstain`/`no_with_veto`) options to vote, it is recommended to choose only the `yes` option as this will fix existing bugs on the network.
 
 
 ## How to Upgrade
