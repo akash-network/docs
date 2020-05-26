@@ -17,10 +17,10 @@ $ rm ~/.akashd/config/genesis.json
 $ curl -s https://raw.githubusercontent.com/ovrclk/net/master/centauri-2/genesis.json > ~/.akashd/config/genesis.json
 ```
 
-Verify updated genesis with `sha256sum`:
+Verify the genesis with `sha256sum`:
 ```bash
 $ sha256sum ~/.akashd/config/genesis.json
-263d5742d0fb08a1f1a4eb1e85ab72e16e2dc57f6797ae6b9cf6fdfe3d65e765  /root/.akashd/config/genesis.json
+263d5742d0fb08a1f1a4eb1e85ab72e16e2dc57f6797ae6b9cf6fdfe3d65e765 ~/.akashd/config/genesis.json
 ```
 
 3. Update seeds & persistent peers
