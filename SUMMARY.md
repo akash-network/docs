@@ -9,6 +9,7 @@
 ## Guides
 * [Install Akash Suite](guides/install.md)
 * [Running a Local Testnet](guides/validators/local.md)
+* [Create Keys](guides/create-keys.md)
 
 ## Akashian
 * [The Challenge](akashian/README.md)

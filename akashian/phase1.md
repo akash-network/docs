@@ -15,11 +15,7 @@ export TEAM=<name>
 akashctl keys add $TEAM
 ```
 
-{% hint style='warning' %}
-
-Please store the menonic keys in a safe place
-
-{% endhint %}
+See [Creating Keys](guides/create-keys.md) documentation if joining after Genesis file has been finalized for steps.
 
 ### 2. Generate Genesis Transaction
 

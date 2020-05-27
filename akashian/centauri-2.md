@@ -57,9 +57,13 @@ The above configuraiton will sync your node with below set of seeds nodes and pe
 $ sudo service akashd start
 ```
 
+*Wait for the node to catch up with the Network's block height before attempting to use it for transactions.* View the current block hight via a network [explorer](https://akash.aneka.io/).
+
 5. Create validator
 
-Once the node has started, you should be able to use the same key from `centauri` to create a validator:
+If part of the first testnet, you should be able to use the same key from `centauri`. However if you're new to the network, you need to create a key to associate with the validator. See [account key creation](guides/create-keys.md) documentation to generate one and get initialized on the Network.
+
+Once the `akashd` node has started, create the validator:
 
 ```bash
 $ akashctl tx staking create-validator \
