@@ -85,7 +85,7 @@ The goal is to ensure upgrades happen without friction, and coordination gaps ar
 - Upgrade proposal time: 29 May, 16:00 UTC
 - Binary release : 29 May, 16:00 UTC
 - Voting Period : 29 May - 31 May, 16:00 UTC
-- Network Upgrade Time: 01 May, 16:00 UTC
+- Network Upgrade Time: 01 June, 16:00 UTC
 
 ## Proposal Details
 |    |            |
@@ -94,10 +94,10 @@ The goal is to ensure upgrades happen without friction, and coordination gaps ar
 | Name |    cygni   |
 | Title | Cygni Upgrade | 
 | Description | The goal is to ensure upgrades happen without friction, and coordination gaps are identified and fixed. The release will have updates to gov params and staking, to reduce the voting power of genesis validator(s) to match with other validators. More details on the release changelog are available at: https://github.com/ovrclk/akash/releases/tag/v0.7.1 |
-| Proposal Time | 2020-05-19 16:00 UTC |
-| Voting Start Time | 2020-05-19 16:00 UTC |
-| Voting End Time | 2020-05-21 16:00 UTC |
-| Network Upgrade Time | 22 May, 16:00 UTC |
+| Proposal Time | 2020-05-29 16:00 UTC |
+| Voting Start Time | 2020-05-29 16:00 UTC |
+| Voting End Time | 2020-05-31 16:00 UTC |
+| Network Upgrade Time | 1 June, 16:00 UTC |
 | Link(s) | https://akash.aneka.io/proposals/1, https://testnet.akash.bigdipper.live/proposals/1, https://look.ping.pub/#/governance/1 |
 
 ## Querying the proposal
