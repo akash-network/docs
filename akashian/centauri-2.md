@@ -74,3 +74,48 @@ $ akashctl tx staking create-validator \
   --gas="auto" \
   --from=<key_name>
 ```
+
+
+# Cygni upgrade
+
+## Context - Why Cygni Upgrade?
+The goal is to ensure upgrades happen without friction, and coordination gaps are identified and fixed. The release will have updates to gov params and staking, to reduce the voting power of genesis validator(s) to match with other validators. More details on the release changelog are available at: https://github.com/ovrclk/akash/releases/tag/v0.7.1
+
+## Schedule
+- Upgrade proposal time: 29 May, 16:00 UTC
+- Binary release : 29 May, 16:00 UTC
+- Voting Period : 29 May - 31 May, 16:00 UTC
+- Network Upgrade Time: 01 May, 16:00 UTC
+
+## Proposal Details
+|    |            |
+|----------|:-------------:|
+| Proposal ID |  1 |
+| Name |    cygni   |
+| Title | Cygni Upgrade | 
+| Description | https://akash.aneka.io/proposals/1 |
+| Link(s) | https://akash.aneka.io/proposals/1, https://testnet.akash.bigdipper.live/proposals/1, https://look.ping.pub/#/governance/1 |
+
+## Querying the proposal
+
+Use the following command to query the proposal
+
+```sh
+akashctl query gov proposal 1 --chain-id centauri-2 -o json
+```
+
+You can query the votes using following command.
+
+```sh
+akashctl query gov votes 1 --chain-id centauri-2 -o json
+```
+
+## Voting for proposal
+
+Use the following command to vote on the proposal.
+```sh
+akashctl tx gov vote 1 <option> --chain-id centauri-2 --from <key-name>
+```
+
+You have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recommended to choose your vote carefully as the governance decision will change the network state forever.
+Note: You can always change your vote before voting endtime.
