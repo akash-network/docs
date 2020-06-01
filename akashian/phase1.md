@@ -308,7 +308,7 @@ You have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recommended 
 Note: You can always change your vote before voting endtime.
 
 ## How to Upgrade
-[TBD]
+[NA]
 
 
 # Cygni upgrade
@@ -361,7 +361,7 @@ Note: You can always change your vote before voting endtime.
 
 ## How to Upgrade
 
-If the proposal goes through, everyone gets to switch/update their binaries to new version (v0.7.2). The old binary (v0.7.2) will stop working from 01 June, 16:00 UTC and it won't be able to sync/sign new blocks from then.
+If the proposal goes through, everyone gets to switch/update their binaries to new version (v0.7.2). The old binary (v0.7.0) will stop working from 01 June, 16:00 UTC and it won't be able to sync/sign new blocks from then.
 
 Note: We should use new binaries only after 01 June, 16:00UTC, if you try to update it before, it fails.
 
@@ -384,9 +384,9 @@ Installing Akash suite from source
 ```shell
 $ go get -d github.com/ovrclk/akash
 $ cd $GOPATH/src/github.com/ovrclk/akash
-$ git checkout v0.7.2
-$ make deps-install
+$ git fetch && git checkout v0.7.2
 $ make install
+$ akashd version
 ```
 
 Akash is developed and tested with [golang 1.14+](https://golang.org/). Building requires a working [golang](https://golang.org/) installation, a properly set `GOPATH`, and `$GOPATH/bin` present in `$PATH`.
@@ -396,3 +396,17 @@ Most golang libraries will be installed via `go mod`, however the following pack
 * [mockery](https://github.com/vektra/mockery): Mock generator.
 
 Once you have the dependencies properly setup, download and build `akashctl` and `akashd` using `make install`
+
+### Restart the node
+If you are using `systemd` service,
+
+```sh
+sudo service akashd stop
+sudo service akashd start
+sudo service akashd status
+```
+
+If you are using `screen`, switch to the screen and execute:
+```sh
+akashd start --pruning nothing
+```
