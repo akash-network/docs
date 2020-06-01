@@ -13,8 +13,7 @@
 ## Akashian
 * [The Challenge](akashian/README.md)
 * [Phase 1: Node Operations](akashian/phase1.md)
-* [Setup Validator For Centauri-2](akashian/centauri-2.md)
-* [Upgrade to Cygni Network](akashian/cygni-upgrade.md)
+* [Centauri-2](akashian/centauri-2.md)
 
 ## Usage
 * [Stack Definition Language](sdl/README.md)
