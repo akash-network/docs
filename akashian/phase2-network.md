@@ -1,6 +1,18 @@
 # Akashian Phase 2 Network Configuration
 
-The network for phase 2 of the Akashian challenge will not be a decentralized launch and validator set like Phase 1. After having proven the ability of the validator set to launch and maintain the network in a decentralized fashion in Phase 1, we are moving on to testing the actual funcationality of the network in Phases 2 and 3. This configuration will make it possible for the Akash team to ship bug fixes and features to the network without requiring all network participants to upgrade independently. This should make for a much smoother testnet experience where participants can focus on learning and testing the core functionality of the Akash Network. With that in mind the network topology for phase two is as follows:
+The network for Phase 2 of the Akashian challenge will not be a decentralized launch and validator set like Phase 1. After having proven the ability of the validator set to launch and maintain the network in a decentralized fashion in Phase 1, we are moving on to testing the actual funcationality of the network in Phases 2 and 3. This configuration will make it possible for the Akash team to ship bug fixes and features to the network without requiring all network participants to upgrade independently. This should make for a much smoother testnet experience where participants can focus on learning and testing the core functionality of the Akash Network. 
+
+The instructions for the three weeks of Phase 2 are linked here:
+
+- [Week 1](./phase2-week1.md)
+- [Week 2](TBD) - Instructions not live yet
+- [Week 3](TBD) - Instructions not live yet
+
+Other useful links for this testnet phase:
+- [Running a full node on an Akash test network](../guides/join-the-testnet.md)
+- [Creating a validator on an Akash test network](../guides/create-a-testnet-validator.md) (not required for phase 2)
+
+With that in mind the network topology for Phase 2 is as follows:
 
 ### Network Topology
 
