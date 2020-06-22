@@ -1,4 +1,4 @@
-# Running Akashd in systemd
+# Running `akashd` under Systemd
 
 First ensure that you have [created and configured your full node for the proper testnet](./join-the-testnet.md) and you haven't run `akashd start` yet.
 
@@ -7,6 +7,7 @@ Start by creating the following file and open it in your choice of editor:
 ```bash
 sudo nano /etc/systemd/system/akashd.service
 ```
+
 Fill that file with the following valid `toml`:
 
 > NOTE: the `User`, `ExecStart` and `WorkingDirectory` will depend on your system and how you installed `akashd`.

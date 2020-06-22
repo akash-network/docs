@@ -3,11 +3,11 @@
 ::: tip 
 See the [testnet repo](https://github.com/ovrclk/net) for
 information on the specific testnet you plan to join, including the correct version
-of the Akash binaries to use and details about the genesis file.
+of the Akash binaries to use, details about the genesis file, and seeds/peers.
 :::
 
 ::: warning
-**You need to [install `akashd` and `akashctl`](../guides/install.md) on your sever before you go further**
+**You need to [install `akashd` and `akashctl`](./install.md) on your sever before you go further**
 :::
 
 ## Setting Up a New Node
@@ -70,12 +70,11 @@ akashd validate-genesis
 
 ### Add Seed Nodes
 
-Your node needs to know how to find peers. You'll need to add healthy seed nodes to `$HOME/.akashd/config/config.toml`. The [`net`](https://github.com/ovrclk/net/tree/master/latest) repo contains information about the seed nodes and sentry nodes maintained by the Akash team.
+Your node needs to know how to find peers. You'll need to add healthy seed nodes or persistent peers to `$HOME/.akashd/config/config.toml`. The [`net`](https://github.com/ovrclk/net/tree/master/latest) repo contains information about the seed nodes and sentry nodes maintained by the Akash team.
 
-<!-- TODO: CHECK THAT THIS IS THE RIGHT MATRIX ROOM -->
 You can also ask for peers on the [Validators Riot Room](https://riot.im/app/#/room/#akash-validators:matrix.org)
 
-For more information on the how and why of seeds and peers, you can [read this](https://docs.tendermint.com/master/spec/p2p/peer.html) great documentation.
+For more information on the how and why of seeds and peers, you can [read this](https://docs.tendermint.com/master/spec/p2p/peer.html) great documentation from the Tendermint maintainers.
 
 ## A Note on Gas and Fees
 
@@ -107,8 +106,6 @@ By default every node is in `PruneSyncable` mode. If you would like to change yo
 
 > Note: When you are pruning state you will not be able to query the heights that are not in your store. The sentry nodes the Akash team is running will be `--pruning nothing` and all data from the testnet will be queriable there.
 
-<!-- NOTE: we need to add a link to tendermint pruning docs -->
-
 ## Run a Full Node
 
 Start the full node with this command:
@@ -117,7 +114,7 @@ Start the full node with this command:
 akashd start --pruning everything
 ```
 
-If you would like to run your node via `systemd` please see [this guide](../systemd.md).
+If you would like to run your node via `systemd` please see [this guide](./systemd.md).
 
 You can use `akashctl` to check that everything is running smoothly:
 
@@ -127,7 +124,6 @@ akashctl status
 
 View the status of the network with the testnet explorer.
 
-
 ## Upgrade to Validator Node
 
-You now have an active full node. What's the next step? You can upgrade your full node to become a Akash Validator. Validators have the ability to propose new blocks the Akash testnet. If you are interested you can continue onto [the Validator Setup](../create-a-testnet-validator.md).
+You now have an active full node. What's the next step? You can upgrade your full node to become a Akash Validator. Validators have the ability to propose new blocks the Akash testnet. If you are interested you can continue onto [the Validator Setup](./create-a-testnet-validator.md).
