@@ -7,7 +7,7 @@ of the Akash binaries to use, details about the genesis file, and seeds/peers.
 :::
 
 ::: warning
-**You need to [install `akashd` and `akashctl`](./install.md) on your sever before you go further**
+**You need to [install `akashd` and `akashctl`](/guides/install.md) on your sever before you go further**
 :::
 
 ## Setting Up a New Node
@@ -114,7 +114,7 @@ Start the full node with this command:
 akashd start --pruning everything
 ```
 
-If you would like to run your node via `systemd` please see [this guide](./systemd.md).
+If you would like to run your node via `systemd` please see [this guide](/guides/systemd.md).
 
 You can use `akashctl` to check that everything is running smoothly:
 
@@ -126,4 +126,4 @@ View the status of the network with the testnet explorer.
 
 ## Upgrade to Validator Node
 
-You now have an active full node. What's the next step? You can upgrade your full node to become a Akash Validator. Validators have the ability to propose new blocks the Akash testnet. If you are interested you can continue onto [the Validator Setup](./create-a-testnet-validator.md).
+You now have an active full node. What's the next step? You can upgrade your full node to become a Akash Validator. Validators have the ability to propose new blocks the Akash testnet. If you are interested you can continue onto [the Validator Setup](/guides/create-a-testnet-validator.md).

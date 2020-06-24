@@ -4,13 +4,13 @@ The network for Phase 2 of the Akashian challenge will not be a decentralized la
 
 The instructions for the three weeks of Phase 2 are linked here:
 
-- [Week 1](./phase2-week1.md)
+- [Week 1](/akashian/phase2-week1.md)
 - [Week 2](TBD) - Instructions not live yet
 - [Week 3](TBD) - Instructions not live yet
 
 Other useful links for this testnet phase:
-- [Running a full node on an Akash test network](../guides/join-the-testnet.md)
-- [Creating a validator on an Akash test network](../guides/create-a-testnet-validator.md) (not required for phase 2)
+- [Running a full node on an Akash test network](/guides/join-the-testnet.md)
+- [Creating a validator on an Akash test network](/guides/create-a-testnet-validator.md) (not required for phase 2)
 
 With that in mind the network topology for Phase 2 is as follows:
 
@@ -24,7 +24,7 @@ The Akash Network development team will be running the validator set in a VPC th
 
 The Akash team will be running a number of sentries. These sentries will be available at the following addresses for p2p communication:
 
-> NOTE: If you would like to run a full and connect to the network via p2p please follow [this guide](../guides/join-the-testnet.md).
+> NOTE: If you would like to run a full and connect to the network via p2p please follow [this guide](/guides/join-the-testnet.md).
 
 
 ```bash
