@@ -15,6 +15,7 @@
 * [Phase 1: Node Operations](akashian/phase1.md)
 * [Setup Validator For Centauri-2](akashian/centauri-2.md)
 * [Phase 2: Provider Operations](akashian/phase2.md)
+* [Phase 2 Network Configuration](akashian/phase2-network.md)
 
 ## Usage
 * [Stack Definition Language](sdl/README.md)
@@ -23,6 +24,9 @@
   * [Run Light Client](usage/cli/rest-server.md)
   * [Manage keys](usage/cli/keys.md)
   * [Manage deployments](usage/cli/deployments.md)
+  * [Join the Tesetnet](usage/join-the-testnet.md)
+  * [Systemd configuration](usage/systemd.md)
+  * [Create Testnet Validator](usage/create-a-testnet-validator.md)
   * [Service logs](usage/cli/logs.md)
   * [Monitor marketplace](usage/cli/marketplace.md)
   * [Manage provider](usage/cli/provider.md)
