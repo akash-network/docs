@@ -14,6 +14,7 @@
 * [The Challenge](akashian/README.md)
 * [Phase 1: Node Operations](akashian/phase1.md)
 * [Setup Validator For Centauri-2](akashian/centauri-2.md)
+* [Phase 2: Provider Operations](akashian/phase2.md)
 
 ## Usage
 * [Stack Definition Language](sdl/README.md)
