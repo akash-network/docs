@@ -39,7 +39,17 @@ $ akashctl q provider get $(akashctl keys show mykey -a)
 During the competition the Akash team will be submitting `Deployments` periodically. Those deployment requests will create `Orders` on the chain. They will be originating from the following addresses:
 
 ```
-TODO: add list of addresses where orders will be originating
+akash1n76p2ata9ek5gphs2lj9v9z64xlrx0sgqr72yw
+akash1ejhr8hqndl5jwmvjttepr4yh39vttnmzex0sjk
+akash1kd5vw9vwa4zqcehzz6qxkg8m0kh5l850ksek8s
+akash1xg806jz0ex69nnue36jaq4lyvp43yx60cm2chc
+akash18rnq7f3z7dxx2p5x5mvfml7c8rm726e5u659gc
+akash1qtryq2gk7mgj3zl0nn9mffrt3zzhzmf26lepuu
+akash19a7urn4lpftrlc4a5qadfmdu0erntsaga2kwaz
+akash1uaamq2yk53y0pkykp9h8dq2u3sa2y5g5ec8242
+akash1dmd577v86eggwmfj0g2plxewphgv3ccm9vgg08
+akash1c76e7z8l0uaa77kcrvnhnn24h8n0vvytgugkkj
+akash1fd7sc4h3z6nw8rkx3mhtvswazdg0gqjuu944vp
 ```
 
 You can query for outstanding orders in the DEX using the following CLI command:

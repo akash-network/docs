@@ -57,7 +57,7 @@ Next we need to configure the p2p network and ensure that you have the right `ge
 Fetch the testnet's `genesis.json` file into `akashd`'s config directory.
 
 ```bash
-curl https://raw.githubusercontent.com/ovrclk/net/master/latest/genesis.json > $HOME/.akashd/config/genesis.json
+curl -s https://raw.githubusercontent.com/ovrclk/net/master/latest/genesis.json > $HOME/.akashd/config/genesis.json
 ```
 
 Note we use the `latest` directory in the [testnet repo](https://github.com/ovrclk/net) which contains details for the testnet like the latest version and the genesis file.
