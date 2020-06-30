@@ -9,6 +9,9 @@
 ## Guides
 * [Install Akash Suite](guides/install.md)
 * [Running a Local Testnet](guides/validators/local.md)
+* [Join the Tesetnet](guides/join-the-testnet.md)
+* [Systemd configuration](guides/systemd.md)
+* [Create Testnet Validator](guides/create-a-testnet-validator.md)
 
 ## Akashian
 * [The Challenge](akashian/README.md)
@@ -24,9 +27,6 @@
   * [Run Light Client](usage/cli/rest-server.md)
   * [Manage keys](usage/cli/keys.md)
   * [Manage deployments](usage/cli/deployments.md)
-  * [Join the Tesetnet](usage/join-the-testnet.md)
-  * [Systemd configuration](usage/systemd.md)
-  * [Create Testnet Validator](usage/create-a-testnet-validator.md)
   * [Service logs](usage/cli/logs.md)
   * [Monitor marketplace](usage/cli/marketplace.md)
   * [Manage provider](usage/cli/provider.md)
