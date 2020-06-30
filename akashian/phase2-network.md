@@ -29,18 +29,18 @@ The Akash team will be running a number of sentries. These sentries will be avai
 
 ```bash
 "persistent_peers" = `
-    852480a322f3b08d68a28984f5e7c1a62e332ba2@sentry-1.akashtest.net:26656,
-    17457521dbe43f7d5afe5583229e9501b485d8f0@sentry-2.akashtest.net:26656,
-    d9a94849535687346e72faff6f1cdabb07270087@sentry-3.akashtest.net:26656
+    17803bdbfe6bd1642ff85d24446ec6b1f158fea5@sentry-1.v2.akashtest.net:26656,
+    1da5a7b54f31258c023dd97715355bbd9cbb1fd0@sentry-2.v2.akashtest.net:26656,
+    90db51131dbf7c0579cc64c7451f18f0b7a8ac7b@sentry-3.v2.akashtest.net:26656
 `
 ```
 
 If you would just like to use the provided RPC endpoints to send transactions and query the network the following endpoints will be maintained throughout Phase 2:
 
 ```
-tcp://sentry-1.akashtest.net:26657
-tcp://sentry-2.akashtest.net:26657
-tcp://sentry-3.akashtest.net:26657
+tcp://sentry-1.v2.akashtest.net:26657
+tcp://sentry-2.v2.akashtest.net:26657
+tcp://sentry-3.v2.akashtest.net:26657
 ```
 
 You can use one of the above addresses to configure your `akashctl` to use it: `akashctl config node {{node-addr}}`
