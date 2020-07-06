@@ -5,7 +5,7 @@ The network for Phase 2 of the Akashian challenge will not be a decentralized la
 The instructions for the three weeks of Phase 2 are linked here:
 
 - [Week 1](/akashian/phase2.md)
-- [Week 2](TBD) - Instructions not live yet
+- [Week 2](/akashian/phase2.md)
 - [Week 3](TBD) - Instructions not live yet
 
 Other useful links for this testnet phase:

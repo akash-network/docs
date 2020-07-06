@@ -132,3 +132,24 @@ There is also a piece of infrastructure provided by the `Akash` team that will a
 ```
 $ akashctl provider run --from mykey
 ```
+
+### *Week 2: Chaos is a Ladder* 
+
+Week 2 is a test for throughput of the DEX. This will allow our team to identify performance bottlenecks in our code under realistic network conditions. The challenge builds on users’ provider experience from the Week 1: Capture the Orders challenge and encourages them to explore how to operate as a tenant on the network. 
+
+Reward Opportunities:
+
+* _Provider_: Total Lease-Hours per Provider: Points awarded to the provider that accumulates the greatest total number of lease-blocks. A lease block is an open lease for one block – if a provider has two leases during one block it is counted as two lease-blocks.
+* _Provider_: Total Lease Count: Points awarded to the provider that accumulates the greatest total number total leases.
+* _Tenant_: Total Lease-Hours: Points awarded to the tenant that accumulates the greatest total number of lease-blocks. A lease block is an open lease for one block – if a tenant has two leases during one block it is counted as two lease-blocks.
+* _Tenant_: Total Lease Count: Points awarded to the tenant that accumulates the greatest total number total leases.
+
+The only change this week is that instead of the Akash team submitting all of the orders, all testnet participants are also encouraged to submit their own deployments.The command to submit a deployment is:
+
+```
+akashctl tx deployment create [sdl-file] --from [deployment-key]
+```
+
+There is [documentation on the SDL file format](/sdl/README.md) as well as some examples in the [`ovrclk/akash`](https://github.com/ovrclk/akash/blob/master/_docs/examples/provider/deployment.yaml) repository that will parse. Please note that the `profiles.placement.{name}.attributes` will determine which providers can bid on and win the leases.
+
+> NOTE: Because this challenge encourages maximum concurrent access and high volumes of transactions, users should anticipate and prepare for some adverse network conditions. 
