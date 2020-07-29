@@ -9,16 +9,16 @@
 ## Guides
 * [Install Akash Suite](guides/install.md)
 * [Running a Local Testnet](guides/validators/local.md)
-* [Join the Tesetnet](guides/join-the-testnet.md)
 * [Systemd configuration](guides/systemd.md)
 * [Create Testnet Validator](guides/create-a-testnet-validator.md)
+* [Join the Testnet](guides/join-the-testnet.md)
 
 ## Akashian
 * [The Challenge](akashian/README.md)
 * [Phase 1: Node Operations](akashian/phase1.md)
-* [Setup Validator For Centauri-2](akashian/centauri-2.md)
+* [Phase 1: Setup Validator For Centauri-2](akashian/centauri-2.md)
 * [Phase 2: Provider Operations](akashian/phase2.md)
-* [Phase 2 Network Configuration](akashian/phase2-network.md)
+* [Phase 2: Network Configuration](akashian/phase2-network.md)
 
 ## Usage
 * [Stack Definition Language](sdl/README.md)
