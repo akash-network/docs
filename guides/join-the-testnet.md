@@ -1,14 +1,15 @@
 # Join the Akash Network Testnet
 
-::: tip 
+
+{% hint style="info" %}
 See the [testnet repo](https://github.com/ovrclk/net) for
 information on the specific testnet you plan to join, including the correct version
 of the Akash binaries to use, details about the genesis file, and seeds/peers.
-:::
+{% endhint %}
 
-::: warning
-**You need to [install `akashd` and `akashctl`](/guides/install.md) on your sever before you go further**
-:::
+{% hint style="warning" %}
+You need to [install `akashd` and `akashctl`](/guides/install.md) on your sever before you go further
+{% endhint %}
 
 ## Setting Up a New Node
 
@@ -20,9 +21,9 @@ First, initialize the node and create the necessary config files:
 akashd init <your_custom_moniker>
 ```
 
-::: warning Note
+{% hint style="warning" %}
 Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable.
-:::
+{% endhint %}
 
 You can edit this `moniker` later, in the `~/.akashd/config/config.toml` file:
 
