@@ -59,7 +59,7 @@ Businesses and individual consumers will want and need to protect how they are p
 
 A _lease_ is created when a match occurs between a deployment and fulfillment order. The lease contains references to the deployment and fulfilment orders. Leases will be the binding agent in fulfilling a deployment.
 
-## DSC: Decentralized Cloud Standards 
+## DCS: Decentralized Cloud Standards 
 
 Visit [DCS](https://dcs.akash.network) to learn about Akash system design. Decentralized Cloud Standards (DCSs) describe standards for the Akash Decentralized Cloud platform, including core protocol specifications, client APIs, and SDL standards. 
 
