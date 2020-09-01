@@ -10,7 +10,7 @@ Clients use Akash because of its cost advantage, usability, and flexibility to m
 
 The foundational design objective of the Akash Network is to maintain a low barrier to entry for providers while at the same time ensuring that clients can trust the resources that the platform offers them. To achieve this, the system requires a publicly-verifiable record of transactions within the network. To that end, the Akash Network is implemented using blockchain technologies as a means of achieving consensus on the veracity of a distributed database.
 
-Akash is, first and foremost, a platform that allows clients to procure resources from providers. This is enabled by a blockchain-powered distributed exchange where clients post their desired resources for providers to bid on. The currency of this marketplace is a digital token, the [AKT](http://akash.network/l/econ-paper), whose ledger is stored on a blockchain.
+Akash is, first and foremost, a platform that allows clients to procure resources from providers. This is enabled by a blockchain-powered distributed exchange where clients post their desired resources for providers to bid on. The currency of this marketplace is a digital token, the [AKT](https://akash-web-prod.s3.amazonaws.com/uploads/2020/03/akash-econ.pdf), whose ledger is stored on a blockchain.
 
 Akash is a cloud platform for real-world applications. The requirements of such applications include:
 
