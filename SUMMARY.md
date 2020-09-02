@@ -3,24 +3,35 @@
 * [Introduction](README.md)
 
 ## Overview
-
 * [What is Akash?](overview/README.md)
 
-## Guides
-* [Install Akash Suite](guides/install.md)
+## Wallet Guides
+* [Ledger Using Web](guides/wallet/lunie.md)
+* [Ledger Using CLI](guides/wallet/cli.md)
+
+## Validator Guides
 * [Running a Local Testnet](guides/validators/local.md)
 * [Systemd configuration](guides/systemd.md)
 * [Create Testnet Validator](guides/create-a-testnet-validator.md)
 * [Join the Testnet](guides/join-the-testnet.md)
 
-## Akashian
+## Provider Guides
+* [Sell Your Spare Capacity](providers/kube/README.md)
+
+## Deployment Guides
+* [Deploy Your First App](guides/deploy/simple.md)
+
+## Akashian Challenge
 * [The Challenge](akashian/README.md)
-* [Phase 1: Node Operations](akashian/phase1.md)
-* [Phase 1: Setup Validator For Centauri-2](akashian/centauri-2.md)
+### Phase 1
+* [Node Operations](akashian/phase1.md)
+* [Setup Validator For Centauri-2](akashian/centauri-2.md)
+### Phase 2
 * [Phase 2: Provider Operations](akashian/phase2.md)
 * [Phase 2: Network Configuration](akashian/phase2-network.md)
 
 ## Usage
+* [Install Akash Suite](guides/install.md)
 * [Stack Definition Language](sdl/README.md)
 * [Akash Client](usage/cli/README.md)
   * [Common Commands](usage/cli/general-commands.md)
