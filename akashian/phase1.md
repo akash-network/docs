@@ -24,7 +24,7 @@ Please store the menonic keys in a safe place
 ### 2. Generate Genesis Transaction
 
 ```sh
-akashd init <moniker> --chain-id centauri
+akashd init <moniker> --chain-id centauri-2
 curl -s https://raw.githubusercontent.com/ovrclk/net/master/centauri/genesis.json > ~/.akashd/config/genesis.json
 akashd add-genesis-account $(akashctl keys show $TEAM -a) 10000000uakt # other values will be removed.
 akashd gentx --name $TEAM --amount 9000000uakt
@@ -201,20 +201,20 @@ Centauri network launch was smooth, the first block was produced within 2 second
 Use the following command to query the proposal:
 
 ```sh
-akashctl query gov proposal 2 --chain-id centauri --node http://akash-rpc.vitwit.com:26657 -o json
+akashctl query gov proposal 2 --chain-id centauri-2 --node http://akash-rpc.vitwit.com:26657 -o json
 ```
 
 You can query the votes using the following command:
 
 ```sh
-akashctl query gov votes 2 --chain-id centauri --node http://akash-rpc.vitwit.com:26657 -o json
+akashctl query gov votes 2 --chain-id centauri-2 --node http://akash-rpc.vitwit.com:26657 -o json
 ```
 
 ## Voting for proposal
 
 Use the following command to vote on the proposal:
 ```sh
-akashctl tx gov vote 2 yes --chain-id centauri --node http://akash-rpc.vitwit.com:26657 --from <key-name>
+akashctl tx gov vote 2 yes --chain-id centauri-2 --node http://akash-rpc.vitwit.com:26657 --from <key-name>
 ```
 
 Though you have multiple ( `yes`/`no`/`abstain`/`no_with_veto`) options to vote, it is recommended to choose only the `yes` option as this will fix existing bugs on the network.
@@ -288,20 +288,20 @@ The goal of Eridani release is to tets resilience of the network against corrupt
 Use the following command to query the proposal
 
 ```sh
-akashctl query gov proposal 3 --chain-id centauri -o json
+akashctl query gov proposal 3 --chain-id centauri-2 -o json
 ```
 
 You can query the votes using following command.
 
 ```sh
-akashctl query gov votes 3 --chain-id centauri -o json
+akashctl query gov votes 3 --chain-id centauri-2 -o json
 ```
 
 ## Voting for proposal
 
 Use the following command to vote on the proposal.
 ```sh
-akashctl tx gov vote 3 <option> --chain-id centauri --from <key-name>
+akashctl tx gov vote 3 <option> --chain-id centauri-2 --from <key-name>
 ```
 
 You have `yes`/`no`/`abstain`/`no_with_veto` options to vote, it is recommended to choose your vote carefully as the governance decision will change the network state forever.
