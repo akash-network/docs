@@ -7,7 +7,7 @@
 
 ## Wallet Guides
 * [Ledger Using Web](guides/wallet/lunie.md)
-* [Ledger Using CLI](guides/wallet/cli.md)
+* [Locally Using CLI](guides/wallet/cli.md)
 
 ## Validator Guides
 * [Running a Local Testnet](guides/validators/local.md)
