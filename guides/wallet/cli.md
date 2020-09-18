@@ -33,3 +33,50 @@ town wolf margin parrot strong disease dance eyebrow inflict meadow crunch versi
 In the above example, your new Akash address is `akash1cz87pqkad72gggrv3t7y2x9z56h9gqghlnx3j3` and generated mnemonic phrase is `town wolf margin .... humble nest call`
 
 **IMPORTANT:** It's imperative your keep the mnemonic phrase is a safe place and it is the only way to recover your private key incase you change your device.
+
+## Recovering Your Keys Using Pass Phrase
+
+The command to recover your key is:
+
+```
+akashctl keys add <name> --recover
+```
+
+For example, `akashctl keys add alice --recover` will prompt the user to input a bip39 mnemonic and looks similar to:
+
+```
+> Enter your bip39 mnemonic
+diagram pony police cigar curious miracle multiply tiger salmon trade like month oven custom seven assume rail valid abuse forest mountain submit text print
+
+- name: alice
+  type: local
+  address: akash1skzh3hywj8x5ws7ed30qnz8zf2fq2va6nwdw6t
+  pubkey: akashpub1addwnpepqwyfrxddp5zs72qcyujlhky3rxlp80m7z7klyklpdq84mgw04aghvnr5rtz
+  mnemonic: ""
+  threshold: 0
+  pubkeys: []
+```
+
+## Exporting Your Private Keys
+
+The command to export your private key is `keys export`. For example:
+
+```sh
+akashctl keys export alice
+```
+
+will output a response similar to:
+
+```
+Enter passphrase to decrypt your key:
+Enter passphrase to encrypt the exported key:
+-----BEGIN TENDERMINT PRIVATE KEY-----
+kdf: bcrypt
+salt: DC5BA634306180096D7F9D19E94A7A9D
+type: secp256k1
+
+Hdv20eQY/mXdYD4a/zd6QPdBDkMHyyl2qY6Tun/UgQviUUyyTvzuVQgrrZ6tilRI
+1FXXkwmeRPCOJ4v6oA2q536aM4Jmc5zYekgZ8OI=
+=IGRD
+-----END TENDERMINT PRIVATE KEY-----
+```
