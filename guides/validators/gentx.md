@@ -1,6 +1,6 @@
 ## Before We begin
 
-Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) [please use the `v0.8.1` release](https://github.com/ovrclk/akash/releases/tag/untagged-c61092bf60838cda6018) for instructions.
+Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) [please use the `v0.8.1` release](https://github.com/ovrclk/akash/releases/tag/v0.8.1) for instructions.
 
 If you're building from source, ensure you have correct version `v0.8.1` and proper build flags:
 
