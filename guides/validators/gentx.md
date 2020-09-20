@@ -2,6 +2,13 @@
 
 Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) [please use the `v0.8.1` release](https://github.com/ovrclk/akash/releases/tag/untagged-c61092bf60838cda6018) for instructions.
 
+If you're building from source, ensure you have correct version `v0.8.1` and proper build flags:
+
+```sh
+git checkout tags/v0.8.1
+MAINNET=true make install
+```
+
 ## 1. Generate Genesis Transaction (GenTx)
 
 Create a genesis transaction to become a Akash Genesis validator, you can create one using `gentx` command from the `akashd`. To create the genesis transaction using the key `alice` and a moniker `mymoniker`:
