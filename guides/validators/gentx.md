@@ -4,7 +4,7 @@ Make sure to have Akash client installed on your workstation, check [install gui
 
 ## 1. Generate Genesis Transaction (GenTx)
 
-Create a genesis transaction to become a Akash Genesis validator, you can create one using `gentx` command from the `akashd`. To create the genesis transaction using the key `alice` and a monitor `mymoniker`:
+Create a genesis transaction to become a Akash Genesis validator, you can create one using `gentx` command from the `akashd`. To create the genesis transaction using the key `alice` and a moniker `mymoniker`:
 
 ```sh
 akashd init mymoniker --chain-id akashnet-1
