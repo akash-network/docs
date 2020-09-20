@@ -6,10 +6,11 @@
 * [What is Akash?](overview/README.md)
 
 ## Wallet Guides
-* [Ledger Using Web](guides/wallet/lunie.md)
-* [Locally Using CLI](guides/wallet/cli.md)
+* [Using Lunie Web with Ledger](guides/wallet/lunie.md)
+* [Ledger or Local with CLI](guides/wallet/cli.md)
 
 ## Validator Guides
+* [Submit GenTx for Mainnet](guides/validators/gentx.md)
 * [Running a Local Testnet](guides/validators/local.md)
 * [Create Testnet Validator](guides/create-a-testnet-validator.md)
   * [Systemd Configuration](guides/systemd.md)

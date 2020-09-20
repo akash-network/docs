@@ -4,7 +4,7 @@ In this guide, we'll generate a wallet address on your workstation
 
 Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) for instructions.
 
-## Derive a New Key
+## Derive a New Key Locally
 
 Derive a new private key and encrypt to disk using the command `keys add`, to generate a key with the named `alice`, run the below (please make sure to replace alice with a name of your choice):
 
@@ -24,15 +24,34 @@ You'll see a response similar to below:
   pubkeys: []
 
 
-**Important** write this mnemonic phrase in a safe place.
-It is the only way to recover your account if you ever forget your password.
+**Important** write this mnemonic phrase in a safe place. It is the only way to recover your account if you ever forget your password.
 
 town wolf margin parrot strong disease dance eyebrow inflict meadow crunch version tube elite interest movie uphold column shift fox excuse humble nest call
 ```
 
 In the above example, your new Akash address is `akash1cz87pqkad72gggrv3t7y2x9z56h9gqghlnx3j3` and generated mnemonic phrase is `town wolf margin .... humble nest call`
 
-**IMPORTANT:** It's imperative your keep the mnemonic phrase is a safe place and it is the only way to recover your private key incase you change your device.
+**IMPORTANT:** It's imperative your keep the mnemonic phrase is a safe place and it is the ONLY way to recover your private key incase you change or lose your device.
+
+## Derive a New Key using Ledger
+
+To derive a key and store it on the ledger, add the `--ledger` flag `keys add` command. For example:
+
+```sh
+akashctl keys add alice --ledger
+```
+
+Will produce a similar output to:
+
+```
+- name: alice
+  type: ledger
+  address: akash1dt6wukc53dangle8qz7xjc792u0yrdc3esjlsp
+  pubkey: akashpub1addwnpepqvcsl4dxvsrdjyvd839uth7g96qhjq7jcxrnlf5qt0rgchutwcp8wgp4yk9
+  mnemonic: ""
+  threshold: 0
+  pubkeys: []
+```
 
 ## Recovering Your Keys Using Pass Phrase
 
