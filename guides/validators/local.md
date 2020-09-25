@@ -177,7 +177,7 @@ average move castle eager beauty focus sugar gesture method biology brick lonely
 Add 100M tokens to genesis Master account
 
 ```sh
-akashd add-genesis-account master 100000000akash,100000000stake
+akashd add-genesis-account master 100000000uakt,100000000stake
 ```
 
 ## Create a Validator

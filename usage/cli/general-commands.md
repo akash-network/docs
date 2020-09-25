@@ -60,7 +60,7 @@ akashctl tx send [from_key_or_address] [to_address] [amount] [flags]
  **Example**
 
 ```
-$ akashctl tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000akt -y -o json
+$ akashctl tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000uakt -y -o json
 
 {"height":"0","txhash":"116ED246AFF9F9B58036AECAA5EFE81AA7A788CC625CC2A4ADAFC68378834413","raw_log":"[]"}
 ```
@@ -151,7 +151,7 @@ $ akashctl tx staking delegate <validator-address> <amount-with-denom> --from <f
 **Example**
 
 ```
-$ akashctl tx staking delegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000akt --from alice -y -o json
+$ akashctl tx staking delegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000uakt --from alice -y -o json
 
 {"height":"0","txhash":"F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7","raw_log":"[]"}
 ```
@@ -205,7 +205,7 @@ $ akashctl tx staking redelegate <src-validator-address> <dest-validator-address
 **Example**
 
 ```
-$ akashctl tx staking redelegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr 1000000akt --from alice -y -o json
+$ akashctl tx staking redelegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr 1000000uakt --from alice -y -o json
 
 {"height":"0","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","raw_log":"[]"}
 ```
@@ -217,7 +217,7 @@ $ akashctl tx staking redelegate -h
 Redelegate an amount of illiquid staking tokens from one validator to another.
 
 Example:
-$ akashctl tx staking redelegate cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj cosmosvaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 100akt --from mykey
+$ akashctl tx staking redelegate cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj cosmosvaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 100uakt --from mykey
 
 Usage:
   akashctl tx staking redelegate [src-validator-addr] [dst-validator-addr] [amount] [flags]
@@ -260,7 +260,7 @@ $ akashctl tx staking unbond <validator-address> <amount-with-denom> --from <fro
 
 **Example**
 ```
-$ akashctl tx staking unbond akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000akt --from alice -y -o json
+$ akashctl tx staking unbond akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000uakt --from alice -y -o json
 
 {"height":"0","txhash":"F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7","raw_log":"[]"}
 ```
@@ -271,7 +271,7 @@ $ akashctl tx staking unbond -h
 Unbond an amount of bonded shares from a validator.
 
 Example:
-$ akashctl tx staking unbond cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 100akt --from mykey
+$ akashctl tx staking unbond cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 100uakt --from mykey
 
 Usage:
   akashctl tx staking unbond [validator-addr] [amount] [flags]
