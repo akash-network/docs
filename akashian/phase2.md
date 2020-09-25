@@ -92,7 +92,7 @@ $ akashctl tx market bid-create \
     --dseq {id.dseq} \
     --gseq {id.gseq} \
     --oseq {id.oseq} \
-    --price 10akash \
+    --price 10uakt \
     --from mykey
 ```
 

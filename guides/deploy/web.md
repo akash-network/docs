@@ -93,8 +93,8 @@ You should see a response similar to:
 I[2020-09-02|18:47:04.304] tx sent successfully                         hash=754913EA2098EA3E11FF72C62E41D65C925DB0BDB2F487FDDC282D2EAA51B9EE code=0 codespace= action=create-deployment dseq=529443
 I[2020-09-02|18:47:04.304] deployment created                           addr=akash1u74ah2ek7hku766yqpc5huqdc5fdydrm9glaa9 dseq=529443
 I[2020-09-02|18:47:04.727] order for deployment created                 addr=akash1u74ah2ek7hku766yqpc5huqdc5fdydrm9glaa9 dseq=529443 oseq=1
-I[2020-09-02|18:47:09.627] bid for order created                        addr=akash1u74ah2ek7hku766yqpc5huqdc5fdydrm9glaa9 dseq=529443 oseq=1 price=176akash
-I[2020-09-02|18:47:30.807] lease for order created                      addr=akash1u74ah2ek7hku766yqpc5huqdc5fdydrm9glaa9 dseq=529443 oseq=1 price=176akash
+I[2020-09-02|18:47:09.627] bid for order created                        addr=akash1u74ah2ek7hku766yqpc5huqdc5fdydrm9glaa9 dseq=529443 oseq=1 price=176uakt
+I[2020-09-02|18:47:30.807] lease for order created                      addr=akash1u74ah2ek7hku766yqpc5huqdc5fdydrm9glaa9 dseq=529443 oseq=1 price=176uakt
 I[2020-09-02|18:47:30.982] sending manifest to provider                 action=send-manifest provider=akash1chyw0u8vetuaynk8q03zv0p62th59z66qfy0vh uri=http://provider.akashdev.net dseq=529443
 I[2020-09-02|18:47:34.591] 8qssay4mtokdsucy9y9gyr.provider.akashdev.net name=web available=1
 ```

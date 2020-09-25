@@ -34,7 +34,7 @@ moniker = "<your_custom_moniker>"
 
 Your full-node keeps unconfirmed transactions in its mempool. In order to protect it from spam, it is better to set a `minimum-gas-prices` that the transaction must meet in order to be accepted in your node's mempool. This parameter can be set in the following file `~/.akashd/config/app.toml`.
 
-The initial recommended `min-gas-prices` is `0.025akash`, but you might want to change it later.
+The initial recommended `min-gas-prices` is `0.025uakt`, but you might want to change it later.
 
 ```
 # This is a TOML config file.
@@ -46,7 +46,7 @@ The initial recommended `min-gas-prices` is `0.025akash`, but you might want to 
 # transaction. A transaction's fees must meet the minimum of any denomination
 # specified in this config (e.g. 10uatom).
 
-minimum-gas-prices = "0.025akash"
+minimum-gas-prices = "0.025uakt"
 ``` 
 
 ## Genesis & Seeds
@@ -92,7 +92,7 @@ The `gasPrice` is the price of each unit of `gas`. Each validator sets a `min-ga
 The transaction `fees` are the product of `gas` and `gasPrice`. As a user, you have to input 2 out of 3. The higher the `gasPrice`/`fees`, the higher the chance that your transaction will get included in a block. 
 
 ::: tip
-For Akash testnets, the recommended `gas-prices` is `0.025akash`. 
+For Akash testnets, the recommended `gas-prices` is `0.025uakt`. 
 ::: 
 
 ## Pruning of State

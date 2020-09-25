@@ -273,7 +273,7 @@ Create and sign a send tx.
 **Example**
 
 ```shell
-$ akashctl tx bank send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000akashctl -y -o json
+$ akashctl tx bank send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000uakt -y -o json
 
 {"height":"0","txhash":"116ED246AFF9F9B58036AECAA5EFE81AA7A788CC625CC2A4ADAFC68378834413","raw_log":"[]"}
 ```
@@ -283,7 +283,7 @@ $ akashctl tx bank send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 1000000
 |:--------------------|:-------|:---------|:-----------------------------------|
 | from_key_or_address | string | Y        | From address or key name           |
 | to_address          | string | Y        | To address                         |
-| amount              | string | Y        | Amount need to send Eg: 10akashctl |
+| amount              | string | Y        | Amount need to send Eg: 10uakt |
 
 **Flags**
 | Short | Verbose           | Required | Type   | Description                                                                                                                                               |
@@ -961,7 +961,7 @@ Create and sign a send tx.
 **Example**
 
 ```shell
-$ akashctl tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000akashctl -y -o json
+$ akashctl tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000uakt -y -o json
 
 {"height":"0","txhash":"116ED246AFF9F9B58036AECAA5EFE81AA7A788CC625CC2A4ADAFC68378834413","raw_log":"[]"}
 ```
@@ -971,7 +971,7 @@ $ akashctl tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000akas
 |:--------------------|:-------|:---------|:-----------------------------------|
 | from_key_or_address | string | Y        | From address or key name           |
 | to_address          | string | Y        | To address                         |
-| amount              | string | Y        | Amount need to send Eg: 10akashctl |
+| amount              | string | Y        | Amount need to send Eg: 10uakt |
 
 **Flags**
 | Short | Verbose           | Required | Type   | Description                                                                                                                                               |
