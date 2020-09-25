@@ -68,7 +68,7 @@ You should see a response similar to:
     "address": "akash1u74ah2ek7hku766yqpc5huqdc5fdydrm9glaa9",
     "coins": [
       {
-        "denom": "akash",
+        "denom": "uakt",
         "amount": "1000000"
       }
     ],

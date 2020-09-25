@@ -92,7 +92,7 @@ Don't use more `uakt` than you have.
 
 * When specifying commission parameters, the `commission-max-change-rate` is used to measure *% point* change over the `commission-rate`. E.g. 1% to 2% is a 100% rate increase, but only 1 percentage point.
 
-* `Min-self-delegation` is a stritly positive integer that represents the minimum amount of self-delegated voting power your validator must always have. A `min-self-delegation` of 1 means your validator will never have a self-delegation lower than `1akt`, or `1000000uakt`.
+* `Min-self-delegation` is a stritly positive integer that represents the minimum amount of self-delegated voting power your validator must always have. A `min-self-delegation` of 1 means your validator will never have a self-delegation lower than `1uakt`, or `1000000uakt`.
 
 You can confirm that you are in the validator set by using any akash block explorer.
 
