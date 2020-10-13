@@ -6,18 +6,17 @@
 * [What is Akash?](overview/README.md)
 
 ## Wallet Guides
-* [Using Lunie Web with Ledger](guides/wallet/lunie.md)
-* [Ledger or Local with CLI](guides/wallet/cli.md)
+* [Using Lunie Web Wallet and Ledger](guides/wallet/lunie.md)
+* [Using CLI](guides/wallet/cli.md)
 
 ## Validator Guides
-* [Submit GenTx for Mainnet](guides/validators/gentx.md)
-* [Running a Local Testnet](guides/validators/local.md)
-* [Create Testnet Validator](guides/create-a-testnet-validator.md)
+* [Validators Overview](guides/validators/overview.md)
+* [Running a Local Node](guides/validators/local.md)
+* [Joining the Mainnet](guides/create-a-testnet-validator.md)
   * [Systemd Configuration](guides/systemd.md)
-* [Join the Testnet](guides/join-the-testnet.md)
 
 ## Provider Guides
-* [Sell Your Spare Capacity](providers/kube/README.md)
+* [Running a Provider Node](providers/kube/README.md)
 
 ## Deployment Guides
 * [Deploy a Simple Web App](guides/deploy/web.md)
@@ -44,3 +43,7 @@
   * [Send tokens to an account](usage/cli/send.md)
   * [Get remote node status](usage/cli/status.md)
   * [Print Akash version](usage/cli/version.md)
+
+## Resources
+* [REST API Spec](http://lcd.akash.forbole.com/)
+* [SDK API Reference](https://godoc.org/github.com/ovrclk/akash)

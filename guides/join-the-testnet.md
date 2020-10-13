@@ -1,6 +1,5 @@
 # Join the Akash Network Testnet
 
-
 {% hint style="info" %}
 See the [testnet repo](https://github.com/ovrclk/net) for
 information on the specific testnet you plan to join, including the correct version
