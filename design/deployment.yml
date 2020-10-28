@@ -61,15 +61,15 @@ profiles:
     web:
       cpu: "0.01"
       memory: "128Mi"
-      disk: "512Mi"
+      storage: "512Mi"
     db:
       cpu: "0.01"
       memory: "128Mi"
-      disk: "1Gi"
+      storage: "1Gi"
     db-pool:
       cpu: "0.01"
       memory: "128Mi"
-      disk: "512Mi"
+      storage: "512Mi"
 
   placement:
     westcoast:

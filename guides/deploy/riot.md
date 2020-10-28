@@ -55,7 +55,7 @@ profiles:
     web:
       cpu: "0.25"
       memory: "512Mi"
-      disk: "1G"
+      storage: "1G"
 
   placement:
     global:

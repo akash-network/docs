@@ -107,11 +107,11 @@ Marketplace facilitators maintain the distributed exchange (marketplace).  [Vali
 
 #### ComputeUnit
 
-| Field  | Definition |
-|--------|------|
-| cpu    | Number of vCPUs |
-| memory | Amount of memory in GB |
-| disk   | Amount of block storage in GB |
+| Field   | Definition |
+|---------|------|
+| cpu     | Number of vCPUs |
+| memory  | Amount of memory in GB |
+| storage | Amount of block storage in GB |
 
 #### ResourceGroup
 
