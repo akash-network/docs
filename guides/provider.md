@@ -286,8 +286,8 @@ Version:     	commit: deaa5acdafb694eb7a00a4be701084b6f4f1b828 | date: 2019-10-1
 Leases:      	2
 Deployments: 	0
 Orders:      	0
-Active:      	cpu: 500 | disk: 1.1 GB | mem: 537 MB
+Active:      	cpu: 500 | storage: 1.1 GB | mem: 537 MB
 Pending:
-Available:   	cpu: 7541 | disk: 222 GB | mem: 29 GB
+Available:   	cpu: 7541 | storage: 222 GB | mem: 29 GB
 Message(s):  	code=200  msg=OK
 ```

@@ -273,7 +273,7 @@ profiles:
     synapse:
       cpu: "1"
       memory: "1Gi"
-      disk: "1G"
+      storage: "1G"
 
   placement:
     attributes:

@@ -561,7 +561,7 @@ Deployments: 	0
 Orders:      	0
 Active:
 Pending:
-Available:   	cpu: 7825 | disk: 222 GB | mem: 32 GB
+Available:   	cpu: 7825 | storage: 222 GB | mem: 32 GB
 Message(s):  	code=200  msg=OK
 ```
 

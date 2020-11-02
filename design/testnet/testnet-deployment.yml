@@ -15,7 +15,7 @@ profiles:
     web:
       cpu: "100m"
       memory: "512Mi"
-      disk: "512Mi"
+      storage: "512Mi"
   placement:
     global:
       pricing:
