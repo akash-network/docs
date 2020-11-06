@@ -115,7 +115,7 @@ $ akashctl query tx <txhash> -o json
 ```
 $ akashctl query tx 295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E -o json
 
-{"height":"338","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","codespace":"staking","code":3,"raw_log":"validator does not exist: failed to execute message; message index: 0","gas_wanted":"200000","gas_used":"35496","tx":{"type":"cosmos-sdk/StdTx","value":{"msg":[{"type":"cosmos-sdk/MsgBeginRedelegate","value":{"delegator_address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","validator_src_address":"akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s","validator_dst_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","amount":{"denom":"akt","amount":"10000"}}}],"fee":{"amount":[],"gas":"200000"},"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"A+hCkyWd4cWG0KD+GgCxHEOUzll1cl5VvoGgDvVIwF3E"},"signature":"XI1XhIXlSCPnQVHQamu+sbqiZxAxLM8OnXSF2gqNVkkpP1bi6Au3v8N4EUAaPrZGYigechb2ekt6MUEjrFWdgw=="}],"memo":""}},"timestamp":"2020-03-06T10:39:57Z"}
+{"height":"338","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","codespace":"staking","code":3,"raw_log":"validator does not exist: failed to execute message; message index: 0","gas_wanted":"200000","gas_used":"35496","tx":{"type":"cosmos-sdk/StdTx","value":{"msg":[{"type":"cosmos-sdk/MsgBeginRedelegate","value":{"delegator_address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","validator_src_address":"akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s","validator_dst_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","amount":{"denom":"uakt","amount":"10000"}}}],"fee":{"amount":[],"gas":"200000"},"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"A+hCkyWd4cWG0KD+GgCxHEOUzll1cl5VvoGgDvVIwF3E"},"signature":"XI1XhIXlSCPnQVHQamu+sbqiZxAxLM8OnXSF2gqNVkkpP1bi6Au3v8N4EUAaPrZGYigechb2ekt6MUEjrFWdgw=="}],"memo":""}},"timestamp":"2020-03-06T10:39:57Z"}
 ```
 
 **More info**
@@ -374,11 +374,11 @@ $ akashctl query distribution rewards <delegator-address> [<validator-address>] 
 ```
 $ akashctl query distribution rewards akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr -o json
 
-[{"denom":"akt","amount":"69009.444000000000000000"}]
+[{"denom":"uakt","amount":"69009.444000000000000000"}]
 
 $ akashctl query distribution rewards akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
 
-{"rewards":[{"validator_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","reward":[{"denom":"akt","amount":"1089622.800000000000000000"}]}],"total":[{"denom":"akt","amount":"1089622.800000000000000000"}]}
+{"rewards":[{"validator_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","reward":[{"denom":"uakt","amount":"1089622.800000000000000000"}]}],"total":[{"denom":"uakt","amount":"1089622.800000000000000000"}]}
 ```
 
 **More info**
@@ -415,7 +415,7 @@ $ akashctl query account <account-address> -o json
 ```
 $ akashctl query account akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
 
-{"type":"cosmos-sdk/Account","value":{"address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","coins":[{"denom":"akt","amount":"99870156179"}],"public_key":"akashpub1addwnpepq05y9ye9nhsutpks5rlp5q93r3pefnjew4e9u4d7sxsqaa2gcpwug9szhl2","account_number":3,"sequence":5}}
+{"type":"cosmos-sdk/Account","value":{"address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","coins":[{"denom":"uakt","amount":"99870156179"}],"public_key":"akashpub1addwnpepq05y9ye9nhsutpks5rlp5q93r3pefnjew4e9u4d7sxsqaa2gcpwug9szhl2","account_number":3,"sequence":5}}
 ```
 
 **More info**

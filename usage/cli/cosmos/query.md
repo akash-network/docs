@@ -2156,7 +2156,7 @@ Query total supply of coins that are held by accounts in the chain.
 ```text
     $ akashctl query supply total
 
-    [{"denom":"akt","amount":"1000000000"},{"denom":"stake","amount":"1000101980"}]
+    [{"denom":"uakt","amount":"1000000000"},{"denom":"stake","amount":"1000101980"}]
 ```
 **Arguments**
 
