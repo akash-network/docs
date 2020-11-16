@@ -2,7 +2,7 @@
 
 The Akash Suite was originally composed of a full node `akashd` and the client `akashctl`. The full node `akashd` was the tendermint-based blockchain node that implemented the decentralized exchange. `akashctl` was the client used to access the exchange and network in general.
 
-The two binaries listed above have since been consoladated a single binary called `akash`.
+The two binaries listed above have since been consoladated to a single binary called `akash`.
 
 
 ### MacOS
