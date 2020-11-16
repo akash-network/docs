@@ -1,37 +1,49 @@
 # Join the Akash Network Testnet
 
 {% hint style="info" %}
-See the [testnet repo](https://github.com/ovrclk/net) for
+See the [testnet repo](https://github.com/ovrclk/net/tree/master/latest) for
 information on the specific testnet you plan to join, including the correct version
 of the Akash binaries to use, details about the genesis file, and seeds/peers.
 {% endhint %}
 
-{% hint style="warning" %}
-You need to [install `akashd` and `akashctl`](/guides/install.md) on your sever before you go further
-{% endhint %}
 
 ## Setting Up a New Node
 
-These instructions are for setting up a brand new full node from scratch.
+These instructions are for setting up a brand new full node from scratch. The node is running on Linux, using Ubuntu 20.10 
 
-First, initialize the node and create the necessary config files:
+First, update the system and install dependencies:
 
 ```bash
-akashd init <your_custom_moniker>
+sudo apt update
+sudo apt install build-essential jq git -y
 ```
 
-{% hint style="warning" %}
-Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable.
-{% endhint %}
+Install latest go version from https://golang.org/doc/install
 
-You can edit this `moniker` later, in the `~/.akashd/config/config.toml` file:
+```bash
+wget https://dl.google.com/go/<LATEST_GO.tar.gz>
+sudo tar -C /usr/local -xzf <LATEST_GO.tar.gz>
+```
+
+You need to [install `akash`](/guides/install.md) on your sever before you go further
+
+
+Initialize the node and create the necessary config files. Repalce <chain_id.txt> below with the chain-id used in the [latest testnet](https://github.com/ovrclk/net/tree/master/latest) 
+
+```bash
+akashd init <your_custom_moniker> --chain-id <chain_id.txt>
+```
+
+Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable.
+
+You can edit this `moniker` later, in the `~/.akash/config/config.toml` file:
 
 ```toml
 # A custom human readable name for this node
 moniker = "<your_custom_moniker>"
 ```
 
-Your full-node keeps unconfirmed transactions in its mempool. In order to protect it from spam, it is better to set a `minimum-gas-prices` that the transaction must meet in order to be accepted in your node's mempool. This parameter can be set in the following file `~/.akashd/config/app.toml`.
+Your full-node keeps unconfirmed transactions in its mempool. In order to protect it from spam, it is better to set a `minimum-gas-prices` that the transaction must meet in order to be accepted in your node's mempool. This parameter can be set in the following file `~/.akash/config/app.toml`.
 
 The initial recommended `min-gas-prices` is `0.025uakt`, but you might want to change it later.
 
@@ -54,10 +66,10 @@ Next we need to configure the p2p network and ensure that you have the right `ge
 
 ### Copy the Genesis File
 
-Fetch the testnet's `genesis.json` file into `akashd`'s config directory.
+Fetch the testnet's `genesis.json` file into `akash`'s config directory.
 
 ```bash
-curl -s https://raw.githubusercontent.com/ovrclk/net/master/latest/genesis.json > $HOME/.akashd/config/genesis.json
+curl -s https://raw.githubusercontent.com/ovrclk/net/master/latest/genesis.json > $HOME/.akash/config/genesis.json
 ```
 
 Note we use the `latest` directory in the [testnet repo](https://github.com/ovrclk/net) which contains details for the testnet like the latest version and the genesis file.
@@ -65,14 +77,14 @@ Note we use the `latest` directory in the [testnet repo](https://github.com/ovrc
 To verify the correctness of the configuration run:
 
 ```bash
-akashd validate-genesis
+akash validate-genesis
 ```
 
 ### Add Seed Nodes
 
-Your node needs to know how to find peers. You'll need to add healthy seed nodes or persistent peers to `$HOME/.akashd/config/config.toml`. The [`net`](https://github.com/ovrclk/net/tree/master/latest) repo contains information about the seed nodes and sentry nodes maintained by the Akash team.
+Your node needs to know how to find peers. You'll need to add healthy seed nodes or persistent peers to `$HOME/.akash/config/config.toml`. The [`net`](https://github.com/ovrclk/net/tree/master/latest) repo contains information about the seed nodes and sentry nodes maintained by the Akash team.
 
-You can also ask for peers on the [Validators Riot Room](https://riot.im/app/#/room/#akash-validators:matrix.org)
+You can also ask for peers on the [Validator Discord Channel](https://discord.gg/BX6Rm7aTWZ)
 
 For more information on the how and why of seeds and peers, you can [read this](https://docs.tendermint.com/master/spec/p2p/peer.html) great documentation from the Tendermint maintainers.
 
@@ -102,7 +114,7 @@ There are three strategies for pruning state, please be aware that this is only 
 2. `PruneNothing`: This means that all state will be saved and nothing will be deleted.
 3. `PruneSyncable`: This means that only the state of the last 100 and every 10,000th blocks will be saved.
 
-By default every node is in `PruneSyncable` mode. If you would like to change your nodes pruning strategy then you must do so when the node is initialized. For example, if you would like to change your node to the `PruneEverything` mode then you can pass the `---pruning everything` flag when you call `akashd start`.
+By default every node is in `PruneSyncable` mode. If you would like to change your nodes pruning strategy then you must do so when the node is initialized. For example, if you would like to change your node to the `PruneEverything` mode then you can pass the `---pruning everything` flag when you call `akash start`.
 
 > Note: When you are pruning state you will not be able to query the heights that are not in your store. The sentry nodes the Akash team is running will be `--pruning nothing` and all data from the testnet will be queriable there.
 
@@ -111,15 +123,15 @@ By default every node is in `PruneSyncable` mode. If you would like to change yo
 Start the full node with this command:
 
 ```bash
-akashd start --pruning everything
+akash start --pruning everything
 ```
 
 If you would like to run your node via `systemd` please see [this guide](/guides/systemd.md).
 
-You can use `akashctl` to check that everything is running smoothly:
+You can use `akash` to check that everything is running smoothly:
 
 ```bash
-akashctl status
+akash status
 ```
 
 View the status of the network with the testnet explorer.
