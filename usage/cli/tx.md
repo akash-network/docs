@@ -3,7 +3,7 @@
 **Usage**
 
 ```shell
-$  akashctl tx [command]
+$  akash tx [command]
 ```
 
 **Example**
@@ -11,7 +11,7 @@ $  akashctl tx [command]
 ```shell
 
 Usage:
-  akashctl tx [command]
+  akash tx [command]
 
 Available Commands:
   auth         Auth transaction subcommands
@@ -34,15 +34,15 @@ Flags:
 
 Global Flags:
    -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 
 
-Use "akashctl tx [command] --help" for more information about a command.
+Use "akash tx [command] --help" for more information about a command.
 ```
 
-Use `akashctl tx` to create transactions.
+Use `akash tx` to create transactions.
 
 **Available Commands**
 
@@ -70,8 +70,8 @@ Deployment transaction subcommands
 **Usage**
 
 ```text
-$ akashctl tx deployment [flags]
-$ akashctl tx deployment [command]
+$ akash tx deployment [flags]
+$ akash tx deployment [command]
 ```
 
 **Available Commands**
@@ -95,13 +95,13 @@ Create deployment
 **Usage**
 
 ```text
-$ akashctl tx deployment create [sdl-file] [flags]
+$ akash tx deployment create [sdl-file] [flags]
 ```
 
 **Example**
 
 ```shell
- $ akashctl tx deployment create ~/Downloads/Files/riot.yml --from my-account
+ $ akash tx deployment create ~/Downloads/Files/riot.yml --from my-account
 
  {"chain_id":"mychain","account_number":"3","sequence":"3","fee":{"amount":[],"gas":"200000"},"msgs":[{"type":"deployment/msg-create","value":{"owner":"akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84","groups":[{"name":"global","requirements":null,"resources":[{"unit":{"cpu":10,"memory":"134217728","storage":"536870912"},"count":1,"price":{"denom":"akash","amount":"30"}}]}]}}],"memo":""}
 
@@ -155,13 +155,13 @@ Close deployment
 **Usage**
 
 ```shell
-$ akashctl tx deployment close [flags]
+$ akash tx deployment close [flags]
 ```
 
 **Example**
 
 ```shell
-$ akashctl tx deployment close --dseq 83 --from master
+$ akash tx deployment close --dseq 83 --from master
 {"chain_id":"devnet","account_number":"9","sequence":"12","fee":{"amount":[],"gas":"200000"},"msgs":[{"type":"deployment/msg-close","value":{"ID":{"owner":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","dseq":"83"}}}],"memo":""}
 
 confirm transaction before signing and broadcasting [y/N]: y
@@ -200,13 +200,13 @@ update deployment
 **Usage**
 
 ```text
-$ akashctl tx deployment update [sdl-file] [flags]
+$ akash tx deployment update [sdl-file] [flags]
 ```
 
 **Example**
 
 ```shell
-$ akashctl tx deployment update riot.yml --from master
+$ akash tx deployment update riot.yml --from master
 
 {"chain_id":"devnet","account_number":"9","sequence":"13","fee":{"amount":[],"gas":"200000"},"msgs":[{"type":"deployment/msg-update","value":{"ID":{"owner":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","dseq":"0"},"Version":""}}],"memo":""}
 
@@ -246,8 +246,8 @@ confirm transaction before signing and broadcasting [y/N]: y
 **Usage**
 
 ```text
- $ akashctl tx market [flags]
- $ akashctl tx market [command]
+ $ akash tx market [flags]
+ $ akash tx market [command]
 ```
 
 **Available Commands**
@@ -271,13 +271,13 @@ Create bid
 **Usage**
 
 ```shell
-  $ akashctl tx market bid-create [flags]
+  $ akash tx market bid-create [flags]
 ```
 
 **Example**
 
 ```shell
-$ akashctl tx market bid-create --owner akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf --dseq 14 --gseq 1 --oseq 5 --price 20stake  --from provider
+$ akash tx market bid-create --owner akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf --dseq 14 --gseq 1 --oseq 5 --price 20stake  --from provider
 
 {"chain_id":"devnet","account_number":"9","sequence":"13","fee":{"amount":[],"gas":"200000"},"msgs":[{"type":"market/msg-create-bid","value":{"order":{"owner":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","dseq":"14","gseq":1,"oseq":5},"owner":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","price":{"denom":"stake","amount":"20"}}}],"memo":""}
 
@@ -320,14 +320,14 @@ Close bid
 **Usage**
 
 ```shell
-  $ akashctl tx market bid-close [flags]
+  $ akash tx market bid-close [flags]
 
 ```
 
 **Example**
 
 ```shell
-    $ akashctl tx market bid-close --owner akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf --dseq 14 --gseq 1 --oseq 5 --from provider
+    $ akash tx market bid-close --owner akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf --dseq 14 --gseq 1 --oseq 5 --from provider
 
     {"chain_id":"mychain","account_number":"3","sequence":"4","fee":{"amount":[],"gas":"200000"},"msgs":[{"type":"market/msg-close-bid","value":{"id":{"owner":"","dseq":"23","gseq":1,"oseq":1,"provider":"akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84"}}}],"memo":""}
 
@@ -383,14 +383,14 @@ Close order
 **Usage**
 
 ```shell
-  $ akashctl tx market order-close [flags]
+  $ akash tx market order-close [flags]
 
 ```
 
 **Example**
 
 ```shell
-$ akashctl tx market order-close --owner akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf --dseq 14 --gseq 1 --oseq 5 --from master -y
+$ akash tx market order-close --owner akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf --dseq 14 --gseq 1 --oseq 5 --from master -y
 
 {"height":"8682","txhash":"7FC55085F67B47433C3B677FFEE4DA6469A6F61589DFF0F966A934DB1EA18878","raw_log":"[{\"msg_index\":0,\"log\":\"\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"close-order\"},{\"key\":\"module\",\"value\":\"market\"},{\"key\":\"action\",\"value\":\"order-closed\"},{\"key\":\"owner\",\"value\":\"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf\"},{\"key\":\"dseq\",\"value\":\"14\"},{\"key\":\"gseq\",\"value\":\"1\"},{\"key\":\"oseq\",\"value\":\"5\"},{\"key\":\"module\",\"value\":\"market\"},{\"key\":\"action\",\"value\":\"lease-closed\"},{\"key\":\"owner\",\"value\":\"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf\"},{\"key\":\"dseq\",\"value\":\"14\"},{\"key\":\"gseq\",\"value\":\"1\"},{\"key\":\"oseq\",\"value\":\"5\"},{\"key\":\"provider\",\"value\":\"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug\"}]}]}]","logs":[{"msg_index":0,"log":"","events":[{"type":"message","attributes":[{"key":"action","value":"close-order"},{"key":"module","value":"market"},{"key":"action","value":"order-closed"},{"key":"owner","value":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf"},{"key":"dseq","value":"14"},{"key":"gseq","value":"1"},{"key":"oseq","value":"5"},{"key":"module","value":"market"},{"key":"action","value":"lease-closed"},{"key":"owner","value":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf"},{"key":"dseq","value":"14"},{"key":"gseq","value":"1"},{"key":"oseq","value":"5"},{"key":"provider","value":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug"}]}]}],"gas_wanted":"200000","gas_used":"53641"}
 
@@ -432,8 +432,8 @@ Deployment transaction subcommands
 **Usage**
 
 ```text
-  $ akashctl tx provider [flags]
-  $ akashctl tx provider [command]
+  $ akash tx provider [flags]
+  $ akash tx provider [command]
 ```
 
 **Available Commands**
@@ -457,14 +457,14 @@ Create provider
 **Usage**
 
 ```shell
-  $ akashctl tx provider create [config-file] [flags]
+  $ akash tx provider create [config-file] [flags]
 
 ```
 
 **Example**
 
 ```shell
-$ akashctl tx provider create ~/Downloads/Files/provider.yml --from my-account
+$ akash tx provider create ~/Downloads/Files/provider.yml --from my-account
 
 {"chain_id":"mychain","account_number":"3","sequence":"5","fee":{"amount":[],"gas":"200000"},"msgs":[{"type":"provider/msg-create","value":{"owner":"akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84","host-uri":"http://akash.ovrclk.com","attributes":[{"key":"cmVnaW9u","value":"c2Zv"},{"key":"bW9uaWtlcg==","value":"YWtoaWw="}]}}],"memo":""}
 
@@ -518,14 +518,14 @@ Update provider
 **Usage**
 
 ```shell
-  $ akashctl tx provider update [config-file] [flags]
+  $ akash tx provider update [config-file] [flags]
 
 ```
 
 **Example**
 
 ```shell
-$ akashctl tx provider update ~/Downloads/Files/provider.yml --from my-account
+$ akash tx provider update ~/Downloads/Files/provider.yml --from my-account
 
 {"chain_id":"mychain","account_number":"3","sequence":"5","fee":{"amount":[],"gas":"200000"},"msgs":[{"type":"provider/msg-create","value":{"owner":"akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84","host-uri":"http://akash.ovrclk.com","attributes":[{"key":"cmVnaW9u","value":"c2Zv"},{"key":"bW9uaWtlcg==","value":"YWtoaWw="}]}}],"memo":""}
 

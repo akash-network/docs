@@ -3,13 +3,13 @@
 > **Usage**
 
 ```text
-akashctl status [flags]
+akash status [flags]
 ```
 
 > **Example**
 
 ```text
-$ akashctl status
+$ akash status
 
 {
     "node_info":{
@@ -38,7 +38,7 @@ $ akashctl status
 
 > In the example above, the details are about node version and latest block on the network
 
-Use `akashctl status` to check status of a node (default "http://api.akashtest.net:80").
+Use `akash status` to check status of a node (default "http://api.akashtest.net:80").
 
 **Arguments**
 
@@ -54,5 +54,5 @@ No arguments.
 
 | Short | Verbose | Argument | Required | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| -d | --data | string | N | data directory (default "~/.akashctl") |
+| -d | --data | string | N | data directory (default "~/.akash") |
 | -m | --mode | string | N | output mode (interactive|shell|json) (default "interactive") |

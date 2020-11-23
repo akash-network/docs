@@ -1,6 +1,19 @@
 # Akash Client Installation
 
-The Akash Suite is composed of a full node `akashd` and the client `akashctl`. The full node `akashd` is the tendermint-based blockchain node that implements the decentralized exchange. `akashctl` is the client used to access the exchange and network in general.
+The `akash` command is used to run all components of the Akash Network, including:
+
+* Network node and API servers
+* Provider services
+* Client interface
+
+There are a number of ways to install it, depending on your operating system.
+
+{% hint style='info' %}
+See [Choosing a Network](/guides/versions.md) for determining which version to install.
+
+The rest of this document will assume that you have populated the `AKASH_VERSION` environment
+variable with the appropriate software version.
+{% endhint %}
 
 {% tabs %} {% tab title="MacOS" %}
 
@@ -12,49 +25,52 @@ The simplest way to install is by using [homebrew](https://brew.sh). If you do n
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Install `akashctl` client and `akashd` daemon using homebrew:
+Install `akash` daemon using homebrew:
 
 ```shell
-brew install ovrclk/tap/akash
+brew tap ovrclk/akash
+brew install akash-edge
+brew link akash-edge --force
 ```
 
-Once installed, verify the installation by running `akashctl version`.
+Once installed, verify the installation by running `akash version`.  Compare that with the version for the network
+you plan on connecting to:
 
-
-Alternatively, you can manually download the [binaries](https://github.com/ovrclk/akash/releases/download/v0.8.1/akash_0.8.1_darwin_amd64.zip) from the [releases page](https://github.com/ovrclk/akash/releases). The latest release is `0.8.1` as of writing of this document, please make sure to check the releases page for the latest version. The final step is to make sure that the akash binary is available on the `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on MacOS.
+```sh
+curl -s "$AKASH_NET/version.txt"
+```
 
 {% endtab %} {% tab title="Linux" %}
 
 ### Linux
 
-Download the [linux archive](https://github.com/ovrclk/akash/releases/download/v0.8.1/akash_0.8.1_linux_amd64.zip) from the [release page](https://github.com/ovrclk/akash/releases).
+Download the archive for your system from the [release page](https://github.com/ovrclk/akash/releases), extract it, and
+install the `akash` binary into your path.
 
 Alternatively, install the latest version via [`godownloader`](https://github.com/goreleaser/godownloader) with:
 
 ```sh
-curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh
+curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "$AKASH_VERSION"
 ```
 
 The final step is to make sure that the akash binaries are available in your shell `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.
 
-{% endtab %} {% endtabs %}
+{% endtab %} {% tab title="Source" %}
 
-### Others \(From Source\)
+### Source
 
 Installing Akash suite from source
 
 ```shell
 $ go get -d github.com/ovrclk/akash
 $ cd $GOPATH/src/github.com/ovrclk/akash
-$ MAINNET=true git checkout v0.8.1
+$ git checkout "$AKASH_VERSION"
 $ make deps-install
 $ make install
 ```
 
 Akash is developed and tested with [golang 1.15+](https://golang.org/). Building requires a working [golang](https://golang.org/) installation, a properly set `GOPATH`, and `$GOPATH/bin` present in `$PATH`.
 
-Most golang libraries will be installed via `go mod`, however the following packages will be installed globally with their binaries placed in `$GOPATH/bin` by `make devdeps-install`:
+Once you have the dependencies properly setup, download and build `akash` using `make install`
 
-* [mockery](https://github.com/vektra/mockery): Mock generator.
-
-Once you have the dependencies properly setup, download and build `akashctl` and `akashd` using `make install`
+{% endtab %} {% endtabs %}

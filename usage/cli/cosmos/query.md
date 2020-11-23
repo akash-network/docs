@@ -3,18 +3,18 @@
 **Usage**
 
 ```text
-$ akashctl query [command]
+$ akash query [command]
 ```
 
 **Example**
 
 ```text
-$ akashctl query help
+$ akash query help
 
 Querying subcommands
 
 Usage:
-  akashctl query [command]
+  akash query [command]
 
 Aliases:
   query, q
@@ -40,15 +40,15 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex/b64/btc) (default "hex")
-      --home string       directory for config and data (default "/home/vitwit/.akashctl")
+      --home string       directory for config and data (default "/home/vitwit/.akash")
   -o, --output string     Output format (text/json) (default "text")
       --trace             print out full stack trace on errors
 
-Use "akashctl query [command] --help" for more information about a command.
+Use "akash query [command] --help" for more information about a command.
 
 ```
 
-Use `akashctl query` to query all the things that need querying.
+Use `akash query` to query all the things that need querying.
 
 **Available Commands**
 
@@ -76,13 +76,13 @@ Use `akashctl query` to query all the things that need querying.
 Query account balance
 
 ```text
-akashctl query account [address] [flags]
+akash query account [address] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query account akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
+$ akash query account akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
 {
   "type": "cosmos-sdk/Account",
   "value": {
@@ -122,7 +122,7 @@ $ akashctl query account akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -136,14 +136,14 @@ Querying commands for the auth module
 Query account balance
 
 ```text
-  akashctl query auth [flags]
-  akashctl query auth [command]
+  akash query auth [flags]
+  akash query auth [command]
 ```
 
 **Example**
 
 ```text
-$ akashctl query auth account akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
+$ akash query auth account akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
 {
   "type": "cosmos-sdk/Account",
   "value": {
@@ -183,7 +183,7 @@ $ akashctl query auth account akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -195,14 +195,14 @@ Get verified data for a the block at given height
 
 ```text
 
-akashctl query block [height] [flags]
+akash query block [height] [flags]
 
 ```
 
 **Example**
 
 ```text
-$ akashctl query block 100 -o json
+$ akash query block 100 -o json
 
 {"block_id":{"hash":"808F36F63C25D9699E133DED2E687A5BA730FDDD91B18DD7D535FF3AB27F378C","parts":{"total":"1","hash":"F8EF622C895DCF37AC5B92FEF958B1C84BE1B0BD875953465043D4DD52434182"}},"block":{"header":{"version":{"block":"10","app":"0"},"chain_id":"mychain","height":"100","time":"2020-03-10T10:45:25.393189106Z","last_block_id":{"hash":"DE1E1D77285934318BD43B766A85E7B1F93E770FFA9D6A3417DDBA306BBAE427","parts":{"total":"1","hash":"4F25970582F60D8D55AD470172B601C95E86345A13D71D3E16F1CD0EE2979924"}},"last_commit_hash":"4948EECA76794BCEF8618AA2D0F51E175357CB094857C69243C9E409A1BB5A40","data_hash":"","validators_hash":"AA3DB9F361351ED65B9C73A72703CA3E469B9F3CABAD7707639C93496C2E14D7","next_validators_hash":"AA3DB9F361351ED65B9C73A72703CA3E469B9F3CABAD7707639C93496C2E14D7","consensus_hash":"048091BC7DDC283F77BFBF91D73C44DA58C3DF8A9CBC867405D8B7F3DAADA22F","app_hash":"070839326D9A0F5643248C9EAC01B0B0124106DC6E6003F0E6C8A7906631D607","last_results_hash":"","evidence_hash":"","proposer_address":"15A9E2C091AED0734D0BCB47781E54CF81F0F4F8"},"data":{"txs":null},"evidence":{"evidence":null},"last_commit":{"height":"99","round":"0","block_id":{"hash":"DE1E1D77285934318BD43B766A85E7B1F93E770FFA9D6A3417DDBA306BBAE427","parts":{"total":"1","hash":"4F25970582F60D8D55AD470172B601C95E86345A13D71D3E16F1CD0EE2979924"}},"signatures":[{"block_id_flag":2,"validator_address":"15A9E2C091AED0734D0BCB47781E54CF81F0F4F8","timestamp":"2020-03-10T10:45:25.393189106Z","signature":"tx2v3hKYxkWHDXXVXZt4x9EqKr7VAJ48ETyXAmUPmqmILQrouEERtSdKsAe808Nkx1FD/X4/a5t/8/m41vaiDg=="}]}}}
 
@@ -227,7 +227,7 @@ $ akashctl query block 100 -o json
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -239,8 +239,8 @@ Querying commands for the distribution module
 **Usage**
 
 ```text
-  akashctl query distribution [flags]
-  akashctl query distribution [command]
+  akash query distribution [flags]
+  akash query distribution [command]
 ```
 
 ```
@@ -260,13 +260,13 @@ Query validator commission rewards from delegators to that validator.
 **Usage**
 
 ```text
-  akashctl query distribution commission [validator] [flags]
+  akash query distribution commission [validator] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query distribution commission akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
+$ akash query distribution commission akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
 [
   {
     "denom": "stake",
@@ -296,7 +296,7 @@ $ akashctl query distribution commission akashvaloper16q6s0tauc3cks5us7f57wds8c8
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -307,13 +307,13 @@ Query all coins in the community pool which is under Governance control.
 **Usage**
 
 ```text
-  akashctl query distribution community-pool [flags]
+  akash query distribution community-pool [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query distribution community-pool
+$ akash query distribution community-pool
 [
   {
     "denom": "stake",
@@ -341,7 +341,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -352,13 +352,13 @@ Query distribution params.
 **Usage**
 
 ```text
-  akashctl query distribution params [flags]
+  akash query distribution params [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query distribution params
+$ akash query distribution params
 {
   "community_tax": "0.020000000000000000",
   "base_proposer_reward": "0.010000000000000000",
@@ -386,7 +386,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -398,13 +398,13 @@ Query all rewards earned by a delegator, optionally restrict to rewards from a s
 **Usage**
 
 ```text
-  akashctl query distribution rewards [delegator-addr] [<validator-addr>] [flags]
+  akash query distribution rewards [delegator-addr] [<validator-addr>] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query distribution rewards akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
+$ akash query distribution rewards akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
 {
   "rewards": [
     {
@@ -448,7 +448,7 @@ $ akashctl query distribution rewards akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -459,13 +459,13 @@ Query all slashes of a validator for a given block range.
 **Usage**
 
 ```text
-  akashctl query distribution slashes [validator] [start-height] [end-height] [flags]
+  akash query distribution slashes [validator] [start-height] [end-height] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query distribution slashes akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr 2 300
+$ akash query distribution slashes akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr 2 300
 null
 ```
 **Arguments**
@@ -493,7 +493,7 @@ null
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -506,13 +506,13 @@ for a validator and all their delegations.
 **Usage**
 
 ```text
-  akashctl query distribution validator-outstanding-rewards [validator] [flags]
+  akash query distribution validator-outstanding-rewards [validator] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query distribution validator-outstanding-rewards akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
+$ akash query distribution validator-outstanding-rewards akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
 [
   {
     "denom": "stake",
@@ -542,7 +542,7 @@ $ akashctl query distribution validator-outstanding-rewards akashvaloper16q6s0ta
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -553,8 +553,8 @@ Querying commands for the governance module
 **Usage**
 
 ```text
-  akashctl query gov [flags]
-  akashctl query gov [command]
+  akash query gov [flags]
+  akash query gov [command]
 ```
 
 **Available Commands**
@@ -583,7 +583,7 @@ Querying commands for the governance module
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -594,13 +594,13 @@ Query details for a single proposal deposit on a proposal by its identifier.
 **Usage**
 
 ```text
-  akashctl query gov deposit [proposal-id] [depositor-addr] [flags]
+  akash query gov deposit [proposal-id] [depositor-addr] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query gov deposit 1 akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf
+$ akash query gov deposit 1 akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf
 {
   "proposal_id": "1",
   "depositor": "akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf",
@@ -635,7 +635,7 @@ $ akashctl query gov deposit 1 akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -646,13 +646,13 @@ Query details for a single proposal deposit on a proposal by its identifier.
 **Usage**
 
 ```text
-  akashctl query gov deposits [proposal-id] [flags]
+  akash query gov deposits [proposal-id] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query gov deposits 1
+$ akash query gov deposits 1
 [
   {
     "proposal_id": "1",
@@ -688,7 +688,7 @@ $ akashctl query gov deposits 1
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -699,13 +699,13 @@ Query the all the parameters for the governance process.
 **Usage**
 
 ```text
-  akashctl query gov param [param-type] [flags]
+  akash query gov param [param-type] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query gov param voting
+$ akash query gov param voting
 {
   "voting_period": "172800000000000"
 }
@@ -732,7 +732,7 @@ $ akashctl query gov param voting
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -743,13 +743,13 @@ Query the all the parameters for the governance process.
 **Usage**
 
 ```text
-  akashctl query gov params [flags]
+  akash query gov params [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query gov params
+$ akash query gov params
 {
   "voting_params": {
     "voting_period": "172800000000000"
@@ -790,24 +790,24 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
 ### `proposal`
 
-Query details for a proposal. You can find the proposal-id by running "akashctl query gov proposals".
+Query details for a proposal. You can find the proposal-id by running "akash query gov proposals".
 
 **Usage**
 
 ```text
-  akashctl query gov proposal [proposal-id] [flags]
+  akash query gov proposal [proposal-id] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query gov proposal 1
+$ akash query gov proposal 1
 {
   "content": {
     "type": "cosmos-sdk/TextProposal",
@@ -858,7 +858,7 @@ $ akashctl query gov proposal 1
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -869,13 +869,13 @@ Query for a all paginated proposals.
 **Usage**
 
 ```text
-  akashctl query gov proposals [flags]
+  akash query gov proposals [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query gov proposals
+$ akash query gov proposals
 [
   {
     "content": {
@@ -931,7 +931,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -942,13 +942,13 @@ Query which address proposed a proposal with a given ID.
 **Usage**
 
 ```text
-  akashctl query gov proposer [proposal-id] [flags]
+  akash query gov proposer [proposal-id] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query gov proposer 1
+$ akash query gov proposer 1
 {
   "proposal_id": "1",
   "proposer": "akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf"
@@ -976,7 +976,7 @@ $ akashctl query gov proposer 1
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -987,13 +987,13 @@ Query tally of votes on a proposal with a given proposal ID.
 **Usage**
 
 ```text
-  akashctl query gov tally [proposal-id] [flags]
+  akash query gov tally [proposal-id] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query gov tally 1
+$ akash query gov tally 1
 {
   "yes": "0",
   "abstain": "0",
@@ -1023,7 +1023,7 @@ $ akashctl query gov tally 1
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1034,13 +1034,13 @@ Query details for a single vote on a proposal given its identifier.
 **Usage**
 
 ```text
-  akashctl query gov vote [proposal-id] [voter-addr] [flags]
+  akash query gov vote [proposal-id] [voter-addr] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query gov vote 1 akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf
+$ akash query gov vote 1 akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf
 ERROR: address 'akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf' did not vote on proposalID 1
 ```
 **Arguments**
@@ -1066,7 +1066,7 @@ ERROR: address 'akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf' did not vote on pr
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1077,13 +1077,13 @@ Query vote details for a single proposal by its identifier.
 **Usage**
 
 ```text
-  akashctl query gov votes [proposal-id] [flags]
+  akash query gov votes [proposal-id] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query gov votes 1
+$ akash query gov votes 1
 null
 ```
 **Arguments**
@@ -1110,7 +1110,7 @@ null
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1121,8 +1121,8 @@ Querying commands for the minting module.
 **Usage**
 
 ```text
-  akashctl query mint [flags]
-  akashctl query mint [command]
+  akash query mint [flags]
+  akash query mint [command]
 ```
 
 **Available Commands**
@@ -1144,7 +1144,7 @@ Querying commands for the minting module.
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1157,13 +1157,13 @@ Query the current minting annual provisions value
 **Usage**
 
 ```text
-  akashctl query mint annual-provisions [flags]
+  akash query mint annual-provisions [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query mint annual-provisions
+$ akash query mint annual-provisions
 
 "130062221.481762115300279620"
 
@@ -1188,7 +1188,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1201,13 +1201,13 @@ Query the current minting inflation value
 **Usage**
 
 ```text
-  akashctl query mint inflation [flags]
+  akash query mint inflation [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query mint inflation
+$ akash query mint inflation
 
 "0.130064607864796538"
 
@@ -1232,7 +1232,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1243,13 +1243,13 @@ Query the current minting parameters
 **Usage**
 
 ```text
- akashctl query mint params [flags]
+ akash query mint params [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query mint params -o json
+$ akash query mint params -o json
 {
   "mint_denom":"stake",
   "inflation_rate_change":"0.130000000000000000",
@@ -1279,7 +1279,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1290,8 +1290,8 @@ Querying commands for the slashing module
 **Usage**
 
 ```text
-  akashctl query slashing [flags]
-  akashctl query slashing [command]
+  akash query slashing [flags]
+  akash query slashing [command]
 ```
 
 **Available Commands**
@@ -1312,7 +1312,7 @@ Querying commands for the slashing module
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1324,13 +1324,13 @@ Query genesis parameters for the slashing module
 **Usage**
 
 ```text
-   akashctl query slashing params [flags]
+   akash query slashing params [flags]
 ```
 
 **Example**
 
 ```text
-  $ akashctl query slashing params -o json
+  $ akash query slashing params -o json
   {
   "signed_blocks_window":"100",
   "min_signed_per_window":"0.500000000000000000",
@@ -1357,7 +1357,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1368,13 +1368,13 @@ Use a validators' consensus public key to find the signing-info for that validat
 **Usage**
 
 ```text
-   akashctl query slashing signing-info [validator-conspub] [flags]
+   akash query slashing signing-info [validator-conspub] [flags]
 ```
 
 **Example**
 
 ```text
- $ akashctl query slashing signing-info akashvalconspub1zcjduepq684h6mwk9ttnh7xhtzazhnpse4mcths2t086wmyj2dhxymqm35dstmj96y
+ $ akash query slashing signing-info akashvalconspub1zcjduepq684h6mwk9ttnh7xhtzazhnpse4mcths2t086wmyj2dhxymqm35dstmj96y
 {
   "address": "akashvalcons156gt0up7ajnxudhr08nvn7gpz06k8c8pwhk32v",
   "start_height": "0",
@@ -1406,7 +1406,7 @@ Use a validators' consensus public key to find the signing-info for that validat
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1417,8 +1417,8 @@ Querying commands for the staking module
 **Usage**
 
 ```text
-  akashctl query staking [flags]
-  akashctl query staking [command]
+  akash query staking [flags]
+  akash query staking [command]
 ```
 
 **Available Commands**
@@ -1451,7 +1451,7 @@ Querying commands for the staking module
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1462,13 +1462,13 @@ Query delegations for an individual delegator on an individual validator.
 **Usage**
 
 ```text
-   akashctl query staking delegation [delegator-addr] [validator-addr] [flags]
+   akash query staking delegation [delegator-addr] [validator-addr] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query staking delegation akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
+$ akash query staking delegation akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
 {
   "delegator_address": "akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf",
   "validator_address": "akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr",
@@ -1502,7 +1502,7 @@ $ akashctl query staking delegation akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1513,13 +1513,13 @@ Query delegations for an individual delegator on all validators.
 **Usage**
 
 ```text
-   akashctl query staking delegations [delegator-addr] [flags]
+   akash query staking delegations [delegator-addr] [flags]
 ```
 
 **Example**
 
 ```text
- $ akashctl query staking delegations akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
+ $ akash query staking delegations akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84
  [{
    "delegator_address":"akash1zwksclwdjkjaa9whc8rdxtxlkca9zwgckksd84","validator_address":"akashvaloper1zwksclwdjkjaa9whc8rdxtxlkca9zwgcu57thl","shares":"100000000.000000000000000000",
    "balance":{"denom":"stake","amount":"100000000"}
@@ -1547,7 +1547,7 @@ Query delegations for an individual delegator on all validators.
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1559,13 +1559,13 @@ Query delegations on an individual validator.
 **Usage**
 
 ```text
-   akashctl query staking delegations-to [validator-addr] [flags]
+   akash query staking delegations-to [validator-addr] [flags]
 ```
 
 **Example**
 
 ```text
- $ akashctl query staking delegations-to akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
+ $ akash query staking delegations-to akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
 [
   {
     "delegator_address": "akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf",
@@ -1600,7 +1600,7 @@ Query delegations on an individual validator.
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1612,13 +1612,13 @@ Query historical info at given height.
 **Usage**
 
 ```text
-   akashctl query staking historical-info [height] [flags]
+   akash query staking historical-info [height] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query staking historical-info 100
+$ akash query staking historical-info 100
 ERROR: no historical info found
 ```
 **Arguments**
@@ -1643,7 +1643,7 @@ ERROR: no historical info found
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1655,13 +1655,13 @@ Query values set as staking parameters.
 **Usage**
 
 ```text
-  akashctl query staking params [flags]
+  akash query staking params [flags]
 ```
 
 **Example**
 
 ```text
- $ akashctl query staking params -o json
+ $ akash query staking params -o json
  {
    "unbonding_time":"1814400000000000",
    "max_validators":100,
@@ -1690,7 +1690,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1703,13 +1703,13 @@ Query values for amounts stored in the staking pool.
 **Usage**
 
 ```text
-  akashctl query staking pool [flags]
+  akash query staking pool [flags]
 ```
 
 **Example**
 
 ```text
- $ akashctl query staking pool -o json
+ $ akash query staking pool -o json
  {
    "not_bonded_tokens":"0",
    "bonded_tokens":"100000000"
@@ -1735,7 +1735,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1746,13 +1746,13 @@ Query a redelegation record for an individual delegator between a source and des
 **Usage**
 
 ```text
-  akashctl query staking redelegation [delegator-addr] [src-validator-addr] [dst-validator-addr] [flags]
+  akash query staking redelegation [delegator-addr] [src-validator-addr] [dst-validator-addr] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query staking redelegation akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr akashvaloper1zwksclwdjkjaa9whc8rdxtxlkca9zwgcu57thl
+$ akash query staking redelegation akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr akashvaloper1zwksclwdjkjaa9whc8rdxtxlkca9zwgcu57thl
 ERROR: no redelegation found
 ```
 **Arguments**
@@ -1779,7 +1779,7 @@ ERROR: no redelegation found
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1791,13 +1791,13 @@ Query all redelegation records for an individual delegator.
 **Usage**
 
 ```text
-  akashctl query staking redelegations [delegator-addr] [flags]
+  akash query staking redelegations [delegator-addr] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query staking redelegations akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf
+$ akash query staking redelegations akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf
 null
 ```
 **Arguments**
@@ -1822,7 +1822,7 @@ null
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1834,13 +1834,13 @@ Query delegations that are redelegating from a validator.
 **Usage**
 
 ```text
-  akashctl query staking redelegations-from [validator-addr] [flags]
+  akash query staking redelegations-from [validator-addr] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query staking redelegations-from akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
+$ akash query staking redelegations-from akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
 null
 ```
 **Arguments**
@@ -1865,7 +1865,7 @@ null
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1877,13 +1877,13 @@ Query unbonding delegations for an individual delegator on an individual validat
 **Usage**
 
 ```text
-  akashctl query staking unbonding-delegation [delegator-addr] [validator-addr] [flags]
+  akash query staking unbonding-delegation [delegator-addr] [validator-addr] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query staking unbonding-delegation akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
+$ akash query staking unbonding-delegation akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
 ERROR: no unbonding delegation found
 ```
 **Arguments**
@@ -1909,7 +1909,7 @@ ERROR: no unbonding delegation found
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1920,13 +1920,13 @@ Query unbonding delegations for an individual delegator.
 **Usage**
 
 ```text
-  akashctl query staking unbonding-delegations [delegator-addr] [flags]
+  akash query staking unbonding-delegations [delegator-addr] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query staking unbonding-delegations akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf
+$ akash query staking unbonding-delegations akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf
 null
 ```
 **Arguments**
@@ -1951,7 +1951,7 @@ null
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -1963,13 +1963,13 @@ Query delegations that are unbonding from a validator
 **Usage**
 
 ```text
-  akashctl query staking unbonding-delegations-from [validator-addr] [flags]
+  akash query staking unbonding-delegations-from [validator-addr] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query staking unbonding-delegations-from akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
+$ akash query staking unbonding-delegations-from akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
 null
 ```
 **Arguments**
@@ -1994,7 +1994,7 @@ null
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -2006,13 +2006,13 @@ Query details about an individual validator.
 **Usage**
 
 ```text
-  akashctl query staking validator [validator-addr] [flags]
+  akash query staking validator [validator-addr] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query staking validator akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
+$ akash query staking validator akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr
 {
   "operator_address": "akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr",
   "consensus_pubkey": "akashvalconspub1zcjduepq684h6mwk9ttnh7xhtzazhnpse4mcths2t086wmyj2dhxymqm35dstmj96y",
@@ -2062,7 +2062,7 @@ $ akashctl query staking validator akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -2073,13 +2073,13 @@ Query details about all validators on a network.
 **Usage**
 
 ```text
-  akashctl query staking validators [flags]
+  akash query staking validators [flags]
 ```
 
 **Example**
 
 ```text
- $ akashctl query staking validators -o json
+ $ akash query staking validators -o json
 
   [{"operator_address":"akashvaloper1zwksclwdjkjaa9whc8rdxtxlkca9zwgcu57thl","consensus_pubkey":"akashvalconspub1zcjduepqyt48xd5vj5tqmwq0k2j6puzm4palql6qq56juf4hmajxfefngwkqcs3v6d","jailed":false,"status":2,"tokens":"100000000","delegator_shares":"100000000.000000000000000000","description":{"moniker":"mychain","identity":"","website":"","security_contact":"","details":""},"unbonding_height":"0","unbonding_time":"1970-01-01T00:00:00Z","commission":{"commission_rates":{"rate":"0.100000000000000000","max_rate":"0.200000000000000000","max_change_rate":"0.010000000000000000"},"update_time":"2020-03-10T10:20:12.545378114Z"},"min_self_delegation":"1"}]
 ```
@@ -2103,7 +2103,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -2115,8 +2115,8 @@ Querying commands for the supply module
 **Usage**
 
 ```text
-  akashctl query supply [flags]
-  akashctl query supply [command]
+  akash query supply [flags]
+  akash query supply [command]
 ```
 
 **Available Commands**
@@ -2136,7 +2136,7 @@ Querying commands for the supply module
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -2148,13 +2148,13 @@ Query total supply of coins that are held by accounts in the chain.
 **Usage**
 
 ```text
-  akashctl query supply total [denom] [flags]
+  akash query supply total [denom] [flags]
 ```
 
 **Example**
 
 ```text
-    $ akashctl query supply total
+    $ akash query supply total
 
     [{"denom":"uakt","amount":"1000000000"},{"denom":"stake","amount":"1000101980"}]
 ```
@@ -2180,7 +2180,7 @@ Query total supply of coins that are held by accounts in the chain.
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -2193,13 +2193,13 @@ Get the full tendermint validator set at given height
 **Usage**
 
 ```text
- akashctl query tendermint-validator-set [height] [flags]
+ akash query tendermint-validator-set [height] [flags]
 ```
 
 **Example**
 
 ```text
-    $ akashctl query tendermint-validator-set
+    $ akash query tendermint-validator-set
 
     {"block_height":"5132","validators":[{"address":"akashvalcons1zk579sy34mg8xngtedrhs8j5e7qlpa8cxdye2t","pub_key":"akashvalconspub1zcjduepqyt48xd5vj5tqmwq0k2j6puzm4palql6qq56juf4hmajxfefngwkqcs3v6d","proposer_priority":"0","voting_power":"100"}]}
 ```
@@ -2225,7 +2225,7 @@ Get the full tendermint validator set at given height
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -2236,13 +2236,13 @@ Query for a transaction by hash in a committed block
 **Usage**
 
 ```text
-  akashctl query tx [hash] [flags]
+  akash query tx [hash] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query tx 295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E -o json
+$ akash query tx 295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E -o json
 
 {"height":"338","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","codespace":"staking","code":3,"raw_log":"validator does not exist: failed to execute message; message index: 0","gas_wanted":"200000","gas_used":"35496","tx":{"type":"cosmos-sdk/StdTx","value":{"msg":[{"type":"cosmos-sdk/MsgBeginRedelegate","value":{"delegator_address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","validator_src_address":"akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s","validator_dst_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","amount":{"denom":"stake","amount":"10000"}}}],"fee":{"amount":[],"gas":"200000"},"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"A+hCkyWd4cWG0KD+GgCxHEOUzll1cl5VvoGgDvVIwF3E"},"signature":"XI1XhIXlSCPnQVHQamu+sbqiZxAxLM8OnXSF2gqNVkkpP1bi6Au3v8N4EUAaPrZGYigechb2ekt6MUEjrFWdgw=="}],"memo":""}},"timestamp":"2020-03-06T10:39:57Z"}
 ```
@@ -2265,7 +2265,7 @@ $ akashctl query tx 295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -2280,13 +2280,13 @@ documents its respective events under 'xx_events.md'.
 **Usage**
 
 ```text
-  akashctl query txs [flags]
+  akash query txs [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query txs --events 'message.action=bid-close'
+$ akash query txs --events 'message.action=bid-close'
 {
   "total_count": "0",
   "count": "0",
@@ -2316,7 +2316,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -2327,8 +2327,8 @@ Querying commands for the upgrade module
 **Usage**
 
 ```text
-  akashctl query upgrade [flags]
-  akashctl query upgrade [command]
+  akash query upgrade [flags]
+  akash query upgrade [command]
 ```
 
 **Available Commands**
@@ -2349,7 +2349,7 @@ Querying commands for the upgrade module
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -2361,13 +2361,13 @@ This helps a client determine which binary was valid over a given range of block
 **Usage**
 
 ```text
-  akashctl query upgrade applied [upgrade-name] [flags]
+  akash query upgrade applied [upgrade-name] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query upgrade applied new-upgrade
+$ akash query upgrade applied new-upgrade
 ERROR: no upgrade found
 ```
 **Arguments**
@@ -2392,7 +2392,7 @@ ERROR: no upgrade found
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |
 
@@ -2403,13 +2403,13 @@ Gets the currently scheduled upgrade plan, if one exists.
 **Usage**
 
 ```text
-  akashctl query upgrade plan [flags]
+  akash query upgrade plan [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query upgrade plan
+$ akash query upgrade plan
 ERROR: no upgrade scheduled
 ```
 **Arguments**
@@ -2432,6 +2432,6 @@ None
 | Short | Verbose    | Argument | Required | Description                                                      |
 |:------|:-----------|:---------|:---------|:-----------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                   |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                       |
 |       | --trace    |          | N        | print out full stack trace on errors                             |

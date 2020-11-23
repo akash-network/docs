@@ -3,18 +3,18 @@
 **Usage**
 
 ```text
-$ akashctl query [command]
+$ akash query [command]
 ```
 
 **Example**
 
 ```text
-$ akashctl query help
+$ akash query help
 
 Querying subcommands
 
 Usage:
-  akashctl query [command]
+  akash query [command]
 
 Aliases:
   query, q
@@ -40,15 +40,15 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex/b64/btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text/json) (default "text")
       --trace             print out full stack trace on errors
 
-Use "akashctl query [command] --help" for more information about a command.
+Use "akash query [command] --help" for more information about a command.
 
 ```
 
-Use `akashctl query` to query all the things that need querying.
+Use `akash query` to query all the things that need querying.
 
 **Available Commands**
 
@@ -76,8 +76,8 @@ Deployment query commands
 **Usage**
 
 ```text
-  akashctl query deployment [flags]
-  akashctl query deployment [command]
+  akash query deployment [flags]
+  akash query deployment [command]
 ```
 
 **Available Commands**
@@ -99,7 +99,7 @@ Deployment query commands
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -110,13 +110,13 @@ Query details of a deployment
 **Usage**
 
 ```text
-  akashctl query deployment get [flags]
+  akash query deployment get [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query deployment get --owner akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug --dseq 83
+$ akash query deployment get --owner akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug --dseq 83
 
 {"deployment":{"id":{"owner":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","dseq":"83"},"state":1,"version":null},"groups":[{"id":{"owner":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","dseq":"83","gseq":1},"state":4,"spec":{"name":"global","requirements":null,"resources":[{"unit":{"cpu":10,"memory":"134217728","storage":"536870912"},"count":1,"price":{"denom":"stake","amount":"30"}}]}}]}
 ```
@@ -142,7 +142,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -153,13 +153,13 @@ Query to get list of deployments
 **Usage**
 
 ```text
-  akashctl query deployment list [flags]
+  akash query deployment list [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query deployment list
+$ akash query deployment list
 
 [{"deployment":{"id":{"owner":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","dseq":"83"},"state":1,"version":null},"groups":[{"id":{"owner":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","dseq":"83","gseq":1},"state":4,"spec":{"name":"global","requirements":null,"resources":[{"unit":{"cpu":10,"memory":"134217728","storage":"536870912"},"count":1,"price":{"denom":"stake","amount":"30"}}]}}]}]
 ```
@@ -185,7 +185,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -196,8 +196,8 @@ Deployment group query commands
 **Usage**
 
 ```text
-  akashctl query deployment group [flags]
-  akashctl query deployment group [command]
+  akash query deployment group [flags]
+  akash query deployment group [command]
 ```
 
 **Available Commands**
@@ -217,7 +217,7 @@ Deployment group query commands
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -228,13 +228,13 @@ Query details of a deployment group
 **Usage**
 
 ```text
-  akashctl query deployment group get [flags]
+  akash query deployment group get [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query deployment group get --owner akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug --dseq 83 --gseq 1
+$ akash query deployment group get --owner akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug --dseq 83 --gseq 1
 
 {"id":{"owner":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","dseq":"83","gseq":1},"state":4,"spec":{"name":"global","requirements":null,"resources":[{"unit":{"cpu":10,"memory":"134217728","storage":"536870912"},"count":1,"price":{"denom":"stake","amount":"30"}}]}}
 ```
@@ -261,7 +261,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -272,8 +272,8 @@ Market query commands
 **Usage**
 
 ```text
-  akashctl query market [flags]
-  akashctl query market [command]
+  akash query market [flags]
+  akash query market [command]
 ```
 
 **Available Commands**
@@ -295,7 +295,7 @@ Market query commands
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -306,8 +306,8 @@ Market order query commands
 **Usage**
 
 ```text
-  akashctl query market order [flags]
-  akashctl query market order [command]
+  akash query market order [flags]
+  akash query market order [command]
 ```
 
 **Available Commands**
@@ -328,7 +328,7 @@ Market order query commands
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -339,13 +339,13 @@ Query details of a order in market.
 **Usage**
 
 ```text
-  akashctl query market order get [flags]
+  akash query market order get [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query market order get --owner akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug --dseq 83 --gseq 1 --oseq 1
+$ akash query market order get --owner akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug --dseq 83 --gseq 1 --oseq 1
 
 {"id":{"owner":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","dseq":"83","gseq":1,"oseq":1},"state":2,"start-at":"88","spec":{"name":"global","requirements":null,"resources":[{"unit":{"cpu":10,"memory":"134217728","storage":"536870912"},"count":1,"price":{"denom":"stake","amount":"30"}}]}}
 ```
@@ -373,7 +373,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -384,13 +384,13 @@ Query to get list of orders in market.
 **Usage**
 
 ```text
-  akashctl query market order list [flags]
+  akash query market order list [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query market order list --state open
+$ akash query market order list --state open
 
 [{"id":{"owner":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","dseq":"83","gseq":1,"oseq":1},"state":2,"start-at":"88","spec":{"name":"global","requirements":null,"resources":[{"unit":{"cpu":10,"memory":"134217728","storage":"536870912"},"count":1,"price":{"denom":"stake","amount":"30"}}]}},{"id":{"owner":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","dseq":"14","gseq":1,"oseq":1},"state":2,"start-at":"19","spec":{"name":"global","requirements":null,"resources":[{"unit":{"cpu":10,"memory":"134217728","storage":"536870912"},"count":1,"price":{"denom":"stake","amount":"30"}}]}}]
 ```
@@ -416,7 +416,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -427,8 +427,8 @@ Market bid query commands
 **Usage**
 
 ```text
-  akashctl query market bid [flags]
-  akashctl query market bid [command]
+  akash query market bid [flags]
+  akash query market bid [command]
 ```
 
 **Available Commands**
@@ -449,7 +449,7 @@ Market bid query commands
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -460,13 +460,13 @@ Query details of a bid in market.
 **Usage**
 
 ```text
-  akashctl query market bid get [flags]
+  akash query market bid get [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query market bid get --owner akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf --dseq 14 --gseq 1 --oseq 1 --provider akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug
+$ akash query market bid get --owner akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf --dseq 14 --gseq 1 --oseq 1 --provider akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug
 
 {"id":{"owner":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","dseq":"14","gseq":1,"oseq":1,"provider":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug"},"state":3,"price":{"denom":"stake","amount":"20"}}
 ```
@@ -495,7 +495,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -506,13 +506,13 @@ Query to get list of bids in market.
 **Usage**
 
 ```text
-  akashctl query market bid list [flags]
+  akash query market bid list [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query market bid list
+$ akash query market bid list
 
 [{"id":{"owner":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","dseq":"14","gseq":1,"oseq":1,"provider":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug"},"state":3,"price":{"denom":"stake","amount":"20"}},{"id":{"owner":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","dseq":"14","gseq":1,"oseq":2,"provider":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug"},"state":1,"price":{"denom":"stake","amount":"20"}}]
 ```
@@ -538,7 +538,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -549,8 +549,8 @@ Market lease query commands
 **Usage**
 
 ```text
-  akashctl query market lease [flags]
-  akashctl query market lease [command]
+  akash query market lease [flags]
+  akash query market lease [command]
 ```
 
 **Available Commands**
@@ -571,7 +571,7 @@ Market lease query commands
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -582,13 +582,13 @@ Query details of a lease in market.
 **Usage**
 
 ```text
-  akashctl query market lease get [flags]
+  akash query market lease get [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query market lease get --owner akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf --dseq 14 --gseq 1 --oseq 1 --provider akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug
+$ akash query market lease get --owner akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf --dseq 14 --gseq 1 --oseq 1 --provider akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug
 
 {"id":{"owner":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","dseq":"14","gseq":1,"oseq":1,"provider":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug"},"state":2,"price":{"denom":"stake","amount":"20"}}
 ```
@@ -617,7 +617,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -628,13 +628,13 @@ Query to get list of leases in market.
 **Usage**
 
 ```text
-  akashctl query market lease list [flags]
+  akash query market lease list [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query market lease list
+$ akash query market lease list
 
 [{"id":{"owner":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","dseq":"14","gseq":1,"oseq":1,"provider":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug"},"state":2,"price":{"denom":"stake","amount":"20"}},{"id":{"owner":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","dseq":"14","gseq":1,"oseq":2,"provider":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug"},"state":2,"price":{"denom":"stake","amount":"20"}}]
 ```
@@ -660,7 +660,7 @@ None
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -671,8 +671,8 @@ Provider query commands
 **Usage**
 
 ```text
-  akashctl query provider [flags]
-  akashctl query provider [command]
+  akash query provider [flags]
+  akash query provider [command]
 ```
 
 **Available Commands**
@@ -693,7 +693,7 @@ Provider query commands
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -705,13 +705,13 @@ Query details of provider.
 **Usage**
 
 ```text
- akashctl query provider get [address] [flags]
+ akash query provider get [address] [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query provider get akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug
+$ akash query provider get akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug
 
 {"owner":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","host-uri":"http://akash.akhilkumar.online","attributes":[{"key":"cmVnaW9u","value":"c2Zv"},{"key":"bW9uaWtlcg==","value":"YWtoaWw="}]}
 ```
@@ -737,7 +737,7 @@ $ akashctl query provider get akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |
 
@@ -749,13 +749,13 @@ Query for all providers
 **Usage**
 
 ```text
- akashctl query provider list [flags]
+ akash query provider list [flags]
 ```
 
 **Example**
 
 ```text
-$ akashctl query provider list
+$ akash query provider list
 
 [{"owner":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","host-uri":"http://akash.akhilkumar.online","attributes":[{"key":"cmVnaW9u","value":"c2Zv"},{"key":"bW9uaWtlcg==","value":"YWtoaWw="}]}]
 ```
@@ -775,6 +775,6 @@ $ akashctl query provider list
 | Short | Verbose    | Argument | Required | Description                                                   |
 |:------|:-----------|:---------|:---------|:--------------------------------------------------------------|
 | -e    | --encoding | string   | N        | Binary encoding (hex/b64/btc) (default "hex").                |
-|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akashctl") |
+|       | --home     | string   | N        | directory for config and data (default "/home/ubuntu/.akash") |
 | -o    | --output   | string   | N        | Output format (text/json) (default "text")                    |
 |       | --trace    |          | N        | print out full stack trace on errors                          |

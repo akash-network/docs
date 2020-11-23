@@ -1,5 +1,3 @@
-# SDL: Stack Definination Language 
-
 ## Deployment Configuration
 
 Deployment services, datacenters, pricing, etc.. are described by a [YAML](http://www.yaml.org/start.html) configuration file.  Configuration files may end in `.yml` or `.yaml`.
@@ -11,137 +9,13 @@ A complete deployment has the following sections:
  * [profiles](#profiles)
  * [deployment](#deployment)
 
-### Example
+An example deployment configuration can be found [here](deployment.yaml).
 
-```yaml
----
-version: "1.0"
+### version
 
-include:
-  - "foo.yml"
-  - "https://foo.yml"
+Indicates version of Akash configuration file.  Currently only `"1.5"` is accepted.
 
-services:
-
-  db-master:
-    image: postgres
-    expose:
-      - port: 5432
-        proto: tcp
-        to:
-          - service: db-pool
-          - service: db-pool
-            global:  true
-          - service: db-slave
-            global: true
-
-  db-slave:
-    image: postgres-slave
-    depends-on:
-      - service: db-master
-    expose:
-      - port: 5432
-        proto: tcp
-        to:
-          - service: db-pool
-
-  db-pool:
-    image: db-pool
-    depends-on:
-      - service: db-slave
-      - service: db-master
-    expose:
-      - port: 5432
-        proto: tcp
-        to:
-          - service: web
-
-  web:
-    image: foo:latest
-    env:
-      - "API_KEY=996fb92427ae41e4649b934ca495991b785"
-    port: 80
-    depends-on:
-      - service: db-pool
-    expose:
-      - port: 443
-        as: 8080
-        accept:
-          - foo.com
-        to:
-          - global: true
-
-profiles:
-
-  compute:
-    web:
-      cpu: "0.01"
-      memory: "128Mi"
-      storage: "512Mi"
-    db:
-      cpu: "0.01"
-      memory: "128Mi"
-      storage: "1Gi"
-    db-pool:
-      cpu: "0.01"
-      memory: "128Mi"
-      storage: "512Mi"
-
-  placement:
-    westcoast:
-      attributes:
-        region: us-west
-      pricing:
-        web: 10u
-        db:  50u
-        db-pool: 30u
-    eastcoast:
-      attributes:
-        region: us-east
-      pricing:
-        web: 30u
-        db:  60u
-        db-pool: 40u
-
-deployment:
-
-  db-master:
-    westcoast:
-      profile: db
-      count: 1
-
-  db-slave:
-    westcoast:
-      profile: db
-      count: 1
-    eastcoast:
-      profile: db
-      count: 1
-
-  db-pool:
-    westcoast:
-      profile: db-pool
-      count: 1
-    eastcoast:
-      profile: db-pool
-      count: 1
-
-  web:
-    westcoast:
-      profile: web
-      count: 2
-    eastcoast:
-      profile: web
-      count: 2
-```
-
-An example deployment configuration for the Akash testnet can be found [here](testnet/testnet-deployment.yml). A full example deployment configuration can be found [here](deployment.yml).
-
-## version
-
-Indicates version of Akash configuration file.  Currently only `"1.0"` is accepted.
-
-## services
+### services
 
 The top-level `services` entry contains a map of workloads to be ran on the Akash deployment.  Each key is a service name; values are a map containing the following keys:
 
@@ -149,11 +23,12 @@ The top-level `services` entry contains a map of workloads to be ran on the Akas
 | --- | --- | --- |
 | `image` | Yes | Docker image of the container |
 | `depends-on` | No | List of services which must be brought up before the current service |
-| `args` | No | Arguments to use when executing the container |
+| `command` | No | Custom command use when executing container |
+| `args` | No | Arguments to custom command use when executing the container |
 | `env` |  No | Environment variables to set in running container |
 | `expose` | No | Entities allowed to connect to to the services.  See [services.expose](#servicesexpose). |
 
-## services.expose
+#### services.expose
 
 `expose` is a list describing what can connect to the service.  Each entry is a map containing one or more of the following fields:
 
@@ -173,7 +48,7 @@ The `port` value governs the default `proto` value as follows:
 | 443 | https |
 | all others | tcp |
 
-### services.expose.to
+#### services.expose.to
 
 `expose.to` is a list of clients to accept connections from.  Each item is a map with one or more of the following entries:
 
@@ -182,7 +57,6 @@ The `port` value governs the default `proto` value as follows:
 | `service` | A service in this deployment | | Allow the given service to connect |
 | `global`  | `true` or `false` | `false` | If true, allow connections from outside of the datacenter |
 
-
 If no service is given and `global` is true, any client can connect from anywhere (web servers typically want this).
 
 If a service name is given and `global` is `false`, only the services in the current datacenter can connect.
@@ -190,18 +64,18 @@ If a service name is given and `global` is `true`, services in other datacenters
 
 If `global` is `false` then a service name must be given.
 
-## profiles
+### profiles
 
 The `profiles` section contains named compute and placement profiles to be used in the [deployment](#deployment).
 
-### profiles.compute
+#### profiles.compute
 
 `profiles.compute` is map of named compute profiles.  Each profile specifies compute resources to be leased for each service instance
 uses uses the profile.
 
 Example:
 
-This defines a profile named `web` having resource requirements of 2 vCPUs, 2 gigabytes of memory, and 5 gigabytes of storage available.
+This defines a profile named `web` having resource requirements of 2 vCPUs, 2 gigabytes of memory, and 5 gigabytes of storage space available.
 
 
 ```yaml
@@ -240,10 +114,11 @@ Example:
 | `E`  | 1000^6 |
 | `Ei`  | 1024^6 |
 
-### profiles.placement
+#### profiles.placement
 
-`profiles.placement` is map of named datacenter profiles.  Each profile specifies required datacenter attributes and pricing
+`profiles.placement` is map of named datacenter profiles. Each profile specifies required datacenter attributes and pricing
 configuration for each [compute profile](#profilescompute) that will be used within the datacenter.
+It also specifies optional list of signatures of which tenants expects audit of datacenter attributes.
 
 Example:
 
@@ -251,25 +126,26 @@ Example:
 westcoast:
   attributes:
     region: us-west
+  signedBy: # optional, allOf has higher priority, anyOf is ignored if there is at least one key in allOf
+    allOf: # array of keys tenant expects attributes to be validated by. if all but one validated, provider cannot bid
+      - signer1
+      - signer2
+    anyOf: # array of keys tenant expects attributes to be validated by. provider can bid if one of keys has put signature 
+      - signer3
+      - signer4
   pricing:
-    web: 8u
-    db: 100u
+    web:
+      denom: uakt
+      amount: 8
+    db:
+      denom: uakt
+      amount: 100
 ```
 
 This defines a profile named `westcoast` having required attributes `{region="us-west"}`, and with a max price for
-the `web` and `db` [compute profiles](#profilescompute) of 8 and 15 _micro_ (10^-6) tokens per block, respectively.
+the `web` and `db` [compute profiles](#profilescompute) of 8 and 15 tokens per block, respectively.
 
-Pricing may be expressed in decimal or scientific notation for Akash units, or may be suffixed with `mu`,`µ`, or `u` to represent _micro_ Akash.
-
-Examples:
-
-| Value | Micro Akash Tokens |
-| --- | --- |
-| `1`    | 1000000 |
-| `1e-4` | 100 |
-| `20u`  | 20 |
-
-## deployment
+### deployment
 
 The `deployment` section defines how to deploy the services.  It is a mapping of service name to deployment configuration.
 

@@ -2,48 +2,36 @@
 
 * [Introduction](README.md)
 
-## Overview
-* [What is Akash?](overview/README.md)
+* [Features and Design](/design/README.md)
+  * [Features](/design/features.md)
+{% comment %}
+  * [Marketplace](/design/marketplace.md)
+  * [Provider Services](/design/provider-services.md)
+{% uncomment %}
 
-## Wallet Guides
-* [Using Lunie Web Wallet and Ledger](guides/wallet/lunie.md)
-* [Using CLI](guides/wallet/cli.md)
+## Guides
 
-## Validator Guides
-* [Validators Overview](guides/validators/overview.md)
-* [Running a Local Node](guides/validators/local.md)
-* [Joining the Mainnet](guides/create-a-testnet-validator.md)
-  * [Systemd Configuration](guides/systemd.md)
+* [Choosing a Network](/guides/version.md)
+* [Install Akash](/guides/install.md)
+* [Wallet Setup](/guides/wallet/README.md)
+* [Funding your Account](/guides/wallet/funding.md)
+* [Deploy an Application](/guides/deploy/README.md)
+* [Run an Akash Node](/guides/node/README.md)
+  * [RPC Service](/guides/node/rpc.md)
+  * [API Service](/guides/node/api.md)
+  * [Run a Validator](/guides/node/validator.md)
+* [Become a Provider](/guides/provider/README.md)
 
-## Provider Guides
-* [Running a Provider Node](providers/kube/README.md)
+## Documentation
 
-## Deployment Guides
-* [Deploy a Simple Web App](guides/deploy/web.md)
+* [Stack Definition Language](/sdl/README.md)
+{% comment %}
+* [Command-Line](/cli/README.md) 
+{% endcomment %}
 
-## Akashian Challenge
-* [The Challenge](akashian/README.md)
-* [Phase 1](akashian/phase1.md)
-  * [Centauri 2 Validator Setup](akashian/centauri-2.md)
-* [Phase 2](akashian/phase2.md)
-  * [Network Configuration](akashian/phase2-network.md)
+## Testnet Challenges
 
-## Usage
-* [Install Akash Suite](guides/install.md)
-* [Stack Definition Language](sdl/README.md)
-* [Akash Client](usage/cli/README.md)
-  * [Common Commands](usage/cli/general-commands.md)
-  * [Run Light Client](usage/cli/rest-server.md)
-  * [Manage keys](usage/cli/keys.md)
-  * [Manage deployments](usage/cli/deployments.md)
-  * [Service logs](usage/cli/logs.md)
-  * [Monitor marketplace](usage/cli/marketplace.md)
-  * [Manage provider](usage/cli/provider.md)
-  * [Query network](usage/cli/query.md)
-  * [Send tokens to an account](usage/cli/send.md)
-  * [Get remote node status](usage/cli/status.md)
-  * [Print Akash version](usage/cli/version.md)
-
-## Resources
-* [REST API Spec](http://lcd.akash.forbole.com/)
-* [SDK API Reference](https://godoc.org/github.com/ovrclk/akash)
+* [Overview](/testnet-challenges/README.md)
+  * [Network Support](/testnet-challenges/network-support.md)
+  * [Guided Deployments](/testnet-challenges/guided-deployments.md)
+  * [Community Content](/testnet-challenges/community-content.md)

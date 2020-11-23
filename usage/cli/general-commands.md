@@ -5,28 +5,28 @@
 **Usage**
 
 ```shell
-akashctl rest-server [flags]
+akash rest-server [flags]
 ```
 
 **Example**
 
 ```
-$ akashctl rest-server --node tcp://localhost:26657 --laddr tcp://127.0.0.1:1319
+$ akash rest-server --node tcp://localhost:26657 --laddr tcp://127.0.0.1:1319
 I[2020-02-27|16:25:57.343] Starting application REST service (chain-id: "")...  module=rest-server 
 I[2020-02-27|16:25:57.343] Starting RPC HTTP server on 127.0.0.1:1319   module=rest-server
 ```
 
-Use `akashctl rest-server` to start light client.
+Use `akash rest-server` to start light client.
 
 **More info**
 
 ```text
-akashctl rest-server --help
+akash rest-server --help
 
 Start LCD (light-client daemon), a local REST server
 
 Usage:
-  akashctl rest-server [flags]
+  akash rest-server [flags]
 
 Flags:
       --height int           Use a specific height to query state at (this can error if the node is pruning state)
@@ -42,7 +42,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 ```
@@ -54,13 +54,13 @@ Sign and send tokens to other account.
 **Usage**
 
 ```
-akashctl tx send [from_key_or_address] [to_address] [amount] [flags]
+akash tx send [from_key_or_address] [to_address] [amount] [flags]
 ```
 
  **Example**
 
 ```
-$ akashctl tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000uakt -y -o json
+$ akash tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000uakt -y -o json
 
 {"height":"0","txhash":"116ED246AFF9F9B58036AECAA5EFE81AA7A788CC625CC2A4ADAFC68378834413","raw_log":"[]"}
 ```
@@ -68,11 +68,11 @@ $ akashctl tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000uakt
 **More Info**
 
 ```
-$ akashctl tx send -h
+$ akash tx send -h
 Create and sign a send tx
 
 Usage:
-  akashctl tx send [from_key_or_address] [to_address] [amount] [flags]
+  akash tx send [from_key_or_address] [to_address] [amount] [flags]
 
 Flags:
   -a, --account-number uint      The account number of the signing account (offline mode only)
@@ -96,7 +96,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 ```
@@ -107,13 +107,13 @@ Query for a transaction by hash in a committed block.
 
 **Usage**
 ```
-$ akashctl query tx <txhash> -o json
+$ akash query tx <txhash> -o json
 ```
 
 **Examples**
 
 ```
-$ akashctl query tx 295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E -o json
+$ akash query tx 295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E -o json
 
 {"height":"338","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","codespace":"staking","code":3,"raw_log":"validator does not exist: failed to execute message; message index: 0","gas_wanted":"200000","gas_used":"35496","tx":{"type":"cosmos-sdk/StdTx","value":{"msg":[{"type":"cosmos-sdk/MsgBeginRedelegate","value":{"delegator_address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","validator_src_address":"akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s","validator_dst_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","amount":{"denom":"uakt","amount":"10000"}}}],"fee":{"amount":[],"gas":"200000"},"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"A+hCkyWd4cWG0KD+GgCxHEOUzll1cl5VvoGgDvVIwF3E"},"signature":"XI1XhIXlSCPnQVHQamu+sbqiZxAxLM8OnXSF2gqNVkkpP1bi6Au3v8N4EUAaPrZGYigechb2ekt6MUEjrFWdgw=="}],"memo":""}},"timestamp":"2020-03-06T10:39:57Z"}
 ```
@@ -121,10 +121,10 @@ $ akashctl query tx 295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0
 **More info**
 
 ```
-$ akashctl query tx -h
+$ akash query tx -h
 
 Usage:
-  akashctl query tx [hash] [flags]
+  akash query tx [hash] [flags]
 
 Flags:
   -h, --help          help for tx
@@ -133,7 +133,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 ```
@@ -145,13 +145,13 @@ Delegate some tokens to validator i.e., bonding tokens.
 **Usage**
 
 ```
-$ akashctl tx staking delegate <validator-address> <amount-with-denom> --from <from-account> -y -o json
+$ akash tx staking delegate <validator-address> <amount-with-denom> --from <from-account> -y -o json
 ```
 
 **Example**
 
 ```
-$ akashctl tx staking delegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000uakt --from alice -y -o json
+$ akash tx staking delegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000uakt --from alice -y -o json
 
 {"height":"0","txhash":"F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7","raw_log":"[]"}
 ```
@@ -159,11 +159,11 @@ $ akashctl tx staking delegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp9
 **More info**
 
 ```
-$ akashctl tx staking delegate -h
+$ akash tx staking delegate -h
 Delegate an amount of liquid coins to a validator from your wallet.
 
 Usage:
-  akashctl tx staking delegate [validator-addr] [amount] [flags]
+  akash tx staking delegate [validator-addr] [amount] [flags]
 
 Flags:
   -a, --account-number uint      The account number of the signing account (offline mode only)
@@ -187,7 +187,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 ```
@@ -199,13 +199,13 @@ Redelegate some tokens from one validator to another.
 **Usage**
 
 ```
-$ akashctl tx staking redelegate <src-validator-address> <dest-validator-address> <amount-with-denom> --from <from-account> -y -o json
+$ akash tx staking redelegate <src-validator-address> <dest-validator-address> <amount-with-denom> --from <from-account> -y -o json
 ```
 
 **Example**
 
 ```
-$ akashctl tx staking redelegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr 1000000uakt --from alice -y -o json
+$ akash tx staking redelegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr 1000000uakt --from alice -y -o json
 
 {"height":"0","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","raw_log":"[]"}
 ```
@@ -213,14 +213,14 @@ $ akashctl tx staking redelegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpg
 **More info**
 
 ```
-$ akashctl tx staking redelegate -h
+$ akash tx staking redelegate -h
 Redelegate an amount of illiquid staking tokens from one validator to another.
 
 Example:
-$ akashctl tx staking redelegate cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj cosmosvaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 100uakt --from mykey
+$ akash tx staking redelegate cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj cosmosvaloper1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm 100uakt --from mykey
 
 Usage:
-  akashctl tx staking redelegate [src-validator-addr] [dst-validator-addr] [amount] [flags]
+  akash tx staking redelegate [src-validator-addr] [dst-validator-addr] [amount] [flags]
 
 Flags:
   -a, --account-number uint      The account number of the signing account (offline mode only)
@@ -244,7 +244,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 ```
@@ -255,26 +255,26 @@ Undelegate some tokens from validator i.e., unbonding tokens.
 
 **Usage**
 ```
-$ akashctl tx staking unbond <validator-address> <amount-with-denom> --from <from-account> -y -o json
+$ akash tx staking unbond <validator-address> <amount-with-denom> --from <from-account> -y -o json
 ```
 
 **Example**
 ```
-$ akashctl tx staking unbond akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000uakt --from alice -y -o json
+$ akash tx staking unbond akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000uakt --from alice -y -o json
 
 {"height":"0","txhash":"F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7","raw_log":"[]"}
 ```
 
 **More info**
 ```
-$ akashctl tx staking unbond -h
+$ akash tx staking unbond -h
 Unbond an amount of bonded shares from a validator.
 
 Example:
-$ akashctl tx staking unbond cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 100uakt --from mykey
+$ akash tx staking unbond cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj 100uakt --from mykey
 
 Usage:
-  akashctl tx staking unbond [validator-addr] [amount] [flags]
+  akash tx staking unbond [validator-addr] [amount] [flags]
 
 Flags:
   -a, --account-number uint      The account number of the signing account (offline mode only)
@@ -298,7 +298,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 ```
@@ -309,30 +309,30 @@ Withdraw rewards from validator
 
 **Usage**
 ```
-$ akashctl tx distribution withdraw-rewards <validator-address> <amount-with-denom> --from <from-account> -y -o json
+$ akash tx distribution withdraw-rewards <validator-address> <amount-with-denom> --from <from-account> -y -o json
 ```
 
 **Example**
 ```
-$ akashctl tx distribution withdraw-rewards akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr --from alice -y -o json
+$ akash tx distribution withdraw-rewards akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr --from alice -y -o json
 
 {"height":"0","txhash":"1BBB4A7A4D245C7534F366BABCE5BDD73776FB0430B3A241BFEEEF99445C52C3","raw_log":"[]"}
 ```
 
 **More info**
 ```
-$ akashctl tx distribution withdraw-rewards -h
+$ akash tx distribution withdraw-rewards -h
 Withdraw rewards from a given delegation address,
 and optionally withdraw validator commission if the delegation address given is a validator operator.
 
 Example:
-$ akashctl tx distribution withdraw-rewards cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj --from mykey
+$ akash tx distribution withdraw-rewards cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj --from mykey
 
 ### Withdraw commission
-$ akashctl tx distribution withdraw-rewards cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj --from mykey --commission
+$ akash tx distribution withdraw-rewards cosmosvaloper1gghjut3ccd8ay0zduzj64hwre2fxs9ldmqhffj --from mykey --commission
 
 Usage:
-  akashctl tx distribution withdraw-rewards [validator-addr] [flags]
+  akash tx distribution withdraw-rewards [validator-addr] [flags]
 
 Flags:
   -a, --account-number uint      The account number of the signing account (offline mode only)
@@ -357,7 +357,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 ```
@@ -367,26 +367,26 @@ Query all rewards earned by a delegator, optionally restrict to rewards from a s
 
 **Usage**
 ```
-$ akashctl query distribution rewards <delegator-address> [<validator-address>] -o json
+$ akash query distribution rewards <delegator-address> [<validator-address>] -o json
 ```
 
 **Examples**
 ```
-$ akashctl query distribution rewards akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr -o json
+$ akash query distribution rewards akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr -o json
 
 [{"denom":"uakt","amount":"69009.444000000000000000"}]
 
-$ akashctl query distribution rewards akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
+$ akash query distribution rewards akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
 
 {"rewards":[{"validator_address":"akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr","reward":[{"denom":"uakt","amount":"1089622.800000000000000000"}]}],"total":[{"denom":"uakt","amount":"1089622.800000000000000000"}]}
 ```
 
 **More info**
 ```
-$ akashctl query distribution rewards -h
+$ akash query distribution rewards -h
 
 Usage:
-  akashctl query distribution rewards [delegator-addr] [<validator-addr>] [flags]
+  akash query distribution rewards [delegator-addr] [<validator-addr>] [flags]
 
 Flags:
       --height int    Use a specific height to query state at (this can error if the node is pruning state)
@@ -398,7 +398,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 ```
@@ -408,22 +408,22 @@ Query account balance of given account address.
 
 **Usage**
 ```
-$ akashctl query account <account-address> -o json
+$ akash query account <account-address> -o json
 ```
 
 **Examples**
 ```
-$ akashctl query account akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
+$ akash query account akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
 
 {"type":"cosmos-sdk/Account","value":{"address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","coins":[{"denom":"uakt","amount":"99870156179"}],"public_key":"akashpub1addwnpepq05y9ye9nhsutpks5rlp5q93r3pefnjew4e9u4d7sxsqaa2gcpwug9szhl2","account_number":3,"sequence":5}}
 ```
 
 **More info**
 ```
-$ akashctl query account -h
+$ akash query account -h
 
 Usage:
-  akashctl query account [address] [flags]
+  akash query account [address] [flags]
 
 Flags:
       --height int    Use a specific height to query state at (this can error if the node is pruning state)
@@ -435,7 +435,7 @@ Flags:
 
 Global Flags:
   -e, --encoding string   Binary encoding (hex|b64|btc) (default "hex")
-      --home string       directory for config and data (default "/home/ubuntu/.akashctl")
+      --home string       directory for config and data (default "/home/ubuntu/.akash")
   -o, --output string     Output format (text|json) (default "text")
       --trace             print out full stack trace on errors
 ```
@@ -446,12 +446,12 @@ Provide seed phrase to recover existing key instead of creating.
 
 **Usage**
 ```
-$ akashctl keys add <key-name> --recover
+$ akash keys add <key-name> --recover
 ```
 
 **Example**
 ```
-$ akashctl keys add alice --recover
+$ akash keys add alice --recover
 > Enter your bip39 mnemonic
 close super rare vicious core supreme collect fatigue maid cupboard throw surge notable phrase brand actual high track stay visual afraid lot dizzy wedding
 
@@ -470,12 +470,12 @@ Export a private key from the local keybase in ASCII-armored encrypted format. E
 
 **Usage**
 ```
-akashctl keys export <key-name>
+akash keys export <key-name>
 ```
 
 **Example**
 ```
-$ akashctl keys export provider
+$ akash keys export provider
 Enter passphrase to decrypt your key:
 Enter passphrase to encrypt the exported key:
 -----BEGIN TENDERMINT PRIVATE KEY-----
@@ -495,11 +495,11 @@ Import a file with ASCII armored private key into the local keybase. Required ke
 
 **Usage**
 ```
-$ akashctl keys import <key-name> <keyfile>
+$ akash keys import <key-name> <keyfile>
 ```
 
 **Example**
 ```
-$ akashctl keys import provider key
+$ akash keys import provider key
 Enter passphrase to decrypt your key:
 ```

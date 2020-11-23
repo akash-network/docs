@@ -7,7 +7,7 @@ In this guide, we'll set up a full Akash Validator node on Akash Mainnet and opt
 
 Before we begin, ensure your workstation has the below necessary software installed:
 
-**Akash Suite (~> `0.8.2`)**: You'll need `akashd` and `akashctl` installed on your workstation. Please see this [guide](guides/install.md) for help with installation.
+**Akash Suite (~> `0.8.2`)**: You'll need `akash` and `akash` installed on your workstation. Please see this [guide](guides/install.md) for help with installation.
 
 Moniker
 
@@ -16,6 +16,6 @@ Picking a clealy identifiable Moniker is essential for delegators to trust you a
 
 ## Generate Configuration
 
-`akashd init alice`
+`akash init alice`
 
 Create A Validator
