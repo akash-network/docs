@@ -53,14 +53,14 @@ Installing Akash suite from source:
 $ go get -d github.com/ovrclk/akash
 $ cd $GOPATH/src/github.com/ovrclk/akash
 ```
-Replace <version.txt> below with the `akash` version used in the [latest testnet](https://github.com/ovrclk/net/tree/master/latest)
+Replace <version.txt> below with the `akash` version used in the [latest testnet](https://github.com/ovrclk/net/blob/master/testnet/version.txt)
 ```
 $ MAINNET=false git checkout <version.txt>
 $ make deps-install
 $ make install
 ```
 
-Once installed, verify the installation by running `akash version`.
+Once installed, verify the installation by running `akashd version`.
 
 Akash is developed and tested with [golang 1.15+](https://golang.org/). Building requires a working [golang](https://golang.org/) installation, a properly set `GOPATH`, and `$GOPATH/bin` present in `$PATH`.
 
