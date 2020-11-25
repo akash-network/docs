@@ -11,4 +11,5 @@ information on settings that are specific to this.
 
 * [Network Support](/testnet-challenges/network-support.md)
 * [Guided Deployments](/testnet-challenges/guided-deployments.md)
+* [Open-Ended Deployments](/testnet-challenges/open-ended-deployments.md)
 * [Community Content](/testnet-challenges/community-content.md)

@@ -31,6 +31,7 @@ For details about what [Akash] can do and what makes it tick, see [Features and 
 * [Overview](/testnet-challenges/README.md)
   * [Network Support](/testnet-challenges/network-support.md)
   * [Guided Deployments](/testnet-challenges/guided-deployments.md)
+  * [Open-Ended Deployments](/testnet-challenges/open-ended-deployments.md)
   * [Community Content](/testnet-challenges/community-content.md)
 
 [Akash]: https://github.com/ovrclk/akash

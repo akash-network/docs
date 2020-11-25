@@ -1,3 +1,8 @@
+{% hint %}
+Instructions will be revealed when the challenge starts
+{% endhint %}
+
+{% comment %}
 Follow the [node guides](guides/node/README.md) to install and configure
 your node to run on the current **edgenet** network.
 
@@ -17,3 +22,5 @@ Host an RPC node and add its connection details to `edgenet/rpc-nodes.txt`
 ## API Node
 
 Host an API node and add its connection details to `edgenet/api-nodes.txt`
+
+{% endcomment %}
