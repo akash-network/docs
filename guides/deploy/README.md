@@ -12,9 +12,16 @@ Make sure to have Akash client installed on your workstation, check [install gui
 You'll need an account with funds to pay for your deployment.  See the [funding guide](/guides/wallet/funding.md) for
 creating a key and funding your account.
 
-## Configure your settings
+You'll need an SDL file frome awesome-akash or similar.  See the [Awesome Akash 
 
-Choose an SDL file frome awesome-akash or similar.
+### Shell Variables Required
+
+|Name|Description|
+|---|---|
+|`ACCOUNT_ADDRESS`|The address of your account.  See [here](/guides/wallet/README.md#account-address).|
+|`KEYRING_BACKEND`|Keyring backend to use for local keys.  See [here](/guides/wallet/README.md)|
+|`AKASH_NODE`|Akash network configuration base URL. See [here](/guides/version.md).|
+
 
 ## Depoy your application
 
