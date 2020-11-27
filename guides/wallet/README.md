@@ -4,12 +4,18 @@ In this guide, we'll generate a wallet address on your workstation
 
 Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) for instructions.
 
+### Shell Variables Required
+
+|Name|Description|
+|---|---|
+|`KEY_NAME`|Key name of your choosing.  This documentation uses a value of "alice".|
+
 ## Derive a New Key Locally
 
 Derive a new private key and encrypt to disk using the command `keys add`, to generate a key with the named `alice`, run the below (please make sure to replace alice with a name of your choice):
 
 ```sh
-akash keys add alice
+akash keys add "$KEY_NAME"
 ```
 
 You'll see a response similar to below:
@@ -38,7 +44,7 @@ In the above example, your new Akash address is `akash1cz87pqkad72gggrv3t7y2x9z5
 To derive a key and store it on the ledger, add the `--ledger` flag `keys add` command. For example:
 
 ```sh
-akash keys add alice --ledger
+akash keys add "$KEY_NAME" --ledger
 ```
 
 Will produce a similar output to:
@@ -58,10 +64,10 @@ Will produce a similar output to:
 The command to recover your key is:
 
 ```
-akash keys add <name> --recover
+akash keys add "$KEY_NAME" --recover
 ```
 
-For example, `akash keys add alice --recover` will prompt the user to input a bip39 mnemonic and looks similar to:
+For example, `akash keys add "$KEY_NAME" --recover` will prompt the user to input a bip39 mnemonic and looks similar to:
 
 ```
 > Enter your bip39 mnemonic
@@ -81,7 +87,7 @@ diagram pony police cigar curious miracle multiply tiger salmon trade like month
 The command to export your private key is `keys export`. For example:
 
 ```sh
-akash keys export alice
+akash keys export "$KEY_NAME"
 ```
 
 will output a response similar to:

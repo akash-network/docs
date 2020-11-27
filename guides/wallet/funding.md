@@ -13,6 +13,12 @@ Make sure to have Akash client installed on your workstation, check [install gui
 
 You'll need a key to use for your account and your account address handy.  See the [wallet guide](/guides/wallet.md) for how to set this up.
 
+### Shell Variables Required
+
+|Name|Description|
+|---|---|
+|`AKASH_NET`|Akash network configuration base URL.|
+
 # Funding Method
 
 There are a number of different ways to fund your account.  Some work for `mainnet` and some don't; pick an appropriate
