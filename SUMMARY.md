@@ -1,25 +1,26 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Features and Design](design/README.md)
-  * [Features](design/features.md)
+* [Features and Design](/design/README.md)
+  * [Features](/design/features.md)
 
 ## Guides
 
-* [Choosing a Network](guides/version.md)
-* [Install Akash](guides/install.md)
-* [Wallet Setup](guides/wallet/README.md)
-* [Funding your Account](guides/wallet/funding.md)
-* [Deploy an Application](guides/deploy/README.md)
-* [Run an Akash Node](guides/node/README.md)
-  * [RPC Service](guides/node/rpc-service.md)
-  * [API Service](guides/node/api-service.md)
-  * [Run a Validator](guides/node/validator.md)
-* [Become a Provider](guides/provider.md)
+* [Overview](/guides/README.md)
+* [Choosing a Network](/guides/version.md)
+* [Install Akash](/guides/install.md)
+* [Wallet Setup](/guides/wallet/README.md)
+* [Funding your Account](/guides/wallet/funding.md)
+* [Deploy an Application](/guides/deploy/README.md)
+* [Run an Akash Node](/guides/node/README.md)
+  * [RPC Service](/guides/node/rpc-service.md)
+  * [API Service](/guides/node/api-service.md)
+  * [Run a Validator](/guides/node/validator.md)
+* [Become a Provider](/guides/provider.md)
 
 ## Documentation
 
-* [Stack Definition Language](documentation/sdl.md)
+* [Stack Definition Language](/sdl/sdl.md)
 
 ## Testnet Challenges
 
