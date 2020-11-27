@@ -3,8 +3,6 @@
 * [Introduction](README.md)
 * [Features and Design](design/README.md)
   * [Features](design/features.md)
-* [Marketplace](marketplace.md)
-* [Provider Services](provider-services.md)
 
 ## Guides
 
