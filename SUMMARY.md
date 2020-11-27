@@ -16,11 +16,11 @@
   * [RPC Service](/guides/node/rpc-service.md)
   * [API Service](/guides/node/api-service.md)
   * [Run a Validator](/guides/node/validator.md)
-* [Become a Provider](/guides/provider.md)
+* [Become a Provider](/guides/provider/README.md)
 
 ## Documentation
 
-* [Stack Definition Language](/sdl/sdl.md)
+* [Stack Definition Language](/sdl/README.md)
 
 ## Testnet Challenges
 
@@ -29,4 +29,3 @@
   * [Guided Deployments](/testnet-challenges/guided-deployments.md)
   * [Open-Ended Deployments](/testnet-challenges/open-ended-deployments.md)
   * [Community Content](/testnet-challenges/community-content.md)
-
