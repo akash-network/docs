@@ -6,11 +6,11 @@ This guide will walk you through funding an account on an Akash network. Funding
 
 ### Before We Begin
 
-You'll need to know information about the network you're connecting your node to. See [Choosing a Network](https://github.com/ovrclk/docs/tree/c03b7cdc6c14faf2e334273b8e18e6ac06d02a77/guides/versions.md) for how to obtain any network-related information.
+You'll need to know information about the network you're connecting your node to. See [Choosing a Network](/guides/versions.md) for how to obtain any network-related information.
 
 Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions.
 
-You'll need a key to use for your account and your account address handy. See the [wallet guide](https://github.com/ovrclk/docs/tree/c03b7cdc6c14faf2e334273b8e18e6ac06d02a77/guides/wallet.md) for how to set this up.
+You'll need a key to use for your account and your account address handy. See the [wallet guide](/guides/wallet.md) for how to set this up.
 
 ## Funding Method
 

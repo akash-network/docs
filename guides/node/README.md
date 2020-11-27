@@ -4,9 +4,9 @@ In this guide, we'll set up an Akash node and connect it to a network.
 
 ## Before We Begin
 
-You'll also need to know information about the network you're connecting your node to. See [Choosing a Network](https://github.com/ovrclk/docs/tree/c03b7cdc6c14faf2e334273b8e18e6ac06d02a77/guides/versions.md) for how to obtain any network-related information.
+You'll also need to know information about the network you're connecting your node to. See [Choosing a Network](/guides/versions.md) for how to obtain any network-related information.
 
-Make sure to have Akash client installed on your workstation, check [install guide](../install.md) for instructions.
+Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) for instructions.
 
 ## Setting Up a New Node
 
@@ -108,7 +108,7 @@ Start the full node with this command:
 akash start --pruning everything
 ```
 
-If you would like to run your node via `systemd` please see [this guide](https://github.com/ovrclk/docs/tree/c03b7cdc6c14faf2e334273b8e18e6ac06d02a77/guides/node/systemd.md).
+If you would like to run your node via `systemd` please see [this guide](/guides/node/systemd.md).
 
 You can use `akash` to check that everything is running smoothly:
 

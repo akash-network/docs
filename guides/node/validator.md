@@ -134,5 +134,5 @@ You may notice that your voting power is less than it used to be. That's because
 
 ### Problem \#2: My `akash` crashes because of `too many open files`
 
-The default number of files Linux can open \(per-process\) is `1024`. `akash` is known to open more than `1024` files. This causes the process to crash. A quick fix is to run `ulimit -n 4096` \(increase the number of open files allowed\) and then restart the process with `akash start`. If you are using `systemd` or another process manager to launch `akash` this may require some configuration at that level. See the [`systemd` configuration doc](https://github.com/ovrclk/docs/tree/c03b7cdc6c14faf2e334273b8e18e6ac06d02a77/guides/node/systemd.md) for details on how to configure `systemd` to aleviate this issue.
+The default number of files Linux can open \(per-process\) is `1024`. `akash` is known to open more than `1024` files. This causes the process to crash. A quick fix is to run `ulimit -n 4096` \(increase the number of open files allowed\) and then restart the process with `akash start`. If you are using `systemd` or another process manager to launch `akash` this may require some configuration at that level. See the [`systemd` configuration doc](/guides/node/systemd.md) for details on how to configure `systemd` to aleviate this issue.
 

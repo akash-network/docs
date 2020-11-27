@@ -9,7 +9,7 @@ The `akash` command is used to run all components of the Akash Network, includin
 There are a number of ways to install it, depending on your operating system.
 
 {% hint style="info" %}
-See [Choosing a Network](https://github.com/ovrclk/docs/tree/c03b7cdc6c14faf2e334273b8e18e6ac06d02a77/guides/versions.md) for determining which version to install.
+See [Choosing a Network](/guides/versions.md) for determining which version to install.
 
 The rest of this document will assume that you have populated the `AKASH_VERSION` environment variable with the appropriate software version.
 {% endhint %}

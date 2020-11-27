@@ -44,7 +44,7 @@ Akash has created an example Kubespray configuration to provision a Kubernetes i
 
 _Warning: needs to be updated_
 
-See [here](https://github.com/ovrclk/docs/tree/c03b7cdc6c14faf2e334273b8e18e6ac06d02a77/guides/provider/kube-gce.md) for seting up these prerequisites using [GCE](https://cloud.google.com/compute).
+See [here](/guides/provider/kube-gce.md) for seting up these prerequisites using [GCE](https://cloud.google.com/compute).
 
 ### Kubernetes Ingress
 
