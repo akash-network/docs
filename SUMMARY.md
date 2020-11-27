@@ -23,9 +23,9 @@
 
 ## Testnet Challenges
 
-* [Overview](testnet-challenges/testnet-challenges/README.md)
-  * [Network Support](testnet-challenges/testnet-challenges/network-support.md)
-  * [Guided Deployments](testnet-challenges/testnet-challenges/guided-deployments.md)
-  * [Open-Ended Deployments](testnet-challenges/testnet-challenges/open-ended-deployments.md)
-  * [Community Content](testnet-challenges/testnet-challenges/community-content.md)
+* [Overview](testnet-challenges/README.md)
+  * [Network Support](testnet-challenges/network-support.md)
+  * [Guided Deployments](testnet-challenges/guided-deployments.md)
+  * [Open-Ended Deployments](testnet-challenges/open-ended-deployments.md)
+  * [Community Content](testnet-challenges/community-content.md)
 
