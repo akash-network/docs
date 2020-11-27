@@ -4,7 +4,7 @@ Welcome to the documentation and user guides for [Akash](https://github.com/ovrc
 
 For details about what [Akash](https://github.com/ovrclk/akash) can do and what makes it tick, see [Features and Design](design/).
 
-## Guides
+## Usage
 
 * [Choosing a Network](guides/version.md)
 * [Install Akash](guides/install.md)
@@ -12,8 +12,8 @@ For details about what [Akash](https://github.com/ovrclk/akash) can do and what 
 * [Funding your Account](guides/funding.md)
 * [Deploy an Application](guides/deploy.md)
 * [Run an Akash Node](guides/node/)
-  * [RPC Service](https://github.com/ovrclk/docs/tree/858856bdfc2cd8f2cad55ec72dd72e73ac40a5e1/guides/node/rpc.md)
-  * [API Service](https://github.com/ovrclk/docs/tree/858856bdfc2cd8f2cad55ec72dd72e73ac40a5e1/guides/node/api.md)
+  * [RPC Service](guides/node/rpc.md)
+  * [API Service](guides/node/api.md)
   * [Run a Validator](guides/node/validator.md)
 * [Become a Provider](guides/provider.md)
 
@@ -28,4 +28,3 @@ For details about what [Akash](https://github.com/ovrclk/akash) can do and what 
   * [Guided Deployments](testnet-challenges/testnet-challenges/guided-deployments.md)
   * [Open-Ended Deployments](testnet-challenges/testnet-challenges/open-ended-deployments.md)
   * [Community Content](testnet-challenges/testnet-challenges/community-content.md)
-
