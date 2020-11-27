@@ -9,13 +9,16 @@ Make sure to have Akash client installed on your workstation, check [install gui
 |Name|Description|
 |---|---|
 |`KEY_NAME`|Key name of your choosing.  This documentation uses a value of "alice".|
+|`KEYRING_BACKEND`|Keyring backend to use for local keys.  One of `os` (default), `file`, `test`.|
 
 ## Derive a New Key Locally
 
 Derive a new private key and encrypt to disk using the command `keys add`, to generate a key with the named `alice`, run the below (please make sure to replace alice with a name of your choice):
 
 ```sh
-akash keys add "$KEY_NAME"
+akash \
+  --keyring-backend "$KEYRING_BACKEND" \
+  keys add "$KEY_NAME"
 ```
 
 You'll see a response similar to below:
@@ -44,7 +47,10 @@ In the above example, your new Akash address is `akash1cz87pqkad72gggrv3t7y2x9z5
 To derive a key and store it on the ledger, add the `--ledger` flag `keys add` command. For example:
 
 ```sh
-akash keys add "$KEY_NAME" --ledger
+akash \
+  --keyring-backend "$KEYRING_BACKEND" \
+  keys add "$KEY_NAME" \
+  --ledger
 ```
 
 Will produce a similar output to:
@@ -64,10 +70,13 @@ Will produce a similar output to:
 The command to recover your key is:
 
 ```
-akash keys add "$KEY_NAME" --recover
+akash \
+  --keyring-backend "$KEYRING_BACKEND" \
+  akash keys add "$KEY_NAME" \
+  --recover
 ```
 
-For example, `akash keys add "$KEY_NAME" --recover` will prompt the user to input a bip39 mnemonic and looks similar to:
+This will prompt the user to input a bip39 mnemonic and looks similar to:
 
 ```
 > Enter your bip39 mnemonic
@@ -87,7 +96,9 @@ diagram pony police cigar curious miracle multiply tiger salmon trade like month
 The command to export your private key is `keys export`. For example:
 
 ```sh
-akash keys export "$KEY_NAME"
+akash \
+  --keyring-backend "$KEYRING_BACKEND" \
+  keys export "$KEY_NAME"
 ```
 
 will output a response similar to:
@@ -111,5 +122,7 @@ Hdv20eQY/mXdYD4a/zd6QPdBDkMHyyl2qY6Tun/UgQviUUyyTvzuVQgrrZ6tilRI
 You can find your account address with:
 
 ```sh
-akash keys show "$KEY_NAME" -a
+akash \
+  --keyring-backend "$KEYRING_BACKEND" \
+  keys show "$KEY_NAME" -a
 ```
