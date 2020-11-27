@@ -105,3 +105,11 @@ Hdv20eQY/mXdYD4a/zd6QPdBDkMHyyl2qY6Tun/UgQviUUyyTvzuVQgrrZ6tilRI
 =IGRD
 -----END TENDERMINT PRIVATE KEY-----
 ```
+
+# Account Address
+
+You can find your account address with:
+
+```sh
+akash keys show "$KEY_NAME" -a
+```

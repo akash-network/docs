@@ -8,11 +8,11 @@ The `akash` command is used to run all components of the Akash Network, includin
 
 There are a number of ways to install it, depending on your operating system.
 
-{% hint style="info" %}
-See [Choosing a Network](/guides/versions.md) for determining which version to install.
+## Variables Required
 
-The rest of this document will assume that you have populated the `AKASH_VERSION` environment variable with the appropriate software version.
-{% endhint %}
+|Name|Description|
+|---|---|
+|`AKASH_VERSION`|Akash version to install for your network.  See [here](/guides/version.md).|
 
 {% tabs %}
 {% tab title="MacOS" %}

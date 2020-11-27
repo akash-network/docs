@@ -1,4 +1,3 @@
-# Funding your account.
 
 This guide will walk you through funding an account on an Akash network.
 Funding your network account is, of course, crucial to using the network - all messages charge a transaction fee, and if
@@ -17,7 +16,9 @@ You'll need a key to use for your account and your account address handy.  See t
 
 |Name|Description|
 |---|---|
-|`AKASH_NET`|Akash network configuration base URL.|
+|`AKASH_NET`|Akash network configuration base URL. See [here](/guides/version.md).|
+|`AKASH_NODE`|Akash network configuration base URL. See [here](/guides/version.md).|
+|`ACCOUNT_ADDRESS`|The address of your account.  See [here](/guides/wallet/README.md#account-address).|
 
 # Funding Method
 
@@ -40,3 +41,15 @@ Go to the resulting URL and enter your account address; you should see tokens in
 
 Tokens may currently be purchased on bitmax.io.  From there you can withdraw tokens to your address.
 
+
+## Check Balance
+
+Check your account balance with
+
+```sh
+akash \
+  --node "$AKASH_NODE" \
+  query bank balances "$ACCOUNT_ADDRESS"
+```
+
+You should see a non-zero entry containing `uakt` tokens!
