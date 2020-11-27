@@ -1,13 +1,12 @@
-# Join the Akash Network Testnet
+# Run an Akash Node
 
 In this guide, we'll set up an Akash node and connect it to a network.
 
 ## Before We Begin
 
-You'll also need to know information about the network you're connecting your node to.
-See [Choosing a Network](/guides/versions.md) for how to obtain any network-related information.
+You'll also need to know information about the network you're connecting your node to. See [Choosing a Network](https://github.com/ovrclk/docs/tree/c03b7cdc6c14faf2e334273b8e18e6ac06d02a77/guides/versions.md) for how to obtain any network-related information.
 
-Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) for instructions.
+Make sure to have Akash client installed on your workstation, check [install guide](../install.md) for instructions.
 
 ## Setting Up a New Node
 
@@ -25,7 +24,7 @@ Monikers can contain only ASCII characters. Using Unicode characters will render
 
 You can edit this `moniker` later, in the `~/.akash/config/config.toml` file:
 
-```toml
+```text
 # A custom human readable name for this node
 moniker = "<your_custom_moniker>"
 ```
@@ -34,7 +33,7 @@ Your full-node keeps unconfirmed transactions in its mempool. In order to protec
 
 The initial recommended `min-gas-prices` is `0.025uakt`, but you might want to change it later.
 
-```
+```text
 # This is a TOML config file.
 # For more information, see https://github.com/toml-lang/toml
 
@@ -45,7 +44,7 @@ The initial recommended `min-gas-prices` is `0.025uakt`, but you might want to c
 # specified in this config (e.g. 10uatom).
 
 minimum-gas-prices = "0.025uakt"
-``` 
+```
 
 ## Genesis & Seeds
 
@@ -59,8 +58,7 @@ Fetch the testnet's `genesis.json` file into `akash`'s config directory.
 curl -s "$AKASH_NET/genesis.json" > $HOME/.akash/config/genesis.json
 ```
 
-Note we use the `$AKASH_NET` variable - see the [net repo](https://github.com/ovrclk/net) for how to set this variable
-for the network you're connecting to.
+Note we use the `$AKASH_NET` variable - see the [net repo](https://github.com/ovrclk/net) for how to set this variable for the network you're connecting to.
 
 To verify the correctness of the configuration run:
 
@@ -70,7 +68,7 @@ akash validate-genesis
 
 ### Add Seed Nodes
 
-Your node needs to know how to find peers. You'll need to add healthy seed nodes or persistent peers to `$HOME/.akash/config/config.toml`.  As with installing [`genesis.json`](#copy-the-genesis-file), consult the [net repo](https://github.com/ovrclk/net/) for how to obtain seeds to connect to.
+Your node needs to know how to find peers. You'll need to add healthy seed nodes or persistent peers to `$HOME/.akash/config/config.toml`. As with installing [`genesis.json`](./#copy-the-genesis-file), consult the [net repo](https://github.com/ovrclk/net/) for how to obtain seeds to connect to.
 
 For more information on the how and why of seeds and peers, you can [read this](https://docs.tendermint.com/master/spec/p2p/peer.html) great documentation from the Tendermint maintainers.
 
@@ -78,19 +76,17 @@ For more information on the how and why of seeds and peers, you can [read this](
 
 Transactions on the Akash Network need to include a transaction fee in order to be processed. This fee pays for the gas required to run the transaction. The formula is the following:
 
-```
+```text
 fees = ceil(gas * gasPrices)
 ```
 
-The `gas` is dependent on the transaction. Different transaction require different amount of `gas`. The `gas` amount for a transaction is calculated as it is being processed, but there is a way to estimate it beforehand by using the `auto` value for the `gas` flag. Of course, this only gives an estimate. You can adjust this estimate with the flag `--gas-adjustment` (default `1.0`) if you want to be sure you provide enough `gas` for the transaction. 
+The `gas` is dependent on the transaction. Different transaction require different amount of `gas`. The `gas` amount for a transaction is calculated as it is being processed, but there is a way to estimate it beforehand by using the `auto` value for the `gas` flag. Of course, this only gives an estimate. You can adjust this estimate with the flag `--gas-adjustment` \(default `1.0`\) if you want to be sure you provide enough `gas` for the transaction.
 
-The `gasPrice` is the price of each unit of `gas`. Each validator sets a `min-gas-price` value, and will only include transactions that have a `gasPrice` greater than their `min-gas-price`. 
+The `gasPrice` is the price of each unit of `gas`. Each validator sets a `min-gas-price` value, and will only include transactions that have a `gasPrice` greater than their `min-gas-price`.
 
-The transaction `fees` are the product of `gas` and `gasPrice`. As a user, you have to input 2 out of 3. The higher the `gasPrice`/`fees`, the higher the chance that your transaction will get included in a block. 
+The transaction `fees` are the product of `gas` and `gasPrice`. As a user, you have to input 2 out of 3. The higher the `gasPrice`/`fees`, the higher the chance that your transaction will get included in a block.
 
-::: tip
-For Akash testnets, the recommended `gas-prices` is `0.025uakt`. 
-::: 
+::: tip For Akash testnets, the recommended `gas-prices` is `0.025uakt`. :::
 
 ## Pruning of State
 
@@ -112,7 +108,7 @@ Start the full node with this command:
 akash start --pruning everything
 ```
 
-If you would like to run your node via `systemd` please see [this guide](/guides/node/systemd.md).
+If you would like to run your node via `systemd` please see [this guide](https://github.com/ovrclk/docs/tree/c03b7cdc6c14faf2e334273b8e18e6ac06d02a77/guides/node/systemd.md).
 
 You can use `akash` to check that everything is running smoothly:
 
@@ -124,4 +120,5 @@ View the status of the network with the testnet explorer.
 
 ## Upgrade to Validator Node
 
-You now have an active full node. What's the next step? You can upgrade your full node to become a Akash Validator. Validators have the ability to propose new blocks the Akash testnet. If you are interested you can continue onto [the Validator Setup](/guides/node/validator.md).
+You now have an active full node. What's the next step? You can upgrade your full node to become a Akash Validator. Validators have the ability to propose new blocks the Akash testnet. If you are interested you can continue onto [the Validator Setup](validator.md).
+

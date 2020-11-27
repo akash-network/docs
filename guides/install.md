@@ -1,4 +1,4 @@
-# Akash Client Installation
+# Install Akash
 
 The `akash` command is used to run all components of the Akash Network, including:
 
@@ -8,60 +8,57 @@ The `akash` command is used to run all components of the Akash Network, includin
 
 There are a number of ways to install it, depending on your operating system.
 
-{% hint style='info' %}
-See [Choosing a Network](/guides/versions.md) for determining which version to install.
+{% hint style="info" %}
+See [Choosing a Network](https://github.com/ovrclk/docs/tree/c03b7cdc6c14faf2e334273b8e18e6ac06d02a77/guides/versions.md) for determining which version to install.
 
-The rest of this document will assume that you have populated the `AKASH_VERSION` environment
-variable with the appropriate software version.
+The rest of this document will assume that you have populated the `AKASH_VERSION` environment variable with the appropriate software version.
 {% endhint %}
 
-{% tabs %} {% tab title="MacOS" %}
-
-### MacOS
+{% tabs %}
+{% tab title="MacOS" %}
+## MacOS
 
 The simplest way to install is by using [homebrew](https://brew.sh). If you do not have homebrew, you can install homebrew using:
 
-```shell
+```text
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 Install `akash` daemon using homebrew:
 
-```shell
+```text
 brew tap ovrclk/akash
 brew install akash-edge
 brew link akash-edge --force
 ```
 
-Once installed, verify the installation by running `akash version`.  Compare that with the version for the network
-you plan on connecting to:
+Once installed, verify the installation by running `akash version`. Compare that with the version for the network you plan on connecting to:
 
-```sh
+```bash
 curl -s "$AKASH_NET/version.txt"
 ```
+{% endtab %}
 
-{% endtab %} {% tab title="Linux" %}
+{% tab title="Linux" %}
+## Linux
 
-### Linux
-
-Download the archive for your system from the [release page](https://github.com/ovrclk/akash/releases), extract it, and
-install the `akash` binary into your path.
+Download the archive for your system from the [release page](https://github.com/ovrclk/akash/releases), extract it, and install the `akash` binary into your path.
 
 Alternatively, install the latest version via [`godownloader`](https://github.com/goreleaser/godownloader) with:
 
-```sh
+```bash
 curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "$AKASH_VERSION"
 ```
 
 The final step is to make sure that the akash binaries are available in your shell `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.
+{% endtab %}
 
-{% endtab %} {% tab title="Source" %}
-
-### Source
+{% tab title="Source" %}
+## Source
 
 Installing Akash suite from source
 
-```shell
+```text
 $ go get -d github.com/ovrclk/akash
 $ cd $GOPATH/src/github.com/ovrclk/akash
 $ git checkout "$AKASH_VERSION"
@@ -72,5 +69,6 @@ $ make install
 Akash is developed and tested with [golang 1.15+](https://golang.org/). Building requires a working [golang](https://golang.org/) installation, a properly set `GOPATH`, and `$GOPATH/bin` present in `$PATH`.
 
 Once you have the dependencies properly setup, download and build `akash` using `make install`
+{% endtab %}
+{% endtabs %}
 
-{% endtab %} {% endtabs %}

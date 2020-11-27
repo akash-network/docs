@@ -1,6 +1,6 @@
-# Run a Validator on the Akash Testnet
+# Run a Validator
 
-Before setting up your validator node, make sure you've already gone through the [Full Node Setup](/guides/node/README.md) guide.
+Before setting up your validator node, make sure you've already gone through the [Full Node Setup](./) guide.
 
 > NOTE: it is not required to create a validator on Akash testnets unless specified in a challenge or otherwise. The akash team runs a centralized validator set to enable for easy and consistent testnet operations for developers trying out the platform for the first time.
 
@@ -33,19 +33,15 @@ akash tx staking create-validator \
   --from="$KEY_NAME"
 ```
 
-::: tip
-When specifying commission parameters, the `commission-max-change-rate` is used to measure % _point_ change over the `commission-rate`. E.g. 1% to 2% is a 100% rate increase, but only 1 percentage point.
-:::
+::: tip When specifying commission parameters, the `commission-max-change-rate` is used to measure % _point_ change over the `commission-rate`. E.g. 1% to 2% is a 100% rate increase, but only 1 percentage point. :::
 
-::: tip
-`min-self-delegation` is a stritly positive integer that represents the minimum amount of self-delegated voting power your validator must always have. A `min-self-delegation` of 1 means your validator will never have a self-delegation lower than `1000000uakt`
-:::
+::: tip `min-self-delegation` is a stritly positive integer that represents the minimum amount of self-delegated voting power your validator must always have. A `min-self-delegation` of 1 means your validator will never have a self-delegation lower than `1000000uakt` :::
 
 You can confirm that you are in the validator set by using a third party explorer for the testnet you are joining.
 
 ## Edit Validator Description
 
-You can edit your validator's public description. This info is to identify your validator, and will be relied on by delegators to decide which validators to stake to. Make sure to provide input for every flag below. If a flag is not included in the command the field will default to empty (`--moniker` defaults to the machine name) if the field has never been set or remain the same if it has been set in the past.
+You can edit your validator's public description. This info is to identify your validator, and will be relied on by delegators to decide which validators to stake to. Make sure to provide input for every flag below. If a flag is not included in the command the field will default to empty \(`--moniker` defaults to the machine name\) if the field has never been set or remain the same if it has been set in the past.
 
 The `<key_name>` specifies the keyy for the validator which you are editing. If you choose to not include certain flags, remember that the `--from` flag must be included to identify the validator to update.
 
@@ -64,11 +60,13 @@ akash tx staking edit-validator
   --commission-rate="0.10"
 ```
 
-__Note__: The `commission-rate` value must adhere to the following invariants:
+**Note**: The `commission-rate` value must adhere to the following invariants:
 
-- Must be between 0 and the validator's `commission-max-rate`
-- Must not exceed the validator's `commission-max-change-rate` which is maximum
+* Must be between 0 and the validator's `commission-max-rate`
+* Must not exceed the validator's `commission-max-change-rate` which is maximum
+
   % point change rate **per day**. In other words, a validator can only change
+
   its commission once per day and within `commission-max-change-rate` bounds.
 
 ## View Validator Description
@@ -90,12 +88,12 @@ akash query slashing signing-info <validator-pubkey> \
 
 ## Unjail Validator
 
-When a validator is "jailed" for downtime, you must submit an `Unjail` transaction from the operator account in order to be able to get block proposer rewards again (depends on the zone fee distribution).
+When a validator is "jailed" for downtime, you must submit an `Unjail` transaction from the operator account in order to be able to get block proposer rewards again \(depends on the zone fee distribution\).
 
 ```bash
 akash tx slashing unjail \
-	--from="$KEY_NAME" \
-	--chain-id="$AKASH_CHAIN_ID"
+    --from="$KEY_NAME" \
+    --chain-id="$AKASH_CHAIN_ID"
 ```
 
 ## Confirm Your Validator is Running
@@ -110,18 +108,13 @@ You should now see your validator in one of the Akash Testnet explorers. You are
 
 ## Halting Your Validator
 
-When attempting to perform routine maintenance or planning for an upcoming coordinated
-upgrade, it can be useful to have your validator systematically and gracefully halt.
-You can achieve this by either setting the `halt-height` to the height at which
-you want your node to shutdown or by passing the `--halt-height` flag to `akash`.
-The node will shutdown with a zero exit code at that given height after committing
-the block.
+When attempting to perform routine maintenance or planning for an upcoming coordinated upgrade, it can be useful to have your validator systematically and gracefully halt. You can achieve this by either setting the `halt-height` to the height at which you want your node to shutdown or by passing the `--halt-height` flag to `akash`. The node will shutdown with a zero exit code at that given height after committing the block.
 
 ## Common Problems
 
-### Problem #1: My validator has `voting_power: 0`
+### Problem \#1: My validator has `voting_power: 0`
 
-Your validator has become jailed. Validators get jailed, i.e. get removed from the active validator set, if they do not vote on `500` of the last `10000` blocks, or if they double sign. 
+Your validator has become jailed. Validators get jailed, i.e. get removed from the active validator set, if they do not vote on `500` of the last `10000` blocks, or if they double sign.
 
 If you got jailed for downtime, you can get your voting power back to your validator. First, if `akash` is not running, start it up again. If you are running `systemd` this will be different:
 
@@ -129,7 +122,7 @@ If you got jailed for downtime, you can get your voting power back to your valid
 akash start
 ```
 
-Wait for your full node to catch up to the latest block. Then, you can [unjail your validator](#unjail-validator)
+Wait for your full node to catch up to the latest block. Then, you can [unjail your validator](validator.md#unjail-validator)
 
 Lastly, check your validator again to see if your voting power is back.
 
@@ -139,6 +132,7 @@ akash status
 
 You may notice that your voting power is less than it used to be. That's because you got slashed for downtime!
 
-### Problem #2: My `akash` crashes because of `too many open files`
+### Problem \#2: My `akash` crashes because of `too many open files`
 
-The default number of files Linux can open (per-process) is `1024`. `akash` is known to open more than `1024` files. This causes the process to crash. A quick fix is to run `ulimit -n 4096` (increase the number of open files allowed) and then restart the process with `akash start`. If you are using `systemd` or another process manager to launch `akash` this may require some configuration at that level. See the [`systemd` configuration doc](/guides/node/systemd.md) for details on how to configure `systemd` to aleviate this issue.
+The default number of files Linux can open \(per-process\) is `1024`. `akash` is known to open more than `1024` files. This causes the process to crash. A quick fix is to run `ulimit -n 4096` \(increase the number of open files allowed\) and then restart the process with `akash start`. If you are using `systemd` or another process manager to launch `akash` this may require some configuration at that level. See the [`systemd` configuration doc](https://github.com/ovrclk/docs/tree/c03b7cdc6c14faf2e334273b8e18e6ac06d02a77/guides/node/systemd.md) for details on how to configure `systemd` to aleviate this issue.
+
