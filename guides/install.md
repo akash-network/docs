@@ -27,7 +27,7 @@ The simplest way to install is by using [homebrew](https://brew.sh). If you do n
 Install `akash` daemon using homebrew:
 
 ```text
-brew tap ovrclk/akash
+brew tap ovrclk/tap
 brew install akash-edge
 brew link akash-edge --force
 ```
