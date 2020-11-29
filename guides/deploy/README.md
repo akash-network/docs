@@ -276,8 +276,210 @@ You should see a response similar to:
 You can access the application by visiting the hostnames mapped to your deployment. In above example, its http://6veev7chcfmnclgqklegcc.provider4.akashdev.net
 
 
-## Shut down deployment
+## Close your deployment
 
-```sh
-akash query market lease --owner $ACCOUNT_ADDRESS
+When you are done with your application, close the deployment. This will deprovision your container and stop the token transfer. This is a critical step to conserve both your tokens and testnet server capacity.
+
+Close deployment using deployment by creating a `deployment-close` transaction:
+
 ```
+akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq 19553 --owner $ACCOUNT_ADDRESS --from $KEY_NAME -y
+```
+
+You should see a response simlar to below as a confirmation your deployment is closed:
+
+```json
+{
+  "height": "19913",
+  "txhash": "C75A7043C002AA5C6BC5562A8330461B57D6C718EB9FD8BCF916F8D50A8AB1EA",
+  "codespace": "",
+  "code": 0,
+  "data": "0A120A10636C6F73652D6465706C6F796D656E74",
+  "raw_log": "[{\"events\":[{\"type\":\"akash.v1\",\"attributes\":[{\"key\":\"module\",\"value\":\"deployment\"},{\"key\":\"action\",\"value\":\"deployment-updated\"},{\"key\":\"version\",\"value\":\"f2b5e760ca93c53548737d76494db89b08d811f7e9b533aa07fd934bf51d6707\"},{\"key\":\"owner\",\"value\":\"akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx\"},{\"key\":\"dseq\",\"value\":\"19553\"},{\"key\":\"module\",\"value\":\"deployment\"},{\"key\":\"action\",\"value\":\"deployment-closed\"},{\"key\":\"owner\",\"value\":\"akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx\"},{\"key\":\"dseq\",\"value\":\"19553\"},{\"key\":\"module\",\"value\":\"market\"},{\"key\":\"action\",\"value\":\"order-closed\"},{\"key\":\"owner\",\"value\":\"akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx\"},{\"key\":\"dseq\",\"value\":\"19553\"},{\"key\":\"gseq\",\"value\":\"1\"},{\"key\":\"oseq\",\"value\":\"1\"},{\"key\":\"module\",\"value\":\"market\"},{\"key\":\"action\",\"value\":\"bid-closed\"},{\"key\":\"owner\",\"value\":\"akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx\"},{\"key\":\"dseq\",\"value\":\"19553\"},{\"key\":\"gseq\",\"value\":\"1\"},{\"key\":\"oseq\",\"value\":\"1\"},{\"key\":\"provider\",\"value\":\"akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl\"},{\"key\":\"price-denom\",\"value\":\"uakt\"},{\"key\":\"price-amount\",\"value\":\"186\"},{\"key\":\"module\",\"value\":\"market\"},{\"key\":\"action\",\"value\":\"lease-closed\"},{\"key\":\"owner\",\"value\":\"akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx\"},{\"key\":\"dseq\",\"value\":\"19553\"},{\"key\":\"gseq\",\"value\":\"1\"},{\"key\":\"oseq\",\"value\":\"1\"},{\"key\":\"provider\",\"value\":\"akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl\"},{\"key\":\"price-denom\",\"value\":\"uakt\"},{\"key\":\"price-amount\",\"value\":\"186\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"close-deployment\"}]}]}]",
+  "logs": [
+    {
+      "msg_index": 0,
+      "log": "",
+      "events": [
+        {
+          "type": "akash.v1",
+          "attributes": [
+            {
+              "key": "module",
+              "value": "deployment"
+            },
+            {
+              "key": "action",
+              "value": "deployment-updated"
+            },
+            {
+              "key": "version",
+              "value": "f2b5e760ca93c53548737d76494db89b08d811f7e9b533aa07fd934bf51d6707"
+            },
+            {
+              "key": "owner",
+              "value": "akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx"
+            },
+            {
+              "key": "dseq",
+              "value": "19553"
+            },
+            {
+              "key": "module",
+              "value": "deployment"
+            },
+            {
+              "key": "action",
+              "value": "deployment-closed"
+            },
+            {
+              "key": "owner",
+              "value": "akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx"
+            },
+            {
+              "key": "dseq",
+              "value": "19553"
+            },
+            {
+              "key": "module",
+              "value": "market"
+            },
+            {
+              "key": "action",
+              "value": "order-closed"
+            },
+            {
+              "key": "owner",
+              "value": "akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx"
+            },
+            {
+              "key": "dseq",
+              "value": "19553"
+            },
+            {
+              "key": "gseq",
+              "value": "1"
+            },
+            {
+              "key": "oseq",
+              "value": "1"
+            },
+            {
+              "key": "module",
+              "value": "market"
+            },
+            {
+              "key": "action",
+              "value": "bid-closed"
+            },
+            {
+              "key": "owner",
+              "value": "akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx"
+            },
+            {
+              "key": "dseq",
+              "value": "19553"
+            },
+            {
+              "key": "gseq",
+              "value": "1"
+            },
+            {
+              "key": "oseq",
+              "value": "1"
+            },
+            {
+              "key": "provider",
+              "value": "akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl"
+            },
+            {
+              "key": "price-denom",
+              "value": "uakt"
+            },
+            {
+              "key": "price-amount",
+              "value": "186"
+            },
+            {
+              "key": "module",
+              "value": "market"
+            },
+            {
+              "key": "action",
+              "value": "lease-closed"
+            },
+            {
+              "key": "owner",
+              "value": "akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx"
+            },
+            {
+              "key": "dseq",
+              "value": "19553"
+            },
+            {
+              "key": "gseq",
+              "value": "1"
+            },
+            {
+              "key": "oseq",
+              "value": "1"
+            },
+            {
+              "key": "provider",
+              "value": "akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl"
+            },
+            {
+              "key": "price-denom",
+              "value": "uakt"
+            },
+            {
+              "key": "price-amount",
+              "value": "186"
+            }
+          ]
+        },
+        {
+          "type": "message",
+          "attributes": [
+            {
+              "key": "action",
+              "value": "close-deployment"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "info": "",
+  "gas_wanted": "200000",
+  "gas_used": "82675",
+  "tx": null,
+  "timestamp": ""
+}
+```
+Additionally, you can also query the market to check if your lease is closed:
+
+```
+akash query market lease list --owner $ACCOUNT_ADDRESS --node $AKASH_NODE
+```
+
+You should see a response similar to:
+
+```
+leases:
+- lease_id:
+    dseq: "19553"
+    gseq: 1
+    oseq: 1
+    owner: akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx
+    provider: akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl
+  price:
+    amount: "186"
+    denom: uakt
+  state: closed
+pagination:
+  next_key: null
+  total: "0"
+```
+
+As you can notice from the above, you lease will be marked `closed`.
