@@ -30,5 +30,7 @@ Given that there are live providers on the network, the lifecycle of a typical a
 8. The workload is running - if it is a web application it can be visited, etc...
 9. The provider or tenant eventually closes the [lease](../marketplace.md#lease), shutting down the workload.
 
+{% comment %}
 * [Features](features.md)
+{% endcomment %}
 

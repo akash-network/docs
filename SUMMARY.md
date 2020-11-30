@@ -2,7 +2,10 @@
 
 * [Introduction](README.md)
 * [Features and Design](/design/README.md)
+
+{% comment %}
   * [Features](/design/features.md)
+{% endcomment %}
 
 ## Guides
 
