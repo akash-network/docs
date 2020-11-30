@@ -11,7 +11,7 @@ Although we do not limit anyone from participating, to claim AKT rewards:
 * You must not be a resident of any of the OFAC sanctioned countries.
 * You must pass KYC/AML verification when collecting the reward. The details for which will be posted at a later time.
 
-## Week 1: Challenge 1 
+## Challenge 1 (Week 1)
 
 **Challenge**: Deploy a web app on Akash and attach a custom domain.
 
@@ -25,7 +25,13 @@ Although we do not limit anyone from participating, to claim AKT rewards:
 
 2) Follow the [instructions](/guides/deploy) for deploying a web app on Akash.
 
-**Submission**:
+### Submission
+
+**Scoring Starts**: Nov 30, 2020 9:00 AM PT 
+
+**Scoring End**: Dec 2, 2020 5:00 AM PT
+
+**Instructions**:
 
 1) Fork the [ecosystem repository](https://github.com/ovrclk/ecosystem).
 
@@ -55,7 +61,7 @@ See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/d
 
 4) Commit your code, and send a pull request to [ecosystem repo](https://github.com/ovrclk/ecosystem).
 
-## Week 1: Challenge 2
+## Challenge 2 (Week 1)
 
 **Challenge**: Deploy a databased-backed web app on Akash and attach a custom domain.
 
@@ -63,29 +69,46 @@ See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/d
 
 **Winners**: First 200 submissions — measured by the timestamp of the git commit — that pass the qualification criteria. 
 
-**Instructions**:
-1. Sign up to Akash [Testnet](https://app.akash.network).
-2. Follow the [instructions](https://docs.akash.network/v/master/guides/deploy) for deploying a web app on Akash.
+**Instructions**: Instructions will be available on Dec 1, 2020 9:00 AM 
 
-**Submission**:
-1. Fork the [ecosystem repository](https://github.com/ovrclk/ecosystem).
-2. Clone the ecosystem repository to your workstation. For example, where `<user>` is your GitHub username:
+### Submission
+
+**Scoring Starts**: Dec 1, 2020 9:00 AM PT 
+
+**Scoring End**: Dec 3, 2020 5:00 PM PT
+
+**Instructions**:
+
+1) Fork the [ecosystem repository](https://github.com/ovrclk/ecosystem).
+
+2) Clone the ecosystem repository to your workstation. For example, where `<user>` is your GitHub username:
   
   ```shell
   git clone https://github.com/<user>/ecosystem.git
   ```
 
-3. Create a file with the `deployment id` mapped and your participation id from [Testnet](https://app.akash.network). For example:
+3) Submit the JSON for your lease as the proof with the **Participation ID** from [Testnet](https://app.akash.network) as the filename under `akashian/phase3/challenge2` directory.
 
-  ```shell
-  echo "0082fa1da40c1a50489f51404e914c191f06e0122d4dff8a7f54027a280a0e55/1/2/d4a9d2283e2d6a442c95d7593ec9ad7bd22b68eca41905f1154b05d12430fa67" > 3bif3qp17x22l
-  ```
+For example, if your code is `dgbfr0rugcxnyuu`, the file will be `akashian/phase3/challenge2/dgbfr0rugcxnyuu.json`.
 
-  Where `3bif3qp17x22l` is the participation id and `0082fa1da40c1a50489f51404e914c191f06e0122d4dff8a7f54027a280a0e55/1/2/d4a9d2283e2d6a442c95d7593ec9ad7bd22b68eca41905f1154b05d12430fa67` is the deployment id. See [submissions](akashian/phase3/challenge1) for examples.
+Popuate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
 
-4. Commit your code, and send a pull request to [ecosystem repo](https://github.com/ovrclk/ecosystem).
+```sh
+akash query market lease get \
+  --dseq $DSEQ \
+  --gseq $GSEQ \
+  --oseq $OSEQ \
+  --provider $PROVIDER \
+  --owner $ACCOUNT_ADDRESS \
+  --node $AKASH_NODE -o json \> akashian/phase3/challenge1/$CODE.json
+```
 
-## Week 1: Challenge 3
+See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
+
+4) Commit your code, and send a pull request to [ecosystem repo](https://github.com/ovrclk/ecosystem).
+
+
+## Challenge 3 (Week 1)
 
 **Challenge**: Deploy a single node network on Akash.
 
@@ -93,23 +116,38 @@ See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/d
 
 **Winners**: First 200 submissions — measured by the timestamp of the git commit — that pass the qualification criteria. 
 
-**Instructions**:
-1. Sign up to Akash [Testnet](https://app.akash.network).
-2. Follow the [instructions](https://docs.akash.network/v/master/guides/deploy) for deploying a web app on Akash.
+**Instructions**: Instructions will be available on Dec 2, 2020 9:00 AM 
 
-**Submission**:
-1. Fork the [ecosystem repository](https://github.com/ovrclk/ecosystem).
-2. Clone the ecosystem repository to your workstation. For example, where `<user>` is your GitHub username:
+### Submission
+
+**Scoring Starts**: Dec 2, 2020 9:00 AM PT 
+
+**Scoring End**: Dec 4, 2020 5:00 PM PT
+
+**Instructions**:
+
+1) Fork the [ecosystem repository](https://github.com/ovrclk/ecosystem).
+
+2) Clone the ecosystem repository to your workstation. For example, where `<user>` is your GitHub username:
   
   ```shell
   git clone https://github.com/<user>/ecosystem.git
   ```
-3. Create a file with the `deployment id` mapped and your participation id from [Testnet](https://app.akash.network). For example:
 
-  ```shell
-  echo "0082fa1da40c1a50489f51404e914c191f06e0122d4dff8a7f54027a280a0e55/1/2/d4a9d2283e2d6a442c95d7593ec9ad7bd22b68eca41905f1154b05d12430fa67" > 3bif3qp17x22l
-  ```
+3) Submit the JSON for your lease as the proof with the **Participation ID** from [Testnet](https://app.akash.network) as the filename under `akashian/phase3/challenge2` directory.
 
-  Where `3bif3qp17x22l` is the participation id and `0082fa1da40c1a50489f51404e914c191f06e0122d4dff8a7f54027a280a0e55/1/2/d4a9d2283e2d6a442c95d7593ec9ad7bd22b68eca41905f1154b05d12430fa67` is the deployment id. See [submissions](akashian/phase3/challenge1) for examples.
+For example, if your code is `dgbfr0rugcxnyuu`, the file will be `akashian/phase3/challenge2/dgbfr0rugcxnyuu.json`.
 
-4. Commit your code, and send a pull request to [ecosystem repo](https://github.com/ovrclk/ecosystem).
+Popuate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
+
+```sh
+akash query market lease get \
+  --dseq $DSEQ \
+  --gseq $GSEQ \
+  --oseq $OSEQ \
+  --provider $PROVIDER \
+  --owner $ACCOUNT_ADDRESS \
+  --node $AKASH_NODE -o json \> akashian/phase3/challenge1/$CODE.json
+```
+
+See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
