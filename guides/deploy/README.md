@@ -1,17 +1,26 @@
 # Deploy an Application
 
-In this guide, we'll deploy an application on Akash.
+In this guide, we'll deploy a single-tier web application on Akash. Akash is a permissionless and censorship-resistant cloud network that guarantees sovereignty over your data and your applications. With Akash, you’re in complete control of all aspects of the life cycle of an application with no middleman.
+
+In this guide, we'll setup [Lunie Light](https://github.com/ovrclk/lunie-light), a non-custodial, web wallet for Akash on Akash. Lunie Light is a staking interface for proof-of-stake blockchains in the Cosmos ecosystem — built for speed, simplicity, and ease-of-use.
 
 ## Before We Begin
 
-You'll need to know information about the network you're connecting your node to. See [Choosing a Network](/guides/versions.md) for how to obtain any network-related information.
+This is a technical guide, best suited to a reader with basic Linux command line knowledge. The audience for this guide is intended for includes:
+
+* Application developers with little or no systems administration experience, wanting to deploy applications on the decentralized cloud.
+* System administrators with little or no experience with infrastructure automation, wanting to learn more.
+* Infrastructure automation engineers that want to explore decentralized cloud.
+* Anyone who wants to get a feel for the current state of the decentralized cloud ecosystem.
+
+You'll need to know information about the network you're connecting your node to. See [Choosing a Network](/guides/version.md) for how to obtain any network-related information.
 
 Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) for instructions.
 
 You'll need an account with funds to pay for your deployment. See the [funding guide](/guides/wallet/funding.md) for
 creating a key and funding your account.
 
-### Shell Variables Required
+### Set up your Environment
 
 We will be using shell variables throughout this guide for convenience and clarity.  Ensure you have the below set of variables defined on your shell, you can use `export VARNAME=...`:
 
@@ -23,32 +32,33 @@ We will be using shell variables throughout this guide for convenience and clari
 |`KEY_NAME` | The name of the key you will be deploying from. See [here](/guides/wallet/README.md) if you haven't yet setup a key|
 |`KEYRING_BACKEND`| Keyring backend to use for local keys. See [here](/guides/wallet/README.md)|
 
-Verify you have correct `$AKASH_NODE` that you have populated while [configuring the connection](/guides/version) using `export AKASH_NODE=$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)`.
+Verify you have correct `$AKASH_NODE`, that you have populated while [configuring the connection](/guides/version) using `export AKASH_NODE=$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)`.
 
 ```sh
-echo $AKASH_NODE
-tcp://rpc-edgenet.akashdev.net:2665
+echo $AKASH_NODE $AKASH_CHAIN_ID
 
-echo $AKASH_CHAIN_ID
-akash-edgenet-1
+tcp://rpc-edgenet.akashdev.net:2665 akash-edgenet-1
 ```
 
-Your value may differ depending on the network you're connecting to, `tcp://rpc-edgenet.akashdev.net:2665` and `akash-edgenet-1` are details for edgenet.
+Your values may differ depending on the network you're connecting to, `tcp://rpc-edgenet.akashdev.net:2665` and `akash-edgenet-1` are details for [edgenet](https://github.com/ovrclk/net/tree/master/edgenet).
 
 Verify you have the key set up and your account has sufficient balances, see the [funding guide](/guides/wallet/funding.md) otherwise:
 
-My local key is named `alice`, the below command should return the name you've used
+My local key is named `alice`, the below command should return the name you've used:
+
 ```sh
 echo $KEY_NAME 
+
 alice
 ```
 
 Populate `ACCOUNT_ADDRESS` from `KEY_NAME` and verify:
 
 ```sh
-export ACCOUNT_ADDRESS=$(akash keys show $KEY_NAME -a)
+export ACCOUNT_ADDRESS="$(akash keys show $KEY_NAME -a)"
 
 echo $ACCOUNT_ADDRESS
+
 akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx
 ```
 
@@ -69,13 +79,11 @@ pagination:
   total: "0"
 ```
 
-Please note the balance indicated is is denominated in uAKT (AKT * 10^-6), in the above example, the account has a balance of 93 AKT.
+Please note the balance indicated is is denominated in uAKT (AKT * 10^-6), in the above example, the account has a balance of *93 AKT*. We're now setup to deploy.
 
-We're now setup to deploy.
+## Create The Deployment Configuration 
 
-## Create the deployment configuration and modify it if desired
-
-Create a deployment configuration [deploy.yml](deploy.yml) to deploy the `quay.io/ovrclk/demo-app` container:
+Create a deployment configuration [deploy.yml](deploy.yml) to deploy the `quay.io/ovrclk/demo-app` container using [SDL](/) :
 
 ```sh
 cat > deploy.yml <<EOF
@@ -84,7 +92,7 @@ version: "2.0"
 
 services:
   web:
-    image: quay.io/ovrclk/demo-app
+    image: ovrclk/lunie-light
     expose:
       - port: 80
         as: 80
@@ -137,7 +145,7 @@ To deploy on Akash, run:
 ```sh
 akash tx deployment create deploy.yml --from $KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID -y
 ```
-
+    
 You should see a response similar to:
 ```json
 {
@@ -204,7 +212,7 @@ In this step, you post your deployment, the Akash marketplace matches you with a
 You can check the status of your lease by running:
 
 ```sh
-akash query market lease list --owner $ACCOUNT_ADDRESS --node $AKASH_NODE
+akash query market lease list --owner $ACCOUNT_ADDRESS --node $AKASH_NODE --state active
 ```
 
 You should see a response similar to:
@@ -215,7 +223,7 @@ You should see a response similar to:
     gseq: 1
     oseq: 1
     owner: akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx
-    provider: akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wakash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wll
+    provider: akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl
   price:
     amount: "186"
     denom: uakt
@@ -225,29 +233,37 @@ pagination:
   total: "0"
 ```
 
-In the above example, we can see that a lease is created using the below set of values that we will be using to reference the deployment:
+In the above example, we can see that a lease is created using for *186 uakt* or *0.00000186 AKT* per block to execute the container.
+
+For convenience and clarity for future referencing, we can extract the below set of values to shell variables that we will be using to reference the deployment:
 
 | Attribute | Value |
 | --- | --- |
-| provider | akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl |
-| owner | akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx |
-| dseq | 19553 |
-| oseq | 1 |
-| gseq | 1 |
+| PROVIDER | akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl |
+| DSEC | 19553 |
+| OSEQ | 1 |
+| GSEQ | 1 |
 
+Verify we have the right values populated by running:
+
+```sh
+echo $PROVIDER $DSEQ $OSEQ $GSEQ
+
+akash1ds82uk3pzawavlasc2qd88luewzye2qrcwky7t 19553 1 1
+```
 
 ## Upload Manifest
 
 Upload the manifest using the values from above step:
 
-```
-akash provider send-manifest --node $AKASH_NODE --dseq 19553 --oseq 1 --gseq 1 --owner $ACCOUNT_ADDRESS --provider akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl deploy.yml
+```sh
+akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $DSEQ --oseq $OSEQ --gseq $GSEQ --owner $ACCOUNT_ADDRESS --provider $PROVIDER 
 ```
 
 Your image is deployed, once you uploaded the manifest. You can retrieve the access details by running the below:
 
-```
-akash provider lease-status --node $AKASH_NODE --dseq 19553 --oseq 1 --gseq 1 --provider akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl --owner $ACCOUNT_ADDRESS
+```sh
+akash provider lease-status --node $AKASH_NODE --dseq $DSEQ --oseq $OSEQ --gseq $GSEQ --provider $PROVIDER --owner $ACCOUNT_ADDRESS
 ```
 
 You should see a response similar to:
@@ -283,7 +299,7 @@ When you are done with your application, close the deployment. This will deprovi
 Close deployment using deployment by creating a `deployment-close` transaction:
 
 ```
-akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq 19553 --owner $ACCOUNT_ADDRESS --from $KEY_NAME -y
+akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $DSEQ --owner $ACCOUNT_ADDRESS --from $KEY_NAME -y
 ```
 
 You should see a response simlar to below as a confirmation your deployment is closed:
