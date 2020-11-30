@@ -22,18 +22,20 @@ Although we do not limit anyone from participating, to claim AKT rewards:
 **Instructions**:
 
 1) Sign up to Akash [Testnet](https://app.akash.network).
+
 2) Follow the [instructions](/guides/deploy) for deploying a web app on Akash.
 
 **Submission**:
 
 1) Fork the [ecosystem repository](https://github.com/ovrclk/ecosystem).
+
 2) Clone the ecosystem repository to your workstation. For example, where `<user>` is your GitHub username:
   
   ```shell
   git clone https://github.com/<user>/ecosystem.git
   ```
 
-3) Submit the JSON for you lease with the **Participation ID** from [Testnet](https://app.akash.network) as the filename under `akashian/phase3/challenge1` directory.
+3) Submit the JSON for your lease as the proof with the **Participation ID** from [Testnet](https://app.akash.network) as the filename under `akashian/phase3/challenge1` directory.
 
 For example, if your code is `dgbfr0rugcxnyuu`, the file will be `akashian/phase3/challenge1/dgbfr0rugcxnyuu.json`.
 
