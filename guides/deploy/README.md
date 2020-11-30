@@ -112,7 +112,10 @@ profiles:
   placement:
     westcoast:
       attributes:
-        region: us-west
+        organization: ovrclk.com
+      signedBy:
+        anyOf:
+          - "akash1vz375dkt0c60annyp6mkzeejfq0qpyevhseu05"
       pricing:
         web: 
           denom: uakt
@@ -123,13 +126,14 @@ deployment:
     westcoast:
       profile: web
       count: 1
+
 EOF
 ```
 
 Alternatively, you can use cURL to download:
 
 ```
-curl -s https://raw.githubusercontent.com/ovrclk/docs/edgenet/guides/deploy/deploy.yml > deploy.yml
+curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yml
 ```
 
 You may use the sample deployment file as-is or modify it for your own needs as desscribed in our [SDL (Stack Definition Language)](documentation/sdl) documentation. A typical modification would be to reference your own image instead of our demo app image. 
