@@ -136,13 +136,11 @@ Example:
 westcoast:
   attributes:
     region: us-west
-  signedBy: # optional, allOf has higher priority, anyOf is ignored if there is at least one key in allOf
-    allOf: # array of keys tenant expects attributes to be validated by. if all but one validated, provider cannot bid
-      - signer1
-      - signer2
-    anyOf: # array of keys tenant expects attributes to be validated by. provider can bid if one of keys has put signature 
-      - signer3
-      - signer4
+  signedBy:
+    allOf:
+      - "akash1vz375dkt0c60annyp6mkzeejfq0qpyevhseu05"
+    anyOf:
+      - "akash1vl3gun7p8y4ttzajrtyevdy5sa2tjz3a29zuah"
   pricing:
     web:
       denom: uakt
@@ -153,7 +151,15 @@ westcoast:
 ```
 
 This defines a profile named `westcoast` having required attributes `{region="us-west"}`, and with a max price for
-the `web` and `db` [compute profiles](#profilescompute) of 8 and 15 tokens per block, respectively.
+the `web` and `db` [compute profiles](#profilescompute) of 8 and 15 `uakt` per block, respectively.  It also
+requires that the provider's attributes have been [signed by](#profilesplacementsignedBy) the accounts `akash1vz375dkt0c60annyp6mkzeejfq0qpyevhseu05` and `akash1vl3gun7p8y4ttzajrtyevdy5sa2tjz3a29zuah`.
+
+#### profiles.placement.signedBy
+
+**Optional**
+
+The `signedBy` section allows you to state attributes that must be signed by one or more accounts of your choosing.  This
+allows for requiring a third-party certification of any provider that you deploy to.
 
 ### deployment
 
