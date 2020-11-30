@@ -13,9 +13,9 @@ Although we do not limit anyone from participating, to claim AKT rewards:
 
 {% notice %}
 Each of these challenges will ask you to follow the [deployment guide](/guides/deploy) to deploy a specific [SDL](/sdl) file.
-{% notice %}
+{% endnotice %}
 
-* [Challenge 1 (Week 1)](guided-deployments/1-1.md)
+* [Challenge 1 (Week 1)](/testnet-challenges/guided-deployments/1-1.md)
 
 ## Challenge 2 (Week 1)
 
