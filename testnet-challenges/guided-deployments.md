@@ -1,8 +1,6 @@
 # Guided Deployments
 
-The Akashian Challenge Phase 3 will test and showcase Akash DeCloud’s deployment platform. Akashian Challengers will be incentivized to deploy applications using the Akash Network. Encompassing two weeks, Phase 3 will include guided challenges for deploying applications of increasing complexity — from simple single-page applications to blockchain network components, and open ended challenges where users can show off their Akash OPS skills by extending the guided examples to deploy any application they desire — from DeFi to CI.
-
-There are additional rewards for participation outside of the deployment challenges, including contributions such as active validator participation, writing blog posts and how-to guides, and sharing novel uses of our platform.
+In Week 1, challenges will focus on deploying stand-alone applications, from website deployments to single-node blockchain networks.
 
 **Qualification Criteria**:
 
