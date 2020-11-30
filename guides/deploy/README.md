@@ -246,7 +246,7 @@ For convenience and clarity for future referencing, we can extract the below set
 | Attribute | Value |
 | --- | --- |
 | `PROVIDER` | `akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl` |
-| `DSEC` | `19553` |
+| `DSEQ` | `19553` |
 | `OSEQ` | `1` |
 | `GSEQ` | `1` |
 
