@@ -29,8 +29,9 @@ Each of these challenges will ask you to follow the [deployment guide](/guides/d
 
 **Instructions**:
 
-1. Sign up to Akash [Testnet](https://app.akash.network).
-1. Using [this](deploy-1-1.yaml) SDL file when following the [deploy instructions](/guides/deploy) to deploy your own
+1) Sign up to Akash [Testnet](https://app.akash.network).
+
+2) Using [this](deploy-1-1.yaml) SDL file when following the [deploy instructions](/guides/deploy) to deploy your own
 instance of the [Lunie-Lite](https://github.com/luniehq/lunie-light) wallet.
 
 ### Submission
