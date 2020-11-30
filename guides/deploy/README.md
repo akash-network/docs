@@ -83,7 +83,7 @@ Please note the balance indicated is is denominated in uAKT (AKT * 10^-6), in th
 
 ## Create The Deployment Configuration 
 
-Create a deployment configuration [deploy.yml](deploy.yml) to deploy the `quay.io/ovrclk/demo-app` container using [SDL](/) :
+Create a deployment configuration [deploy.yml](deploy.yml) to deploy the `quay.io/ovrclk/lunie-light` container using [SDL](/sdl/README.md) :
 
 ```sh
 cat > deploy.yml <<EOF
@@ -239,10 +239,10 @@ For convenience and clarity for future referencing, we can extract the below set
 
 | Attribute | Value |
 | --- | --- |
-| PROVIDER | akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl |
-| DSEC | 19553 |
-| OSEQ | 1 |
-| GSEQ | 1 |
+| `PROVIDER` | `akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl` |
+| `DSEC` | `19553` |
+| `OSEQ` | `1` |
+| `GSEQ` | `1` |
 
 Verify we have the right values populated by running:
 
