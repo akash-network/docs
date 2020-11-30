@@ -15,9 +15,9 @@ Although we do not limit anyone from participating, to claim AKT rewards:
 
 | Task	| Reward (AKT) | Limit	| Start 	| Deadline
 | --- | --- | --- | --- | --- | ---
-| Maintain an active validator with over 80% uptime two-week testnet period	| 500 | 50	| November 30, 2020 at 9AM	| December 11, 2020 at 5PM
-| Maintain a public RPC endpoint over 80% uptime two-week testnet period | 500	| 50 |  November 30, 2020 at 9 AM |  December 11, 2020 at 5PM
-| Maintain a public gRPC endpoint over 80% uptime two-week testnet period | 500	| 50 | November 30, 2020 at 9AM	| December 11, 2020 at 5PM
+| Maintain an active validator with over 80% uptime two-week testnet period	| 1000 | 50	| November 30, 2020 at 9AM	| December 11, 2020 at 5PM
+| Maintain a public RPC endpoint over 80% uptime two-week testnet period | 1000 | 50 |  November 30, 2020 at 9 AM |  December 11, 2020 at 5PM
+| Maintain a public gRPC endpoint over 80% uptime two-week testnet period | 1000 | 50 | November 30, 2020 at 9AM	| December 11, 2020 at 5PM
 
 ## Instructions
 
