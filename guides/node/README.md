@@ -12,21 +12,28 @@ Make sure to have Akash client installed on your workstation, check [install gui
 
 These instructions are for setting up a brand new full node from scratch.
 
-First, initialize the node and create the necessary config files:
-
-```bash
-akash init "$AKASH_MONIKER"
-```
+First, choose "moniker" - readable name for your validator.  In this guide, we'll use
+`moniker-from-the-guide`, but you should replace that with your own for the following instructions.
 
 {% hint style="warning" %}
 Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable.
 {% endhint %}
 
+```sh
+AKASH_MONIKER="moniker-from-the-guide"
+```
+
+Then initialize the node and create the necessary config files:
+
+```bash
+akash init "$AKASH_MONIKER"
+```
+
 You can edit this `moniker` later, in the `~/.akash/config/config.toml` file:
 
 ```text
 # A custom human readable name for this node
-moniker = "<contents of $AKASH_MONIKER>"
+moniker = "moniker-from-the-guide"
 ```
 
 From here on, your node can be configured in a number of different places.
