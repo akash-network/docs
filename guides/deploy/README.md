@@ -476,7 +476,7 @@ You should see a response simlar to below as a confirmation your deployment is c
 Additionally, you can also query the market to check if your lease is closed:
 
 ```
-akash query market lease list --owner $ACCOUNT_ADDRESS --node $AKASH_NODE
+akash query market lease list --owner $ACCOUNT_ADDRESS --node $AKASH_NODE 
 ```
 
 You should see a response similar to:

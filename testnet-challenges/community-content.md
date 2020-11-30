@@ -14,7 +14,7 @@ Submissions for this challenge will be accepted throughout the entire testnet pe
 
 **Deadline**: Dec 11, 2020
 
-**Rewards**:
+## Rewards
 
 | ID | Reward | Description |
 | --- | --- | --- |

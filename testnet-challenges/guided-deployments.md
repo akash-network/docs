@@ -29,7 +29,7 @@ Although we do not limit anyone from participating, to claim AKT rewards:
 
 **Scoring Starts**: Nov 30, 2020 9:00 AM PT 
 
-**Scoring End**: Dec 2, 2020 5:00 AM PT
+**Scoring End**: Dec 2, 2020 5:00 PM PT
 
 **Instructions**:
 
