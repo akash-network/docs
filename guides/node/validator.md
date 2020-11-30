@@ -74,7 +74,7 @@ akash tx staking edit-validator
 View the validator's information with this command:
 
 ```bash
-akash query staking validator <account_akash>
+akash query staking validator $VALIDATOR_ADDRESS
 ```
 
 ## Track Validator Signing Information
@@ -82,7 +82,7 @@ akash query staking validator <account_akash>
 In order to keep track of a validator's signatures in the past you can do so by using the `signing-info` command:
 
 ```bash
-akash query slashing signing-info <validator-pubkey> \
+akash query slashing signing-info $VALIDATOR_PUBKEY \
   --chain-id="$AKASH_CHAIN_ID"
 ```
 

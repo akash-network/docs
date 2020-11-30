@@ -22,7 +22,7 @@ After=network.target
 Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu
-ExecStart=/home/ubuntu/go/bin/akash start --pruning="everything"
+ExecStart=/home/ubuntu/go/bin/akash start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096

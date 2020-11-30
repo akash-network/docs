@@ -55,7 +55,7 @@ akash \
 
 Will produce a similar output to:
 
-```
+```yaml
 - name: alice
   type: ledger
   address: akash1dt6wukc53dangle8qz7xjc792u0yrdc3esjlsp
@@ -69,7 +69,7 @@ Will produce a similar output to:
 
 The command to recover your key is:
 
-```
+```sh
 akash \
   --keyring-backend "$KEYRING_BACKEND" \
   akash keys add "$KEY_NAME" \
