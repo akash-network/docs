@@ -12,7 +12,7 @@ Make sure to have Akash client installed on your workstation, check [install gui
 
 These instructions are for setting up a brand new full node from scratch.
 
-First, choose "moniker" - readable name for your validator.  In this guide, we'll use
+First, choose a "moniker" - a readable name for your validator.  In this guide, we'll use
 `moniker-from-the-guide`, but you should replace that with your own for the following instructions.
 
 {% hint style="warning" %}

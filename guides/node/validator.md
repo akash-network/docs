@@ -49,7 +49,7 @@ The `--identity` can be used as to verify identity with systems like Keybase or 
 
 ```bash
 akash tx staking edit-validator
-  --moniker="choose a moniker" \
+  --moniker="$AKASH_MONIKER" \
   --website="https://akash.network" \
   --identity=6A0D65E29A4CBC8E \
   --details="The SUPERCLOUD IS HERE!" \
