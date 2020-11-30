@@ -20,18 +20,20 @@ Although we do not limit anyone from participating, to claim AKT rewards:
 **Winners**: First 200 submissions — measured by the timestamp of the git commit — that pass the qualification criteria. 
 
 **Instructions**:
-1. Sign up to Akash [Testnet](https://app.akash.network).
-2. Follow the [instructions](https://docs.akash.network/v/master/guides/deploy) for deploying a web app on Akash.
+
+1) Sign up to Akash [Testnet](https://app.akash.network).
+2) Follow the [instructions](https://docs.akash.network/v/master/guides/deploy) for deploying a web app on Akash.
 
 **Submission**:
-1. Fork the [ecosystem repository](https://github.com/ovrclk/ecosystem).
-2. Clone the ecosystem repository to your workstation. For example, where `<user>` is your GitHub username:
+
+1) Fork the [ecosystem repository](https://github.com/ovrclk/ecosystem).
+2) Clone the ecosystem repository to your workstation. For example, where `<user>` is your GitHub username:
   
   ```shell
   git clone https://github.com/<user>/ecosystem.git
   ```
 
-3. Create a file with the `deployment id` mapped and your participation id from [Testnet](https://app.akash.network). For example:
+3) Create a file with the `deployment id` mapped and your participation id from [Testnet](https://app.akash.network). For example:
 
   ```shell
   echo "0082fa1da40c1a50489f51404e914c191f06e0122d4dff8a7f54027a280a0e55/1/2/d4a9d2283e2d6a442c95d7593ec9ad7bd22b68eca41905f1154b05d12430fa67" > 3bif3qp17x22l
@@ -39,7 +41,7 @@ Although we do not limit anyone from participating, to claim AKT rewards:
 
   Where `3bif3qp17x22l` is the participation id and `0082fa1da40c1a50489f51404e914c191f06e0122d4dff8a7f54027a280a0e55/1/2/d4a9d2283e2d6a442c95d7593ec9ad7bd22b68eca41905f1154b05d12430fa67` is the deployment id. See [submissions](akashian/phase3/challenge1) for examples.
 
-4. Commit your code, and send a pull request to [ecosystem repo](https://github.com/ovrclk/ecosystem).
+4) Commit your code, and send a pull request to [ecosystem repo](https://github.com/ovrclk/ecosystem).
 
 ## Week 1: Challenge 2
 
