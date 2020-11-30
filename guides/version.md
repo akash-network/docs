@@ -64,7 +64,9 @@ curl -s "$AKASH_NET/peer-nodes.txt" | paste -d, -s
 Print a random RPC endpoint
 
 ```bash
-curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1
+AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)"
+
+echo $AKASH_NODE
 ```
 
 ### API Node
