@@ -13,7 +13,7 @@ Although we do not limit anyone from participating, to claim AKT rewards:
 Each of these challenges will ask you to follow the [deployment guide](/guides/deploy) to deploy a specific [SDL](/sdl) file.
 {% endhint %}
 
-* [Challenge 1 (Week 1)](#challenge-2-week-1)
+* [Challenge 1 (Week 1)](#challenge-1-week-1)
 * [Challenge 2 (Week 1)](#challenge-2-week-1)
 * [Challenge 3 (Week 1)](#challenge-3-week-1)
 
