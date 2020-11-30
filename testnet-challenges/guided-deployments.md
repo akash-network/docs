@@ -1,9 +1,3 @@
-{% hint style="info" %}
-Instructions will be revealed when the challenge starts.
-{% endhint %}
-
-{% comment %}
-
 # Guided Deployments
 
 The Akashian Challenge Phase 3 will test and showcase Akash DeCloud’s deployment platform. Akashian Challengers will be incentivized to deploy applications using the Akash Network. Encompassing two weeks, Phase 3 will include guided challenges for deploying applications of increasing complexity — from simple single-page applications to blockchain network components, and open ended challenges where users can show off their Akash OPS skills by extending the guided examples to deploy any application they desire — from DeFi to CI.
@@ -105,5 +99,3 @@ Although we do not limit anyone from participating, to claim AKT rewards:
   Where `3bif3qp17x22l` is the participation id and `0082fa1da40c1a50489f51404e914c191f06e0122d4dff8a7f54027a280a0e55/1/2/d4a9d2283e2d6a442c95d7593ec9ad7bd22b68eca41905f1154b05d12430fa67` is the deployment id. See [submissions](akashian/phase3/challenge1) for examples.
 
 4. Commit your code, and send a pull request to [ecosystem repo](https://github.com/ovrclk/ecosystem).
-
-{% endcomment %}
