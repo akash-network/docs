@@ -79,9 +79,16 @@ Note we use the `$AKASH_NET` variable - see the [net repo](https://github.com/ov
 
 To verify the correctness of the configuration run:
 
+{% hint style="warning" %}
+The following command is currently not working on `edgenet`.  **This error can be ignored on `edgenet`**.
+
+We are looking into the problem, but it won't affect running a node.
+{% endhint %}
+
 ```bash
 akash validate-genesis
 ```
+
 
 ### Add Seed Nodes
 
