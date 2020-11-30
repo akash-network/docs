@@ -24,7 +24,7 @@ Although we do not limit anyone from participating, to claim AKT rewards:
 
 1) Sign up to Akash [Testnet](https://app.akash.network).
 
-2) Follow the [node guides](guides/node/README.md) to install and configure your node to run on the current **edgenet** network.
+2) Follow the [node guides](/guides/node/README.md) to install and configure your node to run on the current **edgenet** network.
 For full points, ensure that the following are running and publicly-accessible:
 
 * [API Node](/guides/node/api-service.md)
