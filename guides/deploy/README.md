@@ -94,7 +94,7 @@ services:
   web:
     image: ovrclk/lunie-light
     expose:
-      - port: 80
+      - port: 3000
         as: 80
         to:
           - global: true
@@ -106,13 +106,15 @@ profiles:
         cpu:
           units: 0.1
         memory:
-          size: 16Mi
+          size: 512Mi
         storage:
-          size: 128Mi
+          size: 512Mi
   placement:
     westcoast:
+      attributes:
+        region: us-west
       pricing:
-        web:
+        web: 
           denom: uakt
           amount: 1000
 
