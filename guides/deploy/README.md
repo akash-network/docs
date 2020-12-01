@@ -83,7 +83,7 @@ Please note the balance indicated is is denominated in uAKT (AKT * 10^-6), in th
 
 ## Create The Deployment Configuration 
 
-Create a deployment configuration [deploy.yml](deploy.yml) to deploy the `quay.io/ovrclk/lunie-light` container using [SDL](/sdl/README.md) :
+Create a deployment configuration [deploy.yml](deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](/sdl/README.md):
 
 ```sh
 cat > deploy.yml <<EOF
