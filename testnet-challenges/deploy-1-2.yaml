@@ -39,6 +39,11 @@ profiles:
           size: 128Mi
   placement:
     westcoast:
+      attributes:
+        organization: ovrclk.com
+      signedBy:
+        anyOf:
+          - "akash1vz375dkt0c60annyp6mkzeejfq0qpyevhseu05"
       pricing:
         web: 
           denom: uakt
