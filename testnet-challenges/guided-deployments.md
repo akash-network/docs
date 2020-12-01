@@ -76,7 +76,12 @@ See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/d
 
 **Winners**: First 200 submissions — measured by the timestamp of the git commit — that pass the qualification criteria. 
 
-**Instructions**: Instructions will be available on Dec 1, 2020 9:00 AM 
+**Instructions**:
+
+1) Sign up to Akash [Testnet](https://app.akash.network).
+
+2) Using [this](deploy-1-2.yaml) SDL file when following the [deploy instructions](/guides/deploy) to deploy your own
+instance of the a [retwis](https://github.com/fager/retwis), a Twitter-toy clone written in PHP and Redis, used in the early days to introduce Redis data types.
 
 ### Submission
 
@@ -107,7 +112,7 @@ akash query market lease get \
   --oseq $OSEQ \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
-  --node $AKASH_NODE -o json \> akashian/phase3/challenge1/$CODE.json
+  --node $AKASH_NODE -o json \> akashian/phase3/challenge2/$CODE.json
 ```
 
 See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
@@ -154,7 +159,7 @@ akash query market lease get \
   --oseq $OSEQ \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
-  --node $AKASH_NODE -o json \> akashian/phase3/challenge1/$CODE.json
+  --node $AKASH_NODE -o json \> akashian/phase3/challenge3/$CODE.json
 ```
 
 See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
