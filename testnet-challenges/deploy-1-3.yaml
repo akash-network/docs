@@ -6,6 +6,7 @@ services:
     image: ghcr.io/ovrclk/akash-on-akash-single:a
     expose:
       - port: 26657
+        as: 80
         to:
           - global: true
 
