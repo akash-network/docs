@@ -122,13 +122,45 @@ See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/d
 
 ## Challenge 3 (Week 1)
 
-**Challenge**: Deploy a single node network on Akash.
+**Challenge**: Deploy a single node network on Akash.  Single nodes can be useful for development and testing; this
+is a sneak-peak of next week's challenges, which will guide you through bringing up a node that joins a real blockchain
+network.
 
 **Reward**: 250 AKTs
 
 **Winners**: First 200 submissions — measured by the timestamp of the git commit — that pass the qualification criteria. 
 
 **Instructions**: Instructions will be available on Dec 2, 2020 9:00 AM 
+
+1) Fork the [ecosystem repository](https://github.com/ovrclk/ecosystem).
+
+2) Using [this](deploy-1-3.yaml) SDL file when following the [deploy instructions](/guides/deploy) to deploy your own
+instance of an [Akash](https://github.com/ovrclk/akash), node!
+
+The given [SDL](deploy-1-3.yaml) exposes your node's RPC service on port 80.  Here's how you can test it out:
+
+1. Look up the generated hostname for your deployment with the `lease-status` command as described in the [guide](/guides/deploy).
+1. Use that hostname (we'll call it `$DEPLOYMENT_HOST`) in the `--node` argument to `akash`:
+
+```sh
+akash --node "tcp://$DEPLOYMENT_HOST:80" status
+```
+Or, for those that are more comfortable on the command line:
+
+```sh
+DEPLOYMENT_HOST="$(\
+  akash provider lease-status \
+    --node $AKASH_NODE \
+    --dseq $DSEQ \
+    --oseq $OSEQ \
+    --gseq $GSEQ \
+    --provider $PROVIDER \
+    --owner $ACCOUNT_ADDRESS \
+  | jq -r '.services.akash.uris[0]')"
+akash --node "tcp://$DEPLOYMENT_HOST:80" status
+```
+
+**Note**: Once you have [submitted](#submission) your participation, you should close your lease.
 
 ### Submission
 
