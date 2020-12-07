@@ -38,6 +38,10 @@ the commit message.
 
 > ID dgbfr0rugcxnyuu: Add Lunie-Lite to DeFi apps
 
+The body of the PR should include instructions for verifying your app.  In most cases, including a link to your
+deployed app will suffice.  To ensure that all the information is present, include the output of `akash provider lease-status`.
+
 Tag your PR with the appropriate app category.
 
-9) If you wish, close your deployment as described in the [guides](/guides/deploy).
+9) We will review and visit your app and merge the PR when it has been verified.  When your PR has been merged you
+may close the deployment (see [guides](/guides/deploy) for instructions on closing deployments).
