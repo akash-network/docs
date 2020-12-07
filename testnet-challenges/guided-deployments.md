@@ -202,14 +202,16 @@ See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/d
 **Challenge**: Deploy an API node on a live network.  API nodes are useful for creating wallets and explorers and are
 a perfect fit for use on Akash.
 
-Note that when you deploy this node it will connect to a **live** network, catch up to the latest block height, and
+Note that when you deploy this node it will connect to a **live** Akash network, catch up to the latest block height, and
 participate in the peer-to-peer protocol.
+
+The settings for the network that your node will be connecting to are [here](https://github.com/ovrclk/net/tree/master/definet).
 
 **Reward**: 150 AKTs
 
 **Winners**: First 200 submissions — measured by the timestamp of the git commit — that pass the qualification criteria. 
 
-**Instructions**: Instructions will be available on Dec 7, 2020 9:00 AM 
+**Instructions**:
 
 1) Using [this](deploy-2-1.yaml) SDL file when following the [deploy instructions](/guides/deploy) to deploy your own
 instance of an [Akash](https://github.com/ovrclk/akash) API node.
@@ -231,7 +233,7 @@ akash provider lease-status \
   jq '.["forwarded-ports"].akash[] | select(.port==1317)'
 ```
 
-will produce:
+The above command will produce:
 
 ```json
 {
@@ -249,6 +251,8 @@ the data from above; change the host and port to match your output.
 
 1. `curl http://ext.provider1.akashdev.net:32747/node_info`
 1. [http://ext.provider1.akashdev.net:32747/node_info](curl http://ext.provider1.akashdev.net:32747/node_info)
+
+If you run into problems, [check your logs](/guides/deploy#view-your-logs) to see if you can remedy the problem.
 
 **Note**: Once you have [submitted](#submission) your participation, you should close your lease.
 

@@ -297,6 +297,24 @@ You should see a response similar to:
 
 You can access the application by visiting the hostnames mapped to your deployment. In above example, its http://6veev7chcfmnclgqklegcc.provider4.akashdev.net
 
+## View your logs
+
+You can view your application logs to debug issues or watch progress like so:
+
+```sh
+akash \
+  --home "$AKASH_HOME" \
+  --node "$AKASH_NODE" \
+  provider service-logs \
+  --service $SERVICE_NAME \
+  --owner "$ACCOUNT_ADDRESS" \
+  --dseq "$DSEQ" \
+  --gseq 1 \
+  --oseq $OSEQ \
+  --provider "$PROVIDER"
+```
+
+where `$SERVICE_NAME` is the name of a service defined in your [SDL](/sdl).
 
 ## Close your deployment
 
