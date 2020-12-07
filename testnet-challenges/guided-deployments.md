@@ -16,6 +16,7 @@ Each of these challenges will ask you to follow the [deployment guide](/guides/d
 * [Challenge 1 (Week 1)](#challenge-1-week-1)
 * [Challenge 2 (Week 1)](#challenge-2-week-1)
 * [Challenge 3 (Week 1)](#challenge-3-week-1)
+* [Challenge 1 (Week 2)](#challenge-1-week-2)
 
 ## Challenge 1 (Week 1)
 
@@ -192,6 +193,95 @@ akash query market lease get \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
   --node $AKASH_NODE -o json \> akashian/phase3/challenge3/$CODE.json
+```
+
+See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
+
+## Challenge 1 (Week 2)
+
+**Challenge**: Deploy an API node on a live network.  API nodes are useful for creating wallets and explorers and are
+a perfect fit for use on Akash.
+
+Note that when you deploy this node it will connect to a **live** network, catch up to the latest block height, and
+participate in the peer-to-peer protocol.
+
+**Reward**: 150 AKTs
+
+**Winners**: First 200 submissions — measured by the timestamp of the git commit — that pass the qualification criteria. 
+
+**Instructions**: Instructions will be available on Dec 7, 2020 9:00 AM 
+
+1) Using [this](deploy-2-1.yaml) SDL file when following the [deploy instructions](/guides/deploy) to deploy your own
+instance of an [Akash](https://github.com/ovrclk/akash) API node.
+
+The given [SDL](deploy-2-1.yaml) exposes your node's API service on a random port.  Here's how you can test it out:
+
+Look up the generated hostname for your deployment with the `lease-status` command as described in the [guide](/guides/deploy).  There will be a list of `"forwarded-ports"`. Look for an entry for port `1317`; the `host` and `externalPort` fields
+from that are where you can reach your API node.
+
+For advanced users:
+```sh
+akash provider lease-status \
+  --dseq $DSEQ \
+  --gseq $GSEQ \
+  --oseq $OSEQ \
+  --provider $PROVIDER \
+  --owner $ACCOUNT_ADDRESS \
+  --node $AKASH_NODE -o json \
+  jq '.["forwarded-ports"].akash[] | select(.port==1317)'
+```
+
+will produce:
+
+```json
+{
+  "host": "ext.provider1.akashdev.net",
+  "port": 1317,
+  "externalPort": 32747,
+  "proto": "TCP",
+  "available": 1,
+  "name": "akash"
+}
+```
+
+You can then test your API server by visiting it with a browser or using `curl`.  The below examples use
+the data from above; change the host and port to match your output.
+
+1. `curl http://ext.provider1.akashdev.net:32747/node_info`
+1. [http://ext.provider1.akashdev.net:32747/node_info](curl http://ext.provider1.akashdev.net:32747/node_info)
+
+**Note**: Once you have [submitted](#submission) your participation, you should close your lease.
+
+### Submission
+
+**Scoring Starts**: Dec 7, 2020 9:00 AM PT 
+
+**Scoring End**: Dec 10, 2020 5:00 PM PT
+
+**Instructions**:
+
+1) Fork the [ecosystem repository](https://github.com/ovrclk/ecosystem).
+
+2) Clone the ecosystem repository to your workstation. For example, where `<user>` is your GitHub username:
+  
+  ```shell
+  git clone https://github.com/<user>/ecosystem.git
+  ```
+
+3) Submit the JSON for your lease as the proof with the **Participation ID** from [Testnet](https://app.akash.network) as the filename under `akashian/phase3/challenge4` directory.
+
+For example, if your code is `dgbfr0rugcxnyuu`, the file will be `akashian/phase3/challenge4/dgbfr0rugcxnyuu.json`.
+
+Popuate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
+
+```sh
+akash query market lease get \
+  --dseq $DSEQ \
+  --gseq $GSEQ \
+  --oseq $OSEQ \
+  --provider $PROVIDER \
+  --owner $ACCOUNT_ADDRESS \
+  --node $AKASH_NODE -o json \> akashian/phase3/challenge4/$CODE.json
 ```
 
 See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
