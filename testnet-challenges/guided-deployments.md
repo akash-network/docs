@@ -53,7 +53,7 @@ instance of the [Lunie-Lite](https://github.com/luniehq/lunie-light) wallet.
 
 For example, if your code is `dgbfr0rugcxnyuu`, the file will be `akashian/phase3/challenge1/dgbfr0rugcxnyuu.json`.
 
-Popuate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
+Populate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
 
 ```sh
 akash query market lease get \
@@ -104,7 +104,7 @@ instance of the a [retwis](https://github.com/fager/retwis), a Twitter-toy clone
 
 For example, if your code is `dgbfr0rugcxnyuu`, the file will be `akashian/phase3/challenge2/dgbfr0rugcxnyuu.json`.
 
-Popuate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
+Populate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
 
 ```sh
 akash query market lease get \
@@ -183,7 +183,7 @@ akash --node "tcp://$DEPLOYMENT_HOST:80" status
 
 For example, if your code is `dgbfr0rugcxnyuu`, the file will be `akashian/phase3/challenge2/dgbfr0rugcxnyuu.json`.
 
-Popuate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
+Populate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
 
 ```sh
 akash query market lease get \
@@ -276,7 +276,7 @@ If you run into problems, [check your logs](/guides/deploy#view-your-logs) to se
 
 For example, if your code is `dgbfr0rugcxnyuu`, the file will be `akashian/phase3/challenge4/dgbfr0rugcxnyuu.json`.
 
-Popuate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
+Populate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
 
 ```sh
 akash query market lease get \
