@@ -6,7 +6,7 @@ services:
     image: ghcr.io/ovrclk/akash-on-akash:v0.0.2
     env:
       - ENC_KEY=
-      - STATE_SYNC=0
+      - STATE_SYNC=1
       - SEEDS_URL=https://raw.githubusercontent.com/ovrclk/net/master/definet/seed-nodes.txt
       - SYNC_URL=https://raw.githubusercontent.com/ovrclk/net/master/definet/rpc-nodes.txt
       - GENESIS_URL=https://raw.githubusercontent.com/ovrclk/net/master/definet/genesis.json
@@ -35,7 +35,7 @@ profiles:
         cpu:
           units: 0.5
         memory:
-          size: 1Gi
+          size: 512Mi
         storage:
           size: 512Mi
   placement:
