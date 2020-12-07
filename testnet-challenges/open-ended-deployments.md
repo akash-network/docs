@@ -15,7 +15,7 @@ You’ll support the Akash DeCloud community by finding unique applications to d
 
 1) Sign up to Akash [Testnet](https://app.akash.network).
 
-2) Create an [SDL](/sdl) for your application and use the [deploy guides](/guide/deploy) to deploy it.
+2) Create an [SDL](/sdl) for your application and use the [deploy guides](/guides/deploy) to deploy it.
 
 4) Fork the [Awesome Akash Repository](https://github.com/ovrclk/awesome-akash).
 
