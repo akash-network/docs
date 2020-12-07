@@ -229,8 +229,8 @@ akash provider lease-status \
   --oseq $OSEQ \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
-  --node $AKASH_NODE -o json \
-  jq '.["forwarded-ports"].akash[] | select(.port==1317)'
+  --node $AKASH_NODE \
+  | jq '.["forwarded-ports"].akash[] | select(.port==1317)'
 ```
 
 The above command will produce:
