@@ -250,7 +250,7 @@ You can then test your API server by visiting it with a browser or using `curl`.
 the data from above; change the host and port to match your output.
 
 1. `curl http://ext.provider1.akashdev.net:32747/node_info`
-1. [http://ext.provider1.akashdev.net:32747/node_info](curl http://ext.provider1.akashdev.net:32747/node_info)
+1. Swagger interface: [http://ext.provider1.akashdev.net:32747/swagger/#/](http://ext.provider1.akashdev.net:32747/swagger/#/)
 
 If you run into problems, [check your logs](/guides/deploy#view-your-logs) to see if you can remedy the problem.
 
