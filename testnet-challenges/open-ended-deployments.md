@@ -11,4 +11,33 @@ You’ll support the Akash DeCloud community by finding unique applications to d
 
 ## Submission
 
-Instructions will be published shortly
+**Instructions**:
+
+1) Sign up to Akash [Testnet](https://app.akash.network).
+
+2) Create an [SDL](/sdl) for your application and use the [deploy guides](/guide/deploy) to deploy it.
+
+4) Fork the [Awesome Akash Repository](https://github.com/ovrclk/awesome-akash).
+
+5) Clone the ecosystem repository to your workstation. For example, where `<user>` is your GitHub username:
+  
+  ```shell
+  git clone https://github.com/<user>/awesome-akash.git
+  ```
+
+6) Create a directory for your app in the `awesome-akash` repository.
+
+1. Add your [SDL](/sdl) file to the directory for your application.
+1. Add a `README.md` to your application directory that describes your application and any special instructions needed for deploying it.
+1. Add your app to the list of applications in the main [`README.md`](https://github.com/ovrclk/awesome-akash/blob/master/README.md)
+
+7) Commit your code; include your **Participation ID** from [Testnet](https://app.akash.network) in the body of
+the commit message.
+
+8) Send a pull request to [Awesome Akash Repository](https://github.com/ovrclk/awesome-akash).  Include your **Participation ID** from [Testnet](https://app.akash.network) in the title of the pull request like so:
+
+> ID dgbfr0rugcxnyuu: Add Lunie-Lite to DeFi apps
+
+Tag your PR with the appropriate app category.
+
+9) If you wish, close your deployment as described in the [guides](/guides/deploy).
