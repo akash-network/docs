@@ -9,9 +9,14 @@ You’ll support the Akash DeCloud community by finding unique applications to d
 | Unique Application Added to Awesome Akash List |500	| Up to first 200	| December 7, 2020 at 9AM	| December 11, 2020 at 5PM
 | Deployed an application from the Awesome Akash List	| 150	|Up to first 200	| December 7, 2020 at 9AM	| December 11, 2020 at 5PM
 
-## Submission
+For submissions, see either:
 
-**Instructions**:
+* [Unique Application](#unique-app-submission)
+* [Deploy an app from the list](#verify-app-submission)
+
+## Unique App Submission
+
+**Instructions** for adding a **new** app:
 
 1) Sign up to Akash [Testnet](https://app.akash.network).
 
@@ -46,4 +51,21 @@ Tag your PR with the appropriate app category.
 Please see [this](https://github.com/ovrclk/awesome-akash/pull/22) for an example of a well-formed pull request.
 
 9) We will review and visit your app and merge the PR when it has been verified.  When your PR has been merged you
+may close the deployment (see [guides](/guides/deploy) for instructions on closing deployments).
+
+## Verify App Submission
+
+**Instructions** for verifying an **existing** app:
+
+1) Sign up to Akash [Testnet](https://app.akash.network).
+
+2) Use an [SDL](/sdl) from an existing application in [Awesome Akash](https://github.com/ovrclk/awesome-akash) and follow the [deploy guides](/guides/deploy) to deploy it.
+
+3) Create an issue [here](https://github.com/ovrclk/awesome-akash/issues/new) with the following properties:
+
+* The title should be `ID: <participation-id> verify <app-name>`.
+* The body should have the output of  `akashctl provider lease-status` for your deployment.
+* Add the label `kind/verification`.
+
+4) We will review and visit your app and close the issue when it has been verified.  When your issue has been closed you
 may close the deployment (see [guides](/guides/deploy) for instructions on closing deployments).
