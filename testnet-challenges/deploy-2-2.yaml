@@ -5,11 +5,19 @@ services:
   akash:
     image: ghcr.io/ovrclk/akash-on-akash:v0.0.2
     env:
-      - ENC_KEY=
+      - ENC_KEY=akashnumberone
       - STATE_SYNC=1
       - SEEDS_URL=https://raw.githubusercontent.com/ovrclk/net/master/definet/seed-nodes.txt
       - SYNC_URL=https://raw.githubusercontent.com/ovrclk/net/master/definet/rpc-nodes.txt
       - GENESIS_URL=https://raw.githubusercontent.com/ovrclk/net/master/definet/genesis.json
+      - AKASH_PEX=true
+      - AKASH_SEED_MODE=true
+      - AKASH_PRUNING=custom
+      - AKASH_PRUNING_INTERVAL=10
+      - AKASH_PRUNING_KEEP_EVERY=50
+      - AKASH_PRUNING_KEEP_RECENT=10
+      - AKASH_STATE_SYNC_SNAPSHOT_INTERVAL=50
+      - AKASH_STATE_SYNC_KEEP_RECENT=10
     expose:
       - port: 8080
         as: 80
@@ -37,7 +45,7 @@ profiles:
         memory:
           size: 512Mi
         storage:
-          size: 512Mi
+          size: 1Gi
   placement:
     westcoast:
       attributes:

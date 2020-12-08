@@ -372,9 +372,28 @@ Or with the [Akash](https://github.com/ovrclk/akash) client:
 akash --node "$TESTNET_NODE"
 ```
 
-If you run into problems, [check your logs](/guides/deploy#view-your-logs) to see if you can remedy the problem.
+When your node first starts, it will attempt to sync with the network by "catching up".  You can see this in the
+status:
 
-To complete this challenge, we will send a transaction *to your new node*.
+```sh
+akash --node $TESTNET_NODE status | jq '.sync_info.catching_up'
+true
+```
+
+Wait for your node to catch up.  **This may take some time**.  Your node is using the new [state-sync](https://docs.tendermint.com/master/tendermint-core/state-sync.html) feature of tendermint, but the peer-to-peer protocol can run into problems
+which makes this take longer than we'd like.
+
+The *good* news is that today's [SDL](deploy-2-2.yaml) turns on it's ability to serve `state-sync` blocks, so
+as more people participate in the challenge, the new nodes _may_ get up to speed faster.
+
+[Check your logs](/guides/deploy#view-your-logs) to see how things are going during the process.
+
+If and when your node catches up, continue on.  If it turns out that many people are having problems getting
+their nodes caught up, we will not require [sending a transaction to your node](#send-a-transaction).  Let's see what happens - this _is_ a **testnet**, after all.
+
+### Send a Transaction
+
+If you've made it this far, let's put our efforts to work: we will send a transaction *to your new node*.
 
 1) Follow the steps for using the faucet in [Funding your Account](/guides/wallet/funding.md).  The faucet is currently
 configured to send your address tokens **on both networks**.
