@@ -413,9 +413,9 @@ participation.
   git clone https://github.com/<user>/ecosystem.git
   ```
 
-3) Submit the JSON for your lease as the proof with the **Participation ID** from [Testnet](https://app.akash.network) as the filename under `akashian/phase3/challenge4` directory.
+3) Submit the JSON for your lease as the proof with the **Participation ID** from [Testnet](https://app.akash.network) as the filename under `akashian/phase3/challenge5` directory.
 
-For example, if your code is `dgbfr0rugcxnyuu`, the file will be `akashian/phase3/challenge4/dgbfr0rugcxnyuu.json`.
+For example, if your code is `dgbfr0rugcxnyuu`, the file will be `akashian/phase3/challenge5/dgbfr0rugcxnyuu.json`.
 
 Popuate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
 
