@@ -402,7 +402,7 @@ configured to send your address tokens **on both networks**.
 ```sh
 akash \
   --node "$TESTNET_NODE" \
-  --chain-id edgenet-2 \
+  --chain-id akash-edgenet-2 \
   --keyring-backend "$KEYRING_BACKEND" \
   --memo "$CODE" \
   tx send "$KEY_NAME" akash1vl3gun7p8y4ttzajrtyevdy5sa2tjz3a29zuah 1000000uakt
