@@ -320,7 +320,6 @@ and you will create this deployment **on the `edgenet` network**.
 
 Instructions will be revealed when the challenge starts.
 
-{% comment %}
 1) Using [this](deploy-2-2.yaml) SDL file when following the [deploy instructions](/guides/deploy) to deploy your own
 instance of an [Akash](https://github.com/ovrclk/akash) RPC node.
 
@@ -395,7 +394,6 @@ participation.
 
 **Note**: Once you have [submitted](#submission) your participation, you should close your lease.
 
-{% endcomment %}
 
 ### Submission
 
