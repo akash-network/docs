@@ -43,5 +43,7 @@ deployed app will suffice.  To ensure that all the information is present, inclu
 
 Tag your PR with the appropriate app category.
 
+Please see [this](https://github.com/ovrclk/awesome-akash/pull/22) for an example of a well-formed pull request.
+
 9) We will review and visit your app and merge the PR when it has been verified.  When your PR has been merged you
 may close the deployment (see [guides](/guides/deploy) for instructions on closing deployments).
