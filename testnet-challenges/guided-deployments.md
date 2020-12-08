@@ -320,12 +320,13 @@ and you will create this deployment **on the `edgenet` network**.
 
 Instructions will be revealed when the challenge starts.
 
+{% comment %}
 1) Using [this](deploy-2-2.yaml) SDL file when following the [deploy instructions](/guides/deploy) to deploy your own
 instance of an [Akash](https://github.com/ovrclk/akash) RPC node.
 
 The given [SDL](deploy-2-2.yaml) exposes your node's RPC service on a random port.  Here's how you can test it out:
 
-Look up the generated hostname for your deployment with the `lease-status` command as described in the [guide](/guides/deploy).  There will be a list of `"forwarded-ports"`. Look for an entry for port `1317`; the `host` and `externalPort` fields
+Look up the generated hostname for your deployment with the `lease-status` command as described in the [guide](/guides/deploy).  There will be a list of `"forwarded-ports"`. Look for an entry for port `26657`; the `host` and `externalPort` fields
 from that are where you can reach your API node.
 
 For advanced users:
@@ -394,6 +395,7 @@ participation.
 
 **Note**: Once you have [submitted](#submission) your participation, you should close your lease.
 
+{% endcomment %}
 
 ### Submission
 
