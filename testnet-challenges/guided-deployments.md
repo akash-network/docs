@@ -17,6 +17,7 @@ Each of these challenges will ask you to follow the [deployment guide](/guides/d
 * [Challenge 2 (Week 1)](#challenge-2-week-1)
 * [Challenge 3 (Week 1)](#challenge-3-week-1)
 * [Challenge 1 (Week 2)](#challenge-1-week-2)
+* [Challenge 2 (Week 2)](#challenge-2-week-2)
 
 ## Challenge 1 (Week 1)
 
@@ -261,6 +262,146 @@ If you run into problems, [check your logs](/guides/deploy#view-your-logs) to se
 **Scoring Starts**: Dec 7, 2020 9:00 AM PT 
 
 **Scoring End**: Dec 10, 2020 5:00 PM PT
+
+**Instructions**:
+
+1) Fork the [ecosystem repository](https://github.com/ovrclk/ecosystem).
+
+2) Clone the ecosystem repository to your workstation. For example, where `<user>` is your GitHub username:
+  
+  ```shell
+  git clone https://github.com/<user>/ecosystem.git
+  ```
+
+3) Submit the JSON for your lease as the proof with the **Participation ID** from [Testnet](https://app.akash.network) as the filename under `akashian/phase3/challenge4` directory.
+
+For example, if your code is `dgbfr0rugcxnyuu`, the file will be `akashian/phase3/challenge4/dgbfr0rugcxnyuu.json`.
+
+Popuate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
+
+```sh
+akash query market lease get \
+  --dseq $DSEQ \
+  --gseq $GSEQ \
+  --oseq $OSEQ \
+  --provider $PROVIDER \
+  --owner $ACCOUNT_ADDRESS \
+  --node $AKASH_NODE -o json \
+  > akashian/phase3/challenge4/$CODE.json
+```
+
+See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
+
+## Challenge 2 (Week 2)
+
+**Challenge**: Deploy an RPC node on a live network and send a transaction to it.
+
+RPC nodes allow querying similar to the API nodes from the [previous challenge](#challenge-1-week-2),
+but also allow sending transactions to the network.
+
+{% hint %}
+
+In this challenge you will be deploying an [Akash](https://github.com/ovrclk/akash) node by creating a deployment on the current [edgenet](https://github.com/ovrclk/net/tree/master/edgenet) network.
+
+The node that you deploy will join a [separate network](https://github.com/ovrclk/net/tree/master/definet).
+
+The [SDL](/sdl) file that is included in this challenge describes how the new node should be deployed,
+and you will create this deployment **on the `edgenet` network**.
+
+**YOU DO NOT NEED TO CREATE A NODE FOR, OR INTERACT WITH, THE [SEPARATE NETWORK](https://github.com/ovrclk/net/tree/master/definet) BEYOND WHAT IS DESCRIBED BELOW** 
+
+{% endhint %}
+
+**Reward**: 200 AKTs
+
+**Winners**: First 200 submissions — measured by the timestamp of the git commit — that pass the qualification criteria. 
+
+**Instructions**:
+
+Instructions will be revealed when the challenge starts.
+
+{% comment %}
+1) Using [this](deploy-2-2.yaml) SDL file when following the [deploy instructions](/guides/deploy) to deploy your own
+instance of an [Akash](https://github.com/ovrclk/akash) RPC node.
+
+The given [SDL](deploy-2-2.yaml) exposes your node's RPC service on a random port.  Here's how you can test it out:
+
+Look up the generated hostname for your deployment with the `lease-status` command as described in the [guide](/guides/deploy).  There will be a list of `"forwarded-ports"`. Look for an entry for port `1317`; the `host` and `externalPort` fields
+from that are where you can reach your API node.
+
+For advanced users:
+```sh
+akash provider lease-status \
+  --dseq $DSEQ \
+  --gseq $GSEQ \
+  --oseq $OSEQ \
+  --provider $PROVIDER \
+  --owner $ACCOUNT_ADDRESS \
+  --node $AKASH_NODE \
+  | jq '.["forwarded-ports"].akash[] | select(.port==26657)'
+```
+
+The above command will produce:
+
+```json
+{
+  "host": "ext.provider1.akashdev.net",
+  "port": 26657,
+  "externalPort": 32747,
+  "proto": "TCP",
+  "available": 1,
+  "name": "akash"
+}
+```
+
+With this information we can construct the RPC endpoint:
+
+```sh
+TESTNET_NODE=http://ext.provider1.akashdev.net:32747
+```
+
+You can then test your RPC server by visiting it with a browser or using `curl`:
+
+```sh
+curl -s "$TESTNET_NODE/status"
+```
+
+Or with the [Akash](https://github.com/ovrclk/akash) client:
+
+```sh
+akash --node "$TESTNET_NODE"
+```
+
+If you run into problems, [check your logs](/guides/deploy#view-your-logs) to see if you can remedy the problem.
+
+To complete this challenge, we will send a transaction *to your new node*.
+
+1) Follow the steps for using the faucet in [Funding your Account](/guides/wallet/funding.md).  The faucet is currently
+configured to send your address tokens **on both networks**.
+
+2) Send 1 AKT to the following address **through the node you created in this challenge**: `akash1vl3gun7p8y4ttzajrtyevdy5sa2tjz3a29zuah`.  Include your **Participation ID** (`$CODE`) from [Testnet](https://app.akash.network) in the memo field of the transaction:
+
+```sh
+akash \
+  --node "$TESTNET_NODE" \
+  --chain-id edgenet-2 \
+  --keyring-backend "$KEYRING_BACKEND" \
+  --memo "$CODE" \
+  tx send "$KEY_NAME" akash1vl3gun7p8y4ttzajrtyevdy5sa2tjz3a29zuah 1000000uakt
+```
+
+Once your transaction is complete, you have finished today's challenge and can [submit](#submission) your
+participation.
+
+**Note**: Once you have [submitted](#submission) your participation, you should close your lease.
+
+{% endcomment %}
+
+### Submission
+
+**Scoring Starts**: Dec 8, 2020 9:00 AM PT 
+
+**Scoring End**: Dec 11, 2020 5:00 PM PT
 
 **Instructions**:
 
