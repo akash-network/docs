@@ -427,7 +427,7 @@ akash query market lease get \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
   --node $AKASH_NODE -o json \
-  > akashian/phase3/challenge4/$CODE.json
+  > akashian/phase3/challenge5/$CODE.json
 ```
 
 See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
