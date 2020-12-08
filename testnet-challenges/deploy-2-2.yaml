@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   akash:
-    image: ghcr.io/ovrclk/akash-on-akash:v0.0.2
+    image: ghcr.io/ovrclk/akash-on-akash:v0.0.3
     env:
       - ENC_KEY=akashnumberone
       - STATE_SYNC=1

@@ -10,7 +10,7 @@ Although we do not limit anyone from participating, to claim AKT rewards:
 * You must pass KYC/AML verification when collecting the reward. The details for which will be posted at a later time.
 
 {% hint %}
-Each of these challenges will ask you to follow the [deployment guide](/guides/deploy) to deploy a specific [SDL](/sdl) file.
+Each of these challenges will ask you to follow the [deployment guide](/guides/deploy) to deploy a specific [SDL](/sdl/README.md) file.
 {% endhint %}
 
 * [Challenge 1 (Week 1)](#challenge-1-week-1)
@@ -305,7 +305,7 @@ In this challenge you will be deploying an [Akash](https://github.com/ovrclk/aka
 
 The node that you deploy will join a [separate network](https://github.com/ovrclk/net/tree/master/definet).
 
-The [SDL](/sdl) file that is included in this challenge describes how the new node should be deployed,
+The [SDL](/sdl/README.md) file that is included in this challenge describes how the new node should be deployed,
 and you will create this deployment **on the `edgenet` network**.
 
 **YOU DO NOT NEED TO CREATE A NODE FOR, OR INTERACT WITH, THE [SEPARATE NETWORK](https://github.com/ovrclk/net/tree/master/definet) BEYOND WHAT IS DESCRIBED BELOW** 
