@@ -67,5 +67,7 @@ may close the deployment (see [guides](/guides/deploy) for instructions on closi
 * The body should have the output of  `akashctl provider lease-status` for your deployment.
 * Add the label `kind/verification`.
 
+See [here](https://github.com/ovrclk/awesome-akash/issues/24) for a well-formed submission.
+
 4) We will review and visit your app and close the issue when it has been verified.  When your issue has been closed you
 may close the deployment (see [guides](/guides/deploy) for instructions on closing deployments).
