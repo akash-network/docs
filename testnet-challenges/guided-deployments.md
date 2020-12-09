@@ -617,7 +617,7 @@ DEPLOY_NODE_RPC=http://ext.provider1.akashdev.net:32747
 And query its state:
 
 ```sh
-akash --node "$DEPLOY_NODE_RPC"
+akash --node "$DEPLOY_NODE_RPC" status
 ```
 
 When your node first starts, it will attempt to sync with the network by "catching up".  You can see this in the
