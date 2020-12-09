@@ -666,7 +666,7 @@ creating this validator on the secondary network, `akash-edgenet-2`.
 1) Create a new key for this network by following the [wallet guide](/guides/wallet/README.md) and using `$SECONDARY_KEY_NAME`
 as a key name.
 
-2) Fund your new address (`$SECONDARY_ACCOUNT`) with the faucet by following [these guides](/guides/wallet/funding.md).
+2) Fund your new address (`$SECONDARY_ACCOUNT`) with the faucet [here](https://akash.vitwit.com/faucet).
 
 3) Your deployed node has an endpoint from which you can download your validator public key.  Use the following
 command to get the hostname for your node:
