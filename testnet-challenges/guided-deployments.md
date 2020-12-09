@@ -21,6 +21,10 @@ Each of these challenges will ask you to follow the [deployment guide](/guides/d
 
 ## Challenge 1 (Week 1)
 
+{% hint style="warning" %}
+The submission deadline for this challenge has passed.
+{% endhint %}
+
 **Challenge**: Deploy a web app on Akash and attach a custom domain.
 
 **Reward**: 150 AKTs
@@ -71,6 +75,10 @@ See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/d
 4) Commit your code, and send a pull request to [ecosystem repo](https://github.com/ovrclk/ecosystem).
 
 ## Challenge 2 (Week 1)
+
+{% hint style="warning" %}
+The submission deadline for this challenge has passed.
+{% endhint %}
 
 **Challenge**: Deploy a databased-backed web app on Akash and attach a custom domain.
 
@@ -123,6 +131,10 @@ See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/d
 
 
 ## Challenge 3 (Week 1)
+
+{% hint style="warning" %}
+The submission deadline for this challenge has passed.
+{% endhint %}
 
 **Challenge**: Deploy a single node network on Akash.  Single nodes can be useful for development and testing; this
 is a sneak-peak of next week's challenges, which will guide you through bringing up a node that joins a real blockchain
@@ -199,6 +211,10 @@ akash query market lease get \
 See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
 
 ## Challenge 1 (Week 2)
+
+{% hint style="warning" %}
+The submission deadline for this challenge has passed.
+{% endhint %}
 
 **Challenge**: Deploy an API node on a live network.  API nodes are useful for creating wallets and explorers and are
 a perfect fit for use on Akash.

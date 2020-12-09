@@ -1,3 +1,8 @@
+{% hint style="warning" %}
+It is no longer possible to earn points in this challenge if you have
+not already started.
+{% endhint %}
+
 While validators and other network components are not necessarily targeted in this testnet, they are of course essential to maintaining a healthy DeCloud. 
 
 Leverage this testnet to practice your operations, or try new ones.
