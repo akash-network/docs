@@ -352,7 +352,7 @@ akash provider lease-status \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
   --node $AKASH_NODE \
-  | jq '.["forwarded-ports"].akash[] | select(.port==26657)'
+  | jq -r '.["forwarded-ports"].akash[] | select(.port==26657)'
 ```
 
 The above command will produce:
@@ -367,6 +367,22 @@ The above command will produce:
   "name": "akash"
 }
 ```
+
+{% hint style="notice" %}
+If the `"host"` field is not present in the command above,
+please use the following to look up the host:
+
+```sh
+akash provider lease-status \
+  --dseq $DSEQ \
+  --gseq $GSEQ \
+  --oseq $OSEQ \
+  --provider $PROVIDER \
+  --owner $ACCOUNT_ADDRESS \
+  --node $AKASH_NODE \
+  | jq -r '.services.akash.uris[0]'
+```
+{% endhint %}
 
 With this information we can construct the RPC endpoint:
 
@@ -576,7 +592,7 @@ akash provider lease-status \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
   --node $AKASH_NODE \
-  | jq '.["forwarded-ports"].akash[] | select(.port==26657)'
+  | jq -r '.["forwarded-ports"].akash[] | select(.port==26657)'
 ```
 
 The above command will produce:
@@ -604,7 +620,7 @@ akash provider lease-status \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
   --node $AKASH_NODE \
-  | jq '.services.akash.uris[0]'
+  | jq -r '.services.akash.uris[0]'
 ```
 {% endhint %}
 
@@ -663,7 +679,7 @@ akash provider lease-status \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
   --node $AKASH_NODE \
-  | jq '.services.akash.uris[0]'
+  | jq -r '.services.akash.uris[0]'
 ```
 
 For these instructions, we'll use the value below:
