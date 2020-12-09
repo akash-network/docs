@@ -471,13 +471,13 @@ In the [previous challenge](#challenge-2-week-2), we deployed an RPC node that c
 [separate network](https://github.com/ovrclk/net/tree/master/definet).  In this final challenge,
 we are going to take it one step further and turn your deployed node into a **validator**.
 
-{% notice style="warning" %}
+{% hint style="warning" %}
 **DO NOT USE THESE INSTRUCTIONS TO HOST A `MAINNET` VALIDATOR OF ANY KIND**
 
 There are many use-cases for hosting a validator on [Akash](https://github.com/ovrclk/akash),
 but using [Akash](https://github.com/ovrclk/akash) to host a _mainnet_ validator is not one of them
 (for the time being).
-{% endnotice %}
+{% endhint %}
 
 **Reward**: 250 AKTs
 
