@@ -682,7 +682,6 @@ akash tx staking create-validator \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.01" \
   --min-self-delegation="1" \
-  --gas="auto" \
   --gas-prices="0.025uakt" \
   --from="$SECONDARY_KEY_NAME"
 ```
