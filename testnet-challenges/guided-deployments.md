@@ -647,7 +647,7 @@ akash provider lease-status \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
   --node $AKASH_NODE \
-  | jq '.services.web.uris[0]'
+  | jq '.services.akash.uris[0]'
 ```
 
 For these instructions, we'll use the value below:
@@ -673,6 +673,7 @@ in-depth discussion.
 
 ```sh
 akash tx staking create-validator \
+  --node="$SECONDARY_NODE" \
   --amount=1000000uakt \
   --pubkey="$VALIDATOR_PUBKEY" \
   --moniker="$SECONDARY_MONIKER" \
