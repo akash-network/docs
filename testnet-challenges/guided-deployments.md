@@ -758,7 +758,7 @@ akash query market lease get \
   --oseq $OSEQ \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
-  --node $AKASH_NODE -o json \
+  --node $AKASH_NODE -o json
   > akashian/phase3/challenge6/$CODE.json
 ```
 
