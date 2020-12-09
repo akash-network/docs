@@ -608,11 +608,13 @@ When your node first starts, it will attempt to sync with the network by "catchi
 status:
 
 ```sh
-akash --node $DEPLOY_NODE_RPC status | jq '.sync_info.catching_up'
+akash --node $DEPLOY_NODE_RPC status | jq '.sync_info.latest_block_height,.sync_info.latest_block_time,.sync_info.catching_up'
+"38630"
+"2020-12-09T13:33:02.741252071Z"
 true
 ```
 
-When the above command returns `false`, your node is caught up.
+When the last line of the above command returns `false`, your node is caught up.
 
 Wait for your node to catch up.  **This may take some time**.  Your node is using the new [state-sync](https://docs.tendermint.com/master/tendermint-core/state-sync.html) feature of tendermint, but the peer-to-peer protocol can run into problems
 which makes this take longer than we'd like.
