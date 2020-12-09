@@ -18,6 +18,7 @@ Each of these challenges will ask you to follow the [deployment guide](/guides/d
 * [Challenge 3 (Week 1)](#challenge-3-week-1)
 * [Challenge 1 (Week 2)](#challenge-1-week-2)
 * [Challenge 2 (Week 2)](#challenge-2-week-2)
+* [Challenge 3 (Week 2)](#challenge-3-week-2)
 
 ## Challenge 1 (Week 1)
 
@@ -334,8 +335,6 @@ and you will create this deployment **on the `edgenet` network**.
 
 **Instructions**:
 
-Instructions will be revealed when the challenge starts.
-
 1) Using [this](deploy-2-2.yaml) SDL file when following the [deploy instructions](/guides/deploy) to deploy your own
 instance of an [Akash](https://github.com/ovrclk/akash) RPC node.
 
@@ -460,6 +459,276 @@ akash query market lease get \
   --owner $ACCOUNT_ADDRESS \
   --node $AKASH_NODE -o json \
   > akashian/phase3/challenge5/$CODE.json
+```
+
+See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
+
+## Challenge 3 (Week 2)
+
+**Challenge**:
+
+In the [previous challenge](#challenge-2-week-2), we deployed an RPC node that connected to a
+[separate network](https://github.com/ovrclk/net/tree/master/definet).  In this final challenge,
+we are going to take it one step further and turn your deployed node into a **validator**.
+
+{% notice style="warning" %}
+**DO NOT USE THESE INSTRUCTIONS TO HOST A `MAINNET` VALIDATOR OF ANY KIND**
+
+There are many use-cases for hosting a validator on [Akash](https://github.com/ovrclk/akash),
+but using [Akash](https://github.com/ovrclk/akash) to host a _mainnet_ validator is not one of them
+(for the time being).
+{% endnotice %}
+
+**Reward**: 250 AKTs
+
+**Winners**: First 200 submissions — measured by the timestamp of the git commit — that pass the qualification criteria. 
+
+**Instructions**:
+
+{% hint %}
+
+In this challenge you will be deploying an [Akash](https://github.com/ovrclk/akash) node by creating a deployment on the current [edgenet](https://github.com/ovrclk/net/tree/master/edgenet) network.
+
+The node that you deploy will join a [separate network](https://github.com/ovrclk/net/tree/master/definet).
+
+The [SDL](/sdl/README.md) file that is included in this challenge describes how the new node should be deployed,
+and you will create this deployment **on the `edgenet` network**.
+
+**YOU DO NOT NEED TO CREATE A NODE FOR, OR INTERACT WITH, THE [SEPARATE NETWORK](https://github.com/ovrclk/net/tree/master/definet) BEYOND WHAT IS DESCRIBED BELOW** 
+
+{% endhint %}
+
+Instructions will be revealed when the challenge starts.
+
+{% comment %}
+
+This final guided challenge will be similar to the [previous challenge](#challenge-2-week-2), but
+there are a few workflow changes that are meant to address some of the difficulties we saw during that challenge:
+
+1. We will use a **separate wallet key** for the [secondary network](https://github.com/ovrclk/net/tree/master/definet).
+1. We will not send transactions *through* our node, but rather to a separate public RPC node.
+
+**This challenge is going to be _difficult_.**  The purpose of these challenges is to both
+test the limits of [Akash](https://github.com/ovrclk/akash) software and to build a community
+of proficient users of the system.
+
+It is expected that you will run into problems.  Try to use these setbacks as a learning opportunities.
+
+* _Think_ about what you're doing - don't mindlessly follow instructions verbatim.
+* When asking questions on [Discord](https://discord.akash.network), include as much information as
+you can - deployment ID, logs, etc...
+* Double check your variables - think about whether they make sense for the task you are trying to complete.
+* Read through the help pages of `akash` commands (use `--help`).  There are often times commands or options
+that are relevant to the issue you are having.  **try them out**.
+
+Finally, thank you for participating in these challenges.  The whole team here at [Akash](https://githubcom/ovrclk/akash)
+has been blown away by the level of interest in our testnet and product in general.  We can't thank
+you enough for the valuable feedback you're giving us, and we hope that you enjoy the challenges!
+
+### Variables
+
+For the purposes of this guide, you will need some variables defined:
+
+* `SECONDARY_NODE`, which can be defined as follows.
+
+```sh
+SECONDARY_NODE="$(curl -s https://raw.githubusercontent.com/ovrclk/net/master/definet/rpc-nodes.txt | head -1)"
+```
+
+* `SECONDARY_MONIKER`, which should be set to your **Participation ID** from [Testnet](https://app.akash.network).  As always,
+we will use the value `dgbfr0rugcxnyuu` as our example ID.
+
+```sh
+SECONDARY_MONIKER=dgbfr0rugcxnyuu
+```
+
+* `SECONDARY_KEY_NAME`: an arbitrary key name that is separate from your `$KEY_NAME`.  A reasonable
+default is below:
+
+```sh
+SECONDARY_KEY_NAME=secondary-key
+```
+
+* `SECONDARY_CHAIN_ID`: the chain-id of the secondary network.  It is `akash-edgenet-2`
+
+```sh
+SECONDARY_CHAIN_ID=akash-edgenet-2
+```
+
+### Deploy Your Node
+
+1) Download [this](deploy-2-3.yaml) SDL file.  Edit the file and set the `AKASH_MONIKER` environment variable for your
+node.  You should use the same value as `SECONDARY_MONIKER` from above.
+
+```sh
+      - AKASH_MONIKER=dgbfr0rugcxnyuu
+```
+
+2) Use the file you just edited with the [deploy instructions](/guides/deploy) to deploy your node.
+
+3) As with [before](#challenge-2-week-2), obtain the endpoint for your node's RPC endpoint
+
+```sh
+akash provider lease-status \
+  --dseq $DSEQ \
+  --gseq $GSEQ \
+  --oseq $OSEQ \
+  --provider $PROVIDER \
+  --owner $ACCOUNT_ADDRESS \
+  --node $AKASH_NODE \
+  | jq '.["forwarded-ports"].akash[] | select(.port==26657)'
+```
+
+The above command will produce:
+
+```json
+{
+  "host": "ext.provider1.akashdev.net",
+  "port": 26657,
+  "externalPort": 32747,
+  "proto": "TCP",
+  "available": 1,
+  "name": "akash"
+}
+```
+
+With this information we can construct the RPC endpoint:
+
+```sh
+DEPLOY_NODE_RPC=http://ext.provider1.akashdev.net:32747
+```
+
+And query its state:
+
+```sh
+akash --node "$DEPLOY_NODE_RPC"
+```
+
+When your node first starts, it will attempt to sync with the network by "catching up".  You can see this in the
+status:
+
+```sh
+akash --node $DEPLOY_NODE_RPC status | jq '.sync_info.catching_up'
+true
+```
+
+When the above command returns `false`, your node is caught up.
+
+Wait for your node to catch up.  **This may take some time**.  Your node is using the new [state-sync](https://docs.tendermint.com/master/tendermint-core/state-sync.html) feature of tendermint, but the peer-to-peer protocol can run into problems
+which makes this take longer than we'd like.
+
+[Check your logs](/guides/deploy#view-your-logs) to see how things are going during the process.
+
+{% hint %}
+If your node does not "catch up" in a reasonable amount of time, you may still continue
+on to the next part of the challenge.
+{% endhint %}
+
+### Create Your Provider
+
+If you've made it this far, let's put our node to work: let's turn it into a _validator_.  We will be
+creating this validator on the secondary network, `akash-edgenet-2`.
+
+1) Create a new key for this network by following the [wallet guide](/guides/wallet/README.md) and using `$SECONDARY_KEY_NAME`
+as a key name.
+
+2) Fund your new address (`$SECONDARY_ACCOUNT`) with the faucet by following [these guides](/guides/wallet/funding.md).
+
+3) Your deployed node has an endpoint from which you can download your validator public key.  Use the following
+command to get the hostname for your node:
+
+```sh
+akash provider lease-status \
+  --dseq $DSEQ \
+  --gseq $GSEQ \
+  --oseq $OSEQ \
+  --provider $PROVIDER \
+  --owner $ACCOUNT_ADDRESS \
+  --node $AKASH_NODE \
+  | jq '.services.web.uris[0]'
+```
+
+For these instructions, we'll use the value below:
+
+```sh
+NODE_ENDPOINT=6veev7chcfmnclgqklegcc.provider4.akashdev.net
+```
+
+You can obtain your validator public key with the following:
+
+```sh
+curl -s "$NODE_ENDPOINT/validator-pubkey.txt"
+```
+
+We'll save it in a variable to be used later:
+
+```sh
+VALIDATOR_PUBKEY="$(curl -s "$NODE_ENDPOINT/validator-pubkey.txt")"
+```
+
+Finally, let's create the validator.  See the [validator guide](/guides/node/validator.md) for a more
+in-depth discussion.
+
+```sh
+akash tx staking create-validator \
+  --amount=1000000uakt \
+  --pubkey="$VALIDATOR_PUBKEY" \
+  --moniker="$SECONDARY_MONIKER" \
+  --chain-id="$SECONDARY_CHAIN_ID" \
+  --commission-rate="0.10" \
+  --commission-max-rate="0.20" \
+  --commission-max-change-rate="0.01" \
+  --min-self-delegation="1" \
+  --gas="auto" \
+  --gas-prices="0.025uakt" \
+  --from="$SECONDARY_KEY_NAME"
+```
+
+Once that is done, you can see the status of your validator with:
+
+```sh
+akash --node "$SECONDARY_NODE" query staking validator $SECONDARY_ACCOUNT
+```
+
+Once your validator is created, you have finished today's challenge and can [submit](#submission) your
+participation.
+
+**Note**: Once you have [submitted](#submission) your participation and your validator has signed
+a few blocks, please close your deployment.
+
+{% endcomment %}
+
+### Submission
+
+**Scoring Starts**: Dec 9, 2020 9:00 AM PT 
+
+**Scoring End**: Dec 12, 2020 5:00 PM PT
+
+**Instructions**:
+
+1) Fork the [ecosystem repository](https://github.com/ovrclk/ecosystem).
+
+2) Clone the ecosystem repository to your workstation. For example, where `<user>` is your GitHub username:
+  
+  ```shell
+  git clone https://github.com/<user>/ecosystem.git
+  ```
+
+3) Submit the JSON for your lease as the proof with the **Participation ID** from [Testnet](https://app.akash.network) as the filename under `akashian/phase3/challenge6` directory.
+
+For example, if your code is `dgbfr0rugcxnyuu`, the file will be `akashian/phase3/challenge6/dgbfr0rugcxnyuu.json`.
+
+Popuate `$CODE` with your **Participation ID** from [Testnet](https://app.akash.network) and run the below:
+
+```sh
+akash query market lease get \
+  --dseq $DSEQ \
+  --gseq $GSEQ \
+  --oseq $OSEQ \
+  --provider $PROVIDER \
+  --owner $ACCOUNT_ADDRESS \
+  --node $AKASH_NODE -o json \
+  > akashian/phase3/challenge6/$CODE.json
 ```
 
 See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
