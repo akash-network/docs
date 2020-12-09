@@ -592,6 +592,22 @@ The above command will produce:
 }
 ```
 
+{% hint style="notice" %}
+If the `"host"` field is not present in the command above,
+please use the following to look up the host:
+
+```sh
+akash provider lease-status \
+  --dseq $DSEQ \
+  --gseq $GSEQ \
+  --oseq $OSEQ \
+  --provider $PROVIDER \
+  --owner $ACCOUNT_ADDRESS \
+  --node $AKASH_NODE \
+  | jq '.services.akash.uris[0]'
+```
+{% endhint %}
+
 With this information we can construct the RPC endpoint:
 
 ```sh
