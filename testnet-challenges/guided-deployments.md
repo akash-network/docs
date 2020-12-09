@@ -516,8 +516,6 @@ and you will create this deployment **on the `edgenet` network**.
 
 Instructions will be revealed when the challenge starts.
 
-{% comment %}
-
 This final guided challenge will be similar to the [previous challenge](#challenge-2-week-2), but
 there are a few workflow changes that are meant to address some of the difficulties we saw during that challenge:
 
@@ -730,8 +728,6 @@ participation.
 
 **Note**: Once you have [submitted](#submission) your participation and your validator has signed
 a few blocks, please close your deployment.
-
-{% endcomment %}
 
 ### Submission
 
