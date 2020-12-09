@@ -335,6 +335,19 @@ and you will create this deployment **on the `edgenet` network**.
 
 **Instructions**:
 
+{% hint style="notice" %}
+This challenge requires `akash` version `v0.9.0-rc13` or higher.
+
+You can check your current version with:
+
+```sh
+akash version
+```
+
+See the [installation instructions](/guides/install.md) for installing the latest version for `edgenet`
+if you need to upgrade.
+{% endhint %}
+
 1) Using [this](deploy-2-2.yaml) SDL file when following the [deploy instructions](/guides/deploy) to deploy your own
 instance of an [Akash](https://github.com/ovrclk/akash) RPC node.
 
@@ -370,7 +383,8 @@ The above command will produce:
 
 {% hint style="notice" %}
 If the `"host"` field is not present in the command above,
-please use the following to look up the host:
+you are using an old version.  Please upgrade or
+use the following to look up the host:
 
 ```sh
 akash provider lease-status \
@@ -514,8 +528,6 @@ and you will create this deployment **on the `edgenet` network**.
 
 {% endhint %}
 
-Instructions will be revealed when the challenge starts.
-
 This final guided challenge will be similar to the [previous challenge](#challenge-2-week-2), but
 there are a few workflow changes that are meant to address some of the difficulties we saw during that challenge:
 
@@ -538,6 +550,19 @@ that are relevant to the issue you are having.  **try them out**.
 Finally, thank you for participating in these challenges.  The whole team here at [Akash](https://githubcom/ovrclk/akash)
 has been blown away by the level of interest in our testnet and product in general.  We can't thank
 you enough for the valuable feedback you're giving us, and we hope that you enjoy the challenges!
+
+{% hint style="notice" %}
+This challenge requires `akash` version `v0.9.0-rc13` or higher.
+
+You can check your current version with:
+
+```sh
+akash version
+```
+
+See the [installation instructions](/guides/install.md) for installing the latest version for `edgenet`
+if you need to upgrade.
+{% endhint %}
 
 ### Variables
 
@@ -608,7 +633,8 @@ The above command will produce:
 
 {% hint style="notice" %}
 If the `"host"` field is not present in the command above,
-please use the following to look up the host:
+you are using an old version.  Please upgrade or
+use the following to look up the host:
 
 ```sh
 akash provider lease-status \
