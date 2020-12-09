@@ -689,7 +689,8 @@ akash tx staking create-validator \
 Once that is done, you can see the status of your validator with:
 
 ```sh
-akash --node "$SECONDARY_NODE" query staking validator $SECONDARY_ACCOUNT
+SECONDARY_VALOPER_ADDRESS="$(akash keys show "$SECONDARY_KEY_NAME" --bech=val -a)"
+akash --node "$SECONDARY_NODE" query staking validator "$SECONDARY_VALOPER_ADDRESS"
 ```
 
 Once your validator is created, you have finished today's challenge and can [submit](#submission) your
