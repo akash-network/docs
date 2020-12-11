@@ -25,4 +25,4 @@ Submissions for this challenge will be accepted throughout the entire testnet pe
 
 ## Submission
 
-Please submit this post using this [form](https://forms.gle/AaS6UAnATeUatjD57).
+Please submit this post using this [form](https://docs.google.com/forms/d/e/1FAIpQLScX4VVheTeo-WmzHe2IHw1dXfRX2tGv-MHzs75-Hp-7yKuCjA/viewform).
