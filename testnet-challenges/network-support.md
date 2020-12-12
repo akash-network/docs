@@ -1,6 +1,9 @@
 {% hint style="warning" %}
-It is no longer possible to earn points in this challenge if you have
-not already started.
+The incentivized testnet has completed - there are no more challenges
+to earn rewards from.
+
+Thank you for your interest; stay tuned for more opportunities to participate
+in the future!
 {% endhint %}
 
 While validators and other network components are not necessarily targeted in this testnet, they are of course essential to maintaining a healthy DeCloud. 

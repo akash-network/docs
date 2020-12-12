@@ -1,3 +1,11 @@
+{% hint style="warning" %}
+The incentivized testnet has completed - there are no more challenges
+to earn rewards from.
+
+Thank you for your interest; stay tuned for more opportunities to participate
+in the future!
+{% endhint %}
+
 As a generic cloud platform, Akash DeCloud has the potential to be used in a wide variety of use cases. This open-ended challenge is meant to explore what kinds of applications can be deployed on DeCloud, and how.
 
 You’ll support the Akash DeCloud community by finding unique applications to deploy and sharing your deployment configuration via a pull request on [Awesome Akash](https://github.com/ovrclk/awesome-akash).

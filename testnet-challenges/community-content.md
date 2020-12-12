@@ -1,3 +1,11 @@
+{% hint style="warning" %}
+The incentivized testnet has completed - there are no more challenges
+to earn rewards from.
+
+Thank you for your interest; stay tuned for more opportunities to participate
+in the future!
+{% endhint %}
+
 Share your experience, thoughts, and know-how on Akash DeCloud to earn rewards from this testnet.  This challenge supports community members that independently publish articles and guides related to the Akash Network.  There are two categories of rewards available - an open-ended category where "anything goes" (we love to see content related to Akash), and also a category calling on our community to think hard about leveraging Akash's DeCloud as the infrastructure behind DeFi applications.
 
 Here are some Anything Goes ideas for you to explore:

@@ -1,5 +1,13 @@
 # Guided Deployments
 
+{% hint style="warning" %}
+The incentivized testnet has completed - there are no more challenges
+to earn rewards from.
+
+Thank you for your interest; stay tuned for more opportunities to participate
+in the future!
+{% endhint %}
+
 In Week 1, challenges will focus on deploying stand-alone applications, from website deployments to single-node blockchain networks.
 
 **Qualification Criteria**:
@@ -23,7 +31,11 @@ Each of these challenges will ask you to follow the [deployment guide](/guides/d
 ## Challenge 1 (Week 1)
 
 {% hint style="warning" %}
-The submission deadline for this challenge has passed.
+The incentivized testnet has completed - there are no more challenges
+to earn rewards from.
+
+Thank you for your interest; stay tuned for more opportunities to participate
+in the future!
 {% endhint %}
 
 **Challenge**: Deploy a web app on Akash and attach a custom domain.
@@ -78,7 +90,11 @@ See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/d
 ## Challenge 2 (Week 1)
 
 {% hint style="warning" %}
-The submission deadline for this challenge has passed.
+The incentivized testnet has completed - there are no more challenges
+to earn rewards from.
+
+Thank you for your interest; stay tuned for more opportunities to participate
+in the future!
 {% endhint %}
 
 **Challenge**: Deploy a databased-backed web app on Akash and attach a custom domain.
@@ -134,7 +150,11 @@ See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/d
 ## Challenge 3 (Week 1)
 
 {% hint style="warning" %}
-The submission deadline for this challenge has passed.
+The incentivized testnet has completed - there are no more challenges
+to earn rewards from.
+
+Thank you for your interest; stay tuned for more opportunities to participate
+in the future!
 {% endhint %}
 
 **Challenge**: Deploy a single node network on Akash.  Single nodes can be useful for development and testing; this
@@ -214,7 +234,11 @@ See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/d
 ## Challenge 1 (Week 2)
 
 {% hint style="warning" %}
-The submission deadline for this challenge has passed.
+The incentivized testnet has completed - there are no more challenges
+to earn rewards from.
+
+Thank you for your interest; stay tuned for more opportunities to participate
+in the future!
 {% endhint %}
 
 **Challenge**: Deploy an API node on a live network.  API nodes are useful for creating wallets and explorers and are
@@ -310,6 +334,14 @@ akash query market lease get \
 See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
 
 ## Challenge 2 (Week 2)
+
+{% hint style="warning" %}
+The incentivized testnet has completed - there are no more challenges
+to earn rewards from.
+
+Thank you for your interest; stay tuned for more opportunities to participate
+in the future!
+{% endhint %}
 
 **Challenge**: Deploy an RPC node on a live network and send a transaction to it.
 
@@ -494,6 +526,14 @@ akash query market lease get \
 See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
 
 ## Challenge 3 (Week 2)
+
+{% hint style="warning" %}
+The incentivized testnet has completed - there are no more challenges
+to earn rewards from.
+
+Thank you for your interest; stay tuned for more opportunities to participate
+in the future!
+{% endhint %}
 
 **Challenge**:
 
