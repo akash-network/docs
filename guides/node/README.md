@@ -137,8 +137,15 @@ Enable "Fast Sync" with
 fast_sync = true
 ```
 
-The Akash Network uses the `v2` backend of "Fast Sync".  Find the `[fastsync]` section of `~/.akash/config/config.toml` and
-set the correct backend like so:
+Different versions of Akash use diferent versions of the "Fast Sync" backend:
+
+|Akash Version|Fast Sync Version|
+|---|---|
+|`<  0.9.x`|`v0`|
+|`>= 0.9.x`|`v2`|
+
+Find the `[fastsync]` section of `~/.akash/config/config.toml` and
+set the correct backend version like so:
 
 ```toml
 version = "v2"
