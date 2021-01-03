@@ -26,10 +26,10 @@ Submissions for this challenge will be accepted throughout the entire testnet pe
 
 | ID | Reward | Description |
 | --- | --- | --- |
-| 1 | 500 AKT | Publish a guide on deploying an application (not DeFi).
-| 2 | 750 AKT | Publish a blog discussing deployment strategies for deploying secure applications on Akash DeCloud.
-| 3 | 750 AKT | Publish blog on why DeCloud is important for DeFi.
-| 4 | 500 AKT | Publish blog on your experience as a validator on Akash's testnet.
+| 1 | 1500 AKT | Publish a guide on deploying an application (not DeFi).
+| 2 | 1500 AKT | Publish a blog discussing deployment strategies for deploying secure applications on Akash DeCloud.
+| 3 | 500 AKT | Publish blog on why DeCloud is important for DeFi.
+| 4 | 300 AKT | Publish blog on your experience as a validator on Akash's testnet.
 
 ## Submission
 
