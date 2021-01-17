@@ -26,7 +26,7 @@ AKASH_MONIKER="moniker-from-the-guide"
 Then initialize the node and create the necessary config files:
 
 ```bash
-akash init "$AKASH_MONIKER"
+akash init --chain-id "$AKASH_CHAIN_ID" "$AKASH_MONIKER" 
 ```
 
 You can edit this `moniker` later, in the `~/.akash/config/config.toml` file:
