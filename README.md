@@ -21,6 +21,7 @@ For details about what [Akash](https://github.com/ovrclk/akash) can do and what 
 ## Documentation
 
 * [Stack Definition Language](/sdl/README.md)
+* [Akash CLI reference](/cli/akash.md)
 
 ## Testnet Challenges
 
