@@ -80,7 +80,7 @@ akash query market lease get \
   --oseq $OSEQ \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
-  --node $AKASH_NODE -o json \> akashian/phase3/challenge1/$CODE.json
+  --node $AKASH_NODE -o json > akashian/phase3/challenge1/$CODE.json
 ```
 
 See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
@@ -139,7 +139,7 @@ akash query market lease get \
   --oseq $OSEQ \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
-  --node $AKASH_NODE -o json \> akashian/phase3/challenge2/$CODE.json
+  --node $AKASH_NODE -o json > akashian/phase3/challenge2/$CODE.json
 ```
 
 See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
@@ -226,7 +226,7 @@ akash query market lease get \
   --oseq $OSEQ \
   --provider $PROVIDER \
   --owner $ACCOUNT_ADDRESS \
-  --node $AKASH_NODE -o json \> akashian/phase3/challenge3/$CODE.json
+  --node $AKASH_NODE -o json > akashian/phase3/challenge3/$CODE.json
 ```
 
 See https://github.com/ovrclk/ecosystem/tree/master/akashian/phase3/challenge1/dgbfr0rugcxnyuu.json for example.
