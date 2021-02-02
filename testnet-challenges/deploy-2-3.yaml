@@ -1,0 +1,65 @@
+---
+version: "2.0"
+
+services:
+  akash:
+    image: ghcr.io/ovrclk/akash-on-akash:v0.0.4
+    env:
+      - AKASH_MONIKER=
+      - STATE_SYNC=1
+      - SEEDS_URL=https://raw.githubusercontent.com/ovrclk/net/master/definet/seed-nodes.txt
+      - SYNC_URL=https://raw.githubusercontent.com/ovrclk/net/master/definet/rpc-nodes.txt
+      - GENESIS_URL=https://raw.githubusercontent.com/ovrclk/net/master/definet/genesis.json
+      - AKASH_PEX=true
+      - AKASH_SEED_MODE=true
+      - AKASH_PRUNING=custom
+      - AKASH_PRUNING_INTERVAL=10
+      - AKASH_PRUNING_KEEP_EVERY=50
+      - AKASH_PRUNING_KEEP_RECENT=10
+      - AKASH_STATE_SYNC_SNAPSHOT_INTERVAL=50
+      - AKASH_STATE_SYNC_KEEP_RECENT=10
+    expose:
+      - port: 8080
+        as: 80
+        to:
+          - global: true
+      - port: 26657
+        to:
+          - global: true
+      - port: 26656
+        to:
+          - global: true
+      - port: 1317
+        to:
+          - global: true
+      - port: 9090
+        to:
+          - global: true
+
+profiles:
+  compute:
+    akash:
+      resources:
+        cpu:
+          units: 0.5
+        memory:
+          size: 512Mi
+        storage:
+          size: 1Gi
+  placement:
+    westcoast:
+      attributes:
+        organization: ovrclk.com
+      signedBy:
+        anyOf:
+          - "akash1vz375dkt0c60annyp6mkzeejfq0qpyevhseu05"
+      pricing:
+        akash: 
+          denom: uakt
+          amount: 1000
+
+deployment:
+  akash:
+    westcoast:
+      profile: akash
+      count: 1

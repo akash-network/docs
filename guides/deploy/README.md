@@ -83,7 +83,7 @@ Please note the balance indicated is is denominated in uAKT (AKT * 10^-6), in th
 
 ## Create The Deployment Configuration 
 
-Create a deployment configuration [deploy.yml](deploy.yml) to deploy the `quay.io/ovrclk/lunie-light` container using [SDL](/sdl/README.md) :
+Create a deployment configuration [deploy.yml](deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](/sdl/README.md):
 
 ```sh
 cat > deploy.yml <<EOF
@@ -246,7 +246,7 @@ For convenience and clarity for future referencing, we can extract the below set
 | Attribute | Value |
 | --- | --- |
 | `PROVIDER` | `akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl` |
-| `DSEC` | `19553` |
+| `DSEQ` | `19553` |
 | `OSEQ` | `1` |
 | `GSEQ` | `1` |
 
@@ -297,6 +297,24 @@ You should see a response similar to:
 
 You can access the application by visiting the hostnames mapped to your deployment. In above example, its http://6veev7chcfmnclgqklegcc.provider4.akashdev.net
 
+## View your logs
+
+You can view your application logs to debug issues or watch progress like so:
+
+```sh
+akash \
+  --home "$AKASH_HOME" \
+  --node "$AKASH_NODE" \
+  provider service-logs \
+  --service $SERVICE_NAME \
+  --owner "$ACCOUNT_ADDRESS" \
+  --dseq "$DSEQ" \
+  --gseq 1 \
+  --oseq $OSEQ \
+  --provider "$PROVIDER"
+```
+
+where `$SERVICE_NAME` is the name of a service defined in your [SDL](/sdl).
 
 ## Close your deployment
 

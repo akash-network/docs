@@ -1,3 +1,11 @@
+{% hint style="warning" %}
+The incentivized testnet has completed - there are no more challenges
+to earn rewards from.
+
+Thank you for your interest; stay tuned for more opportunities to participate
+in the future!
+{% endhint %}
+
 Share your experience, thoughts, and know-how on Akash DeCloud to earn rewards from this testnet.  This challenge supports community members that independently publish articles and guides related to the Akash Network.  There are two categories of rewards available - an open-ended category where "anything goes" (we love to see content related to Akash), and also a category calling on our community to think hard about leveraging Akash's DeCloud as the infrastructure behind DeFi applications.
 
 Here are some Anything Goes ideas for you to explore:
@@ -18,11 +26,11 @@ Submissions for this challenge will be accepted throughout the entire testnet pe
 
 | ID | Reward | Description |
 | --- | --- | --- |
-| 1 | 500 AKT | Publish a guide on deploying an application (not DeFi).
-| 2 | 750 AKT | Publish a blog discussing deployment strategies for deploying secure applications on Akash DeCloud.
-| 3 | 750 AKT | Publish blog on why DeCloud is important for DeFi.
-| 4 | 500 AKT | Publish blog on your experience as a validator on Akash's testnet.
+| 1 | 1500 AKT | Publish a guide on deploying an application (not DeFi).
+| 2 | 1500 AKT | Publish a blog discussing deployment strategies for deploying secure applications on Akash DeCloud.
+| 3 | 500 AKT | Publish blog on why DeCloud is important for DeFi.
+| 4 | 300 AKT | Publish blog on your experience as a validator on Akash's testnet.
 
 ## Submission
 
-Please submit this post using this [form](https://forms.gle/AaS6UAnATeUatjD57).
+Please submit this post using this [form](https://docs.google.com/forms/d/e/1FAIpQLScX4VVheTeo-WmzHe2IHw1dXfRX2tGv-MHzs75-Hp-7yKuCjA/viewform).

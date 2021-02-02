@@ -26,7 +26,7 @@ AKASH_MONIKER="moniker-from-the-guide"
 Then initialize the node and create the necessary config files:
 
 ```bash
-akash init "$AKASH_MONIKER"
+akash init --chain-id "$AKASH_CHAIN_ID" "$AKASH_MONIKER" 
 ```
 
 You can edit this `moniker` later, in the `~/.akash/config/config.toml` file:
@@ -137,8 +137,15 @@ Enable "Fast Sync" with
 fast_sync = true
 ```
 
-The Akash Network uses the `v2` backend of "Fast Sync".  Find the `[fastsync]` section of `~/.akash/config/config.toml` and
-set the correct backend like so:
+Different versions of Akash use diferent versions of the "Fast Sync" backend:
+
+|Akash Version|Fast Sync Version|
+|---|---|
+|`<  0.9.x`|`v0`|
+|`>= 0.9.x`|`v2`|
+
+Find the `[fastsync]` section of `~/.akash/config/config.toml` and
+set the correct backend version like so:
 
 ```toml
 version = "v2"

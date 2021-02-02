@@ -1,0 +1,39 @@
+---
+version: "2.0"
+
+services:
+  akash:
+    image: ghcr.io/ovrclk/akash-on-akash-single:a
+    expose:
+      - port: 26657
+        as: 80
+        to:
+          - global: true
+
+profiles:
+  compute:
+    akash:
+      resources:
+        cpu:
+          units: 0.15
+        memory:
+          size: 64Mi
+        storage:
+          size: 256Mi
+  placement:
+    westcoast:
+      attributes:
+        organization: ovrclk.com
+      signedBy:
+        anyOf:
+          - "akash1vz375dkt0c60annyp6mkzeejfq0qpyevhseu05"
+      pricing:
+        akash: 
+          denom: uakt
+          amount: 9000
+
+deployment:
+  akash:
+    westcoast:
+      profile: akash
+      count: 1

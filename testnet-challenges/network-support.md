@@ -1,3 +1,11 @@
+{% hint style="warning" %}
+The incentivized testnet has completed - there are no more challenges
+to earn rewards from.
+
+Thank you for your interest; stay tuned for more opportunities to participate
+in the future!
+{% endhint %}
+
 While validators and other network components are not necessarily targeted in this testnet, they are of course essential to maintaining a healthy DeCloud. 
 
 Leverage this testnet to practice your operations, or try new ones.
@@ -24,7 +32,7 @@ Although we do not limit anyone from participating, to claim AKT rewards:
 
 1) Sign up to Akash [Testnet](https://app.akash.network).
 
-2) Follow the [node guides](guides/node/README.md) to install and configure your node to run on the current **edgenet** network.
+2) Follow the [node guides](/guides/node/README.md) to install and configure your node to run on the current **edgenet** network.
 For full points, ensure that the following are running and publicly-accessible:
 
 * [API Node](/guides/node/api-service.md)
