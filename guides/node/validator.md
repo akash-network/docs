@@ -6,7 +6,7 @@ Before setting up your validator node, make sure you've already gone through the
 
 ## What is a Validator?
 
-Validators are responsible for committing new blocks to the blockchain through voting. A validator's stake is slashed if they become unavailable or sign blocks at the same height. Please read about [Sentry Node Architecture](https://hub.cosmos.network/master/validators/validator-faq.html#how-can-validators-protect-themselves-from-denial-of-service-attacks) to learn how to protect your node from DDOS attacks and to ensure high-availability on mainnet.
+Validators are responsible for committing new blocks to the blockchain through voting. A validator's stake is slashed if they become unavailable or sign blocks at the same height. Please read about [Sentry Node Architecture](https://forum.cosmos.network/t/sentry-node-architecture-overview/454) to learn how to protect your node from DDOS attacks and to ensure high-availability on mainnet.
 
 ## Create Your Validator
 
