@@ -23,7 +23,7 @@ Given that there are live providers on the network, the lifecycle of a typical a
 1. The tenant describes their desired deployment in \[SDL\], called a [deployment](../marketplace.md#deployment).
 2. The tenant submits that definition to the blockchain.
 3. Their submission generates an [order](../marketplace.md#order) on the \[marketplace\].
-4. Providers that would like to fulfill that [order](../marketplace.md#bid) on it.
+4. Providers that would like to fulfill that [order](../marketplace.md#bid) bid on it.
 5. After some period of time, a winning [bid](../marketplace.md#bid) for the [order](../marketplace.md#order) is chosen, and a [lease](../marketplace.md#lease) is created.
 6. Once a [lease](../marketplace.md#lease) has been created, the tenant submits a [manifest](../provider-services.md#manifest) to the provider.
 7. The provider executes workloads as instructed by the [manifest](../provider-services.md#manifest).
