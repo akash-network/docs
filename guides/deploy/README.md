@@ -37,10 +37,10 @@ Verify you have correct `$AKASH_NODE`, that you have populated while [configurin
 ```sh
 echo $AKASH_NODE $AKASH_CHAIN_ID
 
-tcp://rpc-edgenet.akashdev.net:2665 akash-edgenet-1
+http://147.75.195.69:26657 edgenet-4
 ```
 
-Your values may differ depending on the network you're connecting to, `tcp://rpc-edgenet.akashdev.net:2665` and `akash-edgenet-1` are details for [edgenet](https://github.com/ovrclk/net/tree/master/edgenet).
+Your values may differ depending on the network you're connecting to, `http://147.75.195.69:26657` and `edgenet-4` are details for [edgenet](https://github.com/ovrclk/net/tree/master/edgenet).
 
 Verify you have the key set up and your account has sufficient balances, see the [funding guide](/guides/wallet/funding.md) otherwise:
 
@@ -149,7 +149,7 @@ Please note if you are running on the testnet, you are limited in the amount of 
 To deploy on Akash, run:
 
 ```sh
-akash tx deployment create deploy.yml --from $KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID -y
+akash tx deployment create deploy.yml --from $KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --keyring-backend $KEYRING_BACKEND -y --fees 5000uakt
 ```
     
 You should see a response similar to:
