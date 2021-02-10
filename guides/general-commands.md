@@ -13,7 +13,7 @@ akash tx bank send [from_key_or_address] [to_address] [amount] [flags]
 **Example**
 
 ```text
-$ akash tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000uakt --chain-id devnet -y
+$ akash tx bank send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000uakt --chain-id devnet -y
 
 {"height":"0","txhash":"116ED246AFF9F9B58036AECAA5EFE81AA7A788CC625CC2A4ADAFC68378834413","raw_log":"[]"}
 ```
