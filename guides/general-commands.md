@@ -669,6 +669,12 @@ curl -X POST -H "Content-Type: application/json" -d'{"tx_bytes":"{{txBytes}}","m
 
 Here, `tx_bytes` value will be encoded tx of signed transaction.
 
+**Example**
+
+```text
+$ $ curl -X POST -H "Content-Type: application/json" -d'{"tx_bytes":"CpABCo0BChwvY29zbW9zLmJhbmsudjFiZXRhMS5Nc2dTZW5kEm0KLGFrYXNoMTZxNnMwdGF1YzNja3M1dXM3ZjU3d2RzOGM4bHFnNGpxczBxdGFmEixha2FzaDF6c2d6ZWU2dnZ4OTQyYzRjNjl2bDg1OXc5YXpuNzdqOHVoZHV1ZxoPCgVzdGFrZRIGMTAwMDAwElgKUApGCh8vY29zbW9zLmNyeXB0by5zZWNwMjU2azEuUHViS2V5EiMKIQPoQpMlneHFhtCg/hoAsRxDlM5ZdXJeVb6BoA71SMBdxBIECgIIfxgCEgQQwJoMGkB+VlYeHU81v4qxIOGpIKpmq7fzVB83Lvy5xvxpm37F6yZ9+XA56KzkMdHhpURmaFYF2567D0nE5e57UKfKF6Az","mode":"BROADCAST_MODE_SYNC"}' localhost:1317/cosmos/tx/v1beta1/txs
+```
+
 ### Using CosmJS (JavaScript & TypeScript)
 
 CosmJS aims to build client libraries in JavaScript that can be embedded in web applications. Please see https://cosmos.github.io/cosmjs (opens new window) for more information. As of January 2021, CosmJS documentation is still work in progress.
