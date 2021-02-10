@@ -7,7 +7,7 @@ Sign and send tokens to other account.
 **Usage**
 
 ```text
-akash tx send [from_key_or_address] [to_address] [amount] [flags]
+akash tx bank send [from_key_or_address] [to_address] [amount] [flags]
 ```
 
 **Example**
