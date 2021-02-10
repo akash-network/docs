@@ -26,7 +26,7 @@ Send funds from one account to another. Note, the'--from' flag is
 ignored as it is implied from [from_key_or_address].
 
 Usage:
-  akash tx send [from_key_or_address] [to_address] [amount] [flags]
+  akash tx bank send [from_key_or_address] [to_address] [amount] [flags]
 
 Flags:
   -a, --account-number uint      The account number of the signing account (offline mode only)
