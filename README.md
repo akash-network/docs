@@ -17,6 +17,7 @@ For details about what [Akash](https://github.com/ovrclk/akash) can do and what 
   * [API Service](/guides/node/api-service.md)
   * [Run a Validator](/guides/node/validator.md)
 * [Become a Provider](/guides/provider/README.md)
+* [Common Commands](/guides/general-commands.md)
 
 ## Documentation
 
