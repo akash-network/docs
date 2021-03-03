@@ -6,7 +6,7 @@ you are deploying applications then the leases for that deployment are paid out 
 ## Before We Begin
 
 You'll need to know information about the network you're connecting your node to.
-See [Choosing a Network](/guides/versions.md) for how to obtain any network-related information.
+See [Choosing a Network](/guides/version.md) for how to obtain any network-related information.
 
 Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) for instructions.
 
