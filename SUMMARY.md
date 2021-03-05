@@ -2,10 +2,12 @@
 
 * [Introduction](README.md)
 * [Features and Design](/design/README.md)
-
-{% comment %}
-  * [Features](/design/features.md)
-{% endcomment %}
+  * [Marketplace](/dessign/marketplace.md)
+  * [Escrow](/design/escrow.md)
+  * [mTLS](/design/mtls.md)
+  {% comment %}
+  * [Provider Services](/design/provider-services.md)
+  {% endcomment %}
 
 ## Guides
 

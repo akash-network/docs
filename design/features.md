@@ -18,10 +18,6 @@ By default, workloads in a deployment group are isolated - nothing else is allow
 
 Audited attributes allow users deploying applications to be more selective about which providers can run their apps. Anyone on the Akash Network can assign these attributes to Providers via an on-chain transaction.
 
-## Logging
-
-See logging
-
 ## Escrow Accounts
 
 Escrow accounts are a mechanism that allow for time-based payments from one bank account to another without block-by-block micropayments. They also support holding funds for an account until an arbitrary event occurrs.
