@@ -15,7 +15,7 @@
     
 2. Set halt-time to ensure your validator node stops at the right time and date: March 08 2021 at 1500 UTC.
     ```
-   $ perl -i -pe 's/^halt-time =.*/halt-time = 1615195800/' ~/.akashd/config/app.toml
+   $ perl -i -pe 's/^halt-time =.*/halt-time = 1615215600/' ~/.akashd/config/app.toml
     ```
     or you can manually update `app.toml` using `nano` or `vm`
     
@@ -81,7 +81,7 @@ build_deps:
 
 8.  Migrate exported state from the current v0.8.3 version to the new v0.10.1 version:
 ```
-$ akash migrate v0.40 old_genesis_updated.json --chain-id=akashnet-2 > 040_migrated_genesis.json
+$ akash migrate v0.40 old_genesis_updated.json --chain-id=akashnet-2 --genesis-time 2021-03-08T15:00:00Z > 040_migrated_genesis.json
 ```
 9. Migrate command adds a warning to the exported file regarding `max_bytes` in the `evidence` module which we will modify in the next step. Remove the warning:
 ```
