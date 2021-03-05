@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Features and Design](/design/README.md)
-  * [Marketplace](/dessign/marketplace.md)
+  * [Marketplace](/design/marketplace.md)
   * [Escrow](/design/escrow.md)
   * [mTLS](/design/mtls.md)
   {% comment %}
