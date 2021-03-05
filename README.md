@@ -18,6 +18,7 @@ For details about what [Akash](https://github.com/ovrclk/akash) can do and what 
   * [Run a Validator](/guides/node/validator.md)
 * [Become a Provider](/guides/provider/README.md)
 * [Common Commands](/guides/general-commands.md)
+* [Upgrade to Akashnet-2](/guides/upgrade-mainnet.md)
 
 ## Documentation
 
