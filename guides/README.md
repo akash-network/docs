@@ -30,3 +30,4 @@ will mean that you have to re-define the variable.
   * [API Service](/guides/node/api-service.md)
   * [Run a Validator](/guides/node/validator.md)
 * [Become a Provider](/guides/provider.md)
+* [Upgrade to Akashnet-2](/guides/upgrade-mainnet.md)
