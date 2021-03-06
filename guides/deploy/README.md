@@ -149,7 +149,7 @@ Please note if you are running on the testnet, you are limited in the amount of 
 To create a deployment, a certificate must first be created. To do this, run:
 
 ```
-akash tx cert create client --chain-id $CHAIN_ID --keyring-backend=$KEYRING_BACKEND --from $KEY_NAME --node=$AKASH_NODE
+akash tx cert create client --chain-id $CHAIN_ID --keyring-backend=$KEYRING_BACKEND --from $KEY_NAME --node=$AKASH_NODE --fees 5000uakt
 ```
 
 You should see a response similar to:
