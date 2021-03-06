@@ -67,7 +67,7 @@ $ akash version --long
 name: akash
 server_name: akash
 version: 0.10.1
-commit: af43b89e47e50bfeedcc35c7ee77229bd258ed0d
+commit: c39715e1f9c13ec85eefbfb295031e995db45591
 build_tags: netgo,ledger,mainnet
 go: go version go1.15.5 linux/amd64
 build_deps:
