@@ -139,6 +139,7 @@ version = "v2"
    **blocks, instead downloading and applying a snapshot of the application state at a given height.**
 
 ```toml
+minimum-gas-prices = "0.025uakt"
 
 [state-sync]
 
