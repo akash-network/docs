@@ -85,13 +85,6 @@ MAINNET=true make install
    build_tags: netgo,ledger,mainnet
    go: go version go1.15.5 linux/amd64
    build_deps:
-
-2. github.com/99designs/keyring@v1.1.6
-3. github.com/ChainSafe/go-schnorrkel@v0.0.0-20200405005733-88cbf1b4c40d
-4. github.com/Workiva/go-datastructures@v1.0.52
-
-   ....
-
 ```
 
 **Note**: `akashd` and `akashctl` are merged into a single binary, `akash` now.
@@ -151,7 +144,7 @@ version = "v2"
 
 ## snapshot-interval specifies the block interval at which local state sync snapshots are
 
-## taken \(0 to disable\). Must be a multiple of pruning-keep-every.
+## taken (0 to disable). Must be a multiple of pruning-keep-every.
 
 snapshot-interval = 500
 
