@@ -17,13 +17,13 @@ For details about what [Akash](https://github.com/ovrclk/akash) can do and what 
   * [API Service](guides/node/api-service.md)
   * [Run a Validator](guides/node/validator.md)
 * [Become a Provider](guides/provider.md)
-* [Common Commands](https://github.com/ovrclk/docs/tree/feefb1f06d61d5ee6430740b696a7edfac8a3df6/guides/general-commands.md)
-* [Upgrade to Akashnet-2](https://github.com/ovrclk/docs/tree/feefb1f06d61d5ee6430740b696a7edfac8a3df6/guides/upgrade-mainnet.md)
+* [Common Commands](guides/general-commands.md)
+* [Upgrade to Akashnet-2](guides/upgrade-mainnet.md)
 
 ## Documentation
 
 * [Stack Definition Language](documentation/sdl.md)
-* [Akash CLI reference](https://github.com/ovrclk/docs/tree/feefb1f06d61d5ee6430740b696a7edfac8a3df6/cli/akash.md)
+* [Akash CLI reference](cli/akash.md)
 
 ## Testnet Challenges
 
