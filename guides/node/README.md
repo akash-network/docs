@@ -4,29 +4,28 @@ In this guide, we'll set up an Akash node and connect it to a network.
 
 ## Before We Begin
 
-You'll also need to know information about the network you're connecting your node to. See [Choosing a Network](/guides/versions.md) for how to obtain any network-related information.
+You'll also need to know information about the network you're connecting your node to. See [Choosing a Network](https://github.com/ovrclk/docs/tree/5de597cc071f0dec49919e331bc5589f97af6854/guides/versions.md) for how to obtain any network-related information.
 
-Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) for instructions.
+Make sure to have Akash client installed on your workstation, check [install guide](../install.md) for instructions.
 
 ## Setting Up a New Node
 
 These instructions are for setting up a brand new full node from scratch.
 
-First, choose a "moniker" - a readable name for your validator.  In this guide, we'll use
-`moniker-from-the-guide`, but you should replace that with your own for the following instructions.
+First, choose a "moniker" - a readable name for your validator. In this guide, we'll use `moniker-from-the-guide`, but you should replace that with your own for the following instructions.
 
 {% hint style="warning" %}
 Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable.
 {% endhint %}
 
-```sh
+```bash
 AKASH_MONIKER="moniker-from-the-guide"
 ```
 
 Then initialize the node and create the necessary config files:
 
 ```bash
-akash init --chain-id "$AKASH_CHAIN_ID" "$AKASH_MONIKER" 
+akash init --chain-id "$AKASH_CHAIN_ID" "$AKASH_MONIKER"
 ```
 
 You can edit this `moniker` later, in the `~/.akash/config/config.toml` file:
@@ -80,7 +79,7 @@ Note we use the `$AKASH_NET` variable - see the [net repo](https://github.com/ov
 To verify the correctness of the configuration run:
 
 {% hint style="warning" %}
-The following command is currently not working on `edgenet`.  **This error can be ignored on `edgenet`**.
+The following command is currently not working on `edgenet`. **This error can be ignored on `edgenet`**.
 
 We are looking into the problem, but it won't affect running a node.
 {% endhint %}
@@ -89,10 +88,9 @@ We are looking into the problem, but it won't affect running a node.
 akash validate-genesis
 ```
 
-
 ### Add Seed Nodes
 
-Your node needs to know how to find peers. You'll need to add healthy seed nodes or persistent peers to `$HOME/.akash/config/config.toml`. As with installing [`genesis.json`](#copy-the-genesis-file), consult the [net repo](https://github.com/ovrclk/net/) for how to obtain seeds to connect to.
+Your node needs to know how to find peers. You'll need to add healthy seed nodes or persistent peers to `$HOME/.akash/config/config.toml`. As with installing [`genesis.json`](./#copy-the-genesis-file), consult the [net repo](https://github.com/ovrclk/net/) for how to obtain seeds to connect to.
 
 For more information on the how and why of seeds and peers, you can [read this](https://docs.tendermint.com/master/spec/p2p/peer.html) great documentation from the Tendermint maintainers.
 
@@ -116,11 +114,10 @@ The transaction `fees` are the product of `gas` and `gasPrice`. As a user, you h
 
 There are three strategies for pruning state, please be aware that this is only for state and not for block storage:
 
-
 1. `default`: the last 100 states are kept in addition to every 500th state; pruning at 10 block intervals
-1. `nothing`: all historic states will be saved, nothing will be deleted (i.e. archiving node)
-1. `everything`: all saved states will be deleted, storing only the current state; pruning at 10 block intervals
-1. `custom`: allow pruning options to be manually specified through `pruning-keep-recent`, `pruning-keep-every`, and `pruning-interval`
+2. `nothing`: all historic states will be saved, nothing will be deleted \(i.e. archiving node\)
+3. `everything`: all saved states will be deleted, storing only the current state; pruning at 10 block intervals
+4. `custom`: allow pruning options to be manually specified through `pruning-keep-recent`, `pruning-keep-every`, and `pruning-interval`
 
 You can configure your node's pruning strategy at start time with the `--pruning` or by configuring your `app.toml` file.
 
@@ -128,26 +125,24 @@ You can configure your node's pruning strategy at start time with the `--pruning
 
 ## Fast Sync
 
-"Fast Sync" allows nodes that are far behind the current height to catchup quickly by downloading blocks in parallel
-and verifying their commits.  This feature is configured in `~/.akash/config/config.toml`.
+"Fast Sync" allows nodes that are far behind the current height to catchup quickly by downloading blocks in parallel and verifying their commits. This feature is configured in `~/.akash/config/config.toml`.
 
 Enable "Fast Sync" with
 
-```toml
+```text
 fast_sync = true
 ```
 
 Different versions of Akash use diferent versions of the "Fast Sync" backend:
 
-|Akash Version|Fast Sync Version|
-|---|---|
-|`<  0.9.x`|`v0`|
-|`>= 0.9.x`|`v2`|
+| Akash Version | Fast Sync Version |
+| :--- | :--- |
+| `<  0.9.x` | `v0` |
+| `>= 0.9.x` | `v2` |
 
-Find the `[fastsync]` section of `~/.akash/config/config.toml` and
-set the correct backend version like so:
+Find the `[fastsync]` section of `~/.akash/config/config.toml` and set the correct backend version like so:
 
-```toml
+```text
 version = "v2"
 ```
 
@@ -159,10 +154,11 @@ Start the full node with this command:
 akash start
 ```
 
-If you would like to run your node via `systemd` please see [this guide](/guides/node/systemd.md).
+If you would like to run your node via `systemd` please see [this guide](https://github.com/ovrclk/docs/tree/5de597cc071f0dec49919e331bc5589f97af6854/guides/node/systemd.md).
 
 You can use `akash` to check that everything is running smoothly:
 
 ```bash
 akash status
 ```
+

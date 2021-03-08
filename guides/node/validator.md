@@ -1,6 +1,6 @@
 # Run a Validator
 
-Before setting up your validator node, make sure you've already gone through the [Full Node Setup](./README.md) guide.
+Before setting up your validator node, make sure you've already gone through the [Full Node Setup](./) guide.
 
 > NOTE: it is not required to create a validator on Akash testnets unless specified in a challenge or otherwise. The akash team runs a centralized validator set to enable for easy and consistent testnet operations for developers trying out the platform for the first time.
 
@@ -134,5 +134,5 @@ You may notice that your voting power is less than it used to be. That's because
 
 ### Problem \#2: My `akash` crashes because of `too many open files`
 
-The default number of files Linux can open \(per-process\) is `1024`. `akash` is known to open more than `1024` files. This causes the process to crash. A quick fix is to run `ulimit -n 4096` \(increase the number of open files allowed\) and then restart the process with `akash start`. If you are using `systemd` or another process manager to launch `akash` this may require some configuration at that level. See the [`systemd` configuration doc](/guides/node/systemd.md) for details on how to configure `systemd` to aleviate this issue.
+The default number of files Linux can open \(per-process\) is `1024`. `akash` is known to open more than `1024` files. This causes the process to crash. A quick fix is to run `ulimit -n 4096` \(increase the number of open files allowed\) and then restart the process with `akash start`. If you are using `systemd` or another process manager to launch `akash` this may require some configuration at that level. See the [`systemd` configuration doc](https://github.com/ovrclk/docs/tree/1c9232aaec2197efbf4532e8883a247566cf9e28/guides/node/systemd.md) for details on how to configure `systemd` to aleviate this issue.
 

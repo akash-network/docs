@@ -10,9 +10,9 @@ There are a number of ways to install it, depending on your operating system.
 
 ## Variables Required
 
-|Name|Description|
-|---|---|
-|`AKASH_VERSION`|Akash version to install for your network.  See [here](/guides/version.md).|
+| Name | Description |
+| :--- | :--- |
+| `AKASH_VERSION` | Akash version to install for your network.  See [here](version.md). |
 
 {% tabs %}
 {% tab title="MacOS" %}

@@ -505,21 +505,22 @@ Enter passphrase to decrypt your key:
 Generating a transaction can simply be done by appending the --generate-only flag on any tx command
 
 Example:
-```
+
+```text
 akash tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000uakt --chain-id devnet --generate-only
 ```
 
 This will output the unsigned transaction as JSON in the console. We can also save the unsigned transaction to a file by appending `> unsigned_tx.json` to the above command.
- 
+
 ## Signing a Transaction
 
 Signing a transaction using the CLI requires the unsigned transaction to be saved in a file.
 
-``` text
+```text
 $ akash tx sign unsigned_tx.json --chain-id devnet --from alice
 ```
 
-This command will decode the unsigned transaction and sign it with SIGN_MODE_DIRECT with alice's key, which we already set up in the keyring. The signed transaction will be output as JSON to the console, and we can save it to a file by appending `> signed_tx.json`.
+This command will decode the unsigned transaction and sign it with SIGN\_MODE\_DIRECT with alice's key, which we already set up in the keyring. The signed transaction will be output as JSON to the console, and we can save it to a file by appending `> signed_tx.json`.
 
 **More Info**
 
@@ -553,19 +554,18 @@ Flags:
       --signature-only           Print only the signatures
       --timeout-height uint      Set a block timeout height to prevent the tx from being committed past a certain height
   -y, --yes                      Skip tx broadcasting prompt confirmation
-
 ```
 
 Some useful flags to consider in the tx sign command:
 
-  * --sign-mode: you may use amino-json to sign the transaction using SIGN_MODE_LEGACY_AMINO_JSON,
-  * --offline: sign in offline mode. This means that the tx sign command doesn't connect to the node to retrieve the signer's account number and sequence, both needed for signing. In this case, you must manually supply the --account-number and --sequence flags. This is useful for offline signing, i.e. signing in a secure environment which doesn't have access to the internet.
+* --sign-mode: you may use amino-json to sign the transaction using SIGN\_MODE\_LEGACY\_AMINO\_JSON,
+* --offline: sign in offline mode. This means that the tx sign command doesn't connect to the node to retrieve the signer's account number and sequence, both needed for signing. In this case, you must manually supply the --account-number and --sequence flags. This is useful for offline signing, i.e. signing in a secure environment which doesn't have access to the internet.
 
 ## Encode a Transaction
 
-Encode transactions created with the --generate-only flag and signed with the sign command. It will read a transaction from <file>, serialize it to the Amino wire protocol, and output it as base64. If you supply a dash (-) argument in place of an input filename, the command reads from standard input.
+Encode transactions created with the --generate-only flag and signed with the sign command. It will read a transaction from , serialize it to the Amino wire protocol, and output it as base64. If you supply a dash \(-\) argument in place of an input filename, the command reads from standard input.
 
-```
+```text
 $ akash tx encode signed-tx.json
 
 CpABCo0BChwvY29zbW9zLmJhbmsudjFiZXRhMS5Nc2dTZW5kEm0KLGFrYXNoMTZxNnMwdGF1YzNja3M1dXM3ZjU3d2RzOGM4bHFnNGpxczBxdGFmEixha2FzaDF6c2d6ZWU2dnZ4OTQyYzRjNjl2bDg1OXc5YXpuNzdqOHVoZHV1ZxoPCgVzdGFrZRIGMTAwMDAwElgKUApGCh8vY29zbW9zLmNyeXB0by5zZWNwMjU2azEuUHViS2V5EiMKIQPoQpMlneHFhtCg/hoAsRxDlM5ZdXJeVb6BoA71SMBdxBIECgIIfxgCEgQQwJoMGkB+VlYeHU81v4qxIOGpIKpmq7fzVB83Lvy5xvxpm37F6yZ9+XA56KzkMdHhpURmaFYF2567D0nE5e57UKfKF6Az
@@ -607,11 +607,11 @@ Global Flags:
       --trace               print out full stack trace on errors
 ```
 
-## Broadcasting a Transaction (CLI)
+## Broadcasting a Transaction \(CLI\)
 
 Broadcasting a transaction using the CLI requires the signed transaction to be saved in a file.
 
-```
+```text
 akash tx broadcast [file_path] [flags]
 ```
 
@@ -619,12 +619,11 @@ You may optionally pass the --broadcast-mode flag to specify which response to r
 
 * block: the CLI waits for the tx to be committed in a block.
 * sync: the CLI waits for a CheckTx execution response only.
-* async: the CLI returns immediately (transaction might fail).
+* async: the CLI returns immediately \(transaction might fail\).
 
 **More info**
 
 ```text
-
 Example:
 
 $ akash tx broadcast ./mysign.json
@@ -659,9 +658,9 @@ Global Flags:
       --trace               print out full stack trace on errors
 ```
 
-## Broadcasting a Transaction (REST)
+## Broadcasting a Transaction \(REST\)
 
-Broadcasting a transaction using the REST endpoint (served by gRPC-gateway) can be done by sending a POST request as follows, where the txBytes are the protobuf-encoded bytes of a signed transaction:
+Broadcasting a transaction using the REST endpoint \(served by gRPC-gateway\) can be done by sending a POST request as follows, where the txBytes are the protobuf-encoded bytes of a signed transaction:
 
 ```text
 curl -X POST -H "Content-Type: application/json" -d'{"tx_bytes":"{{txBytes}}","mode":"BROADCAST_MODE_SYNC"}' localhost:1317/cosmos/tx/v1beta1/txs
@@ -675,8 +674,9 @@ Here, `tx_bytes` value will be encoded tx of signed transaction.
 $ $ curl -X POST -H "Content-Type: application/json" -d'{"tx_bytes":"CpABCo0BChwvY29zbW9zLmJhbmsudjFiZXRhMS5Nc2dTZW5kEm0KLGFrYXNoMTZxNnMwdGF1YzNja3M1dXM3ZjU3d2RzOGM4bHFnNGpxczBxdGFmEixha2FzaDF6c2d6ZWU2dnZ4OTQyYzRjNjl2bDg1OXc5YXpuNzdqOHVoZHV1ZxoPCgVzdGFrZRIGMTAwMDAwElgKUApGCh8vY29zbW9zLmNyeXB0by5zZWNwMjU2azEuUHViS2V5EiMKIQPoQpMlneHFhtCg/hoAsRxDlM5ZdXJeVb6BoA71SMBdxBIECgIIfxgCEgQQwJoMGkB+VlYeHU81v4qxIOGpIKpmq7fzVB83Lvy5xvxpm37F6yZ9+XA56KzkMdHhpURmaFYF2567D0nE5e57UKfKF6Az","mode":"BROADCAST_MODE_SYNC"}' localhost:1317/cosmos/tx/v1beta1/txs
 ```
 
-### Using CosmJS (JavaScript & TypeScript)
+### Using CosmJS \(JavaScript & TypeScript\)
 
-CosmJS aims to build client libraries in JavaScript that can be embedded in web applications. Please see https://cosmos.github.io/cosmjs (opens new window) for more information. As of January 2021, CosmJS documentation is still work in progress.
+CosmJS aims to build client libraries in JavaScript that can be embedded in web applications. Please see [https://cosmos.github.io/cosmjs](https://cosmos.github.io/cosmjs) \(opens new window\) for more information. As of January 2021, CosmJS documentation is still work in progress.
 
 Please go through this [code](https://github.com/chainapsis/keplr-example/blob/5c95ce0c4878f40ccf40931bc54a170af4a46fa2/src/main.js) to sign a transaction using CosmJS javascript library.
+
