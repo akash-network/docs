@@ -84,7 +84,6 @@ MAINNET=true make install
    commit: c39715e1f9c13ec85eefbfb295031e995db45591
    build_tags: netgo,ledger,mainnet
    go: go version go1.15.5 linux/amd64
-   build_deps:
 ```
 
 **Note**: `akashd` and `akashctl` are merged into a single binary, `akash` now.
@@ -135,8 +134,17 @@ version = "v2"
 
 8. Make the following changes in `app.toml`
 
-   **State sync snapshots allow other nodes to rapidly join the network without replaying historical**
-   **blocks, instead downloading and applying a snapshot of the application state at a given height.**
+Configure `minimum-gas-prices` - this is very important for the security of the network.
+
+```toml
+# The minimum gas prices a validator is willing to accept for processing a
+# transaction. A transaction's fees must meet the minimum of any denomination
+# specified in this config (e.g. 0.25token1;0.0001token2).
+minimum-gas-prices = "0.025uakt"
+```
+
+Configure `state-sync`.  State sync snapshots allow other nodes to rapidly join the network without replaying historical
+blocks.
 
 ```toml
 
