@@ -13,7 +13,7 @@ An example deployment configuration can be found [here](deployment.yaml).
 
 ### version
 
-Indicates version of Akash configuration file.  Currently only `"1.5"` is accepted.
+Indicates version of Akash configuration file.  Currently only `"2.0"` is accepted.
 
 ### services
 

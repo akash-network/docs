@@ -20,15 +20,15 @@ Deploying applications onto [Akash](https://github.com/ovrclk/akash) involves tw
 
 Given that there are live providers on the network, the lifecycle of a typical application deployment is as follows:
 
-1. The tenant describes their desired deployment in \[SDL\], called a [deployment](../marketplace.md#deployment).
+1. The tenant describes their desired deployment in \[SDL\], called a [deployment](/design/marketplace.md#deployment).
 2. The tenant submits that definition to the blockchain.
-3. Their submission generates an [order](../marketplace.md#order) on the \[marketplace\].
-4. Providers that would like to fulfill that [order](../marketplace.md#bid) bid on it.
-5. After some period of time, a winning [bid](../marketplace.md#bid) for the [order](../marketplace.md#order) is chosen, and a [lease](../marketplace.md#lease) is created.
-6. Once a [lease](../marketplace.md#lease) has been created, the tenant submits a [manifest](../provider-services.md#manifest) to the provider.
-7. The provider executes workloads as instructed by the [manifest](../provider-services.md#manifest).
+3. Their submission generates an [order](/design/marketplace.md#order) on the marketplace.
+4. Providers that would like to fulfill that order [bid](/design/marketplace.md#bid) on it.
+5. After some period of time, a winning [bid](/design/marketplace.md#bid) for the [order](/design/marketplace.md#order) is chosen, and a [lease](/design/marketplace.md#lease) is created.
+6. Once a [lease](/design/marketplace.md#lease) has been created, the tenant submits a [manifest](/sdl/README.md) to the provider.
+7. The provider executes workloads as instructed by the [manifest](/sdl/README.md).
 8. The workload is running - if it is a web application it can be visited, etc...
-9. The provider or tenant eventually closes the [lease](../marketplace.md#lease), shutting down the workload.
+9. The provider or tenant eventually closes the [lease](/design/marketplace.md#lease), shutting down the workload.
 
 # Features
 
@@ -42,7 +42,7 @@ Tenants define workloads requirements, as well as regional and pricing parameter
 
 ## Networking
 
-Networking - allowing connectivity to and between workloads - can be configured via the [SDL](../documentation/sdl.md) for a deployment.
+Networking - allowing connectivity to and between workloads - can be configured via the [SDL](/sdl/README.md) for a deployment.
 
 By default, workloads in a deployment group are isolated - nothing else is allowed to connect to them. This restriction can be relaxed by enabling
 
