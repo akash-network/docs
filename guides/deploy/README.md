@@ -156,6 +156,14 @@ On the `akashnet-2` network, to ensure tenants have smooth and reliable service 
         - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
 ```
 
+Please note that all of the following can be substituted in the `datacenter` field above and should be chosen based on your needs:
+
+|Datacenter|Location|
+|---|---|
+|`equinix-metal-ams1`| Amsterdam, Netherlands|
+|`equinix-metal-ewr1`| New Jersey, United States|
+|`equinix-metal-sjc1`| California, United States|
+
 
 ## Create the Deployment
 
@@ -235,7 +243,7 @@ I[2021-03-10|16:54:26.299] lease ready                                  leaseID=
 
 ```
 
-In this step, you post your deployment, the Akash marketplace matches you with a provider via auction. To create a deployment use akash deployment. The syntax for the deployment is `akash deploy create <config-path> --from <key-name>`. 
+In this step, you post your deployment, and the Akash marketplace matches you with a provider via auction - the URI in the output is randomly generated. To create a deployment use akash deployment. The syntax for the deployment is `akash deploy create <config-path> --from <key-name>`. 
 
 ## View your Lease
 
