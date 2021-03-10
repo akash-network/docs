@@ -162,7 +162,7 @@ On the `akashnet-2` network, to ensure tenants have smooth and reliable service 
 To create a deployment, a certificate must first be created. To do this, run:
 
 ```
-akash tx cert create client --chain-id $CHAIN_ID --keyring-backend $KEYRING_BACKEND --from $KEY_NAME --node $AKASH_NODE
+akash tx cert create client --chain-id $CHAIN_ID --keyring-backend $KEYRING_BACKEND --from $KEY_NAME --node $AKASH_NODE --fees 5000uakt
 ```
 
 You should see a response similar to:
