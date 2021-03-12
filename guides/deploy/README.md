@@ -26,8 +26,8 @@ We will be using shell variables throughout this guide for convenience and clari
 
 |Name|Description|
 |---|---|
-|`AKASH_NODE`| Akash network configuration base URL. See [here](/guides/version.md).|
-|`AKASH_CHAIN_ID`| Chain ID of the Akash network connecting to. See [here](/guides/version.md).|
+|`AKASH_NODE`| Akash network configuration base URL. See [here](/guides/version.md#RPC-Node).|
+|`AKASH_CHAIN_ID`| Chain ID of the Akash network connecting to. See [here](/guides/version.md#Chain-ID).|
 |`ACCOUNT_ADDRESS`| The address of your account.  See [here](/guides/wallet/README.md#account-address).|
 |`KEY_NAME` | The name of the key you will be deploying from. See [here](/guides/wallet/README.md) if you haven't yet setup a key|
 |`KEYRING_BACKEND`| Keyring backend to use for local keys. See [here](/guides/wallet/README.md)|
@@ -79,7 +79,7 @@ pagination:
   total: "0"
 ```
 
-Please note the balance indicated is is denominated in uAKT (AKT * 10^-6), in the above example, the account has a balance of *93 AKT*. We're now setup to deploy.
+Please note the balance indicated is is denominated in uAKT (AKT x 10^-6), in the above example, the account has a balance of *93 AKT*. We're now setup to deploy.
 
 ## Create The Deployment Configuration 
 
@@ -144,12 +144,33 @@ Please note if you are running on the testnet, you are limited in the amount of 
 
 {% endhint %}
 
+### Mainnet - Audited Attributes
+
+On the `akashnet-2` network, to ensure tenants have smooth and reliable service from their provider, it is recommended to use the following audited attributes in their deployment:
+
+```sh
+      attributes:
+        datacenter: equinix-metal-ams1
+      signedBy:
+       anyOf:
+        - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
+```
+
+Please note that all of the following can be substituted in the `datacenter` field above and should be chosen based on your needs:
+
+|Datacenter|Location|
+|---|---|
+|`equinix-metal-ams1`| Amsterdam, Netherlands|
+|`equinix-metal-ewr1`| New Jersey, United States|
+|`equinix-metal-sjc1`| California, United States|
+
+
 ## Create the Deployment
 
 To create a deployment, a certificate must first be created. To do this, run:
 
 ```
-akash tx cert create client --chain-id $CHAIN_ID --keyring-backend=$KEYRING_BACKEND --from $KEY_NAME --node=$AKASH_NODE
+akash tx cert create client --chain-id $CHAIN_ID --keyring-backend $KEYRING_BACKEND --from $KEY_NAME --node $AKASH_NODE --fees 5000uakt
 ```
 
 You should see a response similar to:
@@ -185,71 +206,46 @@ You should see a response similar to:
 To deploy on Akash, run:
 
 ```sh
-akash tx deployment create deploy.yml --from $KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --keyring-backend $KEYRING_BACKEND -y --fees 5000uakt
+akash deploy create deploy.yml --from $KEY_NAME --chain-id $CHAIN_ID --keyring-backend $KEYRING_BACKEND --node $AKASH_NODE --fees 5000uakt
 ```
     
 You should see a response similar to:
 ```json
+I[2021-03-10|16:53:46.160] tx sent successfully                         hash=780A5FE292F00057BDD0EFB5333096E328BE3899F219EF52C938286FD28FBF43 code=0 codespace= action=create-deployment dseq=27977
+I[2021-03-10|16:53:53.611] deployment created                           addr=akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj dseq=27977
+I[2021-03-10|16:53:53.611] order for deployment created                 addr=akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj dseq=27977 oseq=1
+I[2021-03-10|16:53:59.600] bid for order created                        addr=akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj dseq=27977 oseq=1 price=100uakt
+D[2021-03-10|16:53:59.600] Processing bid                               
+D[2021-03-10|16:53:59.600] All groups have at least one bid             
+I[2021-03-10|16:54:14.600] Done waiting on bids                         qty=1
+I[2021-03-10|16:54:14.601] Winning bid                                  gseq=1 price=100uakt provider=akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz
+I[2021-03-10|16:54:17.735] All expected leases created                  addr=akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj dseq=27977
+I[2021-03-10|16:54:17.735] lease for order created                      addr=akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj dseq=27977 oseq=1 price=100uakt
+I[2021-03-10|16:54:17.735] Waiting on leases to be ready                leaseQuantity=1
+D[2021-03-10|16:54:17.735] Checking status of lease                     lease=akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj/27977/1/1/akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz
+I[2021-03-10|16:54:18.235] sending manifest to provider                 action=send-manifest provider=akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz dseq=27977
+D[2021-03-10|16:54:18.353] Could not get lease status                   lease=akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj/27977/1/1/akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz err="remote server returned 404"
+I[2021-03-10|16:54:26.299] service ready                                lease=akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj/27977/1/1/akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz service=web
+I[2021-03-10|16:54:26.299] lease ready                                  leaseID=akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj/27977/1/1/akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz
 {
-  "height": "19555",
-  "txhash": "FC58F52F49E91808A4751E5A5603C34489B253F59E40F7058E1CC5E70F036CA1",
-  "codespace": "",
-  "code": 0,
-  "data": "0A130A116372656174652D6465706C6F796D656E74",
-  "raw_log": "[{\"events\":[{\"type\":\"akash.v1\",\"attributes\":[{\"key\":\"module\",\"value\":\"deployment\"},{\"key\":\"action\",\"value\":\"deployment-created\"},{\"key\":\"version\",\"value\":\"f2b5e760ca93c53548737d76494db89b08d811f7e9b533aa07fd934bf51d6707\"},{\"key\":\"owner\",\"value\":\"akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx\"},{\"key\":\"dseq\",\"value\":\"19553\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"create-deployment\"}]}]}]",
-  "logs": [
-    {
-      "msg_index": 0,
-      "log": "",
-      "events": [
-        {
-          "type": "akash.v1",
-          "attributes": [
-            {
-              "key": "module",
-              "value": "deployment"
-            },
-            {
-              "key": "action",
-              "value": "deployment-created"
-            },
-            {
-              "key": "version",
-              "value": "f2b5e760ca93c53548737d76494db89b08d811f7e9b533aa07fd934bf51d6707"
-            },
-            {
-              "key": "owner",
-              "value": "akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx"
-            },
-            {
-              "key": "dseq",
-              "value": "19553"
-            }
-          ]
-        },
-        {
-          "type": "message",
-          "attributes": [
-            {
-              "key": "action",
-              "value": "create-deployment"
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "info": "",
-  "gas_wanted": "200000",
-  "gas_used": "53806",
-  "tx": null,
-  "timestamp": ""
+ "name": "web",
+ "available": 1,
+ "total": 1,
+ "uris": [
+  "5tito0kgehbrjefr7ae9ko1pfs.ingress.ams1p0.mainnet.akashian.io"
+ ],
+ "observed_generation": 1,
+ "replicas": 1,
+ "updated_replicas": 1,
+ "ready_replicas": 1,
+ "available_replicas": 1
 }
+
 ```
 
-In this step, you post your deployment, the Akash marketplace matches you with a provider via auction. To create a deployment use akash deployment. The syntax for the deployment is `akash tx deployment create <config-path> --from <key-name>`. 
+In this step, you post your deployment, and the Akash marketplace matches you with a provider via auction - the URI in the output is randomly generated. To create a deployment use akash deployment. The syntax for the deployment is `akash deploy create <config-path> --from <key-name>`. 
 
-## Wait for your Lease
+## View your Lease
 
 You can check the status of your lease by running:
 
@@ -260,52 +256,63 @@ akash query market lease list --owner $ACCOUNT_ADDRESS --node $AKASH_NODE --stat
 You should see a response similar to:
 
 ```
-- lease_id:
-    dseq: "19553"
-    gseq: 1
-    oseq: 1
-    owner: akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx
-    provider: akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl
-  price:
-    amount: "186"
-    denom: uakt
-  state: active
+leases:
+- escrow_payment:
+    account_id:
+      scope: deployment
+      xid: akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj/27977
+    balance:
+      amount: "0"
+      denom: uakt
+    owner: akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz
+    payment_id: 1/1/akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz
+    rate:
+      amount: "100"
+      denom: uakt
+    state: open
+    withdrawn:
+      amount: "0"
+      denom: uakt
+  lease:
+    created_at: "27983"
+    lease_id:
+      dseq: "27977"
+      gseq: 1
+      oseq: 1
+      owner: akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj
+      provider: akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz
+    price:
+      amount: "100"
+      denom: uakt
+    state: active
 pagination:
   next_key: null
   total: "0"
 ```
 
-In the above example, we can see that a lease is created using for *186 uakt* or *0.00000186 AKT* per block to execute the container.
+In the above example, we can see that a lease is created using *100 uakt* or *0.00000100 AKT* per block to execute the container.
 
 For convenience and clarity for future referencing, we can extract the below set of values to shell variables that we will be using to reference the deployment:
 
 | Attribute | Value |
 | --- | --- |
-| `PROVIDER` | `akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl` |
-| `DSEQ` | `19553` |
-| `OSEQ` | `1` |
-| `GSEQ` | `1` |
+| `PROVIDER` | `akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz` |
+| `DSEQ` | `27977` |
 
 Verify we have the right values populated by running:
 
 ```sh
-echo $PROVIDER $DSEQ $OSEQ $GSEQ
+echo $PROVIDER $DSEQ
 
-akash1ds82uk3pzawavlasc2qd88luewzye2qrcwky7t 19553 1 1
+akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz 27977 
 ```
 
-## Upload Manifest
+## View Deployment
 
-Upload the manifest using the values from above step:
-
-```sh
-akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $DSEQ --oseq $OSEQ --gseq $GSEQ --owner $ACCOUNT_ADDRESS --provider $PROVIDER 
-```
-
-Your image is deployed, once you uploaded the manifest. You can retrieve the access details by running the below:
+Once your lease has been created and you have the relevant information above, you can retrieve the access details by running the below:
 
 ```sh
-akash provider lease-status --node $AKASH_NODE --dseq $DSEQ --oseq $OSEQ --gseq $GSEQ --provider $PROVIDER --owner $ACCOUNT_ADDRESS
+akash provider lease-status --log_level=info --dseq $DSEQ --from $KEY_NAME --home ~/.akash --provider $PROVIDER --keyring-backend $KEYRING_BACKEND --node $AKASH_NODE
 ```
 
 You should see a response similar to:
@@ -318,20 +325,20 @@ You should see a response similar to:
       "available": 1,
       "total": 1,
       "uris": [
-        "6veev7chcfmnclgqklegcc.provider4.akashdev.net"
+        "5tito0kgehbrjefr7ae9ko1pfs.ingress.ams1p0.mainnet.akashian.io"
       ],
-      "observed-generation": 0,
-      "replicas": 0,
-      "updated-replicas": 0,
-      "ready-replicas": 0,
-      "available-replicas": 0
+      "observed_generation": 1,
+      "replicas": 1,
+      "updated_replicas": 1,
+      "ready_replicas": 1,
+      "available_replicas": 1
     }
   },
-  "forwarded-ports": {}
+  "forwarded_ports": {}
 }
 ```
 
-You can access the application by visiting the hostnames mapped to your deployment. In above example, its http://6veev7chcfmnclgqklegcc.provider4.akashdev.net
+You can access the application by visiting the hostnames mapped to your deployment. In above example, it's http://5tito0kgehbrjefr7ae9ko1pfs.ingress.ams1p0.mainnet.akashian.io
 
 ## View your logs
 
@@ -359,200 +366,287 @@ When you are done with your application, close the deployment. This will deprovi
 Close deployment using deployment by creating a `deployment-close` transaction:
 
 ```
-akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $DSEQ --owner $ACCOUNT_ADDRESS --from $KEY_NAME -y
+akash tx deployment close --node $AKASH_NODE --chain-id $CHAIN_ID --dseq $DSEQ  --owner $ACCOUNT_ADDRESS --from $KEY_NAME --keyring-backend $KEYRING_BACKEND -y --fees 5000uakt
 ```
 
 You should see a response simlar to below as a confirmation your deployment is closed:
 
 ```json
 {
-  "height": "19913",
-  "txhash": "C75A7043C002AA5C6BC5562A8330461B57D6C718EB9FD8BCF916F8D50A8AB1EA",
-  "codespace": "",
-  "code": 0,
-  "data": "0A120A10636C6F73652D6465706C6F796D656E74",
-  "raw_log": "[{\"events\":[{\"type\":\"akash.v1\",\"attributes\":[{\"key\":\"module\",\"value\":\"deployment\"},{\"key\":\"action\",\"value\":\"deployment-updated\"},{\"key\":\"version\",\"value\":\"f2b5e760ca93c53548737d76494db89b08d811f7e9b533aa07fd934bf51d6707\"},{\"key\":\"owner\",\"value\":\"akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx\"},{\"key\":\"dseq\",\"value\":\"19553\"},{\"key\":\"module\",\"value\":\"deployment\"},{\"key\":\"action\",\"value\":\"deployment-closed\"},{\"key\":\"owner\",\"value\":\"akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx\"},{\"key\":\"dseq\",\"value\":\"19553\"},{\"key\":\"module\",\"value\":\"market\"},{\"key\":\"action\",\"value\":\"order-closed\"},{\"key\":\"owner\",\"value\":\"akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx\"},{\"key\":\"dseq\",\"value\":\"19553\"},{\"key\":\"gseq\",\"value\":\"1\"},{\"key\":\"oseq\",\"value\":\"1\"},{\"key\":\"module\",\"value\":\"market\"},{\"key\":\"action\",\"value\":\"bid-closed\"},{\"key\":\"owner\",\"value\":\"akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx\"},{\"key\":\"dseq\",\"value\":\"19553\"},{\"key\":\"gseq\",\"value\":\"1\"},{\"key\":\"oseq\",\"value\":\"1\"},{\"key\":\"provider\",\"value\":\"akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl\"},{\"key\":\"price-denom\",\"value\":\"uakt\"},{\"key\":\"price-amount\",\"value\":\"186\"},{\"key\":\"module\",\"value\":\"market\"},{\"key\":\"action\",\"value\":\"lease-closed\"},{\"key\":\"owner\",\"value\":\"akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx\"},{\"key\":\"dseq\",\"value\":\"19553\"},{\"key\":\"gseq\",\"value\":\"1\"},{\"key\":\"oseq\",\"value\":\"1\"},{\"key\":\"provider\",\"value\":\"akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl\"},{\"key\":\"price-denom\",\"value\":\"uakt\"},{\"key\":\"price-amount\",\"value\":\"186\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"close-deployment\"}]}]}]",
-  "logs": [
+  "height":"28587",
+  "txhash":"8EB6E5E7891F9D650569BDE94E6DD4B03AB76D368D259CED46D3C91130F44B90",
+  "codespace":"",
+  "code":0,
+  "data":"0A120A10636C6F73652D6465706C6F796D656E74",
+  "raw_log":"[{\"events\":[{\"type\":\"akash.v1\",\"attributes\":[{\"key\":\"module\",\"value\":\"deployment\"},{\"key\":\"action\",\"value\":\"deployment-closed\"},{\"key\":\"owner\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"dseq\",\"value\":\"27977\"},{\"key\":\"module\",\"value\":\"deployment\"},{\"key\":\"action\",\"value\":\"group-closed\"},{\"key\":\"owner\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"dseq\",\"value\":\"27977\"},{\"key\":\"gseq\",\"value\":\"1\"},{\"key\":\"module\",\"value\":\"market\"},{\"key\":\"action\",\"value\":\"order-closed\"},{\"key\":\"owner\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"dseq\",\"value\":\"27977\"},{\"key\":\"gseq\",\"value\":\"1\"},{\"key\":\"oseq\",\"value\":\"1\"},{\"key\":\"module\",\"value\":\"market\"},{\"key\":\"action\",\"value\":\"bid-closed\"},{\"key\":\"owner\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"dseq\",\"value\":\"27977\"},{\"key\":\"gseq\",\"value\":\"1\"},{\"key\":\"oseq\",\"value\":\"1\"},{\"key\":\"provider\",\"value\":\"akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz\"},{\"key\":\"price-denom\",\"value\":\"uakt\"},{\"key\":\"price-amount\",\"value\":\"100\"},{\"key\":\"module\",\"value\":\"market\"},{\"key\":\"action\",\"value\":\"lease-closed\"},{\"key\":\"owner\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"dseq\",\"value\":\"27977\"},{\"key\":\"gseq\",\"value\":\"1\"},{\"key\":\"oseq\",\"value\":\"1\"},{\"key\":\"provider\",\"value\":\"akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz\"},{\"key\":\"price-denom\",\"value\":\"uakt\"},{\"key\":\"price-amount\",\"value\":\"100\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"close-deployment\"},{\"key\":\"sender\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"sender\",\"value\":\"akash14pphss726thpwws3yc458hggufynm9x77l4l2u\"},{\"key\":\"sender\",\"value\":\"akash14pphss726thpwws3yc458hggufynm9x77l4l2u\"},{\"key\":\"sender\",\"value\":\"akash14pphss726thpwws3yc458hggufynm9x77l4l2u\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8\"},{\"key\":\"sender\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"amount\",\"value\":\"5000uakt\"},{\"key\":\"recipient\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"sender\",\"value\":\"akash14pphss726thpwws3yc458hggufynm9x77l4l2u\"},{\"key\":\"amount\",\"value\":\"4939600uakt\"},{\"key\":\"recipient\",\"value\":\"akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz\"},{\"key\":\"sender\",\"value\":\"akash14pphss726thpwws3yc458hggufynm9x77l4l2u\"},{\"key\":\"amount\",\"value\":\"60400uakt\"},{\"key\":\"recipient\",\"value\":\"akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz\"},{\"key\":\"sender\",\"value\":\"akash14pphss726thpwws3yc458hggufynm9x77l4l2u\"},{\"key\":\"amount\",\"value\":\"50000000uakt\"}]}]}]",
+  "logs":[
     {
-      "msg_index": 0,
-      "log": "",
-      "events": [
+      "msg_index":0,
+      "log":"",
+      "events":[
         {
-          "type": "akash.v1",
-          "attributes": [
+          "type":"akash.v1",
+          "attributes":[
             {
-              "key": "module",
-              "value": "deployment"
+              "key":"module",
+              "value":"deployment"
             },
             {
-              "key": "action",
-              "value": "deployment-updated"
+              "key":"action",
+              "value":"deployment-closed"
             },
             {
-              "key": "version",
-              "value": "f2b5e760ca93c53548737d76494db89b08d811f7e9b533aa07fd934bf51d6707"
+              "key":"owner",
+              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
             },
             {
-              "key": "owner",
-              "value": "akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx"
+              "key":"dseq",
+              "value":"27977"
             },
             {
-              "key": "dseq",
-              "value": "19553"
+              "key":"module",
+              "value":"deployment"
             },
             {
-              "key": "module",
-              "value": "deployment"
+              "key":"action",
+              "value":"group-closed"
             },
             {
-              "key": "action",
-              "value": "deployment-closed"
+              "key":"owner",
+              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
             },
             {
-              "key": "owner",
-              "value": "akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx"
+              "key":"dseq",
+              "value":"27977"
             },
             {
-              "key": "dseq",
-              "value": "19553"
+              "key":"gseq",
+              "value":"1"
             },
             {
-              "key": "module",
-              "value": "market"
+              "key":"module",
+              "value":"market"
             },
             {
-              "key": "action",
-              "value": "order-closed"
+              "key":"action",
+              "value":"order-closed"
             },
             {
-              "key": "owner",
-              "value": "akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx"
+              "key":"owner",
+              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
             },
             {
-              "key": "dseq",
-              "value": "19553"
+              "key":"dseq",
+              "value":"27977"
             },
             {
-              "key": "gseq",
-              "value": "1"
+              "key":"gseq",
+              "value":"1"
             },
             {
-              "key": "oseq",
-              "value": "1"
+              "key":"oseq",
+              "value":"1"
             },
             {
-              "key": "module",
-              "value": "market"
+              "key":"module",
+              "value":"market"
             },
             {
-              "key": "action",
-              "value": "bid-closed"
+              "key":"action",
+              "value":"bid-closed"
             },
             {
-              "key": "owner",
-              "value": "akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx"
+              "key":"owner",
+              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
             },
             {
-              "key": "dseq",
-              "value": "19553"
+              "key":"dseq",
+              "value":"27977"
             },
             {
-              "key": "gseq",
-              "value": "1"
+              "key":"gseq",
+              "value":"1"
             },
             {
-              "key": "oseq",
-              "value": "1"
+              "key":"oseq",
+              "value":"1"
             },
             {
-              "key": "provider",
-              "value": "akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl"
+              "key":"provider",
+              "value":"akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz"
             },
             {
-              "key": "price-denom",
-              "value": "uakt"
+              "key":"price-denom",
+              "value":"uakt"
             },
             {
-              "key": "price-amount",
-              "value": "186"
+              "key":"price-amount",
+              "value":"100"
             },
             {
-              "key": "module",
-              "value": "market"
+              "key":"module",
+              "value":"market"
             },
             {
-              "key": "action",
-              "value": "lease-closed"
+              "key":"action",
+              "value":"lease-closed"
             },
             {
-              "key": "owner",
-              "value": "akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx"
+              "key":"owner",
+              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
             },
             {
-              "key": "dseq",
-              "value": "19553"
+              "key":"dseq",
+              "value":"27977"
             },
             {
-              "key": "gseq",
-              "value": "1"
+              "key":"gseq",
+              "value":"1"
             },
             {
-              "key": "oseq",
-              "value": "1"
+              "key":"oseq",
+              "value":"1"
             },
             {
-              "key": "provider",
-              "value": "akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl"
+              "key":"provider",
+              "value":"akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz"
             },
             {
-              "key": "price-denom",
-              "value": "uakt"
+              "key":"price-denom",
+              "value":"uakt"
             },
             {
-              "key": "price-amount",
-              "value": "186"
+              "key":"price-amount",
+              "value":"100"
             }
           ]
         },
         {
-          "type": "message",
-          "attributes": [
+          "type":"message",
+          "attributes":[
             {
-              "key": "action",
-              "value": "close-deployment"
+              "key":"action",
+              "value":"close-deployment"
+            },
+            {
+              "key":"sender",
+              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
+            },
+            {
+              "key":"sender",
+              "value":"akash14pphss726thpwws3yc458hggufynm9x77l4l2u"
+            },
+            {
+              "key":"sender",
+              "value":"akash14pphss726thpwws3yc458hggufynm9x77l4l2u"
+            },
+            {
+              "key":"sender",
+              "value":"akash14pphss726thpwws3yc458hggufynm9x77l4l2u"
+            }
+          ]
+        },
+        {
+          "type":"transfer",
+          "attributes":[
+            {
+              "key":"recipient",
+              "value":"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"
+            },
+            {
+              "key":"sender",
+              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
+            },
+            {
+              "key":"amount",
+              "value":"5000uakt"
+            },
+            {
+              "key":"recipient",
+              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
+            },
+            {
+              "key":"sender",
+              "value":"akash14pphss726thpwws3yc458hggufynm9x77l4l2u"
+            },
+            {
+              "key":"amount",
+              "value":"4939600uakt"
+            },
+            {
+              "key":"recipient",
+              "value":"akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz"
+            },
+            {
+              "key":"sender",
+              "value":"akash14pphss726thpwws3yc458hggufynm9x77l4l2u"
+            },
+            {
+              "key":"amount",
+              "value":"60400uakt"
+            },
+            {
+              "key":"recipient",
+              "value":"akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz"
+            },
+            {
+              "key":"sender",
+              "value":"akash14pphss726thpwws3yc458hggufynm9x77l4l2u"
+            },
+            {
+              "key":"amount",
+              "value":"50000000uakt"
             }
           ]
         }
       ]
     }
   ],
-  "info": "",
-  "gas_wanted": "200000",
-  "gas_used": "82675",
-  "tx": null,
-  "timestamp": ""
+  "info":"",
+  "gas_wanted":"200000",
+  "gas_used":"184841",
+  "tx":null,
+  "timestamp":""
 }
 ```
 Additionally, you can also query the market to check if your lease is closed:
 
 ```
-akash query market lease list --owner $ACCOUNT_ADDRESS --node $AKASH_NODE 
+akash query market lease list --owner $ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $DSEQ 
 ```
 
 You should see a response similar to:
 
 ```
 leases:
-- lease_id:
-    dseq: "19553"
-    gseq: 1
-    oseq: 1
-    owner: akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx
-    provider: akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl
-  price:
-    amount: "186"
-    denom: uakt
-  state: closed
+- escrow_payment:
+    account_id:
+      scope: deployment
+      xid: akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj/27977
+    balance:
+      amount: "0"
+      denom: uakt
+    owner: akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz
+    payment_id: 1/1/akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz
+    rate:
+      amount: "100"
+      denom: uakt
+    state: closed
+    withdrawn:
+      amount: "60400"
+      denom: uakt
+  lease:
+    created_at: "27983"
+    lease_id:
+      dseq: "27977"
+      gseq: 1
+      oseq: 1
+      owner: akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj
+      provider: akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz
+    price:
+      amount: "100"
+      denom: uakt
+    state: closed
 pagination:
   next_key: null
   total: "0"
