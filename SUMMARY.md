@@ -25,12 +25,3 @@
 ## Documentation
 
 * [Stack Definition Language](documentation/sdl.md)
-
-## Testnet Challenges
-
-* [Overview](testnet-challenges/testnet-challenges/README.md)
-  * [Guided Deployments](testnet-challenges/testnet-challenges/guided-deployments.md)
-  * [Open-Ended Deployments](testnet-challenges/testnet-challenges/open-ended-deployments.md)
-  * [Community Content](testnet-challenges/testnet-challenges/community-content.md)
-  * [Network Support](testnet-challenges/testnet-challenges/network-support.md)
-
