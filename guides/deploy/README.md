@@ -167,7 +167,7 @@ Please note that all of the following can be substituted in the `datacenter` fie
 
 ## Create the Deployment
 
-To create a deployment, a certificate must first be created. To do this, run:
+To create a deployment, a [certificate](../../design/mtls.md) must first be created. To do this, run:
 
 ```
 akash tx cert create client --chain-id $CHAIN_ID --keyring-backend $KEYRING_BACKEND --from $KEY_NAME --node $AKASH_NODE --fees 5000uakt
@@ -202,6 +202,8 @@ You should see a response similar to:
   "signatures": []
 }
 ```
+
+:warning: **certificate needs to be created only once per account** and can be used across all deployments.   
 
 To deploy on Akash, run:
 
