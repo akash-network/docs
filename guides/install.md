@@ -28,8 +28,8 @@ Install `akash` daemon using homebrew:
 
 ```text
 brew tap ovrclk/tap
-brew install akash-edge
-brew link akash-edge --force
+brew install akash
+brew link akash --force
 ```
 
 Once installed, verify the installation by running `akash version`. Compare that with the version for the network you plan on connecting to:
