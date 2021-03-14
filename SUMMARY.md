@@ -13,7 +13,7 @@
 * [Install Akash](guides/install.md)
 * [Wallet Setup](guides/wallet.md)
 * [Funding your Account](guides/funding.md)
-* [Deploy an Application](guides/deploy.md)
+* [Deploy an Application](guides/deploy/README.md)
 * [Run an Akash Node](guides/node/README.md)
   * [RPC Service](guides/node/rpc-service.md)
   * [API Service](guides/node/api-service.md)
