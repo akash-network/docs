@@ -385,7 +385,7 @@ Akash Groups are translated into Kubernetes Deployments, this means that only a 
   ```sh
   akash tx deployment update deploy.yml --dseq $DSEQ --from $KEY_NAME --chain-id $CHAIN_ID --node $AKASH_NODE --fees=5000uakt
   ```
-  You should see a response similar to this:
+  After confirming your transaction, you should see a response similar to this:
   ```json
   {
   "height":"98503",
