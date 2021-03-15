@@ -371,6 +371,107 @@ akash \
 
 where `$SERVICE_NAME` is the name of a service defined in your [SDL](/sdl).
 
+## Update your deployment
+
+Updating active deployments is a two step process. First, edit the deploy.yml with the desired changes.
+
+{% hint style="warn" %}
+
+Akash Groups are translated into Kubernetes Deployments, this means that only a few fields from the Akash SDL are mutable. For example image, command, args, env and exposed ports can be modified, but compute resources and placement criteria cannot. 
+
+{% endhint %}
+
+  1. Update your deployment by running:
+  ```sh
+  akash tx deployment update deploy.yml --dseq $DSEQ --from $KEY_NAME --chain-id $CHAIN_ID --node $AKASH_NODE --fees=5000uakt
+  ```
+  You should see a response similar to this:
+  ```json
+  {
+  "height":"98503",
+  "txhash":"94FEF5ACB39145BB41ECB1FC224480ED5C80414D0757FC07C844B16EC246D304",
+  "codespace":"",
+  "code":0,
+  "data":"0A130A117570646174652D6465706C6F796D656E74",
+  "raw_log":"[{\"events\":[{\"type\":\"akash.v1\",\"attributes\":[{\"key\":\"module\",\"value\":\"deployment\"},{\"key\":\"action\",\"value\":\"deployment-updated\"},{\"key\":\"version\",\"value\":\"2b86f778de8cc9df415490efa162c58e7a0c297fbac9cdb8d6c6600eda56f17e\"},{\"key\":\"owner\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"dseq\",\"value\":\"98199\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"update-deployment\"},{\"key\":\"sender\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8\"},{\"key\":\"sender\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"amount\",\"value\":\"5000uakt\"}]}]}]",
+  "logs":[
+    {
+      "msg_index":0,
+      "log":"",
+      "events":[
+        {
+          "type":"akash.v1",
+          "attributes":[
+            {
+              "key":"module",
+              "value":"deployment"
+            },
+            {
+              "key":"action",
+              "value":"deployment-updated"
+            },
+            {
+              "key":"version",
+              "value":"2b86f778de8cc9df415490efa162c58e7a0c297fbac9cdb8d6c6600eda56f17e"
+            },
+            {
+              "key":"owner",
+              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
+            },
+            {
+              "key":"dseq",
+              "value":"98199"
+            }
+          ]
+        },
+        {
+          "type":"message",
+          "attributes":[
+            {
+              "key":"action",
+              "value":"update-deployment"
+            },
+            {
+              "key":"sender",
+              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
+            }
+          ]
+        },
+        {
+          "type":"transfer",
+          "attributes":[
+            {
+              "key":"recipient",
+              "value":"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"
+            },
+            {
+              "key":"sender",
+              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
+            },
+            {
+              "key":"amount",
+              "value":"5000uakt"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "info":"",
+  "gas_wanted":"200000",
+  "gas_used":"58833",
+  "tx":null,
+  "timestamp":""
+}
+  ```
+
+  2. Send the updated manifest by running:
+  ```sh
+  akash provider send-manifest deploy.yml --keyring-backend=os --node $AKASH_NODE --from=$KEY_NAME --provider=$PROVIDER --dseq $DSEQ --log_level=info --home ~/.akash
+  ```
+
+Between the first and second step, the prior deployment's containers will continue to run until the new manifest file is received, validated, and new container group operational. After health checks on updated group are passing; the prior containers will be terminated - this process may take a couple minutes to complete.
+
 ## Close your deployment
 
 When you are done with your application, close the deployment. This will deprovision your container and stop the token transfer. This is a critical step to conserve both your tokens and testnet server capacity.
