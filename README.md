@@ -11,7 +11,7 @@ For details about what [Akash](https://github.com/ovrclk/akash) can do and what 
 * [Install Akash](guides/install.md)
 * [Wallet Setup](guides/wallet.md)
 * [Funding your Account](guides/funding.md)
-* [Deploy an Application](guides/deploy.md)
+* [Deploy an Application](guides/deploy/README.md)
 * [Run an Akash Node](guides/node/)
   * [RPC Service](guides/node/rpc-service.md)
   * [API Service](guides/node/api-service.md)
@@ -24,12 +24,3 @@ For details about what [Akash](https://github.com/ovrclk/akash) can do and what 
 
 * [Stack Definition Language](documentation/sdl.md)
 * [Akash CLI reference](cli/akash.md)
-
-## Testnet Challenges
-
-* [Overview](testnet-challenges/testnet-challenges/)
-  * [Guided Deployments](testnet-challenges/testnet-challenges/guided-deployments.md)
-  * [Open-Ended Deployments](testnet-challenges/testnet-challenges/open-ended-deployments.md)
-  * [Community Content](testnet-challenges/testnet-challenges/community-content.md)
-  * [Network Support](testnet-challenges/testnet-challenges/network-support.md)
-
