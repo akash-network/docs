@@ -152,7 +152,16 @@ On the `akashnet-2` network, to ensure tenants have smooth and reliable service 
 
 ```sh
       attributes:
-        datacenter: equinix-metal-ams1
+        host: akash
+      signedBy:
+       anyOf:
+        - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
+```
+--or--
+
+```sh
+      attributes:
+        datacenter: equinix-metal-ewr1
       signedBy:
        anyOf:
         - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
@@ -162,7 +171,6 @@ Please note that all of the following can be substituted in the `datacenter` fie
 
 |Datacenter|Location|
 |---|---|
-|`equinix-metal-ams1`| Amsterdam, Netherlands|
 |`equinix-metal-ewr1`| New Jersey, United States|
 |`equinix-metal-sjc1`| California, United States|
 
