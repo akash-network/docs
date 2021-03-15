@@ -42,8 +42,8 @@ Bid deposits are implemented with an escrow account module. See [here](escrow.md
 
 | Name | Initial Value | Description |
 | :--- | :--- | :--- |
-| `deployment_min_deposit` | `10akt` | Minimum deposit to make deployments.  Target: ~$10 |
-| `bid_min_deposit` | `100akt` | Deposit amount required to bid.  Target: ~$100 |
+| `deployment_min_deposit` | `5akt` | Minimum deposit to make deployments.  Target: ~$10 |
+| `bid_min_deposit` | `50akt` | Deposit amount required to bid.  Target: ~$100 |
 
 ## Transactions
 
