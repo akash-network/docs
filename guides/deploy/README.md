@@ -373,7 +373,7 @@ where `$SERVICE_NAME` is the name of a service defined in your [SDL](/sdl).
 
 ## Update your deployment
 
-Updating active deployments is a two step process. First, edit the deploy.yml with the desired changes.
+Updating active deployments is a two step process. First, edit your deployment YAML file with the desired changes.
 
 {% hint style="warn" %}
 
@@ -464,6 +464,8 @@ Akash Groups are translated into Kubernetes Deployments, this means that only a 
   "timestamp":""
 }
   ```
+
+  Note the `code: 0` shown in the successful deployment update output above.
 
   2. Send the updated manifest by running:
   ```sh
