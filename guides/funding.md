@@ -36,7 +36,7 @@ Go to the resulting URL and enter your account address; you should see tokens in
 
 **`mainnet`-only**
 
-Tokens may currently be purchased on bitmax.io. From there you can withdraw tokens to your address.
+Tokens may currently be purchased on echanges lists [here](https://akash.network/token). From there you can withdraw tokens to your address.
 
 ### Check Balance
 
