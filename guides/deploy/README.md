@@ -180,7 +180,7 @@ Please note that all of the following can be substituted in the `datacenter` fie
 To create a deployment, a [certificate](../../design/mtls.md) must first be created. To do this, run:
 
 ```
-akash tx cert create client --chain-id $CHAIN_ID --keyring-backend $KEYRING_BACKEND --from $KEY_NAME --node $AKASH_NODE --fees 5000uakt
+akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $KEYRING_BACKEND --from $KEY_NAME --node $AKASH_NODE --fees 5000uakt
 ```
 
 You should see a response similar to:
@@ -383,7 +383,7 @@ Akash Groups are translated into Kubernetes Deployments, this means that only a 
 
   1. Update your deployment by running:
   ```sh
-  akash tx deployment update deploy.yml --dseq $DSEQ --from $KEY_NAME --chain-id $CHAIN_ID --node $AKASH_NODE --fees=5000uakt
+  akash tx deployment update deploy.yml --dseq $DSEQ --from $KEY_NAME --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --fees=5000uakt
   ```
   After confirming your transaction, you should see a response similar to this:
   ```json
@@ -467,6 +467,7 @@ Akash Groups are translated into Kubernetes Deployments, this means that only a 
 
   Note the `code: 0` shown in the successful deployment update output above.
 
+
   2. Send the updated manifest by running:
   ```sh
   akash provider send-manifest deploy.yml --keyring-backend=os --node $AKASH_NODE --from=$KEY_NAME --provider=$PROVIDER --dseq $DSEQ --log_level=info --home ~/.akash
@@ -481,7 +482,7 @@ When you are done with your application, close the deployment. This will deprovi
 Close deployment using deployment by creating a `deployment-close` transaction:
 
 ```
-akash tx deployment close --node $AKASH_NODE --chain-id $CHAIN_ID --dseq $DSEQ  --owner $ACCOUNT_ADDRESS --from $KEY_NAME --keyring-backend $KEYRING_BACKEND -y --fees 5000uakt
+akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $DSEQ  --owner $ACCOUNT_ADDRESS --from $KEY_NAME --keyring-backend $KEYRING_BACKEND -y --fees 5000uakt
 ```
 
 You should see a response simlar to below as a confirmation your deployment is closed:
