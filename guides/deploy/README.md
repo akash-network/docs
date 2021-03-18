@@ -570,7 +570,7 @@ akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7
 Create a lease for the bid from the chosen provider above by running:
 
 ```sh
-akash tx market lease create --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --owner $ACCOUNT_ADDRESS --dseq $DSEQ --gseq $GSEQ --oseq $OSEQ --provider akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7 --from $KEY_NAME –fees 5000uakt
+akash tx market lease create --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --owner $ACCOUNT_ADDRESS --dseq $DSEQ --gseq $GSEQ --oseq $OSEQ --provider $PROVIDER --from $KEY_NAME --fees 5000uakt
 ```
 
 After confirming your transaction, you should see a response similar to:
@@ -1207,7 +1207,7 @@ akash \
   --service $SERVICE_NAME \
   --owner "$ACCOUNT_ADDRESS" \
   --dseq "$DSEQ" \
-  --gseq 1 \
+  --gseq "$DSEQ" \
   --oseq $OSEQ \
   --provider "$PROVIDER"
 ```
