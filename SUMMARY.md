@@ -21,7 +21,9 @@
 * [Become a Provider](guides/provider.md)
 * [Common Commands](guides/general-commands.md)
 * [Upgrade to Akashnet-2](guides/upgrade-mainnet.md)
+* [Using the Deploy Tool](guides/deploy-tool.md)
 
 ## Documentation
 
 * [Stack Definition Language](documentation/sdl.md)
+* [Akash CLI reference](cli/akash.md)
