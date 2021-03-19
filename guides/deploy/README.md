@@ -19,8 +19,7 @@ You'll need to know information about the network you're connecting your node to
 
 Make sure to have Akash client installed on your workstation, check [install guide](../install.md) for instructions.
 
-You'll need an account with funds to pay for your deployment. See the [funding guide](../wallet/funding.md) for
-creating a key and funding your account.
+You'll need an account with funds to pay for your deployment. See the [funding guide](../wallet/funding.md) for creating a key and funding your account.
 
 ### Set up your Environment
 
@@ -28,13 +27,13 @@ We will be using shell variables throughout this guide for convenience and clari
 
 |Name|Description|
 |---|---|
-|`AKASH_NODE`| Akash network configuration base URL. See [here](/guides/version.md#RPC-Node).|
+|`AKASH_NODE`| Akash network configuration base URL. See [here](../version.md#RPC-Node).|
 |`AKASH_CHAIN_ID`| Chain ID of the Akash network connecting to. See [here](../version.md#Chain-ID).|
 |`ACCOUNT_ADDRESS`| The address of your account.  See [here](../wallet/README.md#account-address).|
-|`AKASH_KEYRING_BACKEND`| Keyring backend to use for local keys. See [here](/guides/wallet/README.md)|
-|`KEY_NAME` | The name of the key you will be deploying from. See [here](/guides/wallet/README.md) if you haven't yet setup a key|
+|`AKASH_KEYRING_BACKEND`| Keyring backend to use for local keys. See [here](../wallet/README.md)|
+|`KEY_NAME` | The name of the key you will be deploying from. See [here](../wallet/README.md) if you haven't yet setup a key|
 
-Verify you have correct `$AKASH_NODE`, that you have populated while [configuring the connection](/guides/version) using `export AKASH_NODE=$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)`.
+Verify you have correct `$AKASH_NODE`, that you have populated while [configuring the connection](../version.md) using `export AKASH_NODE=$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)`.
 
 ```sh
 echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND
@@ -44,7 +43,7 @@ http://147.75.195.69:26657 edgenet-4 os
 
 Your values may differ depending on the network you're connecting to, `http://147.75.195.69:26657` and `edgenet-4` are details for [edgenet](https://github.com/ovrclk/net/tree/master/edgenet).
 
-Verify you have the key set up and your account has sufficient balances, see the [funding guide](/guides/wallet/funding.md) otherwise:
+Verify you have the key set up and your account has sufficient balances, see the [funding guide](../wallet/funding.md) otherwise:
 
 My local key is named `alice`, the below command should return the name you've used:
 
