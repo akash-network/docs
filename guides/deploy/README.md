@@ -17,9 +17,9 @@ We encourage to take a look at [Variables guide](../variables.md) to understand 
 
 You'll need to know information about the network you're connecting your node to. See [Choosing a Network](/guides/version.md) for how to obtain any network-related information.
 
-Make sure to have Akash client installed on your workstation, check [install guide](/guides/install.md) for instructions.
+Make sure to have Akash client installed on your workstation, check [install guide](../install.md) for instructions.
 
-You'll need an account with funds to pay for your deployment. See the [funding guide](/guides/wallet/funding.md) for
+You'll need an account with funds to pay for your deployment. See the [funding guide](../wallet/funding.md) for
 creating a key and funding your account.
 
 ### Set up your Environment
@@ -29,8 +29,8 @@ We will be using shell variables throughout this guide for convenience and clari
 |Name|Description|
 |---|---|
 |`AKASH_NODE`| Akash network configuration base URL. See [here](/guides/version.md#RPC-Node).|
-|`AKASH_CHAIN_ID`| Chain ID of the Akash network connecting to. See [here](/guides/version.md#Chain-ID).|
-|`ACCOUNT_ADDRESS`| The address of your account.  See [here](/guides/wallet/README.md#account-address).|
+|`AKASH_CHAIN_ID`| Chain ID of the Akash network connecting to. See [here](../version.md#Chain-ID).|
+|`ACCOUNT_ADDRESS`| The address of your account.  See [here](../wallet/README.md#account-address).|
 |`AKASH_KEYRING_BACKEND`| Keyring backend to use for local keys. See [here](/guides/wallet/README.md)|
 |`KEY_NAME` | The name of the key you will be deploying from. See [here](/guides/wallet/README.md) if you haven't yet setup a key|
 
