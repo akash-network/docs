@@ -37,8 +37,10 @@ AKASH_VERSION="$(curl -s "$AKASH_NET/version.txt")"
 
 ### Chain ID
 
+The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exported to the shell.
+
 ```bash
-AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
+export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
 ```
 
 ### Genesis
@@ -61,10 +63,10 @@ curl -s "$AKASH_NET/peer-nodes.txt" | paste -d, -s
 
 ### RPC Node
 
-Print a random RPC endpoint
+Print a random RPC endpoint. The akash CLI will recogonize `AKASH_NODE` environment variable when exported to the shell.
 
 ```bash
-AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)"
+export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)"
 
 echo $AKASH_NODE
 ```
