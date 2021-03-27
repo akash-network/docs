@@ -35,7 +35,7 @@ akash tx deployment create --keyring-backend=$AKASH_KEYRING_BACKEND ...
 #keyring-backend=test is used 
 ```
 
-We recommend to use environment Variables to easily follow commands used in the documentation.
+The use of environment variables is recommended so that you can easily follow the commands used in the documentation.
 
 |Name|Flag|Description|
 |---|---|
