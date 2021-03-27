@@ -186,7 +186,7 @@ Please note that all of the following can be substituted in the `datacenter` fie
 To create a deployment, a [certificate](/design/mtls.md) must first be created. To do this, run:
 
 ```
-akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $KEYRING_BACKEND --from $KEY_NAME --node $AKASH_NODE --fees 5000uakt
+akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $KEY_NAME --node $AKASH_NODE --fees 5000uakt
 ```
 
 You should see a response similar to:
@@ -330,7 +330,7 @@ akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz 27977
 Once your lease has been created and you have the relevant information above, you can retrieve the access details by running the below:
 
 ```sh
-akash provider lease-status --log_level=info --dseq $DSEQ --from $KEY_NAME --home ~/.akash --provider $PROVIDER --keyring-backend $KEYRING_BACKEND --node $AKASH_NODE
+akash provider lease-status --log_level=info --dseq $DSEQ --from $KEY_NAME --home ~/.akash --provider $PROVIDER --keyring-backend $AKASH_KEYRING_BACKEND --node $AKASH_NODE
 ```
 
 You should see a response similar to:
@@ -488,7 +488,7 @@ You will eventually need to add funds to the escrow account associated with your
 Deposit additional funds to your escrow account by running:
 
 ```sh
-akash tx deployment deposit --from $KEY_NAME --chain-id $CHAIN_ID --keyring-backend=$KEYRING_BACKEND --node $AKASH_NODE 10000uakt --dseq $DSEQ --fees=5000uakt
+akash tx deployment deposit --from $KEY_NAME --chain-id $CHAIN_ID --keyring-backend=$AKASH_KEYRING_BACKEND --node $AKASH_NODE 10000uakt --dseq $DSEQ --fees=5000uakt
 ```
 
 After confirming the transaction, you should see a response similar to:
@@ -570,7 +570,7 @@ When you are done with your application, close the deployment. This will deprovi
 Close deployment using deployment by creating a `deployment-close` transaction:
 
 ```
-akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $DSEQ  --owner $ACCOUNT_ADDRESS --from $KEY_NAME --keyring-backend $KEYRING_BACKEND -y --fees 5000uakt
+akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $DSEQ  --owner $ACCOUNT_ADDRESS --from $KEY_NAME --keyring-backend $AKASH_KEYRING_BACKEND -y --fees 5000uakt
 ```
 
 You should see a response simlar to below as a confirmation your deployment is closed:

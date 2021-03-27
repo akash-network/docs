@@ -80,7 +80,7 @@ pagination:
   total: "0"
 ```
 
-Please note the balance indicated is is denominated in uAKT (AKT x 10^-6), in the above example, the account has a balance of *93 AKT*. We're now setup to deploy.
+Please note the balance indicated is denominated in uAKT (AKT x 10^-6), in the above example, the account has a balance of *93 AKT*. We're now setup to deploy.
 
 {% hint style="warn" %}
 
@@ -185,7 +185,7 @@ Please note that all of the following can be substituted in the `datacenter` fie
 To create a deployment, a [certificate](/design/mtls.md) must first be created. To do this, run:
 
 ```
-akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $KEYRING_BACKEND --from $KEY_NAME --node $AKASH_NODE --fees 5000uakt
+akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $KEY_NAME --node $AKASH_NODE --fees 5000uakt
 ```
 
 You should see a response similar to:
@@ -715,7 +715,7 @@ You can access the application by visiting the hostnames mapped to your deployme
 
 ## Update your deployment
 
-Updating active deployments is a two step process. First, edit your deployment YAML file with the desired changes.
+Updating active deployments is a two-step process. First, edit your deployment YAML file with the desired changes.
 
 {% hint style="warn" %}
 
@@ -812,7 +812,7 @@ Akash Groups are translated into Kubernetes Deployments, this means that only a 
 
   2. Send the updated manifest by running:
   ```sh
-  akash provider send-manifest deploy.yml --keyring-backend=os --node $AKASH_NODE --from=$KEY_NAME --provider=$PROVIDER --dseq $DSEQ --log_level=info --home ~/.akash
+  akash provider send-manifest deploy.yml --keyring-backend=$AKASH_KEYRING_BACKEND --node $AKASH_NODE --from=$KEY_NAME --provider=$PROVIDER --dseq $DSEQ --log_level=info --home ~/.akash
   ```
 
 Between the first and second step, the prior deployment's containers will continue to run until the new manifest file is received, validated, and new container group operational. After health checks on updated group are passing; the prior containers will be terminated - this process may take a couple minutes to complete.
@@ -824,7 +824,7 @@ You will eventually need to add funds to the escrow account associated with your
 Deposit additional funds to your escrow account by running:
 
 ```sh
-akash tx deployment deposit --from $KEY_NAME --chain-id $CHAIN_ID --keyring-backend=$KEYRING_BACKEND --node $AKASH_NODE 10000uakt --dseq $DSEQ --fees=5000uakt
+akash tx deployment deposit --from $KEY_NAME --chain-id $CHAIN_ID --keyring-backend=$AKASH_KEYRING_BACKEND --node $AKASH_NODE 10000uakt --dseq $DSEQ --fees=5000uakt
 ```
 
 After confirming the transaction, you should see a response similar to:
@@ -906,7 +906,7 @@ When you are done with your application, close the deployment. This will deprovi
 Close deployment using deployment by creating a `deployment-close` transaction:
 
 ```
-akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $DSEQ  --owner $ACCOUNT_ADDRESS --from $KEY_NAME --keyring-backend $KEYRING_BACKEND -y --fees 5000uakt
+akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $DSEQ  --owner $ACCOUNT_ADDRESS --from $KEY_NAME --keyring-backend $AKASH_KEYRING_BACKEND -y --fees 5000uakt
 ```
 
 You should see a response simlar to below as a confirmation your deployment is closed:

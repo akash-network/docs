@@ -30,9 +30,12 @@ akash tx deployment create --keyring-backend=file ...
 ```
 - use value set by environment variable `AKASH_KEYRING_BACKEND=test`
 ```shell
-AKASH_KEYRING_BACKEND=test akash tx deployment create --keyring-backend=file ...
+export AKASH_KEYRING_BACKEND=test 
+akash tx deployment create --keyring-backend=$AKASH_KEYRING_BACKEND ...
 #keyring-backend=test is used 
 ```
+
+We recommend to use environment Variables to easily follow commands used in the documentation.
 
 |Name|Flag|Description|
 |---|---|
