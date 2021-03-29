@@ -18,10 +18,12 @@ sudo service akash stop
 
 ### 3. Get/Install new version
 
-#### Option-1:
+**Option-1: Using pre-build binaries**
+
    Download pre-built binaries from: https://github.com/ovrclk/akash/releases/tag/v0.12.0
-#### Option-2:
-   Build from source
+
+**Option-2: Build from source**
+
    - Requires go1.16+
    ```sh
    git clone https://github.com/ovrclk/akash
