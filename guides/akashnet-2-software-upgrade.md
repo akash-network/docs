@@ -30,7 +30,7 @@ sudo service akash stop
    cd akash
    git fetch
    git checkout v0.12.0
-   make install
+   MAINNET=true make install
    ```
 
 ### 4. Check your new akash version
@@ -47,3 +47,15 @@ sudo service akash start
 ```
 
 That's it. You should be able to check new blocks coming up.
+
+## What if the upgrade fails?
+
+Since we are not hard-forking the network, it should be simple to revert back.
+- Stop akash service
+- Re-install akash `v0.10.2`
+   ```sh
+   cd akash
+   git checkout v0.10.2
+   MAINNET=true make install
+   ```
+- Start akash service
