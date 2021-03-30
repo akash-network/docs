@@ -283,7 +283,7 @@ DSEQ="$(akash query market lease list --node=$AKASH_NODE --home=$AKASH_HOME --ke
 ```sh
 akash provider send-manifest deployment.yaml --node=$AKASH_NODE \
   --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND \
-  --dseq "$DSEQ" \
+  --dseq "$AKASH_DSEQ" \
   --oseq 1 \
   --gseq 1 \
   --owner    "$(akash keys show deploy -a)" \
@@ -295,7 +295,7 @@ akash provider send-manifest deployment.yaml --node=$AKASH_NODE \
 ```sh
 akash provider lease-status --node=$AKASH_NODE \
   --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND \
-  --dseq "$DSEQ" \
+  --dseq "$AKASH_DSEQ" \
   --oseq 1 \
   --gseq 1 \
   --owner    "$(akash keys show deploy -a)" \
@@ -306,7 +306,7 @@ akash provider lease-status --node=$AKASH_NODE \
 
 ```sh
 akash provider lease-status \
-  --dseq "$DSEQ" \
+  --dseq "$AKASH_DSEQ" \
   --oseq 1 \
   --gseq 1 \
   --owner    "$(akash keys show deploy -a)"     \
@@ -325,6 +325,6 @@ akash tx deployment close \
   --chain-id=$AKASH_CHAIN_ID \
   --home=$AKASH_HOME \
   --keyring-backend=$AKASH_KEYRING_BACKEND \
-  --from $OWNER_ADDRESS \
-  --dseq $DSEQ
+  --from $AKASH_KEY_NAME \
+  --dseq $AKASH_DSEQ
 ```

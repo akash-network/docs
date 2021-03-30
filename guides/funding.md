@@ -16,7 +16,7 @@ You'll need a key to use for your account and your account address handy. See th
 | :--- | :--- |
 | `AKASH_NET` | Akash network configuration base URL. See [here](version.md). |
 | `AKASH_NODE` | Akash network configuration base URL. See [here](version.md). |
-| `ACCOUNT_ADDRESS` | The address of your account.  See [here](wallet.md#account-address). |
+| `AKASH_ACCOUNT_ADDRESS` | The address of your account.  See [here](wallet.md#account-address). |
 
 ## Funding Method
 
@@ -45,7 +45,7 @@ Check your account balance with
 ```bash
 akash \
   --node "$AKASH_NODE" \
-  query bank balances "$ACCOUNT_ADDRESS"
+  query bank balances "$AKASH_ACCOUNT_ADDRESS"
 ```
 
 You should see a non-zero entry containing `uakt` tokens!
