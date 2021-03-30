@@ -1,5 +1,14 @@
 # Akashnet-2 Software upgrade procedure
 
+## TL;DR
+Software upgrades allows any cosmos based network to soft-upgrade the network to a new version. In general, for any state breaking changes, there will be a migration script to migrate the chain data and we generally hard fork the blockchain network. For soft-upgrades, `x/upgrade` module has a special function called upgrade-handler which handles all the migrations required. Here is the upgrade handler for `akashnet-2-upgrade-1`: https://github.com/ovrclk/akash/blob/147aaceb41eaf11ec49f3c151301a11bb361ae5f/app/app.go#L266-L271.
+
+It handles 2 migrations:
+- Fix vesting account delegation issues
+- Set staking historical events to `10000`, which is required for IBC.
+
+For more details on soft-upgrades [click here](https://docs.cosmos.network/master/modules/upgrade/)
+
 ## What validators need to do before the upgrade time?
 
 - Nothing, just sit back and relax. The `software-upgrade` proposal will force the binary (current version, `akash-v0.10.x`) to halt at specified height, i.e., 455200
@@ -58,5 +67,5 @@ Since we are not hard-forking the network, it should be simple to revert back.
    git checkout v0.10.2
    MAINNET=true make install
    ```
-- Edit akash service file and change `akash start` to `akash start --unsafe-skip-upgrades 455201`
+- Edit akash service file and change `akash start` to `akash start --unsafe-skip-upgrades 455200`
 - Start akash service
