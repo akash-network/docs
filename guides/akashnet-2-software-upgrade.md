@@ -58,4 +58,5 @@ Since we are not hard-forking the network, it should be simple to revert back.
    git checkout v0.10.2
    MAINNET=true make install
    ```
+- Edit akash service file and change `akash start` to `akash start --unsafe-skip-upgrades 455201`
 - Start akash service
