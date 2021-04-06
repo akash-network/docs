@@ -31,3 +31,4 @@ will mean that you have to re-define the variable.
   * [Run a Validator](/guides/node/validator.md)
 * [Become a Provider](/guides/provider.md)
 * [Upgrade to Akashnet-2](/guides/upgrade-mainnet.md)
+* [Software Upgrade: Akashnet-2-upgrade-1](/guides/akashnet-2-software-upgrade.md)
