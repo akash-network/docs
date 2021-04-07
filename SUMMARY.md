@@ -22,6 +22,7 @@
 * [Common Commands](guides/general-commands.md)
 * [Upgrade to Akashnet-2](guides/upgrade-mainnet.md)
 * [Using the Deploy Tool](guides/deploy-tool.md)
+* [Multi-Tiered Deployment](guides/multi-tier-app)
 * [Software Upgrade: Akashnet-2-upgrade-1](guides/akashnet-2-software-upgrade.md)
 
 ## Documentation

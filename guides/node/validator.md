@@ -30,7 +30,7 @@ akash tx staking create-validator \
   --min-self-delegation="1" \
   --gas="auto" \
   --gas-prices="0.025uakt" \
-  --from="$KEY_NAME"
+  --from="$AKASH_KEY_NAME"
 ```
 
 ::: tip When specifying commission parameters, the `commission-max-change-rate` is used to measure % _point_ change over the `commission-rate`. E.g. 1% to 2% is a 100% rate increase, but only 1 percentage point. :::
@@ -43,7 +43,7 @@ You can confirm that you are in the validator set by using a third party explore
 
 You can edit your validator's public description. This info is to identify your validator, and will be relied on by delegators to decide which validators to stake to. Make sure to provide input for every flag below. If a flag is not included in the command the field will default to empty \(`--moniker` defaults to the machine name\) if the field has never been set or remain the same if it has been set in the past.
 
-The `$KEY_NAME` specifies the key for the validator which you are editing. If you choose to not include certain flags, remember that the `--from` flag must be included to identify the validator to update.
+The `$AKASH_KEY_NAME` specifies the key for the validator which you are editing. If you choose to not include certain flags, remember that the `--from` flag must be included to identify the validator to update.
 
 The `--identity` can be used as to verify identity with systems like Keybase or UPort. When using with Keybase `--identity` should be populated with a 16-digit string that is generated with a [keybase.io](https://keybase.io) account. It's a cryptographically secure method of verifying your identity across multiple online networks. The Keybase API allows explorers to retrieve your Keybase avatar. This is how you can add a logo to your validator profile.
 
@@ -56,7 +56,7 @@ akash tx staking edit-validator
   --chain-id="$AKASH_CHAIN_ID" \
   --gas="auto" \
   --gas-prices="0.025uakt" \
-  --from="$KEY_NAME" \
+  --from="$AKASH_KEY_NAME" \
   --commission-rate="0.10"
 ```
 
@@ -74,7 +74,7 @@ akash tx staking edit-validator
 View the validator's information with this command:
 
 ```bash
-akash query staking validator $VALIDATOR_ADDRESS
+akash query staking validator $AKASH_VALIDATOR_ADDRESS
 ```
 
 ## Track Validator Signing Information
@@ -82,7 +82,7 @@ akash query staking validator $VALIDATOR_ADDRESS
 In order to keep track of a validator's signatures in the past you can do so by using the `signing-info` command:
 
 ```bash
-akash query slashing signing-info $VALIDATOR_PUBKEY \
+akash query slashing signing-info $AKASH_VALIDATOR_PUBKEY \
   --chain-id="$AKASH_CHAIN_ID"
 ```
 
@@ -92,7 +92,7 @@ When a validator is "jailed" for downtime, you must submit an `Unjail` transacti
 
 ```bash
 akash tx slashing unjail \
-    --from="$KEY_NAME" \
+    --from="$AKASH_KEY_NAME" \
     --chain-id="$AKASH_CHAIN_ID"
 ```
 
