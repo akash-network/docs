@@ -112,9 +112,9 @@ The `services` entries contain maps of workloads to be ran on the Akash deployme
 
 We can see that `goosebin` is globally exposed and open to the public, while `redis` is internal to the deployment and is only shared with `goosebin`. 
 
-Within the `goosebin` entry, we set some environmental variables - these are declared internally within the `goosebin` image.  Note that each application can choose whatever environment variables it wants to use on its own for configuration.   The variable that ties our services together is `REDIS_HOST`. This is what `goosebin` looks at to determine which host to connect to for `redis`. In this case we set `REDIS_HOST=redis` because we chose to name the service `redis` - had we named the service `database`, we would have set `REDIS_HOST=database`.
+Within the `goosebin` entry, we set some environmental variables - these are declared internally within the `goosebin` image.  Note that each application can choose whatever environment variables it wants to use on its own for configuration. The variable that ties our services together is `REDIS_HOST`. This is what `goosebin` looks at to determine which host to connect to for `redis`. In this case we set `REDIS_HOST=redis` because we chose to name the service `redis` - had we named the service `database`, we would have set `REDIS_HOST=database`.
 
-The `expose` section is similar to other http examples - internally, the container for this example is listing on port 8000, but we're going to expose port 80 globally so it returns a URI that can be visited in a web browser.  
+The `expose` section is similar to other http examples - internally, the container for this example is listing on port 8000. The deployment will only be assigned a unique URI that can be visited in a web browser when `expose` has `global: true` and the port is set to 80.  
 
 ### Profiles 
 
@@ -150,7 +150,7 @@ profiles:
 
 The `profiles` entries contain named compute and placement profiles to be used in the deployment. 
 
-Since we have 2 services to deploy, details for each of them must be specified here. This section is very similar to a standard deployment, so it won't be covered in detail here. An imprtant item to note, however, is that the named compute/placement profiles here (`redis` and `goosebin`) must match the names we had specified in the `services` section. [Additional mappings](/sdl/README.md#profiles) can also be specified within `profiles` such as audited attributes and datacenter attributes.
+Since we have 2 services to deploy, details for each of them must be specified here. This section is very similar to a standard deployment, so it won't be covered in detail here. An important item to note, however, is that the named compute/placement profiles here (`redis` and `goosebin`) must match the names we had specified in the `services` section. [Additional mappings](/sdl/README.md#profiles) can also be specified within `profiles` such as audited attributes and datacenter attributes.
 
 ### Deployments
 
