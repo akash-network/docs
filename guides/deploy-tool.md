@@ -36,7 +36,7 @@ We will be using shell variables throughout this guide for convenience and clari
 |---|---|
 |`AKASH_NODE`| Akash network configuration base URL. See [here](/guides/version.md#RPC-Node).|
 |`AKASH_CHAIN_ID`| Chain ID of the Akash network connecting to. See [here](/guides/version.md#Chain-ID).|
-|`ACCOUNT_ADDRESS`| The address of your account.  See [here](/guides/wallet/README.md#account-address).|
+|`AKASH_ACCOUNT_ADDRESS`| The address of your account.  See [here](/guides/wallet/README.md#account-address).|
 |`AKASH_KEYRING_BACKEND`| Keyring backend to use for local keys. See [here](/guides/wallet/README.md)|
 |`KEY_NAME` | The name of the key you will be deploying from. See [here](/guides/wallet/README.md) if you haven't yet setup a key|
 
@@ -60,12 +60,12 @@ echo $KEY_NAME
 alice
 ```
 
-Populate `ACCOUNT_ADDRESS` from `KEY_NAME` and verify:
+Populate `AKASH_ACCOUNT_ADDRESS` from `KEY_NAME` and verify:
 
 ```sh
-export ACCOUNT_ADDRESS="$(akash keys show $KEY_NAME -a)"
+export AKASH_ACCOUNT_ADDRESS="$(akash keys show $KEY_NAME -a)"
 
-echo $ACCOUNT_ADDRESS
+echo $AKASH_ACCOUNT_ADDRESS
 
 akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx
 ```
@@ -73,7 +73,7 @@ akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx
 Check your account has sufficient balance by running:
 
 ```sh
-akash query bank balances $ACCOUNT_ADDRESS
+akash query bank balances $AKASH_ACCOUNT_ADDRESS
 ```
 
 You should see a response similar to:
@@ -268,7 +268,7 @@ In this step, you post your deployment, and the Akash marketplace matches you wi
 You can check the status of your lease by running:
 
 ```sh
-akash query market lease list --owner $ACCOUNT_ADDRESS --node $AKASH_NODE --state active
+akash query market lease list --owner $AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --state active
 ```
 
 You should see a response similar to:
@@ -314,13 +314,13 @@ For convenience and clarity for future referencing, we can extract the below set
 
 | Attribute | Value |
 | --- | --- |
-| `PROVIDER` | `akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz` |
-| `DSEQ` | `27977` |
+| `AKASH_PROVIDER` | `akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz` |
+| `AKASH_DSEQ` | `27977` |
 
 Verify we have the right values populated by running:
 
 ```sh
-echo $PROVIDER $DSEQ
+echo $AKASH_PROVIDER $AKASH_DSEQ
 
 akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz 27977 
 ```
@@ -330,7 +330,7 @@ akash1ccktptfkvdc67msasmesuy5m7gpc76z75kukpz 27977
 Once your lease has been created and you have the relevant information above, you can retrieve the access details by running the below:
 
 ```sh
-akash provider lease-status --log_level=info --dseq $DSEQ --from $KEY_NAME --home ~/.akash --provider $PROVIDER --keyring-backend $KEYRING_BACKEND --node $AKASH_NODE
+akash provider lease-status --log_level=info --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --home ~/.akash --provider $AKASH_PROVIDER --keyring-backend $AKASH_KEYRING_BACKEND --node $AKASH_NODE
 ```
 
 You should see a response similar to:
@@ -367,15 +367,15 @@ akash \
   --home "$AKASH_HOME" \
   --node "$AKASH_NODE" \
   provider service-logs \
-  --service $SERVICE_NAME \
-  --owner "$ACCOUNT_ADDRESS" \
-  --dseq "$DSEQ" \
+  --service $AKASH_SERVICE_NAME \
+  --owner "$AKASH_ACCOUNT_ADDRESS" \
+  --dseq "$AKASH_DSEQ" \
   --gseq 1 \
-  --oseq $OSEQ \
-  --provider "$PROVIDER"
+  --oseq $AKASH_OSEQ \
+  --provider "$AKASH_PROVIDER"
 ```
 
-where `$SERVICE_NAME` is the name of a service defined in your [SDL](/sdl).
+where `$AKASH_SERVICE_NAME` is the name of a service defined in your [SDL](/sdl).
 
 ## Update your deployment
 
@@ -389,7 +389,7 @@ Akash Groups are translated into Kubernetes Deployments, this means that only a 
 
   1. Update your deployment by running:
   ```sh
-  akash tx deployment update deploy.yml --dseq $DSEQ --from $KEY_NAME --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --fees=5000uakt
+  akash tx deployment update deploy.yml --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --fees=5000uakt
   ```
   After confirming your transaction, you should see a response similar to this:
   ```json
@@ -476,7 +476,7 @@ Akash Groups are translated into Kubernetes Deployments, this means that only a 
 
   2. Send the updated manifest by running:
   ```sh
-  akash provider send-manifest deploy.yml --keyring-backend=os --node $AKASH_NODE --from=$KEY_NAME --provider=$PROVIDER --dseq $DSEQ --log_level=info --home ~/.akash
+  akash provider send-manifest deploy.yml --keyring-backend=os --node $AKASH_NODE --from=$AKASH_KEY_NAME --provider=$AKASH_PROVIDER --dseq $AKASH_DSEQ --log_level=info --home ~/.akash
   ```
 
 Between the first and second step, the prior deployment's containers will continue to run until the new manifest file is received, validated, and new container group operational. After health checks on updated group are passing; the prior containers will be terminated - this process may take a couple minutes to complete.
@@ -488,7 +488,7 @@ You will eventually need to add funds to the escrow account associated with your
 Deposit additional funds to your escrow account by running:
 
 ```sh
-akash tx deployment deposit --from $KEY_NAME --chain-id $CHAIN_ID --keyring-backend=$KEYRING_BACKEND --node $AKASH_NODE 10000uakt --dseq $DSEQ --fees=5000uakt
+akash tx deployment deposit --from $AKASH_KEY_NAME --chain-id $AKASH_CHAIN_ID --keyring-backend=$AKASH_KEYRING_BACKEND --node $AKASH_NODE 10000uakt --dseq $AKASH_DSEQ --fees=5000uakt
 ```
 
 After confirming the transaction, you should see a response similar to:
@@ -570,7 +570,7 @@ When you are done with your application, close the deployment. This will deprovi
 Close deployment using deployment by creating a `deployment-close` transaction:
 
 ```
-akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $DSEQ  --owner $ACCOUNT_ADDRESS --from $KEY_NAME --keyring-backend $KEYRING_BACKEND -y --fees 5000uakt
+akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $AKASH_DSEQ  --owner $AKASH_ACCOUNT_ADDRESS --from $AKASH_KEY_NAME --keyring-backend $AKASH_KEYRING_BACKEND -y --fees 5000uakt
 ```
 
 You should see a response simlar to below as a confirmation your deployment is closed:
@@ -816,7 +816,7 @@ You should see a response simlar to below as a confirmation your deployment is c
 Additionally, you can also query the market to check if your lease is closed:
 
 ```
-akash query market lease list --owner $ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $DSEQ 
+akash query market lease list --owner $AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ 
 ```
 
 You should see a response similar to:

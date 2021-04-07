@@ -29,7 +29,7 @@ We will be using shell variables throughout this guide for convenience and clari
 |---|---|
 |`AKASH_NODE`| Akash network configuration base URL. See [here](../version.md#RPC-Node).|
 |`AKASH_CHAIN_ID`| Chain ID of the Akash network connecting to. See [here](../version.md#Chain-ID).|
-|`ACCOUNT_ADDRESS`| The address of your account.  See [here](../wallet/README.md#account-address).|
+|`AKASH_ACCOUNT_ADDRESS`| The address of your account.  See [here](../wallet/README.md#account-address).|
 |`AKASH_KEYRING_BACKEND`| Keyring backend to use for local keys. See [here](../wallet/README.md)|
 |`AKASH_KEY_NAME` | The name of the key you will be deploying from. See [here](../wallet/README.md) if you haven't yet setup a key|
 
@@ -66,7 +66,7 @@ akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx
 Check your account has sufficient balance by running:
 
 ```sh
-akash query bank balances --node $AKASH_NODE $ACCOUNT_ADDRESS 
+akash query bank balances --node $AKASH_NODE $AKASH_ACCOUNT_ADDRESS 
 ```
 
 You should see a response similar to:

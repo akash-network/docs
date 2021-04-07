@@ -178,13 +178,13 @@ Now that we have the SDL configured, lets deploy this application and see what h
 Create the deployment by running:
 
 ```sh
-akash tx deployment create goosebin.yml --from $KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --fees 5000uakt -y
+akash tx deployment create goosebin.yml --from $AKASH_KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --fees 5000uakt -y
 ```
 
 Once a provider is chosen, a lease is created, and the manifest is uploaded, we can view the status of our deployment by running:
 
 ```sh
-akash provider lease-status --node $AKASH_NODE --home ~/.akash --dseq $DSEQ --from $KEY_NAME --provider $PROVIDER
+akash provider lease-status --node $AKASH_NODE --home ~/.akash --dseq $AKASH_DSEQ --from $AKSH_KEY_NAME --provider $AKASH_PROVIDER
 ```
 
 You should see a response similar to:
@@ -224,7 +224,7 @@ You should see a response similar to:
 The URI shown above will take you to the front-end service.  We can verify the service is running and talking with the backend (`redis`) by running the following:
 
 ```sh
-akash provider lease-logs --node $AKASH_NODE --home $AKASH_HOME  --from $KEY_NAME --dseq $DSEQ  --provider $PROVIDER
+akash provider lease-logs --node $AKASH_NODE --home $AKASH_HOME  --from $AKSH_KEY_NAME --dseq $AKASH_DSEQ  --provider $AKASH_PROVIDER
 ```
 
 You should see a response similar to:
