@@ -92,7 +92,7 @@ akash keys add $AKASH_PROVIDER_KEY --home=$AKASH_HOME --keyring-backend=$AKASH_K
 
 ```bash
 curl -s -o kustomization.yaml \
-  https://raw.githubusercontent.com/ovrclk/akash/master/_docs/examples/provider/kustomization.yaml
+  https://raw.githubusercontent.com/ovrclk/akash/master/_docs/kustomize/akash-provider/kustomization.yaml
 ```
 
 ### Configure Akash Provider
@@ -231,7 +231,7 @@ akash query account --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND 
 
 ```bash
 curl -s -o deployment.yaml \
-  https://raw.githubusercontent.com/ovrclk/akash/master/_docs/examples/provider/deployment.yaml
+  https://raw.githubusercontent.com/ovrclk/akash/master/_docs/kustomize/akash-provider/deployment.yaml
 ```
 
 ### Customize SDL
@@ -279,7 +279,7 @@ DSEQ="$(akash query market lease list --node=$AKASH_NODE --home=$AKASH_HOME --ke
 ```bash
 akash provider send-manifest deployment.yaml --node=$AKASH_NODE \
   --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND \
-  --dseq "$DSEQ" \
+  --dseq "$AKASH_DSEQ" \
   --oseq 1 \
   --gseq 1 \
   --owner    "$(akash keys show deploy -a)" \
@@ -291,7 +291,7 @@ akash provider send-manifest deployment.yaml --node=$AKASH_NODE \
 ```bash
 akash provider lease-status --node=$AKASH_NODE \
   --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND \
-  --dseq "$DSEQ" \
+  --dseq "$AKASH_DSEQ" \
   --oseq 1 \
   --gseq 1 \
   --owner    "$(akash keys show deploy -a)" \
@@ -302,7 +302,7 @@ akash provider lease-status --node=$AKASH_NODE \
 
 ```bash
 akash provider lease-status \
-  --dseq "$DSEQ" \
+  --dseq "$AKASH_DSEQ" \
   --oseq 1 \
   --gseq 1 \
   --owner    "$(akash keys show deploy -a)"     \
@@ -321,7 +321,7 @@ akash tx deployment close \
   --chain-id=$AKASH_CHAIN_ID \
   --home=$AKASH_HOME \
   --keyring-backend=$AKASH_KEYRING_BACKEND \
-  --from $OWNER_ADDRESS \
-  --dseq $DSEQ
+  --from $AKASH_KEY_NAME \
+  --dseq $AKASH_DSEQ
 ```
 
