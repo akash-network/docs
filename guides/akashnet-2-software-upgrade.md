@@ -29,7 +29,7 @@ sudo service akash stop
 
 **Option-1: Using pre-build binaries**
 
-   Download pre-built binaries from: https://github.com/ovrclk/akash/releases/tag/v0.12.0
+   Download pre-built binaries from: https://github.com/ovrclk/akash/releases/tag/v0.12.1
 
 **Option-2: Build from source**
 
@@ -38,7 +38,7 @@ sudo service akash stop
    git clone https://github.com/ovrclk/akash
    cd akash
    git fetch
-   git checkout v0.12.0
+   git checkout v0.12.1
    MAINNET=true make install
    ```
 
@@ -46,8 +46,13 @@ sudo service akash stop
 
 ```sh
 $ akash version --long
-
-[TBD]
+name: akash
+server_name: akash
+version: v0.12.1
+commit: 53182423582000bf63fa674245a5008c5b466bf1
+build_tags: osusergo,netgo,ledger,mainnet,static_build
+go: go version go1.16.1 linux/amd64
+...
 ```
 
 ### 5. Start your akash service
