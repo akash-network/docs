@@ -38,7 +38,7 @@ We will be using shell variables throughout this guide for convenience and clari
 |`AKASH_CHAIN_ID`| Chain ID of the Akash network connecting to. See [here](/guides/version.md#Chain-ID).|
 |`AKASH_ACCOUNT_ADDRESS`| The address of your account.  See [here](/guides/wallet/README.md#account-address).|
 |`AKASH_KEYRING_BACKEND`| Keyring backend to use for local keys. See [here](/guides/wallet/README.md)|
-|`KEY_NAME` | The name of the key you will be deploying from. See [here](/guides/wallet/README.md) if you haven't yet setup a key|
+|`AKASH_KEY_NAME` | The name of the key you will be deploying from. See [here](/guides/wallet/README.md) if you haven't yet setup a key|
 
 Verify you have correct `$AKASH_NODE`, that you have populated while [configuring the connection](/guides/version) using `export AKASH_NODE=$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)`.
 
@@ -55,15 +55,15 @@ Verify you have the key set up and your account has sufficient balances, see the
 My local key is named `alice`, the below command should return the name you've used:
 
 ```sh
-echo $KEY_NAME 
+echo $AKASH_KEY_NAME 
 
 alice
 ```
 
-Populate `AKASH_ACCOUNT_ADDRESS` from `KEY_NAME` and verify:
+Populate `AKASH_ACCOUNT_ADDRESS` from `AKASH_KEY_NAME` and verify:
 
 ```sh
-export AKASH_ACCOUNT_ADDRESS="$(akash keys show $KEY_NAME -a)"
+export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 
 echo $AKASH_ACCOUNT_ADDRESS
 
@@ -186,7 +186,7 @@ Please note that all of the following can be substituted in the `datacenter` fie
 To create a deployment, a [certificate](/design/mtls.md) must first be created. To do this, run:
 
 ```
-akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $KEYRING_BACKEND --from $KEY_NAME --node $AKASH_NODE --fees 5000uakt
+akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt
 ```
 
 You should see a response similar to:
@@ -224,7 +224,7 @@ You should see a response similar to:
 To deploy on Akash, run:
 
 ```sh
-akash deploy create deploy.yml --from $KEY_NAME --fees 5000uakt
+akash deploy create deploy.yml --from $AKASH_KEY_NAME --fees 5000uakt
 ```
     
 You should see a response similar to:

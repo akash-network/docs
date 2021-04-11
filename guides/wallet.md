@@ -19,8 +19,8 @@ Derive a new private key and encrypt to disk using the command `keys add`, to ge
 
 ```bash
 akash \
-  --keyring-backend "$KEYRING_BACKEND" \
-  keys add "$KEY_NAME"
+  --keyring-backend "$AKASH_KEYRING_BACKEND" \
+  keys add "$AKASH_KEY_NAME"
 ```
 
 You'll see a response similar to below:
@@ -50,8 +50,8 @@ To derive a key and store it on the ledger, add the `--ledger` flag `keys add` c
 
 ```bash
 akash \
-  --keyring-backend "$KEYRING_BACKEND" \
-  keys add "$KEY_NAME" \
+  --keyring-backend "$AKASH_KEYRING_BACKEND" \
+  keys add "$AKASH_KEY_NAME" \
   --ledger
 ```
 
@@ -73,8 +73,8 @@ The command to recover your key is:
 
 ```bash
 akash \
-  --keyring-backend "$KEYRING_BACKEND" \
-  akash keys add "$KEY_NAME" \
+  --keyring-backend "$AKASH_KEYRING_BACKEND" \
+  akash keys add "$AKASH_KEY_NAME" \
   --recover
 ```
 
@@ -99,8 +99,8 @@ The command to export your private key is `keys export`. For example:
 
 ```bash
 akash \
-  --keyring-backend "$KEYRING_BACKEND" \
-  keys export "$KEY_NAME"
+  --keyring-backend "$AKASH_KEYRING_BACKEND" \
+  keys export "$AKASH_KEY_NAME"
 ```
 
 will output a response similar to:
@@ -125,7 +125,7 @@ You can find your account address with:
 
 ```bash
 akash \
-  --keyring-backend "$KEYRING_BACKEND" \
-  keys show "$KEY_NAME" -a
+  --keyring-backend "$AKASH_KEYRING_BACKEND" \
+  keys show "$AKASH_KEY_NAME" -a
 ```
 
