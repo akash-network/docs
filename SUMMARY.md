@@ -29,3 +29,4 @@
 
 * [Stack Definition Language](documentation/sdl.md)
 * [Akash CLI reference](cli/akash.md)
+* [FAQ](design/faq.md)
