@@ -10,8 +10,8 @@ Make sure to have Akash client installed on your workstation, check [install gui
 
 | Name | Description |
 | :--- | :--- |
-| `KEY_NAME` | Key name of your choosing.  This documentation uses a value of "alice". |
-| `KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` \(default\), `file`, `test`. |
+| `AKASH_KEY_NAME` | Key name of your choosing.  This documentation uses a value of "alice". |
+| `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` \(default\), `file`, `test`. |
 
 ### Derive a New Key Locally
 

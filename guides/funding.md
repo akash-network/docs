@@ -8,7 +8,7 @@ You'll need to know information about the network you're connecting your node to
 
 Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions.
 
-You'll need a key to use for your account and your account address handy. See the [wallet guide](https://github.com/ovrclk/docs/tree/9ba5597d7a6d9df65c8de647b52806904d25d845/guides/wallet.md) for how to set this up.
+You'll need a key to use for your account and your account address handy. See the [wallet guide](/guides/wallet.md) for how to set this up.
 
 #### Shell Variables Required
 
