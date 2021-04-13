@@ -34,6 +34,10 @@ Yes, this is something we've talked about for a long time but haven't had a chan
 
 Yes. All storage is ephemeral for now, but we will work on persistent storage in the future.
 
+**Is there GPU support?**
+
+It is on the roadmap, however, GPU workloads aren't supported just yet - there are some technical limitations related to GPU sharing and security with our current Kubernetes backend. We are actively working on it.
+
 **Can Akash be used with private images or do they have to be public?**
 
 Images need to be publicly accessible at this time.
