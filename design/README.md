@@ -63,7 +63,7 @@ Escrow accounts are necessary in akash for two primary reasons:
 
 ### Certificates
 
-It is important for the tenant to send thir manifest to the correct provider, and for the provider to ensure only valid owners can access their deployments. This authentication is implemented with [mTLS](mtls.md) and involves each account creating a certificate prior to deploying a workload or starting a provider.
+It is important for the tenant to send their manifest to the correct provider, and for the provider to ensure only valid owners can access their deployments. This authentication is implemented with [mTLS](mtls.md) and involves each account creating a certificate prior to deploying a workload or starting a provider.
 
 Default certificate lifespan is 365 days from the moment of issuance. This can be customized to be valid up to a certain date, or not valid until a certain date.
 
