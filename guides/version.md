@@ -63,7 +63,7 @@ curl -s "$AKASH_NET/peer-nodes.txt" | paste -d, -s
 
 ### RPC Node
 
-Print a random RPC endpoint. The akash CLI will recogonize `AKASH_NODE` environment variable when exported to the shell.
+Print a random RPC endpoint. The akash CLI will recognize `AKASH_NODE` environment variable when exported to the shell.
 
 ```bash
 export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)"
