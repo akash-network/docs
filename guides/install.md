@@ -47,7 +47,7 @@ Download the archive for your system from the [release page](https://github.com/
 Alternatively, install the latest version via [`godownloader`](https://github.com/goreleaser/godownloader) with:
 
 ```bash
-curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "$AKASH_VERSION"
+curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "v$AKASH_VERSION"
 ```
 
 The final step is to make sure that the akash binaries are available in your shell `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.
@@ -61,7 +61,7 @@ Installing Akash suite from source
 ```text
 $ go get -d github.com/ovrclk/akash
 $ cd $GOPATH/src/github.com/ovrclk/akash
-$ git checkout "$AKASH_VERSION"
+$ git checkout "v$AKASH_VERSION"
 $ make deps-install
 $ make install
 ```
