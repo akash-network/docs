@@ -9,7 +9,7 @@
 * Akash Network to connect to.
   * Established account address with some tokens\(for gas\) in network to create Provider registration.
 * Kubernetes Cluster
-  * [Akash Kubespray](https://github.com/ovrclk/kubespray/) can help get a functional cluster bootstrapped.
+  * [Akash Kubespray](https://github.com/kubernetes-sigs/kubespray/) can help get a functional cluster bootstrapped.
   * Provider Pod will require admin authorization.
 
 ### Tools
@@ -36,7 +36,7 @@ mkdir akash-demo && cd akash-demo
 * A Kubernetes cluster with your local `kubectl` with admin authentication and authorization.
 * A wildcard A Record resolving to a cluster route-able IP. eg: `*.akashian.io`
 
-#### Option 1: [Akash Kubespray](https://github.com/ovrclk/kubespray/)
+#### Option 1: [Akash Kubespray](https://github.com/kubernetes-sigs/kubespray/)
 
 Akash has created an example Kubespray configuration to provision a Kubernetes installation on linux machines. Included are best practice configuration for CNI `calico` plugin, default Network Policies + Namespaces, `nginx` Ingress Controller, `metrics-server`, `cert-manager`, and Seccomp syscall restrictions.
 
