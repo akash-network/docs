@@ -1207,7 +1207,7 @@ akash \
   --service $AKASH_SERVICE_NAME \
   --owner "$AKASH_ACCOUNT_ADDRESS" \
   --dseq "$AKASH_DSEQ" \
-  --gseq "$AKASH_DSEQ" \
+  --gseq "$AKASH_GSEQ" \
   --oseq $AKASH_OSEQ \
   --provider "$AKASH_PROVIDER"
 ```
