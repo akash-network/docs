@@ -121,6 +121,10 @@ There are three strategies for pruning state, please be aware that this is only 
 
 You can configure your node's pruning strategy at start time with the `--pruning` or by configuring your `app.toml` file.
 
+{% hint style="warning" %}
+If running a validator node, do not use `--pruning everything` as it is known to cause issues.  Instead, please use `--pruning default`.
+{% endhint %}
+
 > Note: When you are pruning state you will not be able to query the heights that are not in your store. The sentry nodes the Akash team is running will be `--pruning nothing` and all data from the testnet will be queriable there.
 
 ## Fast Sync

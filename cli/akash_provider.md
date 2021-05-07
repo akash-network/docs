@@ -15,7 +15,7 @@ Akash provider commands
 * [akash provider lease-status](akash_provider_lease-status.md)	 - get lease status
 * [akash provider run](akash_provider_run.md)	 - run akash provider
 * [akash provider send-manifest](akash_provider_send-manifest.md)	 - Submit manifest to provider(s)
-* [akash provider service-logs](akash_provider_service-logs.md)	 - get service status
+* [akash provider lease-logs](akash_provider_lease-logs.md)	 - get service status
 * [akash provider service-status](akash_provider_service-status.md)	 - get service status
 * [akash provider status](akash_provider_status.md)	 - get provider status
 

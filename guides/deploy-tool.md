@@ -366,16 +366,13 @@ You can view your application logs to debug issues or watch progress like so:
 akash \
   --home "$AKASH_HOME" \
   --node "$AKASH_NODE" \
-  provider service-logs \
-  --service $AKASH_SERVICE_NAME \
-  --owner "$AKASH_ACCOUNT_ADDRESS" \
+  provider lease-logs \
   --dseq "$AKASH_DSEQ" \
-  --gseq 1 \
-  --oseq $AKASH_OSEQ \
-  --provider "$AKASH_PROVIDER"
+  --gseq "$AKASH_GSEQ" \
+  --oseq "$AKASH_OSEQ" \
+  --provider "$AKASH_PROVIDER" \
+  --from "$AKASH_KEY_NAME"
 ```
-
-where `$AKASH_SERVICE_NAME` is the name of a service defined in your [SDL](/sdl).
 
 ## Update your deployment
 

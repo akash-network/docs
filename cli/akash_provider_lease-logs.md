@@ -1,9 +1,9 @@
-## akash provider service-logs
+## akash provider lease-logs
 
 get service status
 
 ```
-akash provider service-logs [flags]
+akash provider lease-logs [flags]
 ```
 
 ### Options
@@ -14,7 +14,7 @@ akash provider service-logs [flags]
       --format string            Output format text|json. Defaults to text (default "text")
       --from string              name or address of private key with which to sign
       --gseq uint32              group sequence (default 1)
-  -h, --help                     help for service-logs
+  -h, --help                     help for lease-logs
       --home string              the application home directory
       --keyring-backend string   select keyring's backend (os|file|kwallet|pass|test) (default "os")
       --oseq uint32              order sequence (default 1)
