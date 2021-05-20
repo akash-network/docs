@@ -29,6 +29,6 @@ will mean that you have to re-define the variable.
   * [RPC Service](/guides/node/rpc-service.md)
   * [API Service](/guides/node/api-service.md)
   * [Run a Validator](/guides/node/validator.md)
-* [Become a Provider](/guides/provider.md)
+* [Become a Provider](/guides/provider/README.md)
 * [Upgrade to Akashnet-2](/guides/upgrade-mainnet.md)
 * [Software Upgrade: Akashnet-2-upgrade-1](/guides/akashnet-2-software-upgrade.md)
