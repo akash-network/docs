@@ -74,7 +74,7 @@ The command to recover your key is:
 ```bash
 akash \
   --keyring-backend "$AKASH_KEYRING_BACKEND" \
-  akash keys add "$AKASH_KEY_NAME" \
+  keys add "$AKASH_KEY_NAME" \
   --recover
 ```
 
