@@ -11,7 +11,7 @@ To run a provider on the Akash network, you need the following
 * A machine that can run the Akash provider service.
   * The Akash provider is a service that listens for events on the Akash blockchain and then responds to those events by offering available compute resources in the Kubernetes cluster. The provider also must be accessible from the internet and have a hostname associated with it. This is because when a lease is created, the owner of the lease directly communicates with the provider to provide the final instructions for provisioning resources.
 * Access to an Akash blockchain RPC node
-  * An RPC node is necessary because the Akash provider does not directly participate in the blockchain network. Instead it uses an external node to manage all interactionwith the blockchain. Any accessible RPC can be used. Anyone running an Akash provider is strongly reccommended to run a node on the Akash network co-located with the provider. It is _not_ necessary for this node to act as a validator. More than one provider can access the same RPC node. 
+  * An RPC node is necessary because the Akash provider does not directly participate in the blockchain network. Instead it uses an external node to manage all interactionwith the blockchain. Any accessible RPC node can be used. Anyone running an Akash provider is strongly reccommended to run a node on the Akash network co-located with the provider. It is _not_ necessary for this node to act as a validator. More than one provider can access the same RPC node. 
 
 ## Kubernetes Cluster Setup
 
@@ -47,7 +47,7 @@ virtualenv --python=python3 venv
 . venv/bin/activate
 ```
 ```
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ## Accessing nodes
@@ -175,8 +175,6 @@ To increase the pods per node limit, 3 steps need to be taken:
 
 In this example, these values can be configured in `kubespray/inventory/defi/group_vars/k8s_cluster/k8s-cluster.yml`
 
-<!-- TODO - add notes about adding CRD -->
-
 ### Add the Akash Custom Resource Definition
 
 On the remote machine, navigate to `/root/.kube` and open `config` using your preferred editor. Ensure that the `server` field is populated with the actual server IP (including port number), as Kubespray often incorrectly fills it with `127.0.0.1`.
@@ -228,6 +226,15 @@ You can apply it using the `kubectl` command like this
 ```
 kubectl apply -f ./ingress-nginx.yaml
 ```
+
+Additionally, exactly one node needs to be labeled with a label specific to this ingress declaration:
+
+```
+kubectl label nodes name_of_the_node_goes_here akashRole=ingress
+```
+
+This will cause the NGINX ingress to live only on that node. When the wildcard domain is created, it needs to point at this node's IP address.
+
 ### Configure gVisor
 
 Files:
@@ -262,9 +269,11 @@ This section documents configuration you may want to consider customizing when s
 
 There are 3 important public hostnames that a provider must configure.
 
-The **provider host** is the publicly accessible hostname of the provider. This is specified in the configuration file using the `host` key when `akash tx provider create` or `akash tx provider update` is ran. This value is stored on the blockchain. It is used whenever a lease owner needs to communicate directly when the provider for things such as sending a manifest or getting a lease status.
+The **provider host** is the publicly accessible hostname of the provider. This is specified in the configuration file using the `host` key when `akash tx provider create` or `akash tx provider update` is ran. This value is stored on the blockchain. It is used whenever a lease owner needs to communicate directly with the provider for things such as sending a manifest or getting a lease status.
 
-The **cluster ingress host** is the publicly accessible hostname of the Kubernetes cluster. The Kubernetes cluster hosts an Ingress Controller, which is one way that leases in the cluster may be exposed to the outside world. At this time only HTTP is supported for the Ingress Controller. The hostname should resolve to an IP which directs traffic to the Kubernetes ingress controller IP on your network. This value is specified using the `--deployment-ingress-domain` switch. It is not stored on the blockchain.
+The **cluster ingress host** is the publicly accessible hostname of the Kubernetes cluster. The Kubernetes cluster hosts an Ingress Controller, which is one way that leases in the cluster may be exposed to the outside world. It is currently recommended to [assign](#Create-Kubernetes-Ingress-Controller) exactly one node in your cluster to the Ingress Controller role.
+
+At this time only HTTP is supported for the Ingress Controller. The hostname should resolve to an IP which directs traffic to the Kubernetes ingress controller IP on your network. This value is specified using the `--deployment-ingress-domain` switch. It is not stored on the blockchain.
 
 The **cluster public hostname** is the publicly accessible hostname of the Kubernetes cluster. Is is not required, nor is it desirable to expose an entire cluster to the internet. The Kubernetes cluster supports a feature called a "NodePort" service. This allows UDP and TCP traffic to be forwarded from the cluster directly to a container on any node in the cluster. By default Kubernetes uses the port range `30000-32767` for this. It is recommended that traffic from the internet only be able to access this port range. This hostname should be configured to resolve to an IP that directs traffic to any of the nodes in the Kubernetes cluster.  Kubernetes automatically routes the IP traffic to the correct container. This value is set using the `--cluster-public-hostname` command line  switch. It _may_ be different that the **cluster ingress host** but that is not required. This value is not stored on the blockchain.
 
@@ -327,7 +336,6 @@ You must configure the following parameters on the command line when starting th
 * `--home`
 * `--chain-id`
 * `--keyring-backend` - always set to `test`
-* `--from`
 * `--fees`
 
 You must set the following parameters, either by using the command line options or the equivalent environmental variable.
@@ -344,7 +352,7 @@ The provider must have a wallet accessible under the directory specified by `--h
 
 Example command to start a provider:
 
-`akash provider run --home $AKASH_HOME --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --keyring-backend=test --from $AKASH_PROVIDER_KEY --fees 5000uakt --kubeconfig $KUBECONFIG --cluster-k8s true --deployment-ingress-domain  foo.com --deployment-ingress-static-hosts true --cluster-public-hostname foo.com --bid-price-strategy scale --bid-price-cpu-scale 500`
+`akash provider run --home $AKASH_HOME --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --keyring-backend=test --from $AKASH_PROVIDER_KEY --fees 5000uakt --kubeconfig $KUBECONFIG --cluster-k8s true --deployment-ingress-domain  $PROVIDER_DOMAIN --deployment-ingress-static-hosts true --cluster-public-hostname _optional_ --bid-price-strategy scale --bid-price-cpu-scale 500`
 
 ### Cluster resources overcommit
 
