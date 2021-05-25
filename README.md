@@ -22,6 +22,7 @@ For details about what [Akash](https://github.com/ovrclk/akash) can do and what 
 * [Using the Deploy Tool](guides/deploy-tool.md)
 * [Multi-Tiered Deployment](guides/multi-tier-app.md)
 * [Software Upgrade: Akashnet-2-upgrade-1](guides/akashnet-2-software-upgrade.md)
+* [Akashnet-2 IBC Connections](guides/akashnet-relayer.md)
 
 ## Documentation
 
