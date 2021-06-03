@@ -1,6 +1,6 @@
 # Marketplace
 
-The Akash Marketplace is an auction for compute resources. It is the mechanism by which users acquire resources on the Akash Platform.
+Contents:
 
 * [Overview](marketplace.md#overview)
 * [Payments](marketplace.md#payments)

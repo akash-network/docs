@@ -5,11 +5,11 @@
 ## Decentralized Cloud
 
 * [Marketplace](decentralized-cloud/marketplace.md)
-* [Escrow](decentralized-cloud/escrow.md)
-* [mTLS](decentralized-cloud/mtls.md)
+* [Akash CLI](decentralized-cloud/general-commands.md)
+* [Escrow Accounts](decentralized-cloud/escrow.md)
+* [Security \(mTLS\)](decentralized-cloud/mtls.md)
 * [Stack Definition Language](decentralized-cloud/sdl.md)
-* [Command Line Interface](decentralized-cloud/general-commands.md)
-* [Features](decentralized-cloud/design.md)
+* [Overview](decentralized-cloud/design.md)
 
 ## Getting Started <a id="guides"></a>
 

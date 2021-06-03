@@ -1,4 +1,4 @@
-# Escrow
+# Escrow Accounts
 
 * [Overview](escrow.md#overview)
 * [Account Settlement](escrow.md#account-settlement)
