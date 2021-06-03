@@ -1,16 +1,18 @@
-# Deploy a Multi-Tiered Application 
+# Multi-Tiered Deployment
 
-In this guide, we will deploy a multi-tier web application on Akash. The example application will consist of two services: a front-end web service and a back-end database. 
+## Deploy a Multi-Tiered Application
 
-## Before We Begin
+In this guide, we will deploy a multi-tier web application on Akash. The example application will consist of two services: a front-end web service and a back-end database.
 
-This guide is to be considered an extenstion of the [Deploy an Application](deploy/README.md) guide.  Please ensure you have successfully completed all steps leading up to the "Create the Deployment Configuration" step in said guide, as they will not be discussed here. 
+### Before We Begin
 
-# Create the Deployment Configuration
+This guide is to be considered an extenstion of the [Deploy an Application](deploy.md) guide. Please ensure you have successfully completed all steps leading up to the "Create the Deployment Configuration" step in said guide, as they will not be discussed here.
 
-Let's create a deployment configuration that specifies mutliple services in a single deployment.  
+## Create the Deployment Configuration
 
-```sh
+Let's create a deployment configuration that specifies mutliple services in a single deployment.
+
+```bash
 ---
 version: "2.0"
 
@@ -80,9 +82,9 @@ deployment:
 
 Let's break down the above SDL into its 3 primary categories: `services`, `profiles`, and `deployment`.
 
-### Services
+#### Services
 
-```sh
+```bash
 services:
   redis:
     image: bitnami/redis:6.2
@@ -106,19 +108,20 @@ services:
       - port: 8000
         as: 80
         to:
-          - global: true  
+          - global: true
 ```
-The `services` entries contain maps of workloads to be ran on the Akash deployment. This deployment has 2 service entries: `redis` and `goosebin` - the former being our backend and the latter being our frontend. Please note that while these service names are arbitrary, their usage must remain consistent accross the whole .yml file.   
 
-We can see that `goosebin` is globally exposed and open to the public, while `redis` is internal to the deployment and is only shared with `goosebin`. 
+The `services` entries contain maps of workloads to be ran on the Akash deployment. This deployment has 2 service entries: `redis` and `goosebin` - the former being our backend and the latter being our frontend. Please note that while these service names are arbitrary, their usage must remain consistent accross the whole .yml file.
 
-Within the `goosebin` entry, we set some environmental variables - these are declared internally within the `goosebin` image.  Note that each application can choose whatever environment variables it wants to use on its own for configuration. The variable that ties our services together is `REDIS_HOST`. This is what `goosebin` looks at to determine which host to connect to for `redis`. In this case we set `REDIS_HOST=redis` because we chose to name the service `redis` - had we named the service `database`, we would have set `REDIS_HOST=database`.
+We can see that `goosebin` is globally exposed and open to the public, while `redis` is internal to the deployment and is only shared with `goosebin`.
 
-The `expose` section is similar to other http examples - internally, the container for this example is listing on port 8000. The deployment will only be assigned a unique URI that can be visited in a web browser when `expose` has `global: true` and the port is set to 80.  
+Within the `goosebin` entry, we set some environmental variables - these are declared internally within the `goosebin` image. Note that each application can choose whatever environment variables it wants to use on its own for configuration. The variable that ties our services together is `REDIS_HOST`. This is what `goosebin` looks at to determine which host to connect to for `redis`. In this case we set `REDIS_HOST=redis` because we chose to name the service `redis` - had we named the service `database`, we would have set `REDIS_HOST=database`.
 
-### Profiles 
+The `expose` section is similar to other http examples - internally, the container for this example is listing on port 8000. The deployment will only be assigned a unique URI that can be visited in a web browser when `expose` has `global: true` and the port is set to 80.
 
-```sh
+#### Profiles
+
+```bash
 profiles:
   compute:
     redis:
@@ -148,13 +151,13 @@ profiles:
           amount: 100
 ```
 
-The `profiles` entries contain named compute and placement profiles to be used in the deployment. 
+The `profiles` entries contain named compute and placement profiles to be used in the deployment.
 
-Since we have 2 services to deploy, details for each of them must be specified here. This section is very similar to a standard deployment, so it won't be covered in detail here. An important item to note, however, is that the named compute/placement profiles here (`redis` and `goosebin`) must match the names we had specified in the `services` section. [Additional mappings](/sdl/README.md#profiles) can also be specified within `profiles` such as audited attributes and datacenter attributes.
+Since we have 2 services to deploy, details for each of them must be specified here. This section is very similar to a standard deployment, so it won't be covered in detail here. An important item to note, however, is that the named compute/placement profiles here \(`redis` and `goosebin`\) must match the names we had specified in the `services` section. [Additional mappings](https://github.com/ovrclk/docs/tree/a8e7a472b43ec742a03bc5063f6c5a82ca3ca2ea/sdl/README.md#profiles) can also be specified within `profiles` such as audited attributes and datacenter attributes.
 
-### Deployments
+#### Deployments
 
-```sh
+```bash
 deployment:
   redis:
     dc1:
@@ -165,31 +168,32 @@ deployment:
       profile: goosebin
       count: 1
 ```
+
 The `deployment` entries map the datacenter profiles to compute profiles to create a final desired configuration for the resources required for the services.
 
-Similar to the `profiles` entries, we must specify deployment criteria for both of our services.  This says that the 1 instance of the `redis` service and 1 instance of the `goosebin` service should be deployed to a datacenter matching the `dc1` datacenter profile. Each instance of the services will have the resources defined in its corresponding compute profile (`redis` or `goosebin`) available to it.
+Similar to the `profiles` entries, we must specify deployment criteria for both of our services. This says that the 1 instance of the `redis` service and 1 instance of the `goosebin` service should be deployed to a datacenter matching the `dc1` datacenter profile. Each instance of the services will have the resources defined in its corresponding compute profile \(`redis` or `goosebin`\) available to it.
 
-### Deployment
+#### Deployment
 
-Now that we have the SDL configured, lets deploy this application and see what happens. A more detailed guide on this process can be found in the [Deploy an Application](deploy/README.md) guide.
+Now that we have the SDL configured, lets deploy this application and see what happens. A more detailed guide on this process can be found in the [Deploy an Application](deploy.md) guide.
 
-#### Create the Deployment
+**Create the Deployment**
 
 Create the deployment by running:
 
-```sh
+```bash
 akash tx deployment create goosebin.yml --from $AKASH_KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --fees 5000uakt -y
 ```
 
 Once a provider is chosen, a lease is created, and the manifest is uploaded, we can view the status of our deployment by running:
 
-```sh
+```bash
 akash provider lease-status --node $AKASH_NODE --home ~/.akash --dseq $AKASH_DSEQ --from $AKSH_KEY_NAME --provider $AKASH_PROVIDER
 ```
 
 You should see a response similar to:
 
-```json
+```javascript
 {
   "services": {
     "goosebin": {
@@ -221,15 +225,15 @@ You should see a response similar to:
 }
 ```
 
-The URI shown above will take you to the front-end service.  We can verify the service is running and talking with the backend (`redis`) by running the following:
+The URI shown above will take you to the front-end service. We can verify the service is running and talking with the backend \(`redis`\) by running the following:
 
-```sh
+```bash
 akash provider lease-logs --node $AKASH_NODE --home $AKASH_HOME  --from $AKSH_KEY_NAME --dseq $AKASH_DSEQ  --provider $AKASH_PROVIDER
 ```
 
 You should see a response similar to:
 
-```sh
+```bash
 [goosebin-5cf5678d5b-rfdqv] Starting HTTP server on "0.0.0.0:8000"
 [goosebin-5cf5678d5b-rfdqv] GET / rendered "home"
 [goosebin-5cf5678d5b-rfdqv] GET /create-paste rendered "newPaste"
@@ -258,4 +262,5 @@ You should see a response similar to:
 [redis-8569665588-zh6pr] 1:M 06 Apr 2021 19:38:14.691 * Running mode=standalone, port=6379.
 ```
 
-We can see the `goosebin` frontend has made some requests to the `redis` backend, and the containers are healthy. 
+We can see the `goosebin` frontend has made some requests to the `redis` backend, and the containers are healthy.
+

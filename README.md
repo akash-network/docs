@@ -11,12 +11,12 @@ For details about what [Akash](https://github.com/ovrclk/akash) can do and what 
 * [Install Akash](guides/install.md)
 * [Wallet Setup](guides/wallet.md)
 * [Funding your Account](guides/funding.md)
-* [Deploy an Application](guides/deploy/README.md)
-* [Run an Akash Node](guides/node/README.md)
+* [Deploy an Application](guides/deploy.md)
+* [Run an Akash Node](guides/node/)
   * [RPC Service](guides/node/rpc-service.md)
   * [API Service](guides/node/api-service.md)
   * [Run a Validator](guides/node/validator.md)
-* [Become a Provider](guides/provider/README.md)
+* [Become a Provider](guides/provider.md)
 * [Common Commands](guides/general-commands.md)
 * [Upgrade to Akashnet-2](guides/upgrade-mainnet.md)
 * [Using the Deploy Tool](guides/deploy-tool.md)
@@ -27,5 +27,6 @@ For details about what [Akash](https://github.com/ovrclk/akash) can do and what 
 ## Documentation
 
 * [Stack Definition Language](documentation/sdl.md)
-* [Akash CLI reference](cli/akash.md)
-* [FAQ](design/faq.md)
+* [Akash CLI reference](documentation/akash.md)
+* [FAQ](documentation/faq.md)
+
