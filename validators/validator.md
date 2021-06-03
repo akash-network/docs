@@ -1,6 +1,6 @@
-# Run a Validator
+# Running a Validator
 
-Before setting up your validator node, make sure you've already gone through the [Full Node Setup](./) guide.
+Before setting up your validator node, make sure you've already gone through the [Full Node Setup](../guides/node/) guide.
 
 > NOTE: it is not required to create a validator on Akash testnets unless specified in a challenge or otherwise. The akash team runs a centralized validator set to enable for easy and consistent testnet operations for developers trying out the platform for the first time.
 

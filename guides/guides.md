@@ -22,9 +22,7 @@ Because of this, it is important to type the commands into a terminal that the v
 * [Run an Akash Node](node/)
   * [RPC Service](node/rpc-service.md)
   * [API Service](node/api-service.md)
-  * [Run a Validator](node/validator.md)
-* [Become a Provider](provider.md)
-* [Common Commands](general-commands.md)
-* [Upgrade to Akashnet-2](upgrade-mainnet.md)
-* [Using the Deploy Tool](deploy-tool.md)
+  * [Run a Validator](../validators/validator.md)
+* [Become a Provider](../providers/provider.md)
+* [Common Commands](../decentralized-cloud/general-commands.md)
 

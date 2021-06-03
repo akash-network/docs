@@ -83,7 +83,7 @@ pagination:
 Please note the balance indicated is denominated in uAKT \(AKT x 10^-6\), in the above example, the account has a balance of _93 AKT_. We're now setup to deploy.
 
 {% hint style="info" %}
-Your account must have a minimum balance of 5 AKT to create a deployment. This 5 AKT funds the escrow account associated with the deployment and is used to pay the provider for their services. It is recommended you have more than this minimum balance to pay for transaction fees. For more information on escrow accounts, see [here](../design/escrow.md)
+Your account must have a minimum balance of 5 AKT to create a deployment. This 5 AKT funds the escrow account associated with the deployment and is used to pay the provider for their services. It is recommended you have more than this minimum balance to pay for transaction fees. For more information on escrow accounts, see [here](../decentralized-cloud/escrow.md)
 {% endhint %}
 
 ## Create The Deployment Configuration
@@ -178,7 +178,7 @@ Please note that all of the following can be substituted in the `datacenter` fie
 
 ## Create the Deployment
 
-To create a deployment, a [certificate](../design/mtls.md) must first be created. To do this, run:
+To create a deployment, a [certificate](../decentralized-cloud/mtls.md) must first be created. To do this, run:
 
 ```text
 akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt
