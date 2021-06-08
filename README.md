@@ -8,17 +8,30 @@ description: >-
 
 ### What is Akash?
 
-Akash -- "open space, sky" in ancient Sanskrit -- is the world’s first distributed peer-to-peer open cloud computing marketplace; our goal is to build an open source permissionless cloud as boundless as the sky.
+Akash -- "open space, sky" in ancient Sanskrit -- is the world’s first distributed peer-to-peer open cloud computing marketplace; our goal is to build an open source permissionless cloud as boundless as the sky. 
 
 ### What makes Akash different?
 
 Akash provides a serverless platform that hosts containers where users can run _**any**_ application currently running on the cloud. The deployment is off-chain and performed over a private peer-to-peer network isolated from the blockchain, and asset transfer occurs off-chain to protect and performance that we need for a mission critical application running on the Cloud. Unlike centralized providers, in Akash, _the users (tenants) sets the price and the terms, the provider bids for their workloads_. 
 
+### Why use Akash?
+
+Akash is an open source decentralized cloud network, _Airbnb for Compute_. It's a reverse auction marketplace. This has several advantages:
+
+- Multi-provider with audited attributes
+- Multi-cloud
+- More Secure
+- Scalable and resilient
+- Costs are lower and optimized
+- Pricing is set by the users of compute. In Airbnb terms, by the guests, not the hosts
+- Pricing is variable and on a continuum, per deployment
+- Pricing is predictable so you avoid the sticker shock each month
+
 ### Why use a blockchain?
 
-Akash leverages blockchain for provisioning and settlement but deployment happens off-chain. This limits Akash’s users from running verifiable smart contracts as the scalability envelope is not designed for on-chain execution.
+Akash leverages blockchain for provisioning and settlement (in AKT) but deployment happens off-chain. This limits Akash’s users from running verifiable smart contracts as the scalability envelope is not designed for on-chain execution.
 
-### Decentralized Cloud
+### Akash Decentralized Cloud
 
 The [Akash](https://github.com/ovrclk/akash) Decentralized Cloud \(DeCloud\) is comprised of two main components, the network, and the cloud platform.
 
