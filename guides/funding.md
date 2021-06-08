@@ -33,7 +33,7 @@ Developers can qualify for a small amount of tokens, up to $1,000 paid in AKT. T
 
 ### **Grant Funding as Akash Compute Credits**
 
-Developers can qualify for a long-term Akash Credits of tokens, up to $100,000 paid in AKT.  ****The ****Akash Credits funding process is coming soon. Check back on June 15th, 2021.
+Developers can qualify for a long-term Akash Credits as tokens, up to $100,000 paid in AKT.  The **Akash Credits** funding process is coming soon. Check back on June 15th, 2021.
 
 ### Gitcoin Bounties
 
