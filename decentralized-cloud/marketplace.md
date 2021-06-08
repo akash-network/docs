@@ -51,11 +51,24 @@ When a deployment is closed, the unspent portion of the balance will be returned
 
 Payments are implemented with an escrow account module. See [here](escrow.md) for more information.
 
+### Escrow Accounts
+
+[Escrow accounts](escrow.md) are a mechanism that allow for time-based payments from one bank account to another without block-by-block micropayments. They also support holding funds for an account until an arbitrary event occurrs.
+
+Escrow accounts are necessary in akash for two primary reasons:
+
+1. Leases in Akash are priced in blocks - every new block, a payment from the tenant \(deployment owner\) to the provider \(lease holder\) is due. Performance and security considerations prohibit the naive approach of transferring tokens on every block.
+2. Bidding on an order should not be free \(for various reasons, including performance and security\). Akash requires a deposit for every bid. The deposit is returned to the bidder when the bid is closed.
+
 ## Bid Deposits
 
 Bidding on an order requires a deposit to be made. The deposit will be returned to the provider account when the [bid](marketplace.md#bid) transitions to state `CLOSED`.
 
 Bid deposits are implemented with an escrow account module. See [here](escrow.md) for more information.
+
+## Audited Attributes
+
+Audited attributes allow users deploying applications to be more selective about which providers can run their apps. Anyone on the Akash Network can assign these attributes to Providers via an on-chain transaction.
 
 ## On-Chain Parameters
 
