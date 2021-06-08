@@ -4,7 +4,7 @@ This guide will walk you through funding an account on an Akash network. Funding
 
 ### Before We Begin
 
-You'll need to know information about the network you're connecting your node to. See [Choosing a Network](version.md) for how to obtain any network-related information.
+You'll need to know information about the network you're connecting your node to. See [Choosing a Network](../providers/version.md) for how to obtain any network-related information.
 
 Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions.
 
@@ -14,8 +14,8 @@ You'll need a key to use for your account and your account address handy. See th
 
 | Name | Description |
 | :--- | :--- |
-| `AKASH_NET` | Akash network configuration base URL. See [here](version.md). |
-| `AKASH_NODE` | Akash network configuration base URL. See [here](version.md). |
+| `AKASH_NET` | Akash network configuration base URL. See [here](../providers/version.md). |
+| `AKASH_NODE` | Akash network configuration base URL. See [here](../providers/version.md). |
 | `AKASH_ACCOUNT_ADDRESS` | The address of your account.  See [here](wallet.md#account-address). |
 
 ## Funding Method

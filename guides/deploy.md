@@ -15,7 +15,7 @@ This is a technical guide, best suited to a reader with basic Linux command line
 
 We encourage to take a look at [Variables guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/variables.md) to understand usage of environment variables as well cli flags.
 
-You'll need to know information about the network you're connecting your node to. See [Choosing a Network](version.md) for how to obtain any network-related information.
+You'll need to know information about the network you're connecting your node to. See [Choosing a Network](../providers/version.md) for how to obtain any network-related information.
 
 Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions.
 
@@ -27,13 +27,13 @@ We will be using shell variables throughout this guide for convenience and clari
 
 | Name | Description |
 | :--- | :--- |
-| `AKASH_NODE` | Akash network configuration base URL. See [here](version.md#RPC-Node). |
-| `AKASH_CHAIN_ID` | Chain ID of the Akash network connecting to. See [here](version.md#Chain-ID). |
+| `AKASH_NODE` | Akash network configuration base URL. See [here](../providers/version.md#RPC-Node). |
+| `AKASH_CHAIN_ID` | Chain ID of the Akash network connecting to. See [here](../providers/version.md#Chain-ID). |
 | `AKASH_ACCOUNT_ADDRESS` | The address of your account.  See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md#account-address). |
 | `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) |
 | `AKASH_KEY_NAME` | The name of the key you will be deploying from. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) if you haven't yet setup a key |
 
-Verify you have correct `$AKASH_NODE`, that you have populated while [configuring the connection](version.md) using `export AKASH_NODE=$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)`.
+Verify you have correct `$AKASH_NODE`, that you have populated while [configuring the connection](../providers/version.md) using `export AKASH_NODE=$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)`.
 
 ```bash
 echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND

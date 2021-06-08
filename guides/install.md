@@ -1,4 +1,12 @@
+---
+description: >-
+  This guides walks through installing and using all components of Akash
+  software.
+---
+
 # Install Akash
+
+The software to run  **Akash** and the command-line client used to interact with them are all currently distributed in the `akash`application.
 
 The `akash` command is used to run all components of the Akash Network, including:
 
@@ -6,13 +14,21 @@ The `akash` command is used to run all components of the Akash Network, includin
 * Provider services
 * Client interface
 
-There are a number of ways to install it, depending on your operating system.
+### Shell Variables
+
+Shell variables will be used throughout these guides to make the instructions so that the commands can be used verbatim.
+
+The beginning of each guide will give a list of variables used and how to populate them.
+
+Because of this, it is important to type the commands into a terminal that the variables have been defined in - changing terminals will mean that you have to re-define the variable.
 
 ## Variables Required
 
 | Name | Description |
 | :--- | :--- |
-| `AKASH_VERSION` | Akash version to install for your network.  See [here](version.md). |
+| `AKASH_VERSION` | Akash version to install for your network.  See [here](../providers/version.md). |
+
+There are a number of ways to install it, depending on your operating system. Select a tab to view instructions for MacOS, Linux, or compiling from source.
 
 {% tabs %}
 {% tab title="MacOS" %}

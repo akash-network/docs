@@ -1,4 +1,4 @@
-# Awesome Akash
+# Awesome Apps on Akash
 
 **Repository**: [ovrclk/awesome-akash](https://github.com/ovrclk/awesome-akash)
 
