@@ -10,8 +10,8 @@ Make sure to have Akash client installed on your workstation, check [install gui
 
 | Name | Description |
 | :--- | :--- |
-| `AKASH_NET` | Akash network configuration base URL.  |
-| `AKASH_NODE` | Akash network configuration base URL.  |
+| `AKASH_NET` | Akash network configuration base URL. |
+| `AKASH_NODE` | Akash network configuration base URL. |
 | `AKASH_ACCOUNT_ADDRESS` | The address of your account.  See [here](wallet.md#account-address). |
 
 ## Funding Method
@@ -33,7 +33,7 @@ Developers can qualify for a small amount of tokens, up to $1,000 paid in AKT. T
 
 ### **Grant Funding as Akash Compute Credits**
 
-Developers can qualify for a long-term Akash Credits as tokens, up to $100,000 paid in AKT.  The **Akash Credits** funding process is coming soon. Check back on June 15th, 2021.
+Developers can qualify for a long-term Akash Credits as tokens, up to $100,000 paid in AKT. The **Akash Credits** funding process is coming soon. Check back on June 15th, 2021.
 
 ### Gitcoin Bounties
 
