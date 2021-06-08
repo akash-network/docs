@@ -11,9 +11,9 @@
 
 ## Reference
 
-* [Inter-blockchain Connections \(IBC\)](reference/akashnet-relayer.md)
-* [Stack Definition Language \(SDL\)](reference/sdl.md)
 * [Command Line Interface \(CLI\)](reference/general-commands.md)
+* [Stack Definition Language \(SDL\)](reference/sdl.md)
+* [Inter-blockchain Connections \(IBC\)](reference/akashnet-relayer.md)
 
 ## Guides <a id="guides-1"></a>
 
