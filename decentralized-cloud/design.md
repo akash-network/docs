@@ -9,7 +9,7 @@ The **Network** is built with [cosmos-sdk](https://github.com/cosmos/cosmos-sdk)
 
 The **Platform** is a set of [cloud management services](design.md#provider-services) that leverage [Kubernetes](https://kubernetes.io) to run workloads.
 
-The software to run the **Network**, the **Platform**, and the [command-line client](../guides-1/general-commands.md) used to interact with them are all currently distributed in the `akash` application.The Akash Marketplace is an auction for compute resources. It is the mechanism by which users acquire resources on the Akash Platform.
+The software to run the **Network**, the **Platform**, and the [command-line client](../reference/general-commands.md) used to interact with them are all currently distributed in the `akash` application.The Akash Marketplace is an auction for compute resources. It is the mechanism by which users acquire resources on the Akash Platform.
 
 ### Docker
 
@@ -21,7 +21,7 @@ Tenants define workloads requirements, as well as regional and pricing parameter
 
 ### Networking
 
-Networking - allowing connectivity to and between workloads - can be configured via the [SDL](sdl.md) for a deployment.
+Networking - allowing connectivity to and between workloads - can be configured via the [SDL](../reference/sdl.md) for a deployment.
 
 By default, workloads in a deployment group are isolated - nothing else is allowed to connect to them. This restriction can be relaxed by enabling
 

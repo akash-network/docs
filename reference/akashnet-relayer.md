@@ -1,4 +1,4 @@
-# Inter-Blockchain \(IBC\) Connections
+# Inter-blockchain Connections \(IBC\)
 
 This guide will give you information about IBC connections between Akashnet-2 and other Cosmos SDK based networks.
 

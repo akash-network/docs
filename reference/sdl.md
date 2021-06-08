@@ -1,4 +1,4 @@
-# Stack Definition Language
+# Stack Definition Language \(SDL\)
 
 Deployment services, datacenters, pricing, etc.. are described by a [YAML](http://www.yaml.org/start.html) configuration file. Configuration files may end in `.yml` or `.yaml`.
 

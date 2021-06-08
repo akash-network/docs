@@ -32,8 +32,8 @@ Given that there are live providers on the network, the lifecycle of a typical a
 3. Their submission generates an [order](marketplace.md#order) on the marketplace.
 4. Providers that would like to fulfill that order [bid](marketplace.md#bid) on it.
 5. After some period of time, a winning [bid](marketplace.md#bid) for the [order](marketplace.md#order) is chosen, and a [lease](marketplace.md#lease) is created.
-6. Once a [lease](marketplace.md#lease) has been created, the tenant submits a [manifest](sdl.md) to the provider.
-7. The provider executes workloads as instructed by the [manifest](sdl.md).
+6. Once a [lease](marketplace.md#lease) has been created, the tenant submits a [manifest](../reference/sdl.md) to the provider.
+7. The provider executes workloads as instructed by the [manifest](../reference/sdl.md).
 8. The workload is running - if it is a web application it can be visited, etc...
 9. The provider or tenant eventually closes the [lease](marketplace.md#lease), shutting down the workload.
 
