@@ -8,6 +8,7 @@
 * [Create an Account](guides/wallet.md)
 * [Fund the Account](guides/funding.md)
 * [Deploy an Application](guides/deploy.md)
+* [Technical Support](guides/technical-support.md)
 
 ## Deployment Guides <a id="guides-1"></a>
 
