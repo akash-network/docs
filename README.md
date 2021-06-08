@@ -12,7 +12,7 @@ Akash -- "open space, sky" in ancient Sanskrit -- is the world’s first distrib
 
 ### What makes Akash different?
 
-Akash provides a serverless platform that hosts containers where users can run _**any**_ application currently running on the cloud. The deployment is off-chain and performed over a private peer-to-peer network isolated from the blockchain, and asset transfer occurs off-chain to protect and performance that we need for a mission critical application running on the Cloud. 
+Akash provides a serverless platform that hosts containers where users can run _**any**_ application currently running on the cloud. The deployment is off-chain and performed over a private peer-to-peer network isolated from the blockchain, and asset transfer occurs off-chain to protect and performance that we need for a mission critical application running on the Cloud. Unlike centralized providers, in Akash, _the users (tenants) sets the price and the terms, the provider bids for their workloads_. 
 
 ### Why use a blockchain?
 
@@ -22,7 +22,7 @@ Akash leverages blockchain for provisioning and settlement but deployment happen
 
 The [Akash](https://github.com/ovrclk/akash) Decentralized Cloud \(DeCloud\) is comprised of two main components, the network, and the cloud platform.
 
-The **Akash Marketplace** is an auction for compute resources. It is the mechanism by which users acquire resources on the Akash Platform. The Akash marketplace is an on-chain decentralized [marketplace](decentralized-cloud/marketplace.md) for leasing computing resources. The marketplace is built with [cosmos-sdk](https://github.com/cosmos/cosmos-sdk) - it is a [tendermint](https://github.com/tendermint/tendermint)-based blockchain application.
+The **Akash Marketplace** is an reverse auction for compute resources. It is the mechanism by which users acquire resources on the Akash Platform. The Akash marketplace is an on-chain decentralized [marketplace](decentralized-cloud/marketplace.md) for leasing computing resources. The marketplace is built with [cosmos-sdk](https://github.com/cosmos/cosmos-sdk) - it is a [tendermint](https://github.com/tendermint/tendermint)-based blockchain application.
 
 The **Akash Platform** is an off-chain deployment platform used for hosting and managing workloads. The platform is built with a set of cloud management services including  [Kubernetes](https://kubernetes.io) to run workloads.
 
