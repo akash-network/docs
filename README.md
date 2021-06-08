@@ -6,27 +6,16 @@ For details about what [Akash](https://github.com/ovrclk/akash) can do and what 
 
 ## Guides
 
-* [Overview](decentralized-cloud/design.md)
-* [Choosing a Network](providers/version.md)
-* [Install Akash](guides/install.md)
-* [Wallet Setup](guides/wallet.md)
-* [Funding your Account](guides/funding.md)
-* [Deploy an Application](guides/deploy.md)
+* **Getting Started**
+  * \*\*\*\*[Install Akash](guides/install.md)
+  * [Wallet Setup](guides/wallet.md)
+  * [Funding your Account](guides/funding.md)
+  * [Deploy an Application](guides/deploy.md)
+* **Key Concepts**
+  * Decentralized Cloud
+  * 
 * [Run an Akash Node](providers/node/)
-  * [RPC Service](providers/node/rpc-service.md)
-  * [API Service](providers/node/api-service.md)
   * [Run a Validator](providers/validator.md)
-* [Become a Provider](providers/provider.md)
+  * [Become a Provider](providers/provider.md)
 * [Common Commands](guides-1/general-commands.md)
-* [Upgrade to Akashnet-2]()
-* [Using the Deploy Tool]()
-* [Multi-Tiered Deployment](guides-1/multi-tier-app.md)
-* [Software Upgrade: Akashnet-2-upgrade-1]()
-* [Akashnet-2 IBC Connections](guides-1/akashnet-relayer.md)
-
-## Documentation
-
-* [Stack Definition Language](decentralized-cloud/sdl.md)
-* [Akash CLI reference]()
-* [FAQ](guides-1/faq.md)
 
