@@ -14,8 +14,8 @@ You'll need a key to use for your account and your account address handy. See th
 
 | Name | Description |
 | :--- | :--- |
-| `AKASH_NET` | Akash network configuration base URL. See [here](../providers/version.md). |
-| `AKASH_NODE` | Akash network configuration base URL. See [here](../providers/version.md). |
+| `AKASH_NET` | Akash network configuration base URL.  |
+| `AKASH_NODE` | Akash network configuration base URL.  |
 | `AKASH_ACCOUNT_ADDRESS` | The address of your account.  See [here](wallet.md#account-address). |
 
 ## Funding Method

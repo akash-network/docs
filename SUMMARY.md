@@ -26,8 +26,8 @@
 
 ## Key Concepts <a id="decentralized-cloud"></a>
 
-* [Decentralized Cloud](decentralized-cloud/design.md)
 * [Marketplace](decentralized-cloud/marketplace.md)
+* [Features](decentralized-cloud/design.md)
 * [Escrow Accounts](decentralized-cloud/escrow.md)
 * [Security \(mTLS\)](decentralized-cloud/mtls.md)
 

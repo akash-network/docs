@@ -1,23 +1,14 @@
-# Decentralized Cloud
+# Features
 
-The [Akash](https://github.com/ovrclk/akash) Decentralized Cloud or DeCloud is comprised of two main components:
+### Containers
 
-1. The **Network**: an on-chain decentralized [marketplace](marketplace.md) for leasing computing resources.
-2. The **Platform**: an off-chain deployment platform used for hosting and managing workloads.
+A  container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
 
-The **Network** is built with [cosmos-sdk](https://github.com/cosmos/cosmos-sdk) - it is a [tendermint](https://github.com/tendermint/tendermint)-based blockchain application.
+Container images become containers at runtime and in the case of Docker containers - images become containers when they run on [Docker Engine](https://www.docker.com/products/container-runtime). Available for both Linux and Windows-based applications, containerized software will always run the same, regardless of the infrastructure. Containers isolate software from its environment and ensure that it works uniformly despite differences for instance between development and staging.
 
-The **Platform** is a set of [cloud management services](design.md#provider-services) that leverage [Kubernetes](https://kubernetes.io) to run workloads.
+### Stack Definition Language \(SDL\) 
 
-The software to run the **Network**, the **Platform**, and the [command-line client](../reference/general-commands.md) used to interact with them are all currently distributed in the `akash` application.The Akash Marketplace is an auction for compute resources. It is the mechanism by which users acquire resources on the Akash Platform.
-
-### Docker
-
-Docker-based deploys
-
-### SDL
-
-Tenants define workloads requirements, as well as regional and pricing parameters, in a manifest file using a declarative language called SDL \(inspired by Docker Compose\). The SDL file is essentially a form to request resources from the Network.
+Tenants define workloads requirements, as well as regional and pricing parameters, in a manifest file using a declarative language called Software Definition Language \(SDL\). The SDL file is essentially a form to request resources from the Network. SDL is related to and inspired by the Docker Compose language. 
 
 ### Networking
 

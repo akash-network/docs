@@ -14,21 +14,43 @@ The `akash` command is used to run all components of the Akash Network, includin
 * Provider services
 * Client interface
 
-### Shell Variables
+## Shell Variables
 
-Shell variables will be used throughout these guides to make the instructions so that the commands can be used verbatim.
+Shell variables will be used throughout these guides to make the instructions so that the commands can be used verbatim. The beginning of each guide will give a list of variables used and how to populate them.
 
-The beginning of each guide will give a list of variables used and how to populate them.
-
-Because of this, it is important to type the commands into a terminal that the variables have been defined in - changing terminals will mean that you have to re-define the variable.
-
-## Variables Required
+Because of this, it is important to type the commands into a terminal where the variables have been defined. Closing or changing terminals will mean that you have to re-define the variable.
 
 | Name | Description |
 | :--- | :--- |
-| `AKASH_VERSION` | Akash version to install for your network.  See [here](../providers/version.md). |
+| `AKASH_NET` | Akash network configuration base URL.  |
+| `AKASH_VERSION` | Akash version to install for your network.   |
+| `AKASH_CHAINID` | Chain ID of the network for [Inter-blockchain Connections](../reference/akashnet-relayer.md). |
 
-There are a number of ways to install it, depending on your operating system. Select a tab to view instructions for MacOS, Linux, or compiling from source.
+First configure the base URL \(`$AKASH_NET`\) for the Akash Network; copy and paste the command below:
+
+```bash
+AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
+```
+
+### Version
+
+Next configure the version of the Akash Network `AKASH_VERSION`; copy and paste the command below:
+
+```bash
+AKASH_VERSION="$(curl -s "$AKASH_NET/version.txt")"
+```
+
+### Chain ID
+
+The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exported to the shell. 
+
+```bash
+export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
+```
+
+## Installing Akash
+
+Select a tab below to view instructions for MacOS, Linux, or compiling from source.
 
 {% tabs %}
 {% tab title="MacOS" %}
@@ -48,11 +70,7 @@ brew install akash
 brew link akash --force
 ```
 
-Once installed, verify the installation by running `akash version`. Compare that with the version for the network you plan on connecting to:
-
-```bash
-curl -s "$AKASH_NET/version.txt"
-```
+Once installed, verify the installation by running `akash version`. 
 {% endtab %}
 
 {% tab title="Linux" %}
