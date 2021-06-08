@@ -4,18 +4,3 @@ Welcome to the support documentation and user guides for [Akash](https://github.
 
 For details about what [Akash](https://github.com/ovrclk/akash) can do and what makes it tick, see [Features and Design](decentralized-cloud/design.md).
 
-## Guides
-
-* **Getting Started**
-  * \*\*\*\*[Install Akash](guides/install.md)
-  * [Wallet Setup](guides/wallet.md)
-  * [Funding your Account](guides/funding.md)
-  * [Deploy an Application](guides/deploy.md)
-* **Key Concepts**
-  * Decentralized Cloud
-  * 
-* [Run an Akash Node](providers/node/)
-  * [Run a Validator](providers/validator.md)
-  * [Become a Provider](providers/provider.md)
-* [Common Commands](guides-1/general-commands.md)
-
