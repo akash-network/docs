@@ -1,6 +1,6 @@
-# Akash CLI
+# Common Commands
 
-The software to run the **Network**, the **Platform**, and the command-line client used to interact with them are all currently distributed in the `akash` application.The Akash Marketplace is an auction for compute resources. It is the mechanism by which users acquire resources on the Akash Platform.
+The software to run the **Network**, the **Platform**, and the command-line client used to interact with them are all currently distributed in the `akash` Command Line Interface \(CLI\) application.
 
 ## The Akash CLI
 

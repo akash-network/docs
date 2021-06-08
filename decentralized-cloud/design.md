@@ -1,4 +1,4 @@
-# Overview
+# Decentralized Cloud
 
 The [Akash](https://github.com/ovrclk/akash) Decentralized Cloud or DeCloud is comprised of two main components:
 
@@ -9,7 +9,7 @@ The **Network** is built with [cosmos-sdk](https://github.com/cosmos/cosmos-sdk)
 
 The **Platform** is a set of [cloud management services](design.md#provider-services) that leverage [Kubernetes](https://kubernetes.io) to run workloads.
 
-The software to run the **Network**, the **Platform**, and the [command-line client](general-commands.md) used to interact with them are all currently distributed in the `akash` application.The Akash Marketplace is an auction for compute resources. It is the mechanism by which users acquire resources on the Akash Platform.
+The software to run the **Network**, the **Platform**, and the [command-line client](../guides/general-commands.md) used to interact with them are all currently distributed in the `akash` application.The Akash Marketplace is an auction for compute resources. It is the mechanism by which users acquire resources on the Akash Platform.
 
 ### Docker
 
