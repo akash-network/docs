@@ -13,7 +13,8 @@
 
 * [Command Line Interface \(CLI\)](reference/general-commands.md)
 * [Stack Definition Language \(SDL\)](reference/sdl.md)
-* [Inter-blockchain Connections \(IBC\)](reference/akashnet-relayer.md)
+* [Inter-Blockchain Connections \(IBC\)](reference/akashnet-relayer.md)
+* [Frequently Asked Questions \(FAQ\)](reference/faq.md)
 
 ## Guides <a id="guides-1"></a>
 
@@ -29,7 +30,6 @@
 * [Marketplace](decentralized-cloud/marketplace.md)
 * [Escrow Accounts](decentralized-cloud/escrow.md)
 * [Security \(mTLS\)](decentralized-cloud/mtls.md)
-* [Frequently Asked Questions](decentralized-cloud/faq.md)
 
 ## Running Akash Nodes <a id="providers"></a>
 

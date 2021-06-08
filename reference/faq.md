@@ -1,4 +1,4 @@
-# Frequently Asked Questions
+# Frequently Asked Questions \(FAQ\)
 
 If there is something you'd like to see in here that isn't already, please reach out \(_link to channels_\) to one of the mods and we'll get it added!
 
