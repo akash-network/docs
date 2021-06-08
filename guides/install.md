@@ -26,13 +26,15 @@ Because of this, it is important to type the commands into a terminal where the 
 | `AKASH_VERSION` | Akash version to install for your network.   |
 | `AKASH_CHAINID` | Chain ID of the network for [Inter-blockchain Connections](../reference/akashnet-relayer.md). |
 
+#### Network
+
 First configure the base URL \(`$AKASH_NET`\) for the Akash Network; copy and paste the command below:
 
 ```bash
 AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
 ```
 
-### Version
+#### Version
 
 Next configure the version of the Akash Network `AKASH_VERSION`; copy and paste the command below:
 
@@ -40,7 +42,7 @@ Next configure the version of the Akash Network `AKASH_VERSION`; copy and paste 
 AKASH_VERSION="$(curl -s "$AKASH_NET/version.txt")"
 ```
 
-### Chain ID
+#### Chain ID
 
 The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exported to the shell. 
 
