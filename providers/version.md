@@ -79,3 +79,13 @@ Print a random API endpoint
 curl -s "$AKASH_NET/api-nodes.txt" | shuf -n 1
 ```
 
+### Testnet Faucet
+
+The TestNet has a "faucet" running - a server that will send tokens to your account. You can see the faucet url by running:
+
+```bash
+curl "$AKASH_NET/faucet-url.txt"
+```
+
+Go to the resulting URL and enter your account address; you should see tokens in your account shortly.
+

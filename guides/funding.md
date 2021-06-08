@@ -4,11 +4,7 @@ This guide will walk you through funding an account on an Akash network. Funding
 
 ### Before We Begin
 
-You'll need to know information about the network you're connecting your node to. See [Choosing a Network](../providers/version.md) for how to obtain any network-related information.
-
-Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions.
-
-You'll need a key to use for your account and your account address handy. See the [wallet guide](wallet.md) for how to set this up.
+Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions. You'll need a key to use for your account and your account address handy. See the [wallet guide](wallet.md) for how to set this up.
 
 #### Shell Variables Required
 
@@ -22,15 +18,13 @@ You'll need a key to use for your account and your account address handy. See th
 
 There are a number of different ways to fund your account. Some work for `mainnet` and some don't; pick an appropriate option from below for the network you're connecting to.
 
-### Faucet
+### Developer Seed Funding
 
-**Non-`mainnet`** networks will often times have a "faucet" running - a server that will send tokens to your account. You can see the faucet url by running:
+Write a detailed post on ****[**forum.akash.network**](http://forum.akash.network) about your project to qualify for Seed Funding up to $100. Join the Akash Discord server [**discord.akash.network**](http://discord.akash.network) to verify your wallet address for seed funding. Message @colinster\#0001 to discuss seed funding. 
 
-```bash
-curl "$AKASH_NET/faucet-url.txt"
-```
+### Developer Grant Funding
 
-Go to the resulting URL and enter your account address; you should see tokens in your account shortly.
+Grant funding is coming soon! Check back on June 15th, 2021.
 
 ### Purchasing Tokens
 
