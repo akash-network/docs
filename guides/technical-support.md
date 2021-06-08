@@ -1,12 +1,16 @@
 # Technical Support
 
-To contact support:
+**To contact technical support:**
 
 * Message the **\#deployments** channel on the Akash Discord Server \([discord.akash.network](http://discord.akash.network)\) 
-* Submit a GitHub issue for the [Akash repo](https://github.com/ovrclk/akash)
 * Email [support@akash.network](mailto::support@akash.network)
 
-Please include the following information:
+**To submit a bug report to Engineering :**
+
+* Submit a GitHub issue to the [Akash repo](https://github.com/ovrclk/akash)
+* Email [support@akash.network](mailto::support@akash.network)
+
+**Please include the following information in your message:**
 
 * Account address
 * Deployment sequence
