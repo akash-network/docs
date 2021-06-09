@@ -30,6 +30,7 @@ Developers can qualify for a small amount of tokens, up to $1,000 paid in AKT. T
    * **Methodology:** How will this task be accomplished?
    * **Timeline:** What is the timeline for accomplishing this task?
    * **Reporting**: How will you report your progress to the community \(e.g. weekly calls, reports\)?
+   * **Design**: Screenshots 
 
 ### **Grant Funding as Akash Compute Credits**
 
