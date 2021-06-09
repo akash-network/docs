@@ -17,7 +17,7 @@ To run a provider on the Akash network, you need the following
 
 ### Kubernetes Cluster Setup
 
-The setup of a Kubernetes cluster is the responsibility of whoever sets up a provider on the Akash network. This section of this document provides best practices and ecommendations for setting up a Kubernetes cluster. This document is not a comprehensive guide to operating a Kubernetes cluster.
+The setup of a Kubernetes cluster is the responsibility of whoever sets up a provider on the Akash network. This section of this document provides best practices and recommendations for setting up a Kubernetes cluster. This document is not a comprehensive guide to operating a Kubernetes cluster.
 
 The general set of actions which must be carried out to setup a Kubernetes cluster for a provider is
 
