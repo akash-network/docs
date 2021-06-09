@@ -14,7 +14,7 @@ The `akash` command is used to run all components of the Akash Network, includin
 * Provider services
 * Client interface
 
-## Shell Variables
+## Connect to MainNet
 
 Shell variables will be used throughout these guides to make the instructions so that the commands can be used verbatim. The beginning of each guide will give a list of variables used and how to populate them.
 
@@ -24,7 +24,8 @@ Because of this, it is important to type the commands into a terminal where the 
 | :--- | :--- |
 | `AKASH_NET` | Akash network configuration base URL.  |
 | `AKASH_VERSION` | Akash version to install for your network.   |
-| `AKASH_CHAINID` | Chain ID of the network for [Inter-blockchain Connections](../reference/akashnet-relayer.md). |
+| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](../reference/akashnet-relayer.md). |
+| `AKASH_NODE` | Akash RPC endpoint URL and port number. |
 
 #### Network
 
@@ -50,7 +51,25 @@ The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exporte
 export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
 ```
 
-## Installing Akash
+#### RPC Endpoint
+
+Print a random RPC endpoint. The akash CLI will recognize `AKASH_NODE` environment variable when exported to the shell.
+
+```bash
+export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)"
+
+echo $AKASH_NODE
+```
+
+#### API Endpoint
+
+Print a random API endpoint.
+
+```bash
+curl -s "$AKASH_NET/api-nodes.txt" | shuf -n 1
+```
+
+## Install Akash
 
 Select a tab below to view instructions for MacOS, Linux, or compiling from source.
 
