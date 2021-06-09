@@ -1,7 +1,5 @@
 # Helium Validator
 
-
-
 **Repository:** [**tombeynon/helium-on-akash**](https://github.com/tombeynon/helium-on-akash)\*\*\*\*
 
 This repository includes everything needed to run a Helium validator on Akash. The container will connect to an S3 bucket to upload/download the swarm\_key on boot.
