@@ -1,8 +1,8 @@
-# Choosing a Network
+# Beta Testing
 
-At any given time, there are a number of different active Akash networks running, each with a different `akash` version, chain-id, seed hosts, etc...
+## NOTE: Please do not use the Testnet for your deployments. There are no available providers on Test networks at this time. 
 
-The generally available networks are:
+At any given time, there are a number of different  Akash networks running for using in testing new nodes, providers, validators, and even deployments.  The generally available networks are: 
 
 | Network | Description |
 | :--- | :--- |

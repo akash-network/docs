@@ -33,10 +33,10 @@
 
 ## Running Akash Nodes <a id="providers"></a>
 
-* [Choosing a Network](providers/version.md)
 * [Run an Akash Node](providers/node/README.md)
   * [RPC Service](providers/node/rpc-service.md)
   * [API Service](providers/node/api-service.md)
 * [Running a Validator](providers/validator.md)
 * [Becoming a Provider](providers/provider.md)
+* [Beta Testing](providers/version.md)
 
