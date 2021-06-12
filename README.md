@@ -5,19 +5,11 @@ description: >-
   together.
 ---
 
-# Akash Overview
+# What is Akash?
 
-## Akash Network is the first open source cloud. 
+## Akash is the first open source cloud. 
 
-Akash means 'open space' or 'sky' in Sanskrit. Akash Network is the world’s first open source cloud.  Any cloud-native and containerized applications running on centralized cloud can run faster and at lower cost on Akash’s DeCloud - the decentralized cloud.
-
-{% hint style="info" %}
-Want to dive straight in? Start with our [**Getting Started**](start/install.md) section.
-{% endhint %}
-
-### Why does Akash matter?
-
-Akash Network envisions a world where cloud computing is permissionless, sovereign, and open, where builders of the internet have greater freedom. Akash is a live working product that allows you to:
+Any cloud-native and containerized applications running on centralized cloud can run faster and at lower cost on Akash’s DeCloud - the decentralized cloud. Akash is a live working product that allows you to:
 
 * Deploy your application in minutes without having to set up, configure, or manage servers.
 * Package your application in a container and expose any TCP/UDP port you want. 
@@ -25,19 +17,37 @@ Akash Network envisions a world where cloud computing is permissionless, soverei
 * Set the price for providers bid on, and letting you select the best price and provider.
 * Use a platform that is censorship-resistant, permissionless, and self-sovereign. 
 
+{% hint style="info" %}
+Want to dive straight in? Start with our [**Getting Started**](start/install.md) section.
+{% endhint %}
+
+### Why build an open source cloud? 
+
+Akash means 'open space' or 'sky' in ancient Sanskrit.  Akash Network envisions a world where cloud computing is permissionless, sovereign, and open, where builders of the internet have greater freedom. 
+
 ### How can I use Akash? 
 
 We have written several guides for learning about Akash: a [getting started guide](start/install.md), a [node operator guide](providers/node/), a [validator guide](providers/validator.md), a [cloud provider guide](providers/provider/), and several [deployment guides](guides/awesome-akash.md) for running various apps on Akash.
 
 If you're new to Akash, start with the [**Getting Started guide**](start/install.md) and go from there. We suggest developers and providers  read through the entirety of the Getting Started article before working through more specific documentation. 
 
-### What makes Akash different from other decentralized platforms?
+### What makes Akash different from centralized Cloud platforms?
 
-Akash a server-less Cloud platform that hosts containers where users can run _**any**_  Cloud-Native application. The deployment is off-chain and performed over a private peer-to-peer network isolated from the blockchain. Asset transfer occurs off-chain to provide the security and performance required by a mission critical applications running on the Cloud. 
+Like AirBNB for server hosting, Akash is a marketplace that gives you control over the price you pay and the amenities included \(we call them attributes\). Akash gives app developers an instant, zero-click command line tool  for leasing and deploying apps right from a terminal.  Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. This allows Akash to provide more variety and better pricing. 
+
+### What is the cost to use Akash?
+
+The cost of hosting your application using Akash is as little as one-tenth the cost of Amazon AWS, Google Cloud Platform \(GCP\), and Microsoft Azure. You can check the prices live using the [Akashlytics.com price comparison tool](https://akashlytics.com/price-compare). 
 
 ### Why does Akash use a blockchain?
 
 Akash leverages blockchain for provisioning and settlement using the Akash Token \(AKT\), while deployment happens off-chain. This limits Akash’s users from running verifiable smart contracts as the scalability envelope is not designed for on-chain execution.
+
+### 
+
+### What makes Akash different from decentralized VM platforms?
+
+Akash a server-less Cloud platform that hosts containers where users can run _**any**_  Cloud-Native application. There is no need to run a special VM or re-write the entire internet in a new language. The deployment is off-chain and performed over a private peer-to-peer network isolated from the blockchain. Asset transfer occurs off-chain to provide the security and performance required by a mission critical applications running on the Cloud.  
 
 ### What is the Akash DeCloud? 
 
