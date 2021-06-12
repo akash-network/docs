@@ -12,7 +12,7 @@ description: >-
 Akash Network is the world’s first open source cloud.  Any cloud-native and containerized applications running on centralized cloud can run faster and at lower cost on Akash’s DeCloud - the decentralized cloud.
 
 {% hint style="info" %}
-Want to dive straight in? Start with our [**Getting Started**](guides/install.md) section.
+Want to dive straight in? Start with our [**Getting Started**](start/install.md) section.
 {% endhint %}
 
 ### Why does Akash matter?
@@ -27,9 +27,9 @@ Akash Network envisions a world where cloud computing is permissionless, soverei
 
 ### How can I use Akash? 
 
-We have written several guides for learning about Akash: a [getting started guide](guides/install.md), a [node operator guide](providers/node/), a [validator guide](providers/validator.md), a [cloud provider guide](providers/provider/), and several [deployment guides](guides-1/awesome-akash.md) for running various apps on Akash.
+We have written several guides for learning about Akash: a [getting started guide](start/install.md), a [node operator guide](providers/node/), a [validator guide](providers/validator.md), a [cloud provider guide](providers/provider/), and several [deployment guides](guides/awesome-akash.md) for running various apps on Akash.
 
-If you're new to Akash, start with the [**Getting Started guide**](guides/install.md) and go from there. We suggest developers and providers  read through the entirety of the Getting Started article before working through more specific documentation. 
+If you're new to Akash, start with the [**Getting Started guide**](start/install.md) and go from there. We suggest developers and providers  read through the entirety of the Getting Started article before working through more specific documentation. 
 
 ### What makes Akash different from other decentralized platforms?
 
