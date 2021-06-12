@@ -7,7 +7,7 @@ description: >-
 
 # Akash Overview
 
-## The word, Akash means "open space, sky" in ancient Sanskrit.
+## Akash means 'open space' or 'sky' in Sanskrit.
 
 Akash Network is the world’s first open source cloud.  Any cloud-native and containerized applications running on centralized cloud can run faster and at lower cost on Akash’s DeCloud - the decentralized cloud.
 
