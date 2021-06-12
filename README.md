@@ -43,11 +43,9 @@ The cost of hosting your application using Akash is as little as one-tenth the c
 
 Akash leverages blockchain for provisioning and settlement using the Akash Token \(AKT\), while deployment happens off-chain. This limits Akash’s users from running verifiable smart contracts as the scalability envelope is not designed for on-chain execution.
 
-### 
+### What makes Akash different from decentralized 'VM' platforms?
 
-### What makes Akash different from decentralized VM platforms?
-
-Akash a server-less Cloud platform that hosts containers where users can run _**any**_  Cloud-Native application. There is no need to run a special VM or re-write the entire internet in a new language. The deployment is off-chain and performed over a private peer-to-peer network isolated from the blockchain. Asset transfer occurs off-chain to provide the security and performance required by a mission critical applications running on the Cloud.  
+Akash a server-less Cloud platform that hosts containers where users can run _**any**_  Cloud-Native application. There is no need to re-write the entire internet in a new proprietary language, and there is no vendor lock-in to prevent you from switching Cloud providers. The deployment is off-chain and performed over a private peer-to-peer network isolated from the blockchain. Asset transfer occurs off-chain to provide the security and performance required by a mission critical applications running on the Cloud.  
 
 ### What is the Akash DeCloud? 
 
