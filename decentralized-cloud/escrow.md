@@ -1,9 +1,18 @@
-# Escrow Accounts
+# Payments
 
-* [Overview](escrow.md#overview)
-* [Account Settlement](escrow.md#account-settlement)
-* [Models](escrow.md#models)
-* [Hooks](escrow.md#hooks)
+Leases are paid from deployment owner \(tenant\) to the provider through a [deposit](escrow.md#bid-deposits) & withdraw mechanism.
+
+### Bid Deposits
+
+Tenants are required to submit a deposit when creating a deployment. Leases will be paid passively from the balance of this deposit. At any time, a lease provider may withdraw the balance owed to them from this deposit.
+
+If the available funds in the deposit ever reaches zero, a provider may close the lease. A tenant can add funds to their deposit at any time.  When a deployment is closed, the unspent portion of the balance will be returned to the tenant.
+
+Bidding on an order requires a deposit to be made. The deposit will be returned to the provider account when the [bid](marketplace.md#bid) transitions to state `CLOSED`.
+
+Bid deposits are implemented with an escrow account module. See [here](escrow.md) for more information.
+
+## Escrow Accounts
 
 Escrow accounts are a mechanism that allow for time-based payments from one bank account to another without block-by-block micropayments. They also support holding funds for an account until an arbitrary event occurrs.
 
@@ -18,13 +27,6 @@ Escrow accounts are necessary in akash for two primary reasons:
    naive approach of transferring tokens on every block.
 
 2. Bidding on an order should not be free \(for various reasons, including performance and security\). Akash requires a deposit for every bid. The deposit is returned to the bidder when the bid is closed.
-3. [Overview](escrow.md#overview)
-4. [Account Settlement](escrow.md#account-settlement)
-5. [Models](escrow.md#models)
-6. [Methods](escrow.md#methods)
-7. [Hooks](escrow.md#hooks)
-
-## Overview
 
 Escrow [accounts](escrow.md#account) are created with an arbitrary ID, an owner, and a balance. The balance is immediately transferred from the owner bank account to the escrow module [account](escrow.md#account). [Accounts](escrow.md#account) may have their balance increased by being deposited to after creation.
 

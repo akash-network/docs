@@ -267,7 +267,7 @@ There are 3 important public hostnames that a provider must configure.
 
 The **provider host** is the publicly accessible hostname of the provider. This is specified in the configuration file using the `host` key when `akash tx provider create` or `akash tx provider update` is ran. This value is stored on the blockchain. It is used whenever a lease owner needs to communicate directly with the provider for things such as sending a manifest or getting a lease status.
 
-The **cluster ingress host** is the publicly accessible hostname of the Kubernetes cluster. The Kubernetes cluster hosts an Ingress Controller, which is one way that leases in the cluster may be exposed to the outside world. It is currently recommended to [assign](provider.md#Create-Kubernetes-Ingress-Controller) exactly one node in your cluster to the Ingress Controller role.
+The **cluster ingress host** is the publicly accessible hostname of the Kubernetes cluster. The Kubernetes cluster hosts an Ingress Controller, which is one way that leases in the cluster may be exposed to the outside world. It is currently recommended to [assign](./#Create-Kubernetes-Ingress-Controller) exactly one node in your cluster to the Ingress Controller role.
 
 At this time only HTTP is supported for the Ingress Controller. The hostname should resolve to an IP which directs traffic to the Kubernetes ingress controller IP on your network. This value is specified using the `--deployment-ingress-domain` switch. It is not stored on the blockchain.
 

@@ -12,6 +12,8 @@ The Akash command line utility
 
 ## Akash Commands
 
+Below are links to the top level commands. Click one of the links to see the available commands.
+
 * [akash ](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_.md)     - 
 * [akash ](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_.md)     - 
 * [akash add-genesis-account](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_add-genesis-account.md)     - Add a genesis account to genesis.json

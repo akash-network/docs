@@ -1,4 +1,4 @@
-# Fund the Account
+# Fund your Wallet
 
 This guide will walk you through funding an account on an Akash network. Funding your network account is, of course, crucial to using the network - all messages charge a transaction fee, and if you are deploying applications then the leases for that deployment are paid out of your account.
 
@@ -38,7 +38,7 @@ Developers can qualify for a long-term Akash Credits as tokens, up to $100,000 p
 
 ### Gitcoin Bounties
 
-We have three bounties on Gitcoin offerring up to $100,000 in funding:
+We have three bounties on Gitcoin offerring up to $100,000 in fuysqnding:
 
 1. [**Akash Deploy UI Challenge**](https://gitcoin.co/issue/ovrclk/awesome-akash/177/100025806)
 2. [**Akash Open Cloud Challenge**](https://gitcoin.co/issue/ovrclk/awesome-akash/178/100025807)

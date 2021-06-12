@@ -1,6 +1,6 @@
-# Beta Testing
+# Provider Test Networks
 
-## NOTE: Please do not use the Testnet for your deployments. There are no available providers on Test networks at this time. 
+## NOTE: Please use Mainnet for all deployments. We do not recommend using the Testnet for deployments. Testnet is suited for providers and validators. There are no providers on Testnet.
 
 At any given time, there are a number of different  Akash networks running for using in testing new nodes, providers, validators, and even deployments.  The generally available networks are: 
 
@@ -12,7 +12,7 @@ At any given time, there are a number of different  Akash networks running for u
 
 When following guides in this document, it is important to use the right parameters for the network you want to connect to.
 
-The [ovrclk/net](https://github.com/ovrclk/net) repository contains metadata about each available network. The format is standardized across the networks so that you can use the same method to fetch the information for any of them. See [below](version.md#obtaining-the-data) for how to use [ovrclk/net](https://github.com/ovrclk/net) in the guides here.
+The [ovrclk/net](https://github.com/ovrclk/net) repository contains metadata about each available network. The format is standardized across the networks so that you can use the same method to fetch the information for any of them. See [below](testnet.md#obtaining-the-data) for how to use [ovrclk/net](https://github.com/ovrclk/net) in the guides here.
 
 ## Obtaining Data
 

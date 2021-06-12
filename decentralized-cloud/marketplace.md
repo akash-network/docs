@@ -25,7 +25,7 @@ The general workflow is:
 
 ### Lifecycle of a Deployment
 
-Given that there are live providers on the network, the lifecycle of a typical application deployment is as follows:
+The lifecycle of a typical application deployment is as follows:
 
 1. The tenant describes their desired deployment in \[SDL\], called a [deployment](marketplace.md#deployment).
 2. The tenant submits that definition to the blockchain.
@@ -34,7 +34,7 @@ Given that there are live providers on the network, the lifecycle of a typical a
 5. After some period of time, a winning [bid](marketplace.md#bid) for the [order](marketplace.md#order) is chosen, and a [lease](marketplace.md#lease) is created.
 6. Once a [lease](marketplace.md#lease) has been created, the tenant submits a [manifest](../reference/sdl.md) to the provider.
 7. The provider executes workloads as instructed by the [manifest](../reference/sdl.md).
-8. The workload is running - if it is a web application it can be visited, etc...
+8. The workload is running - if it is a web application it can be visited
 9. The provider or tenant eventually closes the [lease](marketplace.md#lease), shutting down the workload.
 
 ## Payments
@@ -43,13 +43,7 @@ Leases are paid from deployment owner \(tenant\) to the provider through a depos
 
 Tenants are required to submit a deposit when creating a deployment. Leases will be paid passively from the balance of this deposit. At any time, a lease provider may withdraw the balance owed to them from this deposit.
 
-If the available funds in the deposit ever reaches zero, a provider may close the lease.
-
-A tenant can add funds to their deposit at any time.
-
-When a deployment is closed, the unspent portion of the balance will be returned to the tenant.
-
-Payments are implemented with an escrow account module. See [here](escrow.md) for more information.
+If the available funds in the deposit ever reaches zero, a provider may close the lease. A tenant can add funds to their deposit at any time.  When a deployment is closed, the unspent portion of the balance will be returned to the tenant.
 
 ### Escrow Accounts
 

@@ -1,14 +1,14 @@
 # Table of contents
 
 * [Akash Overview](README.md)
+* [Technical Support](technical-support.md)
 
 ## Getting Started <a id="guides"></a>
 
 * [Install Akash](guides/install.md)
-* [Create an Account](guides/wallet.md)
-* [Fund the Account](guides/funding.md)
-* [Deploy an Application](guides/deploy.md)
-* [Getting Support](guides/technical-support.md)
+* [Create your Wallet](guides/wallet.md)
+* [Fund your Wallet](guides/funding.md)
+* [Deploy your Application](guides/deploy.md)
 
 ## Deployment Guides <a id="guides-1"></a>
 
@@ -20,6 +20,7 @@
 
 ## Reference
 
+* [Getting Support](reference/technical-support.md)
 * [Command Line Interface \(CLI\)](reference/general-commands.md)
 * [Stack Definition Language \(SDL\)](reference/sdl.md)
 * [Inter-Blockchain Connections \(IBC\)](reference/akashnet-relayer.md)
@@ -28,8 +29,8 @@
 ## Key Concepts <a id="decentralized-cloud"></a>
 
 * [Marketplace](decentralized-cloud/marketplace.md)
-* [Escrow Accounts](decentralized-cloud/escrow.md)
-* [Security \(mTLS\)](decentralized-cloud/mtls.md)
+* [Payments](decentralized-cloud/escrow.md)
+* [Certificates](decentralized-cloud/mtls.md)
 
 ## Running Akash Nodes <a id="providers"></a>
 
@@ -37,6 +38,6 @@
   * [RPC Service](providers/node/rpc-service.md)
   * [API Service](providers/node/api-service.md)
 * [Running a Validator](providers/validator.md)
-* [Becoming a Provider](providers/provider.md)
-* [Beta Testing](providers/version.md)
+* [Becoming a Provider](providers/provider/README.md)
+  * [Provider Test Networks](providers/provider/testnet.md)
 

@@ -51,6 +51,14 @@ The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exporte
 export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
 ```
 
+### Genesis
+
+The genesis file is required to run a full node.  Use this  command to download the genesis file. Note, you will not need this file for deployment.
+
+```bash
+curl -s "$https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json" > genesis.json
+```
+
 #### RPC Endpoint
 
 Print a random RPC endpoint. The akash CLI will recognize `AKASH_NODE` environment variable when exported to the shell.
