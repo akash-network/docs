@@ -4,7 +4,7 @@ This guide will walk you through funding an account on an Akash network. Funding
 
 ### Before We Begin
 
-Make sure to have Akash client installed on your workstation, check [install guide](deploy-1.md) for instructions. You'll need a key to use for your account and your account address handy. See the [wallet guide](wallet.md) for how to set this up.
+Make sure to have Akash client installed on your workstation, check [install guide](deploy.md) for instructions. You'll need a key to use for your account and your account address handy. See the [wallet guide](wallet.md) for how to set this up.
 
 #### Shell Variables Required
 
