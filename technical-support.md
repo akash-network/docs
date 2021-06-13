@@ -4,7 +4,7 @@
 
 The Akash Support Forum \([forum.akash.network](http://forum.akash.network/)\) is the best place to ask for help with an issue, report a bug, share your projects, discuss proposals, and submit feature requests.  
 
-**For help with Deployments:**
+**For faster support, please provide the following information:**
 
 * Account address
 * Deployment sequence
