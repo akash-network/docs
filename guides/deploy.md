@@ -17,7 +17,7 @@ We encourage to take a look at [Variables guide](https://github.com/ovrclk/docs/
 
 You'll need to know information about the network you're connecting your node to. See [Choosing a Network](../providers/provider/testnet.md) for how to obtain any network-related information.
 
-Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions.
+Make sure to have Akash client installed on your workstation, check [install guide](deploy-1.md) for instructions.
 
 You'll need an account with funds to pay for your deployment. See the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md) for creating a key and funding your account.
 

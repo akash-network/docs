@@ -3,20 +3,20 @@
 * [What is Akash?](README.md)
 * [Technical Support](technical-support.md)
 
-## Getting Started Guide <a id="start"></a>
+## Getting Started Guide <a id="guides"></a>
 
-* [Install Akash](start/install.md)
-* [Create your Wallet](start/wallet.md)
-* [Fund your Wallet](start/funding.md)
-* [Deploy your Application](start/deploy.md)
+* [Install Akash](guides/deploy-1.md)
+* [Create your Wallet](guides/wallet.md)
+* [Fund your Wallet](guides/funding.md)
+* [Deploy your Application](guides/deploy.md)
 
-## Deployment Guides <a id="guides"></a>
+## Deployment Guides <a id="deploy"></a>
 
-* [Awesome Apps on Akash](guides/awesome-akash.md)
-* [Multi-Tiered Deployment](guides/multi-tier-app.md)
-* [Helium Validator](guides/helium-validator.md)
-* [PostgreSQL restore/backup](guides/postgresql-restore-backup.md)
-* [Ruby on Rails with Sia and Auth0](guides/ruby-on-rails-with-sia-and-auth0.md)
+* [Awesome Apps on Akash](deploy/awesome-akash.md)
+* [Multi-Tiered Deployment](deploy/multi-tier-app.md)
+* [Helium Validator](deploy/helium-validator.md)
+* [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
+* [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
 
 ## Reference Guides <a id="reference"></a>
 

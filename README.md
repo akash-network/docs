@@ -9,10 +9,10 @@ description: >-
 
 ## Akash is the open source cloud. 
 
-The open source cloud is a shift from computing resources being managed by three large  Cloud platforms \(Amazon, Google, and Microsoft\) to a network __of Cloud providers running an _**open**_ _**platform**_ developed by the open source community and allows everyone to compete in an _**open**_ _**marketplace**_ for computing resources with more providers and lower costs.
+The open source cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network __of Cloud providers running an _**open**_ _**platform**_ developed by the open source community creating competition in an _**open**_ _**marketplace**_ with more providers and lower costs.
 
 {% hint style="info" %}
-Want to dive straight in? Start with our [**Getting Started**](start/install.md) section.
+Want to dive straight in? Start with our [**Getting Started Guide**](guides/deploy-1.md).
 {% endhint %}
 
 ## What is the Akash Platform?
@@ -41,13 +41,13 @@ The cost of hosting your application using Akash is about one-third the cost of 
 
 ### How can I use Akash? 
 
-If you're new to Akash, start with the [**Getting Started guide**](start/install.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](providers/node/), a [validator guide](providers/validator.md), a [cloud provider guide](providers/provider/), and several [deployment guides](guides/awesome-akash.md) for running various apps on Akash.
+If you're new to Akash, start with the [**Getting Started guide**](guides/deploy-1.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](providers/node/), a [validator guide](providers/validator.md), a [cloud provider guide](providers/provider/), and several [deployment guides](deploy/awesome-akash.md) for running various apps on Akash.
 
 ### What makes Akash different from centralized Cloud platforms?
 
 Like AirBNB for server hosting, Akash is a marketplace that gives you control over the price you pay and the amenities included \(we call them attributes\). Akash gives app developers an instant, zero-click command line tool  for leasing and deploying apps right from a terminal.  Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. This allows Akash to provide more variety and better pricing. Any cloud-native and containerized applications running on centralized cloud can run faster and at lower cost on the Akash decentralized cloud. 
 
-### What makes Akash different from decentralized 'VM' platforms?
+### What makes Akash different from decentralized VM platforms?
 
 Akash is a decentralized cloud platform that hosts containers where users can run _**any**_  Cloud-Native application. There is no need to re-write the entire internet in a new proprietary language, and there is no vendor lock-in to prevent you from switching Cloud providers. The deployment is off-chain and performed over a private peer-to-peer network isolated from the blockchain. Asset transfer occurs off-chain to provide the security and performance required by a mission critical applications running on the Cloud.  
 

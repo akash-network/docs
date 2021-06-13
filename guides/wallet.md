@@ -4,7 +4,7 @@ In this guide, we'll generate a wallet address on your workstation
 
 ### Before We Begin
 
-Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions.
+Make sure to have Akash client installed on your workstation, check [install guide](deploy-1.md) for instructions.
 
 #### Shell Variables Required
 
