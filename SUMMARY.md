@@ -6,10 +6,10 @@
 
 ## Getting Started Guide <a id="guides"></a>
 
-* [Install Akash](guides/deploy.md)
+* [Install Akash](guides/install.md)
 * [Create your Wallet](guides/wallet.md)
 * [Fund your Wallet](guides/funding.md)
-* [Deploy your Application](guides/deployment.md)
+* [Deploy your Application](guides/deploy.md)
 
 ## Deployment Guides <a id="deploy"></a>
 
