@@ -1,7 +1,6 @@
 # Table of contents
 
-* [Getting Started](README.md)
-* [What is Akash?](intro.md)
+* [What is Akash?](README.md)
 * [Technical Support](support.md)
 
 ## Getting Started Guide <a id="guides"></a>
