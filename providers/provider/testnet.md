@@ -1,6 +1,6 @@
 # Provider Test Networks
 
-## NOTE: Please use Mainnet for all deployments. We do not recommend using the Testnet for deployments. Testnet is suited for providers and validators. There are no providers on Testnet.
+## NOTE: Please use Mainnet for all deployments if you want to get bids from Providers. There are no providers available to bid on orders on the Testnet.
 
 At any given time, there are a number of different  Akash networks running for using in testing new nodes, providers, validators, and even deployments.  The generally available networks are: 
 
