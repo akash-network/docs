@@ -7,7 +7,7 @@ At any given time, there are a number of different  Akash networks running for u
 | Network | Description |
 | :--- | :--- |
 | [mainnet](https://github.com/ovrclk/net/tree/master/mainnet) | Akash Network mainnet network. |
-| [testnet](https://github.com/ovrclk/net/tree/master/testnet) | **No available providers at this time.**  |
+| [testnet](https://github.com/ovrclk/net/tree/master/testnet) | **No providers available to bid at this time.**  |
 | \*\*\*\*[edgenet](https://github.com/ovrclk/net/tree/master/edgenet) | Testnet of the next mainnet version. |
 
 When following guides in this document, it is important to use the right parameters for the network you want to connect to.
