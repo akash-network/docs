@@ -1,8 +1,6 @@
 # Deploy your Application
 
-In this guide, we'll deploy a single-tier web application on Akash. Akash is a permissionless and censorship-resistant cloud network that guarantees sovereignty over your data and your applications. With Akash, you’re in complete control of all aspects of the life cycle of an application with no middleman.
-
-In this guide, we'll setup [Lunie Light](https://github.com/ovrclk/lunie-light), a non-custodial, web wallet for Akash on Akash. Lunie Light is a staking interface for proof-of-stake blockchains in the Cosmos ecosystem — built for speed, simplicity, and ease-of-use.
+In this guide, we'll deploy a single-tier web application on Akash. We will run an app on Akash, [Lunie Light](https://github.com/ovrclk/lunie-light), a non-custodial, web wallet for Akash. Lunie Light is a staking interface for proof-of-stake blockchains in the Cosmos ecosystem — built for speed, simplicity, and ease-of-use.
 
 ## Before We Begin
 
@@ -147,7 +145,9 @@ You may use the sample deployment file as-is or modify it for your own needs as 
 Please note if you are running on the testnet, you are limited in the amount of testnet resources you may request.
 {% endhint %}
 
-### Mainnet - Audited Attributes
+### Audited Attributes
+
+Audited attributes allow users deploying applications to be more selective about which providers can run their apps. Anyone on the Akash Network can assign these attributes to Providers via an on-chain transaction.
 
 On the `akashnet-2` network, to ensure tenants have smooth and reliable service from their provider, it is recommended to use the following audited attributes in their deployment:
 

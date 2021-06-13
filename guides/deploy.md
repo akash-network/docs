@@ -1,6 +1,6 @@
 ---
 description: >-
-  This guides walks through installing and using all components of Akash
+  This guide walks through installing and using all components of Akash
   software.
 ---
 
