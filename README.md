@@ -96,9 +96,25 @@ A typical application deployment on Akash will follow this flow:
 8. The workload is running - if it is a web application it can be visited
 9. The provider or tenant eventually closes the [lease](decentralized-cloud/marketplace.md#lease), shutting down the workload.
 
-## How does Akash authenticate users?
+## How does **Security** work on Akash?
+
+With Akash, you decide **who** you want to trust. 
+
+### How does Akash authenticate users?
 
 It is important for the tenant to send their manifest to the correct provider, and for the provider to ensure only valid owners can access their deployments. This authentication is implemented with [mTLS](decentralized-cloud/mtls.md) and involves each account creating a certificate prior to deploying a workload or starting a provider.
 
 Default certificate lifespan is 365 days from the moment of issuance. This can be customized to be valid up to a certain date, or not valid until a certain date.
+
+### **What are Audited Attributes?**
+
+Akash has a feature designed to allow you to _control_ your trust settings called **Audited Attributes**.
+
+Akash's Stack Definition Language \(SDL\) allows you to define attributes such as the type of provider, region, CPU, Memory, Storage, and which auditors you want to trust. When you deploy on Akash, you can configure any attribute that restricts bids to only providers that meet your criteria.
+
+Auditors on the Akash Network review cloud providers and digitally sign the provider on chain with their certificate. If you only accept bids from audited providers this means you are trusting the Auditor/Provider not just a Provider.
+
+### **How do I limit my trust to Audited Providers?**
+
+Follow the getting started guide, and you will see the [instructions for audited attributes](https://docs.akash.network/guides/deploy#audited-attributes) suggest using only servers signed by Akash Network. If you deploy today, you will see bids by Equinix servers that audited and signed by Akash Network. By doing this you are trusting [Equinix’s Security Standards and Compliance](https://www.equinix.com/data-centers/design/standards-compliance) and you are trusting Overclock Labs as the auditor to only sign servers that meet those standards.
 
