@@ -69,7 +69,7 @@ curl -s "$https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.js
 Print a random RPC endpoint. The akash CLI will recognize `AKASH_NODE` environment variable when exported to the shell.
 
 ```bash
-export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)"
+export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | head -n 1)"
 
 echo $AKASH_NODE
 ```
@@ -79,7 +79,7 @@ echo $AKASH_NODE
 Print a random API endpoint.
 
 ```bash
-curl -s "$AKASH_NET/api-nodes.txt" | shuf -n 1
+curl -s "$AKASH_NET/api-nodes.txt" | head -n 1
 ```
 
 ### Set up your Environment
@@ -98,8 +98,6 @@ Verify you have correct `$AKASH_NODE`, that you have populated while [configurin
 
 ```bash
 echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND
-
-http://147.75.195.69:26657 edgenet-4 os
 ```
 
 Your values may differ depending on the network you're connecting to, `http://147.75.195.69:26657` and `edgenet-4` are details for [edgenet](https://github.com/ovrclk/net/tree/master/edgenet).
@@ -110,8 +108,6 @@ My local key is named `alice`, the below command should return the name you've u
 
 ```bash
 echo $AKASH_KEY_NAME 
-
-alice
 ```
 
 Populate `AKASH_ACCOUNT_ADDRESS` from `AKASH_KEY_NAME` and verify:
@@ -120,8 +116,6 @@ Populate `AKASH_ACCOUNT_ADDRESS` from `AKASH_KEY_NAME` and verify:
 export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 
 echo $AKASH_ACCOUNT_ADDRESS
-
-akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx
 ```
 
 Check your account has sufficient balance by running:
