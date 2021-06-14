@@ -59,14 +59,6 @@ The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exporte
 export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
 ```
 
-### Genesis
-
-The genesis file is required to run a full node.  Use this  command to download the genesis file. Note, you will not need this file for deployment.
-
-```bash
-curl -s "$https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json" > genesis.json
-```
-
 #### Network Node
 
 You need to select a node on the network to connect to, using an RPC endpoint. To configure the`AKASH_NODE` environment variable use this export command:
@@ -93,15 +85,17 @@ Set the Key Ring Backend that you used to store your key.  The default is `os` a
 AKASH_KEYRING_BACKEND=os
 ```
 
-```bash
-echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND
-```
+#### Confirm your network variables are setup
 
 Your values may differ depending on the network you're connecting to, but you should see something similar to:
 
 `http://135.181.60.250:26657 akashnet-2 os`
 
-#### Key Name
+```bash
+echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND
+```
+
+#### Configure your Account Key
 
 Configure the name of your key.  The command below will set thee name of your key to `alice`, run the below command  and replace `alice` with a name of your choice:
 
@@ -109,9 +103,7 @@ Configure the name of your key.  The command below will set thee name of your ke
 AKASH_KEY_NAME=alice
 ```
 
-Verify you have the key set up and your account has sufficient balances, see the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md) otherwise:
-
-In this example, the local key is named `alice`, the below command should return the name you've used:
+Verify you have the key set up . The below command should return the name you've used:
 
 ```bash
 echo $AKASH_KEY_NAME 
@@ -124,6 +116,8 @@ export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 
 echo $AKASH_ACCOUNT_ADDRESS
 ```
+
+## Check your Account Balance
 
 Check your account has sufficient balance by running:
 
@@ -142,7 +136,7 @@ pagination:
   total: "0"
 ```
 
-Please note the balance indicated is denominated in uAKT \(AKT x 10^-6\), in the above example, the account has a balance of _93 AKT_. We're now setup to deploy.
+If you don't have a balance, please see the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md). Please note the balance indicated is denominated in uAKT \(AKT x 10^-6\), in the above example, the account has a balance of _93 AKT_. We're now setup to deploy.
 
 {% hint style="info" %}
 Your account must have a minimum balance of 5 AKT to create a deployment. This 5 AKT funds the escrow account associated with the deployment and is used to pay the provider for their services. It is recommended you have more than this minimum balance to pay for transaction fees. For more information on escrow accounts, see [here](../decentralized-cloud/escrow.md)
