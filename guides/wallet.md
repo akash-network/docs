@@ -1,4 +1,4 @@
-# Create your Wallet
+# Create an Account
 
 In this guide, we'll generate a wallet address on your workstation
 

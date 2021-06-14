@@ -1,15 +1,15 @@
 # Table of contents
 
 * [What is Akash?](README.md)
-* [Quick Start Guide](quick-start-guide.md)
+* [Quick Start Guide](start.md)
 * [Technical Support](support.md)
 
 ## Getting Started <a id="guides"></a>
 
 * [Install Akash](guides/install.md)
-* [Create your Wallet](guides/wallet.md)
-* [Fund your Wallet](guides/funding.md)
-* [Deploy your Application](guides/deploy.md)
+* [Create an Account](guides/wallet.md)
+* [Funding an Account](guides/funding.md)
+* [Deploy an Application](guides/deploy.md)
 
 ## Deployment Guides <a id="deploy"></a>
 

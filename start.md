@@ -42,7 +42,7 @@ Once installed, verify the installation by running `akash version`
 akash version
 ```
 
-Congrats, now it's time to[ create your wallet.](guides/wallet.md)
+Congrats, now it's time to[ create your account. ](guides/wallet.md)
 {% endtab %}
 
 {% tab title="Linux" %}
@@ -84,9 +84,9 @@ Once you have the dependencies properly setup, download and build `akash` using 
 {% endtab %}
 {% endtabs %}
 
-## Step 2. Create a Wallet
+## Step 2. Create an Account
 
-Change the name of your wallet to anything you like! In this example, the name is MyWallet. Copy and paste this command into Terminal:
+Change the name of your account to anything you like! In this example, the name is MyWallet. Copy and paste this command into Terminal:
 
 ```bash
 akash keys add MyWallet
@@ -108,9 +108,7 @@ export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 echo $AKASH_ACCOUNT_ADDRESS
 ```
 
-
-
-## Step 3. Fund your Wallet
+## Step 3. Fund your Account
 
 Developers can qualify for a small amount of tokens, up to $1,000 paid in AKT. To qualify follow these steps:
 
