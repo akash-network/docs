@@ -12,7 +12,7 @@ description: >-
 The open source cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network __of Cloud providers running an _**open**_ _**platform**_ developed by the open source community creating competition in an _**open**_ _**marketplace**_ with more providers and lower costs.
 
 {% hint style="info" %}
-Want to dive straight in? Start with our [**Quick Start Guide**](deploy/quick-start.md).
+Want to dive straight in? Start with our [**Quick Start Guide**](guides/quick-start.md).
 {% endhint %}
 
 ## What is the Akash Platform?
@@ -41,7 +41,7 @@ The cost of hosting your application using Akash is about one-third the cost of 
 
 ### How can I use Akash? 
 
-If you're new to Akash, start with the [**Getting Started guide**](guides/install.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](providers/node/), a [validator guide](providers/validator.md), a [cloud provider guide](providers/provider/), and several [deployment guides](deploy/awesome-akash.md) for running various apps on Akash.
+If you're new to Akash, start with the [**Getting Started guide**](start/install.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](providers/node/), a [validator guide](providers/validator.md), a [cloud provider guide](providers/provider/), and several [deployment guides](guides/awesome-akash.md) for running various apps on Akash.
 
 ### What makes Akash different from centralized Cloud platforms?
 

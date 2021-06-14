@@ -3,22 +3,22 @@
 * [What is Akash?](README.md)
 * [Technical Support](support.md)
 
-## Getting Started <a id="guides"></a>
+## Getting Started <a id="start"></a>
 
-* [Install Akash](guides/install.md)
-* [Create an Account](guides/wallet.md)
-* [Funding an Account](guides/funding.md)
-* [Deploy an Application](guides/deploy.md)
+* [Install Akash](start/install.md)
+* [Create an Account](start/wallet.md)
+* [Funding an Account](start/funding.md)
+* [Deploy an Application](start/deploy.md)
 
-## Deployment Guides <a id="deploy"></a>
+## Deployment Guides <a id="guides"></a>
 
-* [Quick Start Guide](deploy/quick-start.md)
-* [Awesome Apps on Akash](deploy/awesome-akash.md)
-* [Multi-Tiered Deployment](deploy/multi-tier-app.md)
-* [Helium Validator](deploy/helium-validator.md)
-* [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
-* [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
-* [Shell Variables](deploy/shell-variables.md)
+* [Quick Start Guide](guides/quick-start.md)
+* [Awesome Apps on Akash](guides/awesome-akash.md)
+* [Multi-Tiered Deployment](guides/multi-tier-app.md)
+* [Helium Validator](guides/helium-validator.md)
+* [PostgreSQL restore/backup](guides/postgresql-restore-backup.md)
+* [Ruby on Rails with Sia and Auth0](guides/ruby-on-rails-with-sia-and-auth0.md)
+* [Shell Variables](guides/shell-variables.md)
 
 ## Reference Guides <a id="reference"></a>
 

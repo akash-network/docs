@@ -42,7 +42,7 @@ Once installed, verify the installation by running `akash version`
 akash version
 ```
 
-Congrats, now it's time to[ create your account. ](../guides/wallet.md)
+Congrats, now it's time to[ create your account. ](../start/wallet.md)
 {% endtab %}
 
 {% tab title="Linux" %}
