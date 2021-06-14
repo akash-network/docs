@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-## Step 1. Install Akash
+## [Step 7. Create your Deployment](https://app.gitbook.com/@overclock-1/s/docs/start#step-7-create-your-deployment)Step 1. Install Akash
 
 Select a tab below to view instructions for MacOS, Linux, or compiling from source.
 
@@ -254,7 +254,7 @@ EOF
 
 ## Step 6. Create your Certificate
 
-Before you can create a deployment, a [certificate](decentralized-cloud/mtls.md) must first be created. **Your certificate needs to be created only once per account** and can be used across all deployments.To do this, run:
+Before you can create a deployment, a [certificate](decentralized-cloud/mtls.md) must first be created. **Your certificate needs to be created only once per account** and can be used across all deployments. To do this, run:
 
 ```text
 akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt
@@ -389,13 +389,17 @@ You should see a response similar to:
 }
 ```
 
-### What's your Deployment Sequence?  
+### What's your DSEQ?  
 
-Find the DSEQ,  OSEQ, and GSEQ in the deployment you just created. We will be using these to reference the deployment when signing the lease. You will need to replace the AKASH\_DSEQ with the number from your deployment and configure a shell variable. Note that if this is your first time, OSEQ and GSEQ will be 1. 
+Find the .Deplooyment Sequence  \(DSEQ\) in the deployment you just created.  You will need to replace the AKASH\_DSEQ with the number from your deployment to configure a shell variable. 
 
 ```bash
-# Remember to change these numbers to match
-AKASH_DSEQ=1361904
+AKASH_DSEQ=CHANGETHIS
+```
+
+Now set the Order Sequence \(OSEQ\) and Group Sequence \(GSEQ\). Note that if this is your first time deploying on Akash, OSEQ and GSEQ will be 1. 
+
+```bash
 AKASH_OSEQ=1
 AKASH_GSEQ=1
 ```
