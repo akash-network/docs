@@ -6,17 +6,7 @@ This guide will walk you through funding an account on an Akash network. Funding
 
 Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions. You'll need a key to use for your account and your account address handy. See the [wallet guide](wallet.md) for how to set this up.
 
-#### Shell Variables Required
-
-| Name | Description |
-| :--- | :--- |
-| `AKASH_NET` | Akash network configuration base URL. |
-| `AKASH_NODE` | Akash network configuration base URL. |
-| `AKASH_ACCOUNT_ADDRESS` | The address of your account.  See [here](wallet.md#account-address). |
-
-## Funding Method
-
-There are a number of different ways to fund your account. Some work for `mainnet` and some don't; pick an appropriate option from below for the network you're connecting to.
+There are a number of different ways to fund your account. 
 
 ### Seed Funding
 
@@ -47,14 +37,4 @@ We have three bounties on Gitcoin offerring up to $100,000 in funding:
 ### Purchasing Tokens
 
 Tokens may currently be purchased on exchanges listed [here](https://akash.network/token). From there you can withdraw tokens to your address.
-
-### Check Balance
-
-Check if your account alance by running:
-
-```bash
-akash query bank balances --node $AKASH_NODE $AKASH_ACCOUNT_ADDRESS
-```
-
-You should see a non-zero entry containing `uakt` tokens!
 

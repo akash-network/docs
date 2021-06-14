@@ -66,7 +66,7 @@ curl -s "$https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.js
 
 #### RPC Endpoint
 
-Print a random RPC endpoint. The akash CLI will recognize `AKASH_NODE` environment variable when exported to the shell.
+Print a random RPC endpoint. The akash CLI will recognize `AKASH_NODE` environment variable when exported to the shell. 
 
 ```bash
 export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | head -1)"
@@ -94,17 +94,17 @@ We will be using shell variables throughout this guide for convenience and clari
 | `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) |
 | `AKASH_KEY_NAME` | The name of the key you will be deploying from. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) if you haven't yet setup a key |
 
-Verify you have correct `$AKASH_NODE`, that you have populated while [configuring the connection](../providers/provider/testnet.md) using `export AKASH_NODE=$(curl -s "$AKASH_NET/rpc-nodes.txt" | head -1)`.
-
 ```bash
 echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND
 ```
 
-Your values may differ depending on the network you're connecting to, `http://147.75.195.69:26657` and `edgenet-4` are details for [edgenet](https://github.com/ovrclk/net/tree/master/edgenet).
+Your values may differ depending on the network you're connecting to, but yoou should see something similar to:
+
+`http://135.181.60.250:26657 akashnet-2 os`
 
 Verify you have the key set up and your account has sufficient balances, see the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md) otherwise:
 
-My local key is named `alice`, the below command should return the name you've used:
+In this example, the local key is named `alice`, the below command should return the name you've used:
 
 ```bash
 echo $AKASH_KEY_NAME 
@@ -154,6 +154,7 @@ curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deplo
 You may use the sample deployment file as-is or modify it for your own needs as desscribed in our [SDL \(Stack Definition Language\)](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/documentation/sdl/README.md) documentation. A typical modification would be to reference your own image instead of our demo app image.
 
 ```bash
+## DO NOT COPY PASTE THIS INTO TERMINAL 
 cat > deploy.yml <<EOF
 ---
 version: "2.0"
@@ -202,10 +203,10 @@ EOF
 
 Audited attributes allow users deploying applications to be more selective about which providers can run their apps. Anyone on the Akash Network can assign these attributes to Providers via an on-chain transaction.
 
-On the `akashnet-2` network, to ensure tenants have smooth and reliable service from their provider, it is recommended to use the following audited attributes in their deployment:
+On the `akashnet-2` network, to ensure tenants have smooth and reliable service from their provider, it is recommended to use the following audited attributes in their deployment: __
 
 ```bash
-      attributes:
+    attributes:
         host: akash
       signedBy:
        anyOf:
@@ -215,7 +216,7 @@ On the `akashnet-2` network, to ensure tenants have smooth and reliable service 
 --or--
 
 ```bash
-      attributes:
+       attributes:
         datacenter: equinix-metal-ewr1
       signedBy:
        anyOf:
@@ -397,7 +398,9 @@ You should see a response similar to:
 }
 ```
 
-For convenience and clarity for future referencing, we can extract the below set of values to shell variables that we will be using to reference the deployment:
+## Find your  Deployment Sequence Number
+
+Now you need to  extract the below set of values to shell variables that we will be using to reference the deployment when signing the lease. Find the DSEQ,  OSEQ, and GSEQ in the deployment you just created. 
 
 | Attribute | Value |
 | :--- | :--- |
@@ -405,15 +408,11 @@ For convenience and clarity for future referencing, we can extract the below set
 | `AKASH_OSEQ` | `1` |
 | `AKASH_GSEQ` | `1` |
 
-Remember to replace the AKASH\_DSEQ with the number from your deployment and configure the shell variable:
+Remember to replace the **AKASH\_DSEQ, AKASH\_OSEQ, and AKASH\_GSEQ** with the numbers from your deployment and configure the shell variable. Note that if this is your first time, OSEQ and GSEQ will be 1. 
 
 ```bash
-AKASH_DSEQ=140324
-```
-
-Now set the Order Sequence and Group Sequence:
-
-```bash
+# Remember to change these numbers to match
+AKASH_DSEQ=1361818
 AKASH_OSEQ=1
 AKASH_GSEQ=1
 ```
@@ -426,7 +425,7 @@ echo $AKASH_DSEQ $AKASH_OSEQ $AKASH_GSEQ
 
 In this step, you post your deployment, the Akash marketplace matches you with a provider via auction. To create a deployment use akash deployment. The syntax for the deployment is `akash tx deployment create <config-path> --from <key-name>`.
 
-## Verify Deployment Creation
+## Verify Deployment is Open
 
 Check that the deployment was created by running:
 
@@ -612,18 +611,18 @@ bids:
 
 Note that there are bids from multiple different providers. In this case, both providers happen to be willing to accept a price of _1 uAKT_. This means that the lease can be created using _1 uAKT_ or _0.000001 AKT_ per block to execute the container.
 
-For this example, we will choose `akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7`.
+For this example, we will choose `akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal`.
 
 For convenience and clarity for future referencing, we can extract the below value to a shell variable that we will be using to reference the deployment:
 
 | Attribute | Value |
 | :--- | :--- |
-| `AKASH_PROVIDER` | `akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7` |
+| `AKASH_PROVIDER` | `akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal` |
 
 Replace the Value with the provider you select, and then run this command to set the provider shell variable:
 
 ```bash
-AKASH_PROVIDER=akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7
+AKASH_PROVIDER=akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal
 ```
 
 Verify we have the right value populated by running:
@@ -631,10 +630,6 @@ Verify we have the right value populated by running:
 ```bash
 echo $AKASH_PROVIDER
 ```
-
-
-
-
 
 ## Create your Lease
 

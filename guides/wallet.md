@@ -159,3 +159,9 @@ akash \
   keys show "$AKASH_KEY_NAME" -a
 ```
 
+The command below will set thee name of your key to `alice`, run the below command  and replace `alice` with a name of your choice:
+
+```bash
+AKASH_KEY_NAME=alice
+```
+
