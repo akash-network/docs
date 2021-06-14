@@ -200,7 +200,7 @@ deployment:
 EOF
 ```
 
-### Audited Attributes
+### What are Audited Attributes?
 
 Audited attributes allow users deploying applications to be more selective about which providers can run their apps. Anyone on the Akash Network can assign these attributes to Providers via an on-chain transaction.
 
@@ -270,7 +270,7 @@ You should see a response similar to:
 }
 ```
 
-## Create your Deployment
+## Create a Deployment
 
 To deploy on Akash, run:
 
@@ -399,9 +399,9 @@ You should see a response similar to:
 }
 ```
 
-## Find your  Deployment Sequence Number
+### Find your Deployment Sequence 
 
-Now you need to  extract the below set of values to shell variables that we will be using to reference the deployment when signing the lease. Find the DSEQ,  OSEQ, and GSEQ in the deployment you just created. 
+Now you need to extract the values below to shell variables. Find the DSEQ,  OSEQ, and GSEQ in the deployment you just created. We will be using these to reference the deployment when signing the lease. 
 
 | Attribute | Value |
 | :--- | :--- |
@@ -426,7 +426,7 @@ echo $AKASH_DSEQ $AKASH_OSEQ $AKASH_GSEQ
 
 In this step, you post your deployment, the Akash marketplace matches you with a provider via auction. To create a deployment use akash deployment. The syntax for the deployment is `akash tx deployment create <config-path> --from <key-name>`.
 
-## Verify Deployment is Open
+### Verify Deployment is Open
 
 Check that the deployment was created by running:
 
@@ -496,7 +496,7 @@ groups:
   state: open
 ```
 
-## Verify Order Creation
+### Verify Order is Open
 
 After a short time, you should see an order created for this deployment with the following command:
 
@@ -610,6 +610,8 @@ bids:
       denom: uakt
 ```
 
+### Choose a Provider 
+
 Note that there are bids from multiple different providers. In this case, both providers happen to be willing to accept a price of _1 uAKT_. This means that the lease can be created using _1 uAKT_ or _0.000001 AKT_ per block to execute the container.
 
 For this example, we will choose `akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal`.
@@ -632,7 +634,7 @@ Verify we have the right value populated by running:
 echo $AKASH_PROVIDER
 ```
 
-## Create your Lease
+## Create a Lease
 
 Create a lease for the bid from the chosen provider above by running:
 
@@ -651,7 +653,7 @@ After confirming your transaction, if  see a response similar to the following, 
 ,"tx":null,"timestamp":""}
 ```
 
-## Confirm your Lease
+### Confirm the Lease
 
 You can check the status of your lease by running:
 
@@ -697,7 +699,7 @@ leases:
 Please note that once the lease is created, the provider will begin debiting your deployment's escrow account, even if you have not completed the deployment process by uploading the manifest in the following step.
 {% endhint %}
 
-## Send your Manifest \(deploy.yml\) 
+### Send the Manifest  
 
 Upload the manifest using the values from above step:
 
@@ -707,7 +709,7 @@ akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $AKASH_DSEQ --
 
 You should expect no output from the above command.
 
-## Confirm your URL 
+### Confirm the URL 
 
 Now that the manifest is uploaded, your image is deployed. You can retrieve the access details by running the below:
 
