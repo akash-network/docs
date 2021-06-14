@@ -11,13 +11,76 @@ This is a technical guide, best suited to a reader with basic Linux command line
 * Infrastructure automation engineers that want to explore decentralized cloud.
 * Anyone who wants to get a feel for the current state of the decentralized cloud ecosystem.
 
-We encourage to take a look at [Variables guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/variables.md) to understand usage of environment variables as well cli flags.
+We encourage to take a look at [Variables guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/variables.md) to understand usage of environment variables as well as CLI flags.
 
 You'll need to know information about the network you're connecting your node to. See [Choosing a Network](../providers/provider/testnet.md) for how to obtain any network-related information.
 
 Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions.
 
 You'll need an account with funds to pay for your deployment. See the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md) for creating a key and funding your account.
+
+### Configure your Shell 
+
+Shell variables will be used throughout these guides to make the instructions so that the commands can be used verbatim. The beginning of each guide will give a list of variables used and how to populate them.
+
+Because of this, it is important to type the commands into a terminal where the variables have been defined. Closing or changing terminals will mean that you have to re-define the variable.
+
+| Name | Description |
+| :--- | :--- |
+| `AKASH_NET` | Akash network configuration base URL.  |
+| `AKASH_VERSION` | Akash version to install for your network.   |
+| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](../reference/akashnet-relayer.md). |
+| `AKASH_NODE` | Akash RPC endpoint URL and port number. |
+
+#### Network
+
+First configure the base URL \(`$AKASH_NET`\) for the Akash Network; copy and paste the command below:
+
+```bash
+AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
+```
+
+#### Version
+
+Next configure the version of the Akash Network `AKASH_VERSION`; copy and paste the command below:
+
+```bash
+AKASH_VERSION="$(curl -s "$AKASH_NET/version.txt")"
+```
+
+#### Chain ID
+
+The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exported to the shell. 
+
+```bash
+export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
+```
+
+### Genesis
+
+The genesis file is required to run a full node.  Use this  command to download the genesis file. Note, you will not need this file for deployment.
+
+```bash
+curl -s "$https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json" > genesis.json
+```
+
+#### RPC Endpoint
+
+Print a random RPC endpoint. The akash CLI will recognize `AKASH_NODE` environment variable when exported to the shell.
+
+```bash
+export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)"
+
+echo $AKASH_NODE
+```
+
+#### API Endpoint
+
+Print a random API endpoint.
+
+```bash
+curl -s "$AKASH_NET/api-nodes.txt" | shuf -n 1
+```
 
 ### Set up your Environment
 

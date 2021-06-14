@@ -13,6 +13,7 @@
 ## Deployment Guides <a id="deploy"></a>
 
 * [Awesome Apps on Akash](deploy/awesome-akash.md)
+* [Shell Variables](deploy/shell-variables.md)
 * [Multi-Tiered Deployment](deploy/multi-tier-app.md)
 * [Helium Validator](deploy/helium-validator.md)
 * [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
