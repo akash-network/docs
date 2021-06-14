@@ -92,21 +92,15 @@ Change the name of your account to anything you like! In this example, the name 
 akash keys add MyWallet
 ```
 
-Read the output and save your mnemonic phrase is a safe place.  You can always find your account address with this command:
-
-```bash
-akash keys show MyWallet -a
-```
-
-Let's set a Shell Variable  in Terminal `AKASH_ACCOUNT_ADDRESS` to save your account address for later. If you close your Terminal window this variable will not bee saved. 
-
-Populate `AKASH_ACCOUNT_ADDRESS` from `AKASH_KEY_NAME` and verify:
+Read the output and save your mnemonic phrase is a safe place. Let's set a Shell Variable  in Terminal `AKASH_ACCOUNT_ADDRESS` to save your account address for later. 
 
 ```bash
 export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 
 echo $AKASH_ACCOUNT_ADDRESS
 ```
+
+Note that if you close your Terminal window this variable will not bee saved. 
 
 ## Step 3. Fund your Account
 
