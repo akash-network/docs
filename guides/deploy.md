@@ -19,7 +19,7 @@ Make sure to have Akash client installed on your workstation, check [install gui
 
 You'll need an account with funds to pay for your deployment. See the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md) for creating a key and funding your account.
 
-### Configure your Shell 
+### Configure your Shell Variables
 
 Shell variables will be used throughout these guides to make the instructions so that the commands can be used verbatim. The beginning of each guide will give a list of variables used and how to populate them.
 
@@ -117,7 +117,7 @@ export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 echo $AKASH_ACCOUNT_ADDRESS
 ```
 
-## Check your Account Balance
+### Check your Account Balance
 
 Check your account has sufficient balance by running:
 
