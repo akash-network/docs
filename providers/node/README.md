@@ -6,7 +6,7 @@ In this guide, we'll set up an Akash node and connect it to a network.
 
 You'll also need to know information about the network you're connecting your node to. See [Choosing a Network](../provider/testnet.md) for how to obtain any network-related information.
 
-Make sure to have Akash client installed on your workstation, check [install guide](../../start/install.md) for instructions.
+Make sure to have Akash client installed on your workstation, check [install guide](../../guides/install.md) for instructions.
 
 ## Setting Up a New Node
 

@@ -3,22 +3,31 @@
 * [What is Akash?](README.md)
 * [Technical Support](support.md)
 
-## Getting Started <a id="start"></a>
-
-* [Install Akash](start/install.md)
-* [Create your Account](start/wallet.md)
-* [Funding your Account](start/funding.md)
-* [Deploy your Application](start/deploy.md)
-
-## Deployment Guides <a id="guides"></a>
+## Getting Started <a id="guides"></a>
 
 * [Quick Start Guide](guides/deploy.md)
-* [Awesome Apps on Akash](guides/awesome-akash.md)
-* [Multi-Tiered Deployment](guides/multi-tier-app.md)
-* [Helium Validator](guides/helium-validator.md)
-* [PostgreSQL restore/backup](guides/postgresql-restore-backup.md)
-* [Ruby on Rails with Sia and Auth0](guides/ruby-on-rails-with-sia-and-auth0.md)
-* [Shell Variables](guides/shell-variables.md)
+* [Install Akash](guides/install.md)
+* [Create your Account](guides/wallet.md)
+* [Funding your Account](guides/funding.md)
+* [Deploy your Application](guides/deployment.md)
+
+## Deployment Guides <a id="deploy"></a>
+
+* [Awesome Apps on Akash](deploy/awesome-akash.md)
+* [Multi-Tiered Deployment](deploy/multi-tier-app.md)
+* [Helium Validator](deploy/helium-validator.md)
+* [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
+* [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
+* [Shell Variables](deploy/shell-variables.md)
+
+## Operator Guides <a id="providers"></a>
+
+* [Run an Akash Node](providers/node/README.md)
+  * [RPC Service](providers/node/rpc-service.md)
+  * [API Service](providers/node/api-service.md)
+* [Running a Validator](providers/validator.md)
+* [Becoming a Provider](providers/provider/README.md)
+  * [Provider Test Networks](providers/provider/testnet.md)
 
 ## Reference Guides <a id="reference"></a>
 
@@ -32,13 +41,4 @@
 * [Marketplace](decentralized-cloud/marketplace.md)
 * [Payments](decentralized-cloud/escrow.md)
 * [Certificates](decentralized-cloud/mtls.md)
-
-## Operator Guides <a id="providers"></a>
-
-* [Run an Akash Node](providers/node/README.md)
-  * [RPC Service](providers/node/rpc-service.md)
-  * [API Service](providers/node/api-service.md)
-* [Running a Validator](providers/validator.md)
-* [Becoming a Provider](providers/provider/README.md)
-  * [Provider Test Networks](providers/provider/testnet.md)
 

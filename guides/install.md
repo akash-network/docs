@@ -6,13 +6,9 @@ description: >-
 
 # Install Akash
 
-The software to run  **Akash** and the command-line client used to interact with them are all currently distributed in the `akash`application.
+This guide will walk you through installing the `akash`application, creating and funding an account on an Akash network, and deploying a single-tier web application on Akash. 
 
-The `akash` command is used to run all components of the Akash Network, including:
-
-* Network node and API servers
-* Provider services
-* Client interface
+The software to run  **Akash** and the command-line client used to interact with them are all  distributed in the `akash`application. The `akash` command is used to run the Akash Network.
 
 Select a tab below to view instructions for MacOS, Linux, or compiling from source.
 
@@ -95,8 +91,4 @@ Akash is developed and tested with [golang 1.16+](https://golang.org/). Building
 Once you have the dependencies properly setup, download and build `akash` using `make install`
 {% endtab %}
 {% endtabs %}
-
-
-
-f
 

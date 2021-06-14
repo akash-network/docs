@@ -1,6 +1,8 @@
 # Quick Start Guide
 
-The software to run  **Akash** and the command-line client used to interact with them are all currently distributed in the `akash`application. This guide will walk you through installing the `akash`application, creating and funding an account on an Akash network, and deploying a single-tier web application on Akash. 
+This guide will walk you through installing the `akash`application, creating and funding an account on an Akash network, and deploying a single-tier web application on Akash. 
+
+The software to run  **Akash** and the command-line client used to interact with them are all  distributed in the `akash`application. The `akash` command is used to run the Akash Network.
 
 ## Step 1. Install Akash
 

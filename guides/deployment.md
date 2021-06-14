@@ -642,7 +642,7 @@ Create a lease for the bid from the chosen provider above by running:
 akash tx market lease create --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --owner $AKASH_ACCOUNT_ADDRESS --dseq $AKASH_DSEQ --gseq $AKASH_GSEQ --oseq $AKASH_OSEQ --provider $AKASH_PROVIDER --from $AKASH_KEY_NAME --fees 5000uakt
 ```
 
-After confirming your transaction, if  see a response similar to the following, then you were likely just too slow and need to[ close your deployment ](deploy.md#close-your-deployment)and [create a new deployment](deploy.md#create-the-deployment-configuration):
+After confirming your transaction, if  see a response similar to the following, then you were likely just too slow and need to[ close your deployment ](deployment.md#close-your-deployment)and [create a new deployment](deployment.md#create-the-deployment-configuration):
 
 ```javascript
 {"height":"1361880",
