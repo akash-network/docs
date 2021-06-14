@@ -1,4 +1,4 @@
-# Funding an Account
+# Funding your Account
 
 This guide will walk you through funding an account on an Akash network. Funding your network account is, of course, crucial to using the network - all messages charge a transaction fee, and if you are deploying applications then the leases for that deployment are paid out of your account.
 

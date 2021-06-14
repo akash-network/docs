@@ -1,4 +1,4 @@
-# Deploy an Application
+# Deploy your Application
 
 In this guide, we'll deploy a single-tier web application on Akash. We will run an app on Akash, [Lunie Light](https://github.com/ovrclk/lunie-light), a non-custodial, web wallet for Akash. Lunie Light is a staking interface for proof-of-stake blockchains in the Cosmos ecosystem — built for speed, simplicity, and ease-of-use.
 
@@ -12,8 +12,6 @@ This is a technical guide, best suited to a reader with basic Linux command line
 * Anyone who wants to get a feel for the current state of the decentralized cloud ecosystem.
 
 We encourage to take a look at [Variables guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/variables.md) to understand usage of environment variables as well as CLI flags.
-
-You'll need to know information about the network you're connecting your node to. See [Choosing a Network](../providers/provider/testnet.md) for how to obtain any network-related information.
 
 Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions.
 

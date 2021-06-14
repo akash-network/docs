@@ -1,5 +1,7 @@
 # Quick Start Guide
 
+The software to run  **Akash** and the command-line client used to interact with them are all currently distributed in the `akash`application. This guide will walk you through installing the `akash`application, creating and funding an account on an Akash network, and deploying a single-tier web application on Akash. 
+
 ## Step 1. Install Akash
 
 Select a tab below to view instructions for MacOS, Linux, or compiling from source.
@@ -42,7 +44,7 @@ Once installed, verify the installation by running `akash version`
 akash version
 ```
 
-Congrats, now it's time to[ create your account. ](../start/wallet.md)
+Congrats!
 {% endtab %}
 
 {% tab title="Linux" %}

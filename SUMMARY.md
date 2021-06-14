@@ -6,9 +6,9 @@
 ## Getting Started <a id="start"></a>
 
 * [Install Akash](start/install.md)
-* [Create an Account](start/wallet.md)
-* [Funding an Account](start/funding.md)
-* [Deploy an Application](start/deploy.md)
+* [Create your Account](start/wallet.md)
+* [Funding your Account](start/funding.md)
+* [Deploy your Application](start/deploy.md)
 
 ## Deployment Guides <a id="guides"></a>
 
