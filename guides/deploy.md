@@ -69,7 +69,7 @@ curl -s "$https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.js
 Print a random RPC endpoint. The akash CLI will recognize `AKASH_NODE` environment variable when exported to the shell.
 
 ```bash
-export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | head -n 1)"
+export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | head -1)"
 
 echo $AKASH_NODE
 ```
@@ -79,7 +79,7 @@ echo $AKASH_NODE
 Print a random API endpoint.
 
 ```bash
-curl -s "$AKASH_NET/api-nodes.txt" | head -n 1
+curl -s "$AKASH_NET/api-nodes.txt" | head -1
 ```
 
 ### Set up your Environment
