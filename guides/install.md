@@ -38,6 +38,13 @@ If you do not have Homebrew, you can install Homebrew using:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+You should make sure that Homebrew works by linking it with these commands:
+
+```text
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/kelsey/.zprofile 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
 ### Install Akash:
 
 Install `akash` using homebrew:
