@@ -94,7 +94,7 @@ We will be using shell variables throughout this guide for convenience and clari
 | `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) |
 | `AKASH_KEY_NAME` | The name of the key you will be deploying from. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) if you haven't yet setup a key |
 
-Verify you have correct `$AKASH_NODE`, that you have populated while [configuring the connection](../providers/provider/testnet.md) using `export AKASH_NODE=$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)`.
+Verify you have correct `$AKASH_NODE`, that you have populated while [configuring the connection](../providers/provider/testnet.md) using `export AKASH_NODE=$(curl -s "$AKASH_NET/rpc-nodes.txt" | head -1)`.
 
 ```bash
 echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND
@@ -405,12 +405,24 @@ For convenience and clarity for future referencing, we can extract the below set
 | `AKASH_OSEQ` | `1` |
 | `AKASH_GSEQ` | `1` |
 
+Remember to replace the AKASH\_DSEQ with the number from your deployment and configure the shell variable:
+
+```bash
+AKASH_DSEQ=140324
+
+```
+
+Now set the Order Sequence and Group Sequence:
+
+```bash
+AKASH_OSEQ=1
+AKASH_GSEQ=1
+```
+
 Verify we have the right values populated by running:
 
 ```bash
 echo $AKASH_DSEQ $AKASH_OSEQ $AKASH_GSEQ
-
-140324 1 1
 ```
 
 In this step, you post your deployment, the Akash marketplace matches you with a provider via auction. To create a deployment use akash deployment. The syntax for the deployment is `akash tx deployment create <config-path> --from <key-name>`.
@@ -613,9 +625,11 @@ Verify we have the right value populated by running:
 
 ```bash
 echo $AKASH_PROVIDER
-
-akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7
 ```
+
+
+
+
 
 ## Create your Lease
 

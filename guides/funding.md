@@ -50,12 +50,10 @@ Tokens may currently be purchased on exchanges listed [here](https://akash.netwo
 
 ### Check Balance
 
-Check your account balance with
+Check if your account alance by running:
 
 ```bash
-akash \
-  --node "$AKASH_NODE" \
-  query bank balances "$AKASH_ACCOUNT_ADDRESS"
+akash query bank balances --node $AKASH_NODE $AKASH_ACCOUNT_ADDRESS
 ```
 
 You should see a non-zero entry containing `uakt` tokens!
