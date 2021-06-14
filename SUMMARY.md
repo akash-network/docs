@@ -13,11 +13,11 @@
 ## Deployment Guides <a id="deploy"></a>
 
 * [Awesome Apps on Akash](deploy/awesome-akash.md)
-* [Shell Variables](deploy/shell-variables.md)
 * [Multi-Tiered Deployment](deploy/multi-tier-app.md)
 * [Helium Validator](deploy/helium-validator.md)
 * [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
 * [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
+* [Shell Variables](deploy/shell-variables.md)
 
 ## Reference Guides <a id="reference"></a>
 

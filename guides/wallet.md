@@ -6,16 +6,18 @@ In this guide, we'll generate a wallet address on your workstation
 
 Make sure to have Akash client installed on your workstation, check the ****[**install Akash guide**](install.md) ****for instructions.
 
-### Shell Variables 
+### What are Shell Variables? 
 
 Shell variables will be used throughout these guides to make the instructions so that the commands can be used verbatim. The beginning of each guide will give a list of variables used and how to populate them.
 
-Because of this, it is important to type the commands into a terminal where the variables have been defined. Closing or changing terminals will mean that you have to re-define the variable.
+Closing or changing terminals will mean that you have to re-define the variable. Because of this, it is important to type the commands into a terminal where the variables have been defined. 
 
 | Name | Description |
 | :--- | :--- |
 | `AKASH_KEY_NAME` | Key name of your choosing.  This documentation uses a value of "alice". |
 | `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` \(default\), `file`, `test`. |
+
+### Define your Shell Variables 
 
 First configure the name of your key.  The command below will set thee name of your key to `alice`, run the below command  and replace `alice` with a name of your choice:
 
@@ -32,6 +34,12 @@ AKASH_KEYRING_BACKEND=os
 ### Derive a New Key Locally
 
 Derive a new private key and encrypt to disk using the command `keys add`
+
+```bash
+akash keys add "$AKASH_KEY_NAME"
+```
+
+If you used a different keyring backend, you will need to add an additional flag:
 
 ```bash
 akash \
