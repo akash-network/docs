@@ -141,7 +141,7 @@ Please note the balance indicated is denominated in uAKT \(AKT x 10^-6\), in the
 Your account must have a minimum balance of 5 AKT to create a deployment. This 5 AKT funds the escrow account associated with the deployment and is used to pay the provider for their services. It is recommended you have more than this minimum balance to pay for transaction fees. For more information on escrow accounts, see [here](../decentralized-cloud/escrow.md)
 {% endhint %}
 
-## Create The Deployment Configuration
+## Create your Configuration
 
 Create a deployment configuration [deploy.yml](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/sdl/README.md).
 
@@ -269,7 +269,7 @@ You should see a response similar to:
 }
 ```
 
-## Create the Deployment
+## Create your Deployment
 
 To deploy on Akash, run:
 
@@ -412,7 +412,7 @@ Remember to replace the **AKASH\_DSEQ, AKASH\_OSEQ, and AKASH\_GSEQ** with the n
 
 ```bash
 # Remember to change these numbers to match
-AKASH_DSEQ=1361818
+AKASH_DSEQ=1361904
 AKASH_OSEQ=1
 AKASH_GSEQ=1
 ```
@@ -639,59 +639,18 @@ Create a lease for the bid from the chosen provider above by running:
 akash tx market lease create --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --owner $AKASH_ACCOUNT_ADDRESS --dseq $AKASH_DSEQ --gseq $AKASH_GSEQ --oseq $AKASH_OSEQ --provider $AKASH_PROVIDER --from $AKASH_KEY_NAME --fees 5000uakt
 ```
 
-After confirming your transaction, you should see a response similar to:
+After confirming your transaction, if  see a response similar to the following, then you were likely just too slow and need to[ close your deployment ](deploy.md#close-your-deployment)and [create a new deployment](deploy.md#create-the-deployment-configuration):
 
 ```javascript
-              "key":"sender",
-              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
-            },
-            {
-              "key":"sender",
-              "value":"akash14pphss726thpwws3yc458hggufynm9x77l4l2u"
-            }
-          ]
-        },
-        {
-          "type":"transfer",
-          "attributes":[
-            {
-              "key":"recipient",
-              "value":"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"
-            },
-            {
-              "key":"sender",
-              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
-            },
-            {
-              "key":"amount",
-              "value":"5000uakt"
-            },
-            {
-              "key":"recipient",
-              "value":"akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal"
-            },
-            {
-              "key":"sender",
-              "value":"akash14pphss726thpwws3yc458hggufynm9x77l4l2u"
-            },
-            {
-              "key":"amount",
-              "value":"50000000uakt"
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "info":"",
-  "gas_wanted":"200000",
-  "gas_used":"131168",
-  "tx":null,
-  "timestamp":""
-}
+{"height":"1361880",
+"txhash":"554579ED6917847777B645DDEB8B338C4ABC077DFF69517C9F17D55516296832",
+"codespace":"market","code":12,"data":""
+,"raw_log":"failed to execute message; message index: 0: bid not open"
+,"logs":[],"info":"","gas_wanted":"200000","gas_used":"52035"
+,"tx":null,"timestamp":""}
 ```
 
-## Wait for your Lease
+## Confirm your Lease
 
 You can check the status of your lease by running:
 
@@ -737,7 +696,7 @@ leases:
 Please note that once the lease is created, the provider will begin debiting your deployment's escrow account, even if you have not completed the deployment process by uploading the manifest in the following step.
 {% endhint %}
 
-## Upload Manifest
+## Send your Manifest \(deploy.yml\) 
 
 Upload the manifest using the values from above step:
 
@@ -746,6 +705,8 @@ akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $AKASH_DSEQ --
 ```
 
 You should expect no output from the above command.
+
+## Confirm your URL 
 
 Now that the manifest is uploaded, your image is deployed. You can retrieve the access details by running the below:
 
