@@ -12,7 +12,7 @@ description: >-
 The open source cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network __of Cloud providers running an _**open**_ _**platform**_ developed by the open source community creating competition in an _**open**_ _**marketplace**_ with more providers and lower costs.
 
 {% hint style="info" %}
-Want to dive straight in? Start with our [**Quick Start Guide**](guides/quick-start.md).
+Want to dive straight in? Start with our [**Quick Start Guide**](guides/deploy.md).
 {% endhint %}
 
 ## What is the Akash Platform?

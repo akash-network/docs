@@ -12,7 +12,7 @@
 
 ## Deployment Guides <a id="guides"></a>
 
-* [Quick Start Guide](guides/quick-start.md)
+* [Quick Start Guide](guides/deploy.md)
 * [Awesome Apps on Akash](guides/awesome-akash.md)
 * [Multi-Tiered Deployment](guides/multi-tier-app.md)
 * [Helium Validator](guides/helium-validator.md)
