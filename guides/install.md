@@ -22,7 +22,7 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 
 Before you install Akash, you will need to install the **XCode Command Line Tools**, and also we recommend using **Homebrew** to install Akash. 
 
-### Install XCode:
+### 1. Install XCode:
 
 You will need to install Apple's XCode Command Line Tools. Run this command in Terminal:
 
@@ -30,7 +30,7 @@ You will need to install Apple's XCode Command Line Tools. Run this command in T
 xcode-select --install  
 ```
 
-### Install Homebrew:
+### 2. Install Homebrew:
 
 If you do not have Homebrew, you can install Homebrew using:
 
@@ -45,7 +45,7 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/kelsey/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-### Install Akash:
+### 3. Install Akash:
 
 Install `akash` using homebrew:
 

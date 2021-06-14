@@ -17,7 +17,7 @@ Closing or changing terminals will mean that you have to re-define the variable.
 | `AKASH_KEY_NAME` | Key name of your choosing.  This documentation uses a value of "alice". |
 | `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` \(default\), `file`, `test`. |
 
-### Define your Shell Variables 
+### 1. Define your Shell Variables 
 
 First configure the name of your key.  The command below will set thee name of your key to `alice`, run the below command  and replace `alice` with a name of your choice:
 
@@ -31,15 +31,9 @@ Next, set the Key Ring Backend that you will use to store your key locally.  The
 AKASH_KEYRING_BACKEND=os
 ```
 
-### Derive a New Key Locally
+### 2. Derive a New Key Locally
 
 Derive a new private key and encrypt to disk using the command `keys add`
-
-```bash
-akash keys add "$AKASH_KEY_NAME"
-```
-
-If you used a different keyring backend, you will need to add an additional flag:
 
 ```bash
 akash \
@@ -68,7 +62,7 @@ In the above example, your new Akash address is `akash1cz87pqkad72gggrv3t7y2x9z5
 
 **IMPORTANT:** It's imperative your keep the mnemonic phrase is a safe place and it is the ONLY way to recover your private key incase you change or lose your device.
 
-### Derive a New Key using Ledger
+### 3. Derive a New Key using Ledger
 
 To derive a key and store it on the ledger, add the `--ledger` flag `keys add` command. For example:
 
@@ -91,7 +85,7 @@ Will produce a similar output to:
   pubkeys: []
 ```
 
-### Recovering Your Keys Using Pass Phrase
+### 4. Recovering Your Keys Using Pass Phrase
 
 The command to recover your key is:
 
@@ -117,7 +111,7 @@ diagram pony police cigar curious miracle multiply tiger salmon trade like month
   pubkeys: []
 ```
 
-### Exporting Your Private Keys
+### 5. Exporting Your Private Keys
 
 The command to export your private key is `keys export`. For example:
 
@@ -143,15 +137,9 @@ Hdv20eQY/mXdYD4a/zd6QPdBDkMHyyl2qY6Tun/UgQviUUyyTvzuVQgrrZ6tilRI
 -----END TENDERMINT PRIVATE KEY-----
 ```
 
-## Account Address
+## 6. Get your Account Address
 
 You can now find your account address with this command:
-
-```bash
-akash keys show "$AKASH_KEY_NAME" -a
-```
-
-If you changed the Key Ring Backend, you will need to set the flag in your command: 
 
 ```bash
 akash \
@@ -159,9 +147,11 @@ akash \
   keys show "$AKASH_KEY_NAME" -a
 ```
 
-The command below will set thee name of your key to `alice`, run the below command  and replace `alice` with a name of your choice:
+You can now set the Shell Variable `AKASH_ACCOUNT_ADDRESS` for your account address:
 
 ```bash
-AKASH_KEY_NAME=alice
+export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
+
+echo $AKASH_ACCOUNT_ADDRESS
 ```
 

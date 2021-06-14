@@ -28,7 +28,7 @@ Developers can qualify for a long-term Akash Credits as tokens, up to $100,000 p
 
 ### Gitcoin Bounties
 
-We have three bounties on Gitcoin offerring up to $100,000 in funding:
+We have three bounties on Gitcoin offering up to $100,000 in funding:
 
 1. [**Akash Deploy UI Challenge**](https://gitcoin.co/issue/ovrclk/awesome-akash/177/100025806)
 2. [**Akash Open Cloud Challenge**](https://gitcoin.co/issue/ovrclk/awesome-akash/178/100025807)

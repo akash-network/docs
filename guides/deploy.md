@@ -31,6 +31,9 @@ Because of this, it is important to type the commands into a terminal where the 
 | `AKASH_VERSION` | Akash version to install for your network.   |
 | `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](../reference/akashnet-relayer.md). |
 | `AKASH_NODE` | Akash RPC endpoint URL and port number. |
+| `AKASH_ACCOUNT_ADDRESS` | The address of your account.  See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md#account-address). |
+| `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) |
+| `AKASH_KEY_NAME` | The name of the key you will be deploying from. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) if you haven't yet setup a key |
 
 #### Network
 
@@ -64,9 +67,9 @@ The genesis file is required to run a full node.  Use this  command to download 
 curl -s "$https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json" > genesis.json
 ```
 
-#### RPC Endpoint
+#### Network Node
 
-Print a random RPC endpoint. The akash CLI will recognize `AKASH_NODE` environment variable when exported to the shell. 
+You need to select a node on the network to connect to, using an RPC endpoint. To configure the`AKASH_NODE` environment variable use this export command:
 
 ```bash
 export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | head -1)"
@@ -76,31 +79,35 @@ echo $AKASH_NODE
 
 #### API Endpoint
 
-Print a random API endpoint.
+This command will print a random API endpoint. 
 
 ```bash
 curl -s "$AKASH_NET/api-nodes.txt" | head -1
 ```
 
-### Set up your Environment
+#### Key Ring Backend
 
-We will be using shell variables throughout this guide for convenience and clarity. Ensure you have the below set of variables defined on your shell, you can use `export VARNAME=...`:
+Set the Key Ring Backend that you used to store your key.  The default is `os` and will store the key in your operating system, protected by your login password. 
 
-| Name | Description |
-| :--- | :--- |
-| `AKASH_NODE` | Akash network configuration base URL. See [here](../providers/provider/testnet.md#RPC-Node). |
-| `AKASH_CHAIN_ID` | Chain ID of the Akash network connecting to. See [here](../providers/provider/testnet.md#Chain-ID). |
-| `AKASH_ACCOUNT_ADDRESS` | The address of your account.  See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md#account-address). |
-| `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) |
-| `AKASH_KEY_NAME` | The name of the key you will be deploying from. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) if you haven't yet setup a key |
+```bash
+AKASH_KEYRING_BACKEND=os
+```
 
 ```bash
 echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND
 ```
 
-Your values may differ depending on the network you're connecting to, but yoou should see something similar to:
+Your values may differ depending on the network you're connecting to, but you should see something similar to:
 
 `http://135.181.60.250:26657 akashnet-2 os`
+
+#### Key Name
+
+Configure the name of your key.  The command below will set thee name of your key to `alice`, run the below command  and replace `alice` with a name of your choice:
+
+```bash
+AKASH_KEY_NAME=alice
+```
 
 Verify you have the key set up and your account has sufficient balances, see the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md) otherwise:
 
