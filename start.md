@@ -501,7 +501,7 @@ You should see a response similar to:
 }
 ```
 
-You can access the application by visiting the hostnames mapped to your deployment. In above example, its [http://rga3h05jetf9h3p6dbk62m19ck.ingress.ewr1p0.mainnet.akashian.io](http://rga3h05jetf9h3p6dbk62m19ck.ingress.ewr1p0.mainnet.akashian.io)
+You can access the application by visiting the hostnames mapped to your deployment. Look for a URL that is ends in **akashian.io** and copy it to your web browser.
 
 ### View your logs
 
