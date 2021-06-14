@@ -621,6 +621,12 @@ For convenience and clarity for future referencing, we can extract the below val
 | :--- | :--- |
 | `AKASH_PROVIDER` | `akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7` |
 
+Replace the Value with the provider you select, and then run this command to set the provider shell variable:
+
+```bash
+AKASH_PROVIDER=akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7
+```
+
 Verify we have the right value populated by running:
 
 ```bash
