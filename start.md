@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-## [Step 7. Create your Deployment](https://app.gitbook.com/@overclock-1/s/docs/start#step-7-create-your-deployment)Step 1. Install Akash
+## Step 1. Install Akash
 
 Select a tab below to view instructions for MacOS, Linux, or compiling from source.
 
