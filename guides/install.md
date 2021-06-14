@@ -41,7 +41,7 @@ If you do not have Homebrew, you can install Homebrew using:
 You should make sure that Homebrew works by linking it with these commands:
 
 ```text
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/kelsey/.zprofile 
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"'
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
