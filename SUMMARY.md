@@ -3,7 +3,7 @@
 * [What is Akash?](README.md)
 * [Technical Support](support.md)
 
-## Getting Started Guide <a id="guides"></a>
+## Getting Started <a id="guides"></a>
 
 * [Install Akash](guides/install.md)
 * [Create your Wallet](guides/wallet.md)

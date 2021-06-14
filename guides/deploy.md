@@ -229,9 +229,9 @@ Please note that all of the following can be substituted in the `datacenter` fie
 | `equinix-metal-ewr1` | New Jersey, United States |
 | `equinix-metal-sjc1` | California, United States |
 
-## Create the Deployment
+## Create a Certificate
 
-To create a deployment, a [certificate](../decentralized-cloud/mtls.md) must first be created. To do this, run:
+Before you can create a deployment, a [certificate](../decentralized-cloud/mtls.md) must first be created. **Your certificate needs to be created only once per account** and can be used across all deployments.To do this, run:
 
 ```text
 akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt
@@ -268,7 +268,7 @@ You should see a response similar to:
 }
 ```
 
-:warning: **certificate needs to be created only once per account** and can be used across all deployments.
+## Create the Deployment
 
 To deploy on Akash, run:
 
@@ -409,7 +409,6 @@ Remember to replace the AKASH\_DSEQ with the number from your deployment and con
 
 ```bash
 AKASH_DSEQ=140324
-
 ```
 
 Now set the Order Sequence and Group Sequence:
