@@ -42,7 +42,7 @@ Once installed, verify the installation by running `akash version`
 akash version
 ```
 
-Congrats, now it's time to[ create your account. ](guides/wallet.md)
+Congrats, now it's time to[ create your account. ](../guides/wallet.md)
 {% endtab %}
 
 {% tab title="Linux" %}
@@ -116,32 +116,7 @@ Developers can qualify for a small amount of tokens, up to $1,000 paid in AKT. T
    * **Reporting**: How will you report your progress to the community \(e.g. weekly calls, reports\)?
    * **Design**: Screenshots 
 
-### What's your Account Balance?
-
-Check your account has sufficient balance by running:
-
-```bash
-akash query bank balances --node $AKASH_NODE $AKASH_ACCOUNT_ADDRESS
-```
-
-You should see a response similar to:
-
-```text
-balances:
-- amount: "93000637"
-  denom: uakt
-pagination:
-  next_key: null
-  total: "0"
-```
-
-If you don't have a balance, please see the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md). Please note the balance indicated is denominated in uAKT \(AKT x 10^-6\), in the above example, the account has a balance of _93 AKT_. We're now setup to deploy.
-
-{% hint style="info" %}
-Your account must have a minimum balance of 5 AKT to create a deployment. This 5 AKT funds the escrow account associated with the deployment and is used to pay the provider for their services. It is recommended you have more than this minimum balance to pay for transaction fees. For more information on escrow accounts, see [here](decentralized-cloud/escrow.md)
-{% endhint %}
-
-## Step 4. Configure the Network
+## Step 4.  Connect to the Network
 
 First configure the base URL \(`$AKASH_NET`\) for the Akash Network; copy and paste the command below:
 
@@ -185,6 +160,31 @@ You should see something similar to:
 
 `http://135.181.60.250:26657 akashnet-2 os`
 
+### Check your Account Balance
+
+Check your account has sufficient balance by running:
+
+```bash
+akash query bank balances --node $AKASH_NODE $AKASH_ACCOUNT_ADDRESS
+```
+
+You should see a response similar to:
+
+```text
+balances:
+- amount: "93000637"
+  denom: uakt
+pagination:
+  next_key: null
+  total: "0"
+```
+
+If you don't have a balance, please see the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md). Please note the balance indicated is denominated in uAKT \(AKT x 10^-6\), in the above example, the account has a balance of _93 AKT_. We're now setup to deploy.
+
+{% hint style="info" %}
+Your account must have a minimum balance of 5 AKT to create a deployment. This 5 AKT funds the escrow account associated with the deployment and is used to pay the provider for their services. It is recommended you have more than this minimum balance to pay for transaction fees. For more information on escrow accounts, see [here](../decentralized-cloud/escrow.md)
+{% endhint %}
+
 ## Step 5. Create your Configuration
 
 Create a deployment configuration [deploy.yml](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/sdl/README.md).
@@ -195,7 +195,7 @@ You can use cURL to download the file:
 curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yml
 ```
 
-### What's in your Configuration?
+### Modify your Configuration
 
 You may use the sample deployment file as-is or modify it for your own needs as desscribed in our [SDL \(Stack Definition Language\)](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/documentation/sdl/README.md) documentation. A typical modification would be to reference your own image instead of our demo app image.
 
@@ -248,7 +248,7 @@ EOF
 
 ## Step 6. Create your Certificate
 
-Before you can create a deployment, a [certificate](decentralized-cloud/mtls.md) must first be created. **Your certificate needs to be created only once per account** and can be used across all deployments. To do this, run:
+Before you can create a deployment, a [certificate](../decentralized-cloud/mtls.md) must first be created. **Your certificate needs to be created only once per account** and can be used across all deployments. To do this, run:
 
 ```text
 akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt
@@ -383,7 +383,7 @@ You should see a response similar to:
 }
 ```
 
-### What's your DSEQ?  
+### Find your Deployment \#  
 
 Find the .Deplooyment Sequence  \(DSEQ\) in the deployment you just created.  You will need to replace the AKASH\_DSEQ with the number from your deployment to configure a shell variable. 
 

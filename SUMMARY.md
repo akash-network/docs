@@ -1,7 +1,6 @@
 # Table of contents
 
 * [What is Akash?](README.md)
-* [Quick Start Guide](start.md)
 * [Technical Support](support.md)
 
 ## Getting Started <a id="guides"></a>
@@ -13,6 +12,7 @@
 
 ## Deployment Guides <a id="deploy"></a>
 
+* [Quick Start Guide](deploy/quick-start.md)
 * [Awesome Apps on Akash](deploy/awesome-akash.md)
 * [Multi-Tiered Deployment](deploy/multi-tier-app.md)
 * [Helium Validator](deploy/helium-validator.md)
