@@ -98,3 +98,5 @@ Once you have the dependencies properly setup, download and build `akash` using 
 
 
 
+f
+
