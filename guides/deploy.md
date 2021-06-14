@@ -143,7 +143,15 @@ Your account must have a minimum balance of 5 AKT to create a deployment. This 5
 
 ## Create The Deployment Configuration
 
-Create a deployment configuration [deploy.yml](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/sdl/README.md):
+Create a deployment configuration [deploy.yml](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/sdl/README.md).
+
+You can use cURL to download the file:
+
+```text
+curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yml
+```
+
+You may use the sample deployment file as-is or modify it for your own needs as desscribed in our [SDL \(Stack Definition Language\)](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/documentation/sdl/README.md) documentation. A typical modification would be to reference your own image instead of our demo app image.
 
 ```bash
 cat > deploy.yml <<EOF
@@ -189,18 +197,6 @@ deployment:
 
 EOF
 ```
-
-Alternatively, you can use cURL to download:
-
-```text
-curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yml
-```
-
-You may use the sample deployment file as-is or modify it for your own needs as desscribed in our [SDL \(Stack Definition Language\)](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/documentation/sdl/README.md) documentation. A typical modification would be to reference your own image instead of our demo app image.
-
-{% hint style="info" %}
-Please note if you are running on the testnet, you are limited in the amount of testnet resources you may request.
-{% endhint %}
 
 ### Audited Attributes
 
