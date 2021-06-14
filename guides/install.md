@@ -49,6 +49,12 @@ brew link akash --force
 ```
 
 Once installed, verify the installation by running `akash version`
+
+```text
+akash version
+```
+
+Congrats, now it's time to[ create your wallet.](wallet.md)
 {% endtab %}
 
 {% tab title="Linux" %}
