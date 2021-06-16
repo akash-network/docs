@@ -6,11 +6,11 @@
 
 ## Getting Started <a id="guides"></a>
 
-* [Quick Start Guide](guides/deploy.md)
+* [Quick Start](guides/deploy.md)
 * [Install Akash](guides/install.md)
-* [Create your Account](guides/wallet.md)
-* [Funding your Account](guides/funding.md)
-* [Deploy your Application](guides/deployment.md)
+* [Create Account](guides/wallet.md)
+* [Add Funding](guides/funding.md)
+* [Deployment](guides/deployment.md)
 
 ## Deployment Guides <a id="deploy"></a>
 
@@ -20,7 +20,6 @@
 * [Helium Validator](deploy/helium-validator.md)
 * [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
 * [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
-* [Shell Variables](deploy/shell-variables.md)
 
 ## Operator Guides <a id="providers"></a>
 
@@ -43,4 +42,5 @@
 * [Stack Definition Language \(SDL\)](reference/sdl.md)
 * [Inter-Blockchain Connections \(IBC\)](reference/akashnet-relayer.md)
 * [Frequently Asked Questions \(FAQ\)](reference/faq.md)
+* [Shell Variables](reference/shell-variables.md)
 

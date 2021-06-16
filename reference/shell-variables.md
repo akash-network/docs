@@ -8,7 +8,7 @@ Because of this, it is important to type the commands into a terminal where the 
 | :--- | :--- |
 | `AKASH_NET` | Akash network configuration base URL.  |
 | `AKASH_VERSION` | Akash version to install for your network.   |
-| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](../reference/akashnet-relayer.md). |
+| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](akashnet-relayer.md). |
 | `AKASH_NODE` | Akash RPC endpoint URL and port number. |
 
 #### Network
