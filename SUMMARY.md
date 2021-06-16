@@ -13,6 +13,7 @@
 
 ## Deployment Guides <a id="deploy"></a>
 
+* [Unstoppable Web 2.0](deploy/unstoppable-web-2.0.md)
 * [Awesome Apps on Akash](deploy/awesome-akash.md)
 * [Multi-Tiered Deployment](deploy/multi-tier-app.md)
 * [Helium Validator](deploy/helium-validator.md)
