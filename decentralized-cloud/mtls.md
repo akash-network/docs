@@ -1,4 +1,4 @@
-# Certificates
+# Authentication
 
 For tenant it is important to send manifest to the right provider as well as for provider to ensure only owners can access their deployments. Thus each account must [create](mtls.md#manage-certificates) certificate prior deploying workload or starting the provider.
 

@@ -108,17 +108,19 @@ Note that if you close your Terminal window this variable will not bee saved.
 
 ## Step 3. Fund your Account
 
-Developers can qualify for a small amount of tokens, up to $1,000 paid in AKT. To qualify follow these steps:
+Developers can qualify for a small amount of tokens paid in AKT for the sole purpose of running their first app on Akash. To qualify for seed funding, please follow these steps:
 
-1. Join the Akash Discord server [**discord.akash.network**](http://discord.akash.network) to introduce yourself and verify your wallet address. We will send up to $100 to support your first deployment. 
-2. Write a detailed post on [**forum.akash.network**](http://forum.akash.network) about your project and **include a poll** in the proposal post to determine the level of interest in the community. Your forum post should include answers to the following questions:
+1. Write a detailed post on [**forum.akash.network**](http://forum.akash.network) about your project including answers to the following questions:
    * **Problem Statement:** What is the problem you will solve?
    * **Impact:**  What impact will this project have?
    * **Goals:** What are you aiming to accomplish?
    * **Methodology:** How will this task be accomplished?
    * **Timeline:** What is the timeline for accomplishing this task?
+   * **Team**: Are you looking for additional team members?
    * **Reporting**: How will you report your progress to the community \(e.g. weekly calls, reports\)?
-   * **Design**: Screenshots 
+   * **Design**: Do you have any screenshots?
+2. Join the Akash Discord server [**discord.akash.network**](http://discord.akash.network) to introduce yourself to verify you are not a Cylon.
+3. Provide your wallet address in the **\#deployments** channel and we will send up to $100 to support your first deployment. 
 
 ## Step 4.  Connect to the Network
 
