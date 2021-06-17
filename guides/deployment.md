@@ -27,7 +27,7 @@ Because of this, it is important to type the commands into a terminal where the 
 | :--- | :--- |
 | `AKASH_NET` | Akash network configuration base URL.  |
 | `AKASH_VERSION` | Akash version to install for your network.   |
-| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](../reference/akashnet-relayer.md). |
+| `AKASH_CHAIN_ID` | Chain ID of the Akash network for [IBC](../reference/akashnet-relayer.md). |
 | `AKASH_NODE` | Akash RPC endpoint URL and port number. |
 | `AKASH_ACCOUNT_ADDRESS` | The address of your account.  See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md#account-address). |
 | `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) |
@@ -742,6 +742,20 @@ You should see a response similar to:
 
 You can access the application by visiting the hostnames mapped to your deployment. In above example, its [http://rga3h05jetf9h3p6dbk62m19ck.ingress.ewr1p0.mainnet.akashian.io](http://rga3h05jetf9h3p6dbk62m19ck.ingress.ewr1p0.mainnet.akashian.io)
 
+## View your logs
+
+You can view logs emitted from the Kubernetes pods to debug issues, watch progress, or otherwise show the state of the application with the following:
+
+```bash
+akash provider lease-logs --node $AKASH_NODE --from $AKASH_KEY_NAME  --provider $AKASH_PROVIDER --dseq $AKASH_DSEQ
+```
+
+You can view events emitted from Kubernetes, such as if a pod is failing, restarting, docker image has been pulled, etc. with the following:
+
+```bash
+akash provider lease-events --node $AKASH_NODE  --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME  --provider $AKASH_PROVIDER
+```
+
 ## Update your deployment
 
 Updating active deployments is a two step process. First, edit your deployment YAML file with the desired changes.
@@ -1224,20 +1238,3 @@ pagination:
 ```
 
 As you can notice from the above, you lease will be marked `closed`.
-
-## View your logs
-
-You can view your application logs to debug issues or watch progress like so:
-
-```bash
-akash \
-  --home "$AKASH_HOME" \
-  --node "$AKASH_NODE" \
-  provider lease-logs \
-  --dseq "$AKASH_DSEQ" \
-  --gseq "$AKASH_GSEQ" \
-  --oseq "$AKASH_OSEQ" \
-  --provider "$AKASH_PROVIDER" \
-  --from "$AKASH_KEY_NAME"
-```
-
