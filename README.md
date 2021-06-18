@@ -77,7 +77,7 @@ Deploying applications onto [Akash](https://github.com/ovrclk/akash) involves tw
 
 ### What is a Reverse Auction?
 
-Akash uses a reverse auction . Tenants set the price and terms of their deployment, and the Cloud providers bid on the deployments.  
+Akash uses a [reverse auction](https://en.wikipedia.org/wiki/Reverse_auction). Tenants set the price and terms of their deployment, and the Cloud providers bid on the deployments.  
 
 In a very simple reverse auction:
 
