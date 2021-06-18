@@ -4,7 +4,7 @@ description: Akash means "open space" or "sky" in ancient Sanskrit.
 
 # Why Akash Network?
 
-## Akash Network is the open source decentralized, self-soverign, secure cloud platform and marketplace for compute that's 2x to 10x cheaper for developers and businesses. 
+## Akash Network is the open source decentralized, self-soverign, secure cloud platform and marketplace for compute. It's 2x to 10x cheaper for developers and businesses. 
 
 _AKT is used as the [token](https://akash.network/token) to transact for compute on the Akash.Network. Token rewards are earned by staking which can be used to for compute_
 
