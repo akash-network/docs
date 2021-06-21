@@ -4,20 +4,16 @@ description: Akash means "open space" or "sky" in ancient Sanskrit.
 
 # What is Akash?
 
-Akash is an [**open source project** ](https://github.com/ovrclk/akash)that contains everything you need to quickly deploy any public Docker container to the Cloud or create your own Cloud provider and lease server resources to others, right from a [**command-line**](reference/general-commands.md).
+Akash is an [**open source project** ](https://github.com/ovrclk/akash)that allows you quickly deploy a Docker container to the Cloud provider of your choice for one-third the cost of Amazon or create your own Cloud provider to bid on deployments and lease infrastructure to customer, right from a [**command-line**](reference/general-commands.md).
 
-* Define how much CPU, Memory, and Disk in a single file.
-* Deploy your application in minutes without having to set up, configure, or manage servers.
-* Package your application in a container and expose any TCP/UDP network ports you want. 
-* Set the price for providers bid on, and letting you select the best price and provider.
+* Define your Docker  image, CPU, Memory, and Storage in a **deploy.yaml** file.
+* Set your price, receive bids from providers in seconds, and select the best price.
+* Deploy your application without having to set up, configure, or manage servers.
+* Run your application in a container . 
 
 {% hint style="info" %}
 Want to dive straight in? Start with our [**Quick Start Guide**](guides/deploy.md).
 {% endhint %}
-
-### What is Akash?
-
-The open source cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network __of Cloud providers running an _**open**_ _**platform**_ developed by the open source community creating competition in an _**open**_ _**marketplace**_ with more providers and lower costs. 
 
 ### What is the Akash Container Platform \(CCP\)?
 
@@ -37,7 +33,9 @@ If you're new to Akash, start with the [**Getting Started guide**](guides/instal
 
 ### Why is Akash different than other Cloud platforms?
 
-Like AirBNB for server hosting, Akash is a marketplace that gives you control over the price you pay and the amenities included \(we call them attributes\). Akash gives app developers an instant, zero-click command line tool for leasing and deploying apps right from a terminal.  Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. This allows Akash to provide more variety and better pricing. Any cloud-native and containerized applications running on centralized cloud can run faster and at lower cost on the Akash decentralized cloud. 
+The open source cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network __of Cloud providers running an _**open**_ _**platform**_ developed by the open source community creating competition in an _**open**_ _**marketplace**_ with more providers and lower costs. 
+
+Like AirBNB for server hosting, Akash is a marketplace that gives you control over the price you pay and the amenities included \(we call them attributes\). Akash gives app developers a command line tool for leasing and deploying apps right from a terminal.  Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. This allows Akash to provide more variety and better pricing. Any cloud-native and containerized applications running on centralized cloud can run faster and at lower cost on the Akash decentralized cloud. 
 
 ### Why is Akash different than other decentralized platforms?
 
