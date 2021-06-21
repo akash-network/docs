@@ -35,6 +35,7 @@
 * [Marketplace](decentralized-cloud/marketplace.md)
 * [Payments](decentralized-cloud/escrow.md)
 * [Authentication](decentralized-cloud/mtls.md)
+* [Platform](decentralized-cloud/platform.md)
 
 ## Reference Guides <a id="reference"></a>
 
