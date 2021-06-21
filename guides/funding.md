@@ -1,4 +1,4 @@
-# Add Funding
+# Seed Funding
 
 This guide will walk you through funding an account on an Akash network. Funding your network account is, of course, crucial to using the network - all messages charge a transaction fee, and if you are deploying applications then the leases for that deployment are paid out of your account.
 
@@ -38,5 +38,5 @@ Developers can qualify for a long-term Akash Credits as tokens, up to $100,000 p
 
 ### Purchasing Tokens
 
-Tokens may currently be purchased on exchanges listed [here](https://akash.network/token). From there you can withdraw tokens to your address.
+Tokens may currently be purchased on exchanges listed [here](https://akash.network/token). From there you can withdraw tokens to your account address.
 

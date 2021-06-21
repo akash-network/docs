@@ -2,14 +2,14 @@
 
 * [What is Akash?](README.md)
 * [Technical Support](support.md)
-* [Block Explorers](block-explorers.md)
 
 ## Getting Started <a id="guides"></a>
 
 * [Quick Start](guides/deploy.md)
 * [Install Akash](guides/install.md)
+* [Shell Variables](guides/shell-variables.md)
 * [Create Account](guides/wallet.md)
-* [Add Funding](guides/funding.md)
+* [Seed Funding](guides/funding.md)
 * [Deployment](guides/deployment.md)
 
 ## Deployment Guides <a id="deploy"></a>
@@ -42,5 +42,4 @@
 * [Stack Definition Language \(SDL\)](reference/sdl.md)
 * [Inter-Blockchain Connections \(IBC\)](reference/akashnet-relayer.md)
 * [Frequently Asked Questions \(FAQ\)](reference/faq.md)
-* [Shell Variables](reference/shell-variables.md)
 
