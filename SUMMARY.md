@@ -21,14 +21,14 @@
 * [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
 * [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
 
-## Operator Guides <a id="providers"></a>
+## Operator Guides <a id="operator"></a>
 
-* [Run an Akash Node](providers/node/README.md)
-  * [RPC Service](providers/node/rpc-service.md)
-  * [API Service](providers/node/api-service.md)
-* [Running a Validator](providers/validator.md)
-* [Becoming a Provider](providers/provider/README.md)
-  * [Provider Test Networks](providers/provider/testnet.md)
+* [Run an Akash Node](operator/node/README.md)
+  * [RPC Service](operator/node/rpc-service.md)
+  * [API Service](operator/node/api-service.md)
+* [Running a Validator](operator/validator.md)
+* [Becoming a Provider](operator/provider/README.md)
+  * [Provider Test Networks](operator/provider/testnet.md)
 
 ## Key Concepts <a id="decentralized-cloud"></a>
 
