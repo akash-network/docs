@@ -17,7 +17,7 @@ Want to dive straight in? Start with our [**Quick Start Guide**](guides/deploy.m
 
 ### What is the Akash Deployment Marketplace?
 
-The [Akash Marketplace](decentralized-cloud/marketplace.md) is where users lease computing resources from Cloud providers before deploying a Docker container on the Akash Container Platform. Akash uses a blockchain to store records of requests, bids, leases, and settlement payments using the Akash Token \(AKT\). Akash's blockchain is a [tendermint](https://github.com/tendermint/tendermint)-based application based on the [Cosmos SDK](https://github.com/cosmos/cosmos-sdk). 
+The [Akash Marketplace](decentralized-cloud/marketplace.md) is where users lease computing resources from Cloud providers before deploying a Docker container on the Akash Container Platform. The marketplace stores on-chain records of requests, bids, leases, and settlement payments using the Akash Token \(AKT\). Akash's blockchain is a [tendermint](https://github.com/tendermint/tendermint)-based application based on the [Cosmos SDK](https://github.com/cosmos/cosmos-sdk). 
 
 ### What is the Akash Container Platform?
 
