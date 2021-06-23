@@ -1,33 +1,46 @@
 # Table of contents
 
-* [Introduction](README.md)
-* [Features and Design](design/README.md)
-  * [Marketplace](design/marketplace.md)
-  * [Escrow](design/escrow.md)
-  * [mTLS](design/mtls.md)
+* [What is Akash?](README.md)
+* [Technical Support](support.md)
 
-## Guides
+## Getting Started <a id="guides"></a>
 
-* [Overview](guides/guides.md)
-* [Choosing a Network](guides/version.md)
+* [Quick Start](guides/deploy.md)
 * [Install Akash](guides/install.md)
-* [Wallet Setup](guides/wallet.md)
-* [Funding your Account](guides/funding.md)
-* [Deploy an Application](guides/deploy/README.md)
-* [Run an Akash Node](guides/node/README.md)
-  * [RPC Service](guides/node/rpc-service.md)
-  * [API Service](guides/node/api-service.md)
-  * [Run a Validator](guides/node/validator.md)
-* [Become a Provider](guides/provider/README.md)
-* [Common Commands](guides/general-commands.md)
-* [Upgrade to Akashnet-2](guides/upgrade-mainnet.md)
-* [Using the Deploy Tool](guides/deploy-tool.md)
-* [Multi-Tiered Deployment](guides/multi-tier-app.md)
-* [Software Upgrade: Akashnet-2-upgrade-1](guides/akashnet-2-software-upgrade.md)
-* [Akashnet-2 IBC Connections](guides/akashnet-relayer.md)
+* [Shell Variables](guides/shell-variables.md)
+* [Create Account](guides/wallet.md)
+* [Seed Funding](guides/funding.md)
+* [Deployment](guides/deployment.md)
 
-## Documentation
+## Deployment Guides <a id="deploy"></a>
 
-* [Stack Definition Language](documentation/sdl.md)
-* [Akash CLI reference](cli/akash.md)
-* [FAQ](design/faq.md)
+* [Unstoppable Web 2.0](deploy/unstoppable-web-2.0.md)
+* [Awesome Apps on Akash](deploy/awesome-akash.md)
+* [Multi-Tiered Deployment](deploy/multi-tier-app.md)
+* [Helium Validator](deploy/helium-validator.md)
+* [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
+* [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
+
+## Operator Guides <a id="operator"></a>
+
+* [Run an Akash Node](operator/node/README.md)
+  * [RPC Service](operator/node/rpc-service.md)
+  * [API Service](operator/node/api-service.md)
+* [Running a Validator](operator/validator.md)
+* [Becoming a Provider](operator/provider/README.md)
+  * [Provider Test Networks](operator/provider/testnet.md)
+
+## Key Concepts <a id="decentralized-cloud"></a>
+
+* [Marketplace](decentralized-cloud/marketplace.md)
+* [Payments](decentralized-cloud/escrow.md)
+* [Authentication](decentralized-cloud/mtls.md)
+* [Platform](decentralized-cloud/platform.md)
+
+## Reference Guides <a id="reference"></a>
+
+* [Command Line Interface \(CLI\)](reference/general-commands.md)
+* [Stack Definition Language \(SDL\)](reference/sdl.md)
+* [Inter-Blockchain Connections \(IBC\)](reference/akashnet-relayer.md)
+* [Frequently Asked Questions \(FAQ\)](reference/faq.md)
+

@@ -1,21 +1,37 @@
-# Wallet Setup
-
-In this guide, we'll generate a wallet address on your workstation
+# Create Account
 
 ### Before We Begin
 
-Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions.
+In this guide, we'll generate a wallet address on your workstation.  Make sure to have Akash client installed on your workstation, check the ****[**install Akash guide**](install.md) ****for instructions.
 
-#### Shell Variables Required
+### What are Shell Variables? 
+
+Shell variables will be used throughout these guides to make the instructions so that the commands can be used verbatim. The beginning of each guide will give a list of variables used and how to populate them.
+
+Closing or changing terminals will mean that you have to re-define the variable. Because of this, it is important to type the commands into a terminal where the variables have been defined. 
 
 | Name | Description |
 | :--- | :--- |
 | `AKASH_KEY_NAME` | Key name of your choosing.  This documentation uses a value of "alice". |
 | `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` \(default\), `file`, `test`. |
 
-### Derive a New Key Locally
+### 1. Define your Shell Variables 
 
-Derive a new private key and encrypt to disk using the command `keys add`, to generate a key with the named `alice`, run the below \(please make sure to replace alice with a name of your choice\):
+First configure the name of your key.  The command below will set thee name of your key to `alice`, run the below command  and replace `alice` with a name of your choice:
+
+```bash
+AKASH_KEY_NAME=alice
+```
+
+Next, set the Key Ring Backend that you will use to store your key locally.  The default is `os` and will store the key in your operating system, protected by your login password. You can change this to `file` or `test`.
+
+```bash
+AKASH_KEYRING_BACKEND=os
+```
+
+### 2. Derive a New Key Locally
+
+Derive a new private key and encrypt to disk using the command `keys add`
 
 ```bash
 akash \
@@ -44,7 +60,7 @@ In the above example, your new Akash address is `akash1cz87pqkad72gggrv3t7y2x9z5
 
 **IMPORTANT:** It's imperative your keep the mnemonic phrase is a safe place and it is the ONLY way to recover your private key incase you change or lose your device.
 
-### Derive a New Key using Ledger
+### 3. Derive a New Key using Ledger
 
 To derive a key and store it on the ledger, add the `--ledger` flag `keys add` command. For example:
 
@@ -67,7 +83,7 @@ Will produce a similar output to:
   pubkeys: []
 ```
 
-### Recovering Your Keys Using Pass Phrase
+### 4. Recovering Your Keys Using Pass Phrase
 
 The command to recover your key is:
 
@@ -93,7 +109,7 @@ diagram pony police cigar curious miracle multiply tiger salmon trade like month
   pubkeys: []
 ```
 
-### Exporting Your Private Keys
+### 5. Exporting Your Private Keys
 
 The command to export your private key is `keys export`. For example:
 
@@ -119,13 +135,21 @@ Hdv20eQY/mXdYD4a/zd6QPdBDkMHyyl2qY6Tun/UgQviUUyyTvzuVQgrrZ6tilRI
 -----END TENDERMINT PRIVATE KEY-----
 ```
 
-## Account Address
+## 6. Get your Account Address
 
-You can find your account address with:
+You can now find your account address with this command:
 
 ```bash
 akash \
   --keyring-backend "$AKASH_KEYRING_BACKEND" \
   keys show "$AKASH_KEY_NAME" -a
+```
+
+You can now set the Shell Variable `AKASH_ACCOUNT_ADDRESS` for your account address:
+
+```bash
+export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
+
+echo $AKASH_ACCOUNT_ADDRESS
 ```
 

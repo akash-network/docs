@@ -3,14 +3,40 @@
 If there is something you'd like to see in here that isn't already, please reach out (_link to channels_) to one of the mods and we'll get it added!
 
 ### Table of Contents  
- 
+[General](#General)  
 [Product](#Product)  
 [Supermini](#Supermini)  
 
+<a name="General"/>
+
+## General
+
+**What is the core value prop of Akash network?**
+
+Besides being self-sovereign, permission-less, and decentralized, Akash is a reverse auction marketplace - Airbnb for Compute. Unlike Airbnb or centralized cloud providers however, the **Tenant** ("guests" in Airbnb terms) has the power to decide what to pay, when, and filter the provider via audited attributes. The Provider bids on the Tenants' workload to run on their compute. Tenants have predictability on what it will cost, at all times, because the power in their hands.
+
+The core value of Akash is the ability for the Tenant (owner of the workloads) to set the price **_and_** the terms. The Tenant _decides_. They don't have to be surprised by the sticker shock of a monthly billing cycle.
+
+Most customers don't know _why_ they are paying what they are paying. Now, they know because they decide.
+
+Anyone can become a provider on our network.
+
+**How does the Akash Network compete against the AWS spot instances in terms of price?**
+
+Spot Instances are exactly the same as On-Demand Instances. However, Spot does not guarantee that you can keep your running instances long enough to finish your workloads. Spot also does not guarantee that you can get immediate availability of the instances that you are looking for, or that you can always get the aggregate capacity that you requested. Moreover, Spot Instance interruptions and capacity can change over time because Spot Instance availability varies based on supply and demand, and past performance isn’t a guarantee of future results.
+
+Spot Instances are not suitable for workloads that are inflexible, stateful, fault-intolerant, or tightly coupled between instance nodes. It's not recommended for workloads that are intolerant of occasional periods when the target capacity is not completely available. 
+
+Generally, it is cheaper to run on Akash and will be for the foreseeable future, especially, when we introduce fractional uAKT. However, pricing is on a continuum. It's variable, and dynamic at any given time. In Airbnb terms - a hut to a luxury villa. 
 
 <a name="Product"/>
 
 ## Product
+
+**Where do I start?**
+
+- To deploy [locally](https://github.com/ovrclk/akash)
+- To [learn and deploy](https://docs.akash.network/) on _Testnet and/or Mainnet_
 
 **Can Akash provide Name Server Services?**
 
@@ -42,13 +68,14 @@ It is on the roadmap, however, GPU workloads aren't supported just yet - there a
 
 Images need to be publicly accessible at this time.
 
+
 <a name="Supermini"/>
 
 ## Supermini
 
 **When can I get the Supermini and can it be shipped outside the US?**
 
-Currently there is no further information about the supermini, its availability in the US and Europe, or dates of availability for subsequent orders. In the meantime, feel free to sign up to the waitlist! https://akash.network/supermini/
+Currently there is no further information about the [supermini](https://akash.network/supermini), its availability in the US and Europe, or dates of availability for subsequent orders. 
 
 **How much money can the Supermini make me?**
 

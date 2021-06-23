@@ -1,18 +1,18 @@
-# Choosing a Network
+# Provider Test Networks
 
-At any given time, there are a number of different active Akash networks running, each with a different `akash` version, chain-id, seed hosts, etc...
+## NOTE: Please use Mainnet for all deployments if you want to get bids from Providers. There are no providers available to bid on orders on the Testnet.
 
-The generally available networks are:
+At any given time, there are a number of different Akash networks running for using in testing new nodes, providers, validators, and even deployments. The generally available networks are:
 
 | Network | Description |
 | :--- | :--- |
 | [mainnet](https://github.com/ovrclk/net/tree/master/mainnet) | Akash Network mainnet network. |
-| [testnet](https://github.com/ovrclk/net/tree/master/testnet) | Testnet of the current mainnet version. |
-| [edgenet](https://github.com/ovrclk/net/tree/master/edgenet) | Testnet of the next mainnet version. |
+| [testnet](https://github.com/ovrclk/net/tree/master/testnet) | **No providers available to bid at this time.** |
+| \*\*\*\*[edgenet](https://github.com/ovrclk/net/tree/master/edgenet) | Testnet of the next mainnet version. |
 
 When following guides in this document, it is important to use the right parameters for the network you want to connect to.
 
-The [ovrclk/net](https://github.com/ovrclk/net) repository contains metadata about each available network. The format is standardized across the networks so that you can use the same method to fetch the information for any of them. See [below](version.md#obtaining-the-data) for how to use [ovrclk/net](https://github.com/ovrclk/net) in the guides here.
+The [ovrclk/net](https://github.com/ovrclk/net) repository contains metadata about each available network. The format is standardized across the networks so that you can use the same method to fetch the information for any of them. See [below](testnet.md#obtaining-the-data) for how to use [ovrclk/net](https://github.com/ovrclk/net) in the guides here.
 
 ## Obtaining Data
 
@@ -78,4 +78,14 @@ Print a random API endpoint
 ```bash
 curl -s "$AKASH_NET/api-nodes.txt" | shuf -n 1
 ```
+
+### Testnet Faucet
+
+The TestNet has a "faucet" running - a server that will send tokens to your account. You can see the faucet url by running:
+
+```bash
+curl "$AKASH_NET/faucet-url.txt"
+```
+
+Go to the resulting URL and enter your account address; you should see tokens in your account shortly.
 

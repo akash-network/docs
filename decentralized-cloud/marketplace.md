@@ -1,16 +1,21 @@
 # Marketplace
 
+Contents:
+
 * [Overview](marketplace.md#overview)
 * [Payments](marketplace.md#payments)
 * [On-Chain Parameters](marketplace.md#on-chain-parameters)
 * [Transactions](marketplace.md#transactions)
 * [Models](marketplace.md#models)
 
-The Akash Marketplace is an auction for compute resources. It is the mechanism by which users acquire resources on the Akash Platform.
-
 ## Overview
 
 The Akash Marketplace revolves around [Deployments](marketplace.md#deployment), which fully describe the resources that a tenant is requesting from the network. [Deployments](marketplace.md#deployment) contain [Groups](marketplace.md#group), which is a grouping of resources that are meant to be leased together from a single provider.
+
+Deploying applications onto [Akash](https://github.com/ovrclk/akash) involves two types of users:
+
+1. The **Tenant**: the entity that deploys the application.
+2. The **Provider**: the entity that hosts the application.
 
 The general workflow is:
 
@@ -18,25 +23,46 @@ The general workflow is:
 2. Providers bid on orders.
 3. Tenants choose winning bids and create leases.
 
+### Lifecycle of a Deployment
+
+The lifecycle of a typical application deployment is as follows:
+
+1. The tenant describes their desired deployment in \[SDL\], called a [deployment](marketplace.md#deployment).
+2. The tenant submits that definition to the blockchain.
+3. Their submission generates an [order](marketplace.md#order) on the marketplace.
+4. Providers that would like to fulfill that order [bid](marketplace.md#bid) on it.
+5. After some period of time, a winning [bid](marketplace.md#bid) for the [order](marketplace.md#order) is chosen, and a [lease](marketplace.md#lease) is created.
+6. Once a [lease](marketplace.md#lease) has been created, the tenant submits a [manifest](../reference/sdl.md) to the provider.
+7. The provider executes workloads as instructed by the [manifest](../reference/sdl.md).
+8. The workload is running - if it is a web application it can be visited
+9. The provider or tenant eventually closes the [lease](marketplace.md#lease), shutting down the workload.
+
 ## Payments
 
 Leases are paid from deployment owner \(tenant\) to the provider through a deposit & withdraw mechanism.
 
 Tenants are required to submit a deposit when creating a deployment. Leases will be paid passively from the balance of this deposit. At any time, a lease provider may withdraw the balance owed to them from this deposit.
 
-If the available funds in the deposit ever reaches zero, a provider may close the lease.
+If the available funds in the deposit ever reaches zero, a provider may close the lease. A tenant can add funds to their deposit at any time.  When a deployment is closed, the unspent portion of the balance will be returned to the tenant.
 
-A tenant can add funds to their deposit at any time.
+### Escrow Accounts
 
-When a deployment is closed, the unspent portion of the balance will be returned to the tenant.
+[Escrow accounts](escrow.md) are a mechanism that allow for time-based payments from one bank account to another without block-by-block micropayments. They also support holding funds for an account until an arbitrary event occurrs.
 
-Payments are implemented with an escrow account module. See [here](escrow.md) for more information.
+Escrow accounts are necessary in akash for two primary reasons:
+
+1. Leases in Akash are priced in blocks - every new block, a payment from the tenant \(deployment owner\) to the provider \(lease holder\) is due. Performance and security considerations prohibit the naive approach of transferring tokens on every block.
+2. Bidding on an order should not be free \(for various reasons, including performance and security\). Akash requires a deposit for every bid. The deposit is returned to the bidder when the bid is closed.
 
 ## Bid Deposits
 
 Bidding on an order requires a deposit to be made. The deposit will be returned to the provider account when the [bid](marketplace.md#bid) transitions to state `CLOSED`.
 
 Bid deposits are implemented with an escrow account module. See [here](escrow.md) for more information.
+
+## Audited Attributes
+
+Audited attributes allow users deploying applications to be more selective about which providers can run their apps. Anyone on the Akash Network can assign these attributes to Providers via an on-chain transaction.
 
 ## On-Chain Parameters
 

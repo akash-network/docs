@@ -4,9 +4,9 @@ In this guide, we'll set up an Akash node and connect it to a network.
 
 ## Before We Begin
 
-You'll also need to know information about the network you're connecting your node to. See [Choosing a Network](/guides/version.md) for how to obtain any network-related information.
+You'll also need to know information about the network you're connecting your node to. See [Choosing a Network](../provider/testnet.md) for how to obtain any network-related information.
 
-Make sure to have Akash client installed on your workstation, check [install guide](../install.md) for instructions.
+Make sure to have Akash client installed on your workstation, check [install guide](../../guides/install.md) for instructions.
 
 ## Setting Up a New Node
 
@@ -122,7 +122,7 @@ There are three strategies for pruning state, please be aware that this is only 
 You can configure your node's pruning strategy at start time with the `--pruning` or by configuring your `app.toml` file.
 
 {% hint style="warning" %}
-If running a validator node, do not use `--pruning everything` as it is known to cause issues.  Instead, please use `--pruning default`.
+If running a validator node, do not use `--pruning everything` as it is known to cause issues. Instead, please use `--pruning default`.
 {% endhint %}
 
 > Note: When you are pruning state you will not be able to query the heights that are not in your store. The sentry nodes the Akash team is running will be `--pruning nothing` and all data from the testnet will be queriable there.

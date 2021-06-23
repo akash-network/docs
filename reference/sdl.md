@@ -1,6 +1,8 @@
-# Stack Definition Language
+# Stack Definition Language \(SDL\)
 
-Deployment services, datacenters, pricing, etc.. are described by a [YAML](http://www.yaml.org/start.html) configuration file. Configuration files may end in `.yml` or `.yaml`.
+Customers / tenants define the deployment services, datacenters, requirements, and pricing parameters, in a "manifest" file \(deploy.yml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](sdl.md). SDL is a human friendly data  standard for declaring deployment attributes.  The SDL file is a "form" to request resources from the Network. SDL is compatible with the [YAML](http://www.yaml.org/start.html) standard and similar to Docker Compose files.
+
+Configuration files may end in `.yml` or `.yaml`.
 
 A complete deployment has the following sections:
 
@@ -10,6 +12,10 @@ A complete deployment has the following sections:
 * [deployment](sdl.md#deployment)
 
 An example deployment configuration can be found [here](https://github.com/ovrclk/docs/tree/62714bb13cfde51ce6210dba626d7248847ba8c1/sdl/deployment.yaml).
+
+#### Networking
+
+Networking - allowing connectivity to and between workloads - can be configured via the Stack Definition Language \([SDL](sdl.md)\) file for a deployment. By default, workloads in a deployment group are isolated - nothing else is allowed to connect to them. This restriction can be relaxed.
 
 ## version
 

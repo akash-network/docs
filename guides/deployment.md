@@ -1,8 +1,6 @@
-# Deploy an Application
+# Deployment
 
-In this guide, we'll deploy a single-tier web application on Akash. Akash is a permissionless and censorship-resistant cloud network that guarantees sovereignty over your data and your applications. With Akash, you’re in complete control of all aspects of the life cycle of an application with no middleman.
-
-In this guide, we'll setup [Lunie Light](https://github.com/ovrclk/lunie-light), a non-custodial, web wallet for Akash on Akash. Lunie Light is a staking interface for proof-of-stake blockchains in the Cosmos ecosystem — built for speed, simplicity, and ease-of-use.
+In this guide, we'll deploy a single-tier web application on Akash. We will run an app on Akash, [Lunie Light](https://github.com/ovrclk/lunie-light), a non-custodial, web wallet for Akash. Lunie Light is a staking interface for proof-of-stake blockchains in the Cosmos ecosystem — built for speed, simplicity, and ease-of-use.
 
 ## Before We Begin
 
@@ -13,65 +11,121 @@ This is a technical guide, best suited to a reader with basic Linux command line
 * Infrastructure automation engineers that want to explore decentralized cloud.
 * Anyone who wants to get a feel for the current state of the decentralized cloud ecosystem.
 
-We encourage to take a look at [Variables guide](../variables.md) to understand usage of environment variables as well cli flags.
+We encourage to take a look at [Variables guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/variables.md) to understand usage of environment variables as well as CLI flags.
 
-You'll need to know information about the network you're connecting your node to. See [Choosing a Network](/guides/version.md) for how to obtain any network-related information.
+Make sure to have Akash client installed on your workstation, check [install guide](install.md) for instructions.
 
-Make sure to have Akash client installed on your workstation, check [install guide](../install.md) for instructions.
+You'll need an account with funds to pay for your deployment. See the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md) for creating a key and funding your account.
 
-You'll need an account with funds to pay for your deployment. See the [funding guide](../wallet/funding.md) for creating a key and funding your account.
+### Configure your Shell Variables
 
-### Set up your Environment
+Shell variables will be used throughout these guides to make the instructions so that the commands can be used verbatim. The beginning of each guide will give a list of variables used and how to populate them.
 
-We will be using shell variables throughout this guide for convenience and clarity. Ensure you have the below set of variables defined on your shell, you can use `export VARNAME=...`:
+Because of this, it is important to type the commands into a terminal where the variables have been defined. Closing or changing terminals will mean that you have to re-define the variable.
 
-|Name|Description|
-|---|---|
-|`AKASH_NODE`| Akash network configuration base URL. See [here](../version.md#RPC-Node).|
-|`AKASH_CHAIN_ID`| Chain ID of the Akash network connecting to. See [here](../version.md#Chain-ID).|
-|`AKASH_ACCOUNT_ADDRESS`| The address of your account.  See [here](../wallet/README.md#account-address).|
-|`AKASH_KEYRING_BACKEND`| Keyring backend to use for local keys. See [here](../wallet/README.md)|
-|`AKASH_KEY_NAME` | The name of the key you will be deploying from. See [here](../wallet/README.md) if you haven't yet setup a key|
+| Name | Description |
+| :--- | :--- |
+| `AKASH_NET` | Akash network configuration base URL.  |
+| `AKASH_VERSION` | Akash version to install for your network.   |
+| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](../reference/akashnet-relayer.md). |
+| `AKASH_NODE` | Akash RPC endpoint URL and port number. |
+| `AKASH_ACCOUNT_ADDRESS` | The address of your account.  See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md#account-address). |
+| `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) |
+| `AKASH_KEY_NAME` | The name of the key you will be deploying from. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) if you haven't yet setup a key |
 
-Verify you have correct `$AKASH_NODE`, that you have populated while [configuring the connection](../version.md) using `export AKASH_NODE=$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)`.
+#### Network
 
-```sh
-echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND
+First configure the base URL \(`$AKASH_NET`\) for the Akash Network; copy and paste the command below:
 
-http://147.75.195.69:26657 edgenet-4 os
+```bash
+AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
 ```
 
-Your values may differ depending on the network you're connecting to, `http://147.75.195.69:26657` and `edgenet-4` are details for [edgenet](https://github.com/ovrclk/net/tree/master/edgenet).
+#### Version
 
-Verify you have the key set up and your account has sufficient balances, see the [funding guide](../wallet/funding.md) otherwise:
+Next configure the version of the Akash Network `AKASH_VERSION`; copy and paste the command below:
 
-My local key is named `alice`, the below command should return the name you've used:
+```bash
+AKASH_VERSION="$(curl -s "$AKASH_NET/version.txt")"
+```
 
-```sh
+#### Chain ID
+
+The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exported to the shell. 
+
+```bash
+export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
+```
+
+#### Network Node
+
+You need to select a node on the network to connect to, using an RPC endpoint. To configure the`AKASH_NODE` environment variable use this export command:
+
+```bash
+export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | head -1)"
+
+echo $AKASH_NODE
+```
+
+#### API Endpoint
+
+This command will print a random API endpoint. 
+
+```bash
+curl -s "$AKASH_NET/api-nodes.txt" | head -1
+```
+
+#### Key Ring Backend
+
+Set the Key Ring Backend that you used to store your key.  The default is `os` and will store the key in your operating system, protected by your login password. 
+
+```bash
+AKASH_KEYRING_BACKEND=os
+```
+
+#### Confirm your network variables are setup
+
+Your values may differ depending on the network you're connecting to, but you should see something similar to:
+
+`http://135.181.60.250:26657 akashnet-2 os`
+
+```bash
+echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND
+```
+
+#### Configure your Account Key
+
+Configure the name of your key.  The command below will set thee name of your key to `alice`, run the below command  and replace `alice` with a name of your choice:
+
+```bash
+AKASH_KEY_NAME=alice
+```
+
+Verify you have the key set up . The below command should return the name you've used:
+
+```bash
 echo $AKASH_KEY_NAME 
-
-alice
 ```
 
 Populate `AKASH_ACCOUNT_ADDRESS` from `AKASH_KEY_NAME` and verify:
 
-```sh
+```bash
 export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 
 echo $AKASH_ACCOUNT_ADDRESS
-
-akash1j8s87w3fctz7nlcqtkl5clnc805r240443eksx
 ```
+
+### Check your Account Balance
 
 Check your account has sufficient balance by running:
 
-```sh
-akash query bank balances --node $AKASH_NODE $AKASH_ACCOUNT_ADDRESS 
+```bash
+akash query bank balances --node $AKASH_NODE $AKASH_ACCOUNT_ADDRESS
 ```
 
 You should see a response similar to:
 
-```
+```text
 balances:
 - amount: "93000637"
   denom: uakt
@@ -80,19 +134,28 @@ pagination:
   total: "0"
 ```
 
-Please note the balance indicated is denominated in uAKT (AKT x 10^-6), in the above example, the account has a balance of *93 AKT*. We're now setup to deploy.
+If you don't have a balance, please see the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md). Please note the balance indicated is denominated in uAKT \(AKT x 10^-6\), in the above example, the account has a balance of _93 AKT_. We're now setup to deploy.
 
-{% hint style="warn" %}
-
-Your account must have a minimum balance of 5 AKT to create a deployment. This 5 AKT funds the escrow account associated with the deployment and is used to pay the provider for their services. It is recommended you have more than this minimum balance to pay for transaction fees. For more information on escrow accounts, see [here](/design/escrow.md)
-
+{% hint style="info" %}
+Your account must have a minimum balance of 5 AKT to create a deployment. This 5 AKT funds the escrow account associated with the deployment and is used to pay the provider for their services. It is recommended you have more than this minimum balance to pay for transaction fees. For more information on escrow accounts, see [here](../decentralized-cloud/escrow.md)
 {% endhint %}
 
-## Create The Deployment Configuration 
+## Create your Configuration
 
-Create a deployment configuration [deploy.yml](deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](/sdl/README.md):
+Create a deployment configuration [deploy.yml](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/sdl/README.md).
 
-```sh
+You can use cURL to download the file:
+
+```text
+curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yml
+```
+
+### What's in the Configuration?
+
+You may use the sample deployment file as-is or modify it for your own needs as desscribed in our [SDL \(Stack Definition Language\)](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/documentation/sdl/README.md) documentation. A typical modification would be to reference your own image instead of our demo app image.
+
+```bash
+## DO NOT COPY PASTE THIS INTO TERMINAL 
 cat > deploy.yml <<EOF
 ---
 version: "2.0"
@@ -137,35 +200,24 @@ deployment:
 EOF
 ```
 
-Alternatively, you can use cURL to download:
+### What are Audited Attributes?
 
-```
-curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yml
-```
+Audited attributes allow users deploying applications to be more selective about which providers can run their apps. Anyone on the Akash Network can assign these attributes to Providers via an on-chain transaction.
 
-You may use the sample deployment file as-is or modify it for your own needs as desscribed in our [SDL (Stack Definition Language)](documentation/sdl) documentation. A typical modification would be to reference your own image instead of our demo app image. 
+On the `akashnet-2` network, to ensure tenants have smooth and reliable service from their provider, it is recommended to use the following audited attributes in their deployment: __
 
-{% hint style="warn" %}
-
-Please note if you are running on the testnet, you are limited in the amount of testnet resources you may request. 
-
-{% endhint %}
-
-### Mainnet - Audited Attributes
-
-On the `akashnet-2` network, to ensure tenants have smooth and reliable service from their provider, it is recommended to use the following audited attributes in their deployment:
-
-```sh
-      attributes:
+```bash
+    attributes:
         host: akash
       signedBy:
        anyOf:
         - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
 ```
+
 --or--
 
-```sh
-      attributes:
+```bash
+       attributes:
         datacenter: equinix-metal-ewr1
       signedBy:
        anyOf:
@@ -174,22 +226,22 @@ On the `akashnet-2` network, to ensure tenants have smooth and reliable service 
 
 Please note that all of the following can be substituted in the `datacenter` field above and should be chosen based on your needs:
 
-|Datacenter|Location|
-|---|---|
-|`equinix-metal-ewr1`| New Jersey, United States|
-|`equinix-metal-sjc1`| California, United States|
+| Datacenter | Location |
+| :--- | :--- |
+| `equinix-metal-ewr1` | New Jersey, United States |
+| `equinix-metal-sjc1` | California, United States |
 
+## Create a Certificate
 
-## Create the Deployment
+Before you can create a deployment, a [certificate](../decentralized-cloud/mtls.md) must first be created. **Your certificate needs to be created only once per account** and can be used across all deployments.To do this, run:
 
-To create a deployment, a [certificate](/design/mtls.md) must first be created. To do this, run:
-
-```
+```text
 akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt
 ```
 
 You should see a response similar to:
-```json
+
+```javascript
 {
   "body": {
     "messages": [
@@ -218,16 +270,17 @@ You should see a response similar to:
 }
 ```
 
-:warning: **certificate needs to be created only once per account** and can be used across all deployments.   
+## Create a Deployment
 
 To deploy on Akash, run:
 
-```sh
+```bash
 akash tx deployment create deploy.yml --from $AKASH_KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --fees 5000uakt -y
 ```
-    
+
 You should see a response similar to:
-```json
+
+```javascript
 {
   "height":"140325",
   "txhash":"2AF4A01B9C3DE12CC4094A95E9D0474875DFE24FD088BB443238AC06E36D98EA",
@@ -345,33 +398,45 @@ You should see a response similar to:
   "timestamp":""
 }
 ```
-For convenience and clarity for future referencing, we can extract the below set of values to shell variables that we will be using to reference the deployment:
+
+### Find your Deployment Sequence 
+
+Now you need to extract the values below to shell variables. Find the DSEQ,  OSEQ, and GSEQ in the deployment you just created. We will be using these to reference the deployment when signing the lease. 
 
 | Attribute | Value |
-| --- | --- |
+| :--- | :--- |
 | `AKASH_DSEQ` | `140324` |
 | `AKASH_OSEQ` | `1` |
 | `AKASH_GSEQ` | `1` |
 
+Remember to replace the **AKASH\_DSEQ, AKASH\_OSEQ, and AKASH\_GSEQ** with the numbers from your deployment and configure the shell variable. Note that if this is your first time, OSEQ and GSEQ will be 1. 
+
+```bash
+# Remember to change these numbers to match
+AKASH_DSEQ=1361904
+AKASH_OSEQ=1
+AKASH_GSEQ=1
+```
+
 Verify we have the right values populated by running:
 
-```sh
+```bash
 echo $AKASH_DSEQ $AKASH_OSEQ $AKASH_GSEQ
-
-140324 1 1 
 ```
 
 In this step, you post your deployment, the Akash marketplace matches you with a provider via auction. To create a deployment use akash deployment. The syntax for the deployment is `akash tx deployment create <config-path> --from <key-name>`.
 
-## Verify Deployment Creation
+### Verify Deployment is Open
 
 Check that the deployment was created by running:
 
-```sh
+```bash
 akash query deployment get --owner $AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ
 ```
+
 You should see a response similar to:
-```sh
+
+```bash
 deployment:
   created_at: "140325"
   deployment_id:
@@ -431,17 +496,17 @@ groups:
   state: open
 ```
 
-## Verify Order Creation
+### Verify Order is Open
 
 After a short time, you should see an order created for this deployment with the following command:
 
-```sh
+```bash
 akash query market order get --node $AKASH_NODE --owner $AKASH_ACCOUNT_ADDRESS --dseq $AKASH_DSEQ --oseq $AKASH_OSEQ --gseq $AKASH_GSEQ
 ```
 
 You should see a response similar to:
 
-```
+```text
 created_at: "140325"
 order_id:
   dseq: "140324"
@@ -485,13 +550,13 @@ state: open
 
 After a short time, you should see bids from providers for this deployment with the following command:
 
-```sh
+```bash
 akash query market bid list --owner=$AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ
 ```
 
 You should see a response similar to:
 
-```
+```text
 bids:
 - bid:
     bid_id:
@@ -543,98 +608,62 @@ bids:
     transferred:
       amount: "0"
       denom: uakt
-
 ```
 
-Note that there are bids from multiple different providers.  In this case, both providers happen to be willing to accept a price of *1 uAKT*. This means that the lease can be created using *1 uAKT* or *0.000001 AKT* per block to execute the container.
+### Choose a Provider 
 
-For this example, we will choose `akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7`.
+Note that there are bids from multiple different providers. In this case, both providers happen to be willing to accept a price of _1 uAKT_. This means that the lease can be created using _1 uAKT_ or _0.000001 AKT_ per block to execute the container.
+
+For this example, we will choose `akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal`.
 
 For convenience and clarity for future referencing, we can extract the below value to a shell variable that we will be using to reference the deployment:
 
 | Attribute | Value |
-| --- | --- |
-| `AKASH_PROVIDER` | `akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7` |
+| :--- | :--- |
+| `AKASH_PROVIDER` | `akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal` |
+
+Replace the Value with the provider you select, and then run this command to set the provider shell variable:
+
+```bash
+AKASH_PROVIDER=akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal
+```
 
 Verify we have the right value populated by running:
 
-```sh
+```bash
 echo $AKASH_PROVIDER
-
-akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7 
 ```
 
-## Create your Lease
+## Create a Lease
 
 Create a lease for the bid from the chosen provider above by running:
 
-```sh
+```bash
 akash tx market lease create --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --owner $AKASH_ACCOUNT_ADDRESS --dseq $AKASH_DSEQ --gseq $AKASH_GSEQ --oseq $AKASH_OSEQ --provider $AKASH_PROVIDER --from $AKASH_KEY_NAME --fees 5000uakt
 ```
 
-After confirming your transaction, you should see a response similar to:
+After confirming your transaction, if  see a response similar to the following, then you were likely just too slow and need to[ close your deployment ](deployment.md#close-your-deployment)and [create a new deployment](deployment.md#create-the-deployment-configuration):
 
-```json
-              "key":"sender",
-              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
-            },
-            {
-              "key":"sender",
-              "value":"akash14pphss726thpwws3yc458hggufynm9x77l4l2u"
-            }
-          ]
-        },
-        {
-          "type":"transfer",
-          "attributes":[
-            {
-              "key":"recipient",
-              "value":"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"
-            },
-            {
-              "key":"sender",
-              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
-            },
-            {
-              "key":"amount",
-              "value":"5000uakt"
-            },
-            {
-              "key":"recipient",
-              "value":"akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal"
-            },
-            {
-              "key":"sender",
-              "value":"akash14pphss726thpwws3yc458hggufynm9x77l4l2u"
-            },
-            {
-              "key":"amount",
-              "value":"50000000uakt"
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "info":"",
-  "gas_wanted":"200000",
-  "gas_used":"131168",
-  "tx":null,
-  "timestamp":""
-}
+```javascript
+{"height":"1361880",
+"txhash":"554579ED6917847777B645DDEB8B338C4ABC077DFF69517C9F17D55516296832",
+"codespace":"market","code":12,"data":""
+,"raw_log":"failed to execute message; message index: 0: bid not open"
+,"logs":[],"info":"","gas_wanted":"200000","gas_used":"52035"
+,"tx":null,"timestamp":""}
 ```
 
-## Wait for your Lease
+### Confirm the Lease
 
 You can check the status of your lease by running:
 
-```sh
+```bash
 akash query market lease list --owner $AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ
 ```
 
 You should see a response similar to:
 
-```
+```text
 leases:
 - escrow_payment:
     account_id:
@@ -666,31 +695,31 @@ leases:
     state: active
 ```
 
-{% hint style="warn" %}
-
-Please note that once the lease is created, the provider will begin debiting your deployment's escrow account, even if you have not completed the deployment process by uploading the manifest in the following step. 
-
+{% hint style="info" %}
+Please note that once the lease is created, the provider will begin debiting your deployment's escrow account, even if you have not completed the deployment process by uploading the manifest in the following step.
 {% endhint %}
 
-## Upload Manifest
+### Send the Manifest  
 
 Upload the manifest using the values from above step:
 
-```sh
-akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER --home ~/.akash --from $AKASH_KEY_NAME 
+```bash
+akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER --home ~/.akash --from $AKASH_KEY_NAME
 ```
 
 You should expect no output from the above command.
 
+### Confirm the URL 
+
 Now that the manifest is uploaded, your image is deployed. You can retrieve the access details by running the below:
 
-```sh
+```bash
 akash provider lease-status --node $AKASH_NODE --home ~/.akash --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --provider $AKASH_PROVIDER
 ```
 
 You should see a response similar to:
 
-```json
+```javascript
 {
   "services": {
     "web": {
@@ -711,126 +740,126 @@ You should see a response similar to:
 }
 ```
 
-You can access the application by visiting the hostnames mapped to your deployment. In above example, its http://rga3h05jetf9h3p6dbk62m19ck.ingress.ewr1p0.mainnet.akashian.io
+You can access the application by visiting the hostnames mapped to your deployment. In above example, its [http://rga3h05jetf9h3p6dbk62m19ck.ingress.ewr1p0.mainnet.akashian.io](http://rga3h05jetf9h3p6dbk62m19ck.ingress.ewr1p0.mainnet.akashian.io)
 
 ## Update your deployment
 
 Updating active deployments is a two step process. First, edit your deployment YAML file with the desired changes.
 
-{% hint style="warn" %}
-
-Akash Groups are translated into Kubernetes Deployments, this means that only a few fields from the Akash SDL are mutable. For example image, command, args, env and exposed ports can be modified, but compute resources and placement criteria cannot. 
-
+{% hint style="info" %}
+Akash Groups are translated into Kubernetes Deployments, this means that only a few fields from the Akash SDL are mutable. For example image, command, args, env and exposed ports can be modified, but compute resources and placement criteria cannot.
 {% endhint %}
 
-  1. Update your deployment by running:
-  ```sh
-  akash tx deployment update deploy.yml --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --fees=5000uakt
-  ```
-  After confirming your transaction, you should see a response similar to this:
-  ```json
-  {
-  "height":"98503",
-  "txhash":"94FEF5ACB39145BB41ECB1FC224480ED5C80414D0757FC07C844B16EC246D304",
-  "codespace":"",
-  "code":0,
-  "data":"0A130A117570646174652D6465706C6F796D656E74",
-  "raw_log":"[{\"events\":[{\"type\":\"akash.v1\",\"attributes\":[{\"key\":\"module\",\"value\":\"deployment\"},{\"key\":\"action\",\"value\":\"deployment-updated\"},{\"key\":\"version\",\"value\":\"2b86f778de8cc9df415490efa162c58e7a0c297fbac9cdb8d6c6600eda56f17e\"},{\"key\":\"owner\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"dseq\",\"value\":\"98199\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"update-deployment\"},{\"key\":\"sender\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8\"},{\"key\":\"sender\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"amount\",\"value\":\"5000uakt\"}]}]}]",
-  "logs":[
-    {
-      "msg_index":0,
-      "log":"",
-      "events":[
-        {
-          "type":"akash.v1",
-          "attributes":[
-            {
-              "key":"module",
-              "value":"deployment"
-            },
-            {
-              "key":"action",
-              "value":"deployment-updated"
-            },
-            {
-              "key":"version",
-              "value":"2b86f778de8cc9df415490efa162c58e7a0c297fbac9cdb8d6c6600eda56f17e"
-            },
-            {
-              "key":"owner",
-              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
-            },
-            {
-              "key":"dseq",
-              "value":"98199"
-            }
-          ]
-        },
-        {
-          "type":"message",
-          "attributes":[
-            {
-              "key":"action",
-              "value":"update-deployment"
-            },
-            {
-              "key":"sender",
-              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
-            }
-          ]
-        },
-        {
-          "type":"transfer",
-          "attributes":[
-            {
-              "key":"recipient",
-              "value":"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"
-            },
-            {
-              "key":"sender",
-              "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
-            },
-            {
-              "key":"amount",
-              "value":"5000uakt"
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "info":"",
-  "gas_wanted":"200000",
-  "gas_used":"58833",
-  "tx":null,
-  "timestamp":""
-}
-  ```
+1. Update your deployment by running:
 
-  Note the `code: 0` shown in the successful deployment update output above.
+   ```bash
+   akash tx deployment update deploy.yml --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --fees=5000uakt
+   ```
 
+   After confirming your transaction, you should see a response similar to this:
 
-  2. Send the updated manifest by running:
+   ```javascript
+   {
+   "height":"98503",
+   "txhash":"94FEF5ACB39145BB41ECB1FC224480ED5C80414D0757FC07C844B16EC246D304",
+   "codespace":"",
+   "code":0,
+   "data":"0A130A117570646174652D6465706C6F796D656E74",
+   "raw_log":"[{\"events\":[{\"type\":\"akash.v1\",\"attributes\":[{\"key\":\"module\",\"value\":\"deployment\"},{\"key\":\"action\",\"value\":\"deployment-updated\"},{\"key\":\"version\",\"value\":\"2b86f778de8cc9df415490efa162c58e7a0c297fbac9cdb8d6c6600eda56f17e\"},{\"key\":\"owner\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"dseq\",\"value\":\"98199\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"update-deployment\"},{\"key\":\"sender\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8\"},{\"key\":\"sender\",\"value\":\"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj\"},{\"key\":\"amount\",\"value\":\"5000uakt\"}]}]}]",
+   "logs":[
+   {
+    "msg_index":0,
+    "log":"",
+    "events":[
+      {
+        "type":"akash.v1",
+        "attributes":[
+          {
+            "key":"module",
+            "value":"deployment"
+          },
+          {
+            "key":"action",
+            "value":"deployment-updated"
+          },
+          {
+            "key":"version",
+            "value":"2b86f778de8cc9df415490efa162c58e7a0c297fbac9cdb8d6c6600eda56f17e"
+          },
+          {
+            "key":"owner",
+            "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
+          },
+          {
+            "key":"dseq",
+            "value":"98199"
+          }
+        ]
+      },
+      {
+        "type":"message",
+        "attributes":[
+          {
+            "key":"action",
+            "value":"update-deployment"
+          },
+          {
+            "key":"sender",
+            "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
+          }
+        ]
+      },
+      {
+        "type":"transfer",
+        "attributes":[
+          {
+            "key":"recipient",
+            "value":"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"
+          },
+          {
+            "key":"sender",
+            "value":"akash1vn06ycjjnvsvl639fet9lajjctuturrtx7fvuj"
+          },
+          {
+            "key":"amount",
+            "value":"5000uakt"
+          }
+        ]
+      }
+    ]
+   }
+   ],
+   "info":"",
+   "gas_wanted":"200000",
+   "gas_used":"58833",
+   "tx":null,
+   "timestamp":""
+   }
+   ```
 
-  ```sh
-  akash provider send-manifest deploy.yml --keyring-backend $AKASH_KEYRING_BACKEND --node $AKASH_NODE --from $AKASH_KEY_NAME --provider $AKASH_PROVIDER --dseq $AKASH_DSEQ --log_level info --home ~/.akash
-  ```
+   Note the `code: 0` shown in the successful deployment update output above.
+
+2. Send the updated manifest by running:
+
+   ```bash
+   akash provider send-manifest deploy.yml --keyring-backend $AKASH_KEYRING_BACKEND --node $AKASH_NODE --from $AKASH_KEY_NAME --provider $AKASH_PROVIDER --dseq $AKASH_DSEQ --log_level info --home ~/.akash
+   ```
 
 Between the first and second step, the prior deployment's containers will continue to run until the new manifest file is received, validated, and new container group operational. After health checks on updated group are passing; the prior containers will be terminated - this process may take a couple minutes to complete.
 
 ## Add funds to your Deployment
 
-You will eventually need to add funds to the escrow account associated with your deployment to keep it running.  If the account becomes overdrawn due to lack of funds, the deployment will permanently close and require you to complete the deploy process again.  This in turn will also assign a new, random URI for the deployment.
+You will eventually need to add funds to the escrow account associated with your deployment to keep it running. If the account becomes overdrawn due to lack of funds, the deployment will permanently close and require you to complete the deploy process again. This in turn will also assign a new, random URI for the deployment.
 
 Deposit additional funds to your escrow account by running:
 
-```sh
+```bash
 akash tx deployment deposit --from $AKASH_KEY_NAME --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --node $AKASH_NODE 10000uakt --dseq $AKASH_DSEQ --fees=5000uakt
 ```
 
 After confirming the transaction, you should see a response similar to:
 
-```json
+```javascript
 {
   "height":"141905",
   "txhash":"DBB5AE97701172506B46B59C46095BC17CF4474E07AABF912D43DC36F57B1E69",
@@ -906,13 +935,13 @@ When you are done with your application, close the deployment. This will deprovi
 
 Close deployment using deployment by creating a `deployment-close` transaction:
 
-```
+```text
 akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $AKASH_DSEQ  --owner $AKASH_ACCOUNT_ADDRESS --from $AKASH_KEY_NAME --keyring-backend $AKASH_KEYRING_BACKEND -y --fees 5000uakt
 ```
 
 You should see a response simlar to below as a confirmation your deployment is closed:
 
-```json
+```javascript
 {
   "height":"141928",
   "txhash":"406B359910E4AD0944DA3C00D66B79179849B1A894C73A8CAA3CA0D93E44A1AA",
@@ -1150,15 +1179,16 @@ You should see a response simlar to below as a confirmation your deployment is c
   "timestamp":""
 }
 ```
+
 Additionally, you can also query the market to check if your lease is closed:
 
-```
-akash query market lease list --owner $AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ 
+```text
+akash query market lease list --owner $AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ
 ```
 
 You should see a response similar to:
 
-```
+```text
 leases:
 - escrow_payment:
     account_id:
@@ -1199,7 +1229,7 @@ As you can notice from the above, you lease will be marked `closed`.
 
 You can view your application logs to debug issues or watch progress like so:
 
-```sh
+```bash
 akash \
   --home "$AKASH_HOME" \
   --node "$AKASH_NODE" \
@@ -1210,3 +1240,4 @@ akash \
   --provider "$AKASH_PROVIDER" \
   --from "$AKASH_KEY_NAME"
 ```
+
