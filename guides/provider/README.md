@@ -1,6 +1,6 @@
 # Become a provider
 
-## Prerequisits
+## Prerequisites
 
 To run a provider on the Akash network, you need the following
 
@@ -142,6 +142,8 @@ This examples defines 3 separate hosts `mymaster`, `mynode0`, and `mynode1`.
 
 The `inventory` directory in the Kubespray project contains an existing directory called `sample`. The `sample` directory should be copied to a name of your choosing. In this guide we assume the `sample` directory has been copied to a directory called `defi`. The YAML file you create should be placed in the `defi` directory.
 
+Additionally, the steps in this guide should be followed to configure Kubernetes to use containerD as the container engine: https://github.com/kubernetes-sigs/kubespray/blob/master/docs/containerd.md
+
 ## Running Kubespray 
 
 Assuming you have created an inventory file placed at `inventory/defi/myinventory.yaml`, `cd` back up into `/kubespray/` run Kubespray with the following command:
@@ -237,14 +239,24 @@ This will cause the NGINX ingress to live only on that node. When the wildcard d
 
 ### Configure gVisor
 
-Files:
-1. [https://raw.githubusercontent.com/ovrclk/operations/master/infra/roles/kubernetes-gvisor-class/files/gvisor_runtime_class?token=ALSBDWBUBQCMW2TIPDDXZALAV4E3A]
+You can install gVisor for containerD on each host by folllowing this guide: https://github.com/google/gvisor-containerd-shim/blob/master/docs/runtime-handler-shim-v2-quickstart.md
+
+Kubernetes must be configured to have a `RuntimeClass` defining gvisor. Create a file named `gvisor-runtime.yaml` with the following contents
+
+```
+apiVersion: node.k8s.io/v1beta1
+kind: RuntimeClass
+metadata:
+  name: gvisor
+handler: runsc
+```
+
+You can then apply the `RuntimeClass` object to Kubernetes with the folllowing command
 
 ```
 kubectl apply -f ./gvisor-runtime.yaml
 ```
 
-TODO - convert above to file and move to public Akash repo
 
 # Provider Setup & Configuration
 
