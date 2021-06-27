@@ -63,5 +63,5 @@ To update the miner on Akash, run the above to build it with the latest Helium i
 
 * [https://docs.helium.com/mine-hnt/validators/validator-deployment-guide](https://docs.helium.com/mine-hnt/validators/validator-deployment-guide)
 * [https://explorer.helium.wtf/validators](https://explorer.helium.wtf/validators)
-* [https://testnet-api.helium.wtf/v1/validators/{{ADDRESS}}](https://testnet-api.helium.wtf/v1/validators/%7B%7BADDRESS%7D%7D)
+* [https://testnet-api.helium.wtf/v1/validators/](https://testnet-api.helium.wtf/v1/validators/%7B%7BADDRESS%7D%7D)
 

@@ -6,7 +6,7 @@ Leases are paid from deployment owner \(tenant\) to the provider through a [depo
 
 Tenants are required to submit a deposit when creating a deployment. Leases will be paid passively from the balance of this deposit. At any time, a lease provider may withdraw the balance owed to them from this deposit.
 
-If the available funds in the deposit ever reaches zero, a provider may close the lease. A tenant can add funds to their deposit at any time.  When a deployment is closed, the unspent portion of the balance will be returned to the tenant.
+If the available funds in the deposit ever reaches zero, a provider may close the lease. A tenant can add funds to their deposit at any time. When a deployment is closed, the unspent portion of the balance will be returned to the tenant.
 
 Bidding on an order requires a deposit to be made. The deposit will be returned to the provider account when the [bid](marketplace.md#bid) transitions to state `CLOSED`.
 
@@ -22,7 +22,7 @@ Escrow accounts are necessary in akash for two primary reasons:
 
    from the tenant \(deployment owner\) to the provider \(lease holder\)
 
-   is due.  Performance and security considerations prohibit the
+   is due. Performance and security considerations prohibit the
 
    naive approach of transferring tokens on every block.
 

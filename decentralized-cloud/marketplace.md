@@ -43,7 +43,7 @@ Leases are paid from deployment owner \(tenant\) to the provider through a depos
 
 Tenants are required to submit a deposit when creating a deployment. Leases will be paid passively from the balance of this deposit. At any time, a lease provider may withdraw the balance owed to them from this deposit.
 
-If the available funds in the deposit ever reaches zero, a provider may close the lease. A tenant can add funds to their deposit at any time.  When a deployment is closed, the unspent portion of the balance will be returned to the tenant.
+If the available funds in the deposit ever reaches zero, a provider may close the lease. A tenant can add funds to their deposit at any time. When a deployment is closed, the unspent portion of the balance will be returned to the tenant.
 
 ### Escrow Accounts
 

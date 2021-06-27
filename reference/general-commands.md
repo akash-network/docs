@@ -4,7 +4,7 @@ The software to run the **Network**, the **Platform**, and the command-line clie
 
 ## The Akash CLI
 
-The Akash command line utility 
+The Akash command line utility
 
 ```text
   -h, --help   help for akash

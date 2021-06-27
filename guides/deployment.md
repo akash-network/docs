@@ -25,8 +25,8 @@ Because of this, it is important to type the commands into a terminal where the 
 
 | Name | Description |
 | :--- | :--- |
-| `AKASH_NET` | Akash network configuration base URL.  |
-| `AKASH_VERSION` | Akash version to install for your network.   |
+| `AKASH_NET` | Akash network configuration base URL. |
+| `AKASH_VERSION` | Akash version to install for your network. |
 | `AKASH_CHAIN_ID` | Chain ID of the Akash network for [IBC](../reference/akashnet-relayer.md). |
 | `AKASH_NODE` | Akash RPC endpoint URL and port number. |
 | `AKASH_ACCOUNT_ADDRESS` | The address of your account.  See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md#account-address). |
@@ -51,7 +51,7 @@ AKASH_VERSION="$(curl -s "$AKASH_NET/version.txt")"
 
 #### Chain ID
 
-The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exported to the shell. 
+The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exported to the shell.
 
 ```bash
 export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
@@ -69,7 +69,7 @@ echo $AKASH_NODE
 
 #### API Endpoint
 
-This command will print a random API endpoint. 
+This command will print a random API endpoint.
 
 ```bash
 curl -s "$AKASH_NET/api-nodes.txt" | head -1
@@ -77,7 +77,7 @@ curl -s "$AKASH_NET/api-nodes.txt" | head -1
 
 #### Key Ring Backend
 
-Set the Key Ring Backend that you used to store your key.  The default is `os` and will store the key in your operating system, protected by your login password. 
+Set the Key Ring Backend that you used to store your key. The default is `os` and will store the key in your operating system, protected by your login password.
 
 ```bash
 AKASH_KEYRING_BACKEND=os
@@ -95,7 +95,7 @@ echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND
 
 #### Configure your Account Key
 
-Configure the name of your key.  The command below will set thee name of your key to `alice`, run the below command  and replace `alice` with a name of your choice:
+Configure the name of your key. The command below will set thee name of your key to `alice`, run the below command and replace `alice` with a name of your choice:
 
 ```bash
 AKASH_KEY_NAME=alice
@@ -104,7 +104,7 @@ AKASH_KEY_NAME=alice
 Verify you have the key set up . The below command should return the name you've used:
 
 ```bash
-echo $AKASH_KEY_NAME 
+echo $AKASH_KEY_NAME
 ```
 
 Populate `AKASH_ACCOUNT_ADDRESS` from `AKASH_KEY_NAME` and verify:
@@ -204,7 +204,7 @@ EOF
 
 Audited attributes allow users deploying applications to be more selective about which providers can run their apps. Anyone on the Akash Network can assign these attributes to Providers via an on-chain transaction.
 
-On the `akashnet-2` network, to ensure tenants have smooth and reliable service from their provider, it is recommended to use the following audited attributes in their deployment: __
+On the `akashnet-2` network, to ensure tenants have smooth and reliable service from their provider, it is recommended to use the following audited attributes in their deployment: \_\_
 
 ```bash
     attributes:
@@ -399,9 +399,9 @@ You should see a response similar to:
 }
 ```
 
-### Find your Deployment Sequence 
+### Find your Deployment Sequence
 
-Now you need to extract the values below to shell variables. Find the DSEQ,  OSEQ, and GSEQ in the deployment you just created. We will be using these to reference the deployment when signing the lease. 
+Now you need to extract the values below to shell variables. Find the DSEQ, OSEQ, and GSEQ in the deployment you just created. We will be using these to reference the deployment when signing the lease.
 
 | Attribute | Value |
 | :--- | :--- |
@@ -409,7 +409,7 @@ Now you need to extract the values below to shell variables. Find the DSEQ,  OSE
 | `AKASH_OSEQ` | `1` |
 | `AKASH_GSEQ` | `1` |
 
-Remember to replace the **AKASH\_DSEQ, AKASH\_OSEQ, and AKASH\_GSEQ** with the numbers from your deployment and configure the shell variable. Note that if this is your first time, OSEQ and GSEQ will be 1. 
+Remember to replace the **AKASH\_DSEQ, AKASH\_OSEQ, and AKASH\_GSEQ** with the numbers from your deployment and configure the shell variable. Note that if this is your first time, OSEQ and GSEQ will be 1.
 
 ```bash
 # Remember to change these numbers to match
@@ -610,7 +610,7 @@ bids:
       denom: uakt
 ```
 
-### Choose a Provider 
+### Choose a Provider
 
 Note that there are bids from multiple different providers. In this case, both providers happen to be willing to accept a price of _1 uAKT_. This means that the lease can be created using _1 uAKT_ or _0.000001 AKT_ per block to execute the container.
 
@@ -642,7 +642,7 @@ Create a lease for the bid from the chosen provider above by running:
 akash tx market lease create --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --owner $AKASH_ACCOUNT_ADDRESS --dseq $AKASH_DSEQ --gseq $AKASH_GSEQ --oseq $AKASH_OSEQ --provider $AKASH_PROVIDER --from $AKASH_KEY_NAME --fees 5000uakt
 ```
 
-After confirming your transaction, if  see a response similar to the following, then you were likely just too slow and need to[ close your deployment ](deployment.md#close-your-deployment)and [create a new deployment](deployment.md#create-the-deployment-configuration):
+After confirming your transaction, if see a response similar to the following, then you were likely just too slow and need to[ close your deployment ](deployment.md#close-your-deployment)and [create a new deployment](deployment.md#create-the-deployment-configuration):
 
 ```javascript
 {"height":"1361880",
@@ -699,7 +699,7 @@ leases:
 Please note that once the lease is created, the provider will begin debiting your deployment's escrow account, even if you have not completed the deployment process by uploading the manifest in the following step.
 {% endhint %}
 
-### Send the Manifest  
+### Send the Manifest
 
 Upload the manifest using the values from above step:
 
@@ -709,7 +709,7 @@ akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $AKASH_DSEQ --
 
 You should expect no output from the above command.
 
-### Confirm the URL 
+### Confirm the URL
 
 Now that the manifest is uploaded, your image is deployed. You can retrieve the access details by running the below:
 
@@ -1238,3 +1238,4 @@ pagination:
 ```
 
 As you can notice from the above, you lease will be marked `closed`.
+

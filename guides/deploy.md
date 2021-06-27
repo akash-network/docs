@@ -1,8 +1,8 @@
 # Quick Start
 
-This guide will walk you through installing the `akash`application, creating and funding an account on an Akash network, and deploying a single-tier web application on Akash. 
+This guide will walk you through installing the `akash`application, creating and funding an account on an Akash network, and deploying a single-tier web application on Akash.
 
-The software to run  **Akash** and the command-line client used to interact with them are all  distributed in the `akash`application. The `akash` command is used to run the Akash Network.
+The software to run **Akash** and the command-line client used to interact with them are all distributed in the `akash`application. The `akash` command is used to run the Akash Network.
 
 ## Part 1. Install Akash
 
@@ -12,14 +12,14 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 {% tab title="MacOS" %}
 ## MacOS
 
-Before you install Akash, you will need to install the **XCode Command Line Tools**, and also we recommend using **Homebrew** to install Akash. 
+Before you install Akash, you will need to install the **XCode Command Line Tools**, and also we recommend using **Homebrew** to install Akash.
 
 ### 1. Install XCode:
 
 You will need to install Apple's XCode Command Line Tools. Run this command in Terminal:
 
 ```text
-xcode-select --install  
+xcode-select --install
 ```
 
 ### 2. Install Homebrew:
@@ -96,15 +96,15 @@ Change the name of your account to anything you like! In this example, the name 
 akash keys add MyWallet
 ```
 
-Read the output and save your mnemonic phrase is a safe place. Let's set a Shell Variable  in Terminal `AKASH_ACCOUNT_ADDRESS` to save your account address for later. 
+Read the output and save your mnemonic phrase is a safe place. Let's set a Shell Variable in Terminal `AKASH_ACCOUNT_ADDRESS` to save your account address for later.
 
 ```bash
-export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
+export AKASH_ACCOUNT_ADDRESS="$(akash keys show MyWallet -a)"
 
 echo $AKASH_ACCOUNT_ADDRESS
 ```
 
-Note that if you close your Terminal window this variable will not bee saved. 
+Note that if you close your Terminal window this variable will not bee saved.
 
 ## Part 3. Fund your Account
 
@@ -140,7 +140,7 @@ AKASH_VERSION="$(curl -s "$AKASH_NET/version.txt")"
 
 #### Chain ID
 
-The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exported to the shell. 
+The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exported to the shell.
 
 ```bash
 export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
@@ -389,15 +389,15 @@ You should see a response similar to:
 }
 ```
 
-### Find your Deployment \#  
+### Find your Deployment \#
 
-Find the .Deplooyment Sequence  \(DSEQ\) in the deployment you just created.  You will need to replace the AKASH\_DSEQ with the number from your deployment to configure a shell variable. 
+Find the .Deplooyment Sequence \(DSEQ\) in the deployment you just created. You will need to replace the AKASH\_DSEQ with the number from your deployment to configure a shell variable.
 
 ```bash
 AKASH_DSEQ=CHANGETHIS
 ```
 
-Now set the Order Sequence \(OSEQ\) and Group Sequence \(GSEQ\). Note that if this is your first time deploying on Akash, OSEQ and GSEQ will be 1. 
+Now set the Order Sequence \(OSEQ\) and Group Sequence \(GSEQ\). Note that if this is your first time deploying on Akash, OSEQ and GSEQ will be 1.
 
 ```bash
 AKASH_OSEQ=1
@@ -418,7 +418,7 @@ After a short time, you should see bids from providers for this deployment with 
 akash query market bid list --owner=$AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ
 ```
 
-### Choose a Provider 
+### Choose a Provider
 
 Note that there are bids from multiple different providers. In this case, both providers happen to be willing to accept a price of _1 uAKT_. This means that the lease can be created using _1 uAKT_ or _0.000001 AKT_ per block to execute the container. You should see a response similar to:
 
@@ -514,7 +514,7 @@ You should see a response that ends with:
 Please note that once the lease is created, the provider will begin debiting your deployment's escrow account, even if you have not completed the deployment process by uploading the manifest in the following step.
 {% endhint %}
 
-## Part 10. Send the Manifest  
+## Part 10. Send the Manifest
 
 Upload the manifest using the values from above step:
 
@@ -524,7 +524,7 @@ akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $AKASH_DSEQ --
 
 You should expect no output from the above command.
 
-### Confirm the URL 
+### Confirm the URL
 
 Now that the manifest is uploaded, your image is deployed. You can retrieve the access details by running the below:
 

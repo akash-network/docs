@@ -40,7 +40,6 @@ services:
         to:
           - service: app
           - service: cron
-
 ```
 
 ### Environment variables

@@ -1,6 +1,6 @@
 # Unstoppable Web 2.0
 
-**Repository:** [https://github.com/coffeeroaster/unstoppable-web2.0/ ](https://github.com/coffeeroaster/unstoppable-web2.0/%20) 
+**Repository:** [https://github.com/coffeeroaster/unstoppable-web2.0/ ](https://github.com/coffeeroaster/unstoppable-web2.0/%20)
 
 This repository serves as a general guide and proof of concept for **deploying a full-stack web application onto blockchain-based decentralized infrastructure**.
 
@@ -55,7 +55,7 @@ There are a few simple options for registering a **Handshake** domain name:
 
 ### Step 3 - Deploy back-end to Akash
 
-If you haven't already, take the time to read through the **Akash deployment documentation** and familiarize yourself with the concepts and steps involved https://docs.akash.network/guides/deploy
+If you haven't already, take the time to read through the **Akash deployment documentation** and familiarize yourself with the concepts and steps involved [https://docs.akash.network/guides/deploy](https://docs.akash.network/guides/deploy)
 
 You can deploy to Akash using the **standard Akash CLI** directly [https://docs.akash.network/guides/install](https://docs.akash.network/guides/install) but for the purpose of this guide, I am using **tombeynon's Akash Deploy UI** [https://github.com/tombeynon/akash-deploy](https://github.com/tombeynon/akash-deploy) which is a great tool built on top of the standard CLI. Steps for deploying to Akash using this tool are below.
 
@@ -165,7 +165,7 @@ curl -v http://$AkashHost/getsnapshot:$AkashPort > dbout.zip
 #
 # Backup against live demo
 #
-curl https://unstoppablestack.coffeeroaster.me/getsnapshot > dbout.zip 
+curl https://unstoppablestack.coffeeroaster.me/getsnapshot > dbout.zip
 ```
 
 Make sure to update the **`$BACKUP_PASS`** env variable in docker-compose.yml, akash/deploy-sample.yml. You will use the password to decrypt the zip file. You can use **`$BACKUP_PASS`** env var in [akash/deploy-sample.yml](https://github.com/coffeeroaster/unstoppable-web2.0/blob/main/akash/deploy-sample.yml) to decrypt and examine the backup.
