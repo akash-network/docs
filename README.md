@@ -4,42 +4,76 @@ description: Akash means "open space" or "sky" in ancient Sanskrit.
 
 # What is Akash?
 
-Akash is an [**open source** ](https://github.com/ovrclk/akash)Cloud platform that lets you quickly deploy a Docker container to the Cloud provider of your choice for about one-third the cost of AWS, right from the [**command-line**](reference/general-commands.md).
+## Akash Network is the open source decentralized, self-soverign, secure cloud platform and marketplace for compute. It's 2x to 10x cheaper for developers and businesses.
 
-* Define your Docker  image, CPU, Memory, and Storage in a **deploy.yaml** file.
-* Set your price, receive bids from providers in seconds, and select the lowest price.
-* Deploy your application without having to set up, configure, or manage servers.
-* Scale your application from a single container to hundreds of deployments.
+Akash is an [**open source project** ](https://github.com/ovrclk/akash)that contains everything you need to quickly deploy a Docker container to the Cloud - or - to create your own Cloud provider and lease server resources to others, right from the [**command-line**](reference/general-commands.md).
+
+* Define how much CPU, Memory, and Disk in a single file.
+* Deploy your application in minutes without having to set up, configure, or manage servers.
+* Package your application in a container and expose any TCP/UDP network ports you want. 
+* Set the price for providers bid on, and letting you select the best price and provider.
+
+_AKT is used as the_ [_token_](https://akash.network/token) _to transact for compute on the Akash.Network. Token rewards are earned by staking which can be used to for compute_
+
+The open source cloud is a decentralized network. Most of the compute capacity is owned by the big three centralized providers, \(Amazon, Google, and Microsoft\). Akash.Network enables compute resources to be owned and operated by _any_ provider and make that available to _any_ developer or business that wants to use them in a simpler, faster, scalable way. This creates an multi-provider resilient and redundant network of compute capacity that is easier, more private and secure for tenants \(developers and businesses\), while providing additional reveneue for providers to offer their excess compute at reasonable prices. Akash.Network ensures an efficient marketplace where the cost of compute is matched to the demand for running workloads, in real-time, just in time. Just about every business complains about their monthly bill on centralized cloud providers. They have zero negotiating power. Akash decentralizes and democratizes that power so individuals and business are in control \(self-soverign\). They control the pricing and the terms so monthly bills aren't a surprise, it's predictable. The providers are available to match the demand in real-time, per workload deployment. In a $370bn market for cloud compute where 85% of capacity from 8.4 million, high quality, reliable data centers, is under utilized, Akash enables supply to match demand, dynamically. As a result, the market becomes highly efficient with optimal pricing and capacity. Today, using the Akash.Newtork markelplace, costs are 2x to 10x chepaer and a fill rate that's 2x of current capacity used from centralized cloud providers.
+
+The Akash Network consists of **marketplace** \(blockchain\) and **platform**
 
 {% hint style="info" %}
 Want to dive straight in? Start with our [**Quick Start Guide**](guides/deploy.md).
 {% endhint %}
 
-### What is the Akash Deployment Marketplace?
+### What is Akash?
 
-The [Akash Marketplace](decentralized-cloud/marketplace.md) is where users lease computing resources from Cloud providers before deploying a Docker container on the Akash Container Platform. The marketplace stores on-chain records of requests, bids, leases, and settlement payments using the Akash Token \(AKT\). Akash's blockchain is a [tendermint](https://github.com/tendermint/tendermint)-based application based on the [Cosmos SDK](https://github.com/cosmos/cosmos-sdk). 
+## What is the Akash Platform?
 
-### What is the Akash Container Platform?
 
-The [**Akash Container Platform**](decentralized-cloud/platform.md) is a deployment platform for hosting and managing [containers](./#what-is-a-container) where users can run _**any**_  Cloud-Native application.  Akash is built with a set of cloud management services including [Kubernetes](https://kubernetes.io) to orchestrate and manage containers.
+
+The **Akash Platform** enables defining, deploying, and managing [containers](./#what-is-a-container) where users can run _**any**_ applications. Any cloud application that runs on traditional cloud providers can run on Akash along with next generation web3 and DeFi apps. It's a [serverless](https://en.wikipedia.org/wiki/Serverless_computing) platform for any containerized application. The **Akash Platform** is built with a set of cloud management services including [Kubernetes](https://kubernetes.io) to orchestrate and manage containers for stateless and stateful workloads. Any docker, kubernetes, helm chart application running on a centralized cloud provider, can run on the decentralized and open source **Akash Network**.
+
+* Deploy your application in minutes without having to set up, configure, or manage servers - serverless.
+* Package your application in a container and expose any TCP/UDP port you want. 
+* Define how much CPU, Memory, and Disk in a single file.
+* Set the price for providers bid on, and letting you select the best price and provider.
+* Use a platform that is decentralized, resilient, redundant, scalable, secure, self-sovereign, with complete privacy. 
+
+### What is the Akash Marketplace?
+
+The open source cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network __of Cloud providers running an _**open**_ _**platform**_ developed by the open source community creating competition in an _**open**_ _**marketplace**_ with more providers and lower costs. 
+
+The **Akash Marketplace** is the reverse auction marketplace for compute \(_Airbnb for Compute_\), think Priceline meets Airbnb, where **tenants** \(developers and businesses\) declare what resources they want and what they want to pay for their workloads, per deployment, and providers bid to run their workloads. The Akash marketplace leverages a public blockchain in a proof of stake network. The [marketplace](decentralized-cloud/marketplace.md) transactions is on-chain for leasing computing resources on the Akash Platform.
+
+Akash's blockchain is a [tendermint](https://github.com/tendermint/tendermint)-based application based on the Cosmos SDK \([cosmos-sdk](https://github.com/cosmos/cosmos-sdk)\). Akash uses the blockchain to store records of requests, bids, leases, and settlement payments using the Akash Token \(AKT\).
+
+### What is the Akash Container Platform \(CCP\)?
+
+### What is an Akash Application?
+
+The **Akash** **Application** contains everything needed to run the **Akash Platform**, the **Akash Marketplace**, and the [command-line interface](reference/general-commands.md) and is distributed in the [Akash open source GitHub repository](https://github.com/ovrclk/akash). Sample applications are available for you to use [here](https://github.com/ovrclk/awesome-akash)
 
 ### What is the cost to use Akash?
 
-The cost of hosting your application using Akash is about one-third the cost of Amazon AWS, Google Cloud Platform \(GCP\), and Microsoft Azure. You can check the prices live using the [Akashlytics.com price comparison tool](https://akashlytics.com/price-compare). 
+The cost is whatever you decide it is. The cost is also predictable so you no longer face sticker shock every month. The cost of hosting your application using Akash is typically about one-third the cost of Amazon AWS, Google Cloud Platform \(GCP\), and Microsoft Azure. Today, costs are 2x to 10x cheaper depending on the types of workloads. You can get a sense today using this community built open source tool, [Akashlytics.com price comparison tool](https://akashlytics.com/price-compare).
 
-### How can I use Akash? 
+### How can I use Akash?
 
-If you're new to Akash, start with the [**Getting Started guide**](guides/install.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](operator/node/), a [validator guide](operator/validator.md), a [cloud provider guide](operator/provider/), and several [deployment guides](deploy/awesome-akash.md) for running various apps on Akash.
+If you're new to Akash, start with the [**Getting Started guide**](guides/install.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](providers/node/), a [validator guide](providers/validator/), a [cloud provider guide](providers/provider/), and several [deployment guides](deploy/awesome-akash.md) for running various apps on Akash.
 
 ### Why is Akash different than other Cloud platforms?
 
-The decentralized cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network __of Cloud providers running an _**open**_ _**platform**_ developed by the open source community creating competition in an _**open**_ _**marketplace**_ with more providers  - and lower costs. 
+### What makes Akash different from centralized Cloud platforms?
 
-Like AirBNB for server hosting, Akash is a marketplace that gives you control over the price you pay and the amenities included \(we call them attributes\). Akash gives app developers a command line tool for leasing and deploying apps right from a terminal.  Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. Any cloud-native and containerized applications running on centralized cloud can run faster and at lower cost on the Akash decentralized cloud. 
+Like AirBNB for server hosting, Akash is a marketplace that gives you control over the price you pay and the amenities included \(we call them attributes\). Akash gives app developers an instant, zero-click command line tool for leasing and deploying apps right from a terminal.  Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. This allows Akash to provide more variety and better pricing. Any cloud-native and containerized applications running on centralized cloud can run faster and at lower cost on the Akash decentralized cloud. 
+
+Akash is Airbnb for Compute. Unlike Airbnb, where "hosts" sets the price and terms and "guests" choose, Akash is a reverse auction marketplace that gives consumers of cloud resources - developers and businesses \(**tenants**, "guests" in Airbnb\) - full control over the price and terms \(we call them attributes\) and **providers** \("hosts"\), bid. Akash gives app developers an instant, zero-click command line tool for leasing and deploying apps right from a terminal. Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. This allows Akash to provide dynamic pricing and variety of compute resources. Any containerized application running on centralized cloud can run faster, scale quickly at lower costs on the Akash decentralized cloud.
 
 ### Why is Akash different than other decentralized platforms?
 
-Akash hosts [containers](./#what-is-a-container) where users can run _**any**_  Cloud-Native application. There is no need to re-write the entire internet in a new proprietary language, and there is no vendor lock-in to prevent you from switching Cloud providers. The deployment file is transferred over a private peer-to-peer network isolated from the blockchain. Asset transfer occurs off-chain over mTLS to provide the security and performance required by a mission critical applications running on the Cloud.  
+### What makes Akash different from decentralized VM platforms?
+
+Akash is a decentralized cloud platform that hosts containers where users can run _**any**_  Cloud-Native application. There is no need to re-write the entire internet in a new proprietary language, and there is no vendor lock-in to prevent you from switching Cloud providers. The deployment file is transferred over a private peer-to-peer network isolated from the blockchain. Asset transfer occurs off-chain to provide the security and performance required by a mission critical applications running on the Cloud.  
+
+Akash is a decentralized cloud platform that hosts containers where users can run _**any**_ Cloud-Native application. There is no need to re-write the entire internet in a new proprietary language, and there is no vendor lock-in to prevent you from switching Cloud providers. The deployment is off-chain and performed over a private peer-to-peer network isolated from the blockchain. Asset transfer occurs off-chain to provide the security and performance required by a mission critical applications running on the Cloud.
 
 ### What is a Container?
 
@@ -47,11 +81,11 @@ A **container** is a standard unit of software that packages up code and all its
 
 **Container images** become **containers** at runtime. Available for both Linux and Windows-based applications, containerized software will always run the same, regardless of the infrastructure. Containers isolate software from its environment and ensure that it works uniformly despite differences for instance between development and staging.
 
-### What is the Stack Definition Language \(SDL\)?
+### What is this Stack Definition Language \(SDL\)?
 
 Customers / tenants define the deployment services, datacenters, requirements, and pricing parameters, in a "manifest" file \(deploy.yml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](reference/sdl.md). SDL is a human friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the YAML standard and similar to Docker Compose files.
 
-#### How do I configure Networking for my container?
+### How do I configure Networking for my container?
 
 Networking - allowing connectivity to and between workloads - can be configured via the Stack Definition Language \([SDL](reference/sdl.md)\) file for a deployment. By default, workloads in a deployment group are isolated - nothing else is allowed to connect to them. This restriction can be relaxed.
 
@@ -66,7 +100,7 @@ Deploying applications onto [Akash](https://github.com/ovrclk/akash) involves tw
 
 ### What is a Reverse Auction?
 
-Akash uses a reverse auction . Tenants set the price and terms of their deployment, and the Cloud providers bid on the deployments.  
+Akash uses a [reverse auction](https://en.wikipedia.org/wiki/Reverse_auction). Tenants set the price and terms of their deployment, and the Cloud providers bid on the deployments.
 
 In a very simple reverse auction:
 
@@ -79,7 +113,7 @@ A typical application deployment on Akash will follow this flow:
 1. The tenant describes their desired deployment in \[SDL\], called a [deployment](decentralized-cloud/marketplace.md#deployment).
 2. The tenant submits that definition to the blockchain.
 3. Their submission generates an [order](decentralized-cloud/marketplace.md#order) on the marketplace.
-4. Providers that would like to fulfill that order [bid](decentralized-cloud/marketplace.md#bid) on it.
+4. Providers that would like to fulfill that order [bid](decentralized-cloud/marketplace.md#bid) on it. Happens automatically.
 5. After some period of time, a winning [bid](decentralized-cloud/marketplace.md#bid) for the [order](decentralized-cloud/marketplace.md#order) is chosen, and a [lease](decentralized-cloud/marketplace.md#lease) is created.
 6. Once a [lease](decentralized-cloud/marketplace.md#lease) has been created, the tenant submits a [manifest](reference/sdl.md) to the provider.
 7. The provider executes workloads as instructed by the [manifest](reference/sdl.md).
@@ -88,7 +122,7 @@ A typical application deployment on Akash will follow this flow:
 
 ## How does **Security** work on Akash?
 
-With Akash, you decide **who** you want to trust. 
+With Akash, you decide **who** you want to trust.
 
 ### How does Akash authenticate users?
 

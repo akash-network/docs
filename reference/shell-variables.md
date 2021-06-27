@@ -8,26 +8,8 @@ Because of this, it is important to type the commands into a terminal where the 
 | :--- | :--- |
 | `AKASH_NET` | Akash network configuration base URL.  |
 | `AKASH_VERSION` | Akash version to install for your network.   |
-| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](../reference/akashnet-relayer.md). |
+| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](akashnet-relayer.md). |
 | `AKASH_NODE` | Akash RPC endpoint URL and port number. |
-| `AKASH_KEY_NAME` | Key name of your choosing.  This documentation uses a value of "alice". |
-| `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` \(default\), `file`, `test`. |
-
-#### Key Name
-
-First configure the name of your key.  The command below will set thee name of your key to `alice`, run the below command  and replace `alice` with a name of your choice:
-
-```bash
-AKASH_KEY_NAME=alice
-```
-
-**Key Ring Backend**
-
-Set the Key Ring Backend that you will use to store your key locally.  The default is `os` and will store the key in your operating system, protected by your login password. You can change this to `file` or `test`.
-
-```bash
-AKASH_KEYRING_BACKEND=os
-```
 
 #### Network
 
@@ -51,6 +33,14 @@ The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exporte
 
 ```bash
 export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
+```
+
+### Genesis
+
+The genesis file is required to run a full node.  Use this  command to download the genesis file. Note, you will not need this file for deployment.
+
+```bash
+curl -s "$https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json" > genesis.json
 ```
 
 #### RPC Endpoint

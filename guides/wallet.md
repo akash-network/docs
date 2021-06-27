@@ -1,8 +1,10 @@
 # Create Account
 
+In this guide, we'll generate a wallet address on your workstation
+
 ### Before We Begin
 
-In this guide, we'll generate a wallet address on your workstation.  Make sure to have Akash client installed on your workstation, check the ****[**install Akash guide**](install.md) ****for instructions.
+Make sure to have Akash client installed on your workstation, check the ****[**install Akash guide**](install.md) ****for instructions.
 
 ### What are Shell Variables? 
 

@@ -4,7 +4,7 @@ This guide will walk you through installing the `akash`application, creating and
 
 The software to run  **Akash** and the command-line client used to interact with them are all  distributed in the `akash`application. The `akash` command is used to run the Akash Network.
 
-## Part 1. Install Akash
+## Step 1. Install Akash
 
 Select a tab below to view instructions for MacOS, Linux, or compiling from source.
 
@@ -88,7 +88,7 @@ Once you have the dependencies properly setup, download and build `akash` using 
 {% endtab %}
 {% endtabs %}
 
-## Part 2. Create an Account
+## Step 2. Create an Account
 
 Change the name of your account to anything you like! In this example, the name is MyWallet. Copy and paste this command into Terminal:
 
@@ -106,7 +106,7 @@ echo $AKASH_ACCOUNT_ADDRESS
 
 Note that if you close your Terminal window this variable will not bee saved. 
 
-## Part 3. Fund your Account
+## Step 3. Fund your Account
 
 Developers can qualify for a small amount of tokens paid in AKT for the sole purpose of running their first app on Akash. To qualify for seed funding, please follow these steps:
 
@@ -122,7 +122,7 @@ Developers can qualify for a small amount of tokens paid in AKT for the sole pur
 2. Join the Akash Discord server [**discord.akash.network**](http://discord.akash.network) to introduce yourself to verify you are not a Cylon.
 3. Provide your wallet address in the **\#deployments** channel and we will send up to $100 to support your first deployment. 
 
-## Part 4.  Connect to the Network
+## Step 4.  Connect to the Network
 
 First configure the base URL \(`$AKASH_NET`\) for the Akash Network; copy and paste the command below:
 
@@ -191,7 +191,7 @@ If you don't have a balance, please see the [funding guide](https://github.com/o
 Your account must have a minimum balance of 5 AKT to create a deployment. This 5 AKT funds the escrow account associated with the deployment and is used to pay the provider for their services. It is recommended you have more than this minimum balance to pay for transaction fees. For more information on escrow accounts, see [here](../decentralized-cloud/escrow.md)
 {% endhint %}
 
-## Part 5. Create your Configuration
+## Step 5. Create your Configuration
 
 Create a deployment configuration [deploy.yml](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/sdl/README.md).
 
@@ -252,7 +252,7 @@ deployment:
 EOF
 ```
 
-## Part 6. Create your Certificate
+## Step 6. Create your Certificate
 
 Before you can create a deployment, a [certificate](../decentralized-cloud/mtls.md) must first be created. **Your certificate needs to be created only once per account** and can be used across all deployments. To do this, run:
 
@@ -260,7 +260,7 @@ Before you can create a deployment, a [certificate](../decentralized-cloud/mtls.
 akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt
 ```
 
-## Part 7. Create your Deployment
+## Step 7. Create your Deployment
 
 To deploy on Akash, run:
 
@@ -410,7 +410,7 @@ Verify we have the right values populated by running:
 echo $AKASH_DSEQ $AKASH_OSEQ $AKASH_GSEQ
 ```
 
-## Part 8. View your Bids
+## Step 8. View your Bids
 
 After a short time, you should see bids from providers for this deployment with the following command:
 
@@ -488,7 +488,7 @@ Verify we have the right value populated by running:
 echo $AKASH_PROVIDER
 ```
 
-## Part 9. Create a Lease
+## Step 9. Create a Lease
 
 Create a lease for the bid from the chosen provider above by running:
 
@@ -514,7 +514,7 @@ You should see a response that ends with:
 Please note that once the lease is created, the provider will begin debiting your deployment's escrow account, even if you have not completed the deployment process by uploading the manifest in the following step.
 {% endhint %}
 
-## Part 10. Send the Manifest  
+## Step 10. Send the Manifest  
 
 Upload the manifest using the values from above step:
 

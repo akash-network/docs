@@ -1,6 +1,6 @@
 # Running a Validator
 
-Before setting up your validator node, make sure you've already gone through the [Full Node Setup](node/) guide.
+Before setting up your validator node, make sure you've already gone through the [Full Node Setup](../node/) guide.
 
 > NOTE: it is not required to create a validator on Akash testnets unless specified in a challenge or otherwise. The akash team runs a centralized validator set to enable for easy and consistent testnet operations for developers trying out the platform for the first time.
 
@@ -122,7 +122,7 @@ If you got jailed for downtime, you can get your voting power back to your valid
 akash start
 ```
 
-Wait for your full node to catch up to the latest block. Then, you can [unjail your validator](validator.md#unjail-validator)
+Wait for your full node to catch up to the latest block. Then, you can [unjail your validator](./#unjail-validator)
 
 Lastly, check your validator again to see if your voting power is back.
 
