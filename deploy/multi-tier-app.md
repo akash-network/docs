@@ -6,11 +6,11 @@ In this guide, we will deploy a multi-tier web application on Akash. The example
 
 ### Before We Begin
 
-This guide is to be considered an extenstion of the [Deploy an Application](../guides/deployment.md) guide. Please ensure you have successfully completed all steps leading up to the "Create the Deployment Configuration" step in said guide, as they will not be discussed here.
+This guide is to be considered an extension of the [Deploy an Application](../guides/deployment.md) guide. Please ensure you have successfully completed all steps leading up to the "Create the Deployment Configuration" step in said guide, as they will not be discussed here.
 
 ## Create the Deployment Configuration
 
-Let's create a deployment configuration that specifies mutliple services in a single deployment.
+Let's create a deployment configuration that specifies multiple services in a single deployment.
 
 ```bash
 ---
@@ -111,13 +111,13 @@ services:
           - global: true
 ```
 
-The `services` entries contain maps of workloads to be ran on the Akash deployment. This deployment has 2 service entries: `redis` and `goosebin` - the former being our backend and the latter being our frontend. Please note that while these service names are arbitrary, their usage must remain consistent accross the whole .yml file.
+The `services` entries contain maps of workloads to be run on the Akash deployment. This deployment has 2 service entries: `redis` and `goosebin` - the former being our backend and the latter being our frontend. Please note that while these service names are arbitrary, their usage must remain consistent across the whole .yml file.
 
 We can see that `goosebin` is globally exposed and open to the public, while `redis` is internal to the deployment and is only shared with `goosebin`.
 
-Within the `goosebin` entry, we set some environmental variables - these are declared internally within the `goosebin` image. Note that each application can choose whatever environment variables it wants to use on its own for configuration. The variable that ties our services together is `REDIS_HOST`. This is what `goosebin` looks at to determine which host to connect to for `redis`. In this case we set `REDIS_HOST=redis` because we chose to name the service `redis` - had we named the service `database`, we would have set `REDIS_HOST=database`.
+Within the `goosebin` entry, we set some environmental variables - these are declared internally within the `goosebin` image. Note that each application can choose whatever environment variables it wants to use on its own for configuration. The variable that ties our services together is `REDIS_HOST`. This is what `goosebin` looks at to determine which host to connect to for `redis`. In this case, we set `REDIS_HOST=redis` because we chose to name the service `redis` - had we named the service `database`, we would have set `REDIS_HOST=database`.
 
-The `expose` section is similar to other http examples - internally, the container for this example is listing on port 8000. The deployment will only be assigned a unique URI that can be visited in a web browser when `expose` has `global: true` and the port is set to 80.
+The `expose` section is similar to other HTTP examples - internally, the container for this example is listing on port 8000. The deployment will only be assigned a unique URI that can be visited in a web browser when `expose` has `global: true` and the port is set to 80.
 
 #### Profiles
 
@@ -153,7 +153,7 @@ profiles:
 
 The `profiles` entries contain named compute and placement profiles to be used in the deployment.
 
-Since we have 2 services to deploy, details for each of them must be specified here. This section is very similar to a standard deployment, so it won't be covered in detail here. An important item to note, however, is that the named compute/placement profiles here \(`redis` and `goosebin`\) must match the names we had specified in the `services` section. [Additional mappings](https://github.com/ovrclk/docs/tree/a8e7a472b43ec742a03bc5063f6c5a82ca3ca2ea/sdl/README.md#profiles) can also be specified within `profiles` such as audited attributes and datacenter attributes.
+Since we have 2 services to deploy, details for each of them must be specified here. This section is very similar to a standard deployment, so it won't be covered in detail here. An important item to note, however, is that the named compute/placement profiles here \(`redis` and `goosebin`\) must match the names we had specified in the `services` section. [Additional mappings](https://github.com/ovrclk/docs/tree/a8e7a472b43ec742a03bc5063f6c5a82ca3ca2ea/sdl/README.md#profiles) can also be specified within `profiles` such as audited attributes and data center attributes.
 
 #### Deployments
 
@@ -175,7 +175,7 @@ Similar to the `profiles` entries, we must specify deployment criteria for both 
 
 #### Deployment
 
-Now that we have the SDL configured, lets deploy this application and see what happens. A more detailed guide on this process can be found in the [Deploy an Application](../guides/deployment.md) guide.
+Now that we have the SDL configured, let's deploy this application and see what happens. A more detailed guide on this process can be found in the [Deploy an Application](../guides/deployment.md) guide.
 
 **Create the Deployment**
 
