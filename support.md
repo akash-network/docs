@@ -41,13 +41,3 @@ If you wish to submit a ticket via email, please **Email** [**support@akash.netw
 * Your deploy.yaml file
 * Provider address if it is specific to a provider
 
-\*\*\*\*
-
-\*\*\*\*
-
-\*\*\*\*
-
-\*\*\*\*
-
-\*\*\*\*
-

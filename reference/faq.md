@@ -1,6 +1,6 @@
 # Frequently Asked Questions \(FAQ\)
 
-If there is something you'd like to see in here that isn't already, please reach out \(_link to channels_\) to one of the mods and we'll get it added!
+If there is something you'd like to see in here that isn't already, please reach out in our [Developer Chat](http://discord.akash.network)  or the [Community Forum](http://forum.akash.network) and we'll get it added!
 
 ### Table of Contents
 
@@ -30,11 +30,6 @@ Generally, it is cheaper to run on Akash and will be for the foreseeable future,
 
 ## Product
 
-**Where do I start?**
-
-* To deploy [locally](https://github.com/ovrclk/akash)
-* To [learn and deploy](https://docs.akash.network/) on _Testnet and/or Mainnet_
-
 **Can Akash provide Name Server Services?**
 
 One issue with using name servers is that DNS will be exposed on a random ephemeral port instead of 53. We have plans to add IP addresses as a resource of the lease but it is not available yet.
@@ -45,7 +40,7 @@ It depends what you'd like to update. Akash Groups are translated into Kubernete
 
 **How can I \(someone wanting to deploy an application on Akash\) be sure that the provider won't/didn't try to modify my application?**
 
-At this time we don't have secure enclave support. There are some technical limitations to TEE and the like. Our audited attributes system is meant to approach the problem from a different angle. Why would you trust digital ocean, or aws, or any other cloud provider in the first place? some metric of trust. The audited attributes feature allows you to deploy only to providers that have been "signed off" on by an entity that you have confidence in.
+At this time we don't have secure enclave support. There are some technical limitations to TEE and the like. Our audited attributes system is meant to approach the problem from a different angle. Why would you trust digital ocean, or AWS, or any other cloud provider in the first place? some metric of trust. The audited attributes feature allows you to deploy only to providers that have been "signed off" on by an entity that you have confidence in.
 
 **Is there also a way to decentralize docker registry? So it would not be a single point of failure, if selected one \(centralized\) goes down?**
 
