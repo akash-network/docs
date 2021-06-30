@@ -15,7 +15,7 @@ Because of this, it is important to type the commands into a terminal where the 
 
 ## Key Name
 
-First configure the name of your key. The command below will set thee name of your key to `alice`, run the below command and replace `alice` with a name of your choice:
+First, configure the name of your key. The command below will set the name of your key to `alice`, run the below command and replace `alice` with a name of your choice:
 
 ```bash
 AKASH_KEY_NAME=alice
@@ -31,7 +31,7 @@ AKASH_KEYRING_BACKEND=os
 
 ## Network
 
-First configure the base URL \(`$AKASH_NET`\) for the Akash Network; copy and paste the command below:
+First, configure the base URL \(`$AKASH_NET`\) for the Akash Network; copy and paste the command below:
 
 ```bash
 AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
@@ -39,7 +39,7 @@ AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
 
 ## Version
 
-Next configure the version of the Akash Network `AKASH_VERSION`; copy and paste the command below:
+Next, configure the version of the Akash Network `AKASH_VERSION`; copy and paste the command below:
 
 ```bash
 AKASH_VERSION="$(curl -s "$AKASH_NET/version.txt")"
@@ -47,7 +47,7 @@ AKASH_VERSION="$(curl -s "$AKASH_NET/version.txt")"
 
 ## Chain ID
 
-The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exported to the shell.
+The akash CLI will recognize `AKASH_CHAIN_ID` environment variable when exported to the shell.
 
 ```bash
 export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
