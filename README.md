@@ -4,9 +4,9 @@ description: Akash means "open space" or "sky" in ancient Sanskrit.
 
 # What is Akash?
 
-Akash is an [**open source** ](https://github.com/ovrclk/akash)Cloud platform that lets you quickly deploy a Docker container to the Cloud provider of your choice for about one-third the cost of AWS, right from the [**command-line**](reference/general-commands.md).
+Akash is an [**open-source**](https://github.com/ovrclk/akash) cloud platform that lets you quickly deploy a Docker container to the Cloud provider of your choice for about one-third the cost of AWS, right from the [**command-line**](reference/general-commands.md).
 
-* Define your Docker  image, CPU, Memory, and Storage in a **deploy.yaml** file.
+* Define your Docker image, CPU, Memory, and Storage in a **deploy.yaml** file.
 * Set your price, receive bids from providers in seconds, and select the lowest price.
 * Deploy your application without having to set up, configure, or manage servers.
 * Scale your application from a single container to hundreds of deployments.
@@ -29,7 +29,7 @@ The cost of hosting your application using Akash is about one-third the cost of 
 
 ### How is Akash so much cheaper than Amazon?
 
-We are seeding the market with top tier data center providers and negotiating lower than market rates with data centers to lease their underutilized server resources. Most data centers have unused capacity sitting idle. Akash's software helps the data centers lease out their compute resources for Docker containers. 
+We are seeding the market with top-tier data center providers and negotiating lower than market rates with data centers to lease their underutilized server resources. Most data centers have unused capacity sitting idle. Akash's software helps the data centers lease out their compute resources for Docker containers. 
 
 ### How can I use Akash?
 
@@ -37,23 +37,23 @@ If you're new to Akash, start with the [**Getting Started guide**](guides/instal
 
 ### Why is Akash different than other Cloud platforms?
 
-The decentralized cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network _\_of Cloud providers running an_ **open** __**platform** _developed by the open source community creating competition in an_ **open** __**marketplace**\_ with more providers - and lower costs.
+The decentralized cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network _\_of Cloud providers running an_ **open** __**platform** _developed by the open-source community creating competition in an_ **open** __**marketplace**\_ with more providers - and lower costs.
 
-Like AirBNB for server hosting, Akash is a marketplace that gives you control over the price you pay and the amenities included \(we call them attributes\). Akash gives app developers a command line tool for leasing and deploying apps right from a terminal. Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. Any cloud-native and containerized applications running on centralized cloud can run faster and at lower cost on the Akash decentralized cloud.
+Like Airbnb for server hosting, Akash is a marketplace that gives you control over the price you pay and the amenities included \(we call them attributes\). Akash gives app developers a command-line tool for leasing and deploying apps right from a terminal. Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. Any cloud-native and containerized applications running on the centralized cloud can run faster and at a lower cost on the Akash decentralized cloud.
 
 ### Why is Akash different than other decentralized platforms?
 
-Akash hosts [containers](./#what-is-a-container) where users can run _**any**_ Cloud-Native application. There is no need to re-write the entire internet in a new proprietary language, and there is no vendor lock-in to prevent you from switching Cloud providers. The deployment file is transferred over a private peer-to-peer network isolated from the blockchain. Asset transfer occurs off-chain over mTLS to provide the security and performance required by a mission critical applications running on the Cloud.
+Akash hosts [containers](./#what-is-a-container) where users can run _**any**_ Cloud-Native application. There is no need to re-write the entire internet in a new proprietary language, and there is no vendor lock-in to prevent you from switching Cloud providers. The deployment file is transferred over a private peer-to-peer network isolated from the blockchain. Asset transfer occurs off-chain over mTLS to provide the security and performance required by mission-critical applications running on the Cloud.
 
 ### What is a Container?
 
-A **container** is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A **container** **image** is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+A **container** is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A **container** **image** is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings.
 
 **Container images** become **containers** at runtime. Available for both Linux and Windows-based applications, containerized software will always run the same, regardless of the infrastructure. Containers isolate software from its environment and ensure that it works uniformly despite differences for instance between development and staging.
 
 ### What is the Stack Definition Language \(SDL\)?
 
-Customers / tenants define the deployment services, datacenters, requirements, and pricing parameters, in a "manifest" file \(deploy.yml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](reference/sdl.md). SDL is a human friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the YAML standard and similar to Docker Compose files.
+Customers / tenants define the deployment services, data centers, requirements, and pricing parameters, in a "manifest" file \(deploy.yml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](reference/sdl.md). SDL is a human-friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the YAML standard and similar to Docker Compose files.
 
 #### How do I configure Networking for my container?
 
@@ -70,7 +70,7 @@ Deploying applications onto [Akash](https://github.com/ovrclk/akash) involves tw
 
 ### What is a Reverse Auction?
 
-Akash uses a reverse auction . Tenants set the price and terms of their deployment, and the Cloud providers bid on the deployments.
+Akash uses a reverse auction. Tenants set the price and terms of their deployment, and the Cloud providers bid on the deployments.
 
 In a very simple reverse auction:
 
@@ -106,7 +106,7 @@ Akash has a feature designed to allow you to _control_ your trust settings calle
 
 Akash's Stack Definition Language \(SDL\) allows you to define attributes such as the type of provider, region, CPU, Memory, Storage, and which auditors you want to trust. When you deploy on Akash, you can configure any attribute that restricts bids to only providers that meet your criteria.
 
-Auditors on the Akash Network review cloud providers and digitally sign the provider on chain with their certificate. If you only accept bids from audited providers this means you are trusting the Auditor/Provider not just a Provider.
+Auditors on the Akash Network review cloud providers and digitally sign the provider on-chain with their certificate. If you only accept bids from audited providers this means you are trusting the Auditor/Provider not just a Provider.
 
 ### **How do I limit my trust to Audited Providers?**
 
