@@ -10,7 +10,7 @@
 * [Shell Variables](guides/shell-variables.md)
 * [Create Account](guides/wallet.md)
 * [Fund your Account](guides/funding.md)
-* [Deployment](guides/deployment.md)
+* [Deploy your App](guides/deployment.md)
 
 ## Deployment Guides <a id="deploy"></a>
 
