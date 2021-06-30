@@ -58,7 +58,7 @@ town wolf margin parrot strong disease dance eyebrow inflict meadow crunch versi
 
 In the above example, your new Akash address is `akash1cz87pqkad72gggrv3t7y2x9z56h9gqghlnx3j3` and generated mnemonic phrase is `town wolf margin .... humble nest call`
 
-**IMPORTANT:** It's imperative your keep the mnemonic phrase is a safe place and it is the ONLY way to recover your private key incase you change or lose your device.
+**IMPORTANT:** It's imperative you keep the mnemonic phrase in a safe place. It is the ONLY way to recover your private key incase you change or lose your device.
 
 ### 3. Derive a New Key using Ledger
 
