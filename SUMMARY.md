@@ -9,7 +9,7 @@
 * [Install Akash](guides/install.md)
 * [Shell Variables](guides/shell-variables.md)
 * [Create Account](guides/wallet.md)
-* [Seed Funding](guides/funding.md)
+* [Fund your Account](guides/funding.md)
 * [Deployment](guides/deployment.md)
 
 ## Deployment Guides <a id="deploy"></a>
