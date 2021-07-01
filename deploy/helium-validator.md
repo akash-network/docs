@@ -6,15 +6,15 @@ This repository includes everything needed to run a Helium validator on Akash. T
 
 The main files to understand are:
 
-* `Dockerfile` - Installs AWS CLI on top of the [Helium validator docker image](https://quay.io/team-helium/validator) and sets boot.sh to run whenever the container starts
+* `Dockerfile` - Installs AWS CLI on top of the [Helium validator docker image](https://quay.io/team-helium/validator) and sets boot.sh to run whenever the container starts.
 * `boot.sh` - Downloads the swarm\_key from S3 \(if it exists\), starts the miner and prints the address. It then uploads the swarm\_key if it didn't download it earlier \(new miner\).
-* `deploy.yml` - Example/working Akash deployment configuration. This is setup to use my image which may or may not be up to date. See below to create and host your own image if needed
+* `deploy.yml` - Example/working Akash deployment configuration. This is setup to use my image which may or may not be up to date. See below to create and host your own image if needed.
 
 ## Requirements
 
-* [S3 bucket and IAM user](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-walkthroughs-managing-access-example1.html#grant-permissions-to-user-in-your-account-step1), with access key and secret
-* [Dockerhub account](https://hub.docker.com/signup) to host your own container image, if required
-* [Testnet wallet](https://docs.helium.com/mine-hnt/validators/validator-deployment-guide#create-testnet-wallet) to stake to your validator and claim it
+* [S3 bucket and IAM user](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-walkthroughs-managing-access-example1.html#grant-permissions-to-user-in-your-account-step1), with access key and secret.
+* [Dockerhub account](https://hub.docker.com/signup) to host your own container image, if required.
+* [Testnet wallet](https://docs.helium.com/mine-hnt/validators/validator-deployment-guide#create-testnet-wallet) to stake to your validator and claim it.
 
 ## Run the container locally
 
@@ -36,8 +36,8 @@ Once the container is deployed, check the logs to see your address once the serv
 
 There are a couple of reasons to run your own image:
 
-* Akash requires a version specific tag to update the container image. If you use e.g. `latest`, updating the deployment won't pull the latest version of the tag. Helium currently publishes their docker images using the `latest` format only, so to tag the image as required we need to publish our own.
-* Testnet moves quickly and I might not keep my image up to date
+* Akash requires a version-specific tag to update the container image. If you use e.g. `latest`, updating the deployment won't pull the latest version of the tag. Helium currently publishes their docker images using the `latest` format only, so to tag the image as required we need to publish our own.
+* Testnet moves quickly and I might not keep my image up to date.
 
 Create a dockerhub account first, then build the image as follows:
 
@@ -54,10 +54,10 @@ To update the miner on Akash, run the above to build it with the latest Helium i
 
 ## Caveats
 
-* Updating the container isn't ideal, this could be improved in the future
-* Currently only the swarm\_key is synced to S3, meaning the entire blockchain needs to be downloaded each time you run the miner. It takes about 30 minutes currently with the suggested deploy.yml
+* Updating the container isn't ideal, this could be improved in the future.
+* Currently, only the swarm\_key is synced to S3, meaning the entire blockchain needs to be downloaded each time you run the miner. It takes about 30 minutes currently with the suggested deploy.yml.
 * There is a delay between 'Starting miner...' and the logs for the miner showing. The miner is running during this time, just the logs don't show. They appear after 5-10 minutes.
-* The miner currently shows as relay on the Helium explorer, this might be possible to improve?
+* The miner currently shows as a relay on the Helium explorer, this might be possible to improve?
 
 ## References
 
