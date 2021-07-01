@@ -1,6 +1,6 @@
 # Environment variables and flags
 
-Generally, every parameter set be cli flag used by akash can be also set via environment variable.
+Generally, every parameter set by cli flag used by akash, can also be set via environment variable.
 Use following rule of binding flag to the corresponding environment variable
 1. every dash `-` must be replaced with underscore `_`. `--` prefix must not be accounted!
 2. make all characters capital case
