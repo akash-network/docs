@@ -1,6 +1,6 @@
 # Table of contents
 
-* [What is Akash?](README.md)
+* [Intro to Akash](README.md)
 * [Technical Support](support.md)
 
 ## Getting Started <a id="guides"></a>
@@ -9,8 +9,8 @@
 * [Install Akash](guides/install.md)
 * [Shell Variables](guides/shell-variables.md)
 * [Create Account](guides/wallet.md)
-* [Seed Funding](guides/funding.md)
-* [Deployment](guides/deployment.md)
+* [Fund your Account](guides/funding.md)
+* [Deploy your App](guides/deployment.md)
 
 ## Deployment Guides <a id="deploy"></a>
 
@@ -28,7 +28,7 @@
   * [API Service](operator/node/api-service.md)
 * [Running a Validator](operator/validator.md)
 * [Becoming a Provider](operator/provider/README.md)
-  * [Provider Test Networks](operator/provider/testnet.md)
+  * [Provider Networks](operator/provider/testnet.md)
 
 ## Key Concepts <a id="decentralized-cloud"></a>
 

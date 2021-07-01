@@ -1,4 +1,4 @@
-# Deployment
+# Deploy your App
 
 In this guide, we'll deploy a single-tier web application on Akash. We will run an app on Akash, [Lunie Light](https://github.com/ovrclk/lunie-light), a non-custodial, web wallet for Akash. Lunie Light is a staking interface for proof-of-stake blockchains in the Cosmos ecosystem — built for speed, simplicity, and ease-of-use.
 
@@ -945,7 +945,7 @@ After confirming the transaction, you should see a response similar to:
 
 ## Close your deployment
 
-When you are done with your application, close the deployment. This will deprovision your container and stop the token transfer. This is a critical step to conserve both your tokens and testnet server capacity.
+When you are done with your application, close the deployment. This will deprovision your container and stop the token transfer. 
 
 Close deployment using deployment by creating a `deployment-close` transaction:
 
@@ -953,7 +953,7 @@ Close deployment using deployment by creating a `deployment-close` transaction:
 akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $AKASH_DSEQ  --owner $AKASH_ACCOUNT_ADDRESS --from $AKASH_KEY_NAME --keyring-backend $AKASH_KEYRING_BACKEND -y --fees 5000uakt
 ```
 
-You should see a response simlar to below as a confirmation your deployment is closed:
+You should see a response similar to below as a confirmation your deployment is closed:
 
 ```javascript
 {

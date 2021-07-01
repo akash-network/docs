@@ -2,9 +2,12 @@
 description: Akash means "open space" or "sky" in ancient Sanskrit.
 ---
 
-# What is Akash?
+# Intro to Akash
 
-Akash is an [**open-source**](https://github.com/ovrclk/akash) cloud platform that lets you quickly deploy a Docker container to the Cloud provider of your choice for about one-third the cost of AWS, right from the [**command-line**](reference/general-commands.md).
+
+## What is Akash?
+
+Akash is an [**open source** ](https://github.com/ovrclk/akash)Cloud platform that lets you quickly deploy a Docker container to the Cloud provider of your choice for less than the cost of AWS, right from the [**command-line**](reference/general-commands.md).
 
 * Define your Docker image, CPU, Memory, and Storage in a **deploy.yaml** file.
 * Set your price, receive bids from providers in seconds, and select the lowest price.
@@ -27,17 +30,17 @@ The [Akash Container Platform](decentralized-cloud/platform.md) is a deployment 
 
 The cost of hosting your application using Akash is about one-third the cost of Amazon AWS, Google Cloud Platform \(GCP\), and Microsoft Azure. You can check the prices live using the [Akashlytics.com price comparison tool](https://akashlytics.com/price-compare).
 
-### How is Akash so much cheaper than Amazon?
+### Why is Akash cheaper than Amazon?
 
 We are seeding the market with top-tier data center providers and negotiating lower than market rates with data centers to lease their underutilized server resources. Most data centers have unused capacity sitting idle. Akash's software helps the data centers lease out their compute resources for Docker containers. 
 
-### How can I use Akash?
+### How do I use Akash?
 
 If you're new to Akash, start with the [**Getting Started guide**](guides/install.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](operator/node/), a [validator guide](operator/validator.md), a [cloud provider guide](operator/provider/), and several [deployment guides](deploy/awesome-akash.md) for running various apps on Akash.
 
 ### Why is Akash different than other Cloud platforms?
 
-The decentralized cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network _\_of Cloud providers running an_ **open** __**platform** _developed by the open-source community creating competition in an_ **open** __**marketplace**\_ with more providers - and lower costs.
+The decentralized cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network of Cloud providers running  **open source** **software** developed by a community and creating competition in an **open** **marketplace** with more providers.
 
 Like Airbnb for server hosting, Akash is a marketplace that gives you control over the price you pay and the amenities included \(we call them attributes\). Akash gives app developers a command-line tool for leasing and deploying apps right from a terminal. Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. Any cloud-native and containerized applications running on the centralized cloud can run faster and at a lower cost on the Akash decentralized cloud.
 
@@ -53,7 +56,7 @@ A **container** is a standard unit of software that packages up code and all its
 
 ### What is the Stack Definition Language \(SDL\)?
 
-Customers / tenants define the deployment services, data centers, requirements, and pricing parameters, in a "manifest" file \(deploy.yml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](reference/sdl.md). SDL is a human-friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the YAML standard and similar to Docker Compose files.
+You can define the deployment services, datacenters, requirements, and pricing parameters, in a "manifest" file \(deploy.yml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](reference/sdl.md). SDL is a human friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the YAML standard and similar to Docker Compose files.
 
 #### How do I configure Networking for my container?
 
@@ -111,4 +114,8 @@ Auditors on the Akash Network review cloud providers and digitally sign the prov
 ### **How do I limit my trust to Audited Providers?**
 
 Follow the getting started guide, and you will see the [instructions for audited attributes](https://docs.akash.network/guides/deploy#audited-attributes) suggest using only servers signed by Akash Network. If you deploy today, you will see bids by Equinix servers that audited and signed by Akash Network. By doing this you are trusting [Equinix’s Security Standards and Compliance](https://www.equinix.com/data-centers/design/standards-compliance) and you are trusting Overclock Labs as the auditor to only sign servers that meet those standards.
+
+### Is there an Akash Testnet?
+
+Yes, but currently it does not have providers. We encourage developers to use Mainnet and provide tokens to do that. To request tokens, please follow the [Activation Funding](guides/funding.md#activation-funding) guide.
 
