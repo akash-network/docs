@@ -104,7 +104,7 @@ export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 echo $AKASH_ACCOUNT_ADDRESS
 ```
 
-Note that if you close your Terminal window this variable will not bee saved. 
+Note that if you close your Terminal window this variable will not be saved. 
 
 ## Step 3. Fund your Account
 
