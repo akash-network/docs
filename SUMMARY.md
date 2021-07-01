@@ -28,7 +28,7 @@
   * [API Service](operator/node/api-service.md)
 * [Running a Validator](operator/validator.md)
 * [Becoming a Provider](operator/provider/README.md)
-  * [Provider Test Networks](operator/provider/testnet.md)
+  * [Provider Networks](operator/provider/testnet.md)
 
 ## Key Concepts <a id="decentralized-cloud"></a>
 

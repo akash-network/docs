@@ -79,9 +79,7 @@ Note we use the `$AKASH_NET` variable - see the [net repo](https://github.com/ov
 To verify the correctness of the configuration run:
 
 {% hint style="warning" %}
-The following command is currently not working on `edgenet`. **This error can be ignored on `edgenet`**.
-
-We are looking into the problem, but it won't affect running a node.
+The following command is currently not working on `edgenet`. **This error can be ignored on `edgenet.`** We are looking into the problem, but it won't affect running a node.
 {% endhint %}
 
 ```bash
@@ -108,7 +106,7 @@ The `gasPrice` is the price of each unit of `gas`. Each validator sets a `min-ga
 
 The transaction `fees` are the product of `gas` and `gasPrice`. As a user, you have to input 2 out of 3. The higher the `gasPrice`/`fees`, the higher the chance that your transaction will get included in a block.
 
-::: tip For Akash testnets, the recommended `gas-prices` is `0.025uakt`. :::
+For Akash testnets, the recommended `gas-prices` is `0.025uakt`. 
 
 ## Pruning of State
 
@@ -125,7 +123,7 @@ You can configure your node's pruning strategy at start time with the `--pruning
 If running a validator node, do not use `--pruning everything` as it is known to cause issues. Instead, please use `--pruning default`.
 {% endhint %}
 
-> Note: When you are pruning state you will not be able to query the heights that are not in your store. The sentry nodes the Akash team is running will be `--pruning nothing` and all data from the testnet will be queriable there.
+> Note: When you are pruning state you will not be able to query the heights that are not in your store. The sentry nodes the Akash team is running will be `--pruning nothing` and all data from the testnet will be queryable there.
 
 ## Fast Sync
 

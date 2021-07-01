@@ -1,6 +1,6 @@
-# Provider Test Networks
+# Provider Networks
 
-## NOTE: Please use Mainnet for all deployments if you want to get bids from Providers. There are no providers available to bid on orders on the Testnet.
+## NOTE: Please use Mainnet for deployments. Testnet does not have  providers today.
 
 At any given time, there are a number of different Akash networks running for using in testing new nodes, providers, validators, and even deployments. The generally available networks are:
 
@@ -8,13 +8,9 @@ At any given time, there are a number of different Akash networks running for us
 | :--- | :--- |
 | [mainnet](https://github.com/ovrclk/net/tree/master/mainnet) | Akash Network mainnet network. |
 | [testnet](https://github.com/ovrclk/net/tree/master/testnet) | **No providers available to bid at this time.** |
-| \*\*\*\*[edgenet](https://github.com/ovrclk/net/tree/master/edgenet) | Testnet of the next mainnet version. |
+| [edgenet](https://github.com/ovrclk/net/tree/master/edgenet) | Testing the next mainnet version. |
 
-When following guides in this document, it is important to use the right parameters for the network you want to connect to.
-
-The [ovrclk/net](https://github.com/ovrclk/net) repository contains metadata about each available network. The format is standardized across the networks so that you can use the same method to fetch the information for any of them. See [below](testnet.md#obtaining-the-data) for how to use [ovrclk/net](https://github.com/ovrclk/net) in the guides here.
-
-## Obtaining Data
+The [ovrclk/net](https://github.com/ovrclk/net) GitHub repository contains metadata about each available network. The format is standardized across the networks so that you can use the same method to fetch the information for any of them. 
 
 First determine the base URL \(`$AKASH_NET`\) for the network you want to connect to - use the line from below that corresponds with the network you want to connect to:
 
