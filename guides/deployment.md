@@ -943,6 +943,13 @@ After confirming the transaction, you should see a response similar to:
 }
 ```
 
+## Find deployments
+The following commands will filter the full deployment list (requires jq to be installed)
+```
+akash query deployment list -o json | jq '[.deployments[] | .deployment | select(.state == "closed") | .deployment_id]' 
+akash query deployment list -o json | jq '[.deployments[] | .deployment | select(.state == "active") | .deployment_id]'
+```
+
 ## Close your deployment
 
 When you are done with your application, close the deployment. This will deprovision your container and stop the token transfer. 
