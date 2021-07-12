@@ -95,7 +95,7 @@ echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND
 
 #### Configure your Account Key
 
-Configure the name of your key. The command below will set thee name of your key to `alice`, run the below command and replace `alice` with a name of your choice:
+Configure the name of your key. The command below will set the name of your key to `alice`, run the below command and replace `alice` with a name of your choice:
 
 ```bash
 AKASH_KEY_NAME=alice
