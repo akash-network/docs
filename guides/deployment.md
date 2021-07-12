@@ -4,7 +4,7 @@ In this guide, we'll deploy a single-tier web application on Akash. We will run 
 
 ## Before We Begin
 
-This is a technical guide, best suited to a reader with basic Linux command line knowledge. The audience for this guide is intended for includes:
+This is a technical guide, best suited to a reader with basic Linux command line knowledge. The audience this guide is intended for includes:
 
 * Application developers with little or no systems administration experience, wanting to deploy applications on the decentralized cloud.
 * System administrators with little or no experience with infrastructure automation, wanting to learn more.
