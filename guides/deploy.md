@@ -108,19 +108,25 @@ Note that if you close your Terminal window this variable will not bee saved.
 
 ## Part 3. Fund your Account
 
-Developers can qualify for a small amount of tokens paid in AKT for the sole purpose of running their first app on Akash. To qualify for seed funding, please follow these steps:
+Developers can apply for funding from the Community Awards program. Please read the article [**Introducing the Akash Community Awards**](https://forum.akash.network/t/introducing-the-community-awards-program/) and follow the steps below:
 
-1. Write a detailed post on [**forum.akash.network**](http://forum.akash.network) about your project including answers to the following questions:
-   * **Problem Statement:** What is the problem you will solve?
-   * **Impact:**  What impact will this project have?
-   * **Goals:** What are you aiming to accomplish?
-   * **Methodology:** How will this task be accomplished?
-   * **Timeline:** What is the timeline for accomplishing this task?
-   * **Team**: Are you looking for additional team members?
-   * **Reporting**: How will you report your progress to the community \(e.g. weekly calls, reports\)?
-   * **Design**: Do you have any screenshots?
-2. Join the Akash Discord server [**discord.akash.network**](http://discord.akash.network) to introduce yourself to verify you are not a Cylon.
-3. Provide your wallet address in the **\#deployments** channel and we will send up to $100 to support your first deployment. 
+1. [ ] [Create a free account with GitHub](https://forum.akash.network/login). We use a Discourse community to provide a transparent platform for requesting and granting awards to developers.
+
+![](https://lh5.googleusercontent.com/_tg7HKKBJNBFmUJRlz_c_WQY00RL5rfcxD6tG9ZRC7auF_d248fKjTVYB9Nq_jBidj5RWimbDQ6PlQU33vZeZGqA1Ooh6sYRq58OvyeavNqi7MGPg-VTTPsktVZX85WpMWQXhGl6)![](https://lh5.googleusercontent.com/hOevKE9DI2aMCqJXfrkAPqv-G_AQO2ferfy5Qhdpi7uxEJnFT3Xis6PFgAwrrGD3A3sLciJwVYiBoqhN4xe6htKHRlBYqg5gSyYY2B-mM0sJZp5pvWTRRrV7sdtahsGUzWz2Ec-9)
+
+1. [ ] [Add a profile picture and connect your GitHub and Discord accounts to your account](https://forum.akash.network/u/colo/preferences/account). This is to prove you are human and prevent fraud and abuse.
+
+![](https://lh5.googleusercontent.com/SMf60ZsKe0N2Y5ukeGg5GZjvi3FgS5aG41Eq_f7WQv74bT8ma8zVB7ahhGcx51QZ1lxsRJznvBLpeEl1bNzGD4Wwr8jW0KMkZHeMAKlhrut-BULxHX7GUSwQfFsxFYQGnYNRO9j0)![](https://lh3.googleusercontent.com/r4LU9GBdC6tWHeEMlbfvwyz13V41JMfUj9GvAVvRDVM27jTr_T0Z3F03CPGO7xkJ4wF8ha7xs7-ugPUlAUkBR4RBWym9mr556PXWwMAOJv7rKeynYTi7pF6LwECGdEtQWebURgSK)
+
+* [ ] [Complete your profile including your Akash Account Address](https://forum.akash.network/my/preferences/profile). We need this in order to fund your account. Do not use an exchange address or you will not be able to receive $AKT tokens.
+
+![](https://lh5.googleusercontent.com/tU8y-BL2rXICZOU-7jRjh0EyGzpqZNh4SL-5PKaeiKoO9oa9xFLAkI5fm9brqQkXfibvQ_4GsaCvPbaVm75rpeEh3GbiO6U1Fk--t631e8DK3_AoAyHDhCHNrdAf6tsNw6xGESml)
+
+* [ ] [Create an invitation](https://forum.akash.network/my/invited/) and share it with your social networks to attract more developers to the community.
+
+![](https://lh5.googleusercontent.com/c_rUe-PlgA_b_F1gXVKtCnBZmZgEBvCKPittRLQCDY0HaXLIQQSCqJiqLVXWOd4aucdIEQZM3Dpxk-mALWnSIfA1RzGdltZHOokTtsIUf-YiNxyGwTUZLi6qEgsYuz2YprSACYn5)
+
+* [ ] Introduce yourself and your project with a brief description on the [Propose a Project forum](https://forum.akash.network/c/awards/new/).
 
 ## Part 4.  Connect to the Network
 

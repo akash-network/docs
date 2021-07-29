@@ -1,8 +1,8 @@
 # Fund your Account
 
-This guide will walk you through funding an account on an Akash network. Funding your network account is, of course, crucial to using the network - all messages charge a transaction fee, and if you are deploying applications then the leases for that deployment are paid out of your account. There are a number of different ways to fund your account.
+Funding your network account is required to use the network. All messages charge a transaction fee, deployment leases are paid by the account used to create them. There are a two ways to fund your account, buy tokens and apply for awards from the community.
 
-## Buy $AKT
+## Buy Tokens
 
 Tokens may currently be purchased on exchanges listed [here](https://akash.network/token). From there you can send tokens to your Akash account address.
 
