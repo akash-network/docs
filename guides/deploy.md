@@ -1,4 +1,4 @@
-# Quick Start
+# Quick Start Guide
 
 This guide will walk you through installing the `akash`application, creating and funding an account on an Akash network, and deploying a single-tier web application on Akash.
 

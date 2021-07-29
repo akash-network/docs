@@ -2,10 +2,12 @@
 
 * [Intro to Akash](README.md)
 * [Technical Support](support.md)
+* [Command Line Interface \(CLI\)](general-commands.md)
+* [Stack Definition Language \(SDL\)](sdl.md)
 
 ## Getting Started <a id="guides"></a>
 
-* [Quick Start](guides/deploy.md)
+* [Quick Start Guide](guides/deploy.md)
 * [Install Akash](guides/install.md)
 * [Shell Variables](guides/shell-variables.md)
 * [Create Account](guides/wallet.md)
@@ -39,8 +41,6 @@
 
 ## Reference Guides <a id="reference"></a>
 
-* [Command Line Interface \(CLI\)](reference/general-commands.md)
-* [Stack Definition Language \(SDL\)](reference/sdl.md)
 * [Inter-Blockchain Connections \(IBC\)](reference/akashnet-relayer.md)
 * [Frequently Asked Questions \(FAQ\)](reference/faq.md)
 

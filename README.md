@@ -4,10 +4,9 @@ description: Akash means "open space" or "sky" in ancient Sanskrit.
 
 # Intro to Akash
 
-
 ## What is Akash?
 
-Akash is an [**open source** ](https://github.com/ovrclk/akash)Cloud platform that lets you quickly deploy a Docker container to the Cloud provider of your choice for less than the cost of AWS, right from the [**command-line**](reference/general-commands.md).
+Akash is an [**open source** ](https://github.com/ovrclk/akash)Cloud platform that lets you quickly deploy a Docker container to the Cloud provider of your choice for less than the cost of AWS, right from the [**command-line**](general-commands.md).
 
 * Define your Docker image, CPU, Memory, and Storage in a **deploy.yaml** file.
 * Set your price, receive bids from providers in seconds, and select the lowest price.
@@ -32,7 +31,7 @@ The cost of hosting your application using Akash is about one-third the cost of 
 
 ### Why is Akash cheaper than Amazon?
 
-We are seeding the market with top-tier data center providers and negotiating lower than market rates with data centers to lease their underutilized server resources. Most data centers have unused capacity sitting idle. Akash's software helps the data centers lease out their compute resources for Docker containers. 
+We are seeding the market with top-tier data center providers and negotiating lower than market rates with data centers to lease their underutilized server resources. Most data centers have unused capacity sitting idle. Akash's software helps the data centers lease out their compute resources for Docker containers.
 
 ### How do I use Akash?
 
@@ -40,7 +39,7 @@ If you're new to Akash, start with the [**Getting Started guide**](guides/instal
 
 ### Why is Akash different than other Cloud platforms?
 
-The decentralized cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network of Cloud providers running  **open source** **software** developed by a community and creating competition in an **open** **marketplace** with more providers.
+The decentralized cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network of Cloud providers running **open source** **software** developed by a community and creating competition in an **open** **marketplace** with more providers.
 
 Like Airbnb for server hosting, Akash is a marketplace that gives you control over the price you pay and the amenities included \(we call them attributes\). Akash gives app developers a command-line tool for leasing and deploying apps right from a terminal. Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. Any cloud-native and containerized applications running on the centralized cloud can run faster and at a lower cost on the Akash decentralized cloud.
 
@@ -56,11 +55,11 @@ A **container** is a standard unit of software that packages up code and all its
 
 ### What is the Stack Definition Language \(SDL\)?
 
-You can define the deployment services, datacenters, requirements, and pricing parameters, in a "manifest" file \(deploy.yml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](reference/sdl.md). SDL is a human friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the YAML standard and similar to Docker Compose files.
+You can define the deployment services, datacenters, requirements, and pricing parameters, in a "manifest" file \(deploy.yml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](sdl.md). SDL is a human friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the YAML standard and similar to Docker Compose files.
 
 #### How do I configure Networking for my container?
 
-Networking - allowing connectivity to and between workloads - can be configured via the Stack Definition Language \([SDL](reference/sdl.md)\) file for a deployment. By default, workloads in a deployment group are isolated - nothing else is allowed to connect to them. This restriction can be relaxed.
+Networking - allowing connectivity to and between workloads - can be configured via the Stack Definition Language \([SDL](sdl.md)\) file for a deployment. By default, workloads in a deployment group are isolated - nothing else is allowed to connect to them. This restriction can be relaxed.
 
 ## How does the Marketplace work?
 
@@ -88,8 +87,8 @@ A typical application deployment on Akash will follow this flow:
 3. Their submission generates an [order](decentralized-cloud/marketplace.md#order) on the marketplace.
 4. Providers that would like to fulfill that order [bid](decentralized-cloud/marketplace.md#bid) on it.
 5. After some period of time, a winning [bid](decentralized-cloud/marketplace.md#bid) for the [order](decentralized-cloud/marketplace.md#order) is chosen, and a [lease](decentralized-cloud/marketplace.md#lease) is created.
-6. Once a [lease](decentralized-cloud/marketplace.md#lease) has been created, the tenant submits a [manifest](reference/sdl.md) to the provider.
-7. The provider executes workloads as instructed by the [manifest](reference/sdl.md).
+6. Once a [lease](decentralized-cloud/marketplace.md#lease) has been created, the tenant submits a [manifest](sdl.md) to the provider.
+7. The provider executes workloads as instructed by the [manifest](sdl.md).
 8. The workload is running - if it is a web application it can be visited
 9. The provider or tenant eventually closes the [lease](decentralized-cloud/marketplace.md#lease), shutting down the workload.
 
