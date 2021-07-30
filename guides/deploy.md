@@ -567,7 +567,7 @@ bids:
 For this example, we will choose `akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal`. Run this command to set the provider shell variable:
 
 ```bash
-AKASH_PROVIDER=akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal
+AKASH_PROVIDER=akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7
 ```
 
 Verify we have the right value populated by running:
