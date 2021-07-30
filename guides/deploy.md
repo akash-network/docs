@@ -90,16 +90,28 @@ Once you have the dependencies properly setup, download and build `akash` using 
 
 ## Part 2. Create an Account
 
-Change the name of your account to anything you like! In this example, the name is MyWallet. Copy and paste this command into Terminal:
+Configure the name of your key. The command below will set the name of your key to `myWallet`, run the below command and replace `myWallet` with a name of your choice:
 
 ```bash
-akash keys add MyWallet
+AKASH_KEY_NAME=myWallet
+```
+
+Verify you have the shell variables set up . The below command should return the name you've used:
+
+```bash
+echo $AKASH_KEY_NAME
+```
+
+Copy and paste this command into Terminal to create an Akash account:
+
+```bash
+akash keys add $AKASH_KEY_NAME
 ```
 
 Read the output and save your mnemonic phrase is a safe place. Let's set a Shell Variable in Terminal `AKASH_ACCOUNT_ADDRESS` to save your account address for later.
 
 ```bash
-export AKASH_ACCOUNT_ADDRESS="$(akash keys show MyWallet -a)"
+export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 
 echo $AKASH_ACCOUNT_ADDRESS
 ```
