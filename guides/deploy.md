@@ -479,7 +479,7 @@ You should see a response similar to:
 
 ### Find your Deployment \#
 
-Find the .Deplooyment Sequence \(DSEQ\) in the deployment you just created. You will need to replace the AKASH\_DSEQ with the number from your deployment to configure a shell variable.
+Find the Deployment Sequence \(DSEQ\) in the deployment you just created. You will need to replace the AKASH\_DSEQ with the number from your deployment to configure a shell variable.
 
 ```bash
 AKASH_DSEQ=CHANGETHIS
