@@ -300,7 +300,7 @@ EOF
 Before you can create a deployment, a [certificate](../decentralized-cloud/mtls.md) must first be created. **Your certificate needs to be created only once per account** and can be used across all deployments. To do this, run:
 
 ```text
-akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt
+akash tx cert create client --chain-id $AKASH_CHAIN_ID  --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt
 ```
 
 ## Part 7. Create your Deployment
