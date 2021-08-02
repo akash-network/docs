@@ -59,6 +59,11 @@ Download the archive for your system from the [release page](https://github.com/
 Alternatively, install the latest version via [`godownloader`](https://github.com/goreleaser/godownloader) First, configure the version of the Akash Network `AKASH_VERSION`as a shell variable in your terminal:
 
 ```bash
+# Install Zip utility if not already installed
+sudo apt install zip
+```
+
+```bash
 # configure akash version
 AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
 
@@ -67,6 +72,17 @@ curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh 
 ```
 
 The final step is to make sure that the akash binaries are available in your shell `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.
+
+The downloader will extract the project to .../bin for current path unless otherwise set. Example using debian or Ubuntu: If you are in user home directory when entering the commands above, the example path will be /home/$USER/bin which is where the executable file was downloaded to. To add this to your system path do the following:
+```bash
+# Add Akash to Path
+export PATH=$PATH:/home/$USER/bin
+```
+You can verify path was added correctly by simply checking with the following command
+```bash
+echo $PATH
+```
+
 {% endtab %}
 
 {% tab title="Source" %}
