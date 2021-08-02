@@ -8,8 +8,8 @@
 ## Getting Started <a id="guides"></a>
 
 * [Quick Start Guide](guides/deploy.md)
-* [Install Akash](guides/install.md)
 * [Shell Variables](guides/shell-variables.md)
+* [Install Akash](guides/install.md)
 * [Create Account](guides/wallet.md)
 * [Fund your Account](guides/funding.md)
 * [Deploy your App](guides/deployment.md)
