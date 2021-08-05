@@ -7,17 +7,22 @@
 To run a provider on the Akash network, you need the following
 
 * A wallet funded with at least 50 AKT. 
-  * Your wallet must have sufficient funding, as placing a bid on an order on the blockchain requires a 50 AKT deposit.This deposit is fully refunded after the bid is won/lost.
+  * Your wallet must have sufficient funding, as placing a bid on an order on the blockchain requires a 50 AKT deposit. This deposit is fully refunded after the bid is won/lost.
+  * Make sure you have slightly more than just exact 50 AKT as tiny amounts (about `0.001`) of AKT will be used by the Akash provider to commit the transactions on the Akash blockchain.
+  * You can refer to https://docs.akash.network/guides/funding to purchase AKT and https://docs.akash.network/guides/deploy to install Akash CLI wallet and read how to fund it.
+
 * Compute resources which can host a Kubernetes cluster.
-  * The compute resources hosting the Kubernetes cluster should be x86-64 software capable of running a full K8S cluster. The recommended method for provisioning this is using the kubespray project. The cluster must have access to the internet and be accessible from the internet. Hostnames need to be setup for the cluster.
+  * The compute resources hosting the Kubernetes cluster should be x86-64 software capable of running a full K8S cluster. The recommended method for provisioning this is using the kubespray project. The cluster must have access to the internet and be accessible from the internet.
+
 * A machine that can run the Akash provider service.
   * The Akash provider is a service that listens for events on the Akash blockchain and then responds to those events by offering available compute resources in the Kubernetes cluster. The provider also must be accessible from the internet and have a hostname associated with it. This is because when a lease is created, the owner of the lease directly communicates with the provider to provide the final instructions for provisioning resources.
+
 * Access to an Akash blockchain RPC node
-  * An RPC node is necessary because the Akash provider does not directly participate in the blockchain network. Instead it uses an external node to manage all interactionwith the blockchain. Any accessible RPC node can be used. Anyone running an Akash provider is strongly reccommended to run a node on the Akash network co-located with the provider. It is _not_ necessary for this node to act as a validator. More than one provider can access the same RPC node. 
+  * An RPC node is necessary because the Akash provider does not directly participate in the blockchain network. Instead it uses an external node to manage all interaction with the blockchain. Any accessible RPC node can be used. Anyone running an Akash provider is strongly recommended to run a node on the Akash network co-located with the provider. It is _not_ necessary for this node to act as a validator. More than one provider can access the same RPC node.
 
 ### Kubernetes Cluster Setup
 
-The setup of a Kubernetes cluster is the responsibility of whoever sets up a provider on the Akash network. This section of this document provides best practices and ecommendations for setting up a Kubernetes cluster. This document is not a comprehensive guide to operating a Kubernetes cluster.
+The setup of a Kubernetes cluster is the responsibility of whoever sets up a provider on the Akash network. This section of this document provides best practices and recommendations for setting up a Kubernetes cluster. This document is not a comprehensive guide to operating a Kubernetes cluster.
 
 The general set of actions which must be carried out to setup a Kubernetes cluster for a provider is
 
@@ -28,7 +33,7 @@ The general set of actions which must be carried out to setup a Kubernetes clust
 5. Add Akash's Custom Resource Definitions to Kubernetes
 6. Add the NGINX Ingress controller
 
-At ths point you would be left with a Kubernetes cluster that is ready to be a provider but not yet on the network.
+At this point you would be left with a Kubernetes cluster that is ready to be a provider but not yet on the network.
 
 The recommended method for setting up a Kubernetes cluster is to use the [Kubespray](https://github.com/kubernetes-sigs/kubespray) project. This project is a collection of ansible resources for setting up a Kubernetes cluster.
 
@@ -41,14 +46,10 @@ Get the [latest](https://github.com/kubernetes-sigs/kubespray/releases) official
 You need a working Ansible installation as well, with the additional Python dependencies specified in the `requirements.txt` document. It is recommended you install this using a Python virtual environment created with the `virtualenv` tool.
 
 ```text
+git clone https://github.com/kubernetes-sigs/kubespray.git
+cd kubespray
 virtualenv --python=python3 venv
-```
-
-```text
-. venv/bin/activate
-```
-
-```text
+source venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
@@ -62,97 +63,114 @@ If you need to copy your SSH private key to the nodes you can do so using the `s
 
 The Ansible inventory determines what machines Ansible configures for the Kubernetes cluster. Configuration files for Ansible can be created in multiple formats, but this guide only shows how to define an inventory as a YAML file.
 
-Example single node configuration \(not recommended\)
+```
+cp -rfp inventory/sample inventory/akash
+declare -a IPS=(24.1.2.3)
+CONFIG_FILE=inventory/akash/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
+```
+
+**Example single node configuration \(not recommended\)**
 
 ```text
 all:
   vars:
     cluster_id: "1.0.0.1"
     ansible_user: root
+    gvisor_enabled: true
   hosts:
-    mynode:
+    node1:
       ansible_host: 24.1.2.3
   children:
-    kube-master:
+    kube_control_plane:
       hosts:
-        mynode:
+        node1:
+    kube_node:
+      hosts:
+        node1:
     etcd:
       hosts:
-        mynode:
-    kube-node:
-      hosts:
-        mynode:
-    calico-rr:
-      hosts:
-        mynode:
-
-    k8s-cluster:
+        node1:
+    k8s_cluster:
       children:
-        kube-master:
-        kube-node:
-        calico-rr:
+        kube_control_plane:
+        kube_node:
+    calico_rr:
+      hosts: {}
 ```
 
-This Ansible inventory file defines a single node file with a host named "mynode". The name "mynode" is the name internally assigned by Ansible to the node. The value specified at the key `ansible_host` under that file defines how the host is reached by Ansible. In this example the node's IP address is used, but a hostname may also be used.
+This Ansible inventory file defines a single node file with a host named ``node1``. The name ``node1`` is the name internally assigned by Ansible to the node. The value specified at the key `ansible_host` under that file defines how the host is reached by Ansible. In this example the node's IP address is used, but a hostname may also be used.
 
-The host is placed into the groups `kube-master`, `etcd`, `kube-node`, and `calico-rr`. All hosts in those groups are then placed into the `k8s-cluster` group. This is similar to a standard configuration for a Kubernetes cluster, but utilizes Calico for networking. Calico is the only networking solution for the Kubernetes cluster that Akash officially supports at this time.
+The host is placed into the groups `kube_control_plane`, `kube_node`, `etcd`, and `calico-rr`. All hosts in those groups are then placed into the `k8s_cluster` group. This is similar to a standard configuration for a Kubernetes cluster, but utilizes Calico for networking. Calico is the only networking solution for the Kubernetes cluster that Akash officially supports at this time.
 
 One important detail is the value `cluster_id` which is assigned to all nodes by using the `all` group under `vars` in the YAML file. This value is used by Calico to uniquely identify a set of resources. For a more in depth explanation [see this document](https://hub.docker.com/r/calico/routereflector/).
 
-Example multinode configuration, with a single master
+**Example multi-node configuration, with two K8s masters**
+
+```
+declare -a IPS=(24.0.0.1 24.0.0.2 24.0.0.3)
+CONFIG_FILE=inventory/akash/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
+```
 
 ```text
 all:
   vars:
     cluster_id: "1.0.0.1"
     ansible_user: root
+    gvisor_enabled: true
   hosts:
-    mymaster:
+    node1:
       ansible_host: 24.0.0.1
-    mynode0:
+    node2:
       ansible_host: 24.0.0.2
-    mynode1:
+    node3:
       ansible_host: 24.0.0.3
   children:
-    kube-master:
+    kube_control_plane:
       hosts:
-        mymaster:
+        node1:
+        node2:
+    kube_node:
+      hosts:
+        node1:
+        node2:
+        node3:
     etcd:
       hosts:
-        mynode0:
-        mynode1:
-    kube-node:
-      hosts:
-        mynode0:
-        mynode1:
-    calico-rr:
-      hosts:
-        mymaster:
-        mynode0:
-        mynode1:
-
-    k8s-cluster:
+        node1:
+        node2:
+        node3:
+    k8s_cluster:
       children:
-        kube-master:
-        kube-node:
-        calico-rr:
+        kube_control_plane:
+        kube_node:
+    calico_rr:
+      hosts: {}
 ```
 
-This examples defines 3 separate hosts `mymaster`, `mynode0`, and `mynode1`.
+This examples defines 3 separate hosts `node1`, `node2`, and `node3`.
 
-The `inventory` directory in the Kubespray project contains an existing directory called `sample`. The `sample` directory should be copied to a name of your choosing. In this guide we assume the `sample` directory has been copied to a directory called `defi`. The YAML file you create should be placed in the `defi` directory.
+The `inventory` directory in the Kubespray project contains an existing directory called `sample`. The `sample` directory should be copied to a name of your choosing. In this guide we assume the `sample` directory has been copied to a directory called `akash`. The YAML file you create should be placed in the `akash` directory.
 
-Additionally, the steps in [this](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/containerd.md) guide should be followed to configure Kubernetes to use containerD as the container engine.
+As you may have noticed we have set `gvisor_enabled` to `true` in the kubespray inventory file, this will enable [gVisor](https://gvisor.dev) support. gVisor limits the attack surface of the host.
+It also needs the `containerd` container engine. Modify `k8s-cluster.yml` and `etcd.yml` files to enable it:
+
+```
+$ grep container_manager inventory/akash/group_vars/k8s_cluster/k8s-cluster.yml
+container_manager: containerd
+
+$ grep etcd_deployment_type inventory/akash/group_vars/etcd.yml
+etcd_deployment_type: host
+```
 
 ### Running Kubespray
 
-Assuming you have created an inventory file placed at `inventory/defi/myinventory.yaml`, `cd` back up into `/kubespray/` run Kubespray with the following command:
+Assuming you have created an inventory file placed at `inventory/akash/hosts.yaml`, `cd` back up into `kubespray/` run Kubespray with the following command:
 
 ```text
-ansible-playbook -i inventory/defi/myinventory.yaml -b -v --private-key=~/.ssh/id_rsa cluster.yml
+ansible-playbook -i inventory/akash/hosts.yaml -b -v --private-key=~/.ssh/id_rsa cluster.yml
 ```
 
-Note that this will run for some time before it is complete. When complete, thje Kubernetes cluster is up and running.
+Note that this will run for some time before it is complete. When complete, the Kubernetes cluster is up and running.
 
 The `--private-key` option lets Ansible know what SSH private key to authenticate with. If you're using a different private key be sure and update this parameter to point at the location of the private key used to access all hosts in the cluster.
 
@@ -160,13 +178,13 @@ The playbook `cluster.yml` contains all the necessary steps to build the Kuberne
 
 #### Known issues
 
-When the above example is followed, Kubespray uses Calico for the networking of Kubernetes.It is an extremely common error to have Kubespray fail on a step where a script named `calioctl.sh` is being run. This appears to be a bug in Kubespray. The only solution known at this time is to wait around 3 minutes then rerun Kubespray. On the second run, Kubespray complete successfully.
+When the above example is followed, Kubespray uses Calico for the networking of Kubernetes. It is an extremely common error to have Kubespray fail on a step where a script named `calioctl.sh` is being run. This appears to be a bug in Kubespray. The only solution known at this time is to wait around 3 minutes then rerun Kubespray. On the second run, Kubespray complete successfully.
 
 #### Dense Provider considerations
 
 Kubernetes uses a networking model that assigns a single IP address to each deployed pod. Each node in a Kubernetes cluster has a range of IP addresses available to it. This means that there is a limit to the number of pods that can be hosted on a single node.
 
-For providers with small nodes, this pods per node limit is not a concern. For providers running nodes with dense compute configurations \(for example, multisocket CPU servers\) this can become a limiting factor to utilization of the node.
+For providers with small nodes, this pods per node limit is not a concern. For providers running nodes with dense compute configurations \(for example, multi-core CPU servers\) this can become a limiting factor to utilization of the node.
 
 To increase the pods per node limit, 3 steps need to be taken:
 
@@ -174,7 +192,7 @@ To increase the pods per node limit, 3 steps need to be taken:
 2. Increase `kube_pods_subnet` to allow more pods in the kubernetes cluster
 3. Increase `kube_service_addresses` since more services are expected to be running.
 
-In this example, these values can be configured in `kubespray/inventory/defi/group_vars/k8s_cluster/k8s-cluster.yml`
+In this example, these values can be configured in `kubespray/inventory/akash/group_vars/k8s_cluster/k8s-cluster.yml`
 
 #### Add the Akash Custom Resource Definition
 
@@ -191,6 +209,7 @@ Files: 1. \[[https://raw.githubusercontent.com/ovrclk/akash/master/pkg/apis/akas
 and applying it by using the `kubectl` command like this
 
 ```text
+wget https://raw.githubusercontent.com/ovrclk/akash/master/pkg/apis/akash.network/v1/crd.yaml
 kubectl apply -f ./crd.yaml
 ```
 
@@ -211,6 +230,7 @@ Files: 1. \[[https://raw.githubusercontent.com/ovrclk/akash/master/\_docs/kustom
 You can apply it using the `kubectl` command like this
 
 ```text
+wget https://raw.githubusercontent.com/ovrclk/akash/master/_docs/kustomize/networking/network-policy-default-ns-deny.yaml
 kubectl apply -f ./network-policy-default-ns-deny.yaml
 ```
 
@@ -223,37 +243,19 @@ Files: 1. \[[https://raw.githubusercontent.com/ovrclk/akash/master/\_run/ingress
 You can apply it using the `kubectl` command like this
 
 ```text
+wget https://raw.githubusercontent.com/ovrclk/akash/master/_run/ingress-nginx.yaml
 kubectl apply -f ./ingress-nginx.yaml
 ```
 
 Additionally, exactly one node needs to be labeled with a label specific to this ingress declaration:
 
 ```text
-kubectl label nodes name_of_the_node_goes_here akashRole=ingress
+kubectl label nodes node3 akash.network/role=ingress
 ```
 
 This will cause the NGINX ingress to live only on that node. When the wildcard domain is created, it needs to point at this node's IP address.
 
-#### Configure gVisor
-
-You can install gVisor for containerD on each host by following [this guide](https://github.com/google/gvisor-containerd-shim/blob/master/docs/runtime-handler-shim-v2-quickstart.md)
-
-
-Kubernetes must be configured to have a `RuntimeClass` defining gvisor. Create a file named `gvisor-runtime.yaml` with the following contents
-
-```
-apiVersion: node.k8s.io/v1beta1
-kind: RuntimeClass
-metadata:
-  name: gvisor
-handler: runsc
-```
-
-You can then apply the `RuntimeClass` object to Kubernetes with the following command
-
-```text
-kubectl apply -f ./gvisor-runtime.yaml
-```
+You can label more nodes if you wish to load balance the ingress network.
 
 ## Provider Setup & Configuration
 
@@ -309,7 +311,7 @@ attributes:
 EOF
 ```
 
-Note that `PROVIDER_DOMAIN` is the IP address of the provider remote machine.
+Note that `PROVIDER_DOMAIN` is the address (or an IP) of the provider remote machine.
 
 You may optionally declare a list of attributes associated with your provider by adding the following information to `provider.yaml`
 
@@ -374,7 +376,7 @@ By default the akash provider asks Kubernetes to reserve _all_ resources on a 1 
 
 Any flag not specified is equivalent to having a value of zero.
 
-Each flag is a positive integer number. The number given is the percentage of overcommit to consider when making bids. Specifying `--overcommit-pct-cpu=50` tells the Akash provider to commit 50% more CPU than is actuall available.
+Each flag is a positive integer number. The number given is the percentage of overcommit to consider when making bids. Specifying `--overcommit-pct-cpu=50` tells the Akash provider to commit 50% more CPU than is actually available.
 
 #### Bid pricing
 
@@ -382,10 +384,10 @@ When the akash provider considers bidding on a lease, it must compute a bid pric
 
 When the `scale` strategy is used, at least one of the following command line switches must be set:
 
-* `--bid-price-memory-scale` - uakt per megabyte
-* `--bid-price-cpu-scale` - uakt per millicpu 
-* `--bid-price-storage` -  uakt per megabyte 
-* `--bid-price-endpoint-scale` - uakt per endpoint
+* `--bid-price-memory-scale` - memory pricing scale in uakt per megabyte (default "0")
+* `--bid-price-cpu-scale` - cpu pricing scale in uakt per millicpu (default "0")
+* `--bid-price-storage` - storage pricing scale in uakt per megabyte (default "0")
+* `--bid-price-endpoint-scale` - endpoint pricing scale in uakt (default "0", must be a whole number)
 
 The actual bid price is computed by multiplying the configured scale with the resources requested in the lease.
 
@@ -433,6 +435,7 @@ The pricing script may make any computations it needs to compute a price. The pr
 The following script shows an example implementation of a bid pricing script using the Python 3 language.
 
 ```text
+$ cat bid-price-script.py
 #!/usr/bin/env python3
 
 import math
@@ -444,18 +447,18 @@ order_data = json.load(sys.stdin)
 
 bid = True # Flag determining whether or not to bid
 bid_price = 0 # Total bid price
-memory_cutoff = 10000 # Limit for the amount of memory any one container can request
+memory_cutoff = 4*(1024**3) # Limit for the amount of memory any one container can request (e.g. 4G RAM max)
 
-uakt_per_memory_megabyte = 5
-uakt_per_storage_megabyte = 3
-uakt_per_millicpu = 15
+bid_price_memory_scale = 0.001
+bid_price_storage_scale = 0.0002
+bid_price_cpu_scale = 0.001
 
 MEGA = 1024 ** 2
 
 for group in order_data:
   # Compute total cost for this container
   group_count = group['count']
-  price = group['cpu'] * uakt_per_millicpu + group['memory']/MEGA * uakt_per_memory_megabyte + group['storage']/MEGA * uakt_per_storage_megabyte
+  price = group['cpu'] * bid_price_cpu_scale + group['memory']/MEGA * bid_price_memory_scale + group['storage']/MEGA * bid_price_storage_scale
   bid_price += group['count'] * price
 
   # Disable bidding if there is a large container
@@ -471,3 +474,30 @@ else:
     # Indicate not to bid
     json.dump(0, sys.stdout)
 ```
+
+The container requesting 0.5 CPU, 2G RAM, 32G storage would be quoted for a price of `10 uakt` which is `$11.22` a month if we take 1 AKT price is `$2.56`.
+This way the Akash providers can always adjust the bid prices whenever they want, which creates great competition!
+
+```
+$ cat order-data.sample
+[
+    {
+    "memory": 2147483648,
+    "cpu": 500,
+    "storage": 34359738368,
+    "count": 1,
+    "endpoint-quantity": 1
+    }
+]
+
+$ python3 ./bid-price-script.py < order-data.sample ; echo
+10
+
+$ echo "((10*((60/6)*60*24*30.436875))/10^6)*2.56" | bc -l
+11.22024960000000000000
+```
+
+## Additonal resources
+
+- Deploying Akash Provider without kubespray
+  https://nixaid.com/deploy-akash-provider-with-kubeadm
