@@ -14,6 +14,14 @@
 * [Fund your Account](guides/funding.md)
 * [Deploy your App](guides/deployment.md)
 
+## Key Concepts <a id="decentralized-cloud"></a>
+
+* [Security](decentralized-cloud/security.md)
+* [Marketplace](decentralized-cloud/marketplace.md)
+* [Payments](decentralized-cloud/escrow.md)
+* [Authentication](decentralized-cloud/mtls.md)
+* [Platform](decentralized-cloud/platform.md)
+
 ## Deployment Guides <a id="deploy"></a>
 
 * [Unstoppable Web 2.0](deploy/unstoppable-web-2.0.md)
@@ -31,13 +39,6 @@
 * [Running a Validator](operator/validator.md)
 * [Becoming a Provider](operator/provider/README.md)
   * [Provider Networks](operator/provider/testnet.md)
-
-## Key Concepts <a id="decentralized-cloud"></a>
-
-* [Marketplace](decentralized-cloud/marketplace.md)
-* [Payments](decentralized-cloud/escrow.md)
-* [Authentication](decentralized-cloud/mtls.md)
-* [Platform](decentralized-cloud/platform.md)
 
 ## Reference Guides <a id="reference"></a>
 
