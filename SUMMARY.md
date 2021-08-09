@@ -17,10 +17,10 @@
 ## Key Concepts <a id="decentralized-cloud"></a>
 
 * [Security](decentralized-cloud/security.md)
+* [Containers](decentralized-cloud/platform.md)
 * [Marketplace](decentralized-cloud/marketplace.md)
 * [Payments](decentralized-cloud/escrow.md)
 * [Authentication](decentralized-cloud/mtls.md)
-* [Containers](decentralized-cloud/platform.md)
 
 ## Deployment Guides <a id="deploy"></a>
 
