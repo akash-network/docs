@@ -20,7 +20,7 @@
 * [Marketplace](decentralized-cloud/marketplace.md)
 * [Payments](decentralized-cloud/escrow.md)
 * [Authentication](decentralized-cloud/mtls.md)
-* [Platform](decentralized-cloud/platform.md)
+* [Containers](decentralized-cloud/platform.md)
 
 ## Deployment Guides <a id="deploy"></a>
 
