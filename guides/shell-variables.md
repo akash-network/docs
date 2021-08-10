@@ -8,7 +8,7 @@ Because of this, it is important to type the commands into a terminal where the 
 | :--- | :--- |
 | `AKASH_NET` | Akash network configuration base URL. |
 | `AKASH_VERSION` | Akash version to install for your network. |
-| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](../reference/akashnet-relayer.md). |
+| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](../decentralized-cloud/akashnet-relayer.md). |
 | `AKASH_NODE` | Akash RPC endpoint URL and port number. |
 | `AKASH_KEY_NAME` | Key name of your choosing.  This documentation uses a value of "alice". |
 | `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` \(default\), `file`, `test`. |

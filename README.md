@@ -23,7 +23,7 @@ The [Akash Marketplace](decentralized-cloud/marketplace.md) is where users lease
 
 ### What is the Akash Container Platform?
 
-The [Akash Container Platform](decentralized-cloud/platform.md) is a deployment platform for hosting and managing [containers](./#what-is-a-container) where users can run _**any**_ Cloud-Native application. Akash is built with a set of cloud management services including [Kubernetes](https://kubernetes.io) to orchestrate and manage containers.
+The [Akash Container Platform](decentralized-cloud/platform.md) is a deployment platform for hosting and managing [containers](decentralized-cloud/platform.md#containers) where users can run _**any**_ Cloud-Native application. Akash is built with a set of cloud management services including [Kubernetes](https://kubernetes.io) to orchestrate and manage containers.
 
 ### What is the cost to use Akash?
 

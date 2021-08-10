@@ -27,7 +27,7 @@ Because of this, it is important to type the commands into a terminal where the 
 | :--- | :--- |
 | `AKASH_NET` | Akash network configuration base URL. |
 | `AKASH_VERSION` | Akash version to install for your network. |
-| `AKASH_CHAIN_ID` | Chain ID of the Akash network for [IBC](../reference/akashnet-relayer.md). |
+| `AKASH_CHAIN_ID` | Chain ID of the Akash network for [IBC](../decentralized-cloud/akashnet-relayer.md). |
 | `AKASH_NODE` | Akash RPC endpoint URL and port number. |
 | `AKASH_ACCOUNT_ADDRESS` | The address of your account.  See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md#account-address). |
 | `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys. See [here](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/README.md) |
