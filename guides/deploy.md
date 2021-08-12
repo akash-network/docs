@@ -132,7 +132,7 @@ Developers can request funding from the Akash Community. Please read the article
 
 1. [ ] [Create an account on the Community forum](https://forum.akash.network/login)
 2. [ ] [Join the Akash Discord server](https://discord.gg/uJ7NWdF4hn)
-3. [ ] [Connect Github and Discord to your profile](https://forum.akash.network/u/colo/preferences/account)
+3. [ ] [Connect Github and Discord to your profile](https://forum.akash.network/my/preferences/account)
 4. [ ] [Add your Akash Address to your profile](https://forum.akash.network/my/preferences/profile)
 5. [ ] [Introduce yourself and propose a project](https://forum.akash.network/c/grants/new/)
 6. [ ] [Submit a Grant Application](https://forum.akash.network/c/grants/apply/)
