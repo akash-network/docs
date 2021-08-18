@@ -10,15 +10,9 @@ If there is something you'd like to see in here that isn't already, please reach
 
 ## General
 
-**What is the core value prop of Akash network?**
+**How are gas fees calculated on Akash?**
 
-Besides being self-sovereign, permission-less, and decentralized, Akash is a reverse auction marketplace - Airbnb for Compute. Unlike Airbnb or centralized cloud providers however, the **Tenant** \("guests" in Airbnb terms\) has the power to decide what to pay, when, and filter the provider via audited attributes. The Provider bids on the Tenants' workload to run on their compute. Tenants have predictability on what it will cost, at all times, because the power in their hands.
-
-The core value of Akash is the ability for the Tenant \(owner of the workloads\) to set the price _**and**_ the terms. The Tenant _decides_. They don't have to be surprised by the sticker shock of a monthly billing cycle.
-
-Most customers don't know _why_ they are paying what they are paying. Now, they know because they decide.
-
-Anyone can become a provider on our network.
+Akash uses the basic Cosmos gas calculations for all fees.  Cosmos documentation on gas can be found [here](https://docs.cosmos.network/master/basics/gas-fees.html). 
 
 **How does the Akash Network compete against the AWS spot instances in terms of price?**
 
