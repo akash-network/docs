@@ -116,6 +116,12 @@ export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 echo $AKASH_ACCOUNT_ADDRESS
 ```
 
+We now need to point Akash to where the keys are stored for your configuration.   To do this we will set the AKASH\_KEYRING\_BACKEND environmental variable.
+
+```bash
+AKASH_KEYRING_BACKEND=os
+```
+
 Note that if you close your Terminal window this variable will not bee saved.
 
 ## Part 3. Fund your Account
