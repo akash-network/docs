@@ -51,7 +51,7 @@ Akash hosts [containers](./#what-is-a-container) where users can run _**any**_ C
 
 ### What is the Stack Definition Language \(SDL\)?
 
-You can define the deployment services, datacenters, requirements, and pricing parameters, in a "manifest" file \(deploy.yml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](sdl.md). SDL is a human friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the YAML standard and similar to Docker Compose files.
+You can define the deployment services, datacenters, requirements, and pricing parameters, in a "manifest" file \(deploy.yaml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](sdl.md). SDL is a human friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the YAML standard and similar to Docker Compose files.
 
 #### How do I configure Networking for my container?
 

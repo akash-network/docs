@@ -142,12 +142,12 @@ Your account must have a minimum balance of 5 AKT to create a deployment. This 5
 
 ## Create your Configuration
 
-Create a deployment configuration [deploy.yml](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/sdl/README.md).
+Create a deployment configuration [deploy.yaml](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/sdl/README.md).
 
 You can use cURL to download the file:
 
 ```text
-curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yml
+curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yaml > deploy.yaml
 ```
 
 ### What's in the Configuration?
@@ -156,7 +156,7 @@ You may use the sample deployment file as-is or modify it for your own needs as 
 
 ```bash
 ## DO NOT COPY PASTE THIS INTO TERMINAL 
-cat > deploy.yml <<EOF
+cat > deploy.yaml <<EOF
 ---
 version: "2.0"
 
@@ -275,7 +275,7 @@ You should see a response similar to:
 To deploy on Akash, run:
 
 ```bash
-akash tx deployment create deploy.yml --from $AKASH_KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --fees 5000uakt -y
+akash tx deployment create deploy.yaml --from $AKASH_KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --fees 5000uakt -y
 ```
 
 You should see a response similar to:
@@ -704,7 +704,7 @@ Please note that once the lease is created, the provider will begin debiting you
 Upload the manifest using the values from above step:
 
 ```bash
-akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER --home ~/.akash --from $AKASH_KEY_NAME
+akash provider send-manifest deploy.yaml --node $AKASH_NODE --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER --home ~/.akash --from $AKASH_KEY_NAME
 ```
 
 You should expect no output from the above command.
@@ -767,7 +767,7 @@ Akash Groups are translated into Kubernetes Deployments, this means that only a 
 1. Update your deployment by running:
 
    ```bash
-   akash tx deployment update deploy.yml --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --fees=5000uakt
+   akash tx deployment update deploy.yaml --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --fees=5000uakt
    ```
 
    After confirming your transaction, you should see a response similar to this:
@@ -856,7 +856,7 @@ Akash Groups are translated into Kubernetes Deployments, this means that only a 
 2. Send the updated manifest by running:
 
    ```bash
-   akash provider send-manifest deploy.yml --keyring-backend $AKASH_KEYRING_BACKEND --node $AKASH_NODE --from $AKASH_KEY_NAME --provider $AKASH_PROVIDER --dseq $AKASH_DSEQ --log_level info --home ~/.akash
+   akash provider send-manifest deploy.yaml --keyring-backend $AKASH_KEYRING_BACKEND --node $AKASH_NODE --from $AKASH_KEY_NAME --provider $AKASH_PROVIDER --dseq $AKASH_DSEQ --log_level info --home ~/.akash
    ```
 
 Between the first and second step, the prior deployment's containers will continue to run until the new manifest file is received, validated, and new container group operational. After health checks on updated group are passing; the prior containers will be terminated - this process may take a couple minutes to complete.

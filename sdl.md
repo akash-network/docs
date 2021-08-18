@@ -1,6 +1,6 @@
 # Stack Definition Language \(SDL\)
 
-Customers / tenants define the deployment services, datacenters, requirements, and pricing parameters, in a "manifest" file \(deploy.yml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](sdl.md). SDL is a human friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the [YAML](http://www.yaml.org/start.html) standard and similar to Docker Compose files.
+Customers / tenants define the deployment services, datacenters, requirements, and pricing parameters, in a "manifest" file \(deploy.yaml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](sdl.md). SDL is a human friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the [YAML](http://www.yaml.org/start.html) standard and similar to Docker Compose files.
 
 Configuration files may end in `.yml` or `.yaml`.
 
