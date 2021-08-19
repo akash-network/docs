@@ -4,7 +4,7 @@ In this guide, we'll deploy a single-tier web application on Akash. We will run 
 
 ## Before We Begin
 
-This is a technical guide, best suited to a reader with basic Linux command line knowledge. The audience for this guide is intended for includes:
+This is a technical guide, best suited to a reader with basic Linux command line knowledge. The audience this guide is intended for includes:
 
 * Application developers with little or no systems administration experience, wanting to deploy applications on the decentralized cloud.
 * System administrators with little or no experience with infrastructure automation, wanting to learn more.
@@ -95,7 +95,7 @@ echo $AKASH_NODE $AKASH_CHAIN_ID $AKASH_KEYRING_BACKEND
 
 #### Configure your Account Key
 
-Configure the name of your key. The command below will set thee name of your key to `alice`, run the below command and replace `alice` with a name of your choice:
+Configure the name of your key. The command below will set the name of your key to `alice`, run the below command and replace `alice` with a name of your choice:
 
 ```bash
 AKASH_KEY_NAME=alice
