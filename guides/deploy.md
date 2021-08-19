@@ -74,15 +74,17 @@ curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh 
 The final step is to make sure that the akash binaries are available in your shell `PATH`.[This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.
 
 The downloader will extract the project to .../bin for current path unless otherwise set. Example using debian or Ubuntu: If you are in user home directory when entering the commands above, the example path will be /home/$USER/bin which is where the executable file was downloaded to. To add this to your system path do the following:
+
 ```bash
 # Add Akash to Path
 export PATH=$PATH:/home/$USER/bin
 ```
+
 You can verify path was added correctly by simply checking with the following command
+
 ```bash
 echo $PATH
 ```
-
 {% endtab %}
 
 {% tab title="Source" %}
@@ -132,7 +134,7 @@ export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 echo $AKASH_ACCOUNT_ADDRESS
 ```
 
-We now need to point Akash to where the keys are stored for your configuration.   To do this we will set the AKASH\_KEYRING\_BACKEND environmental variable.
+We now need to point Akash to where the keys are stored for your configuration. To do this we will set the AKASH\_KEYRING\_BACKEND environmental variable.
 
 ```bash
 AKASH_KEYRING_BACKEND=os
@@ -148,9 +150,9 @@ Funding your network account is required to use the network. All messages charge
 
 Tokens may currently be purchased on [exchanges listed here](https://akash.network/token). From there you can send tokens to your Akash account address.
 
-### Get $100 of AKT from the Akash Community 
+### Get $100 of AKT from the Akash Community
 
-Developers can request funding from the Akash Community. Please read the article [**How to Apply for Developer Grants**](https://forum.akash.network/t/how-to-apply-for-developer-grants/) ****and follow the steps:
+Developers can request funding from the Akash Community. Please read the article [**How to Apply for Developer Grants**](https://forum.akash.network/t/how-to-apply-for-developer-grants/) _\*\*_and follow the steps:
 
 1. [ ] [Create an account on the Community forum](https://forum.akash.network/login)
 2. [ ] [Join the Akash Discord server](https://discord.gg/uJ7NWdF4hn)
@@ -327,8 +329,6 @@ You should see a response similar to:
   "signatures": []
 }
 ```
-
-
 
 ## Part 7. Create your Deployment
 

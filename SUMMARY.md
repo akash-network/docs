@@ -12,6 +12,7 @@
 * [Install Akash](guides/install.md)
 * [Create Account](guides/wallet.md)
 * [Fund your Account](guides/funding.md)
+* [Using Keplr Wallet](guides/using-keplr-wallet.md)
 * [Deploy your App](guides/deployment.md)
 
 ## Glossary <a id="decentralized-cloud"></a>

@@ -945,7 +945,7 @@ After confirming the transaction, you should see a response similar to:
 
 ## Close your deployment
 
-When you are done with your application, close the deployment. This will deprovision your container and stop the token transfer. 
+When you are done with your application, close the deployment. This will deprovision your container and stop the token transfer.
 
 Close deployment using deployment by creating a `deployment-close` transaction:
 
