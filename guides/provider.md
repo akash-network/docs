@@ -311,7 +311,9 @@ attributes:
 EOF
 ```
 
-Note that `PROVIDER_DOMAIN` is the address (or an IP) of the provider remote machine.
+Note that `PROVIDER_DOMAIN` is the FQDN hostname (recommended) of the provider remote machine.
+
+**IMPORTANT**: If you are going to use an IP address instead of the FQDN hostname (not recommended), then you will have to broadcast the update using `akash tx provider update` command each time the IP changes.
 
 You may optionally declare a list of attributes associated with your provider by adding the following information to `provider.yaml`
 
@@ -364,7 +366,27 @@ The provider must have a wallet accessible under the directory specified by `--h
 
 Example command to start a provider:
 
-`akash provider run --home $AKASH_HOME --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --keyring-backend=test --from $AKASH_PROVIDER_KEY --fees 5000uakt --kubeconfig $KUBECONFIG --cluster-k8s true --deployment-ingress-domain $PROVIDER_DOMAIN --deployment-ingress-static-hosts true --cluster-public-hostname _optional_ --bid-price-strategy scale --bid-price-cpu-scale 500`
+```
+akash provider run \
+  --home $AKASH_HOME \
+  --chain-id $AKASH_CHAIN_ID \
+  --node $AKASH_NODE \
+  --keyring-backend=file \
+  --from $AKASH_PROVIDER_KEY \
+  --fees 1000uakt \
+  --kubeconfig $KUBECONFIG \
+  --cluster-k8s true \
+  --deployment-ingress-domain $PROVIDER_DOMAIN \
+  --deployment-ingress-static-hosts true \
+  --bid-price-strategy scale \
+  --bid-price-cpu-scale 0.001 \
+  --bid-price-memory-scale 0.001 \
+  --bid-price-storage-scale 0.00001 \
+  --bid-price-endpoint-scale 0 \
+  --bid-deposit 5000000uakt \
+  --cluster-node-port-quantity 1000 \
+  --cluster-public-hostname $PROVIDER_DOMAIN
+```
 
 #### Cluster resources overcommit
 
