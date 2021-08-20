@@ -8,10 +8,53 @@ Because of this, it is important to type the commands into a terminal where the 
 | :--- | :--- |
 | `AKASH_NET` | Akash network configuration base URL. |
 | `AKASH_VERSION` | Akash version to install for your network. |
-| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](../decentralized-cloud/akashnet-relayer.md). |
+| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](../glossary/akashnet-relayer.md). |
 | `AKASH_NODE` | Akash RPC endpoint URL and port number. |
 | `AKASH_KEY_NAME` | Key name of your choosing.  This documentation uses a value of "alice". |
 | `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` \(default\), `file`, `test`. |
+
+## Environment variables and flags
+
+Generally, every parameter set be cli flag used by akash can be also set via environment variable. Use following rule of binding flag to the corresponding environment variable
+
+1. every dash `-` must be replaced with underscore `_`. `--` prefix must not be accounted!
+2. make all characters capital case
+3. add prefix `AKASH_` to the result
+
+for example flag `--keyring-backend` binds to `AKASH_KEYRING_BACKEND` environment variable
+
+The precedence is defined in the table below. 0 means highest priority
+
+| Priority | Type |
+| :--- | :--- |
+| 0 | Environment variable |
+| 1 | Flag |
+| 2 | Config file |
+| 3 | Default value |
+
+Example below shows value precedence for `--keyring-backend` parameter.
+
+* use default value set to `os`
+
+```text
+akash tx deployment create ... 
+#keyring-backend=os is used
+```
+
+* use value set by flag `--keyring-backend=file`
+
+```text
+akash tx deployment create --keyring-backend=file ...
+#keyring-backend=file is used 
+```
+
+* use value set by environment variable `AKASH_KEYRING_BACKEND=test`
+
+```text
+AKASH_KEYRING_BACKEND=test 
+akash tx deployment create --keyring-backend=file ...
+#keyring-backend=test is used 
+```
 
 ## Key Name
 
