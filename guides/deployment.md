@@ -944,8 +944,10 @@ After confirming the transaction, you should see a response similar to:
 ```
 
 ## Find deployments
-The following commands will filter the full deployment list (requires jq to be installed)
-```
+
+The following commands will filter the full deployment list \(requires jq to be installed\)
+
+```text
 akash query deployment list -o json | jq '[.deployments[] | .deployment | select(.state == "closed") | .deployment_id]' 
 akash query deployment list -o json | jq '[.deployments[] | .deployment | select(.state == "active") | .deployment_id]'
 ```
