@@ -230,6 +230,7 @@ Please note that all of the following can be substituted in the `datacenter` fie
 | :--- | :--- |
 | `equinix-metal-ewr1` | New Jersey, United States |
 | `equinix-metal-sjc1` | California, United States |
+| `equinix-metal-ams1` | Amsterdam, Netherlands |
 
 ## Create a Certificate
 
