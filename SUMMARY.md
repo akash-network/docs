@@ -33,12 +33,12 @@
 * [Authentication](glossary/mtls.md)
 * [Inter-Blockchain Connections \(IBC\)](glossary/akashnet-relayer.md)
 
-## Tutorials
+## Tutorials <a id="deploy"></a>
 
-* [Unstoppable Web 2.0](tutorials/unstoppable-web-2.0.md)
-* [Awesome Apps on Akash](tutorials/awesome-akash.md)
-* [Multi-Tiered Deployment](tutorials/multi-tier-app.md)
-* [Helium Validator](tutorials/helium-validator.md)
-* [PostgreSQL restore/backup](tutorials/postgresql-restore-backup.md)
-* [Ruby on Rails with Sia and Auth0](tutorials/ruby-on-rails-with-sia-and-auth0.md)
+* [Unstoppable Web 2.0](deploy/unstoppable-web-2.0.md)
+* [Awesome Apps on Akash](deploy/awesome-akash.md)
+* [Multi-Tiered Deployment](deploy/multi-tier-app.md)
+* [Helium Validator](deploy/helium-validator.md)
+* [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
+* [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
 
