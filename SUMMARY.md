@@ -42,3 +42,8 @@
 * [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
 * [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
 
+## Deployment User Interfaces <a id="deployments"></a>
+
+* [Akash Deploy](deployments/akash-deploy.md)
+* [Akashlytics Deploy](deployments/akashlytics-deploy.md)
+
