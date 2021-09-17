@@ -5,7 +5,12 @@
 * [Command Line Interface \(CLI\)](command-line-interface.md)
 * [Stack Definition Language \(SDL\)](stack-definition-language.md)
 
-## Deploy on Akash <a id="guides"></a>
+## Deployment On Akash <a id="deployments"></a>
+
+* [Akash Deploy](deployments/akash-deploy.md)
+* [Akashlytics Deploy](deployments/akashlytics-deploy.md)
+
+## Deploy Via The CLI <a id="guides"></a>
 
 * [Quick Start Guide](guides/deploy.md)
 * [Shell Variables](guides/shell-variables.md)
@@ -41,9 +46,4 @@
 * [Helium Validator](deploy/helium-validator.md)
 * [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
 * [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
-
-## Deployment User Interfaces <a id="deployments"></a>
-
-* [Akash Deploy](deployments/akash-deploy.md)
-* [Akashlytics Deploy](deployments/akashlytics-deploy.md)
 
