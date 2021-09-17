@@ -11,7 +11,7 @@
 * [Akashlytics Deploy](deployments/akashlytics-deploy.md)
 * [Quick Start Guide \(CLI\)](deployments/deploy.md)
 
-## Deploy Via The CLI <a id="guides"></a>
+## Using the cli for deployments <a id="guides"></a>
 
 * [Shell Variables](guides/shell-variables.md)
 * [Install Akash](guides/install.md)
