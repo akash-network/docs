@@ -9,10 +9,10 @@
 
 * [Akash Deploy](deployments/akash-deploy.md)
 * [Akashlytics Deploy](deployments/akashlytics-deploy.md)
+* [Quick Start Guide \(CLI\)](deployments/deploy.md)
 
 ## Deploy Via The CLI <a id="guides"></a>
 
-* [Quick Start Guide](guides/deploy.md)
 * [Shell Variables](guides/shell-variables.md)
 * [Install Akash](guides/install.md)
 * [Create Account](guides/wallet.md)
