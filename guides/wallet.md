@@ -2,7 +2,7 @@
 description: Original content produced by Anthony Rosa as part of the community challenge.
 ---
 
-# Using Keplr Wallet
+# Keplr Wallet
 
 #### Why do I need a wallet?
 

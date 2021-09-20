@@ -9,6 +9,7 @@
 * [Akash Deploy UI \(Web App\)](guides/deploy.md)
 * [Akashlytics Deploy \(Desktop App\)](guides/app.md)
 * [Akash Command \(CLI\)](guides/command.md)
+* [Keplr Wallet](guides/wallet.md)
 
 ## About Akash <a id="glossary"></a>
 
@@ -25,7 +26,6 @@
 * [Install Akash](cli/install.md)
 * [Shell Variables](cli/shell-variables.md)
 * [Create Account](cli/wallet.md)
-* [Using Keplr Wallet](cli/using-keplr-wallet.md)
 * [Fund your Account](cli/funding.md)
 * [Deploy your App](cli/deployment.md)
 
