@@ -1,4 +1,4 @@
-# Akashlytics Deploy
+# Akashlytics Deploy \(Desktop App\)
 
 ## **Akashlytics Deploy Overview**
 

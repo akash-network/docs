@@ -5,20 +5,20 @@
 * [Command Line Interface \(CLI\)](command-line-interface.md)
 * [Stack Definition Language \(SDL\)](stack-definition-language.md)
 
-## Deployment On Akash <a id="deployments"></a>
+## Deployment On Akash <a id="guides"></a>
 
-* [Akash Deploy](deployments/akash-deploy.md)
-* [Akashlytics Deploy](deployments/akashlytics-deploy.md)
+* [Akash Deploy UI \(Web App\)](guides/akash-deploy.md)
+* [Akashlytics Deploy \(Desktop App\)](guides/akashlytics-deploy.md)
+* [Akash Command \(CLI\)](guides/deploy.md)
 
-## Using the cli for deployments <a id="guides"></a>
+## Command Line Interface \(CLI\) <a id="cli"></a>
 
-* [Quick Start Guide \(CLI\)](guides/deploy.md)
-* [Install Akash](guides/install.md)
-* [Shell Variables](guides/shell-variables.md)
-* [Create Account](guides/wallet.md)
-* [Using Keplr Wallet](guides/using-keplr-wallet.md)
-* [Fund your Account](guides/funding.md)
-* [Deploy your App](guides/deployment.md)
+* [Install Akash](cli/install.md)
+* [Shell Variables](cli/shell-variables.md)
+* [Create Account](cli/wallet.md)
+* [Using Keplr Wallet](cli/using-keplr-wallet.md)
+* [Fund your Account](cli/funding.md)
+* [Deploy your App](cli/deployment.md)
 
 ## Operations
 

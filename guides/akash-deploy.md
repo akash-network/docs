@@ -1,4 +1,4 @@
-# Akash Deploy
+# Akash Deploy UI \(Web App\)
 
 ## **Akash Deploy Overview**
 
