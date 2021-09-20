@@ -9,12 +9,12 @@
 
 * [Akash Deploy](deployments/akash-deploy.md)
 * [Akashlytics Deploy](deployments/akashlytics-deploy.md)
-* [Quick Start Guide \(CLI\)](deployments/deploy.md)
 
 ## Using the cli for deployments <a id="guides"></a>
 
-* [Shell Variables](guides/shell-variables.md)
+* [Quick Start Guide \(CLI\)](guides/deploy.md)
 * [Install Akash](guides/install.md)
+* [Shell Variables](guides/shell-variables.md)
 * [Create Account](guides/wallet.md)
 * [Using Keplr Wallet](guides/using-keplr-wallet.md)
 * [Fund your Account](guides/funding.md)
