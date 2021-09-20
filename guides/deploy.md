@@ -1,12 +1,12 @@
 # Akash Deploy UI \(Web App\)
 
-## **Akash Deploy Overview**
+## **Akash Deploy UI Overview**
 
-Akash Deploy delivers a web application allowing workload deployment onto the Akash network with ease.  The platform lessens the learning curve and reduces friction in comparison to traditional methodologies of deployment provisioning through the Akash CLI.
+Akash Deploy UI delivers a web application allowing workload deployment onto the Akash network with ease.  The platform lessens the learning curve and reduces friction in comparison to traditional methodologies of deployment provisioning through the Akash CLI.
 
 The exploration that follows offers detailed guidance in the usage of Akash Deploy with explicit instruction, examples, and sample depictions.
 
-Akash Deploy is an open-source project written in ReactJS.  The repository for the application is listed below.  However a demo site of the app is available, may serve as launch point for initial/continued experimentation with Akash Deploy, and will serve as the platform utilized for the demonstrations that exist in this guide.
+Akash Deploy UI is an open-source project written in ReactJS.  The repository for the application is listed below.  However a demo site of the app is available, may serve as launch point for initial/continued experimentation with Akash Deploy, and will serve as the platform utilized for the demonstrations that exist in this guide.
 
 [**https://github.com/spacepotahto/akash-deploy-ui**](https://github.com/spacepotahto/akash-deploy-ui)
 
@@ -16,11 +16,7 @@ The Akash Deploy app integrates with available Keplr wallet instances.  Keplr is
 
 ### **Keplr Wallet Browser Extension Guidance**
 
-The Keplr wallet extension for Chrome may be found at the following location:
-
-[**https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en\#:~:text=Keplr%20is%20a%20browser%20extension,for%20the%20Cosmos%20interchain%20ecosystem**](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en#:~:text=Keplr%20is%20a%20browser%20extension,for%20the%20Cosmos%20interchain%20ecosystem)
-
-Download of the browser extension and further description of the application may be found within this site.
+The Keplr wallet extension for Chrome may be found on the [Chrome Web Store](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en#:~:text=Keplr%20is%20a%20browser%20extension,for%20the%20Cosmos%20interchain%20ecosystem).
 
 Post installation and extension activation the Keplr wallet should appear as a browser extension as depicted below in a Chrome use case.  The wallet may be opened for subsequent validations in this guide and future needs by clicking the browser’s extension icon highlighted.
 
