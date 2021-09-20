@@ -1,18 +1,27 @@
 # Table of contents
 
-* [Intro to Akash](README.md)
+* [What is Akash?](README.md)
 * [Technical Support](support.md)
-* [Command Line Interface \(CLI\)](command-line-interface.md)
 * [Stack Definition Language \(SDL\)](stack-definition-language.md)
 
-## Deployment On Akash <a id="guides"></a>
+## Deployment Guides <a id="guides"></a>
 
 * [Akash Deploy UI \(Web App\)](guides/deploy.md)
 * [Akashlytics Deploy \(Desktop App\)](guides/app.md)
 * [Akash Command \(CLI\)](guides/command.md)
 
+## About Akash <a id="glossary"></a>
+
+* [Security](glossary/security.md)
+* [Containers](glossary/platform.md)
+* [Marketplace](glossary/marketplace.md)
+* [Payments](glossary/escrow.md)
+* [Authentication](glossary/mtls.md)
+* [Interoperability \(IBC\)](glossary/akashnet-relayer.md)
+
 ## Command Line Interface \(CLI\) <a id="cli"></a>
 
+* [CLI Commands](cli/command-line-interface.md)
 * [Install Akash](cli/install.md)
 * [Shell Variables](cli/shell-variables.md)
 * [Create Account](cli/wallet.md)
@@ -28,15 +37,6 @@
 * [Build your Cloud Provider](operations/provider/README.md)
   * [Provider Networks](operations/provider/testnet.md)
 * [Running a Validator](operations/validator.md)
-
-## Glossary
-
-* [Security](glossary/security.md)
-* [Containers](glossary/platform.md)
-* [Marketplace](glossary/marketplace.md)
-* [Payments](glossary/escrow.md)
-* [Authentication](glossary/mtls.md)
-* [Inter-Blockchain Connections \(IBC\)](glossary/akashnet-relayer.md)
 
 ## Tutorials <a id="deploy"></a>
 
