@@ -7,9 +7,9 @@
 
 ## Deployment On Akash <a id="guides"></a>
 
-* [Akash Deploy UI \(Web App\)](guides/akash-deploy.md)
-* [Akashlytics Deploy \(Desktop App\)](guides/akashlytics-deploy.md)
-* [Akash Command \(CLI\)](guides/deploy.md)
+* [Akash Deploy UI \(Web App\)](guides/deploy.md)
+* [Akashlytics Deploy \(Desktop App\)](guides/app.md)
+* [Akash Command \(CLI\)](guides/command.md)
 
 ## Command Line Interface \(CLI\) <a id="cli"></a>
 
