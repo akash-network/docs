@@ -47,3 +47,7 @@
 * [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
 * [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
 
+## Version Documentation
+
+* [Akash Version 0.14.0 Features & Enchancements](version-documentation/akash-version-0.14.0-features-and-enchancements.md)
+
