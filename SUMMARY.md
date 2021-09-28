@@ -24,10 +24,14 @@
 
 * [CLI Commands](cli/command-line-interface.md)
 * [Install Akash](cli/install.md)
-* [Shell Variables](cli/shell-variables.md)
-* [Create Account](cli/wallet.md)
-* [Fund your Account](cli/funding.md)
-* [Deploy your App](cli/deployment.md)
+* [Setup your Environment](cli/shell-variables.md)
+* [Create Your Account](cli/wallet.md)
+* [Deploy with CLI](cli/deployment.md)
+
+## Using Akash Tokens
+
+* [Buy Akash Tokens](using-akash-tokens/buy.md)
+* [Fund your Account](using-akash-tokens/funding.md)
 
 ## Operations
 
@@ -47,7 +51,7 @@
 * [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
 * [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
 
-## Version Documentation
+## Release Notes <a id="version-documentation"></a>
 
-* [Akash Version 0.14.0 Features & Enchancements](version-documentation/akash-version-0.14.0-features-and-enchancements.md)
+* [Akash Version 0.14](version-documentation/0.14.md)
 

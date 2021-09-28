@@ -161,7 +161,7 @@ Developers can request funding from the Akash Community. Please read the article
 5. [ ] [Introduce yourself and propose a project](https://forum.akash.network/c/grants/new/)
 6. [ ] [Submit a Grant Application](https://forum.akash.network/c/grants/apply/)
 
-## Part 4.  Connect to the Network
+## Part 4.  Configure your Network
 
 First configure the base URL \(`$AKASH_NET`\) for the Akash Network; copy and paste the command below:
 
@@ -546,10 +546,10 @@ bids:
       denom: uakt
 ```
 
-For this example, we will choose `akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal`. Run this command to set the provider shell variable:
+For this example, we will choose `akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal` Run this command to set the provider shell variable:
 
 ```bash
-AKASH_PROVIDER=akash1f6gmtjpx4r8qda9nxjwq26fp5mcjyqmaq5m6j7
+AKASH_PROVIDER=akash1vky0uh4wayh9npd74uqesglpaxwymynnspf6a4
 ```
 
 Verify we have the right value populated by running:
@@ -560,7 +560,7 @@ echo $AKASH_PROVIDER
 
 ## Part 9. Create a Lease
 
-Create a lease for the bid from the chosen provider above by running:
+Create a lease for the bid from the chosen provider above by running this command:
 
 ```bash
 akash tx market lease create --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --owner $AKASH_ACCOUNT_ADDRESS --dseq $AKASH_DSEQ --gseq $AKASH_GSEQ --oseq $AKASH_OSEQ --provider $AKASH_PROVIDER --from $AKASH_KEY_NAME --fees 5000uakt
@@ -574,7 +574,19 @@ You can check the status of your lease by running:
 akash query market lease list --owner $AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ
 ```
 
-You should see a response that ends with:
+Note the bids will close automatically after 5 minutes, and you may get the response:
+
+```text
+bid not open
+```
+
+If this happens, close your deployment and open a new deployment again.  To close your deployment run this command:
+
+```text
+akash tx deployment close --from=$AKASH_KEY_NAME --fees 5000uakt
+```
+
+If your lease was successful you should see a response that ends with:
 
 ```text
     state: active

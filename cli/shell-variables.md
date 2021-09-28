@@ -1,8 +1,10 @@
-# Shell Variables
+# Setup your Environment
 
-Shell variables will be used throughout these guides to make the instructions so that the commands can be used verbatim. The beginning of each guide will give a list of variables used and how to populate them.
+Shell variables will be used throughout these guides to make the instructions so that the CLI commands in the documentation can be copied and pasted easily without editing at all. Below is a list of variables used and how to populate them.
 
-Because of this, it is important to type the commands into a terminal where the variables have been defined. Closing or changing terminals will mean that you have to re-define the variable.
+Note it is important to type the commands into a terminal where the variables have been defined. Closing or changing terminals will mean that you have to re-define your shell variables.
+
+### Environment Variables
 
 | Name | Description |
 | :--- | :--- |
@@ -13,9 +15,9 @@ Because of this, it is important to type the commands into a terminal where the 
 | `AKASH_KEY_NAME` | Key name of your choosing.  This documentation uses a value of "alice". |
 | `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` \(default\), `file`, `test`. |
 
-## Environment variables and flags
+### Environment Variables and flags
 
-Generally, every parameter set be cli flag used by akash can be also set via environment variable. Use following rule of binding flag to the corresponding environment variable
+Generally, every parameter set by CLI flag used by akash can be also set via environment variable. Use following rule of binding flag to the corresponding environment variable
 
 1. every dash `-` must be replaced with underscore `_`. `--` prefix must not be accounted!
 2. make all characters capital case

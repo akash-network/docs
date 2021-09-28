@@ -6,8 +6,6 @@ description: >-
 
 # Install Akash
 
-This guide will walk you through installing the `akash`application, creating and funding an account on an Akash network, and deploying a single-tier web application on Akash.
-
 The software to run **Akash** and the command-line client used to interact with them are all distributed in the `akash`application. The `akash` command is used to run the Akash Network.
 
 Select a tab below to view instructions for MacOS, Linux, or compiling from source.
@@ -20,25 +18,29 @@ Before you install Akash, you will need to install the **XCode Command Line Tool
 
 ### 1. Install XCode:
 
-You will need to install Apple's XCode Command Line Tools. Run this command in Terminal:
+You will need to install Apple's XCode Command Line Tools. Open Terminal on your Mac.  Click the copy icon in the code box below and paste the command on your Terminal prompt
+
+![](../.gitbook/assets/image.png)
 
 ```text
 xcode-select --install
 ```
+
+Installing XCode may take a while. Go grab a cup of coffee.
 
 ### 2. Install Homebrew:
 
 If you do not have Homebrew, you can install Homebrew using:
 
 ```text
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-
-### 3. Install Akash:
 
 Install `akash` using homebrew:
 
 ```text
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/colinlowenberg/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 brew tap ovrclk/tap
 brew install akash
 brew link akash --force
