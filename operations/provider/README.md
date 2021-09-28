@@ -901,14 +901,13 @@ _Network Configuration Overview_
   <tbody></tbody>
 </table>
 
-**Apply Node Label for Ingress Controller**  
-
+**Apply Node Label for Ingress Controller**
 
 Akash supplies a network configuration which must be applied to the Kubernetes cluster. The application of the network configuration will be accomplished by downloading the network policy YAML manifest and applying the manifest through kubectl from your local machine.
 
 One node should be labeled with a label specific to this ingress declaration.
 
-_Application of the Network Profile_
+_**Application of the Network Profile**_
 
 The label will cause the NGINX ingress to live only on the labeled node. When the wildcard domain is created subsequently the pointers should be to the labeled node's IP address.
 
@@ -929,7 +928,7 @@ Additional nodes may be labeled to load balance the ingress network.
 
 An Akash provider is started by running the command  “akash provider run” - as detailed subsequently in this section - on a system on which the Akash software package has been installed previously. The command is configurable entirely through the command line switches. For each relevant command line switch, an associated environmental variable may also be used alternatively and the use of such variables is encouraged for production operations.
 
-_Download the YAML file and apply/install into the Kubernetes cluster_
+_**Download the YAML file and apply/install into the Kubernetes cluster**_
 
 Guidance for environmental variable use in subsequent instructions in this guide using a prominent example:
 
