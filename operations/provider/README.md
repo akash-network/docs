@@ -4,56 +4,35 @@
 
 Prior to reviewing and completing the implementation steps of an Akash Provider environment consider the following mandates.
 
-Prior to reviewing and completing the implementation steps of an Akash Provider environment consider the following mandates.
-
 #### **Wallet Funding Requirement - Minimum of 50 AKT**
 
 An associated, available wallet must have sufficient funding, as placing a bid on an order on the blockchain requires a 50 AKT deposit. This deposit is fully refunded after the bid is won/lost.
 
-* * The precise minimum funding requirement of the wallet is marginally greater than 50 AKT as tiny amounts \(about 0.001\) of AKT is utilized by the Akash provider to commit transactions on the Akash blockchain.
-  * Reference [https://docs.akash.network/guides/funding](https://docs.akash.network/guides/funding)  as a purchasing guide of AKT and[ https://docs.akash.network/guides/deploy](https://docs.akash.network/guides/deploy) Akash CLI wallet install.
+* The precise minimum funding requirement of the wallet is marginally greater than 50 AKT as tiny amounts \(about 0.001\) of AKT is utilized by the Akash provider to commit transactions on the Akash blockchain.
+* Reference [https://docs.akash.network/guides/funding](https://docs.akash.network/guides/funding)  as a purchasing guide of AKT and[ https://docs.akash.network/guides/deploy](https://docs.akash.network/guides/deploy) Akash CLI wallet install.
 * An associated, available wallet must have sufficient funding, as placing a bid on an order on the blockchain requires a 50 AKT deposit. This deposit is fully refunded after the bid is won/lost.
-  * The precise minimum funding requirement of the wallet is marginally greater than 50 AKT as tiny amounts \(about 0.001\) of AKT is utilized by the Akash provider to commit transactions on the Akash blockchain.
-  * Reference [https://docs.akash.network/guides/funding](https://docs.akash.network/guides/funding)  as a purchasing guide of AKT and[ https://docs.akash.network/guides/deploy](https://docs.akash.network/guides/deploy) Akash CLI wallet install.
 
-_**Compute Resources Powering the Provider’s Kubernetes Cluster**_
+**Compute Resources Powering the Provider’s Kubernetes Cluster**
 
 * The compute resources hosting the provider’s Kubernetes cluster - on which tenants deploy workloads - should be x86-64 software capable.
 * The provider must provision a full Kubernetes cluster.  This guide provides possible techniques and configuration of an appropriate cluster.
 * As detailed subsequently the  recommended method for provisioning the cluster is via the utilization of the kubespray project. 
 * The cluster must have access to the internet and be accessible from the internet.
 
-_**Compute Resource to Host the Akash Provider Service**_
+**Compute Resource to Host the Akash Provider Service**
 
 * The Akash provider service foundationally listens for events on the Akash blockchain and responds to those events by offering available compute resources in the provider’s own Kubernetes cluster. 
 * The provider service must be accessible from the internet and have an associated hostname. When a provider/tenant lease is created, the tenant of the lease communicates directly with the provider detailing precise instructions/requirements of the desired workload deployment and thus requires a direct communication path.
 
-**Access to an Akash blockchain RPC node**
-
-#### **Compute Resources Powering the Provider’s Kubernetes Cluster**
-
-* The compute resources hosting the provider’s Kubernetes cluster - on which tenants deploy workloads - should be x86-64 software capable.
-* The provider must provision a full Kubernetes cluster.  This guide provides possible techniques and configuration of an appropriate cluster.
-* As detailed subsequently the  recommended method for provisioning the cluster is via the utilization of the kubespray project. 
-* The cluster must have access to the internet and be accessible from the internet.
-
-#### **Compute Resource to Host the Akash Provider Service**
-
-* The provider requires access to a Remote Procedure Call \(RPC\) node on the Akash network as the  provider does not directly participate in the blockchain network. 
-* The provider utilizes an external RPC node to manage all interaction with the blockchain. 
-* Any accessible RPC node in the Akash network may be utilized. 
-* All Akash providers are strongly recommended to run a node on the Akash network co-located with the provider for a reduced communication path and reduced round trip communication delay. The node need not act as a validator. Multiple providers may access a single RPC node.
-
 ## **Kubernetes Cluster Setup**
 
-* The Akash provider service foundationally listens for events on the Akash blockchain and responds to those events by offering available compute resources in the provider’s own Kubernetes cluster. 
+* The Akash provider service listens for events on the Akash blockchain and responds to those events by offering available compute resources in the provider’s own Kubernetes cluster. 
 * The provider service must be accessible from the internet and have an associated hostname. When a provider/tenant lease is created, the tenant of the lease communicates directly with the provider detailing precise instructions/requirements of the desired workload deployment and thus requires a direct communication path.
 
 #### **Access to an Akash blockchain RPC node**
 
-### **Overview**
+The provider requires access to a Remote Procedure Call \(RPC\) node on the Akash network as the  provider does not directly participate in the blockchain network. 
 
-* The provider requires access to a Remote Procedure Call \(RPC\) node on the Akash network as the  provider does not directly participate in the blockchain network. 
 * The provider utilizes an external RPC node to manage all interaction with the blockchain. 
 * Any accessible RPC node in the Akash network may be utilized. 
 * All Akash providers are strongly recommended to run a node on the Akash network co-located with the provider for a reduced communication path and reduced round trip communication delay. The node need not act as a validator. Multiple providers may access a single RPC node.
@@ -62,79 +41,34 @@ _**Compute Resource to Host the Akash Provider Service**_
 
 ### **Overview**
 
-Akash workloads are deployed as Kubernetes pods as desperate clusters owned, managed, and maintained by the provider.  As the foundational element of the provider network the guide commences with the build of the provider’s Kubernetes control plane and worker nodes.
-
-Akash workloads are deployed as Kubernetes pods as desperate clusters owned, managed, and maintained by the provider.  As the foundational element of the provider network the guide commences with the build of the provider’s Kubernetes control plane and worker nodes.
-
-The setup of a Kubernetes cluster is the responsibility of the provider on the Akash network. This section of this document provides best practices and recommendations for setting up a Kubernetes cluster. This document is not a comprehensive guide to operating a Kubernetes cluster and assumes pre-existing Kubernetes knowledge and experience.
+Akash workloads are deployed as Kubernetes pods as clusters owned, managed, and maintained by the provider.  As the foundational element of the provider network the guide commences with the build of the provider’s Kubernetes control plane and worker nodes.
 
 The setup of a Kubernetes cluster is the responsibility of the provider on the Akash network. This section of this document provides best practices and recommendations for setting up a Kubernetes cluster. This document is not a comprehensive guide to operating a Kubernetes cluster and assumes pre-existing Kubernetes knowledge and experience.  
 ****
 
 ### **Kubernetes Cluster Creation and Configuration Steps**
 
-### **Kubernetes Cluster Creation and Configuration Steps**
-
-Individual sections following offer guidance in the configuration of a Kubernetes cluster - prepared appropriately to offer Akash provider services - within the following framework and steps.
-
 Individual sections following offer guidance in the configuration of a Kubernetes cluster - prepared appropriately to offer Akash provider services - within the following framework and steps.
 
 The Kubernetes cluster deployment described in these steps utilize Kubespray to deploy the control plane and worker nodes.
 
-The Kubernetes cluster deployment described in these steps utilize Kubespray to deploy the control plane and worker nodes.
-
-**STEP1**:  Clone the Kubespray project
-
-**STEP1**: Clone the Kubespray project
-
-**STEP2**:  Install Ansible and configure Ansible inventory for the nodes in the cluster
-
-**STEP2**: Install Ansible and configure Ansible inventory for the nodes in the cluster
-
-**STEP3**:  Invoke the Kubernetes cluster provisioning using Ansible
-
-**STEP3**: Invoke the Kubernetes cluster provisioning using Ansible
-
-**STEP4**:  Add Akash's Custom Resource Definitions to Kubernetes
-
-**STEP4**: Add Akash's Custom Resource Definitions to Kubernetes
-
-**STEP5**:  Add a NGINX Ingress controller in the Kubernetes cluster for Akash
-
-**STEP5**: Add a NGINX Ingress controller in the Kubernetes cluster for Akash  
-****
+1. Clone the Kubespray project
+2. Install Ansible and configure Ansible inventory for the nodes in the cluster
+3. Invoke the Kubernetes cluster provisioning using Ansible
+4. Add Akash's Custom Resource Definitions to Kubernetes
+5.  Add a NGINX Ingress controller in the Kubernetes cluster for Akash
 
 With the conclusion of the aforementioned steps a Kubernetes cluster will be readied to assume the role of an Akash provider additional steps - provided in detail in a subsequent section of this document - are necessary to configure the provider and place onto the Akash network.
 
-With the conclusion of the aforementioned steps a Kubernetes cluster will be readied to assume the role of an Akash provider additional steps - provided in detail in a subsequent section of this document - are necessary to configure the provider and place onto the Akash network.  
-****
-
 The subsections that follow deep dive into the referenced Kubernetes cluster creation step in detail and within an ordered methodology.
-
-The subsections that follow deep dive into the referenced Kubernetes cluster creation step in detail and within an ordered methodology.  
-****
-
-### **Clone the Kubespray project**
 
 ### **Clone the Kubespray project**
 
 #### **Cluster Creation Recommendations**
 
-_**Cluster Creation Recommendations**_
-
 The recommended method for setting up a Kubernetes cluster for Akash provider use is via the[ Kubespray](https://github.com/kubernetes-sigs/kubespray) project. A collection of ansible resources is provoked by Kubespray allowing Kubernetes cluster deployment with a minimized effort.
 
-The recommended method for setting up a Kubernetes cluster for Akash provider use is via the[ Kubespray](https://github.com/kubernetes-sigs/kubespray) project. A collection of Ansible resources is provoked by Kubespray allowing Kubernetes cluster deployment with a minimized effort.
-
 The recommended minimum number of compute nodes is three in the following footprint:
-
-The recommended minimum number of compute nodes is three in the following footprint:
-
-* One host maintains the role of  the Kubernetes master node & provider
-* One host that serves as a redundant master node
-* One host which facilitates the role of Kubernetes worker nodes and host deployed workloads triggered via the Akash provider
-
-For experimentation and initial exposure it is possible to provision a single host Kubernetes cluster - control-plane, worker node, and Akash provider collapsed on a single node - but this configuration is not recommended for production usage.
 
 * One host maintains the role of  the Kubernetes master node & provider
 * One host that serves as a redundant master node
