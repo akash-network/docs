@@ -11,6 +11,10 @@
 * [Akash Command \(CLI\)](guides/command.md)
 * [Keplr Wallet](guides/wallet.md)
 
+## Release Notes
+
+* [Akash Version 0.14.0](release-notes/v0.14.0.md)
+
 ## About Akash <a id="glossary"></a>
 
 * [Security](glossary/security.md)
@@ -50,8 +54,4 @@
 * [Helium Validator](deploy/helium-validator.md)
 * [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
 * [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
-
-## Release Notes <a id="version-documentation"></a>
-
-* [Akash Version 0.14](version-documentation/0.14.md)
 
