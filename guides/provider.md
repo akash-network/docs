@@ -204,13 +204,21 @@ On your local machine,set the `KUBECONFIG` environmental variable to the path of
 
 Akash uses a custom resource definition to store each deployment in Kubernetes. You must load this CRD by downloading the following file:
 
-Files: 1. \[[https://raw.githubusercontent.com/ovrclk/akash/master/pkg/apis/akash.network/v1/crd.yaml](https://raw.githubusercontent.com/ovrclk/akash/master/pkg/apis/akash.network/v1/crd.yaml)\]
+Files: 
+
+1. [https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/pkg/apis/akash.network/v1/crd.yaml](https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/pkg/apis/akash.network/v1/crd.yaml)
+2. [https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/pkg/apis/akash.network/v1/provider_hosts_crd.yaml](https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/pkg/apis/akash.network/v1/provider_hosts_crd.yaml)
+
 
 and applying it by using the `kubectl` command like this
 
 ```text
-wget https://raw.githubusercontent.com/ovrclk/akash/master/pkg/apis/akash.network/v1/crd.yaml
+wget https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/pkg/apis/akash.network/v1/crd.yaml
 kubectl apply -f ./crd.yaml
+
+wget https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/pkg/apis/akash.network/v1/provider_hosts_crd.yaml
+kubectl apply -f ./provider_hosts_crd.yaml
+
 ```
 
 If you receive an error resembling this
@@ -225,12 +233,14 @@ then the `KUBECONFIG` variable is likely set incorrectly.
 
 Akash supplies networking configuration which must be applied to the Kubernetes cluster. You must load this file by downloading it and applying it
 
-Files: 1. \[[https://raw.githubusercontent.com/ovrclk/akash/master/\_docs/kustomize/networking/network-policy-default-ns-deny.yaml](https://raw.githubusercontent.com/ovrclk/akash/master/_docs/kustomize/networking/network-policy-default-ns-deny.yaml)\]
+Files: 
+
+1. [https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/_docs/kustomize/networking/network-policy-default-ns-deny.yaml](https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/_docs/kustomize/networking/network-policy-default-ns-deny.yaml)
 
 You can apply it using the `kubectl` command like this
 
 ```text
-wget https://raw.githubusercontent.com/ovrclk/akash/master/_docs/kustomize/networking/network-policy-default-ns-deny.yaml
+wget https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/_docs/kustomize/networking/network-policy-default-ns-deny.yaml
 kubectl apply -f ./network-policy-default-ns-deny.yaml
 ```
 
@@ -238,12 +248,17 @@ kubectl apply -f ./network-policy-default-ns-deny.yaml
 
 Akash requires that a Kubernetes ingress controller be created. You must load this file by downloading it and applying it
 
-Files: 1. \[[https://raw.githubusercontent.com/ovrclk/akash/master/\_run/ingress-nginx.yaml](https://raw.githubusercontent.com/ovrclk/akash/master/_run/ingress-nginx.yaml)\]
+Files:
+1. [https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/_run/ingress-nginx-class.yaml](https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/_run/ingress-nginx-class.yaml)
+2. [https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/_run/ingress-nginx.yaml](https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/_run/ingress-nginx.yaml)
 
 You can apply it using the `kubectl` command like this
 
 ```text
-wget https://raw.githubusercontent.com/ovrclk/akash/master/_run/ingress-nginx.yaml
+wget https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/_run/ingress-nginx-class.yaml
+kubectl apply -f ./ingress-nginx-class.yaml
+
+wget https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/_run/ingress-nginx.yaml
 kubectl apply -f ./ingress-nginx.yaml
 ```
 
@@ -253,9 +268,41 @@ Additionally, exactly one node needs to be labeled with a label specific to this
 kubectl label nodes node3 akash.network/role=ingress
 ```
 
-This will cause the NGINX ingress to live only on that node. When the wildcard domain is created, it needs to point at this node's IP address.
+This will cause the NGINX ingress to live only on that node. When the wildcard domain is created, it needs to 
+point at this node's IP address.
 
 You can label more nodes if you wish to load balance the ingress network.
+
+#### Create the Akash hostname operator
+
+The Akash hostname operator has been introduced to manage ingress resources inside Kubernetes for each deployment. 
+
+You need to have the correct release of the `ovrclk/akash` repo checked out in order for this to be done
+
+First make sure the `akash-services` namespace exists
+
+```
+kubectl kustomize _docs/kustomize/akash-services/ | kubectl apply -f -
+```
+
+The hostname operator is implemented in `_docs/kustomize/akash-hostname-operator`. It normally uses the latest version of the docker container image 
+but you should specify the version you are deploying. This is done by editing `_docs/kustomize/akash-hostname-operator/kustomization.yaml` 
+and appending the following section
+
+```
+images:
+  - name: ghcr.io/ovrclk/akash:stable
+    newName: ghcr.io/ovrclk/akash
+    newTag: 0.14.0
+```
+
+The last line specifies the image tag and should correspond to whatever version you are installing.
+
+To install the operator into kubernetes perform the following from the `/_docs` directory.
+
+```
+kubectl kustomize ./kustomize/akash-hostname-operator | kubectl apply -f -
+```
 
 ## Provider Setup & Configuration
 
