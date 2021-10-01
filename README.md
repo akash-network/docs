@@ -14,7 +14,7 @@ Akash is an [**open source** ](https://github.com/ovrclk/akash)Cloud platform th
 * Scale your application from a single container to hundreds of deployments.
 
 {% hint style="info" %}
-Want to dive straight in? Start with our [**Quick Start Guide**](guides/command.md).
+Want to dive straight in? Start with our [**Quick Start Guide**](guides/cli.md).
 {% endhint %}
 
 ### What is the Akash Deployment Marketplace?

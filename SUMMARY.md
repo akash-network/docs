@@ -8,7 +8,7 @@
 
 * [Akash Deploy UI \(Web App\)](guides/deploy.md)
 * [Akashlytics Deploy \(Desktop App\)](guides/app.md)
-* [Akash Command \(CLI\)](guides/command.md)
+* [Akash Command \(CLI\)](guides/cli.md)
 * [Keplr Wallet](guides/wallet.md)
 
 ## Release Notes
