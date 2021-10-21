@@ -144,7 +144,7 @@ _Test Connection Example_
 * Execution should result in a SSH session established to the remote host without the need of password entry
 
 ```text
-ssh-copy-id -i ~/.ssh/id_rsa root@10.0.10.27
+ssh -i ~/.ssh/id_rsa root@10.0.10.27
 ```
 
 _Repeat Steps Above for SSH Connections to all Kubernetes Hosts from Ansible Host_  
