@@ -23,7 +23,6 @@
 * [Marketplace](glossary/marketplace.md)
 * [Payments](glossary/escrow.md)
 * [Authentication](glossary/mtls.md)
-* [Interoperability (IBC)](glossary/akashnet-relayer.md)
 
 ## Command Line Interface (CLI) <a href="cli" id="cli"></a>
 

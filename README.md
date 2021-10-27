@@ -19,7 +19,7 @@ Want to dive straight in? Start with our [**Quick Start Guide**](guides/cli.md).
 
 ### What is the Akash Deployment Marketplace?
 
-The [Akash Marketplace](glossary/marketplace.md) is where users lease computing resources from Cloud providers before deploying a Docker container on the Akash Container Platform. The marketplace stores on-chain records of requests, bids, leases, and settlement payments using the Akash Token \(AKT\). Akash's blockchain is a [tendermint](https://github.com/tendermint/tendermint)-based application based on the [Cosmos SDK](https://github.com/cosmos/cosmos-sdk).
+The [Akash Marketplace](glossary/marketplace.md) is where users lease computing resources from Cloud providers before deploying a Docker container on the Akash Container Platform. The marketplace stores on-chain records of requests, bids, leases, and settlement payments using the Akash Token (AKT). Akash's blockchain is a [tendermint](https://github.com/tendermint/tendermint)-based application based on the [Cosmos SDK](https://github.com/cosmos/cosmos-sdk).
 
 ### What is the Akash Container Platform?
 
@@ -27,7 +27,7 @@ The [Akash Container Platform](glossary/platform.md) is a deployment platform fo
 
 ### What is the cost to use Akash?
 
-The cost of hosting your application using Akash is about one-third the cost of Amazon AWS, Google Cloud Platform \(GCP\), and Microsoft Azure. You can check the prices live using the [Akashlytics.com price comparison tool](https://akashlytics.com/price-compare).
+The cost of hosting your application using Akash is about one-third the cost of Amazon AWS, Google Cloud Platform (GCP), and Microsoft Azure. You can check the prices live using the [Akashlytics.com price comparison tool](https://akashlytics.com/price-compare).
 
 ### Why is Akash cheaper than Amazon?
 
@@ -39,9 +39,9 @@ If you're new to Akash, start with the [**Getting Started guide**](cli/install.m
 
 ### Why is Akash different than other Cloud platforms?
 
-The decentralized cloud is a shift from computing resources being owned and operated by the three large Cloud companies \(Amazon, Google, and Microsoft\) to a decentralized network of Cloud providers running **open source** **software** developed by a community and creating competition in an **open** **marketplace** with more providers.
+The decentralized cloud is a shift from computing resources being owned and operated by the three large Cloud companies (Amazon, Google, and Microsoft) to a decentralized network of Cloud providers running **open source** **software** developed by a community and creating competition in an **open** **marketplace** with more providers.
 
-Like Airbnb for server hosting, Akash is a marketplace that gives you control over the price you pay and the amenities included \(we call them attributes\). Akash gives app developers a command-line tool for leasing and deploying apps right from a terminal. Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. Any cloud-native and containerized applications running on the centralized cloud can run faster and at a lower cost on the Akash decentralized cloud.
+Like Airbnb for server hosting, Akash is a marketplace that gives you control over the price you pay and the amenities included (we call them attributes). Akash gives app developers a command-line tool for leasing and deploying apps right from a terminal. Akash taps into the massive market of underutilized resources sitting idle in the estimated 8.4 million data centers globally. Any cloud-native and containerized applications running on the centralized cloud can run faster and at a lower cost on the Akash decentralized cloud.
 
 ### Why is Akash different than other decentralized platforms?
 
@@ -49,19 +49,18 @@ Akash hosts [containers](./#what-is-a-container) where users can run _**any**_ C
 
 
 
-### What is the Stack Definition Language \(SDL\)?
+### What is the Stack Definition Language (SDL)?
 
-You can define the deployment services, datacenters, requirements, and pricing parameters, in a "manifest" file \(deploy.yaml\). The file is written in a declarative language called [Software Definition Language \(SDL\)](stack-definition-language.md). SDL is a human friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the YAML standard and similar to Docker Compose files.
+You can define the deployment services, datacenters, requirements, and pricing parameters, in a "manifest" file (deploy.yaml). The file is written in a declarative language called [Software Definition Language (SDL)](stack-definition-language.md). SDL is a human friendly data standard for declaring deployment attributes. The SDL file is a "form" to request resources from the Network. SDL is compatible with the YAML standard and similar to Docker Compose files.
 
 #### How do I configure Networking for my container?
 
-Networking - allowing connectivity to and between workloads - can be configured via the Stack Definition Language \([SDL](stack-definition-language.md)\) file for a deployment. By default, workloads in a deployment group are isolated - nothing else is allowed to connect to them. This restriction can be relaxed.
+Networking - allowing connectivity to and between workloads - can be configured via the Stack Definition Language ([SDL](stack-definition-language.md)) file for a deployment. By default, workloads in a deployment group are isolated - nothing else is allowed to connect to them. This restriction can be relaxed.
 
 **Do I need to close and re-create my deployment if I want to update the deployment?**
 
-No. You can update your deployment. However, only some fields in the Akash stack definition file are mutable. The **image**, **command**, **args**, **env** and **exposed ports** can be modified, but compute resources and placement criteria cannot.
+No. You can update your deployment. However, only some fields in the Akash stack definition file are mutable. The **image**, **command**, **args**, **env** and **exposed ports **can be modified, but compute resources and placement criteria cannot.
 
 ## Is there an Akash Testnet?
 
 Yes, but currently it does not have providers. We encourage developers to use Mainnet and provide tokens to do that. To request tokens, please follow the [Activation Funding](using-akash-tokens/funding.md#activation-funding) guide.
-

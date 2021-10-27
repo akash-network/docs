@@ -1,6 +1,6 @@
 # Unstoppable Web 2.0
 
-**Repository:** [https://github.com/coffeeroaster/unstoppable-web2.0/ ](https://github.com/coffeeroaster/unstoppable-web2.0/%20)
+**Repository:** [https://github.com/coffeeroaster/unstoppable-web2.0/ ](https://github.com/coffeeroaster/unstoppable-web2.0/)
 
 This repository serves as a general guide and proof of concept for **deploying a full-stack web application onto blockchain-based decentralized infrastructure**.
 
@@ -8,18 +8,18 @@ The repository is structured as a **monorepo** - with **infrastructure configura
 
 ### Decentralized infrastructure
 
-| DNS | Frontend | Backend | Redundant Database |
-| :--- | :--- | :--- | :--- |
-|  |  |  |  |
-| [Handshake](https://handshake.org/) | [Skynet](https://siasky.net/) | [Akash](https://akash.network/) | [Postgresql](http://postgresql.org/) |
+| DNS                                | Frontend                     | Backend                        | Redundant Database                  |
+| ---------------------------------- | ---------------------------- | ------------------------------ | ----------------------------------- |
+|                                    |                              |                                |                                     |
+| [Handshake](https://handshake.org) | [Skynet](https://siasky.net) | [Akash](https://akash.network) | [Postgresql](http://postgresql.org) |
 
 ### Web application
 
 The demo application deployed in this guide is a note app - with create, read, delete functionality. It serves as a minimal proof of concept for deploying a multi-tier web application to decentralized infrastructure.
 
-| Frontend | Backend | Database |
-| :--- | :--- | :--- |
-| [React](https://reactjs.org/) | [Python FastAPI](https://fastapi.tiangolo.com/) | [PostgreSQL](https://www.postgresql.org/) |
+| Frontend                     | Backend                                        | Database                                 |
+| ---------------------------- | ---------------------------------------------- | ---------------------------------------- |
+| [React](https://reactjs.org) | [Python FastAPI](https://fastapi.tiangolo.com) | [PostgreSQL](https://www.postgresql.org) |
 
 The application structure is bootstrapped using this **cookiecutter** template [https://github.com/Buuntu/fastapi-react](https://github.com/Buuntu/fastapi-react). The **docker** image is based on [tiangolo/uvicorn-gunicorn-fastapi-docker](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker).
 
@@ -29,9 +29,9 @@ The application code, technology choices, and configuration used in this reposit
 
 A deployed **live demo** was deployed using the steps in this guide. Link below:
 
-| Frontend URL | Backend URL |
-| :--- | :--- |
-| [**Skynet URL**](https://0000ac8v9uf92otn28omnuqfan0qd05f3gjrsfoonjpjl3m3ir7qds8.siasky.net/#) | [https://unstoppablestack.coffeeroaster.me/](https://unstoppablestack.coffeeroaster.me/) |
+| Frontend URL                                                                                   | Backend URL                                                                             |
+| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [**Skynet URL**](https://0000ac8v9uf92otn28omnuqfan0qd05f3gjrsfoonjpjl3m3ir7qds8.siasky.net/#) | [https://unstoppablestack.coffeeroaster.me/](https://unstoppablestack.coffeeroaster.me) |
 
 ## Guide
 
@@ -39,15 +39,14 @@ A deployed **live demo** was deployed using the steps in this guide. Link below:
 
 There are a few simple options for registering a **Handshake** domain name:
 
-1. Use a platform like **Namebase** [https://www.namebase.io/](https://www.namebase.io/) or a tool like **Bob Wallet** [https://github.com/kyokan/bob-wallet](https://github.com/kyokan/bob-wallet) to purchase a top-level Handshake domain.
+1.  Use a platform like **Namebase** [https://www.namebase.io/](https://www.namebase.io) or a tool like **Bob Wallet** [https://github.com/kyokan/bob-wallet](https://github.com/kyokan/bob-wallet) to purchase a top-level Handshake domain.
 
-   Domain purchases using Handshake are achieved through an [auction process](https://www.namebase.io/blog/tutorial-3-basics-of-handshake-auction-and-bidding). It will take **10 days** for your auction to finalize. and a winning bid, before you can make use of the domain.
-
-2. Use **gateway.io** [https://gateway.io/](https://gateway.io/) to purchase a domain under one of gateway's existing top-level Handshake domains, like **.c** or **.api**. Domains purchased in this way are **usable immediately**.
+    Domain purchases using Handshake are achieved through an [auction process](https://www.namebase.io/blog/tutorial-3-basics-of-handshake-auction-and-bidding). It will take **10 days** for your auction to finalize. and a winning bid, before you can make use of the domain.
+2. Use **gateway.io** [https://gateway.io/](https://gateway.io) to purchase a domain under one of gateway's existing top-level Handshake domains, like **.c** or **.api**. Domains purchased in this way are **usable immediately**.
 
 ### Step 2 - Push Docker image
 
-1. Make sure **Docker** [https://www.docker.com/](https://www.docker.com/) is installed.
+1. Make sure **Docker** [https://www.docker.com/](https://www.docker.com) is installed.
 2. **CD** to the directory where your `Dockerfile` is. For this repository, it is in `application/backend/Dockerfile`.
 3. **Build** and **tag** docker image `docker build -t/: .`
 4. **Login** to dockerhub `docker login --username=`. You will be prompted for a password.
@@ -59,17 +58,16 @@ If you haven't already, take the time to read through the **Akash deployment doc
 
 You can deploy to Akash using the **standard Akash CLI** directly [https://docs.akash.network/guides/install](https://docs.akash.network/guides/install) but for the purpose of this guide, I am using **tombeynon's Akash Deploy UI** [https://github.com/tombeynon/akash-deploy](https://github.com/tombeynon/akash-deploy) which is a great tool built on top of the standard CLI. Steps for deploying to Akash using this tool are below.
 
-1. Start the **Akash Deploy UI** tool by running the following:
+1.  Start the **Akash Deploy UI** tool by running the following:
 
-   ```text
-   docker run -v ~/.akash-ui:/root/akash -p 3000:3000 --rm -it tombeynon/akash-deploy
-   ```
-
+    ```
+    docker run -v ~/.akash-ui:/root/akash -p 3000:3000 --rm -it tombeynon/akash-deploy
+    ```
 2. Visit [http://localhost:3000](https://github.com/coffeeroaster/unstoppable-web2.0/blob/main) to access the tool
 3. Use the tool to **create a new wallet**. Make sure to record your mnemonic phrase so that you can restore the wallet if needed in the future.
-4. **Fund this new wallet with at least 5 AKT** \(5,000,000 UAKT\) by transferring 5 AKT or more to the displayed wallet address.
+4. **Fund this new wallet with at least 5 AKT** (5,000,000 UAKT) by transferring 5 AKT or more to the displayed wallet address.
 5. **Create a new certificate**. This certificate only needs to be created once and will be used for all future deployments.
-6. **Create a new deployment** using `akash/deploy-sample.yml` as a template. The Akash Stack Definition Language \(SDL\)
+6. **Create a new deployment** using `akash/deploy-sample.yml` as a template. The Akash Stack Definition Language (SDL)
 7. Once you have created your deployment, you will start to receive bids. You can view these in the tool.
 8. Chose a bid and **Create a lease**, then **Send manifest**.
 9. At this point, the tool will show you your **Web URIs** which you can use to access your application.
@@ -91,9 +89,9 @@ You now need to copy those param values and create your `skyns://` URL in the fo
 
 If using **Namebase**, you can now configure your Handshake domain to point to your Skynet hosted frontend by adding a TXT record under the _Blockchain DNS Records_ section on your domain manage page. The value of this record is the `skyns:///` URL that you just generated above.
 
-This **initial DNS configuration can take up to ~6 hours to be synced**. For all future code changes pushed to the _master_ branch, the _Deploy to Skynet_ Action will automatically update your Skynet Registry data and you should see the changes reflected very quickly.
+This **initial DNS configuration can take up to \~6 hours to be synced**. For all future code changes pushed to the _master_ branch, the _Deploy to Skynet_ Action will automatically update your Skynet Registry data and you should see the changes reflected very quickly.
 
-**Once the DNS change takes effect**, your site will be accessible at `https://.hns.siasky.net`. For example, the demo application for this guide is accessible at [https://unstoppable-stack.hns.siasky.net/](https://unstoppable-stack.hns.siasky.net/)
+**Once the DNS change takes effect**, your site will be accessible at `https://.hns.siasky.net`. For example, the demo application for this guide is accessible at [https://unstoppable-stack.hns.siasky.net/](https://unstoppable-stack.hns.siasky.net)
 
 ### Step 6 - Setup HTTPS URL for API
 
@@ -101,7 +99,7 @@ Although you can now make requests directly to your Akash URL over HTTP successf
 
 It is likely possible to enabled an HTTPS connection just using Akash deployment configuration but I was unable to find any documentation on this functionality.
 
-The approach used in this guide is to sign up a free [Cloudflare](https://cloudflare.com/) account and set up their **flexible** SSL/TLS encryption mode on a secondary \(non-Handshake\) domain in order to provide an HTTPS entrypoint that proxies requests to the Akash API server.
+The approach used in this guide is to sign up a free [Cloudflare](https://cloudflare.com) account and set up their **flexible** SSL/TLS encryption mode on a secondary (non-Handshake) domain in order to provide an HTTPS entrypoint that proxies requests to the Akash API server.
 
 Support for HTTPS with Akash is something that I expect to explore further.
 
@@ -109,7 +107,7 @@ Support for HTTPS with Akash is something that I expect to explore further.
 
 ### Backend Redundant Postgresql infrastructure
 
-The backend runs on [Akash](https://akash.network/). Take a moment to review the Akash [config](https://github.com/coffeeroaster/unstoppable-web2.0/blob/main/akash/deploy-sample.yml). The backend stores the database on Akash. Currently, Akash does not have a persistent storage solution. This solution provides the capability to perform regular backups and database restoration via [Skynet](https://siasky.net/). This reference architecture provides the following capability:
+The backend runs on [Akash](https://akash.network). Take a moment to review the Akash [config](https://github.com/coffeeroaster/unstoppable-web2.0/blob/main/akash/deploy-sample.yml). The backend stores the database on Akash. Currently, Akash does not have a persistent storage solution. This solution provides the capability to perform regular backups and database restoration via [Skynet](https://siasky.net). This reference architecture provides the following capability:
 
 * Provide a redundant Postgresql configuration. **pg-0** is replicated to **pg-1**
 * `pg-0` - the postgres master starts up. When it first starts up, it will download an encrypted db backup from Skynet.
@@ -129,11 +127,11 @@ The backend runs on [Akash](https://akash.network/). Take a moment to review the
 
 #### Architecture
 
-Based off the [Bitnami pgpool project](https://github.com/bitnami/bitnami-docker-pgpool/), this approach sets up three containers. **pg-0** as a postgresql master, **pg-1** as a postgresql secondary \( running as a hot standby\), and **pg-pool** will determine which postgres container to connect to.
+Based off the [Bitnami pgpool project](https://github.com/bitnami/bitnami-docker-pgpool/), this approach sets up three containers. **pg-0** as a postgresql master, **pg-1** as a postgresql secondary ( running as a hot standby), and **pg-pool** will determine which postgres container to connect to.
 
 #### Testing Postgresql cluster in a test environment
 
-```text
+```
 # run the backend
 $docker-compose up -d
 # run the front end
@@ -143,7 +141,7 @@ $ cd application/frontend/ && npm install && npm start
 
 #### Shut down **pg-0** container
 
-```text
+```
 $ docker-compose stop pg-0
 ## verify that things are working as planned
 # Connect to the browser at http://localhost:3000
@@ -156,7 +154,7 @@ $ docker-compose stop pg-0
 
 To retrieve a live encrypted backup of the data, you can run the following command against the API:
 
-```text
+```
 # For testing locally with docker-compose
 curl -v http://localhost/getsnapshot > dbout.zip
 # For testing against AKASH deployment
@@ -174,7 +172,7 @@ Make sure to update the **`$BACKUP_PASS`** env variable in docker-compose.yml, a
 
 Upload the backup to Skynet with [skynet-cli](https://github.com/vbstreetz/skynet-cli) and store URL as **BACKUP\_SKYNET\_URL**
 
-```text
+```
 $ npm install -g skynet-cli
 ## send it to Skynet!
 $ skynet-cli dbout.zip
@@ -183,20 +181,20 @@ $ skynet-cli dbout.zip
 
 #### Tell Unstoppable Stack to load it up next time.
 
-Update [docker-compose.yml](https://github.com/coffeeroaster/unstoppable-web2.0/blob/main/docker-compose.yml) \(for testing locally\) and [akash/deploy-sample.yml](https://github.com/coffeeroaster/unstoppable-web2.0/blob/main/akash/deploy-sample.yml) environment variables section and update **BACKUP\_SKYNET\_URL** with the value from the previous step.
+Update [docker-compose.yml](https://github.com/coffeeroaster/unstoppable-web2.0/blob/main/docker-compose.yml) (for testing locally) and [akash/deploy-sample.yml](https://github.com/coffeeroaster/unstoppable-web2.0/blob/main/akash/deploy-sample.yml) environment variables section and update **BACKUP\_SKYNET\_URL** with the value from the previous step.
 
 **Shutdown and destroy your entire deployment**
 
-```text
+```
 # For test environment
 $docker-compose down -v
 # For Akash deployment
 (Consult Akash [documentation](https://docs.akash.network/guides/deploy)
 ```
 
-**Start it back up \(development env\)**
+**Start it back up (development env)**
 
-```text
+```
 $docker-compose up -d
 # run the front end
 $ cd application/frontend/ && npm start
@@ -205,49 +203,47 @@ $ cd application/frontend/ && npm start
 
 You should now see the values from the database that you backed up.
 
-**Start it back up \(production env\)**
+**Start it back up (production env)**
 
-* Update [akash/deploy-sample.yml](https://github.com/coffeeroaster/unstoppable-web2.0/blob/main/akash/deploy-sample.yml) with updated ENV variables \(namely the **BACKUP\_SKYNET\_URL** \)
+* Update [akash/deploy-sample.yml](https://github.com/coffeeroaster/unstoppable-web2.0/blob/main/akash/deploy-sample.yml) with updated ENV variables (namely the **BACKUP\_SKYNET\_URL** )
 * Redeploy backend to Akash following `step 3` in this guide.
-* If using Handshake \(Step 5\) Use the same Front END URL.
+* If using Handshake (Step 5) Use the same Front END URL.
 
 ### Database replication next steps
 
-* Investigate [NuCypher](https://nucypher.com/) for better key management
+* Investigate [NuCypher](https://nucypher.com) for better key management
 * Look into the [SkyNet registry](https://siasky.net/docs/?javascript--node#setting-data-on-the-registry) for a simpler way to provide backup / restoration. Right now, each provision to Akash requires updating a new SkyLink URL. Using a Skylink Registry will allow the container to use a consistent `skyns URL` to retrieve the latest backup for ease of use.
 
 ### Run demo application locally
 
 To run the application locally, you can follow the steps below.
 
-1. Stand up FastAPI and PostgreSQL **backend**
+1.  Stand up FastAPI and PostgreSQL **backend**
 
-   ```text
-   cd backend
-   docker-compose up --build
-   ```
+    ```
+    cd backend
+    docker-compose up --build
+    ```
+2.  In a separate terminal, stand up the React **frontend**
 
-2. In a separate terminal, stand up the React **frontend**
+    ```
+    cd frontend
+    npm install
+    npm run start
+    ```
 
-   ```text
-   cd frontend
-   npm install
-   npm run start
-   ```
-
-You can now **visit** [**http://localhost:3000**](http://localhost:3000/) in the browser to **access the UI**. For testing the **API**, requests can be made to port 80, **Example**: `GET http://localhost:80/api/v1/notes`
+You can now **visit** [**http://localhost:3000**](http://localhost:3000) in the browser to **access the UI**. For testing the **API**, requests can be made to port 80, **Example**: `GET http://localhost:80/api/v1/notes`
 
 ### Sources and resources
 
 **Akash**
 
 * Akash deployment documentation [https://docs.akash.network/guides/deploy](https://docs.akash.network/guides/deploy)
-* Akash multi-tier SDL guide [https://github.com/ovrclk/docs/blob/master/guides/multi-tier-app.md](https://github.com/ovrclk/docs/blob/master/guides/multi-tier-app.md)
+* Akash multi-tier SDL guide [https://github.com/ovrclk/docs/blob/master/guides/multi-tier-app.md](../guides/multi-tier-app.md)
 * SDL examples [https://github.com/ovrclk/awesome-akash](https://github.com/ovrclk/awesome-akash)
 * In-depth walkthrough guide [https://medium.com/coinmonks/guide-to-deploying-applications-to-akash-decloud-b35dc97e5ca4](https://medium.com/coinmonks/guide-to-deploying-applications-to-akash-decloud-b35dc97e5ca4)
-* Akash Discord [http://discord.akash.network/](http://discord.akash.network/)
+* Akash Discord [http://discord.akash.network/](http://discord.akash.network)
 
 **Skynet**
 
 * Detailed Skynet deployment guide [https://blog.sia.tech/automated-deployments-on-skynet-28d2f32f6ca1](https://blog.sia.tech/automated-deployments-on-skynet-28d2f32f6ca1)
-

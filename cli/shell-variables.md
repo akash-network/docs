@@ -6,14 +6,14 @@ Note it is important to type the commands into a terminal where the variables ha
 
 ### Environment Variables
 
-| Name | Description |
-| :--- | :--- |
-| `AKASH_NET` | Akash network configuration base URL. |
-| `AKASH_VERSION` | Akash version to install for your network. |
-| `AKASH_CHAINID` | Chain ID of the Akash network for [IBC](../glossary/akashnet-relayer.md). |
-| `AKASH_NODE` | Akash RPC endpoint URL and port number. |
-| `AKASH_KEY_NAME` | Key name of your choosing.  This documentation uses a value of "alice". |
-| `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` \(default\), `file`, `test`. |
+| Name                    | Description                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------ |
+| `AKASH_NET`             | Akash network configuration base URL.                                          |
+| `AKASH_VERSION`         | Akash version to install for your network.                                     |
+| `AKASH_CHAINID`         | Chain ID of the Akash network for [IBC](broken-reference).                     |
+| `AKASH_NODE`            | Akash RPC endpoint URL and port number.                                        |
+| `AKASH_KEY_NAME`        | Key name of your choosing.  This documentation uses a value of "alice".        |
+| `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` (default), `file`, `test`. |
 
 ### Environment Variables and flags
 
@@ -27,32 +27,32 @@ for example flag `--keyring-backend` binds to `AKASH_KEYRING_BACKEND` environmen
 
 The precedence is defined in the table below. 0 means highest priority
 
-| Priority | Type |
-| :--- | :--- |
-| 0 | Environment variable |
-| 1 | Flag |
-| 2 | Config file |
-| 3 | Default value |
+| Priority | Type                 |
+| -------- | -------------------- |
+| 0        | Environment variable |
+| 1        | Flag                 |
+| 2        | Config file          |
+| 3        | Default value        |
 
 Example below shows value precedence for `--keyring-backend` parameter.
 
 * use default value set to `os`
 
-```text
+```
 akash tx deployment create ... 
 #keyring-backend=os is used
 ```
 
 * use value set by flag `--keyring-backend=file`
 
-```text
+```
 akash tx deployment create --keyring-backend=file ...
 #keyring-backend=file is used 
 ```
 
 * use value set by environment variable `AKASH_KEYRING_BACKEND=test`
 
-```text
+```
 AKASH_KEYRING_BACKEND=test 
 akash tx deployment create --keyring-backend=file ...
 #keyring-backend=test is used 
@@ -76,7 +76,7 @@ AKASH_KEYRING_BACKEND=os
 
 ## Network
 
-First, configure the base URL \(`$AKASH_NET`\) for the Akash Network; copy and paste the command below:
+First, configure the base URL (`$AKASH_NET`) for the Akash Network; copy and paste the command below:
 
 ```bash
 AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
@@ -115,4 +115,3 @@ Print a random API endpoint.
 ```bash
 curl -s "$AKASH_NET/api-nodes.txt" | shuf -n 1
 ```
-
