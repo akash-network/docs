@@ -1,254 +1,251 @@
-# Akash Deploy UI (Web App)
+# Akashlytics Deploy (Desktop App)
 
-## **Akash Deploy Overview**
+## **Akashlytics Deploy Overview**
 
-Akash Deploy delivers a web application allowing for easy deployment on the Akash Network.
+The Akashlytics Deploy Tool is a desktop application which simplifies the deployment process on the Akash Network.  Post deployment the tool provides a dashboard to view the status and details of workloads.  The dashboard also has the ability to perform administrative tasks including closing the deployment, updating the deployment, redeploying, and increasing the funding available to the deployment.
 
-Akash Deploy is an open-source project written in ReactJS. The repository for the application is listed below. However a demo of the app is available if you want to jump right in. For our walkthrough we will be using the demo site.
+This guide will cover the following topics:
 
-[**https://github.com/spacepotahto/akash-deploy-ui**](https://github.com/spacepotahto/akash-deploy-ui)
+* Akashlytics Deploy Installation and Initial Configuration
+  * Installation package download instructions
+  * Installation on MacOS
+  * Installation on Windows
+  * Configuration
+* Walkthrough of a example WordPress deployment using the tool
+* Teardown and cleanup of the example app
 
-## **Prepare the Environment**
+## **Akashlytics Deploy Installation**
 
-The Akash Deploy app integrates with the popular Keplr wallet. Keplr is a simple, open-source browser extension wallet for the Cosmos interchain ecosystem. It also happens to have full support for the Akash blockchain. We will cover the setup of the keplr wallet.
+### **Software Access and Download Instructions**
 
-### **Keplr Wallet Browser Extension Guidance**
+The Akashlytics Deploy software may be found at the project’s documentation here.
 
-The Keplr wallet extension for Chrome may be found at the following location:
+[**https://www.akashlytics.com/deploy**](https://www.akashlytics.com/deploy)
 
-{% embed url="https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en#:~:text=Keplr%20is%20a%20browser%20extension,for%20the%20Cosmos%20interchain%20ecosystem" %}
+![](../.gitbook/assets/AkashlyticsDownloadScreen.png)
 
-After you have installed the extension the Keplr wallet should appear in the browser extension tray. To open the wallet simply click on the keplr icon in the extension tray.
+### **MacOS Installation Details**
 
-![](../.gitbook/assets/KeplrWalletVerify.png)
+#### **STEP1 - Locate the Downloaded DMG File**
 
-### **Ensure Adequately Funded Keplr Wallet**
+* After completing the download find the MacOS DMG in the Downloads directory.
+* Locate the DMG and double-click.
 
-* To check your funds simply open the extension and select Akash from the dropdown at the top of the app
-* A minimum 5 AKT is needed to fund a deployment’s escrow account
-* For the next section we will assume you have the required funds in the wallet
+![](../.gitbook/assets/MacOSDMGScreen.png)
 
-![](https://lh5.googleusercontent.com/DdHCWmQFBuKA4sp8wPSHX\_hhm\_UHkWfoy0QcgY4QlGPgRyXOQHMpEUDCdiNyp6gjFu\_XDwt1NVpcEgY7TgurBbgDFUeUg-LyUUm1\_vr7MmkZsDPi0UDkVp--kxJyL8h5FB5dB12U=s0)
+#### **STEP2 - Move Akashlytics Deploy to the Applications Directory**
 
-## **Initial Akash Deploy Access and Configuration**
+* After installation - MacOS will prompt the user to move the Akashlytics Deploy shortcut to the Applications directory
+* Drag and drop the Akashlytics Deploy icon into the Applications folder from the prompt
 
-We will use a demo Akash Deploy site for this guide. To access the site go to the following URL
+![](../.gitbook/assets/MacOSDrapToApp.png)
 
-[**https://akashdeploy.hns.siasky.net/**](https://akashdeploy.hns.siasky.net)
+#### **STEP3 - Launching the Tool**
 
-If all worked as intended you should see something like this.
+* With the installation completed - open MacOS Finder and type “akashlytics deploy”
+* Double click the Akashlytics Deploy icon
 
-![](https://lh4.googleusercontent.com/f0cIAce8G3916Ln1139xhtXx-hXXgdvr2Gk8dz4o3Jf9DNMH1tzy1GX5mrgPjvXkPXAoPy1\_Nm8ItFKlr\_HKgIxVKdYAuj102L90ea4Iuo2XRcPNTLeYDYd8mdwknYC1NH\_Pzd4p=s0)
+![](../.gitbook/assets/MacOSLaunchApp.png)
 
-### Linking Keplr to The Deploy Tool
+#### **STEP4 - Override MacOS Unidentified Developer Warning**
 
-* When launching the tool for the first time Keplr will prompt you for permission to link the wallet to the tool.
-* Go ahead and approve the link
+When first launching Akashlytics Deploy your mac will have an “unidentified provider” warning preventing the application from launching.  As this software is created, maintained by the Akash community and can be trusted as such.  To get past this prompt do the following
 
-![](https://lh5.googleusercontent.com/lADn1khoxFgKxQJRj6mKVfBi9Zrj-HRDWbIGC09jh21m3\_xW47Ss3JF\_DmTM\_fCWndW4WGza0LL1A8JgJCesb3Imnjbo1fcMs4caVP3cmrg-WUdvul7SVhr8StfyPUqRunE0QJhM=s0)
+* Click the Question Mark (“?”) icon provided on the warning message.
 
-### **Create Certificate for Transactions**
+![](<../.gitbook/assets/MacOSISecurityWarn (1).png>)
 
-The Akash Deploy instance must have access to a certificate to sign transactions placed onto the blockchain.  Since this is our first time using the tool no such certificate exists.  Let’s create one now.
+* Press “Ok” to exit the warning message dialog box and follow the instructions that pop up.
 
-* Click the “CERTIFICATE” tab
-* In the dialog box that appears select the “CREATE” button
+![](https://lh4.googleusercontent.com/sYSIOWncayYLyaClOtxcFtIZM42RSR2sOurIiIVLWi5zWh\_6-ijwli9lJKIJ8vpgGGJnVAFgL1y5ygmQm-DbSEMKEyAcsofuKh6SWGHCYm1RIbWvlBAO\_wWG1bv6Hq2aKXneRS-1=s0)
 
-![](https://lh6.googleusercontent.com/M\_cUADVPBj8Xhg12WfC4l0m7tjyZQNYoLiC7EofhPgqX5uyTCcK3kIaSjgsEQJUV64G7h1hImKcvDSStWWFxBUclB70nAnw553DuOh-hak\_cgr0NsK9sbVMzHZWYZ1-n9Fi1Mj-r=s0)
+* Locate App within the MacOS Finder utility and Control-Click the icon
+* Select “Open”
 
-* On certificate creation, Keplr will prompt to accept gas fees for the transaction.
-* Accept the default gas fees by clicking the “APPROVE” button.
+![](https://lh4.googleusercontent.com/QnaI15EOGA\_OA1wOzaATAHR3NHiQVdjDTgwKCR943T4-xPMew1f7Pab\_kFvvp7doAmmsNROn2kmSVVBpM2LEbxBMkVKq2V1JjAgl2ufogQlw4no\_qcsdGop4DGcJFV8XxrB9pZVW=s0)
 
-Note - All transaction processes that interact on chain may take a few seconds to complete.
+* ** **You will be prompted with an “unidentified developer” dialog box
+* Click the “Open” button.
 
-![](https://lh4.googleusercontent.com/n6bkRDWpqL3qhaIQIZrtsZ2zh3d3VIC7ZGejfO8h\_BtzVcUhlCquK3axZj5P5YLNVWk7xPrCjgrLfYzaENu\_GQ5beZ422llr\_sA-ENgbYSuab9P6gfQcY1QYaaCA-SjSfPJGKLMv=s0)
+![](https://lh6.googleusercontent.com/6E6GPuZTqEr78CicCBJvU5hS8\_KgJa8LmYpfQyXZiToqeWvzhHwIwlRR8f4Zq5E\_y9hKKPub8ild6XSCSau\_HzPmwLacoW76xxTP2QT3ixrGOpTiWU\_J5Rmr677Aem7thWmUhzWH=s0)
 
-* Once the process completes you should see a valid certificate as in the screenshot below
+### **Windows Installation**
 
-![](https://lh4.googleusercontent.com/4tBhrsGyIHG0RFPFdQI\_XudHmV0hVQW\_WTwHY8oXwYAr4WuJAkhppCYXsCWjp1Va\_dy4DcOJZRXKNfjfQ7LA5djX8\_6-VfH-\_5AXnDCWF1Dka8ZaIsOXdRiz3IVe\_GtIWLXx-WMK=s0)
+Note: The installation steps captured in the steps and screenshots that follow were conducted on a Windows Server instance but the application install should be nearly identical on other Windows Platforms (I.e. Windows 10).
 
-## **Deployment of Sample Workload**
+#### **STEP1 - Launch the Installer**
 
-When first launched, the Akash Deploy application displays an editing pane prepopulated with Stack Definition Language (SDL) for the Lunie Light application.  The sample application (Lunie Light) is a non-custodial, web wallet for Akash.  This is one of many pre-built deployments to choose from.  In subsequent sections, we will take a quick look at additional applications/SDLs within the Akash Deploy Gallery.
+* Find the installer on your computer and double click
 
-### **Steps in Application Deployment**
+![](https://lh6.googleusercontent.com/N\_qb4pKmkRKHGq\_dDshrznrJXQx1TUXyPjpFfMjgFbtoFh2jX-9CLauLp3EKPyLek2uilQdyiS\_87Vs1jGVr4PdFDhm8-DDKJTyQGSe-rJqGUDpeR7E3Bo6NB\_yV-5BdFUXjAMCI=s0)
 
-#### **SDL Edit/Deploy**
+**STEP2 - Windows Defender Warning**
 
-* Make sure you are on the “DEPLOY” page from the top toolbar and as depicted below
+Depending on the Operating System version and installed/enabled security tools - Windows Defender may pop up with an “unrecognized app” message.  As this software is created, maintained by the Akash community and can be trusted as such.  We can get past this with the following steps.
 
-![](https://lh4.googleusercontent.com/w4QZ0PB7Wi\_ee-eoO1qe8Sy95Kd-LKFGLwqIQ5mOe5wYYYWDmCkE99ji2kYp4SCX0UNtXTDrT7G4boBW8Jfxc-hFUSnsNpoZupRYl9WdVyNggHZyBsbTXdvpENhdEgyKIbBI5CFa=s0)
+* Expand the available options on the warning prompt and select “Run anyway”
 
-* Akash Deploy has the default Lunie Light SDL in the code editor.
-* For our example today we can simply click the “DEPLOY” button.
+![](https://lh3.googleusercontent.com/GzzI3N0uOSMqDUDR4oDEm1EbiH75wIJ\_ctzaSwtQzEjlcn5Nq8q8QfkFpN5XCOlyc1l40Wibv5nlS8T3cDQ6VQtJs1xPqeRWfFwU6vuSjrlMq6j\_qrkUojW\_gfjTZnxxO0jZoztk=s0)
 
-![](https://lh4.googleusercontent.com/zK7oHSZLutPjfHYGJnfmzfRLqQbzKYe5rmYJO9COKQT4ax\_3oCZy72uu1\_wqRRo2qMHruVSjHWGSAOojm6kTXD08A7WEx\_AP-Gbl8nvqFm1GIvVA1lX3dtU8TwpwbJdc4Jg-wQee=s0)
+* Feel free to use the default install options and follow the prompts.
 
-* Once the process starts a Keplr prompt will popup requesting acceptance of the deployment’s transaction gas fees.
-* Accept the default gas fee selection to allow deployment to proceed.
-* Once you have accepted the fees notice the status change to “waiting for bids” as the provider bids are collected.
+![](https://lh4.googleusercontent.com/4l1By-gVjfWNo4x2tX7TFwKoagY67qke4O2Y6r2\_hH2dNtsxpph416ldfShLs3k5aWbfLl4Ykq-VQlUIrOAS\_S0OlPH7pGcI43zERVY8ow-d-kH5pIKKP8KbFhMlNfa1a9XLkrxC=s0)
 
-![](https://lh4.googleusercontent.com/-DsAha7\_Gry6z4aFEQAaOQhWTEla9BJNrwxqMQ1qPURmArhvqoi-vUwDsoZ2-JQ24h9O2MDcQswl1mG-54BBGcHC6Oqyj-2zYLz42pE75hxMQK\_RgwWwG91j1CLZSJxKouyZUFTi=s0)
+* On the last step of the install in the “Completing Akashlytics Deploy Setup” section - check the “Run Akashlytics Deploy” option (likely selected by default) and select “Finish”.
 
-#### **Provider Selection**
+![](https://lh3.googleusercontent.com/6Cyequp89\_MuGfOSrZtep\_nNHYpuOlpab-2Ojxbmh5alKiYsY7fdZvo0irWCJj-2FfHJ4MHthGsF3LGVZxDAXO-3SWipLbdE9LsbHk5zerqWNgK8\_bxEnkPoeAsII-Vb9WiuIHg4=s0)
 
-* Select a provider from the list of submitted bids
-* Press “SUBMIT” once the preferred provider has been selected
+### Initial Configuration
 
-![](https://lh3.googleusercontent.com/Zrz73djx5-xqvt1Qj5rLH8NUJlKOCNu0Vo\_M1elSOkdKYDzharubO8lQm\_LRTdHy5wYIF8xrK9Oy9C5dT8SA8bgBiMxtCbcY4ELIxcrWoz5jCK1tpWKOQRRfaUIOruj19jQj2LUH=s0)
+In this section we will configure the following:
 
-* A transaction gas fee prompt will pop up. Feel free to accept the defaults.
-* Once a bid is accepted the status message will run through the following steps “Confirming the lease” > “Querying the provider” > “Sending the manifest” > “Querying lease status”.
+* Import an Existing Wallet
+* Create a Certificate to Interact With the Blockchain
 
-![](https://lh3.googleusercontent.com/zkMddw9w4iiyau77tUR\_bp3ARPVsGAFkhIyWUvnbQH4DQ1ZBiGbc5lYAKF9Zg9yt1hnhrY6-M7uEqA2R5H9Uuzt4PQflvGWdPtdLgO1VfmNHgRV2RjOKzNIlWNTwtCXxI1CfaOse=s0)
+#### **STEP1 - Import Existing Wallet**
 
-* Once the bid has been accepted and the deployment setup an information window will pop up for the new deployment.  A couple things to note:
-  * Number of workload replicas
-  * Available replicas
-  * In the case of web services workloads the exposed URI&#x20;
+* The first thing you will need is a wallet. With a mnemonic phrase you have access to.
+* In the tool you can choose a name for this wallet. This will not affect the functionality of the tool but is just an easy way to track what wallet is currently in use.
+* Next choose a password that you will remember for the wallet.
 
-![](https://lh4.googleusercontent.com/X\_OZsXq9d7IRHBzw0lSWbqjvdW5z6I3a4z4WFc1AqQp\_fIvZwmRBJulZ5QO3rTFeCgNPbNKs37ORDaD5GEzl\_s5yf2aIhHk2nJHkINOyQspDnBLT4BqTNWNyIJjAV4Ohj5CrFQ1M=s0)
+![](https://lh4.googleusercontent.com/dCDPg7h0GCboGGryK5QgzsTk8ngnsoRimfS6MJ9cx7vPWx1G40FSeGu2rAj8w-YiLsgSyD9OTDlNZTg1ZEJjZLcNMjAbP2vajnDAE\_RETz6XLF1JDnGW64DQg2ujaVwNXIrEkDVU=s0)
 
-#### Testing Our Deployment
+Note: The funds available in the pre-existing wallet instance should now be available to Akashlytics and displayed in the upper left corner of the application (52.943 AKT in the provided example)
 
-* Copy the URI from the popup window
-  * Note - if the deployment information detail panel was closed - the URI may be found by navigating to “MY DEPLOYMENTS” from the toolbar and then clicking the info “I” icon next to the relevant deployment.
+Should a need arise to delete the wallet click the ellipsis (triple dot icon) to the right of the wallet instance on this screen and select the delete option
 
-![](https://lh4.googleusercontent.com/8QKbtcSpAdWu0OMm-2e5ky4YCk4k7DVsidCOID5Izys8Kx1M2D3h6rt3xf2vFoTM92DYaEr2kyDPuVWpNbte3gEnC-s67BBcKxe5dF8JZ4hE-QHFBhPbEFzU0JxuXCubdQlbeFlG=s0)
+#### **STEP2 - Certificate Creation**
 
-* Paste the URI into a browser window and hit enter
-  * Note - if a 502 Bad Gateway HTTP response is returned - continue refreshing the page for a few seconds as the workload may not yet be fully deployed on the provider.
-* Once the page loads you should see something like this
+When first launching the tool there will not be a valid certificate.  To fix this select the ellipsis to the right of the Certificate status and click “Create Certificate”
 
-![](https://lh4.googleusercontent.com/MXlZz\_gRmriE3O1wsZpFnTAe5iCAtcA2hLKVcdFAIDahf6Erg3bQXSdSbs6cYpj3mN3T7lcgVk5VkMUBzHRuU3yYEj7TSx0eJQucNObC1nZMF7VFNbLnPnYjPHJbfjnYFdhDCDv5=s0)
+![](https://lh5.googleusercontent.com/D1Pq065Fv5vZesW6t2gj0UQzWVNy5k-9HM3ehq9oQQNfb7O0JJHgyYHvXECUvg2vUjg82K7XBNAZx\_MgevWi1aRJFgPNLMiV1TPxr9vyoXqpdKb5GPUxRjMmuUT6iKzO1Wb0lVlA=s0)
+
+## **Create a Deployment**
+
+In this section we will use the tool to deploy our own example WordPress page on the Akash Network. You can follow the same process for any other workload so long as it is containerized and you have an appropriate SDL.
+
+#### **STEP1 -  Create the Deployment**
+
+* From the Deployments pane click the “CREATE DEPLOYMENTS” button.
+
+![](https://lh3.googleusercontent.com/cITOXBIBZWEZe7vFJfQYpzHEO6ZS8K4FPCI5mpRDAYFzdZ9FIV7dJtvUY8THbd7ll3UqpKjEd6ZdWb0EdUvUAdNXzea40JpXe9CoBR22NpfOge2AwtTuwmnJyVpdiHK2U2XMVNf8=s0)
+
+#### **STEP2 -  Checking Deployment Pre-Reqs**
+
+* Before getting started make sure you have met the following requirements:
+  * 5AKT are available in wallet/escrow accountIf everything is in order click the “CONTINUE” button
+  * Valid certificate (on chain and matching cert locally)
+* If everything is in order click the “CONTINUE” button
+
+![](https://lh3.googleusercontent.com/19ivZkQtByvta\_6a8lV8nuPnxtn8PDcv6a65pSLansGB1JOsdVCcNWPk8pBLcRAzuZ\_Qdc3r9WaahdPj9vVCnXea5dBS-p3GekVPBAbo0uodNUb5tsEBSopdv4XjPhKXVPHV0Jkv=s0)
+
+#### **STEP3 -  Choose Template**
+
+* The tool provides several sample templates including Games (Supermario, Minecraft, etc), and some more general (Wordpress, Hello-World, etc)
+* To deploy a custom application select the Empty template option
+* Press “CONTINUE” with the Wordpress template selected
+
+![](https://lh6.googleusercontent.com/70YVBS9Q\_lB5j7mHDnwcC8iNFJT6ueqarfPG9\_BnDcvmcBwgHDG24RyiTJDvbbvq-HngUgMnC05-Cex6QeiM-VbBxBIs78259J\_NUgexDIrkOfNBsfQ203WqwbGR1FC0b\_9MBx99=s0)
+
+#### **STEP4 -  Create Deployment**
+
+* If you select a empty template now would be the time to paste in your SDL
+* For this example we will be making a small change to the example SDL file. Change the domain name in the SDL’s “expose” section.
+  * In a production system we would want a real domain name. Since this is an example we can use something fake.
+
+![](https://lh5.googleusercontent.com/snngoD7lecf77Y5PZBjqfrnhCTCxgm555meZRGl4oPQX8yZXsv0im7JEbNYGGF46wRiFmLSokFIoSVkP4rGGBwKSnx6vaIzejiGKz\_-XR8VFoUGhr-TZ1-lZakr68744b-iS5IBt=s0)
+
+* Once you have changed the domain name, enter a name for your deployment in the bottom pane and press “CREATE DEPLOYMENT”
+
+![](https://lh3.googleusercontent.com/kuUkw36MAiq64xBgwLYUqF2Tp22UJG4LdymryZCQog2QxDrcxkfxQp-WFrgXgo6GJL\_S\_oPi3q\_EYZMr9jjdanjY9N0TuxwqQUk4iOqPHkFZKZuBRXQ47smegsyofNBgadRZCmvp=s0)
+
+#### **STEP5 -  Create Deployment Transaction**
+
+* Once the process has kicked off a screen will appear asking for a selection of Gas Fees and to add the request for bids on chain. Feel free to use the defaults and select the “APPROVE” button.
+
+Note: The process to write the transaction to the chain may take a couple of minutes to complete. This is true of every step that results in a on chain transaction.
+
+![](https://lh3.googleusercontent.com/Os4DkJBJFNg4jQRzoLit0or0fZJJfqn0y70I0CQJd2v\_EK4IYQUeWaRG9RyPr4-HSsum0zs-sg5wK6BB6Hgmb543zTmvsgr4XEgOUp90KEEbVadX4x4fH81ZMJ4XXk\_GXnBiwK62=s0)
+
+#### **STEP6 -  Review/Accept Bids**
+
+* After a minute or so a list of bids will display. Select the most affordable lease for this example deployment and then press “ACCEPT BID”
+
+![](https://lh6.googleusercontent.com/n77KZpFFF\_-MKeGnk1MU0HSswyNc7mEvFWjOATz8QmFHRCxiovMbJf3FUlALQzARjZMUuMf1xmYhuQIQo5vM3FSpKmVfdZfSc9eKnTADLhibUeFCw0e64G8YpAELlb6mntyCm\_Ho=s0)
+
+#### **STEP7 -  Create Lease Transaction**
+
+* Just as before leave the default selection for Gas Fees and click “APPROVE”
+
+![](https://lh5.googleusercontent.com/j4X1OOUx6jI-t5jOoO-bRCGXOyLHbVcLFCaZkbc3yDc1jUUoQl1ZcKvONW3YpItamT8HzvcRo\_iQe4xBHFptTvu2MeqF8WSAk3xlVzsSMnBqBWOiIZNiU1K610MAZlNEMaz35Dms=s0)
+
+#### **STEP8 -  Post Deployment**
+
+Once the process is complete you can click the Deployments tab and select the new deployment. This is where you can interact with and retrieve information about the deployment.
+
+![](https://lh3.googleusercontent.com/hYHbU35JXkBV0GsZCg0VrIeBcIE0MJyxoPTjHUCWg-o3qhnUcHRS39p1U4kCqlrnHGMURw1U4okbXLE2Ei4lgJhI2JYHkgpa3fM0lsxXLtHkC9ZavW8QRHJKHmwBPJUooly9f1vP=s0)
+
+* To easily navigate to the page you spun up click the icon to the right of the Akash URL
+
+Note: The Wordpress site may take a couple of minutes to load depending on the status of the deployment
+
+![](https://lh4.googleusercontent.com/ShhvDqBaKAEap3KywKlF8eggHb2b2wL7VVX3STX2euLxFUGvcDEdMitMexutzZIgTGrK9R78JgPrSOj3uBBFLQdUXO\_eVghvFV3e\_poO46OgZyVFG7IDY00\_OScdtwsjwWmz0-R3=s0)
 
 ## **Manage Deployments**
 
-With Akash Deploy you can not only deploy but also manage, monitor, and close active workloads.
+There are a couple important operations you can do with the deploy tool.
 
-Monitoring and managing deployments from Akash Deploy is often easier than performing the same operations within the Akash CLI, particularly across many deployments.
+* Add funds to existing deployment’s Escrow Account
+* Close an active deployment
+* Update an active deployment
 
-### **View Active and Inactive Deployment Details**
+### **Deployment Dashboard Overview**
 
-Akash Deploy allows you to view active and inactive deployments.
+* To get an overview of what you have deployed click the Dashboard button on the left hand side of the screen
 
-* Navigate to “MY DEPLOYMENTS” from the toolbar.
+![](https://lh5.googleusercontent.com/1Q3Zdx-NO-kvbzxgNCHfLSsFXF2ES9R1B3BlJXN-VQskuGDn4tp0GkwCDjfmpd\_ay724m\_vNoveIJDFJ\_pGmVPz3ltX7\_qSmxaMIMxghkYBsrhvvfGZGGOJxLdMJUa8z8BJVkN1R=s0)
 
-![](https://lh6.googleusercontent.com/dhsDeco-LVIudmwhpXK5UL\_CM8rSdIDngxtknEzcgRjJD5vRclt0\_a\_kXuSE8j2DSmgbn\_Mjh-zGD6SwTEOO2Py9lvb7wgEEXeF6aKTMstUiWWVPKZEEuLyTJwmF6OLrAUuTfLEl=s0)
+* From the deployment window you can see the resources that are dedicated to each deployment.
 
-* Toggle the “Show Inactive” button
-* Active deployments are represented by a red filled circle containing a cloud icon.
-* Inactive deployments are represented by a grey filled circle containing a cloud icon slashed.
+![](https://lh5.googleusercontent.com/PGtLDklCS5-BBmLDNAXcosnzUOnmAM4qyQwRahXoxOAyVSk0QnQe22G9Uagk1W6bsLOthavS0JzXTDJFzULvVWfuxzRJnrZ\_WJlJpZV91a36uac6FExJBJqbDx5tSloqiXpoQ8\_4=s0)
 
-![](https://lh6.googleusercontent.com/oACJ7NX58-9vs6DuR4-uVBltpQMpOLzqw7IHRewPv6bJDudWDHCgrDjqmOFytFH8rhhCVHfnMJORaRnmwXr-9uoIM0tuEWeunN9qYcz\_Ktfd76NcQCdVAt9YZNnmuuxOoAOrF0FZ=s0)
+### **Add Funding to Active Deployment**
 
-* To see additional information on an active deployment’s lease, select the information (“i”) icon.
+If your escrow for a deployment is running low you will need to add some funds.
 
-![](https://lh5.googleusercontent.com/ZmkkOcNV0b0dmjQSpPf6Aev7SujE2BE\_lHI5EHxN4OMZvQASNrLcTfg6IHatHyt2RVB7Kr0vCwcQPpMog4xjH7oxw1UOCmjNQ3eyoSuabGJjChuVvRnrBWBl3kYDpChHwSbF8x\_O=s0)
+* Navigate to Deployments in the left hand navigation pane and select the deployment in need of updating
 
-Note that the information revealed is identical to the information first displayed when the deployment process completed and includes details such as replica count, available replicas, and URI if applicable.
+![](https://lh4.googleusercontent.com/oRIKwYdsMbqdVSepMvJGh7UISvqy-\_YW4WoK9ohvakEUCkLk7JJvaHkrPpFcnTWjI4JnjRp6Ee5OTgIoPGythqID9kuuGfkKc\_ka3qRySaqQqz6pMXBBx5qGMnBQ8RbZdh15anhh=s0)
 
-![](https://lh5.googleusercontent.com/jr1tuQQKD0tLC6ULg8Bqz8FUGAX\_1Gv9Z-DnufSSXlZDYmNtyxemcWnykFp2O6exgYUKAWJF\_7HFvt6p0hdDh4vYN2rdTdrAStLDMw7oo4U4f3pR8H-5qWmTorxdS8XkZUQxOE\_q=s0)
+* At the top of the screen click “ADD FUNDS”
 
-* For a more detailed block of information regarding the deployment click on the Deployment identifier (DSEQ) or anywhere in the white space to the right of the DSEQ.
+![](https://lh4.googleusercontent.com/5kGhRVBTG642h1mWjSCOOiR3XRseRBcvF9XCrbJy-aYQTbMfwCWhOJ-A1FwNNQOcZzLGaRsK6baKPxHTMDyoyUHeZSrqJrexYVNUqBUrFJgag\_E64nI7oBFDtj-Ulk3zdHmiiHow=s0)
 
-![](https://lh5.googleusercontent.com/jgKHsBMTxYbuQV-kAi4Y-R6pDXAZK5fNMmMeF4YsrKZRIRcdfSF-aFvxioIhtTpK\_HMOuCF-APvULyyekCmX0k9Gz8DCPLqco5GwzNO10YU9ioavmuUY\_d6l1dag8OzZEvcXWUzS=s0)
+* A dialog box will pop up allowing you to add tokens to the deployment’s escrow account
+* Select the DEPOSIT button once you have put in the correct amount
 
-* The revealed information is displayed in a rather lengthy JSON string and includes:
-  * Hardware utilized by the deployment (CPU/mem/disk)
-  * Escrow Account information including current balance
-  * Deployment details (DSEQ, OwnerID, etc)
+![](https://lh4.googleusercontent.com/kUS0dIDN-eLJP2-C4ohVI3ql96Atm5FNlRoHvjd7lRIK0aTV8DiVSPq5LPvnGTiYSgLd0W0xgBUgmq7JhHDIN-sMHcEqOaVPfJ\_0But4RPKrYmdwUIxetN-4RJahKvOkc6KjjqBN=s0)
 
-![](https://lh5.googleusercontent.com/6ziS3SZ8FUFN7cg49xGgVSmzCUg7qT6t6PMF\_Y3UZiqME8Ro3TpYiIdTqURxsq5Dp-w6YEyE4fTDIYj7pSkpe55zaCTDkfQ\_ZxwuCD15t\_PrKmwgd6-sf4q7-iFLCG-2nKz\_Umw0=s0)
+* As always you must confirm the gas fees and transaction to the blockchain by clicking “APPROVE”
 
-### **Close a Deployment**
+![](https://lh5.googleusercontent.com/HK2Hw8gsWuLJ4DiH\_FvbtahEKCoSa1cL6AxdlVEEdl2XbvS8TskwkJwY2i7Rr2wY8X8Ez0LmpP249ZHdcpR5RNF04LPgAEHTMyOgawy5x6e4OSGGwMUekGTzJ2M431MUD6k0IT7j=s0)
 
-Akash Deploy makes it simple to close a deployment.  Follow the steps provided below to terminate the instance.
+* Notice the balance change in the escrow account for the deployment
 
-* Navigate to “MY DEPLOYMENTS”
+![](https://lh6.googleusercontent.com/3M34J2JWHXlwVZyPUBvYwVb7IhkV6gsNSt9NG3v-DV7\_qqaekqxn5Fp4fURFkSMUpGAZ1JkwmB23Hk-kISaUU5L\_HeDhafIckQwqQx\_SFPn9\_Z8dvOH-awr2K8vldW-p5Po0krg5=s0)
 
-![](https://lh6.googleusercontent.com/dhsDeco-LVIudmwhpXK5UL\_CM8rSdIDngxtknEzcgRjJD5vRclt0\_a\_kXuSE8j2DSmgbn\_Mjh-zGD6SwTEOO2Py9lvb7wgEEXeF6aKTMstUiWWVPKZEEuLyTJwmF6OLrAUuTfLEl=s0)
+### **Close Active Deployment**
 
-* Close the deployment of interest by selecting the trash can icon on the deployment’s row.
+Closing a deployment is very simple.
 
-![](https://lh6.googleusercontent.com/iAlfgfqTX4Qgee3Ajh5VQjlSf\_-gWVg7WKGPLgF8X3W61unmVPurOawQGhE9HEsTVKRidYR1DBtS\_vobTjZgY0XIEyf7zMmbV5O3w7UJDLJLW9nWLR8jDwOdEeqZ-y4X1VwPvTbv=s0)
+* Visit the Deployments pane and click the deployment you want to close
+* Select the ellipsis to the right of the “ADD FUNDS” button
+* Select the close button that appears.
 
-* Approve related transaction gas fees within Keplr
+![](https://lh3.googleusercontent.com/afqBVnGVgjXHeuxyvedV\_lAldA60xS-Jl7JpfK9STEQ89gKTRm5NCpalxg-\_xjHI72m5BMRgbD-cWUeucieOo156obgJLLgffnXVEQmL2rYBsGYyNa-I3CkKR2SIL6gZpKk5UNY1=s0)
 
-![](https://lh6.googleusercontent.com/Dz4RecTOpzj7eLTtaNJ\_GZ6bGvdlUeNKqJVRsj5PMtNO1j8YVsttLTbJcCbEV2dzF2Y88mSoPSr2cXXB4HRGcwPICK7pSioNKPa5gSSJ0-qNOnMVg2hbUGd5u5gdlh0mh92AsCxf=s0)
+* Confirm the transaction to the blockchain
 
-* Deployment now displays as closed and remaining funds in the deployment’s escrow have been returned to the Keplr wallet
+![](https://lh6.googleusercontent.com/E\_pygnqUpwOWDvlJl-aBr0W\_jzZF\_SXAkFhibfoxcjJFO-ZOoKEgANc2BLYWZmhTLgIIprVNgyQn8Y99dEIU5C3b-UIVXTAO\_tgerEL0W\_Rsnd1T55wc3ROdfpqUabydTl7Vk3yN=s0)
 
-![](https://lh6.googleusercontent.com/yc4NYsk0N0Y4f0UKchf9wSnAN8MivK8t0tC\_IQ40VLGAxRvhd415tOqc6I\_6ivTKCHy7nMb6IDYk7J64X0D3WN5rE5MABWbEAo7bpXQKgbPoLJcuMVuFkbHhvOJejSH13potomJe=s0)
-
-## **SDL Gallery**
-
-Akash Deploy has a rich selection of pre-defined SDL definition files for all kinds of popular software packages.  Within this section we will access the SDL Gallery, review the gallery categories, and use a specific SDL definition for additional deployment experience.
-
-### **SDL Gallery Access and Overview**
-
-* Navigate to the “SDL GALLERY” tab from the toolbar
-
-![](https://lh3.googleusercontent.com/OEHPtu7NxL0rJT5H5VpqS1k8bz1wHpJVXkD40iI2ZJXGqn-ibPYQ9kCTa9tbRH5AJWjIkitgeiZMQA497JR4SAWW09C\_d\_0FU\_RpJH0zwCqk1fZ6IK0a1iP5NJSDH-X7UD6A2YQG=s0)
-
-#### **Exploring SDL Categories and Available Software Deployments**
-
-Scroll through the SDL Gallery’s available categories and related definition files to reveal a wealth of available applications.&#x20;
-
-* SDL categories include :
-  * Official
-  * DeFi
-  * Blogging
-  * Games
-  * Databases and Administration
-  * Hosting
-  * Continuous Integration
-  * Project Management
-  * Tools
-  * Wallet
-  * Build with Cosmos SDK
-  * Media
-  * Data Visualization
-  * Chat
-
-### **Example SDL exploration within the gallery**
-
-* Locate the “supermario” SDL file via the search bar at the top of the Gallery page and then click on the “SOURCE” link as depicted below.  This will open the git repository that the file lives in.
-
-![](https://lh6.googleusercontent.com/gZjc6uH7-BuASiUvjZxCocM5L8s0edondSCvp0Shj35EoTfrdkxZne2w7B4hp161hsMOkd5\_37ou2FaxeMV8aC4ZUcz-OCA4\_z\_joN2DgqSfDD1TcO4T4zqgV2k4RtjxT1vJ0FsM=s0)
-
-### **Utilize a SDL Gallery Definition in Deployment**
-
-In the prior section the SuperMario SDL was selected.  We will now use the SDL to deploy the SuperMario app on the network.
-
-#### Deployment from the SDL Gallery
-
-* Return to the Akash Deploy application and select the SuperMario SDL’s “DEPLOY!” option.
-
-![](https://lh3.googleusercontent.com/FG7p1xV\_RxRAxL0FgUdbQMBOKtHvVGxDFzf1M\_mXjluYiUGYw4V48SVW7z6uakx-j-oi\_7NwhR0-FZ9EFw7koDQUdYHQjV6vVxEL98zSZX4Z0DD-jR7eAnNhucgDM3I40SJ4s8tR=s0)
-
-* This will redirect us to the “DEPLOY” pane with the SuperMario SDL now loaded within the code editor
-* Click “DEPLOY”.
-
-![](https://lh5.googleusercontent.com/IenswOH\_-DTzgG3mSQ6PVFR59wiwxliIQd\_roWzwJX\_H2enp8dqGU5Fam-cTrHzvU3STwp4e4Zal3F\_Hqy72LAEZBgzanLnuJ6Dr1cLh1g1PmARTFLIc1SxrmXWvRX-FuGdMWtps=s0)
-
-* Approve the gas fees and transaction within Keplr.
-
-![](https://lh4.googleusercontent.com/19Rx\_\_kafjjus\_FOtk99N9xvn\_mdCnkTG4sn\_dYY\_EjfAdxhqNy5V94BZJYNevRwYUK\_rCjctvQ4N0ADWwi2DdXfHx8BtTqob4KE2qf-KGE2nbuii-s1ZUy1GltcV1dlRfWHMbO0=s0)
-
-* Select a provider and press “SUBMIT”
-
-![](https://lh3.googleusercontent.com/d3dqKJDy1zU\_FwDu3mVjTMORSuIWn43dac1hCjn0RT2yZ2OZXNxPoR0rMpsoNwEf4MkN0TtzxyOA48Y9UKLYgfxuOMi5mFsnK4W8X6qpNYGIGJnyMTC3oxyDF\_nYEf5vtSPp5owc=s0)
-
-* Approve the gas fees and transaction within Keplr again.
-
-![](https://lh3.googleusercontent.com/xBEoEn84T24nisGU2NuPfOQcJRT-uYdrvrP756XAAiQm3wNxMrGNc83Z28JyjqM5sr2\_dj3Q5aM1KSExWwrPUE12nEEsOqISXjPNyEh8VLojyc--Ccx0KX66qOiaT3UStm2WWXBV=s0)
-
-* Copy the URI from the deployed workload informational screen.
-* Allow a couple of minutes for the deployment to complete build and then visit the URI in a web browser.
-
-![](https://lh5.googleusercontent.com/3l2QTInt0JnuEArPwquyu7bQEVRPvdOfAflCHcYagFgkcYUN5uTLaSM5B8MeZcJ3Ei0iQ1fp2r6L24aT09U0Bt0SY\_cMucNFJokdEAM56IJfAn7XKYMkDPUpkSSL0q9MAHPSKSiu=s0)
-
-* You should see something similar to the following
-
-![](https://lh6.googleusercontent.com/lbdFSdoGaVSndayoV092iGRYTs9jNsW1U9SB1YkjfA8HDKf7rySsBvg8Hjqg\_WzkrULiL45bTEczxUDdu0k6PdA415MtPizE2OLjLy1jZ9lNqoKsGF8RbaXG186WKsCgzAsPqkzm=s0)
+The deployment should now be gone from the list.

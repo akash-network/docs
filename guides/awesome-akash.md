@@ -1,12 +1,12 @@
-# Awesome Apps on Akash
+# Apps on Akash
+
+### Awesome Akash is a curated list of awesome resources people can use to familiarize themselves with [Akash](https://akash.network) and includes examples of several applications they can deploy on the platform. Please submit a pull request if you know any resources that might be helpful to other developers.
 
 **Repository**: [ovrclk/awesome-akash](https://github.com/ovrclk/awesome-akash)
 
-Awesome Akash is a curated list of awesome resources people can use to familiarize themselves with [Akash](https://akash.network/) and includes examples of several applications they can deploy on the platform. Please submit a pull request if you know any resources that might be helpful to other developers.
+#### Instructions on how to deploy the SDL files in this repository can be found [here](https://docs.akash.network/guides/deploy).
 
-Instructions on how to deploy the SDL files in this repository can be found [here](https://docs.akash.network/guides/deploy).
-
-Join our [discord](https://discord.akash.network/) if you have questions or concerns. Our team is always eager to hear from you. Also, follow [@akashnet\_](https://twitter.com/akashnet_) to stay in the loop with updates and announcements.
+Join our [discord](https://discord.akash.network) if you have questions or concerns. Our team is always eager to hear from you. Also, follow [@akashnet\_](https://twitter.com/akashnet\_) to stay in the loop with updates and announcements.
 
 ## Table of Contents
 
@@ -117,4 +117,3 @@ Awesome DeFi apps you can deploy on Akash
 * [Mattermost](https://github.com/ovrclk/awesome-akash/blob/master/mattermost)
 
 ### Video Conferencing
-
