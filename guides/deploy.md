@@ -1,101 +1,92 @@
 # Akash Deploy UI (Web App)
 
-## **Akash Deploy UI Overview**
+## **Akash Deploy Overview**
 
-Akash Deploy UI delivers a web application allowing workload deployment onto the Akash network with ease.  The platform lessens the learning curve and reduces friction in comparison to traditional methodologies of deployment provisioning through the Akash CLI.
+Akash Deploy delivers a web application allowing for easy deployment on the Akash Network.
 
-The exploration that follows offers detailed guidance in the usage of Akash Deploy with explicit instruction, examples, and sample depictions.
-
-Akash Deploy UI is an open-source project written in ReactJS.  The repository for the application is listed below.  However a demo site of the app is available, may serve as launch point for initial/continued experimentation with Akash Deploy, and will serve as the platform utilized for the demonstrations that exist in this guide.
+Akash Deploy is an open-source project written in ReactJS. The repository for the application is listed below. However a demo of the app is available if you want to jump right in. For our walkthrough we will be using the demo site.
 
 [**https://github.com/spacepotahto/akash-deploy-ui**](https://github.com/spacepotahto/akash-deploy-ui)
 
 ## **Prepare the Environment**
 
-The Akash Deploy app integrates with available Keplr wallet instances.  Keplr is a simple, open-source browser extension wallet for the Cosmos interchain ecosystem and supports the Akash blockchain.  In this section - serving as a prerequisite for Akash Deploy usage -  assurances are conducted to ensure the Keplr wallet is available and funded sufficiently.
+The Akash Deploy app integrates with the popular Keplr wallet. Keplr is a simple, open-source browser extension wallet for the Cosmos interchain ecosystem. It also happens to have full support for the Akash blockchain. We will cover the setup of the keplr wallet.
 
 ### **Keplr Wallet Browser Extension Guidance**
 
-The Keplr wallet extension for Chrome may be found on the [Chrome Web Store](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en#:\~:text=Keplr%20is%20a%20browser%20extension,for%20the%20Cosmos%20interchain%20ecosystem).
+The Keplr wallet extension for Chrome may be found at the following location:
 
-Post installation and extension activation the Keplr wallet should appear as a browser extension as depicted below in a Chrome use case.  The wallet may be opened for subsequent validations in this guide and future needs by clicking the browser’s extension icon highlighted.
+{% embed url="https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en#:~:text=Keplr%20is%20a%20browser%20extension,for%20the%20Cosmos%20interchain%20ecosystem" %}
 
-![](https://lh3.googleusercontent.com/yhagSgBYkSDIuYUvUBDtoEM-yd8J2YtCphOcUrHYj3FeR5\_JjlkCtJoTEzzlvzT6DzmSuM4WRZLzEPJy0wZ293iTHQ8cn1hfseKjJVfhuIuwkeHjBFRahizVXP8fE47j9R6UYFkp=s0)
+After you have installed the extension the Keplr wallet should appear in the browser extension tray. To open the wallet simply click on the keplr icon in the extension tray.
+
+![](../.gitbook/assets/KeplrWalletVerify.png)
 
 ### **Ensure Adequately Funded Keplr Wallet**
 
-* Open the ​Keplr wallet browser extension and ensure sufficient AKT funds are available to allow application deployment to the Akash network&#x20;
-* A minimum 5 AKT would be necessary to allow a deployment and fund the deployment’s escrow account
-* The depiction that follows demonstrates a launched Keplr wallet instance with the Akash network selected and adequate AKT funds available
+* To check your funds simply open the extension and select Akash from the dropdown at the top of the app
+* A minimum 5 AKT is needed to fund a deployment’s escrow account
+* For the next section we will assume you have the required funds in the wallet
 
 ![](https://lh5.googleusercontent.com/DdHCWmQFBuKA4sp8wPSHX\_hhm\_UHkWfoy0QcgY4QlGPgRyXOQHMpEUDCdiNyp6gjFu\_XDwt1NVpcEgY7TgurBbgDFUeUg-LyUUm1\_vr7MmkZsDPi0UDkVp--kxJyL8h5FB5dB12U=s0)
 
 ## **Initial Akash Deploy Access and Configuration**
 
-As discussed previously - a demo Akash Deploy site will be used within this guide.  The demo site may be utilized to follow along and reproduce all referenced examples  using your own wallet/certificates/deployments.  The demo site is multi tenant enabled and only the user’s own workloads and funding will be visible and accessible.
-
-### **Akash Deploy Demo Site Access**
-
-Access instructions and expected landing page of the Akash Deploy demo site are provided in this section.
-
-* Akash Deploy demo site URL
+We will use a demo Akash Deploy site for this guide. To access the site go to the following URL
 
 [**https://akashdeploy.hns.siasky.net/**](https://akashdeploy.hns.siasky.net)
 
-* The page depicted below serves as the landing site of the application
+If all worked as intended you should see something like this.
 
 ![](https://lh4.googleusercontent.com/f0cIAce8G3916Ln1139xhtXx-hXXgdvr2Gk8dz4o3Jf9DNMH1tzy1GX5mrgPjvXkPXAoPy1\_Nm8ItFKlr\_HKgIxVKdYAuj102L90ea4Iuo2XRcPNTLeYDYd8mdwknYC1NH\_Pzd4p=s0)
 
-### **Assure Akash Deploy Access to Keplr Wallet and Associated Funds**
+### Linking Keplr to The Deploy Tool
 
-In the “Prepare the Environment” section of this guide assurances of an available Keplr wallet instance were conducted.  Within this section validations of Akash Deploy access to the Keplr wallet and associated AKT funds are completed.
-
-* Validate Akash Deploy visibility of Keplr wallet AKT funds as per the depiction below
-* In the example depiction Akash Deploy correctly discovers and renders 52.786 AKT
-* The funds displayed should be identical to the funds represented and available in the Keplr wallet and the associated account
+* When launching the tool for the first time Keplr will prompt you for permission to link the wallet to the tool.
+* Go ahead and approve the link
 
 ![](https://lh5.googleusercontent.com/lADn1khoxFgKxQJRj6mKVfBi9Zrj-HRDWbIGC09jh21m3\_xW47Ss3JF\_DmTM\_fCWndW4WGza0LL1A8JgJCesb3Imnjbo1fcMs4caVP3cmrg-WUdvul7SVhr8StfyPUqRunE0QJhM=s0)
 
 ### **Create Certificate for Transactions**
 
-The Akash Deploy instance must have access to a certificate to sign transactions placed onto the blockchain.  On initial access of the demo site no such certificate will be in place.  The steps that follow complete the simple process of certificate creation within the application.
+The Akash Deploy instance must have access to a certificate to sign transactions placed onto the blockchain.  Since this is our first time using the tool no such certificate exists.  Let’s create one now.
 
-* Utilize the “CERTIFICATE” to provoke the certificate creation process
+* Click the “CERTIFICATE” tab
 * In the dialog box that appears select the “CREATE” button
 
 ![](https://lh6.googleusercontent.com/M\_cUADVPBj8Xhg12WfC4l0m7tjyZQNYoLiC7EofhPgqX5uyTCcK3kIaSjgsEQJUV64G7h1hImKcvDSStWWFxBUclB70nAnw553DuOh-hak\_cgr0NsK9sbVMzHZWYZ1-n9Fi1Mj-r=s0)
 
-* Upon certificate create invoke Keplr will prompt to accept gas fees for transaction
-* Accept the medium/default gas fees to ensure timely transaction completion
-* Note - the transaction process may take a few seconds as the associated block is constructed and placed onto the chain
+* On certificate creation, Keplr will prompt to accept gas fees for the transaction.
+* Accept the default gas fees by clicking the “APPROVE” button.
+
+Note - All transaction processes that interact on chain may take a few seconds to complete.
 
 ![](https://lh4.googleusercontent.com/n6bkRDWpqL3qhaIQIZrtsZ2zh3d3VIC7ZGejfO8h\_BtzVcUhlCquK3axZj5P5YLNVWk7xPrCjgrLfYzaENu\_GQ5beZ422llr\_sA-ENgbYSuab9P6gfQcY1QYaaCA-SjSfPJGKLMv=s0)
 
-* Resultant confirmation of successful transaction and certificate creation
+* Once the process completes you should see a valid certificate as in the screenshot below
 
 ![](https://lh4.googleusercontent.com/4tBhrsGyIHG0RFPFdQI\_XudHmV0hVQW\_WTwHY8oXwYAr4WuJAkhppCYXsCWjp1Va\_dy4DcOJZRXKNfjfQ7LA5djX8\_6-VfH-\_5AXnDCWF1Dka8ZaIsOXdRiz3IVe\_GtIWLXx-WMK=s0)
 
 ## **Deployment of Sample Workload**
 
-Upon initial launch the Akash Deploy application displays an editing pane populated with Stack Definition Language (SDL) pertaining to a Lunie Light application.  The sample application (Lunie Light) is a non-custodial, web wallet for Akash.  But for the purpose of demonstration the intent of the application is not of importance.  To explore workload deployments to the Akash network the sample application is utilized for ease.  In subsequent sections - exploration of greater sets of available applications/SDLs within the Akash Deploy Gallery and custom SDL deployment will be detailed.
+When first launched, the Akash Deploy application displays an editing pane prepopulated with Stack Definition Language (SDL) for the Lunie Light application.  The sample application (Lunie Light) is a non-custodial, web wallet for Akash.  This is one of many pre-built deployments to choose from.  In subsequent sections, we will take a quick look at additional applications/SDLs within the Akash Deploy Gallery.
 
 ### **Steps in Application Deployment**
 
 #### **SDL Edit/Deploy**
 
-* If not currently on the Akash Deploy default landing page - navigate to “DEPLOY” from the top toolbar and as depicted below
+* Make sure you are on the “DEPLOY” page from the top toolbar and as depicted below
 
 ![](https://lh4.googleusercontent.com/w4QZ0PB7Wi\_ee-eoO1qe8Sy95Kd-LKFGLwqIQ5mOe5wYYYWDmCkE99ji2kYp4SCX0UNtXTDrT7G4boBW8Jfxc-hFUSnsNpoZupRYl9WdVyNggHZyBsbTXdvpENhdEgyKIbBI5CFa=s0)
 
-* As mentioned prior - Akash Deploy renders the Lunie Light Application SDL in the embedded code editor initially
-* Without need of editing the SDL - click the “DEPLOY” button as depicted
+* Akash Deploy has the default Lunie Light SDL in the code editor.
+* For our example today we can simply click the “DEPLOY” button.
 
 ![](https://lh4.googleusercontent.com/zK7oHSZLutPjfHYGJnfmzfRLqQbzKYe5rmYJO9COKQT4ax\_3oCZy72uu1\_wqRRo2qMHruVSjHWGSAOojm6kTXD08A7WEx\_AP-Gbl8nvqFm1GIvVA1lX3dtU8TwpwbJdc4Jg-wQee=s0)
 
-* Upon invoke of the deployment a Keplr wallet prompt will display - as depicted below - requesting acceptance of the deployment’s transaction gas fees
-* Additionally Akash Deploy displays a pane detailing the running progress of the deployment
-* Accept the default gas fee selection to allow deployment to proceed
-* Post acceptance of gas fees the Akash Deploy deployment tracking will update to “waiting for bids” as provider bids are obtained
+* Once the process starts a Keplr prompt will popup requesting acceptance of the deployment’s transaction gas fees.
+* Accept the default gas fee selection to allow deployment to proceed.
+* Once you have accepted the fees notice the status change to “waiting for bids” as the provider bids are collected.
 
 ![](https://lh4.googleusercontent.com/-DsAha7\_Gry6z4aFEQAaOQhWTEla9BJNrwxqMQ1qPURmArhvqoi-vUwDsoZ2-JQ24h9O2MDcQswl1mG-54BBGcHC6Oqyj-2zYLz42pE75hxMQK\_RgwWwG91j1CLZSJxKouyZUFTi=s0)
 
@@ -106,91 +97,79 @@ Upon initial launch the Akash Deploy application displays an editing pane popula
 
 ![](https://lh3.googleusercontent.com/Zrz73djx5-xqvt1Qj5rLH8NUJlKOCNu0Vo\_M1elSOkdKYDzharubO8lQm\_LRTdHy5wYIF8xrK9Oy9C5dT8SA8bgBiMxtCbcY4ELIxcrWoz5jCK1tpWKOQRRfaUIOruj19jQj2LUH=s0)
 
-* Transaction gas fee prompt following provider selection
-* Following gas fee acceptance - Akash Deploy messaging will proceed thru statuses of “Confirming the lease” > “Querying the provider” > “Sending the manifest” > “Querying lease status”
+* A transaction gas fee prompt will pop up. Feel free to accept the defaults.
+* Once a bid is accepted the status message will run through the following steps “Confirming the lease” > “Querying the provider” > “Sending the manifest” > “Querying lease status”.
 
 ![](https://lh3.googleusercontent.com/zkMddw9w4iiyau77tUR\_bp3ARPVsGAFkhIyWUvnbQH4DQ1ZBiGbc5lYAKF9Zg9yt1hnhrY6-M7uEqA2R5H9Uuzt4PQflvGWdPtdLgO1VfmNHgRV2RjOKzNIlWNTwtCXxI1CfaOse=s0)
 
-* Upon completion of the deployment to the selected provider the following confirmation is received
-* Amongst a wealth of interesting and important information revealed note:
+* Once the bid has been accepted and the deployment setup an information window will pop up for the new deployment.  A couple things to note:
   * Number of workload replicas
   * Available replicas
   * In the case of web services workloads the exposed URI&#x20;
 
 ![](https://lh4.googleusercontent.com/X\_OZsXq9d7IRHBzw0lSWbqjvdW5z6I3a4z4WFc1AqQp\_fIvZwmRBJulZ5QO3rTFeCgNPbNKs37ORDaD5GEzl\_s5yf2aIhHk2nJHkINOyQspDnBLT4BqTNWNyIJjAV4Ohj5CrFQ1M=s0)
 
-#### **Validation of Workload Deployment and Usage**
+#### Testing Our Deployment
 
-The Lunie Light application is a web service and thus the SDL deployment generated an externally reachable URI.  Using the exposed intel from the prior step - access to the web service will be validated.
-
-* Capture/copy the URI from the information exposed following deployment completion and as depicted below
-* Note - if the deployment information detail panel was closed - the URI may be obtained by navigating to “MY DEPLOYMENTS” from the toolbar and then clicking the info “I” icon next to the relevant deployment.  Further detailing of the “MY DEPLOYMENTS” pane will be conducted in a subsequent section of this guide.
+* Copy the URI from the popup window
+  * Note - if the deployment information detail panel was closed - the URI may be found by navigating to “MY DEPLOYMENTS” from the toolbar and then clicking the info “I” icon next to the relevant deployment.
 
 ![](https://lh4.googleusercontent.com/8QKbtcSpAdWu0OMm-2e5ky4YCk4k7DVsidCOID5Izys8Kx1M2D3h6rt3xf2vFoTM92DYaEr2kyDPuVWpNbte3gEnC-s67BBcKxe5dF8JZ4hE-QHFBhPbEFzU0JxuXCubdQlbeFlG=s0)
 
-* Attempt to visit the exposed URI in a web browser
-* Note - if a 502 Bad Gateway HTTP response is returned - continue refreshing the page for a few seconds as the workload may not yet be fully deployed on the provider
-* Receipt of the page displayed below confirms the web service (Lunie Light) was fully deployed successfully
+* Paste the URI into a browser window and hit enter
+  * Note - if a 502 Bad Gateway HTTP response is returned - continue refreshing the page for a few seconds as the workload may not yet be fully deployed on the provider.
+* Once the page loads you should see something like this
 
 ![](https://lh4.googleusercontent.com/MXlZz\_gRmriE3O1wsZpFnTAe5iCAtcA2hLKVcdFAIDahf6Erg3bQXSdSbs6cYpj3mN3T7lcgVk5VkMUBzHRuU3yYEj7TSx0eJQucNObC1nZMF7VFNbLnPnYjPHJbfjnYFdhDCDv5=s0)
 
 ## **Manage Deployments**
 
-Akash Deploy serves as an intriguing platform not only to deploy new workloads but also to manage, monitor, and close active workloads as needed.  In the subsections that follow such deployment management techniques within the platform are explored in detail.
+With Akash Deploy you can not only deploy but also manage, monitor, and close active workloads.
 
-Monitoring and managing deployments from Akash Deploy often proves to be considerably less cumbersome than performing the same operations - particularly across many deployments - within the Akash CLI.
+Monitoring and managing deployments from Akash Deploy is often easier than performing the same operations within the Akash CLI, particularly across many deployments.
 
 ### **View Active and Inactive Deployment Details**
 
-Akash Deploy affords visualization of active and inactive deployments with minimal effort.
+Akash Deploy allows you to view active and inactive deployments.
 
-#### **Display Deployments**
-
-* Navigate to “MY DEPLOYMENTS” as depicted below
+* Navigate to “MY DEPLOYMENTS” from the toolbar.
 
 ![](https://lh6.googleusercontent.com/dhsDeco-LVIudmwhpXK5UL\_CM8rSdIDngxtknEzcgRjJD5vRclt0\_a\_kXuSE8j2DSmgbn\_Mjh-zGD6SwTEOO2Py9lvb7wgEEXeF6aKTMstUiWWVPKZEEuLyTJwmF6OLrAUuTfLEl=s0)
 
 * Toggle the “Show Inactive” button
-* Active deployments are distinguished by a red filled circle containing a cloud icon
-* Inactive deployments are distinguished by a grey filled circle container a cloud icon slashed
+* Active deployments are represented by a red filled circle containing a cloud icon.
+* Inactive deployments are represented by a grey filled circle container a cloud icon slashed.
 
 ![](https://lh6.googleusercontent.com/oACJ7NX58-9vs6DuR4-uVBltpQMpOLzqw7IHRewPv6bJDudWDHCgrDjqmOFytFH8rhhCVHfnMJORaRnmwXr-9uoIM0tuEWeunN9qYcz\_Ktfd76NcQCdVAt9YZNnmuuxOoAOrF0FZ=s0)
 
-#### **Deployment Details Revealed**
-
-* Reveal additional information on an active deployment’s lease information by selecting the information (“i”) icon as depicted
+* To see additional information on an active deployment’s lease, select the information (“i”).
 
 ![](https://lh5.googleusercontent.com/ZmkkOcNV0b0dmjQSpPf6Aev7SujE2BE\_lHI5EHxN4OMZvQASNrLcTfg6IHatHyt2RVB7Kr0vCwcQPpMog4xjH7oxw1UOCmjNQ3eyoSuabGJjChuVvRnrBWBl3kYDpChHwSbF8x\_O=s0)
 
-* Intelligence pertaining to the deployment revealed post selection
-* Note that the information revealed is identical to the intel first displayed in a provoke pane when the deployment process completed and includes details such as replica count/available replicas/URI if applicable
+Note that the information revealed is identical to the information first displayed when the deployment process completed and includes details such as replica count, available replicas, and URI if applicable.
 
 ![](https://lh5.googleusercontent.com/jr1tuQQKD0tLC6ULg8Bqz8FUGAX\_1Gv9Z-DnufSSXlZDYmNtyxemcWnykFp2O6exgYUKAWJF\_7HFvt6p0hdDh4vYN2rdTdrAStLDMw7oo4U4f3pR8H-5qWmTorxdS8XkZUQxOE\_q=s0)
 
-* Reveal detailed intelligence regarding the deployment via click on the Deployment identifier (DSEQ) or anywhere in the white space to the right of the DSEQ as depicted
+* For a more detailed block of information regarding the deployment click on the Deployment identifier (DSEQ) or anywhere in the white space to the right of the DSEQ.
 
 ![](https://lh5.googleusercontent.com/jgKHsBMTxYbuQV-kAi4Y-R6pDXAZK5fNMmMeF4YsrKZRIRcdfSF-aFvxioIhtTpK\_HMOuCF-APvULyyekCmX0k9Gz8DCPLqco5GwzNO10YU9ioavmuUY\_d6l1dag8OzZEvcXWUzS=s0)
 
-* Revealed intelligence is spawned in a rather lengthy JSON string and includes:
+* The revealed information is displayed in a rather lengthy JSON string and includes:
   * Hardware utilized by the deployment (CPU/mem/disk)
   * Escrow Account information including current balance
   * Deployment details (DSEQ, OwnerID, etc)
 
 ![](https://lh5.googleusercontent.com/6ziS3SZ8FUFN7cg49xGgVSmzCUg7qT6t6PMF\_Y3UZiqME8Ro3TpYiIdTqURxsq5Dp-w6YEyE4fTDIYj7pSkpe55zaCTDkfQ\_ZxwuCD15t\_PrKmwgd6-sf4q7-iFLCG-2nKz\_Umw0=s0)
 
-* Below is a depiction of the Escrow Account information reveal in the returned data
-
-![](https://lh6.googleusercontent.com/hwQJwSqe9Pu2M0V7o36vkj3yMuIvX13pawGz5103C2TA6YZ1fJCz33RRvTcIFdmJFNJab3xKryoAZagUkAcqTfAppIBig0GlfhJthEtgocODRfe7aYRZ8bPoCoQS7er1qSru3XCN=s0)
-
 ### **Close a Deployment**
 
-Akash Deploy may also facilitate closure of active deployments.  Follow the steps provided below to render a deployment as inactive.
+Akash Deploy makes it simple to close a deployment.  Follow the steps provided below to terminate the instance.
 
-* Navigate to “MY DEPLOYMENTS” as depicted below
+* Navigate to “MY DEPLOYMENTS”
 
 ![](https://lh6.googleusercontent.com/dhsDeco-LVIudmwhpXK5UL\_CM8rSdIDngxtknEzcgRjJD5vRclt0\_a\_kXuSE8j2DSmgbn\_Mjh-zGD6SwTEOO2Py9lvb7wgEEXeF6aKTMstUiWWVPKZEEuLyTJwmF6OLrAUuTfLEl=s0)
 
-* Close a deployment of interest by selecting the trash can iron within the deployment’s associated row and as depicted below
+* Close the deployment of interest by selecting the trash can icon on the deployment’s row.
 
 ![](https://lh6.googleusercontent.com/iAlfgfqTX4Qgee3Ajh5VQjlSf\_-gWVg7WKGPLgF8X3W61unmVPurOawQGhE9HEsTVKRidYR1DBtS\_vobTjZgY0XIEyf7zMmbV5O3w7UJDLJLW9nWLR8jDwOdEeqZ-y4X1VwPvTbv=s0)
 
@@ -204,23 +183,19 @@ Akash Deploy may also facilitate closure of active deployments.  Follow the step
 
 ## **SDL Gallery**
 
-Akash Deploy offers a rich ecosystem of available pre-defined SDL definition files for rapid deployment of popular workloads.  Exploration in this section includes accessing the SDL Gallery, review of gallery categories, and using a specific SDL definition for deeper inspection/usage.
+Akash Deploy has a rich selection of pre-defined SDL definition files for all kinds of popular software packages.  Within this section we will access the SDL Gallery, review the gallery categories, and use a specific SDL definition for additional deployment experience.
 
 ### **SDL Gallery Access and Overview**
 
-The Akash Deploy SDL Gallery may be accessed via the following navigation:
-
-#### **Accessing SDL Gallery**
-
-* Navigate to the gallery via the selection of  “SDL GALLERY” from the toolbar and  as depicted below
+* Navigate to the “SDL GALLERY” tab from the toolbar
 
 ![](https://lh3.googleusercontent.com/OEHPtu7NxL0rJT5H5VpqS1k8bz1wHpJVXkD40iI2ZJXGqn-ibPYQ9kCTa9tbRH5AJWjIkitgeiZMQA497JR4SAWW09C\_d\_0FU\_RpJH0zwCqk1fZ6IK0a1iP5NJSDH-X7UD6A2YQG=s0)
 
 #### **Exploring SDL Categories and Available Software Deployments**
 
-Scroll thru SDL Gallery available categories and relational definition files to reveal a wealth of pre-developed SDLs/applications&#x20;
+Scroll through the SDL Gallery’s available categories and related definition files to reveal a wealth of available applications.&#x20;
 
-* **SDL categories include :**
+* SDL categories include :
   * Official
   * DeFi
   * Blogging
@@ -238,41 +213,26 @@ Scroll thru SDL Gallery available categories and relational definition files to 
 
 ### **Example SDL exploration within the gallery**
 
-* Locate the “supermario” SDL via the search bar at the top of the Gallery page and then click on the Supermario “SOURCE” link as depicted below
+* Locate the “supermario” SDL file via the search bar at the top of the Gallery page and then click on the “SOURCE” link as depicted below.  This will open the git repository that the file lives in.
 
 ![](https://lh6.googleusercontent.com/gZjc6uH7-BuASiUvjZxCocM5L8s0edondSCvp0Shj35EoTfrdkxZne2w7B4hp161hsMOkd5\_37ou2FaxeMV8aC4ZUcz-OCA4\_z\_joN2DgqSfDD1TcO4T4zqgV2k4RtjxT1vJ0FsM=s0)
 
-* Upon invoke of the “SOURCE” link from the prior step - a redirect to the corresponding Awesome Akash Github repository for the SDL will occur as depicted&#x20;
-
-![](https://lh6.googleusercontent.com/9ma84JkRyjSOTDQef27v\_8tdoL86llkrIzANc7bjx61LLe7My2rLExTyoaiBmkDyNo0EbdN0Ld5ofaYzzhGag2TB9qSg-LhfjwUmwwfy8Z5peJffH2AZgyapNN7nw7xUQoAY8ubG=s0)
-
-* Select the deploy.yaml file in the GitHub repo to view the SDL YAML file for the deployment&#x20;
-
-![](https://lh5.googleusercontent.com/WUzNmnyg6IRpqP0a-FQkF5KNiWhRJpCvaH8u4Lz2x4uYKOjpidZIxfkpe4BtPKoI0BIW4ERhf5gEC-Ec11FgRE2FQbDM5VrMg0MLjoLLAyP2iqLETo8baGzTz6ZLPzB2aMUOkvZi=s0)
-
 ### **Utilize a SDL Gallery Definition in Deployment**
 
-In the prior sub-section the SuperMario SDL from the SDL Gallery was isolated.  The isolated definition will now be utilized in the creation of an Akash deployment.
+In the prior section the SuperMario SDL was selected.  We will now use the SDL to deploy the SuperMario app on the network.
 
-#### **Provoke the Deployment from the SDL Gallery**
+#### Deployment from the SDL Gallery
 
-Two paths exist to deploy the SDL Gallery definition of interest:
-
-1. The code from the GitHub repository explored prior could be copied into the Akash Deploy SDL code editor with subsequent “DEPLOY” button provoke
-2. The SDL Gallery instance “DEPLOY!” option may be used to provoke deployment
-
-The latter of these possible options - provoking deployment from within the SDL Gallery - will be utilized for this demonstration.
-
-* Return to the Akash Deploy application and select the SuperMario SDL’s “DEPLOY!” option as depicted
+* Return to the Akash Deploy application and select the SuperMario SDL’s “DEPLOY!” option.
 
 ![](https://lh3.googleusercontent.com/FG7p1xV\_RxRAxL0FgUdbQMBOKtHvVGxDFzf1M\_mXjluYiUGYw4V48SVW7z6uakx-j-oi\_7NwhR0-FZ9EFw7koDQUdYHQjV6vVxEL98zSZX4Z0DD-jR7eAnNhucgDM3I40SJ4s8tR=s0)
 
-* The user is redirected to the “DEPLOY” pane with the SuperMario SDL now present within the code editor&#x20;
-* Proceed with deployment via the “DEPLOY” button as depicted
+* This will redirect us to the “DEPLOY” pane with the SuperMario SDL now loaded within the code editor
+* Click “DEPLOY”.
 
 ![](https://lh5.googleusercontent.com/IenswOH\_-DTzgG3mSQ6PVFR59wiwxliIQd\_roWzwJX\_H2enp8dqGU5Fam-cTrHzvU3STwp4e4Zal3F\_Hqy72LAEZBgzanLnuJ6Dr1cLh1g1PmARTFLIc1SxrmXWvRX-FuGdMWtps=s0)
 
-* Approve the gas fees within Keplr allowing the deployment to proceed
+* Approve the gas fees and transaction within Keplr.
 
 ![](https://lh4.googleusercontent.com/19Rx\_\_kafjjus\_FOtk99N9xvn\_mdCnkTG4sn\_dYY\_EjfAdxhqNy5V94BZJYNevRwYUK\_rCjctvQ4N0ADWwi2DdXfHx8BtTqob4KE2qf-KGE2nbuii-s1ZUy1GltcV1dlRfWHMbO0=s0)
 
@@ -280,15 +240,15 @@ The latter of these possible options - provoking deployment from within the SDL 
 
 ![](https://lh3.googleusercontent.com/d3dqKJDy1zU\_FwDu3mVjTMORSuIWn43dac1hCjn0RT2yZ2OZXNxPoR0rMpsoNwEf4MkN0TtzxyOA48Y9UKLYgfxuOMi5mFsnK4W8X6qpNYGIGJnyMTC3oxyDF\_nYEf5vtSPp5owc=s0)
 
-* Accept the transaction gas fees to allow the deployment to proceed
+* Approve the gas fees and transaction within Keplr again.
 
 ![](https://lh3.googleusercontent.com/xBEoEn84T24nisGU2NuPfOQcJRT-uYdrvrP756XAAiQm3wNxMrGNc83Z28JyjqM5sr2\_dj3Q5aM1KSExWwrPUE12nEEsOqISXjPNyEh8VLojyc--Ccx0KX66qOiaT3UStm2WWXBV=s0)
 
-* Capture the URI from the deployed workload informational screen
-* Allow a couple of minutes for the deployment to complete build and then visit the URI in a web browser
+* Copy the URI from the deployed workload informational screen.
+* Allow a couple of minutes for the deployment to complete build and then visit the URI in a web browser.
 
 ![](https://lh5.googleusercontent.com/3l2QTInt0JnuEArPwquyu7bQEVRPvdOfAflCHcYagFgkcYUN5uTLaSM5B8MeZcJ3Ei0iQ1fp2r6L24aT09U0Bt0SY\_cMucNFJokdEAM56IJfAn7XKYMkDPUpkSSL0q9MAHPSKSiu=s0)
 
-* Confirmation of deployment provoked within the Akash Deploy SDL Gallery
+* You should see something similar to the following
 
 ![](https://lh6.googleusercontent.com/lbdFSdoGaVSndayoV092iGRYTs9jNsW1U9SB1YkjfA8HDKf7rySsBvg8Hjqg\_WzkrULiL45bTEczxUDdu0k6PdA415MtPizE2OLjLy1jZ9lNqoKsGF8RbaXG186WKsCgzAsPqkzm=s0)
