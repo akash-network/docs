@@ -22,7 +22,7 @@ The Akashlytics Deploy software may be found at the project’s documentation he
 
 [**https://www.akashlytics.com/deploy**](https://www.akashlytics.com/deploy)
 
-![](https://lh5.googleusercontent.com/\_pjwvet6jDYdwGhkthqAOggo0lGUgHke0SaHtFpKaSqXHJBEwbAu2H1pg4q7KqV4uIeKRP-q6-bk\_T3HtSjf7poU62Kwn8RsJIdB\_gN9KQ0xJXSnT90M-crUNOM4XY8MlclIjuQF=s0)
+![](../.gitbook/assets/AkashlyticsDownloadScreen.png)
 
 ### **MacOS Installation Details**
 
@@ -31,21 +31,21 @@ The Akashlytics Deploy software may be found at the project’s documentation he
 * After completing the download find the MacOS DMG in the Downloads directory.
 * Locate the DMG and double-click.
 
-![](https://lh6.googleusercontent.com/iATssC490Hng7W5luV\_iB8ahwTvlVx3rMIb5PJoDgOAyUHd1LOOKDd2L5NnuPXd9K2B8FeMhI1O4a4GlyYuO2r4JmN2nBHSa2koUNJ4FU8EIGOOAxBqTYgz\_Up61w06z2MtFDWMt=s0)
+![](../.gitbook/assets/MacOSDMGScreen.png)
 
 #### **STEP2 - Move Akashlytics Deploy to the Applications Directory**
 
 * After installation - MacOS will prompt the user to move the Akashlytics Deploy shortcut to the Applications directory
 * Drag and drop the Akashlytics Deploy icon into the Applications folder from the prompt
 
-![](https://lh4.googleusercontent.com/IhoAr8KXuGMFDgZE8TGgZRPHnk3huaxw-jX3vf5i6WF9aHvu3Gb5vbgFViFbXp4iYkUUvEkU4Cjk0AHKDd5gU\_2CBNBKeDJm3Q2OUgnRFw5K4ndey2bNXh9J6WcWBsU3-W5u1r\_e=s0)
+![](../.gitbook/assets/MacOSDrapToApp.png)
 
 #### **STEP3 - Launching the Tool**
 
 * With the installation completed - open MacOS Finder and type “akashlytics deploy”
 * Double click the Akashlytics Deploy icon
 
-![](https://lh4.googleusercontent.com/MBeLz1wziLAqCO6PQ3bKwgjdiR4wcvMiycKSWDs-YMBBZeD\_YMXumAw7e7QRhY4zVrsIeXJG2KRCCFFODFqqT2CxbmakFM-CJh1Llo7uivuSfgbyYeGdVUzb6aldHkIUQWyQD7wk=s0)
+![](../.gitbook/assets/MacOSLaunchApp.png)
 
 #### **STEP4 - Override MacOS Unidentified Developer Warning**
 
@@ -53,7 +53,7 @@ When first launching Akashlytics Deploy your mac will have an “unidentified pr
 
 * Click the Question Mark (“?”) icon provided on the warning message.
 
-![](https://lh6.googleusercontent.com/arJiEJgSGuz0oqbKXt7q5Phd9GyvNSyWN73A19oqogZNgYgwOWCV9t8sTHhElovI03YP5uttf2pDNEKNieTeDXBew1KaZNh1CnOuRb2EpZFsWovjEI4AsovSTi6rsKJOoqwuvMMs=s0)
+![](<../.gitbook/assets/MacOSISecurityWarn (1).png>)
 
 * Press “Ok” to exit the warning message dialog box and follow the instructions that pop up.
 
