@@ -138,11 +138,11 @@ Akash Deploy allows you to view active and inactive deployments.
 
 * Toggle the “Show Inactive” button
 * Active deployments are represented by a red filled circle containing a cloud icon.
-* Inactive deployments are represented by a grey filled circle container a cloud icon slashed.
+* Inactive deployments are represented by a grey filled circle containing a cloud icon slashed.
 
 ![](https://lh6.googleusercontent.com/oACJ7NX58-9vs6DuR4-uVBltpQMpOLzqw7IHRewPv6bJDudWDHCgrDjqmOFytFH8rhhCVHfnMJORaRnmwXr-9uoIM0tuEWeunN9qYcz\_Ktfd76NcQCdVAt9YZNnmuuxOoAOrF0FZ=s0)
 
-* To see additional information on an active deployment’s lease, select the information (“i”).
+* To see additional information on an active deployment’s lease, select the information (“i”) icon.
 
 ![](https://lh5.googleusercontent.com/ZmkkOcNV0b0dmjQSpPf6Aev7SujE2BE\_lHI5EHxN4OMZvQASNrLcTfg6IHatHyt2RVB7Kr0vCwcQPpMog4xjH7oxw1UOCmjNQ3eyoSuabGJjChuVvRnrBWBl3kYDpChHwSbF8x\_O=s0)
 
