@@ -1,4 +1,4 @@
-# Akash Command \(CLI\)
+# CLI
 
 This guide will walk you through installing the `akash`application, creating and funding an account on an Akash network, and deploying a single-tier web application on Akash.
 
@@ -18,7 +18,7 @@ Before you install Akash, you will need to install the **XCode Command Line Tool
 
 You will need to install Apple's XCode Command Line Tools. Run this command in Terminal:
 
-```text
+```
 xcode-select --install
 ```
 
@@ -26,7 +26,7 @@ xcode-select --install
 
 If you do not have Homebrew, you can install Homebrew using:
 
-```text
+```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
@@ -34,7 +34,7 @@ If you do not have Homebrew, you can install Homebrew using:
 
 Install `akash` using homebrew:
 
-```text
+```
 brew tap ovrclk/tap
 brew install akash
 brew link akash --force
@@ -42,7 +42,7 @@ brew link akash --force
 
 Once installed, verify the installation by running `akash version`
 
-```text
+```
 akash version
 ```
 
@@ -92,7 +92,7 @@ echo $PATH
 
 Installing Akash suite from source
 
-```text
+```
 $ go get -d github.com/ovrclk/akash
 $ cd $GOPATH/src/github.com/ovrclk/akash
 $ git checkout "v$AKASH_VERSION"
@@ -100,7 +100,7 @@ $ make deps-install
 $ make install
 ```
 
-Akash is developed and tested with [golang 1.16+](https://golang.org/). Building requires a working [golang](https://golang.org/) installation, a properly set `GOPATH`, and `$GOPATH/bin` present in `$PATH`.
+Akash is developed and tested with [golang 1.16+](https://golang.org). Building requires a working [golang](https://golang.org) installation, a properly set `GOPATH`, and `$GOPATH/bin` present in `$PATH`.
 
 Once you have the dependencies properly setup, download and build `akash` using `make install`
 {% endtab %}
@@ -144,26 +144,17 @@ Note that if you close your Terminal window this variable will not bee saved.
 
 ## Part 3. Fund your Account
 
-Funding your network account is required to use the network. All messages charge a transaction fee, deployment leases are paid by the account used to create them. There are a two ways to fund your account, buy tokens and apply for awards from the community.
+A minimum deposit of 5 AKT is required to deploy on Akash, and a small transaction fee is applied to deployment leases paid by the account used to deploy. There are two ways to get funds into your account, buy tokens, and join the Akash community to receive free tokens from the Akash Faucet.
 
-### Buy AKT from an exchange
+### [Buy AKT from an exchange](../using-akash-tokens/buy.md)
 
-Tokens may currently be purchased on [exchanges listed here](https://akash.network/token). From there you can send tokens to your Akash account address.
+### [Join the Akash Community to get free AKT](../using-akash-tokens/funding.md)
 
-### Get $100 of AKT from the Akash Community
 
-Developers can request funding from the Akash Community. Please read the article [**How to Apply for Developer Grants**](https://forum.akash.network/t/how-to-apply-for-developer-grants/) _\*\*_and follow the steps:
-
-1. [ ] [Create an account on the Community forum](https://forum.akash.network/login)
-2. [ ] [Join the Akash Discord server](https://discord.gg/uJ7NWdF4hn)
-3. [ ] [Connect Github and Discord to your profile](https://forum.akash.network/my/preferences/account)
-4. [ ] [Add your Akash Address to your profile](https://forum.akash.network/my/preferences/profile)
-5. [ ] [Introduce yourself and propose a project](https://forum.akash.network/c/grants/new/)
-6. [ ] [Submit a Grant Application](https://forum.akash.network/c/grants/apply/)
 
 ## Part 4.  Configure your Network
 
-First configure the base URL \(`$AKASH_NET`\) for the Akash Network; copy and paste the command below:
+First configure the base URL (`$AKASH_NET`) for the Akash Network; copy and paste the command below:
 
 ```bash
 AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
@@ -215,7 +206,7 @@ akash query bank balances --node $AKASH_NODE $AKASH_ACCOUNT_ADDRESS
 
 You should see a response similar to:
 
-```text
+```
 balances:
 - amount: "93000637"
   denom: uakt
@@ -224,7 +215,7 @@ pagination:
   total: "0"
 ```
 
-If you don't have a balance, please see the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md). Please note the balance indicated is denominated in uAKT \(AKT x 10^-6\), in the above example, the account has a balance of _93 AKT_. We're now setup to deploy.
+If you don't have a balance, please see the [funding guide](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/wallet/funding.md). Please note the balance indicated is denominated in uAKT (AKT x 10^-6), in the above example, the account has a balance of _93 AKT_. We're now setup to deploy.
 
 {% hint style="info" %}
 Your account must have a minimum balance of 5 AKT to create a deployment. This 5 AKT funds the escrow account associated with the deployment and is used to pay the provider for their services. It is recommended you have more than this minimum balance to pay for transaction fees. For more information on escrow accounts, see [here](../glossary/escrow.md)
@@ -236,13 +227,13 @@ Create a deployment configuration [deploy.yaml](https://github.com/ovrclk/docs/t
 
 You can use cURL to download the file:
 
-```text
+```
 curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yaml
 ```
 
 ### Modify your Configuration
 
-You may use the sample deployment file as-is or modify it for your own needs as desscribed in our [SDL \(Stack Definition Language\)](https://github.com/ovrclk/docs/blob/master/sdl/README.md) documentation. A typical modification would be to reference your own image instead of our demo app image.
+You may use the sample deployment file as-is or modify it for your own needs as desscribed in our [SDL (Stack Definition Language)](../sdl/) documentation. A typical modification would be to reference your own image instead of our demo app image.
 
 #### EXAMPLE CONFIGURATION:
 
@@ -295,7 +286,7 @@ EOF
 
 Before you can create a deployment, a [certificate](../glossary/mtls.md) must first be created. **Your certificate needs to be created only once per account** and can be used across all deployments.To do this, run:
 
-```text
+```
 akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend os --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt
 ```
 
@@ -461,13 +452,13 @@ You should see a response similar to:
 
 ### Find your Deployment \#
 
-Find the Deployment Sequence \(DSEQ\) in the deployment you just created. You will need to replace the AKASH\_DSEQ with the number from your deployment to configure a shell variable.
+Find the Deployment Sequence (DSEQ) in the deployment you just created. You will need to replace the AKASH\_DSEQ with the number from your deployment to configure a shell variable.
 
 ```bash
 AKASH_DSEQ=CHANGETHIS
 ```
 
-Now set the Order Sequence \(OSEQ\) and Group Sequence \(GSEQ\). Note that if this is your first time deploying on Akash, OSEQ and GSEQ will be 1.
+Now set the Order Sequence (OSEQ) and Group Sequence (GSEQ). Note that if this is your first time deploying on Akash, OSEQ and GSEQ will be 1.
 
 ```bash
 AKASH_OSEQ=1
@@ -492,7 +483,7 @@ akash query market bid list --owner=$AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --
 
 Note that there are bids from multiple different providers. In this case, both providers happen to be willing to accept a price of _1 uAKT_. This means that the lease can be created using _1 uAKT_ or _0.000001 AKT_ per block to execute the container. You should see a response similar to:
 
-```text
+```
 bids:
 - bid:
     bid_id:
@@ -576,19 +567,19 @@ akash query market lease list --owner $AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE 
 
 Note the bids will close automatically after 5 minutes, and you may get the response:
 
-```text
+```
 bid not open
 ```
 
 If this happens, close your deployment and open a new deployment again.  To close your deployment run this command:
 
-```text
+```
 akash tx deployment close --from=$AKASH_KEY_NAME --fees 5000uakt
 ```
 
 If your lease was successful you should see a response that ends with:
 
-```text
+```
     state: active
 ```
 
@@ -654,4 +645,3 @@ akash \
   --provider "$AKASH_PROVIDER" \
   --from "$AKASH_KEY_NAME"
 ```
-

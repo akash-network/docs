@@ -4,10 +4,6 @@
 * [Technical Support](support.md)
 * [Stack Definition Language (SDL)](stack-definition-language.md)
 
-## Release Notes
-
-* [Akash Version 0.14.0](release-notes/v0.14.0.md)
-
 ## Deployment Guides <a href="guides" id="guides"></a>
 
 * [Apps on Akash](guides/awesome-akash.md)
@@ -17,9 +13,13 @@
 
 ## Using Akash Tokens
 
+* [Get Free Tokens](using-akash-tokens/funding.md)
 * [Buy Akash Tokens](using-akash-tokens/buy.md)
-* [Fund your Account](using-akash-tokens/funding.md)
 * [Keplr Wallet](using-akash-tokens/keplr.md)
+
+## Release Notes
+
+* [Akash Version 0.14.0](release-notes/v0.14.0.md)
 
 ## Tutorials <a href="deploy" id="deploy"></a>
 
