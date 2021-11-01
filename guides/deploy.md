@@ -1,4 +1,4 @@
-# Akashlytics Deploy (Desktop App)
+# Desktop App
 
 ## **Akashlytics Deploy Overview**
 
@@ -49,7 +49,7 @@ The Akashlytics Deploy software may be found at the project’s documentation he
 
 #### **STEP4 - Override MacOS Unidentified Developer Warning**
 
-When first launching Akashlytics Deploy your mac will have an “unidentified provider” warning preventing the application from launching.  As this software is created, maintained by the Akash community and can be trusted as such.  To get past this prompt do the following
+When first launching Akashlytics Deploy your Mac will have an “unidentified provider” warning preventing the application from launching.  This software is created, maintained by the Akash community and can be trusted as such.  To get past this prompt do the following:
 
 * Click the Question Mark (“?”) icon provided on the warning message.
 
@@ -75,13 +75,13 @@ Note: The installation steps captured in the steps and screenshots that follow w
 
 #### **STEP1 - Launch the Installer**
 
-* Find the installer on your computer and double click
+* Following installation file download, find the installer on your computer and double click.
 
 ![](https://lh6.googleusercontent.com/N\_qb4pKmkRKHGq\_dDshrznrJXQx1TUXyPjpFfMjgFbtoFh2jX-9CLauLp3EKPyLek2uilQdyiS\_87Vs1jGVr4PdFDhm8-DDKJTyQGSe-rJqGUDpeR7E3Bo6NB\_yV-5BdFUXjAMCI=s0)
 
 **STEP2 - Windows Defender Warning**
 
-Depending on the Operating System version and installed/enabled security tools - Windows Defender may pop up with an “unrecognized app” message.  As this software is created, maintained by the Akash community and can be trusted as such.  We can get past this with the following steps.
+Depending on the Operating System version and installed/enabled security tools - Windows Defender may pop up with an “unrecognized app” message.  This software is created, maintained by the Akash community and can be trusted as such.  We can get past this warning with the following steps.
 
 * Expand the available options on the warning prompt and select “Run anyway”
 
@@ -99,12 +99,12 @@ Depending on the Operating System version and installed/enabled security tools -
 
 In this section we will configure the following:
 
-* Import an Existing Wallet
-* Create a Certificate to Interact With the Blockchain
+* Import an existing wallet
+* Create a certificate to interact with the Blockchain
 
 #### **STEP1 - Import Existing Wallet**
 
-* The first thing you will need is a wallet. With a mnemonic phrase you have access to.
+* The first thing you will need is a wallet with a mnemonic phrase you have access to.
 * In the tool you can choose a name for this wallet. This will not affect the functionality of the tool but is just an easy way to track what wallet is currently in use.
 * Next choose a password that you will remember for the wallet.
 
@@ -133,7 +133,7 @@ In this section we will use the tool to deploy our own example WordPress page on
 #### **STEP2 -  Checking Deployment Pre-Reqs**
 
 * Before getting started make sure you have met the following requirements:
-  * 5AKT are available in wallet/escrow accountIf everything is in order click the “CONTINUE” button
+  * 5AKT are available in wallet/escrow account.&#x20;
   * Valid certificate (on chain and matching cert locally)
 * If everything is in order click the “CONTINUE” button
 
@@ -141,9 +141,9 @@ In this section we will use the tool to deploy our own example WordPress page on
 
 #### **STEP3 -  Choose Template**
 
-* The tool provides several sample templates including Games (Supermario, Minecraft, etc), and some more general (Wordpress, Hello-World, etc)
+* The tool provides several sample templates including Games (Supermario, Minecraft, etc), and some more general (WordPress, Hello-World, etc)
 * To deploy a custom application select the Empty template option
-* Press “CONTINUE” with the Wordpress template selected
+* Press “CONTINUE” with the WordPress template selected
 
 ![](https://lh6.googleusercontent.com/70YVBS9Q\_lB5j7mHDnwcC8iNFJT6ueqarfPG9\_BnDcvmcBwgHDG24RyiTJDvbbvq-HngUgMnC05-Cex6QeiM-VbBxBIs78259J\_NUgexDIrkOfNBsfQ203WqwbGR1FC0b\_9MBx99=s0)
 
@@ -193,7 +193,7 @@ Note: The Wordpress site may take a couple of minutes to load depending on the s
 
 ## **Manage Deployments**
 
-There are a couple important operations you can do with the deploy tool.
+There are a couple important management operations you can do with the deploy tool.
 
 * Add funds to existing deployment’s Escrow Account
 * Close an active deployment
@@ -205,7 +205,7 @@ There are a couple important operations you can do with the deploy tool.
 
 ![](https://lh5.googleusercontent.com/1Q3Zdx-NO-kvbzxgNCHfLSsFXF2ES9R1B3BlJXN-VQskuGDn4tp0GkwCDjfmpd\_ay724m\_vNoveIJDFJ\_pGmVPz3ltX7\_qSmxaMIMxghkYBsrhvvfGZGGOJxLdMJUa8z8BJVkN1R=s0)
 
-* From the deployment window you can see the resources that are dedicated to each deployment.
+* From the Active Deployments window you can see the resources that are dedicated to each deployment.
 
 ![](https://lh5.googleusercontent.com/PGtLDklCS5-BBmLDNAXcosnzUOnmAM4qyQwRahXoxOAyVSk0QnQe22G9Uagk1W6bsLOthavS0JzXTDJFzULvVWfuxzRJnrZ\_WJlJpZV91a36uac6FExJBJqbDx5tSloqiXpoQ8\_4=s0)
 
