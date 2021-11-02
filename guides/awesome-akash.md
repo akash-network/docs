@@ -115,5 +115,3 @@ Awesome DeFi apps you can deploy on Akash
 ### Chat
 
 * [Mattermost](https://github.com/ovrclk/awesome-akash/blob/master/mattermost)
-
-### Video Conferencing
