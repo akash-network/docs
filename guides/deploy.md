@@ -24,32 +24,34 @@ The Akashlytics Deploy software may be found at the project’s documentation he
 
 ![](../.gitbook/assets/AkashlyticsDownloadScreen.png)
 
-### **MacOS Installation Details**
+{% tabs %}
+{% tab title="MacOS" %}
+### MacOS Installation
 
-#### **STEP1 - Locate the Downloaded DMG File**
+#### STEP1 - Locate the Downloaded DMG File
 
 * After completing the download find the MacOS DMG in the Downloads directory.
 * Locate the DMG and double-click.
 
 ![](../.gitbook/assets/MacOSDMGScreen.png)
 
-#### **STEP2 - Move Akashlytics Deploy to the Applications Directory**
+#### STEP2 - Move Akashlytics Deploy to the Applications Directory
 
 * After installation - MacOS will prompt the user to move the Akashlytics Deploy shortcut to the Applications directory
 * Drag and drop the Akashlytics Deploy icon into the Applications folder from the prompt
 
 ![](../.gitbook/assets/MacOSDrapToApp.png)
 
-#### **STEP3 - Launching the Tool**
+#### STEP3 - Launching the Tool
 
 * With the installation completed - open MacOS Finder and type “akashlytics deploy”
 * Double click the Akashlytics Deploy icon
 
-![](../.gitbook/assets/MacOSLaunchApp.png)
+![](../.gitbook/assets/akashlyticsLaunch.png)
 
-#### **STEP4 - Override MacOS Unidentified Developer Warning**
+#### STEP4 - Override MacOS Unidentified Developer Warning
 
-When first launching Akashlytics Deploy your Mac will have an “unidentified provider” warning preventing the application from launching.  This software is created, maintained by the Akash community and can be trusted as such.  To get past this prompt do the following:
+When first launching Akashlytics Deploy your mac will have an “unidentified provider” warning preventing the application from launching.  As this software is created, maintained by the Akash community and can be trusted as such.  To get past this prompt do the following:
 
 * Click the Question Mark (“?”) icon provided on the warning message.
 
@@ -57,43 +59,47 @@ When first launching Akashlytics Deploy your Mac will have an “unidentified pr
 
 * Press “Ok” to exit the warning message dialog box and follow the instructions that pop up.
 
-![](https://lh4.googleusercontent.com/sYSIOWncayYLyaClOtxcFtIZM42RSR2sOurIiIVLWi5zWh\_6-ijwli9lJKIJ8vpgGGJnVAFgL1y5ygmQm-DbSEMKEyAcsofuKh6SWGHCYm1RIbWvlBAO\_wWG1bv6Hq2aKXneRS-1=s0)
+![](../.gitbook/assets/macOSOverride.png)
 
 * Locate App within the MacOS Finder utility and Control-Click the icon
 * Select “Open”
 
-![](https://lh4.googleusercontent.com/QnaI15EOGA\_OA1wOzaATAHR3NHiQVdjDTgwKCR943T4-xPMew1f7Pab\_kFvvp7doAmmsNROn2kmSVVBpM2LEbxBMkVKq2V1JjAgl2ufogQlw4no\_qcsdGop4DGcJFV8XxrB9pZVW=s0)
+![](../.gitbook/assets/macOSFileOpen.png)
 
-* ** **You will be prompted with an “unidentified developer” dialog box
-* Click the “Open” button.
+* You will be prompted with an “unidentified developer” dialog box
+* Click the “Open” button
 
-![](https://lh6.googleusercontent.com/6E6GPuZTqEr78CicCBJvU5hS8\_KgJa8LmYpfQyXZiToqeWvzhHwIwlRR8f4Zq5E\_y9hKKPub8ild6XSCSau\_HzPmwLacoW76xxTP2QT3ixrGOpTiWU\_J5Rmr677Aem7thWmUhzWH=s0)
+![](../.gitbook/assets/macOSFileOpen2.png)
+{% endtab %}
 
-### **Windows Installation**
+{% tab title="Windows" %}
+### Windows Installation
 
 Note: The installation steps captured in the steps and screenshots that follow were conducted on a Windows Server instance but the application install should be nearly identical on other Windows Platforms (I.e. Windows 10).
 
-#### **STEP1 - Launch the Installer**
+#### STEP1 - Launch the Installer
 
-* Following installation file download, find the installer on your computer and double click.
+* Find the installer on your computer and double click
 
-![](https://lh6.googleusercontent.com/N\_qb4pKmkRKHGq\_dDshrznrJXQx1TUXyPjpFfMjgFbtoFh2jX-9CLauLp3EKPyLek2uilQdyiS\_87Vs1jGVr4PdFDhm8-DDKJTyQGSe-rJqGUDpeR7E3Bo6NB\_yV-5BdFUXjAMCI=s0)
+![](../.gitbook/assets/akashlyticsWindowsExplorer.png)
 
-**STEP2 - Windows Defender Warning**
+#### STEP2 - Windows Defender Warning
 
-Depending on the Operating System version and installed/enabled security tools - Windows Defender may pop up with an “unrecognized app” message.  This software is created, maintained by the Akash community and can be trusted as such.  We can get past this warning with the following steps.
+Depending on the Operating System version and installed/enabled security tools - Windows Defender may pop up with an “unrecognized app” message.  As this software is created, maintained by the Akash community and can be trusted as such.  We can get past this with the following steps.
 
 * Expand the available options on the warning prompt and select “Run anyway”
 
-![](https://lh3.googleusercontent.com/GzzI3N0uOSMqDUDR4oDEm1EbiH75wIJ\_ctzaSwtQzEjlcn5Nq8q8QfkFpN5XCOlyc1l40Wibv5nlS8T3cDQ6VQtJs1xPqeRWfFwU6vuSjrlMq6j\_qrkUojW\_gfjTZnxxO0jZoztk=s0)
+![](../.gitbook/assets/akashlyticsWindowsDefender.png)
 
 * Feel free to use the default install options and follow the prompts.
 
-![](https://lh4.googleusercontent.com/4l1By-gVjfWNo4x2tX7TFwKoagY67qke4O2Y6r2\_hH2dNtsxpph416ldfShLs3k5aWbfLl4Ykq-VQlUIrOAS\_S0OlPH7pGcI43zERVY8ow-d-kH5pIKKP8KbFhMlNfa1a9XLkrxC=s0)
+![](../.gitbook/assets/akashlticsWindowsInstall.png)
 
 * On the last step of the install in the “Completing Akashlytics Deploy Setup” section - check the “Run Akashlytics Deploy” option (likely selected by default) and select “Finish”.
 
-![](https://lh3.googleusercontent.com/6Cyequp89\_MuGfOSrZtep\_nNHYpuOlpab-2Ojxbmh5alKiYsY7fdZvo0irWCJj-2FfHJ4MHthGsF3LGVZxDAXO-3SWipLbdE9LsbHk5zerqWNgK8\_bxEnkPoeAsII-Vb9WiuIHg4=s0)
+![](../.gitbook/assets/akashlyticsWindowsInstallFinalStep.png)
+{% endtab %}
+{% endtabs %}
 
 ### Initial Configuration
 
