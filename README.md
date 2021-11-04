@@ -63,4 +63,4 @@ No. You can update your deployment. However, only some fields in the Akash stack
 
 ## Is there an Akash Testnet?
 
-Yes, but currently it does not have providers. We encourage developers to use Mainnet and provide tokens to do that. To request tokens, please follow the [Activation Funding](using-akash-tokens/funding.md#activation-funding) guide.
+Yes, but currently it does not have providers. We encourage developers to use Mainnet and provide tokens to do that. To request tokens, please follow the [Activation Funding](token/funding.md#activation-funding) guide.

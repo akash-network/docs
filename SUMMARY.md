@@ -4,18 +4,18 @@
 * [Technical Support](support.md)
 * [Stack Definition Language (SDL)](stack-definition-language.md)
 
-## Deployment Guides <a href="guides" id="guides"></a>
+## Deploy on Akash <a href="guides" id="guides"></a>
 
 * [Apps on Akash](guides/awesome-akash.md)
 * [Desktop App](guides/deploy.md)
 * [Web App](guides/web.md)
 * [CLI](guides/cli.md)
 
-## Using Akash Tokens
+## Using Akash Tokens <a href="token" id="token"></a>
 
-* [Get Free Tokens](using-akash-tokens/funding.md)
-* [Buy Akash Tokens](using-akash-tokens/buy.md)
-* [Keplr Wallet](using-akash-tokens/keplr.md)
+* [Get Free Tokens](token/funding.md)
+* [Buy Akash Tokens](token/buy.md)
+* [Keplr Wallet](token/keplr.md)
 
 ## Release Notes
 
