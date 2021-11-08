@@ -35,6 +35,7 @@
   * [RPC Service](operations/node/rpc-service.md)
   * [API Service](operations/node/api-service.md)
 * [Build a Cloud Provider](operations/provider/README.md)
+  * [Kubernetes Cluster](operations/provider/kubernetes-cluster.md)
   * [Provider Networks](operations/provider/testnet.md)
 * [Running a Validator](operations/validator.md)
 * [Akash Audited Attributes](operations/akash-audited-attributes.md)
