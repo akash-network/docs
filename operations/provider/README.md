@@ -31,10 +31,12 @@ The Akash software install process on a Linux server is shown in this step.
 
 _Specify the Akash Version_
 
-* This command will retrieve the latest, stable version of the Akash software and store the version in a local variab**le**
+* These commands will retrieve the latest, stable version of the Akash software and store the version in a local variable
 
 ```
 AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
+
+curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "v$AKASH_VERSION"
 ```
 
 _**Add Akash Install Location to User’s Path**_
@@ -251,9 +253,8 @@ _**Install Kubectl on the Provider**_
 
 ```
 stable=$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
-curl -LO
- 
-https://storage.googleapis.com/kubernetes-release/release/${stable}/bin/linux/amd64/kubectl
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/${stable}/bin/linux/amd64/kubectl
 
 chmod +x ./kubectl
 
