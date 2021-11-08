@@ -53,7 +53,12 @@ vi /etc/environment
 
 _View within text editor prior to the update:_
 
-![](../../.gitbook/assets/providerEtcEnvBefore.png)
+```
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+~                                                                                                                                                                                                          
+~                                                                                                                                                                                                          
+~  
+```
 
 _Add the following directory, which is the Akash install location, to PATH:_
 
@@ -63,7 +68,12 @@ _Add the following directory, which is the Akash install location, to PATH:_
 
 _View within the text editor following the update:_
 
-![](../../.gitbook/assets/provideEtcEnvAfter.png)
+```
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/root/bin"
+~                                                                                                                                                                                                          
+~                                                                                                                                                                                                          
+~ 
+```
 
 _Make the new path active in the current session:_
 
@@ -79,7 +89,10 @@ akash version
 
 _Expected result_:
 
-![](../../.gitbook/assets/akashVersion.png)
+```
+root@node2:~# akash version
+v0.14.0
+```
 
 ### STEP3 - Create/Import Akash Account
 
@@ -105,9 +118,31 @@ _**Create the new account and store the encrypted private key in the keyring**_
 akash --keyring-backend "$AKASH_KEYRING_BACKEND"  keys add "$AKASH_KEY_NAME"
 ```
 
-_**Expected results with important outputs high**_lighted
+_**Expected results:**_
 
-![](../../.gitbook/assets/providerAccountCreation.png)
+```
+root@node2:~# AKASH_KEY_NAME=providerkey
+root@node2:~# ​​AKASH_KEYRING_BACKEND=file
+​​AKASH_KEYRING_BACKEND=file: command not found
+root@node2:~# ​​AKASH_KEYRING_BACKEND=file
+root@node2:~# akash --keyring-backend "$AKASH_KEYRING_BACKEND"  keys add "$AKASH_KEY_NAME"
+Enter keyring passphrase:
+Re-enter keyring passphrase:
+
+- name: providerkey
+  type: local
+  address: akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x
+  pubkey: akashpub1addwnpepqwz556cp568gk6tj9yxmqshmqad6pj0nnfnqzfufez2fd2jh94fr6y763nc
+  mnemonic: ""
+  threshold: 0
+  pubkeys: []
+
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+escape dry gate <redacted>  prosper human
+```
 
 ### STEP4 - Verify Account Balance
 
@@ -139,7 +174,15 @@ akash --node "$AKASH_NODE" query bank balances "$AKASH_ACCOUNT_ADDRESS"
 
 _**Example output:**_
 
-![](<../../.gitbook/assets/providerAccountBalance (1).png>)
+```
+root@node2:~# akash --node "$AKASH_NODE" query bank balances "$AKASH_ACCOUNT_ADDRESS"
+balances:
+- amount: "15000000"
+  denom: uakt
+pagination:
+  next_key: null
+  total: "0"
+```
 
 ### STEP5 - Create the Provider
 
@@ -172,11 +215,23 @@ _**Example of Creating Provider File**_
 
 * These screenshots shows the previous steps for further clarity
 
-![](../../.gitbook/assets/providerDomain.png)
+```
+root@node2:~# export PROVIDER_DOMAIN=chainzeroakash.net
+root@node2:~# vi provider.yaml
+```
 
 * File details within an editor
 
-![](../../.gitbook/assets/providerDetails.png)
+```
+host: https://$PROVIDER_DOMAIN:8443
+attributes:
+  - key: region
+    value: us-west
+  - key: host
+    value: chainzero
+~                                                                                                                                                                                                          
+~   
+```
 
 _**Create the Akash Provider**_
 
@@ -197,9 +252,26 @@ akash tx provider create provider.yaml --from $AKASH_PROVIDER_KEY --home=$AKASH_
 
 _**Example of Creating the Provider**_
 
-![](../../.gitbook/assets/providerCreatingProvider1.png)
+```
+export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
+AKASH_PROVIDER_KEY=providerkey
+AKASH_HOME=/root/.akash
+```
 
-![](../../.gitbook/assets/providerCreatingProvivder2.png)
+```
+root@node2:~# akash tx provider create provider.yaml --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND --node=$AKASH_NODE --chain-id=$AKASH_CHAIN_ID --fees 5000uakt
+
+Enter keyring passphrase:
+
+{"body":{"messages":[{"@type":"/akash.provider.v1beta1.MsgCreateProvider","owner":"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x","host_uri":"https://$PROVIDER_DOMAIN:8443","attributes":[{"key":"region","value":"us-west"},{"key":"host","value":"chainzero"}],"info":{"email":"","website":""}}],"memo":"","timeout_height":"0","extension_options":[],"non_critical_extension_options":[]},"auth_info":{"signer_infos":[],"fee":{"amount":[{"denom":"uakt","amount":"5000"}],"gas_limit":"200000","payer":"","granter":""}},"signatures":[]}
+
+confirm transaction before signing and broadcasting [y/N]: y
+
+{"height":"3403495","txhash":"AE2900D3BC3ABB8517C0F618625CC135460300152C4B20F493606E8733CDBC39","codespace":"","code":0,"data":"0A110A0F6372656174652D70726F7669646572","raw_log":"[{\"events\":[{\"type\":\"akash.v1\",\"attributes\":[{\"key\":\"module\",\"value\":\"provider\"},{\"key\":\"action\",\"value\":\"provider-created\"},{\"key\":\"owner\",\"value\":\"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"create-provider\"},{\"key\":\"sender\",\"value\":\"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8\"},{\"key\":\"sender\",\"value\":\"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x\"},{\"key\":\"amount\",\"value\":\"5000uakt\"}]}]}]","logs":[{"msg_index":0,"log":"","events":[{"type":"akash.v1","attributes":[{"key":"module","value":"provider"},{"key":"action","value":"provider-created"},{"key":"owner","value":"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x"}]},{"type":"message","attributes":[{"key":"action","value":"create-provider"},{"key":"sender","value":"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x"}]},{"type":"transfer","attributes":[{"key":"recipient","value":"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"},{"key":"sender","value":"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x"},{"key":"amount","value":"5000uakt"}]}]}],"info":"","gas_wanted":"200000","gas_used":"63853","tx":null,"timestamp":""}
+
+root@node2:~#
+
+```
 
 ### STEP6 - Create a TLS Certificate
 
@@ -211,7 +283,16 @@ akash tx cert create server $PROVIDER_DOMAIN --chain-id $AKASH_CHAIN_ID --keyrin
 
 _**Example of Creating the Certificate**_
 
-![](../../.gitbook/assets/providerCertCreation.png)
+```
+root@node2:~# akash tx cert create server $PROVIDER_DOMAIN --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --node=$AKASH_NODE --fees 5000uakt
+
+Enter keyring passphrase:
+
+{"body":{"messages":[{"@type":"/akash.cert.v1beta1.MsgRevokeCertificate","id":{"owner":"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x","serial":"1636405619933946920"}}],"memo":"","timeout_height":"0","extension_options":[],"non_critical_extension_options":[]},"auth_info":{"signer_infos":[],"fee":{"amount":[{"denom":"uakt","amount":"5000"}],"gas_limit":"200000","payer":"","granter":""}},"signatures":[]}
+
+confirm transaction before signing and broadcasting [y/N]: y
+root@node2:~# 
+```
 
 ### STEP7 - Configure Kubectl
 
@@ -232,7 +313,24 @@ _**Example output of directory contents**_
 * In this example the .kube directory does not exist and we will need to create it&#x20;
 * If the directory does exist and you are able to conduct kubectl commands (I.e. “kubectl get nodes”), feel free to skip forward to STEP8
 
-![](../../.gitbook/assets/providerHomeDir.png)
+```
+root@node2:~# ls -al
+total 56
+drwx------  8 root root 4096 Nov  8 21:23 .
+drwxr-xr-x 19 root root 4096 Nov  1 14:53 ..
+drwx------  5 root root 4096 Nov  8 21:06 .akash
+drwx------  3 root root 4096 Nov  2 18:49 .ansible
+-rw-------  1 root root   74 Nov  2 16:38 .bash_history
+-rw-r--r--  1 root root 3106 Dec  5  2019 .bashrc
+drwx------  2 root root 4096 Nov  2 16:38 .cache
+-rw-r--r--  1 root root  161 Dec  5  2019 .profile
+drwx------  2 root root 4096 Nov  1 14:53 .ssh
+-rw-------  1 root root 7349 Nov  8 21:03 .viminfo
+drwxr-xr-x  2 root root 4096 Nov  8 20:38 bin
+-rw-r--r--  1 root root  118 Nov  8 21:03 provider.yaml
+drwxr-xr-x  4 root root 4096 Nov  1 14:53 snap
+root@node2:~#
+```
 
 _**Create a .kube Directory**_
 
@@ -265,7 +363,13 @@ _**Verify Kubectl**_
 
 * Following the copy of the kubeconfig file and the kubectl install, you should be able to execute commands like “kubectl get nodes” as shown in example below
 
-![](../../.gitbook/assets/providerKubectlVerification.png)
+```
+root@node2:~# kubectl get nodes
+NAME    STATUS   ROLES                  AGE    VERSION
+node1   Ready    control-plane,master   6d2h   v1.22.3
+node2   Ready    control-plane,master   6d2h   v1.22.3
+node3   Ready    <none>                 6d2h   v1.22.3
+```
 
 ### STEP8 - Start the Provider
 
