@@ -2,9 +2,9 @@
 
 ## Prerequisites of an Akash Provider
 
-### Wallet Funding - Minimum of 50 AKT
+### Wallet Funding - Minimum of 5 AKT
 
-Placing a bid on an order requires a 50 AKT deposit. This deposit is fully refunded after the bid is won/lost.&#x20;
+Placing a bid on an order requires a 5 AKT deposit. This deposit is fully refunded after the bid is won/lost.&#x20;
 
 The steps to create an Akash account are covered in the Provider setup section of this document.
 
@@ -81,7 +81,7 @@ _Expected result_:
 
 ### STEP3 - Create/Import Akash Account
 
-For a Provider to bid on leases an account is needed with minimum funding of 50 AKT.  An account can be created by using the commands of this section.  Alternatively an existing account could be imported for provider use.
+For a Provider to bid on leases an account is needed with minimum funding of 5 AKT.  An account can be created by using the commands of this section.  Alternatively an existing account could be imported for provider use.
 
 _**Specify a key with your choice of name:**_
 
@@ -109,7 +109,7 @@ _**Expected results with important outputs high**_lighted
 
 ### STEP4 - Verify Account Balance
 
-We should verify the minimum account balance for the provider now that the account has been set up. As mentioned, the account needs slightly more than 50 AKT at a minimum.
+We should verify the minimum account balance for the provider now that the account has been set up. As mentioned, the account needs slightly more than 5 AKT at a minimum.
 
 _**Specify the Akash network to query (in this case the mainnet):**_
 
