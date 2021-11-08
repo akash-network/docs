@@ -30,7 +30,7 @@ _**Kubespray Clone**_
 
 Install Kubespray on a machine that has connectivity to the three hosts that will serve as the Kubernetes cluster.
 
-Obtain Kubespray and navigate into the created local directory
+_Obtain Kubespray and navigate into the created local directory_
 
 ```
 git clone https://github.com/kubernetes-sigs/kubespray.git
@@ -71,7 +71,7 @@ Ansible will configure the Kubernetes hosts via SSH. The user Ansible connects w
 
 Commands in this step provide an example set up of SSH access to Kubernetes hosts and testing those connections.
 
-Create SSH Keys on Ansible Host
+_**Create SSH Keys on Ansible Host**_
 
 ```
 ssh-keygen
@@ -89,7 +89,7 @@ _**Copy Public Key to the Kubernetes Hosts**_
 ssh-copy-id -i ~/.ssh/id_rsa <username>@<ip-address>
 ```
 
-Confirm SSH to the Kubernetes Hosts
+_**Confirm SSH to the Kubernetes Hosts**_
 
 * Ansible should be able to access Kubernetes hosts with no password
 
@@ -97,7 +97,7 @@ Confirm SSH to the Kubernetes Hosts
 ssh -i ~/.ssh/id_rsa <username>@<ip-address>
 ```
 
-Example
+_**Example**_
 
 * Complete example SSH setup from Ansible host to all Kubernetes hosts
 
@@ -121,11 +121,11 @@ declare -a IPS=(10.0.10.27 10.0.10.113 10.0.10.132)
 CONFIG_FILE=inventory/akash/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
 ```
 
-Expected result
+_Expected result_
 
 ![](../../.gitbook/assets/providerInsibleInventory.png)
 
-Example of the generated hosts.yaml File
+_Example of the generated hosts.yaml File_
 
 ![](../../.gitbook/assets/providerExampleInventory.png)
 
@@ -186,7 +186,7 @@ A couple of quick Kubernetes cluster checks are in order before moving into next
 
 * SSH into Kubernetes node01 (AKA Kubernetes master node)
 
-Confirm Kubernetes Nodes
+_**Confirm Kubernetes Nodes**_
 
 ```
 kubectl get nodes
@@ -212,25 +212,25 @@ Akash uses two Kubernetes Custom Resource Definitions (CRD) to store each deploy
 
 * On the Kubernetes master node, download and install the Akash CRD files.
 
-Download the First CRD File
+_**Download the First CRD File**_
 
 ```
 wget https://raw.githubusercontent.com/ovrclk/akash/master/pkg/apis/akash.network/v1/crd.yaml
 ```
 
-Install the First CRD File
+_**Install the First CRD File**_
 
 ```
 kubectl apply -f ./crd.yaml
 ```
 
-Download the Second CRD File
+_**Download the Second CRD File**_
 
 ```
 wget https://raw.githubusercontent.com/ovrclk/akash/mainnet/main/pkg/apis/akash.network/v1/provider_hosts_crd.yaml
 ```
 
-Install the Second CRD File
+_**Install the Second CRD File**_
 
 ```
 kubectl apply -f ./provider_hosts_crd.yaml
@@ -242,7 +242,7 @@ _**Confirm the CRD installs**_
 kubectl get crd -n kube-system
 ```
 
-Expected CRD Output
+_**Expected CRD Output**_
 
 ![](../../.gitbook/assets/providerCRDOutput.png)
 
@@ -268,7 +268,7 @@ kubectl apply -f ./network-policy-default-ns-deny.yaml
 
 The Akash provider requires an ingress controller in the Kubernetes cluster.
 
-Ingress Controller Install
+_**Ingress Controller Insta**_ll
 
 * On the Kubernetes master node, download the ingress controller YAML file
 
@@ -286,7 +286,7 @@ kubectl apply -f ./ingress-nginx.yaml
 
 ![](../../.gitbook/assets/providerIngressController.png)
 
-Ingress Controller Configuration
+_**Ingress Controller Configuration**_
 
 A Kubernetes node needs to be labeled for ingress use. This will cause the NGINX ingress controller to live only on the labeled node.
 
