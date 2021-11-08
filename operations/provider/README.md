@@ -1,661 +1,163 @@
 # Build a Cloud Provider
 
-## **Prerequisites of an Akash Provider**
+## Prerequisites of an Akash Provider
 
-Prior to reviewing and completing the implementation steps of an Akash Provider environment consider the following mandates.
+### Wallet Funding - Minimum of 50 AKT
 
-#### **Wallet Funding Requirement - Minimum of 50 AKT**
+Placing a bid on an order requires a 50 AKT deposit. This deposit is fully refunded after the bid is won/lost.&#x20;
 
-* An associated, available wallet must have sufficient funding, as placing a bid on an order on the blockchain requires a 50 AKT deposit. This deposit is fully refunded after the bid is won/lost.
-  * The precise minimum funding requirement of the wallet is marginally greater than 50 AKT as tiny amounts \(about 0.001\) of AKT is utilized by the Akash provider to commit transactions on the Akash blockchain.
-  * Reference [https://docs.akash.network/guides/funding](https://docs.akash.network/guides/funding)  as a purchasing guide of AKT and[ https://docs.akash.network/guides/deploy](https://docs.akash.network/guides/deploy) Akash CLI wallet install.
+The steps to create an Akash account are covered in the Provider setup section of this document.
 
-#### **Compute Resources Powering the Provider’s Kubernetes Cluster**
+### Kubernetes Cluster
 
-* The compute resources hosting the provider’s Kubernetes cluster - on which tenants deploy workloads - should be x86-64 software capable.
-* The provider must provision a full Kubernetes cluster.  This guide provides possible techniques and configuration of an appropriate cluster.
-* As detailed subsequently the  recommended method for provisioning the cluster is via the utilization of the kubespray project. 
-* The cluster must have access to the internet and be accessible from the internet.
+* A full Kubernetes cluster is required.
+* This Akash provided guide offers one possible path for cluster creation via Kubespray.
+  * [ ] [https://docs.akash.network/operations/provider/kubernetes-cluster ](https://docs.akash.network/operations/provider/kubernetes-cluster)
+* The cluster must have outbound internet access and be reachable from the internet.
 
-#### **Compute Resource to Host the Akash Provider Service**
+## Akash Provider Setup
 
-* The Akash provider service foundationally listens for events on the Akash blockchain and responds to those events by offering available compute resources in the provider’s own Kubernetes cluster. 
-* The provider service must be accessible from the internet and have an associated hostname. When a provider/tenant lease is created, the tenant of the lease communicates directly with the provider detailing precise instructions/requirements of the desired workload deployment and thus requires a direct communication path.
+### Provider Setup Overview
 
-#### **Access to an Akash blockchain RPC node**
+The following sections will explore each step of the Akash provider setup in detail.
 
-* The provider requires access to a Remote Procedure Call \(RPC\) node on the Akash network as the  provider does not directly participate in the blockchain network. 
-* The provider utilizes an external RPC node to manage all interaction with the blockchain. 
-* Any accessible RPC node in the Akash network may be utilized. 
-* All Akash providers are strongly recommended to run a node on the Akash network co-located with the provider for a reduced communication path and reduced round trip communication delay. The node need not act as a validator. Multiple providers may access a single RPC node.
+### STEP1 - Select a Host to Run the Akash Provider
 
-## **Kubernetes Cluster Setup**
+The Akash provider can be installed on any Kubernetes master or worker node. Or if preferred the provider may be installed on a separate host outside of the Kubernetes cluster.
 
-### **Overview**
+### STEP2 - Install Akash Software
 
-Akash workloads are deployed as Kubernetes pods as desperate clusters owned, managed, and maintained by the provider.  As the foundational element of the provider network the guide commences with the build of the provider’s Kubernetes control plane and worker nodes.
+The Akash software install process on a Linux server is shown in this step.
 
-The setup of a Kubernetes cluster is the responsibility of the provider on the Akash network. This section of this document provides best practices and recommendations for setting up a Kubernetes cluster. This document is not a comprehensive guide to operating a Kubernetes cluster and assumes pre-existing Kubernetes knowledge and experience.
+_Specify the Akash Version_
 
-### **Kubernetes Cluster Creation and Configuration Steps**
+* This command will retrieve the latest, stable version of the Akash software and store the version in a local variab**le**
 
-Individual sections following offer guidance in the configuration of a Kubernetes cluster - prepared appropriately to offer Akash provider services - within the following framework and steps.
-
-The Kubernetes cluster deployment described in these steps utilize Kubespray to deploy the control plane and worker nodes.
-
-**STEP1**:  Clone the Kubespray project
-
-**STEP2**:  Install Ansible and configure Ansible inventory for the nodes in the cluster
-
-**STEP3**:  Invoke the Kubernetes cluster provisioning using Ansible
-
-**STEP4**:  Add Akash's Custom Resource Definitions to Kubernetes
-
-**STEP5**:  Add a NGINX Ingress controller in the Kubernetes cluster for Akash
-
-With the conclusion of the aforementioned steps a Kubernetes cluster will be readied to assume the role of an Akash provider additional steps - provided in detail in a subsequent section of this document - are necessary to configure the provider and place onto the Akash network.
-
-The subsections that follow deep dive into the referenced Kubernetes cluster creation step in detail and within an ordered methodology.
-
-### **Clone the Kubespray project**
-
-#### **Cluster Creation Recommendations**
-
-The recommended method for setting up a Kubernetes cluster for Akash provider use is via the[ Kubespray](https://github.com/kubernetes-sigs/kubespray) project. A collection of ansible resources is provoked by Kubespray allowing Kubernetes cluster deployment with a minimized effort.
-
-The recommended minimum number of compute nodes is three in the following footprint:
-
-* One host maintains the role of  the Kubernetes master node & provider
-* One host that serves as a redundant master node
-* One host which facilitates the role of Kubernetes worker nodes and host deployed workloads triggered via the Akash provider
-
-For experimentation and initial exposure it is possible to provision a single host Kubernetes cluster - control-plane, worker node, and Akash provider collapsed on a single node - but this configuration is not recommended for production usage.
-
-#### **Provoke Kubespray Project Clone**
-
-Initiate the following commands to obtain Kubespray and navigate into the created local directory for subsequent steps readiness.
-
-Kubespray should be installed on a machine that has connectivity to the three hosts that will serve as the Kubernetes cluster.
-
-```text
-git clone https://github.com/kubernetes-sigs/kubespray.git
-
-cd kubespray
 ```
-
-  
-
-
-### **Install Ansible and configure Ansible inventory for the nodes in the cluster**
-
-#### **Ansible Installation**
-
-Kubespray utilized Ansible during Kubernetes cluster deployment and thus an Ansible installation serves as our next step.  Python version 3 and the associated PIP3 package management system will facilitate Ansible installation. 
-
-The required Ansible version and additional/required Python dependencies are specified in a requirements.txt file which were pulled during the Kubespray clone and reside in the “kubespray” directory.  Recommendation would be to install Ansible and dependencies within a Python virtual environment created via the virtualenv tool and such techniques are included in scripted steps that follow.
-
-* Note - depending on your operating system it may be necessary to update the OS, install pip3, and then install virtualenv prior to the primary steps in the section.  Example readiness commands are listed below in a “Optional Precursor Steps” outline.  _The example steps would be specifically relevant to an Ubuntu OS._
-
-#### **Optional  Precursor Steps**
-
-```text
-sudo apt-get update
-
-sudo apt-get install -y python3-pip
-
-sudo apt install virtualenv
-```
-
-#### **Execute Commands Within kubespray Directory**
-
-```text
-virtualenv --python=python3 venv
-
-source venv/bin/activate
-
-pip3 install -r requirements.txt
-```
-
-#### **Ensuring Ansible Access of Intended Kubernetes Nodes**       
-
-Ansible provokes remote host configuration via SSH. Each node in the intended Kubernetes cluster must be accessible by the Ansible host using SSH. The SSH user which connects remotely to Kubernetes host’s be root or is capable of escalating privileges to root using the sudo command.
-
-If you need to copy your SSH private key to the nodes you can do so using the ssh-copy-id command on most Linux machines.
-
-_Conduct Following Steps on the Ansible Host_
-
-* Generate a SSH public/private key pair.  Accept default naming convention to generate keys as the “id\_rsa” naming convention or change to a naming convention of your choice and then alter the steps that follow accordingly.
-
-```text
-ssh-keygen
-```
-
-_Copy the Newly Generated Public Key to the Kubernetes Hosts \(Example Shown\)_ 
-
-* Upon successful execution of this command a message should be received stating “Number of key\(s\) added” and instruction on how to test connection
-* Enter password when prompted
-
-```text
-ssh-copy-id -i ~/.ssh/id_rsa root@10.0.10.27
-```
-
-_Test Connection Example_
-
-* Execution should result in a SSH session established to the remote host without the need of password entry
-
-```text
-ssh -i ~/.ssh/id_rsa root@10.0.10.27
-```
-
-_Repeat Steps Above for SSH Connections to all Kubernetes Hosts from Ansible Host_  
-
-
-#### **Ansible Inventory Configuration**   
-
-Inventory file population will dictate the hosts in the Kubernetes cluster Ansible will attempt to configure . Inventory configuration files for Ansible may be created in multiple formats.  This guide will focus on inventory definition via a YAML file. 
-
-Example YAML inventory definitions are provided subsequently pertaining to the following scenarios:
-
-* Single node Kubernetes cluster
-* Multiple node Kubernetes cluster \(two masters and one worker node\)
-
-Utilize only the scenario and associated YAML definition file relevant to your desired topology.  
-
-
-#### **Single Node Kubernetes Cluster \(Not Recommended for Production Use\)**
-
-* Execute the following commands to configure the Ansible inventory
-* Explanation of commands in order provided:
-  * Within the kubespray directory an inventory/sample directory containing variables and ini files used by Ansible for inventory purposes exist.  The sample directory is copied into a custom directory.
-  * An IPS variable is declared with a list of IP addresses for the Ansible inventory \(in this case only a single address\)
-  * A Python inventory builder script is called with a reference to the IP address list for injection into the script
-
-_Execute Commands within the “kubespray” Directory_
-
-```text
-cp -rfp inventory/sample inventory/akash
-
-###Replace IP address with Kubernetes node address in your environment
-declare -a IPS=(10.0.10.88)
-CONFIG_FILE=inventory/akash/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
-```
-
-* Following the successful execution of the above commands the referenced hosts.yaml file will be created within the kubespray/inventory/akash directory 
-
-_Manual Edits/Insertions of the hosts.yaml Inventory File_
-
-* The following instructions facilitate necessary additions to the Ansible Inventory file
-
-_Execute Commands within the “kubespray” Directory_
-
-```text
-cd inventory/akash
-```
-
-* Open the hosts.yaml file in VI \(Visual Editor\) or nano to make the following file updates to the hosts.yaml file
-* Within the YAML file’s “all” stanza and prior to the “hosts” sub-stanza level and at prior to the “hosts” sub-stanza level - insert the following vars stanza
-* Reference the full YAML file depiction provided subsequently in this section to ensure proper placement and indentation
-
-```text
-vars:
-  cluster_id: "1.0.0.1"
-  ansible_user: root
-  gvisor_enabled: true
-```
-
-**Granular Review of Ansible Inventory File Elements and Associated Function** 
-
-The Ansible inventory file associated with the single node Kubernetes implementation defines the node as a host named node1. 
-
-* The node1 name is internally assigned by Ansible to the node. The value specified in the key ansible\_host  under the node name defines how the host is reached by Ansible. In this example the node's IP address is utilized but a hostname may be used alternatively.
-* The host is placed into the groups of kube\_control\_plane, kube\_node, etcd, and calico-rr. All hosts in those groups are then placed into the k8s\_cluster group. This is similar to a standard configuration for a Kubernetes cluster.
-* The Calico CNI is the only networking solution for Kubernetes clusters officially supported by Akash at this time.
-
-_Calico Container Network Interface \(CNI\) Detail_
-
-* One important detail is the value cluster\_id which is assigned to all nodes by using the all group under vars in the YAML file.
-* This value is used by Calico to uniquely identify a set of resources. 
-* For a more in depth explanation[ see this document](https://hub.docker.com/r/calico/routereflector/).
-
-_Completed/Expected Ansible Inventory File_
-
-![](https://lh3.googleusercontent.com/mccuNWwCKcPouAX8CgEvFxrY3UUnQo4L-t8LKIpZvrRNvjz-rEoax1fK2ZWw3tf1yFAjGJxt70UV7EDHNxJtINLjggLLzXyg4NlpZ68Aeq7wUFKdNWfHHi_VbimbW2XaPW2abRwB=s0)
-
-
-
-#### **Multiple Node Kubernetes Cluster**                               
-
-* Execute the following commands to configure the Ansible inventory
-* Explanation of commands in order provided:
-  * Within the kubespray directory an inventory/sample directory containing variables and ini files used by Ansible for inventory purposes exist.  The sample directory is copied into a custom directory.
-  * An IPS variable is declared with a list of IP addresses for the Ansible inventory \(in this case three addresses\)
-  * A Python inventory builder script is called with a reference to the IP address list for injection into the script
-
-_Execute Commands within the “kubespray” Directory_  
-
-
-```text
-cp -rfp inventory/sample inventory/akash
-
-###Replace IP address with Kubernetes node addresses in your environment
-
-declare -a IPS=(10.0.10.27 10.0.10.113 10.0.10.132)
-
-CONFIG_FILE=inventory/akash/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
-```
-
-* Following the successful execution of the above commands the referenced hosts.yaml file will be created within the kubespray/inventory/akash directory
-
-_Manual Edits/Insertions of the hosts.yaml Inventory File_
-
-* The following instructions facilitate necessary additions to the Ansible Inventory file
-
-_Execute Commands within the “kubespray” Directory_
-
-```text
-cd inventory/akash
-```
-
-* Open the hosts.yaml file in VI \(Visual Editor\) or nano to make the following file updates to the hosts.yaml file
-* Within the YAML file’s “all” stanza and prior to the “hosts” sub-stanza level and at prior to the “hosts” sub-stanza level - insert the following vars stanza
-* Reference the full YAML file depiction provided subsequently in this section to ensure proper placement and indentation
-
-```text
-vars:
-  cluster_id: "1.0.0.1"
-  ansible_user: root
-  gvisor_enabled: true
-```
-
-_Granular Review of Ansible Inventory File Elements and Associated Function_ 
-
-* The multiple node Kubernetes cluster’s Ansible YAML file example defines 3 separate hosts node1, node2, and node3.
-* The node names \(node1, node2, node3\) are internally assigned by Ansible. The value specified in the key ansible\_host under each node name defines how the host is reached by Ansible. In this example the node's IP address is utilized but a hostname may be used alternatively.
-
-![](https://lh4.googleusercontent.com/8XFo2vthPA2ul6nuYtiGxqXShNT5e4IcfC-lK4ZYjQD4hdnqG0vUH9rbRlMSiyyRsUcuOwH48F_hbM30fI25U3ZcWPOnJXBQWxK0SmhYpTXHPuhBGtVINbuo7ZzGsGv-JXLH_MOH=s0)
-
-
-
-#### **Enablement of gVisor**
-
-* The following activities are applicable to both the single and multiple node Kubernetes implementation scenarios
-* The gvisor\_enabled key has been set to true in the kubespray inventory file within the vars stanza
-* Enablement of [ gVisor](https://gvisor.dev/) support limits the attack surface of the host
-* gVisor requires the containerd container engine
-* Modify k8s-cluster.yml and etcd.yml files to enable gVisor per the steps that follow
-
-_From the kubespray directory:_
-
-```text
-cd inventory/akash/group_vars/k8s_cluster
-```
-
-_Using VI or nano update the k8s-cluster.yml file with the following key-value pair to the value below_
-
-```text
-container_manager: containerd
-```
-
-_From the kubespray directory:_
-
-```text
-cd inventory/akash/group_vars
-```
-
-_Using VI or nano update the etcd.yml file with the following key-value pair to the value below_
-
-```text
-etcd_deployment_type: host
-```
-
-### **Invoke the Kubernetes cluster provisioning using Ansible**
-
-#### **Cluster Build Primary Steps**
-
-Assuming the Ansible inventory file has been created properly and placed within  inventory/akash/hosts.yaml - as detailed in preceding sections of this guide - the Kubernetes cluster build via Kubespray may commence via an Ansible playbook as per the instructions that follow.
-
-_Notes regarding the ansible-playbook invoke_
-
-* The --private-key option informs Ansible of the SSH private key to authenticate with. If a different private key was created and distributed to the hosts in the “Ensuring Ansible Access of Intended Kubernetes Nodes” section of this guide - update this parameter to point at the location of the private key used to access all hosts in the cluster.
-* The Ansible playbook YAML file of cluster.yml contains all the necessary steps to build the Kubernetes cluster. 
-* When the Kubernetes cluster build is completed by Ansible - the Kubernetes master node should have a  file stored at the location of /root/.kube/config which is used to connect to and authenticate with Kubernetes. Treat the file as a secret password and do not share. A copy of this file must be used to configure the Akash provider.
-
-_Dense Provider Considerations_
-
-Kubernetes utilizes a networking model which assigns a single, unique IP address to deployed pods. A node in the Kubernetes cluster manages a pool of available IP addresses for pod assignment. The node’s available IP address pool introduces a limit to the number of pods that may be hosted on that single node.
-
-Providers hosting small nodes would have no pods per node limit concern as the default IP address pool should suffice for deployed workloads.  However providers running nodes with dense compute configurations \(I.e. multi-core CPU servers\) the address pool may become a limiting factor in utilization of the node in a scenario in which the number of pods that could be deployed is greater than the number of addresses in the pool.
-
-To increase the pods per node limit, 3 steps should be taken:
-
-Settings, key-value pairs detailed would exists and may be configured in the following file if following this deployment guide strictly:
-
-*  kubespray/inventory/akash/group\_vars/k8s\_cluster/k8s-cluster.yml
-
-Increase kube\_network\_node\_prefix to assign additional lIP addresses to the node pool available for pod assignment
-
-1. Increase kube\_pods\_subnet to allow more pods in the kubernetes cluster
-2. Increase kube\_service\_addresses as more services would be expected on the dense provider node instance
-
-_Known Kubespray Issues_
-
-* Kubespray will utilize Calico for Kubernetes in this deployment. 
-* An extremely common error encountered involves Kubespray failing on a step in which a script named calioctl.sh is executed. 
-* The issue appears to be a bug in Kubespray. The only solution known at this time is to wait approximately 3 minutes and then rerun Kubespray. On the second execution, Kubespray will complete successfully.
-
-_Execution of Kubernetes Cluster Build via Kubespray_
-
-* From the kubespray directory execute the following command
-* Note - completion of this execution will span several minutes
-
-```text
-ansible-playbook -i inventory/akash/hosts.yaml -b -v --private-key=~/.ssh/id_rsa cluster.yml
-```
-
-_Validation of Kubernetes Cluster Installation_
-
-* Kubectl commands may be run from a Kubernetes control-plane server or from a local origination point with context configured
-
-```text
-kubectl get nodes
-
-kubectl get pods -n kube-system
-```
-
-* Expected output
-* Note  - the expected output example provided pertains to the multiple control-plane, work node scenario
-
-![](https://lh5.googleusercontent.com/7N3gvr6Oajn3o_tGjPBtXAEJyzOWiVRxC9QVAOijtD3csMHOctY7n3nXoRWHA4q3Vl4p3RjOCtANHapDrpBKrM_gLU3YiSqsQHuKTPiAKziP3GiJHPVlPFWPbMffEEWdfxTnyg3W=s0)
-
-### **Add Akash's Custom Resource Definitions to Kubernetes**
-
-#### _Cursory Steps to Allow Local Kubectl Communication to Cluster_
-
-Assuming completion of a fully functional Kubernetes cluster based on prior execution steps, access a control-plane instance to complete the following capture.
-
-* Navigate to the /root/.kube \(known as the “kubeconfig” file\) and open config using your preferred editor. 
-* Ensure that the server field in this file is populated with the server’s IP \(including port number\).   Kubespray often incorrectly fills populates this with 127.0.0.1 \(localhost\) address.
-* An example of the field’s value properly configured is depicted below \(output truncated to only include relevant capture.
-* Save the file if edit was necessary.
-
-![](https://lh6.googleusercontent.com/bSXrIAnghE-blMvACqjMkfMWeISD6ObzaYJsCuXDxRjohcXToDqUqJQvafP0rDsLQbhHrlkgNY8MU4FacRP33yXdMr_2Oq6aVKziy4t85Q32roejWC2bZcOVk80LTUKqMUtMybXE=s0)
-
-_Copy of kubeconfig file for local provoke of Custom Resource Definition build_
-
-* Note - the following steps assume kubectl is installed on your local machine and will walk the user through the configuration of the context configuration to access the provider Kubernetes cluster.  For a through discussion of kubectl installation and use of the referenced environmental variable discussed below - please reference the following document:
-  * [https://rancher.com/learning-paths/how-to-manage-kubernetes-with-kubectl](https://rancher.com/learning-paths/how-to-manage-kubernetes-with-kubectl)
-* To allow creation of the Customer Resource Definition \(CRD\) the config file referenced/manipulated in the prior step will be copied from the Kubernetes master/control-plane instance to your local machine where the kubectl command shall be executed.
-* Copy the entire content of the updated kubeconfig file from the master node \(file location - /root/.kube/config\)
-* Save a copy of this file on your local machine.
-* On your local machine set the KUBECONFIG environmental variable to the path of the config file saved locally.
-
-
-
-#### **Creation of the Custom Resource Definition \(CRD\)**
-
-Akash uses a Custom Resource Definition to store each deployment in Kubernetes. 
-
-* To initiate the CRD creation in Kubernetes download the following file on your local machine
-* Steps provided subsequently to both download and install the CRD
-
-[**https://raw.githubusercontent.com/ovrclk/akash/master/pkg/apis/akash.network/v1/crd.yaml**](https://raw.githubusercontent.com/ovrclk/akash/master/pkg/apis/akash.network/v1/crd.yaml)
-
-* Download the CRD YAML and apply/install the CRD into the Kubernetes cluster
-
-```text
-wget https://raw.githubusercontent.com/ovrclk/akash/master/pkg/apis/akash.network/v1/crd.yaml
-
-kubectl apply -f ./crd.yaml
-```
-
-_Potential Error Condition Encountered During CRD Creation:_
-
-* If the following error is encountered - the KUBECONFIG environment variable is likely incorrectly configured  _Error message - The connection to the server 127.0.0.1:34473 was refused - did you specify the right host or port?_
-
-### **Add a NGINX Ingress controller in the Kubernetes cluster for Akash**
-
-#### **Akash Network Configuration Addition**
-
-_Prerequisites_
-
-Section assumes the steps detailed in the Akash CRD section for the kubeconfig file edit, copy, and local configuration have been completed
-
-_Network Configuration Overview_
-
-Akash supplies a network configuration which must be applied to the Kubernetes cluster. The application of the network configuration will be accomplished by downloading the network policy YAML manifest and applying the manifest through kubectl from your local machine.
-
-_Application of the Network Profile_
-
-* To initiate the network profile creation in Kubernetes download the following file on your local machine
-* Steps provided subsequently to both download and install the network profile
-
-[**https://raw.githubusercontent.com/ovrclk/akash/master/\_docs/kustomize/networking/network-policy-default-ns-deny.yaml**](https://raw.githubusercontent.com/ovrclk/akash/master/_docs/kustomize/networking/network-policy-default-ns-deny.yaml)
-
-_Download the YAML file and apply/install into the Kubernetes cluster_
-
-```text
-wget https://raw.githubusercontent.com/ovrclk/akash/master/_docs/kustomize/networking/network-policy-default-ns-deny.yaml
-
-kubectl apply -f ./network-policy-default-ns-deny.yaml
-```
-
-#### **Akash Ingress Controller**
-
-_Prerequisites_
-
-Section assumes the steps detailed in the Akash CRD section for the kubeconfig file edit, copy, and local configuration have been completed
-
-_Ingress Controller Overview_
-
-The Akash provider requires an ingress controller which must be created in the Kubernetes cluster. The application of the ingress controller will be accomplished by downloading the controller’s YAML manifest and applying the manifest through kubectl from your local machine.
-
-_Creation of the Ingress Controller_
-
-* To initiate the ingress controller creation in Kubernetes download the following file on your local machine
-* Steps provided subsequently to both download and install the ingress controller
-
-[**https://raw.githubusercontent.com/ovrclk/akash/master/\_run/ingress-nginx.yaml**](https://raw.githubusercontent.com/ovrclk/akash/master/_run/ingress-nginx.yaml)
-
-_Download the YAML file and apply/install into the Kubernetes cluster_
-
-```text
-wget https://raw.githubusercontent.com/ovrclk/akash/master/_run/ingress-nginx.yaml
-
-kubectl apply -f ./ingress-nginx.yaml
-```
-
-_Apply Node Label for Ingress Controller_
-
-One node should be labeled with a label specific to this ingress declaration.
-
-The label will cause the NGINX ingress to live only on the labeled node. When the wildcard domain is created subsequently the pointers should be to the labeled node's IP address.
-
-Additional nodes may be labeled to load balance the ingress network.
-
-```text
-kubectl label nodes node3 akash.network/role=ingress
-```
-
-## **Akash Provider Implementation and Configuration**
-
-### **Overview**
-
-An Akash provider is started by running the command  “akash provider run” - as detailed subsequently in this section - on a system on which the Akash software package has been installed previously. The command is configurable entirely through the command line switches. For each relevant command line switch, an associated environmental variable may also be used alternatively and the use of such variables is encouraged for production operations.
-
-Guidance for environmental variable use in subsequent instructions in this guide using a prominent example:
-
-* The Akash provider supports the command line switch --chain-id
-* The environmental variable equivalent is derived via:
-  * Removing the leading dashes 
-  * All other dashes become underscores
-  * All characters are converted to uppercase
-  * The prefix AKASH\_ is added
-*  Thus the resultant environmental variable - utilized in place of the command line switch --chain-id would be:
-  * AKASH\_CHAIN\_ID
-
-### **Akash Provider Creation and Configuration Steps Overview**
-
-_The necessary steps to host an Akash provider include:_
-
-**STEP1:**  Select a host to run the Akash provider \(Kubernetes master node co-residency option acceptable if desired\)
-
-**STEP2:**  Install the Akash software on selected provider host
-
-**STEP3:**  Import/Create provider account
-
-**STEP4:**  Domain name considerations
-
-**STEP5:**  Configure/Create the Akash Provider
-
-**STEP6:**  Create a TLS certificate for the provider on chainSTEP7: Starting the provider
-
-**STEP7:**  Starting the provider
-
-This section documents configuration that should be considered in customization during Akash provider creation. The Akash provider process may be provoked and executed via any means preferred in your unique environment. Akash has built Ansible playbooks to assist the user in the steps necessary to run the provider if this path is desired and preferred.
-
-### **Select a host to run the Akash provider**
-
-The Akash provider may be co-resident on a Kubernetes master/node or on a separate host.  The installation of the provider will be conducted on a Kubernetes master within the steps of this guide.
-
-### **Install the Akash Software on Selected Provider Host**
-
-The installation of Akash software is covered in detail and should be referenced in full at the following Akash documentation locations:
-
-* Deploy on Akash &gt; Quick Start Guide - guide may be found within the following URL:
-  * [https://docs.akash.network/guides/deploy](https://docs.akash.network/guides/deploy)
-* Deploy on Akash &gt; Install Akash - guide may be found within the following URL:
-  * [https://docs.akash.network/guides/install](https://docs.akash.network/guides/install)
-
-#### **Linux Installation Reference**
-
-As a matter of quick reference the following Akash software installation pertaining to a Linux server implementation is provided and utilizing the Godownloader methodology.
-
-_Configure the Akash version_
-
-```text
 AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
 ```
 
-_Install Akash software on host_
+_**Add Akash Install Location to User’s Path**_
 
-```text
-curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "v$AKASH_VERSION"
+Add the software’s install location to the user’s path for easy use of Akash commands.
+
+**NOTE** - below we provide the steps to add the Akash install directory to a user’s path on a Linux Ubuntu server.  Please take a look at a guide for your operating system and how to add a directory to a user’s path.
+
+_Open the user’s path file in an editor:_
+
 ```
-
-_Add the Akash binary to the user/shell path \(note - the technique provided is only relevant to Ubuntu Linux.  Refer to the referenced installation sections provide previously for additional path configuration needs\)_
-
-```text
 vi /etc/environment
 ```
 
-_Edit/add the path to the Akash binary \(I.e. /root/bin\) to the PATH variable_
+_View within text editor prior to the update:_
 
-### **Import/Create Provider Account**
+![](../../.gitbook/assets/providerEtcEnvBefore.png)
 
-The creation of an Akash account is covered in detail and should be referenced in full at the following Akash documentation locations:
+_Add the following directory, which is the Akash install location, to PATH:_
 
-* Deploy on Akash &gt; Create Account - guide may be found within the following URL:
-  * [https://docs.akash.network/guides/wallet](https://docs.akash.network/guides/wallet)
-
-_Note Pertaining to the Keyring Backend Specification_
-
-During the processes of provider creation and bringing the provider into an active run state the Akash keyring must be available and referenced within a local directory/file.  Thus in the creation of the Akash account ensure that the Key Ring Backend is stored in a file and not in the OS \(which is the default\).  This may be accomplished by using the following variable during account creation.  The account’s wallet and key will then be stored in the $HOME/.akash directory.
-
-​​AKASH\_KEYRING\_BACKEND=file
-
-_Wallet Funding Requirement - Minimum of 50 AKT_
-
-The account must be adequately funded as detailed prior.  To reiterate the provider account’s requirements:
-
-* An associated, available wallet must have sufficient funding, as placing a bid on an order on the blockchain requires a 50 AKT deposit. This deposit is fully refunded after the bid is won/lost.
-  * The precise minimum funding requirement of the wallet is marginally greater than 50 AKT as tiny amounts \(about 0.001\) of AKT is utilized by the Akash provider to commit transactions on the Akash blockchain.
-  * Reference [https://docs.akash.network/guides/funding](https://docs.akash.network/guides/funding)  as a purchasing guide of AKT and[ https://docs.akash.network/guides/deploy](https://docs.akash.network/guides/deploy) Akash CLI wallet install.
-
-Ensure completion of the “Connect to the Network” portion of the Deploy guide which is titled “Part 4. Connect to the Network” - which would be necessary to complete the account funding process - as detailed in the previously listed deploy guide URL \([https://docs.akash.network/guides/deploy](https://docs.akash.network/guides/deploy)\).  
-
-
-#### **Validate Account Funding**
-
-Validate account funding minimum requirements levels by issuing the following command
-
-```text
-akash query bank balances --node $AKASH_NODE $AKASH_ACCOUNT_ADDRESS
+```
+/root/bin
 ```
 
-### **Domain Name Considerations**
+_View within the text editor following the update:_
 
-#### **Public Domain Name Configuration**
+![](../../.gitbook/assets/provideEtcEnvAfter.png)
 
-Prior to commencing with the Provider creation and initiation - a discussion of necessary public domain name’s is provided in this section to ensure readiness for subsequent steps.
+_Make the new path active in the current session:_
 
-_Provider Host_
+```
+​​source /etc/environment
+```
 
-* The provider host is the publicly accessible domain name of the provider
-* The domain name will be  specified in the Akash Provider YAML configuration file using the key of host
-*  The associated YAML file is utilized during “akash tx provider create” and “akash tx provider update” are executed as detailed in subsequent sections
-* The provider host value is stored on the blockchain and is used whenever a lease owner needs to communicate directly with the provider for activities such as sending a manifest or fetching a lease status
+_Display the version of Akash software installed. This confirms the software installed and that the new user path addition worked._
 
-_Kubernetes Ingress Controller Host_
+```
+akash version
+```
 
-* The Kubernetes ingress controller host is the publicly accessible domain name of the Kubernetes cluster. 
-* The Kubernetes cluster hosts an Ingress Controller and serves as the mechanism to expose Akash leases to the outside world. 
-* The current recommendation is to[ assign](https://github.com/ovrclk/docs/blob/master/guides/provider.md#Create-Kubernetes-Ingress-Controller) exactly one node in your cluster to the Ingress Controller role.
-* At this time only HTTP is supported for the Ingress Controller. 
-* The hostname should resolve to an IP which directs traffic to the Kubernetes ingress controller IP on your network. 
-* The domain name value is specified via the --deployment-ingress-domain switch when the “akash provider run” command activates the provider instance as detailed in a subsequent section. 
-* The value is not stored on the blockchain.
+_Expected result_:
 
-_Kubernetes Cluster Public Hostname_
+![](../../.gitbook/assets/akashVersion.png)
 
-* The cluster public hostname is the publicly accessible hostname of the Kubernetes cluster. 
-* No requirement exists - nor is it desirable -  to expose an entire Kubernetes cluster to the internet. 
-* The Kubernetes cluster supports a feature called a "NodePort" service. This allows UDP and TCP traffic to be forwarded from the cluster directly to a container on any node in the cluster. By default Kubernetes uses the port range 30000-32767 for the NodePort service. The recommendation would be to allow outside traffic only to the NodePort range. 
-* The associated domain name should resolve to an IP address that directs traffic to any of the nodes in the Kubernetes cluster. Kubernetes then automatically routes the IP traffic to the correct container. 
-* The domain name value is specified via the --cluster-public-hostname switch when the “akash provider run” command activates the provider instance as detailed in a subsequent section. 
-* The value may be different than that of the Kubernetes ingress controller host  but this is not required and the domain names may be identical.
-* The value is not stored on the blockchain.
+### STEP3 - Create/Import Akash Account
 
-#### **Blocking Hostnames**
+For a Provider to bid on leases an account is needed with minimum funding of 50 AKT.  An account can be created by using the commands of this section.  Alternatively an existing account could be imported for provider use.
 
-An additional topic of discussion prior to the creation of the Akash provide instance pertains to the use of hostnames requested during lease creation.
+_**Specify a key with your choice of name:**_
 
-_Lease Hostname Overview_
+```
+AKASH_KEY_NAME=<name>
+```
 
-* A Kubernetes ingress controller is utilized to expose HTTP traffic from an Akash lease to the outside world. 
-* By default the lease may request any hostname desired.
-* The hostname is published in the DNS entries maintained by Kubernetes. 
-* However there may be a desire to block some domains in lease use.
+_**Specify the location of the keyring on the provider:**_
 
-_Blocking Specific Domains/Hostnames for Lease Use_
+```
+AKASH_KEYRING_BACKEND=file
+```
 
-* The command line switch --deployment-blocked-hostnames command line switch - which may be included the “akash provider run” command detailed subsequently - allows blocking of a domain. 
-* To block a single domain, specify it exactly. For example:
-  * --deployment-blocked-hostnames=akash.network blocks a lease from requesting a hostname of akash.network. 
-* To block a domain and all subdomains, precede the hostname with the dot character. For example:
-  *  --deployment-blocked-hostnames=.bobsdeficloud.com would block bobsdeficloud.com, www.bobsdeficloud.com as well as any other subdomains.
-* The  --deployment-blocked-hostnames command line switch may be provided any number of times within a single “akash provider run” command to provoke multiple domain name blocks.
+_**Create the new account and store the encrypted private key in the keyring**_
 
-### **Configure/Create the Akash Provider**
+* Enter a passphrase of your choice when prompted
 
-_The activities in this section may be conducted on any Kubernetes host or remote machine with kubectl installed and configured with a context for the Akash Kubenetes cluster._
+```
+akash --keyring-backend "$AKASH_KEYRING_BACKEND"  keys add "$AKASH_KEY_NAME"
+```
 
-#### **Creation of Akash Provider via YAML File Populated with Provider Specific Details**
+_**Expected results with important outputs high**_lighted
 
-PROVIDER\_DOMAIN Environment Variable Creation
+![](../../.gitbook/assets/providerAccountCreation.png)
 
-* Create an environment variable of PROVIDER\_DOMAIN
-* This environment variable was detailed previously in the Public Domain Name Configuration &gt; Provider Host section and should be the domain name of the selected Akash provider host
+### STEP4 - Verify Account Balance
 
-```text
+We should verify the minimum account balance for the provider now that the account has been set up. As mentioned, the account needs slightly more than 50 AKT at a minimum.
+
+_**Specify the Akash network to query (in this case the mainnet):**_
+
+```
+AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
+```
+
+_**Query the network for an available node to communicate with:**_
+
+```
+export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)"
+```
+
+_**Store the account created in the previous step. Replace the variable portion with your account address (I.e. account such as akash1wpfyf47tzu70q3vu893mghz657gk2kgkuaj5zq):**_
+
+```
+AKASH_ACCOUNT_ADDRESS=<account-address>
+```
+
+_**Get your account balance:**_
+
+```
+akash --node "$AKASH_NODE" query bank balances "$AKASH_ACCOUNT_ADDRESS"
+```
+
+_**Example output:**_
+
+![](<../../.gitbook/assets/providerAccountBalance (1).png>)
+
+### STEP5 - Create the Provider
+
+Use the host that the Akash software was installed on for this section.
+
+_**Provider Domain**_
+
+* Create the environment variable of PROVIDER\_DOMAIN&#x20;
+* This domain is used whenever a lease owner needs to speak directly with the provider to send a manifest or get a lease status&#x20;
+* This should be a publicly accessible domain name
+
+```
 export PROVIDER_DOMAIN=<provider-host-domain-name>
 ```
 
-_Creation of the “provider.yaml” Configuration File_
+_**Create provider.yaml File**_
 
-* Create a file with the name of - provider.yaml - and populate the following key-value pairs with edits made as necessary
-* **IMPORTANT:** If an IP address is utilized instead of the FQDN hostname \(not recommended\), an broadcast update via the “akash tx provider” command will be required each time the IP changes.
+* Create a file with the name of provider.yaml and add the contents below
 
-```text
+```
 host: https://$PROVIDER_DOMAIN:8443
 attributes:
   - key: region
@@ -664,58 +166,111 @@ attributes:
     value: <nameOfYourOrganization>
 ```
 
-_Create the Akash Provider_
+_**Example of Creating Provider File**_
 
-* Register provider on the Akash Network
-* Ensure that all environment variables referenced are created prior to execution
-* For additional guidance the following list demonstrates command/example values for each variable:
-  * AKASH\_PROVIDER\_KEY=alice
-    * Must match key that was used during account creation
-  * AKASH\_HOME=/root/.akash
-    * Must match the directory location of the wallet stored via when the backend was specified as file and the provider account was created.  Location as shown above is likely.
-  * AKASH\_KEYRING\_BACKEND=file
-  * AKASH\_NODE=[http://135.181.60.250:26657](http://135.181.60.250:26657)
-  * AKASH\_CHAIN\_ID=akashnet-2
+* These screenshots shows the previous steps for further clarity
 
-```text
+![](../../.gitbook/assets/providerDomain.png)
+
+* File details within an editor
+
+![](../../.gitbook/assets/providerDetails.png)
+
+_**Create the Akash Provider**_
+
+* Register the provider on the Akash Network&#x20;
+* Three new environment variables are added that the provider create command will use&#x20;
+* Replace the AKASH\_PROVIDER\_KEY with the name of the key created earlier (I.e. providerkey in the example)&#x20;
+* Replace the AKASH\_HOME with the location of the keychain (I.e. /root/.akash in the example)
+
+```
+export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
+AKASH_PROVIDER_KEY=<key-name>
+AKASH_HOME=<keyring-location>
+```
+
+```
 akash tx provider create provider.yaml --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND --node=$AKASH_NODE --chain-id=$AKASH_CHAIN_ID --fees 5000uakt
 ```
 
-### **Create a TLS certificate for the provider on chain**
+_**Example of Creating the Provider**_
 
-* Issue a transaction to the blockchain to create a certificate associated with your provider.
+![](../../.gitbook/assets/providerCreatingProvider1.png)
 
-```text
+![](../../.gitbook/assets/providerCreatingProvivder2.png)
+
+### STEP6 - Create a TLS Certificate
+
+Create a TLS certificate for your provider. The certificate will be stored on the blockchain.
+
+```
 akash tx cert create server $PROVIDER_DOMAIN --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --node=$AKASH_NODE --fees 5000uakt
 ```
 
-### **Starting the Provider**
+_**Example of Creating the Certificate**_
 
-#### **Mandatory provider configuration**
+![](../../.gitbook/assets/providerCertCreation.png)
 
-The following parameters must be specified when starting the Akash provider.  Notes of interest pertaining to the parameter provided for reference.  As shown in the subsequent example command syntax - previously discussed and provoked environment variables should be used for many of the key values.
+### STEP7 - Configure Kubectl
 
-* --home
-  * Location of the CLI wallet manifest during account creation and when the backend was specified as file.  Likely location would be $HOME/.akash \(I.e. /root/akash\).
-* --chain-id
-* --keyring-backend 
-  * Should always be set to test
-* --fees
-* --kubeconfig
-* --cluster-k8s
-  * Should always be set to test
-* --deployment-ingress-domain
-* --deployment-ingress-static-hosts
-  * Should always be set to test
-* --cluster-public-hostname
-* --node
-* --from
+If the provider is on a non-Kubernetes master node, kubectl and the kubeconfig file might not be present.  In this step we will create the kubeconfig file on the provider host which is necessary when we try to start the provider.
 
-_Example command to start a provider:_
+_**Verify Kubeconfig File**_
 
-* Note - the “bid-price” options included in this example are detailed in a subsequent section of this guide
+* On the provider host, verify if the kubeconfig file is present&#x20;
+* We are looking for the presence of the .kube directory within the user’s home directory
 
-```text
+```
+cd ~
+ls -al
+```
+
+_**Example output of directory contents**_
+
+* In this example the .kube directory does not exist and we will need to create it&#x20;
+* If the directory does exist and you are able to conduct kubectl commands (I.e. “kubectl get nodes”), feel free to skip forward to STEP8
+
+![](../../.gitbook/assets/providerHomeDir.png)
+
+_**Create a .kube Directory**_
+
+```
+mkdir .kube
+```
+
+_**Copy Kubeconfig to the Provider**_
+
+* We will use the following command to copy the config file from the Kubernetes master to the provider host&#x20;
+* Replace the username and IP address parts of the command
+
+```
+scp <username>@<ipaddress>:/root/.kube/config /root/.kube/config
+```
+
+_**Install Kubectl on the Provider**_
+
+```
+stable=$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
+curl -LO
+ 
+https://storage.googleapis.com/kubernetes-release/release/${stable}/bin/linux/amd64/kubectl
+
+chmod +x ./kubectl
+
+sudo mv ./kubectl /usr/local/bin/kubectl
+```
+
+_**Verify Kubectl**_
+
+* Following the copy of the kubeconfig file and the kubectl install, you should be able to execute commands like “kubectl get nodes” as shown in example below
+
+![](../../.gitbook/assets/providerKubectlVerification.png)
+
+### STEP8 - Start the Provider
+
+In our final step the provider is started.
+
+```
 akash provider run \
   --home $AKASH_HOME \
   --chain-id $AKASH_CHAIN_ID \
@@ -737,148 +292,9 @@ akash provider run \
   --cluster-public-hostname $PROVIDER_DOMAIN
 ```
 
-#### **Kubernetes Cluster Resource Overcommit Options**
+_**Expected Output**_
 
-_The options detailed in this section are optional parameters of the “akash provider run” command_
+* When the provider starts the initial output should look like the following.&#x20;
+* The full output is not displayed but only the first lines indicating a successful start
 
-* By default the akash provider asks Kubernetes to reserve all resources on a 1 for 1 basis. Since not all leases are expected to see 100% resource utilization, it makes sense to allow resource overcommit. The following flags may be set
-  * --overcommit-pct-cpu - CPU overcommit percentage
-  * --overcommit-pct-mem - Memory overcommit percentage
-  * --overcommit-pct-storage - Storage overcommit percentage
-* Any flag not specified is equivalent to having a value of zero.
-* Each flag must be a positive integer number. The number provided would become the percentage of overcommit to consider when making bids. 
-* Example:
-  *  --overcommit-pct-cpu=50 
-  * Instructs the Akash provider to commit 50% more CPU than is actually available.
-
-#### **Bid Pricing Options**
-
-_The options detailed in this section are optional parameters of the “akash provider run” command_
-
-When the Akash provider considers bidding on a lease, the provider instance must compute a bid price. The bid pricing strategy is set with the switch:
-
-* --bid-price-strategy
-
-By default the scale strategy is used. This strategy computes bid prices using a set of linear scales and computed via the requested CPU, memory, and storage levels.
-
-When the scale strategy is used, at least one of the following command line switches must be set:
-
-* --bid-price-memory-scale - memory pricing scale in uakt per megabyte \(default "0"\)
-* --bid-price-cpu-scale - cpu pricing scale in uakt per millicpu \(default "0"\)
-* --bid-price-storage - storage pricing scale in uakt per megabyte \(default "0"\)
-* --bid-price-endpoint-scale - endpoint pricing scale in uakt \(default "0", must be a whole number\)
-
-The actual bid price is computed by multiplying the configured scale with the resources requested in the lease.
-
-The scale strategy is not likely to be sufficient for all providers. Since some providers may want to use complex pricing strategies \(or not bid at all\) the script strategy can be used. The script strategy invokes an external script to compute a bid price and uses that as a result. A Python script example is provided subsequently.  The following command line switches are used to control the script invocation:
-
-* --bid-price-script-path - Path to executable script, must be set
-* --bid-price-script-process-limit - Maximum number of concurrent executions of the script
-* --bid-price-script-process-timeout - Timeout on bid pricing script configuration
-
-The pricing configuration script must be a file on the same filesystem as the provider and be marked as executable. The script must do the following:
-
-1. Read all available data from standard in
-2. Parse this data as JSON
-3. Uses the data to compute the bid price
-4. Write the bid price to standard out as a single JSON number
-
-_The data written to standard out has the following structure:_
-
-```text
-[
-   {
-   "memory": 2048
-   "cpu": 333
-   "storage": 100
-   "count": 1
-   "endpoint-quantity": 1
-   }
-]
-```
-
-This data is a list of JSON objects, with each JSON object in the list describing a resource that is fulfilled as part of the lease.
-
-The following units are used:
-
-* "memory" - bytes
-* "cpu" - millicpu
-* "storage" - bytes
-
-The key "endpoint-quantity" defines the number of exposed ports the lease is requesting. The "count" key is used when more than 1 instance of an identical set of resources is bid on.
-
-The pricing script may make any computations it needs to compute a price. The price is written to standard out as a JSON number. This should be a whole number, representing the bid quantity in uakt. If the decision is made that no bid should be placed, the number 0 should be used for the bid quantity.
-
-#### **Example Python Script for Bid Price Computation**
-
-_The Python script detailed below provides the example referenced in the previous section for granular control of bid price computation._
-
-* The following script shows an example implementation of a bid pricing using the Python 3 language.
-
-```text
-#!/usr/bin/env python3
-
-import math
-import sys
-import json
-
-# Read JSON from standard input
-order_data = json.load(sys.stdin)
-
-bid = True # Flag determining whether or not to bid
-bid_price = 0 # Total bid price
-memory_cutoff = 4*(1024**3) # Limit for the amount of memory any one container can request (e.g. 4G RAM max)
-
-bid_price_memory_scale = 0.001
-bid_price_storage_scale = 0.0002
-bid_price_cpu_scale = 0.001
-
-MEGA = 1024 ** 2
-
-for group in order_data:
-  # Compute total cost for this container
-  group_count = group['count']
-  price = group['cpu'] * bid_price_cpu_scale + group['memory']/MEGA * bid_price_memory_scale + group['storage']/MEGA * bid_price_storage_scale
-  bid_price += group['count'] * price
-
-  # Disable bidding if there is a large container
-  if group['memory'] > memory_cutoff:
-    bid = False
-
-bid_price = math.ceil(bid_price) # Convert bid to an integer  
-
-# A result must always be written to standard out
-if bid:
-    json.dump(bid_price, sys.stdout)
-else:
-    # Indicate not to bid
-    json.dump(0, sys.stdout)
-
-```
-
-* The container requesting 0.5 CPU, 2G RAM, 32G storage would be quoted with a price of 10 uakt which is $11.22 a month if we assume 1 AKT price is $2.56. 
-* The Akash providers can always adjust the bid prices whenever they want, which creates great competition!
-
-```text
-$ cat order-data.sample
-[
-    {
-    "memory": 2147483648,
-    "cpu": 500,
-    "storage": 34359738368,
-    "count": 1,
-    "endpoint-quantity": 1
-    }
-]
-
-$ python3 ./bid-price-script.py < order-data.sample ; echo
-10
-
-$ echo "((10*((60/6)*60*24*30.436875))/10^6)*2.56" | bc -l
-11.22024960000000000000
-```
-
-## **Additional Resources**
-
-Deploying Akash Provider without kubespray [https://nixaid.com/deploy-akash-provider-with-kubeadm](https://nixaid.com/deploy-akash-provider-with-kubeadm)**​**
-
+![](../../.gitbook/assets/providerStartProvider.png)
