@@ -11,7 +11,7 @@ The steps to create an Akash account are covered in the Provider setup section o
 ### Kubernetes Cluster
 
 * A full Kubernetes cluster is required.
-* This Akash provided guide offers one possible path for cluster creation via Kubespray.
+* This guide offers one possible path for cluster creation via Kubespray:
   * [ ] [https://docs.akash.network/operations/provider/kubernetes-cluster ](https://docs.akash.network/operations/provider/kubernetes-cluster)
 * The cluster must have outbound internet access and be reachable from the internet.
 
@@ -29,9 +29,9 @@ The Akash provider can be installed on any Kubernetes master or worker node. Or 
 
 The Akash software install process on a Linux server is shown in this step.
 
-_Specify the Akash Version_
+_**Specify the Akash Version**_
 
-* These commands will retrieve the latest, stable version of the Akash software and store the version in a local variable
+* These commands will retrieve the latest, stable version of the Akash software_**,**_ store the version in a local variable, and install that version.
 
 ```
 AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
@@ -123,8 +123,6 @@ _**Expected results:**_
 ```
 root@node2:~# AKASH_KEY_NAME=providerkey
 root@node2:~# ​​AKASH_KEYRING_BACKEND=file
-​​AKASH_KEYRING_BACKEND=file: command not found
-root@node2:~# ​​AKASH_KEYRING_BACKEND=file
 root@node2:~# akash --keyring-backend "$AKASH_KEYRING_BACKEND"  keys add "$AKASH_KEY_NAME"
 Enter keyring passphrase:
 Re-enter keyring passphrase:
@@ -188,22 +186,21 @@ pagination:
 
 Use the host that the Akash software was installed on for this section.
 
-_**Provider Domain**_
+_**Deployment Domain**_
 
-* Create the environment variable of PROVIDER\_DOMAIN&#x20;
+* Create the environment variable of DEPLOYMENT\_HOSTNAME&#x20;
 * This domain is used whenever a lease owner needs to speak directly with the provider to send a manifest or get a lease status&#x20;
-* This should be a publicly accessible domain name
-
-```
-export PROVIDER_DOMAIN=<provider-host-domain-name>
-```
+* The public DNS record for the domain should point to the Kubernetes ingress controller
+* ```
+  export DEPLOYMENT_HOSTNAME=<provider-host-domain-name>
+  ```
 
 _**Create provider.yaml File**_
 
 * Create a file with the name of provider.yaml and add the contents below
 
 ```
-host: https://$PROVIDER_DOMAIN:8443
+host: https://$DEPLOYMENT_HOSTNAME:8443
 attributes:
   - key: region
     value: us-west
@@ -216,14 +213,14 @@ _**Example of Creating Provider File**_
 * These screenshots shows the previous steps for further clarity
 
 ```
-root@node2:~# export PROVIDER_DOMAIN=chainzeroakash.net
-root@node2:~# vi provider.yaml
+root@node1:~# export DEPLOYMENT_HOSTNAME=chainzeroakash.net
+root@node1:~# vi provider.yaml
 ```
 
 * File details within an editor
 
 ```
-host: https://$PROVIDER_DOMAIN:8443
+host: https://$DEPLOYMENT_HOSTNAME:8443
 attributes:
   - key: region
     value: us-west
@@ -259,18 +256,17 @@ AKASH_HOME=/root/.akash
 ```
 
 ```
-root@node2:~# akash tx provider create provider.yaml --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND --node=$AKASH_NODE --chain-id=$AKASH_CHAIN_ID --fees 5000uakt
+root@node1:~# akash tx provider create provider.yaml --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND --node=$AKASH_NODE --chain-id=$AKASH_CHAIN_ID --fees 5000uakt
 
 Enter keyring passphrase:
 
-{"body":{"messages":[{"@type":"/akash.provider.v1beta1.MsgCreateProvider","owner":"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x","host_uri":"https://$PROVIDER_DOMAIN:8443","attributes":[{"key":"region","value":"us-west"},{"key":"host","value":"chainzero"}],"info":{"email":"","website":""}}],"memo":"","timeout_height":"0","extension_options":[],"non_critical_extension_options":[]},"auth_info":{"signer_infos":[],"fee":{"amount":[{"denom":"uakt","amount":"5000"}],"gas_limit":"200000","payer":"","granter":""}},"signatures":[]}
+{"body":{"messages":[{"@type":"/akash.provider.v1beta1.MsgCreateProvider","owner":"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx","host_uri":"https://$DEPLOYMENT_HOSTNAME:8443","attributes":[{"key":"region","value":"us-west"},{"key":"host","value":"chainzero"}],"info":{"email":"","website":""}}],"memo":"","timeout_height":"0","extension_options":[],"non_critical_extension_options":[]},"auth_info":{"signer_infos":[],"fee":{"amount":[{"denom":"uakt","amount":"5000"}],"gas_limit":"200000","payer":"","granter":""}},"signatures":[]}
 
 confirm transaction before signing and broadcasting [y/N]: y
 
-{"height":"3403495","txhash":"AE2900D3BC3ABB8517C0F618625CC135460300152C4B20F493606E8733CDBC39","codespace":"","code":0,"data":"0A110A0F6372656174652D70726F7669646572","raw_log":"[{\"events\":[{\"type\":\"akash.v1\",\"attributes\":[{\"key\":\"module\",\"value\":\"provider\"},{\"key\":\"action\",\"value\":\"provider-created\"},{\"key\":\"owner\",\"value\":\"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"create-provider\"},{\"key\":\"sender\",\"value\":\"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8\"},{\"key\":\"sender\",\"value\":\"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x\"},{\"key\":\"amount\",\"value\":\"5000uakt\"}]}]}]","logs":[{"msg_index":0,"log":"","events":[{"type":"akash.v1","attributes":[{"key":"module","value":"provider"},{"key":"action","value":"provider-created"},{"key":"owner","value":"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x"}]},{"type":"message","attributes":[{"key":"action","value":"create-provider"},{"key":"sender","value":"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x"}]},{"type":"transfer","attributes":[{"key":"recipient","value":"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"},{"key":"sender","value":"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x"},{"key":"amount","value":"5000uakt"}]}]}],"info":"","gas_wanted":"200000","gas_used":"63853","tx":null,"timestamp":""}
+{"height":"3413672","txhash":"E9CA2D1ED5FF449E132531C9F6CCBD41F95F01D71C745005E00432852204C564","codespace":"","code":0,"data":"0A110A0F6372656174652D70726F7669646572","raw_log":"[{\"events\":[{\"type\":\"akash.v1\",\"attributes\":[{\"key\":\"module\",\"value\":\"provider\"},{\"key\":\"action\",\"value\":\"provider-created\"},{\"key\":\"owner\",\"value\":\"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"create-provider\"},{\"key\":\"sender\",\"value\":\"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8\"},{\"key\":\"sender\",\"value\":\"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx\"},{\"key\":\"amount\",\"value\":\"5000uakt\"}]}]}]","logs":[{"msg_index":0,"log":"","events":[{"type":"akash.v1","attributes":[{"key":"module","value":"provider"},{"key":"action","value":"provider-created"},{"key":"owner","value":"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx"}]},{"type":"message","attributes":[{"key":"action","value":"create-provider"},{"key":"sender","value":"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx"}]},{"type":"transfer","attributes":[{"key":"recipient","value":"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"},{"key":"sender","value":"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx"},{"key":"amount","value":"5000uakt"}]}]}],"info":"","gas_wanted":"200000","gas_used":"64055","tx":null,"timestamp":""}
 
-root@node2:~#
-
+root@node1:~#
 ```
 
 ### STEP6 - Create a TLS Certificate
@@ -278,20 +274,29 @@ root@node2:~#
 Create a TLS certificate for your provider. The certificate will be stored on the blockchain.
 
 ```
-akash tx cert create server $PROVIDER_DOMAIN --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --node=$AKASH_NODE --fees 5000uakt
+akash tx cert create server $DEPLOYMENT_HOSTNAME --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --node=$AKASH_NODE --fees 5000uakt
 ```
 
 _**Example of Creating the Certificate**_
 
 ```
-root@node2:~# akash tx cert create server $PROVIDER_DOMAIN --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --node=$AKASH_NODE --fees 5000uakt
+root@node1:~# 
+
+root@node1:~# akash tx cert create server $DEPLOYMENT_HOSTNAME --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --node=$AKASH_NODE --fees 5000uakt
 
 Enter keyring passphrase:
 
-{"body":{"messages":[{"@type":"/akash.cert.v1beta1.MsgRevokeCertificate","id":{"owner":"akash16hxyzpwgp9elpl52yvll9gczr3vyanfgmdvh4x","serial":"1636405619933946920"}}],"memo":"","timeout_height":"0","extension_options":[],"non_critical_extension_options":[]},"auth_info":{"signer_infos":[],"fee":{"amount":[{"denom":"uakt","amount":"5000"}],"gas_limit":"200000","payer":"","granter":""}},"signatures":[]}
+no certificate found for address akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx. generating new...
+
+Enter keyring passphrase:
+
+{"body":{"messages":[{"@type":"/akash.cert.v1beta1.MsgCreateCertificate","owner":"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx","cert":"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNFRENDQWJhZ0F3SUJBZ0lJRnJYcVY3ZU9BRTR3Q2dZSUtvWkl6ajBFQXdJd1NqRTFNRE1HQTFVRUF4TXMKWVd0aGMyZ3hlRzE2T1dWek9XRjVPV3h1T1hneWJUTnhPR1JzZFRCaGJIaG1NR3gwWTJVM2VXdHFabmd4RVRBUApCZ1ZuZ1FVQ0JoTUdkakF1TUM0eE1CNFhEVEl4TVRFd09URTFNamd5TWxvWERUSXlNVEV3T1RFMU1qZ3lNbG93ClNqRTFNRE1HQTFVRUF4TXNZV3RoYzJneGVHMTZPV1Z6T1dGNU9XeHVPWGd5YlROeE9HUnNkVEJoYkhobU1HeDAKWTJVM2VXdHFabmd4RVRBUEJnVm5nUVVDQmhNR2RqQXVNQzR4TUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowRApBUWNEUWdBRTYrY1Q0ZkprQ3FjK01ibGdKdldjREhLK3BGL1JLb241V3NLSGdqODZDNnZpT2dGa3ZhRzVocGdZCkV2SXl2YkwvdHNxdjFtZ0I3ZzNnRG1ZTnNFaSt0YU9CaFRDQmdqQU9CZ05WSFE4QkFmOEVCQU1DQkRBd0hRWUQKVlIwbEJCWXdGQVlJS3dZQkJRVUhBd0lHQ0NzR0FRVUZCd01CTUF3R0ExVWRFd0VCL3dRQ01BQXdIUVlEVlIwUgpCQll3RklJU1kyaGhhVzU2WlhKdllXdGhjMmd1Ym1WME1DUUdBMVVkSGdFQi93UWFNQmlnRmpBVWdoSmphR0ZwCmJucGxjbTloYTJGemFDNXVaWFF3Q2dZSUtvWkl6ajBFQXdJRFNBQXdSUUloQU01c3NzaWJ6alpsRmdBWE9vdVQKTWc5YlBUeFBGNHNTZGNzcUFwOW9xSjh2QWlCQ2V0c2pwanlXWUhmdFBELzV0eGJVNFhqNUg4NWltYzY2d0lHSApqUFZCNnc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==","pubkey":"LS0tLS1CRUdJTiBFQyBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFNitjVDRmSmtDcWMrTWJsZ0p2V2NESEsrcEYvUgpLb241V3NLSGdqODZDNnZpT2dGa3ZhRzVocGdZRXZJeXZiTC90c3F2MW1nQjdnM2dEbVlOc0VpK3RRPT0KLS0tLS1FTkQgRUMgUFVCTElDIEtFWS0tLS0tCg=="}],"memo":"","timeout_height":"0","extension_options":[],"non_critical_extension_options":[]},"auth_info":{"signer_infos":[],"fee":{"amount":[{"denom":"uakt","amount":"5000"}],"gas_limit":"200000","payer":"","granter":""}},"signatures":[]}
 
 confirm transaction before signing and broadcasting [y/N]: y
-root@node2:~# 
+
+{"height":"3413739","txhash":"7E7D6E588956E39607DF7986A7B1FF75327D8456C3D18A2581BABDC5EB24E623","codespace":"","code":0,"data":"0A190A17636572742D6372656174652D6365727469666963617465","raw_log":"[{\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"cert-create-certificate\"},{\"key\":\"sender\",\"value\":\"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8\"},{\"key\":\"sender\",\"value\":\"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx\"},{\"key\":\"amount\",\"value\":\"5000uakt\"}]}]}]","logs":[{"msg_index":0,"log":"","events":[{"type":"message","attributes":[{"key":"action","value":"cert-create-certificate"},{"key":"sender","value":"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx"}]},{"type":"transfer","attributes":[{"key":"recipient","value":"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"},{"key":"sender","value":"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx"},{"key":"amount","value":"5000uakt"}]}]}],"info":"","gas_wanted":"200000","gas_used":"90954","tx":null,"timestamp":""}
+
+root@node1:~#
 ```
 
 ### STEP7 - Configure Kubectl
@@ -375,6 +380,19 @@ node3   Ready    <none>                 6d2h   v1.22.3
 
 In our final step the provider is started.
 
+_**Kubernetes Domain**_
+
+* Create the environment variable of KUBERNETES\_HOSTNAME
+* The variable will be used as the value for --cluster-public-hostname during provider start up and is the publicly accessible hostname of the Kubernetes cluster.
+* If multiple master nodes exist in the Kubernetes cluster, either the DNS record should point to the IP addresses of all master nodes or an alternative load balancing strategy should be used.
+* **NOTE - **within this guide --cluster-public-hostname (Kubernetes Cluster) and  --deployment-ingress-domain (Ingress Controller/Provider) point to the same domain name but often the domains will be different.
+
+```
+export KUBERNETES_HOSTNAME=chainzeroakash.net
+```
+
+Start Provider
+
 ```
 akash provider run \
   --home $AKASH_HOME \
@@ -385,7 +403,7 @@ akash provider run \
   --fees 1000uakt \
   --kubeconfig $KUBECONFIG \
   --cluster-k8s true \
-  --deployment-ingress-domain $PROVIDER_DOMAIN \
+  --deployment-ingress-domain $DEPLOYMENT_HOSTNAME \
   --deployment-ingress-static-hosts true \
   --bid-price-strategy scale \
   --bid-price-cpu-scale 0.001 \
@@ -394,7 +412,7 @@ akash provider run \
   --bid-price-endpoint-scale 0 \
   --bid-deposit 5000000uakt \
   --cluster-node-port-quantity 1000 \
-  --cluster-public-hostname $PROVIDER_DOMAIN
+  --cluster-public-hostname $KUBERNETES_HOSTNAME
 ```
 
 _**Expected Output**_
@@ -402,4 +420,20 @@ _**Expected Output**_
 * When the provider starts the initial output should look like the following.&#x20;
 * The full output is not displayed but only the first lines indicating a successful start
 
-![](../../.gitbook/assets/providerStartProvider.png)
+```
+root@node1:~# akash provider run   --home $AKASH_HOME   --chain-id $AKASH_CHAIN_ID   --node $AKASH_NODE   --keyring-backend=file   --from $AKASH_PROVIDER_KEY   --fees 1000uakt   --kubeconfig $KUBECONFIG   --cluster-k8s true   --deployment-ingress-domain $DEPLOYMENT_HOSTNAME   --deployment-ingress-static-hosts true   --bid-price-strategy scale   --bid-price-cpu-scale 0.001   --bid-price-memory-scale 0.001   --bid-price-storage-scale 0.00001   --bid-price-endpoint-scale 0   --bid-deposit 5000000uakt   --cluster-node-port-quantity 1000   --cluster-public-hostname $KUBERNETES_HOSTNAME
+
+Enter keyring passphrase:
+Enter keyring passphrase:
+
+I[2021-11-09|16:00:48.251] found leases                                 module=provider-cluster cmp=service num-active=0
+I[2021-11-09|16:00:48.251] found deployments                            module=provider-cluster cmp=service num-active=0 num-skipped=0
+D[2021-11-09|16:00:48.251] inventory ready                              module=provider-cluster cmp=service cmp=inventory-service
+D[2021-11-09|16:00:48.251] inventory fetched                            module=provider-cluster cmp=service cmp=inventory-service nodes=1
+D[2021-11-09|16:00:48.251] node resources                               module=provider-cluster cmp=service cmp=inventory-service node-id=solo available-cpu="units:<val:\"5000\" > " available-memory="quantity:<val:\"34359738368\" > " available-storage="quantity:<val:\"549755813888\" > "
+I[2021-11-09|16:00:49.982] syncing sequence                             cmp=client/broadcaster local=2 remote=2
+I[2021-11-09|16:00:51.558] found orders                                 module=bidengine-service count=109
+D[2021-11-09|16:00:51.558] creating catchup order                       module=bidengine-service order=order/akash1057uu9jaehgqwk5g8g85nuq3esu0n2wxhejk9z/2200682/1/1
+D[2021-11-09|16:00:51.558] creating catchup order                       module=bidengine-service order=order/akash109pttclfdj6erune0e8v9zed2pkvczq63u8yzp/3411023/1/1
+D[2021-11-09|16:00:51.558] creating catchup order                       module=bidengine-service order=order/akash109pttclfdj6erune0e8v9zed2pkvczq63u8yzp/3411064/1/1
+```
