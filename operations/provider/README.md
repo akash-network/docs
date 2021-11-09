@@ -385,7 +385,7 @@ _**Kubernetes Domain**_
 * Create the environment variable of KUBERNETES\_HOSTNAME
 * The variable will be used as the value for --cluster-public-hostname during provider start up and is the publicly accessible hostname of the Kubernetes cluster.
 * If multiple master nodes exist in the Kubernetes cluster, either the DNS record should point to the IP addresses of all master nodes or an alternative load balancing strategy should be used.
-* **NOTE - **within this guide --cluster-public-hostname (Kubernetes Cluster) and  --deployment-ingress-domain (Ingress Controller/Provider) point to the same domain name but often the domains will be different.
+* **NOTE - **within this guide --cluster-public-hostname (Kubernetes Cluster) and  --deployment-ingress-domain (Ingress Controller) point to the same domain name but often the domains will be different.
 
 ```
 export KUBERNETES_HOSTNAME=chainzeroakash.net
