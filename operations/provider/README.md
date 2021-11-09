@@ -391,7 +391,7 @@ _**Kubernetes Domain**_
 export KUBERNETES_HOSTNAME=chainzeroakash.net
 ```
 
-Start Provider
+_**Start Provider**_
 
 ```
 akash provider run \
