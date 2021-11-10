@@ -202,8 +202,6 @@ _**Create provider.yaml File**_
 ```
 host: https://$DEPLOYMENT_HOSTNAME:8443
 attributes:
-  - key: region
-    value: us-west
   - key: host
     value: <nameOfYourOrganization>
 ```
@@ -222,8 +220,6 @@ root@node1:~# vi provider.yaml
 ```
 host: https://$DEPLOYMENT_HOSTNAME:8443
 attributes:
-  - key: region
-    value: us-west
   - key: host
     value: chainzero
 ~                                                                                                                                                                                                          
