@@ -256,7 +256,7 @@ root@node1:~# akash tx provider create provider.yaml --from $AKASH_PROVIDER_KEY 
 
 Enter keyring passphrase:
 
-{"body":{"messages":[{"@type":"/akash.provider.v1beta1.MsgCreateProvider","owner":"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx","host_uri":"https://$DEPLOYMENT_HOSTNAME:8443","attributes":[{"key":"region","value":"us-west"},{"key":"host","value":"chainzero"}],"info":{"email":"","website":""}}],"memo":"","timeout_height":"0","extension_options":[],"non_critical_extension_options":[]},"auth_info":{"signer_infos":[],"fee":{"amount":[{"denom":"uakt","amount":"5000"}],"gas_limit":"200000","payer":"","granter":""}},"signatures":[]}
+{"body":{"messages":[{"@type":"/akash.provider.v1beta1.MsgCreateProvider","owner":"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx","host_uri":"https://$DEPLOYMENT_HOSTNAME:8443","attributes":[{"key":"host","value":"chainzero"}],"info":{"email":"","website":""}}],"memo":"","timeout_height":"0","extension_options":[],"non_critical_extension_options":[]},"auth_info":{"signer_infos":[],"fee":{"amount":[{"denom":"uakt","amount":"5000"}],"gas_limit":"200000","payer":"","granter":""}},"signatures":[]}
 
 confirm transaction before signing and broadcasting [y/N]: y
 
