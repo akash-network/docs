@@ -140,7 +140,7 @@ No governance is available to ensure that the attributes declared by the provide
 
 Provider auditors assume the role of governance within SDL attributes use.  An Auditors job is to ensure a provider has accurate attributes placed on them and can  fulfill such requirements.
 
-### Auditor Governance
+### Standard Attributes
 
 A comprehensive, open-source framework is in development which will further decentralize the auditing of providers.  Pending the release of this framework, an interim process has been developed to confirm providers claiming Akash recognized attributes.  The process will allow providers to bid on deployments launched via the SDLs within the Awesome Akash repository.  Interested providers may initiate the interim signing process by making contact in Discord with Andy (member of the Akash Developer Insider team) at the following handle: @andy01.
 
