@@ -140,6 +140,35 @@ No governance is available to ensure that the attributes declared by the provide
 
 Provider auditors assume the role of governance within SDL attributes use.  An Auditors job is to ensure a provider has accurate attributes placed on them and can  fulfill such requirements.
 
+### Auditor Governance
+
+A comprehensive, open-source framework is in development which will further decentralize the auditing of providers.  Pending the release of this framework, an interim process has been developed to confirm providers claiming Akash recognized attributes.  The process will allow providers to bid on deployments launched via the SDLs within the Awesome Akash repository.  Interested providers may initiate the interim signing process by making contact in Discord with Andy (member of the Akash Developer Insider team) at the following handle: @andy01.
+
+_**Attributes of Community Providers**_
+
+Community providers vetted and signed by Andy should advertise the following attributes. Leases should use these attributes to allow audited_** **_community providers to bid.
+
+* host: akash
+* tier: community
+
+_**Attributes of Akash Providers**_
+
+The Akash provider, compute resources owned by Akash, will advertise the following attributes.  Use of these attributes ensures only Akash provider instances will bid on the lease.
+
+* host: akash
+* tier: premium
+* organization: ovrclk.com
+
+_**Awesome Akash Examples**_
+
+The example applications in the Awesome Akash repo have the following attributes included.  Based on these attributes, both Akash and community providers are able to bid on associated leases.
+
+* host: akash
+
+_**Lease signedBy Fields**_
+
+To use audited providers only, ensure SDLs have the Akash signedBy address of: akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63.
+
 ### Auditor Location Within the SDL
 
 Using the example SDL provided previously let’s take a look at the Auditor review.
