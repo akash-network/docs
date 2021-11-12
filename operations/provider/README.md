@@ -206,6 +206,10 @@ attributes:
     value: <nameOfYourOrganization>
 ```
 
+* Review the following for a discussion on Akash standard attributes and how/why to use on your provider.
+
+{% embed url="https://docs.akash.network/operations/akash-audited-attributes#standard-attributes" %}
+
 _**Example of Creating Provider File**_
 
 * These screenshots shows the previous steps for further clarity
