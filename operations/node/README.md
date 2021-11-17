@@ -34,7 +34,9 @@ curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh 
 
 ### STEP2 - Add Akash Install Location in the User’s Path
 
-Add the Akash install location to the user’s path for easy use.
+Add the Akash install location to the user’s path for ease of use.
+
+**NOTE - **below we provide the steps to add the Akash install directory to a user’s path on a Linux Ubuntu server.  Please take a look at a guide for your operating system and how to add a directory to a user’s path.
 
 _**Open the user’s path in an editor**_
 
@@ -82,6 +84,8 @@ akash version
 
 _**Expected**_ _**result**_
 
+* The exact, current version displayed may be different
+
 ```
 root@node2:~# akash version
 v0.14.0
@@ -106,7 +110,7 @@ _**The moniker can be changed later, if needed, within the following file**_
 
 ### **STEP4 - Initialize New Node**
 
-In this step we will start our new Akash Node.  In the background several configuration files will be created which can be edited later as needed.
+In this step we will initialize our new Akash Node.  In the background several configuration files will be created which can be edited later as needed.
 
 _**Before starting the node, we specify the Akash network and chain ID**_
 
@@ -279,7 +283,7 @@ version = "v0"
 
 We could let our node catch up to the current block but this would take a very long time. Instead we will download a snapshot of the blockchain before starting our node.
 
-**NOTE** - at the time of this writing the snapshot is 2GB and could take some time to pull down.
+**NOTE** - at the time of this writing the snapshot is 200GB and could take some time to pull down.
 
 _**Remove Existing Data**_
 
