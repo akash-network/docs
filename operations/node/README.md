@@ -1,55 +1,151 @@
 # Run an Akash Node
 
-In this guide, we'll set up an Akash node and connect it to a network.
+We would want our own Akash node when we want to run:
 
-## Before We Begin
+* Akash Validator - a full Akash Node is a prerequisite step to run a validator&#x20;
+* Akash Provider - a dedicated Akash Node is recommended for providers&#x20;
+* Akash Production dApps - a dedicated Akash Node is best practice to eliminate reliance on public nodes when you take your distributed apps past the testing phase.
 
-You'll also need to know information about the network you're connecting your node to. See [Choosing a Network](../provider/testnet.md) for how to obtain any network-related information.
+In this guide we will review the Akash Node setup.
 
-Make sure to have Akash client installed on your workstation, check [install guide](../../cli/install.md) for instructions.
+## Akash Node Setup
 
-## Setting Up a New Node
+### STEP1 - Install Akash Software
 
-These instructions are for setting up a brand new full node from scratch.
+In this step we will cover Installing the Akash software on a Linux server.  We will use an Ubuntu server for our examples.  The commands may need to be changed slightly depending on your Linux distribution.
 
-First, choose a "moniker" - a readable name for your validator. In this guide, we'll use `moniker-from-the-guide`, but you should replace that with your own for the following instructions.
+_**Download and Install Akash**_
 
-{% hint style="warning" %}
-Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable.
-{% endhint %}
+* Install the Linux unzip utility if needed
 
-```bash
-AKASH_MONIKER="moniker-from-the-guide"
+```
+sudo apt install zip
 ```
 
-Then initialize the node and create the necessary config files:
+* These commands will retrieve the latest, stable version of the Akash software, store the version in a local variable, and then install that version.
 
-```bash
+```
+cd ~
+
+AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
+
+curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "v$AKASH_VERSION"
+```
+
+### STEP2 - Add Akash Install Location in the User’s Path
+
+Add the Akash install location to the user’s path for easy use.
+
+_**Open the user’s path in an editor**_
+
+```
+vi /etc/environment
+```
+
+_**It is always best practice to view the path within a text editor or cat it out to console prior to the update to avoid errors.**_
+
+```
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+~                                                                                                                                                                                                          
+~                                                                                                                                                                                                          
+~  
+```
+
+_**Add the following directory, which is the Akash install location, to PATH**_
+
+* Note - this assumes Akash was installed while logged in as the root user.
+
+```
+/root/bin
+```
+
+_**View within the text editor or console following the update**_
+
+```
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/root/bin"
+~                                                                                                                                                                                                          
+~                                                                                                                                                                                                          
+~ 
+```
+
+_**Make the new path active in the current session**_
+
+```
+​​source /etc/environment
+```
+
+_**Display the version of Akash software installed.  This confirms the software installed and that the new user path addition worked.**_
+
+```
+akash version
+```
+
+_**Expected**_ _**result**_
+
+```
+root@node2:~# akash version
+v0.14.0
+```
+
+### STEP3 - Choose a Node Moniker
+
+We choose a "moniker" which is a readable name for your Akash Node.
+
+* Replace the moniker value with a name of your choice
+* **NOTE** - monikers can contain only ASCII characters
+
+```
+AKASH_MONIKER=<moniker>
+```
+
+_**The moniker can be changed later, if needed, within the following file**_
+
+```
+~/.akash/config/config.toml
+```
+
+### **STEP4 - Initialize New Node**
+
+In this step we will start our new Akash Node.  In the background several configuration files will be created which can be edited later as needed.
+
+_**Before starting the node, we specify the Akash network and chain ID**_
+
+```
+AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
+
+export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
+```
+
+_**Start the node**_
+
+```
 akash init --chain-id "$AKASH_CHAIN_ID" "$AKASH_MONIKER"
 ```
 
-You can edit this `moniker` later, in the `~/.akash/config/config.toml` file:
+_**Example/Expected Result**_
 
-```text
-# A custom human readable name for this node
-moniker = "moniker-from-the-guide"
+```
+{"app_message":{"audit":{"attributes":[]},"auth":{"accounts":[],"params":{"max_memo_characters":"256","sig_verify_cost_ed25519":"590","sig_verify_cost
+
+<output truncated>
+
+},"upgrade":{},"vesting":{}},"chain_id":"akashnet-2","gentxs_dir":"","moniker":"chainzero","node_id":"2f4491952df08e69fd988c6f5d6ed21e25318fbc"}
+
 ```
 
-From here on, your node can be configured in a number of different places.
+### STEP5 - Set Minimum Gas Price
 
-* `~/.akash/config/app.toml`    - cosmos-specific configuration
-* `~/.akash/config/config.toml` - tendermint-specific configuration
-* environment variables and command-line options can override settings in the above configuration files.
+Your node keeps unconfirmed transactions in its mempool. In order to protect the node from spam, it is best to set a minimum gas price that the transaction must meet in order to be accepted into the mempool.
 
-Some common settings are described below.
+_**This setting can be found in the following file and we will change the default value which is blank.**_
 
-### Gas Prices
+```
+~/.akash/config/app.toml
+```
 
-Your full-node keeps unconfirmed transactions in its mempool. In order to protect it from spam, it is better to set a `minimum-gas-prices` that the transaction must meet in order to be accepted in your node's mempool. This parameter can be set in `~/.akash/config/app.toml`.
+_**The initial recommended min-gas-prices is 0.025uakt but you might want to change it later.**_
 
-The initial recommended `min-gas-prices` is `0.025uakt`, but you might want to change it later.
-
-```text
+```
 # This is a TOML config file.
 # For more information, see https://github.com/toml-lang/toml
 
@@ -62,105 +158,196 @@ The initial recommended `min-gas-prices` is `0.025uakt`, but you might want to c
 minimum-gas-prices = "0.025uakt"
 ```
 
-## Genesis & Seeds
+### STEP6 - Copy the Genesis File
 
-Next we need to configure the p2p network and ensure that you have the right `genesis.json` file to join the testnet.
+Akash nodes need the Genesis file for the blockchain.  In this step we will gather the genesis.json file and make sure it is valid.
 
-### Copy the Genesis File
+_**Copy the Genesis File**_
 
-Fetch the testnet's `genesis.json` file into `akash`'s config directory.
-
-```bash
+```
 curl -s "$AKASH_NET/genesis.json" > $HOME/.akash/config/genesis.json
 ```
 
-Note we use the `$AKASH_NET` variable - see the [net repo](https://github.com/ovrclk/net) for how to set this variable for the network you're connecting to.
+_**Verify the Genesis File**_
 
-To verify the correctness of the configuration run:
-
-{% hint style="warning" %}
-The following command is currently not working on `edgenet`. **This error can be ignored on `edgenet.`** We are looking into the problem, but it won't affect running a node.
-{% endhint %}
-
-```bash
+```
 akash validate-genesis
 ```
 
-### Add Seed Nodes
+_**Expected Output of Validate Genesis**_
 
-Your node needs to know how to find peers. You'll need to add healthy seed nodes or persistent peers to `$HOME/.akash/config/config.toml`. As with installing [`genesis.json`](./#copy-the-genesis-file), consult the [net repo](https://github.com/ovrclk/net/) for how to obtain seeds to connect to.
+```
+root@ip-10-0-10-101:~# akash validate-genesis
 
-For more information on the how and why of seeds and peers, you can [read this](https://docs.tendermint.com/master/spec/p2p/peer.html) great documentation from the Tendermint maintainers.
-
-## A Note on Gas and Fees
-
-Transactions on the Akash Network need to include a transaction fee in order to be processed. This fee pays for the gas required to run the transaction. The formula is the following:
-
-```text
-fees = ceil(gas * gasPrices)
+File at /root/.akash/config/genesis.json is a valid genesis file
 ```
 
-The `gas` is dependent on the transaction. Different transaction require different amount of `gas`. The `gas` amount for a transaction is calculated as it is being processed, but there is a way to estimate it beforehand by using the `auto` value for the `gas` flag. Of course, this only gives an estimate. You can adjust this estimate with the flag `--gas-adjustment` \(default `1.0`\) if you want to be sure you provide enough `gas` for the transaction.
+### STEP7 - Add Seed Nodes
 
-The `gasPrice` is the price of each unit of `gas`. Each validator sets a `min-gas-price` value, and will only include transactions that have a `gasPrice` greater than their `min-gas-price`.
+A seed node is used as an initial peer on the network. The seed node will provide a list of peers which can be used going forward. In this step we will configure a seed node to connect with.
 
-The transaction `fees` are the product of `gas` and `gasPrice`. As a user, you have to input 2 out of 3. The higher the `gasPrice`/`fees`, the higher the chance that your transaction will get included in a block.
+_**List Current Seed Nodes**_
 
-For Akash testnets, the recommended `gas-prices` is `0.025uakt`. 
+```
+curl -s "$AKASH_NET/seed-nodes.txt" | paste -d, -s
+```
 
-## Pruning of State
+_**Expected Output of Seed Node List**_
 
-There are three strategies for pruning state, please be aware that this is only for state and not for block storage:
+```
+root@ip-10-0-10-101:~# curl -s "$AKASH_NET/seed-nodes.txt" | paste -d, -s
 
-1. `default`: the last 100 states are kept in addition to every 500th state; pruning at 10 block intervals
-2. `nothing`: all historic states will be saved, nothing will be deleted \(i.e. archiving node\)
-3. `everything`: all saved states will be deleted, storing only the current state; pruning at 10 block intervals
-4. `custom`: allow pruning options to be manually specified through `pruning-keep-recent`, `pruning-keep-every`, and `pruning-interval`
+27eb432ccd5e895c5c659659120d68b393dd8c60@35.247.65.183:26656,8e2f56098f182ffe2f6fb09280bafe13c63eb42f@46.101.176.149:26656,fff99a2e8f3c9473e4e5ee9a99611a2e599529fd@46.166.138.218:26656
+```
 
-You can configure your node's pruning strategy at start time with the `--pruning` or by configuring your `app.toml` file.
+_**Include the Peer Nodes in Config File**_
 
-{% hint style="warning" %}
-If running a validator node, do not use `--pruning everything` as it is known to cause issues. Instead, please use `--pruning default`.
-{% endhint %}
+* Open the config.toml file in an editor
 
-> Note: When you are pruning state you will not be able to query the heights that are not in your store. The sentry nodes the Akash team is running will be `--pruning nothing` and all data from the testnet will be queryable there.
+```
+vi $HOME/.akash/config/config.toml
+```
 
-## Fast Sync
+* Within the editor find the seeds field as shown at the bottom of this output
 
-"Fast Sync" allows nodes that are far behind the current height to catchup quickly by downloading blocks in parallel and verifying their commits. This feature is configured in `~/.akash/config/config.toml`.
+```
+#######################################################
+###           P2P Configuration Options             ###
+#######################################################
+[p2p]
 
-Enable "Fast Sync" with
+# Address to listen for incoming connections
+laddr = "tcp://0.0.0.0:26656"
 
-```text
+# Address to advertise to peers for them to dial
+# If empty, will use the same port as the laddr,
+# and will introspect on the listener or use UPnP
+# to figure out the address.
+external_address = ""
+
+# Comma separated list of seed nodes to connect to
+seeds = ""
+```
+
+* Copy and paste the seed nodes returned via the “List Current Seed Nodes” part of this section
+* Following update the seeds field should appear like this:
+
+```
+# Comma separated list of seed nodes to connect to
+seeds = "27eb432ccd5e895c5c659659120d68b393dd8c60@35.247.65.183:26656,8e2f56098f182ffe2f6fb09280bafe13c63eb42f@46.101.176.149:26656,fff99a2e8f3c9473e4e5ee9a99611a2e599529fd@46.166.138.218:26656"
+```
+
+### STEP8 - Fast Sync
+
+Fast Sync means nodes can catch up quickly by downloading blocks in bulk.
+
+_**Fast Sync settings can be found in the following file**_
+
+```
+~/.akash/config/config.toml
+```
+
+_**Verify Fast Sync Settings**_
+
+* Most likely no changes will be necessary to config.toml and the default settings will be fine. But we will make sure.&#x20;
+* Verify the fast\_sync field is set to true
+
+```
+# If this node is many blocks behind the tip of the chain, FastSync
+# allows them to catchup quickly by downloading blocks in parallel
+# and verifying their commits
 fast_sync = true
 ```
 
-Different versions of Akash use diferent versions of the "Fast Sync" backend:
+* Verify the Fast Sync version is set to v0.&#x20;
+* While version 0 is said to be the “legacy” version, in our experience this version works better.
 
-| Akash Version | Fast Sync Version |
-| :--- | :--- |
-| `<  0.9.x` | `v0` |
-| `>= 0.9.x` | `v2` |
+```
+#######################################################
+###       Fast Sync Configuration Connections       ###
+#######################################################
+[fastsync]
 
-Find the `[fastsync]` section of `~/.akash/config/config.toml` and set the correct backend version like so:
-
-```text
-version = "v2"
+# Fast Sync version to use:
+#   1) "v0" (default) - the legacy fast sync implementation
+#   2) "v1" - refactor of v0 version for better testability
+#   2) "v2" - complete redesign of v0, optimized for testability & readability
+version = "v0"
 ```
 
-## Run a Full Node
+### STEP9 - Blockchain Snapshot Use
 
-Start the full node with this command:
+We could let our node catch up to the current block but this would take a very long time. Instead we will download a snapshot of the blockchain before starting our node.
 
-```bash
+**NOTE** - at the time of this writing the snapshot is 2GB and could take some time to pull down.
+
+_**Remove Existing Data**_
+
+```
+rm -rf ~/.akash/data; \
+mkdir -p ~/.akash/data; \
+cd ~/.akash/data
+```
+
+_**Download Snapshot**_
+
+```
+SNAP_NAME=$(curl -s http://135.181.60.250/akash/ | egrep -o ">akashnet-2.*tar" | tr -d ">"); \
+wget -O - http://135.181.60.250/akash/${SNAP_NAME} | tar xf -
+```
+
+### STEP10 - Start the Akash Node
+
+_**Start the node**_
+
+```
 akash start
 ```
 
-If you would like to run your node via `systemd` please see [this guide](https://github.com/ovrclk/docs/tree/5de597cc071f0dec49919e331bc5589f97af6854/guides/node/systemd.md).
+_**Check the status of the node**_
 
-You can use `akash` to check that everything is running smoothly:
+* At first the node will show it is catching up.&#x20;
+* Eventually the node will show the height of the latest block.&#x20;
+* The latest block number can be found on the following website for comparison.
+  * _****_[_**https://www.mintscan.io/akash**_](https://www.mintscan.io/akash)_****_
 
-```bash
+```
 akash status
 ```
 
+## Additional Information
+
+### Config Files
+
+Akash Node configurations are found within these files:
+
+_**Cosmos specific configuration**_
+
+```
+~/.akash/config/app.toml
+```
+
+_**Tendermint specific configuration**_
+
+```
+~/.akash/config/config.toml
+```
+
+### Akash Networks
+
+Within this guide the Akash mainnet is used and as specified in the AKASH\_NET value.  To launch a node on the testnet or edgenet and for additional network information, use this guide:
+
+{% embed url="https://github.com/ovrclk/net" %}
+
+### State Pruning
+
+There are several strategies for pruning state, please be aware that this is only for state and not for block storage:
+
+1. **default: **the last 100 states are kept in addition to every 500th state; pruning at 10 block intervals
+2. **nothing: **all historic states will be saved, nothing will be deleted (i.e. archiving node)
+3. **everything: **all saved states will be deleted, storing only the current state; pruning at 10 block intervals
+4. **custom: **allow pruning options to be manually specified through pruning-keep-recent, pruning-keep-every, and pruning-interval
+
+You can configure the node's pruning strategy at start time with the --pruning or by configuring the app.toml file.
+
+_**Validator Node Pruning Note**_** - **please do not use --pruning everything on validator nodes as it is known to cause issues. Instead use --pruning default.
