@@ -14,6 +14,12 @@ This guide will cover the following topics:
 * Walkthrough of a example WordPress deployment using the tool
 * Teardown and cleanup of the example app
 
+### **Requirements**
+
+#### **Akash wallet with your mnemonic phrase ready for this guide! **
+
+**Follow our **[**Keplr Wallet**](../token/keplr.md)** guide to create your first wallet.**
+
 ## **Akashlytics Deploy Installation**
 
 ### **Software Access and Download Instructions**
@@ -108,9 +114,9 @@ In this section we will configure the following:
 * Import an existing wallet
 * Create a certificate to interact with the Blockchain
 
-#### **STEP1 - Import Existing Wallet**
+**STEP1 - Import Existing Wallet**
 
-* The first thing you will need is a wallet with a mnemonic phrase you have access to.
+* The first thing you will need is a [wallet](../token/keplr.md) with a mnemonic phrase you have access to.
 * In the tool you can choose a name for this wallet. This will not affect the functionality of the tool but is just an easy way to track what wallet is currently in use.
 * Next choose a password that you will remember for the wallet.
 
