@@ -24,6 +24,7 @@
 ## Tutorials <a href="deploy" id="deploy"></a>
 
 * [Mixin Messenger for AKT](deploy/mixin-messenger-for-akt.md)
+* [Polygon on Akash](deploy/polygon-on-akash.md)
 * [Unstoppable Web 2.0](deploy/unstoppable-web-2.0.md)
 * [Multi-Tiered Deployment](deploy/multi-tier-app.md)
 * [Helium Validator](deploy/helium-validator.md)
