@@ -67,7 +67,7 @@ services:
           - global: true
     env:
       - "ADDRESS=RMB251ZucvCNyX1yoQqsSC2wwJ3s7fHx3b"
-      - "POOL=supernova" #You can enter custom pool here, otherwise suprnova nearest location will be used
+      - "POOL=suprnova" #You can enter custom pool here, otherwise suprnova nearest location will be used
       - "WORKER=akash"
       - "TUNE=no-tune"
       - "DONATION=0"
@@ -86,7 +86,7 @@ profiles:
       pricing:
         raptoreum:
           denom: uakt
-          amount: 10
+          amount: 2
 
 deployment:
   raptoreum:
