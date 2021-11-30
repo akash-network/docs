@@ -4,14 +4,14 @@
 * [Technical Support](support.md)
 * [Stack Definition Language (SDL)](stack-definition-language.md)
 
-## Deploy on Akash <a href="guides" id="guides"></a>
+## Deploy on Akash <a href="#guides" id="guides"></a>
 
 * [Apps on Akash](guides/awesome-akash.md)
 * [Desktop App](guides/deploy.md)
 * [Web App](guides/web.md)
 * [CLI](guides/cli.md)
 
-## Using Akash Tokens <a href="token" id="token"></a>
+## Using Akash Tokens <a href="#token" id="token"></a>
 
 * [Get Free Tokens](token/funding.md)
 * [Buy Akash Tokens](token/buy.md)
@@ -21,8 +21,9 @@
 
 * [Akash Version 0.14.0](release-notes/v0.14.0.md)
 
-## Tutorials <a href="deploy" id="deploy"></a>
+## Tutorials <a href="#deploy" id="deploy"></a>
 
+* [Mine Raptoreum on Akash Network](deploy/mine-raptoreum-on-akash-network.md)
 * [Mixin Messenger for AKT](deploy/mixin-messenger-for-akt.md)
 * [Polygon on Akash](deploy/polygon-on-akash.md)
 * [Unstoppable Web 2.0](deploy/unstoppable-web-2.0.md)
@@ -42,7 +43,7 @@
 * [Running a Validator](operations/validator.md)
 * [Akash Audited Attributes](operations/akash-audited-attributes.md)
 
-## Command Line Interface (CLI) <a href="cli" id="cli"></a>
+## Command Line Interface (CLI) <a href="#cli" id="cli"></a>
 
 * [Install Akash](cli/install.md)
 * [CLI Commands](cli/command-line-interface.md)
@@ -50,7 +51,7 @@
 * [Create Your Account](cli/wallet.md)
 * [Deploy with CLI](cli/deployment.md)
 
-## About Akash <a href="glossary" id="glossary"></a>
+## About Akash <a href="#glossary" id="glossary"></a>
 
 * [Security](glossary/security.md)
 * [Containers](glossary/platform.md)

@@ -146,7 +146,7 @@ A comprehensive, open-source framework is in development which will further dece
 
 _**Attributes of Community Providers**_
 
-Community providers vetted and signed by Andy should advertise the following attributes. Leases should use these attributes to allow audited_** **_community providers to bid.
+Community providers vetted and signed by Andy should advertise the following attributes. Leases should use these attributes to allow audited _****_ community providers to bid.
 
 * host: akash
 * tier: community

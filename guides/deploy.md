@@ -16,9 +16,9 @@ This guide will cover the following topics:
 
 ### **Requirements**
 
-#### **Akash wallet with your mnemonic phrase ready for this guide! **
+#### **Akash wallet with your mnemonic phrase ready for this guide!**&#x20;
 
-**Follow our **[**Keplr Wallet**](../token/keplr.md)** guide to create your first wallet.**
+**Follow our** [**Keplr Wallet**](../token/keplr.md) **guide to create your first wallet.**
 
 ## **Akashlytics Deploy Installation**
 

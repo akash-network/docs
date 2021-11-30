@@ -36,7 +36,7 @@ curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh 
 
 Add the Akash install location to the user’s path for ease of use.
 
-**NOTE - **below we provide the steps to add the Akash install directory to a user’s path on a Linux Ubuntu server.  Please take a look at a guide for your operating system and how to add a directory to a user’s path.
+**NOTE -** below we provide the steps to add the Akash install directory to a user’s path on a Linux Ubuntu server.  Please take a look at a guide for your operating system and how to add a directory to a user’s path.
 
 _**Open the user’s path in an editor**_
 
@@ -347,11 +347,11 @@ Within this guide the Akash mainnet is used and as specified in the AKASH\_NET v
 
 There are several strategies for pruning state, please be aware that this is only for state and not for block storage:
 
-1. **default: **the last 100 states are kept in addition to every 500th state; pruning at 10 block intervals
-2. **nothing: **all historic states will be saved, nothing will be deleted (i.e. archiving node)
-3. **everything: **all saved states will be deleted, storing only the current state; pruning at 10 block intervals
-4. **custom: **allow pruning options to be manually specified through pruning-keep-recent, pruning-keep-every, and pruning-interval
+1. **default:** the last 100 states are kept in addition to every 500th state; pruning at 10 block intervals
+2. **nothing:** all historic states will be saved, nothing will be deleted (i.e. archiving node)
+3. **everything:** all saved states will be deleted, storing only the current state; pruning at 10 block intervals
+4. **custom:** allow pruning options to be manually specified through pruning-keep-recent, pruning-keep-every, and pruning-interval
 
 You can configure the node's pruning strategy at start time with the --pruning or by configuring the app.toml file.
 
-_**Validator Node Pruning Note**_** - **please do not use --pruning everything on validator nodes as it is known to cause issues. Instead use --pruning default.
+_**Validator Node Pruning Note**_** -** please do not use --pruning everything on validator nodes as it is known to cause issues. Instead use --pruning default.
