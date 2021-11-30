@@ -105,7 +105,7 @@ Akash is a marketplace of compute. Providers set their own prices for compute re
 
 ### Change the tuning option
 
-_TUNE=no-tune_ variable in deploy.yaml to TUNE=full-tune
+_TUNE=no-tune_ variable in deploy.yaml to _TUNE=full-tune_
 
 No tune will start mining right away - with no performance tuning of the container. Without this expect a lower hashrate. Be warned, tuning can take at least 3 hours before mining begins - so do not expect to see hashrate on the pool immediately. You can check your logs in Akashlytics.
 
