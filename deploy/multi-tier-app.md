@@ -6,7 +6,7 @@ In this guide, we will deploy a multi-tier web application on Akash. The example
 
 ### Before We Begin
 
-This guide is to be considered an extension of the [Deploy an Application](../cli/deployment.md) guide. Please ensure you have successfully completed all steps leading up to the "Create the Deployment Configuration" step in said guide, as they will not be discussed here.
+This guide is to be considered an extension of the [Deploy an Application](broken-reference) guide. Please ensure you have successfully completed all steps leading up to the "Create the Deployment Configuration" step in said guide, as they will not be discussed here.
 
 ## Create the Deployment Configuration
 
@@ -153,7 +153,7 @@ profiles:
 
 The `profiles` entries contain named compute and placement profiles to be used in the deployment.
 
-Since we have 2 services to deploy, details for each of them must be specified here. This section is very similar to a standard deployment, so it won't be covered in detail here. An important item to note, however, is that the named compute/placement profiles here \(`redis` and `goosebin`\) must match the names we had specified in the `services` section. [Additional mappings](https://github.com/ovrclk/docs/tree/a8e7a472b43ec742a03bc5063f6c5a82ca3ca2ea/sdl/README.md#profiles) can also be specified within `profiles` such as audited attributes and data center attributes.
+Since we have 2 services to deploy, details for each of them must be specified here. This section is very similar to a standard deployment, so it won't be covered in detail here. An important item to note, however, is that the named compute/placement profiles here (`redis` and `goosebin`) must match the names we had specified in the `services` section. [Additional mappings](https://github.com/ovrclk/docs/tree/a8e7a472b43ec742a03bc5063f6c5a82ca3ca2ea/sdl/README.md#profiles) can also be specified within `profiles` such as audited attributes and data center attributes.
 
 #### Deployments
 
@@ -171,11 +171,11 @@ deployment:
 
 The `deployment` entries map the datacenter profiles to compute profiles to create a final desired configuration for the resources required for the services.
 
-Similar to the `profiles` entries, we must specify deployment criteria for both of our services. This says that the 1 instance of the `redis` service and 1 instance of the `goosebin` service should be deployed to a datacenter matching the `dc1` datacenter profile. Each instance of the services will have the resources defined in its corresponding compute profile \(`redis` or `goosebin`\) available to it.
+Similar to the `profiles` entries, we must specify deployment criteria for both of our services. This says that the 1 instance of the `redis` service and 1 instance of the `goosebin` service should be deployed to a datacenter matching the `dc1` datacenter profile. Each instance of the services will have the resources defined in its corresponding compute profile (`redis` or `goosebin`) available to it.
 
 #### Deployment
 
-Now that we have the SDL configured, let's deploy this application and see what happens. A more detailed guide on this process can be found in the [Deploy an Application](../cli/deployment.md) guide.
+Now that we have the SDL configured, let's deploy this application and see what happens. A more detailed guide on this process can be found in the [Deploy an Application](broken-reference) guide.
 
 **Create the Deployment**
 
@@ -225,7 +225,7 @@ You should see a response similar to:
 }
 ```
 
-The URI shown above will take you to the front-end service. We can verify the service is running and talking with the backend \(`redis`\) by running the following:
+The URI shown above will take you to the front-end service. We can verify the service is running and talking with the backend (`redis`) by running the following:
 
 ```bash
 akash provider lease-logs --node $AKASH_NODE --home $AKASH_HOME  --from $AKSH_KEY_NAME --dseq $AKASH_DSEQ  --provider $AKASH_PROVIDER
@@ -263,4 +263,3 @@ You should see a response similar to:
 ```
 
 We can see the `goosebin` frontend has made some requests to the `redis` backend, and the containers are healthy.
-

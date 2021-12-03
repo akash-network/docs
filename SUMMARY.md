@@ -49,7 +49,6 @@
 * [CLI Commands](cli/command-line-interface.md)
 * [Setup your Environment](cli/shell-variables.md)
 * [Create Your Account](cli/wallet.md)
-* [Deploy with CLI](cli/deployment.md)
 
 ## About Akash <a href="#glossary" id="glossary"></a>
 
