@@ -34,7 +34,7 @@ If you have not used Akashlytics Deploy previously, please use the following gui
 
 * **NOTE -** the SDL within GitHub currently has a storage > size value of 120Gi.  Omnibus uses a compressed snapshot of the blockchain and when expanded 120GB of storage for the deployment will not be enough.  At the time of this writing adjusting the storage size to 350GB will suffice and allow some growth.  Please adjust the storage appropriately and as shown in the screenshot below.
 
-![](../.gitbook/assets/manifestSelectFinal.png)
+![](../.gitbook/assets/sdlCopyPaste.png)
 
 * Accept the initial deposit of 5 AKT into the deployment’s escrow account&#x20;
 * The escrow can be refilled easily within Akashlytics Deploy at any time
