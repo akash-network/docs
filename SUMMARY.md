@@ -34,6 +34,7 @@
 
 ## Operations
 
+* [Akash Node Deployment Via Omnibus](operations/akash-node-deployment-via-omnibus.md)
 * [Run an Akash Node](operations/node/README.md)
   * [RPC Service](operations/node/rpc-service.md)
   * [API Service](operations/node/api-service.md)
