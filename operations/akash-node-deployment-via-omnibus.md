@@ -8,9 +8,7 @@ For fine tuning of the Akash node check the _Additional Information_ section.
 
 ### Akashlytics Deploy Overview
 
-If you have not used Akashlytics Deploy previously, please use the following guide to get started.  The guide includes steps to install the app and to set up a wallet for Akash deployments.  Once the Akashlytics Deploy tool is installed, return to this guide to walk through the Akash Node deployment.
-
-{% embed url="https://docs.akash.network/guides/deploy" %}
+If you have not used Akashlytics Deploy previously, please use [this guide](https://docs.akash.network/guides/deploy) to get started.  The guide includes steps to install the app and to set up a wallet for Akash deployments.  Once the Akashlytics Deploy tool is installed, return to this guide to walk through the Akash Node deployment.
 
 ### Akashlytics Deploy Walkthrough
 
@@ -28,10 +26,7 @@ If you have not used Akashlytics Deploy previously, please use the following gui
 
 ![](../.gitbook/assets/manifestSelectInitial.png)
 
-* Copy and paste SDL from the following location into the Akashlytics SDL editor window
-
-{% embed url="https://github.com/tombeynon/cosmos-omnibus/blob/master/akash/deploy.yml" %}
-
+* Copy and paste the SDL from [this site](https://github.com/tombeynon/cosmos-omnibus/blob/master/akash/deploy.yml) into the Akashlytics SDL editor window
 * **NOTE -** the SDL within GitHub currently has a storage > size value of 120Gi.  Omnibus uses a compressed snapshot of the blockchain and when expanded 120GB of storage for the deployment will not be enough.  At the time of this writing adjusting the storage size to 350GB will suffice and allow some growth.  Please adjust the storage appropriately and as shown in the screenshot below.
 
 ![](../.gitbook/assets/sdlWithStorageAdjustment.png)
@@ -103,10 +98,8 @@ With the install of the Akash node complete, it must sync with the blockchain.  
 
 ![](../.gitbook/assets/rpcStatusVerification.png)
 
-* Open Mintscan, a popular blockchain explorer, to compare the captured “latest\_block\_height” value to the latest block displayed in the explorer&#x20;
+* Open [Mintscan](https://www.mintscan.io/akash), a popular blockchain explorer, to compare the captured “latest\_block\_height” value to the latest block displayed in the explorer&#x20;
 * The block height from the Akash Node and Mintscan will not be exactly match but should be close to each other
-
-[**Mintscan - Akash Stats**](https://www.mintscan.io/akash)
 
 ![](../.gitbook/assets/mintscanBlockHeight.png)
 
@@ -126,18 +119,12 @@ With the install of the Akash node complete, it must sync with the blockchain.  
 
 ### Cosmos Omnibus Repository
 
-* The repository for the Akash Cosmos Omnibus project:
-
-{% embed url="https://github.com/ovrclk/cosmos-omnibus" %}
+* The repository for the [Akash Cosmos Omnibus ](https://github.com/ovrclk/cosmos-omnibus)project.
 
 ### Akash SDL
 
-* The Akash manifest/SDL used in this guide:
-
-{% embed url="https://github.com/ovrclk/cosmos-omnibus/blob/master/akash/deploy.yml" %}
+* The Akash manifest/SDL used in this [guide](https://github.com/ovrclk/cosmos-omnibus/blob/master/akash/deploy.yml).
 
 ### Chain JSON Config File
 
-* The config file used for the genesis URL, seed nodes, etc:
-
-{% embed url="https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json" %}
+* The [config file](https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json) used for the genesis URL, seed nodes, etc.
