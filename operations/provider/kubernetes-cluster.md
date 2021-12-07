@@ -169,6 +169,14 @@ vi etcd.yml
 etcd_deployment_type: host
 ```
 
+#### gVisor Issue - No system-cgroup v2 Support
+
+If you are using a newer systemd then your container will get stuck in ContainerCreating state on your provider with gVisor enabled.  Please reference the following document for details regarding this issue and the recommended workaround.
+
+{% embed url="https://app.gitbook.com/o/-LnEOqKGbu1NgGg5wQFY/s/-LrNFlfuifzmQ_NMKu9C-887967055/c/EJ34UsXaXYsIcvYbWVP5/operations/provider/gvisor-issue-no-system-cgroup-v2-support" %}
+gVisor and system-cgrup support
+{% endembed %}
+
 ### STEP6 - Create Kubernetes Cluster
 
 With inventory in place we are ready to build the Kubernetes cluster via Ansible.
