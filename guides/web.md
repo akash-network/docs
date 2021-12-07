@@ -1,12 +1,10 @@
-# Akash Deploy UI (Web App)
+# Web App
 
 ## **Akash Deploy Overview**
 
 Akash Deploy delivers a web application allowing for easy deployment on the Akash Network.
 
-Akash Deploy is an open-source project written in ReactJS. The repository for the application is listed below. However a demo of the app is available if you want to jump right in. For our walkthrough we will be using the demo site.
-
-[**https://github.com/spacepotahto/akash-deploy-ui**](https://github.com/spacepotahto/akash-deploy-ui)
+Akash Deploy is an open-source project written in ReactJS. The repository for the application is listed below. However a demo of the app is available if you want to jump right in. For our walkthrough we will be using the [demo site](https://github.com/spacepotahto/akash-deploy-ui).
 
 ## **Prepare the Environment**
 
@@ -14,9 +12,7 @@ The Akash Deploy app integrates with the popular Keplr wallet. Keplr is a simple
 
 ### **Keplr Wallet Browser Extension Guidance**
 
-The Keplr wallet extension for Chrome may be found at the following location:
-
-{% embed url="https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en#:~:text=Keplr%20is%20a%20browser%20extension,for%20the%20Cosmos%20interchain%20ecosystem" %}
+The Keplr wallet extension for Chrome may be found [here](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en#:\~:text=Keplr%20is%20a%20browser%20extension,for%20the%20Cosmos%20interchain%20ecosystem).
 
 After you have installed the extension the Keplr wallet should appear in the browser extension tray. To open the wallet simply click on the keplr icon in the extension tray.
 
@@ -32,9 +28,7 @@ After you have installed the extension the Keplr wallet should appear in the bro
 
 ## **Initial Akash Deploy Access and Configuration**
 
-We will use a demo Akash Deploy site for this guide. To access the site go to the following URL
-
-[**https://akashdeploy.hns.siasky.net/**](https://akashdeploy.hns.siasky.net)
+We will use a demo Akash Deploy site for this guide. To access the site [here](https://akashdeploy.hns.siasky.net).
 
 If all worked as intended you should see something like this.
 
