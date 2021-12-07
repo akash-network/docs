@@ -12,9 +12,7 @@ The steps to create an Akash account are covered in the Provider setup section o
 
 * A full Kubernetes cluster is required.
 * The cluster must have outbound internet access and be reachable from the internet.
-* Please use this guide for ALL Kubernetes related configurations.  This guide covers a _**full cluster build**_, should it be needed, AND important details for new/pre-existing cluster configurations of _**custom resource definitions and ingress controllers**_ for the Akash provider.
-
-{% embed url="https://docs.akash.network/operations/provider/kubernetes-cluster" %}
+* Please use [this guide](https://docs.akash.network/operations/provider/kubernetes-cluster) for ALL Kubernetes related configurations.  This guide covers a _**full cluster build**_, should it be needed, AND important details for new/pre-existing cluster configurations of _**custom resource definitions and ingress controllers**_ for the Akash provider.
 
 ## Akash Provider Setup
 
@@ -207,9 +205,7 @@ attributes:
     value: <nameOfYourOrganization>
 ```
 
-* Review the following for a discussion on Akash standard attributes and how/why to use on your provider.
-
-{% embed url="https://docs.akash.network/operations/akash-audited-attributes#standard-attributes" %}
+* Review [this guide](https://docs.akash.network/operations/akash-audited-attributes#standard-attributes) for a discussion on Akash standard attributes and how/why to use on your provider.
 
 _**Example of Creating Provider File**_
 
