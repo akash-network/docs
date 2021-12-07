@@ -312,8 +312,7 @@ _**Check the status of the node**_
 
 * At first the node will show it is catching up.&#x20;
 * Eventually the node will show the height of the latest block.&#x20;
-* The latest block number can be found on the following website for comparison.
-  * _****_[_**https://www.mintscan.io/akash**_](https://www.mintscan.io/akash)_****_
+* The latest block number can be found on the [Mintscan](https://www.mintscan.io/akash) website for comparison.
 
 ```
 akash status
@@ -339,9 +338,7 @@ _**Tendermint specific configuration**_
 
 ### Akash Networks
 
-Within this guide the Akash mainnet is used and as specified in the AKASH\_NET value.  To launch a node on the testnet or edgenet and for additional network information, use this guide:
-
-{% embed url="https://github.com/ovrclk/net" %}
+Within this guide the Akash mainnet is used and as specified in the AKASH\_NET value.  To launch a node on the testnet or edgenet and for additional network information, use this [guide](https://github.com/ovrclk/net).
 
 ### State Pruning
 
