@@ -24,9 +24,7 @@ This guide will cover the following topics:
 
 ### **Software Access and Download Instructions**
 
-The Akashlytics Deploy software may be found at the project’s documentation here.
-
-[**https://www.akashlytics.com/deploy**](https://www.akashlytics.com/deploy)
+The Akashlytics Deploy software may be found at the project’s documentation [here](https://www.akashlytics.com/deploy).
 
 ![](../.gitbook/assets/AkashlyticsDownloadScreen.png)
 
