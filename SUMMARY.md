@@ -40,6 +40,7 @@
   * [API Service](operations/node/api-service.md)
 * [Build a Cloud Provider](operations/provider/README.md)
   * [Kubernetes Cluster](operations/provider/kubernetes-cluster.md)
+  * [gVisor Issue - No system-cgroup v2 Support](operations/provider/gvisor-issue-no-system-cgroup-v2-support.md)
   * [Provider Networks](operations/provider/testnet.md)
 * [Running a Validator](operations/validator.md)
 * [Akash Audited Attributes](operations/akash-audited-attributes.md)
