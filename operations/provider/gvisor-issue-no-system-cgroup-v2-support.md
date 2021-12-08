@@ -32,13 +32,8 @@ Ubuntu version 21.10 is affected.
 
 ### Support References
 
-* systemd switches to the "unified" cgroup hierarchy
-
-{% embed url="https://salsa.debian.org/systemd-team/systemd/-/commit/170fb124a32884bd9975ee4ea9e1ffbbc2ee26b4" %}
-
-* systemd-cgroup support in gVisor
-
-{% embed url="https://github.com/google/gvisor/issues/193" %}
+* systemd switches to the "unified" cgroup hierarchy [documentation](https://salsa.debian.org/systemd-team/systemd/-/commit/170fb124a32884bd9975ee4ea9e1ffbbc2ee26b4)
+* systemd-cgroup support in gVisor [documentation](https://github.com/google/gvisor/issues/193)
 
 ## Workaround
 
