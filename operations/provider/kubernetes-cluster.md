@@ -171,9 +171,7 @@ etcd_deployment_type: host
 
 #### gVisor Issue - No system-cgroup v2 Support
 
-If you are using a newer systemd then your container will get stuck in ContainerCreating state on your provider with gVisor enabled.  Please reference the following document for details regarding this issue and the recommended workaround.
-
-{% embed url="https://docs.akash.network/operations/provider/gvisor-issue-no-system-cgroup-v2-support" %}
+If you are using a newer systemd then your container will get stuck in ContainerCreating state on your provider with gVisor enabled.  Please reference [this document](https://docs.akash.network/operations/provider/gvisor-issue-no-system-cgroup-v2-support) for details regarding this issue and the recommended workaround.
 
 ### STEP6 - Create Kubernetes Cluster
 
