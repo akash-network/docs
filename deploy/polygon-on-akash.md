@@ -12,27 +12,19 @@ These guides include architecture and technical documentation and a curated list
 
 Throughout this guide we have included resources we believe most valuable to your journey.
 
-* _**Akash**_
-
-_****_[_**https://akashnet.notion.site/akashnet/Polygon-Akash-Starter-Kit-d4e817023556417ea8c9b679336d0d76**_](https://akashnet.notion.site/akashnet/Polygon-Akash-Starter-Kit-d4e817023556417ea8c9b679336d0d76)_****_
-
-* _**Polygon**_
-
-_****_[_**https://polygontechnology.notion.site/Polygon-Starter-Kit-a289a505a0bb4e8b8189c1fc3b2223d0**_](https://polygontechnology.notion.site/Polygon-Starter-Kit-a289a505a0bb4e8b8189c1fc3b2223d0)_****_
+* _****_[_**Akash Starter Kit**_](https://akashnet.notion.site/akashnet/Polygon-Akash-Starter-Kit-d4e817023556417ea8c9b679336d0d76)_****_
+* _****_[_**Polygon Starter Kit**_](https://polygontechnology.notion.site/Polygon-Starter-Kit-a289a505a0bb4e8b8189c1fc3b2223d0)_****_
 
 ## Polygon and Akash Architectures
 
-If you want a deeper understanding of Polygon and Akash before we deploy the Polygon validator, see these architecture guides
+If you want a deeper understanding of Polygon and Akash, see these architecture guides
 
-{% embed url="https://docs.polygon.technology" %}
-
-{% embed url="https://docs.akash.network" %}
+* _****_[_**Polygon Architecture and Documentation**_](https://docs.polygon.technology)_****_
+* [_**Akash Architecture and Documentation**_](https://docs.akash.network)_****_
 
 ## Akash Application Tools
 
-The following provides step by step instructions on how to deploy an app on Akash using a desktop tool named Akashlytics Deploy.&#x20;
-
-{% embed url="https://docs.akash.network/guides/deploy" %}
+This [_**guide**_](https://docs.akash.network/guides/deploy) _****_ provides step by step instructions on how to deploy an app on Akash using a desktop tool named Akashlytics Deploy.&#x20;
 
 ## Technical Support Channels
 
@@ -40,38 +32,21 @@ In depth support for Polygon and Akash is available via the following channels.
 
 ### Polygon on Akash
 
-* _**Discord**_
-
-{% embed url="https://discord.com/invite/xpUtZcWtyp" %}
+* _****_[_**Discord**_](https://discord.com/invite/xpUtZcWtyp)_****_
 
 ### Polygon General
 
-* _**Discord**_
-
-{% embed url="https://discord.com/invite/polygon" %}
-
-* _**Telegram**_
-
-{% embed url="https://t.me/joinchat/UMpbSrjAY_Ffx5CD" %}
+* _****_[_**Discord**_](https://discord.com/invite/polygon)_****_
+* _****_[_**Telegram**_](https://t.me/joinchat/UMpbSrjAY\_Ffx5CD)_****_
 
 ### Akash General
 
-* _**Discord**_
-
-{% embed url="https://discord.com/invite/akash" %}
-
-* _**Support Forum**_
-
-{% embed url="https://forum.akash.network" %}
+* _****_[_**Discord**_](https://discord.com/invite/akash)_****_
+* _****_[_**Support Forum**_](https://forum.akash.network)_****_
 
 ### **Faucets**
 
 The following faucets let users collect a small amount of AKT (Akash) or MATIC (Polygon) currency for development purposes.
 
-* _**Akash Developer Faucet**_
-
-{% embed url="https://drip.akash.network/login" %}
-
-* _**Polygon Developer Faucet**_
-
-{% embed url="https://faucet.polygon.technology" %}
+* _****_[_**Akash Developer Faucet**_](https://drip.akash.network/login)_****_
+* _****_[_**Polygon Developer Faucet**_](https://faucet.polygon.technology)_****_
