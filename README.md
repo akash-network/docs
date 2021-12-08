@@ -6,16 +6,12 @@ description: Akash means "open space" or "sky" in ancient Sanskrit.
 
 ## The Akash Mission
 
-Akash is an [**open source** ](https://github.com/ovrclk/akash)Cloud platform that lets you quickly deploy a Docker container to the Cloud provider of your choice for less than the cost of AWS, right from the [**command-line**](cli/command-line-interface.md).
+Akash is an [**open source** ](https://github.com/ovrclk/akash)Cloud platform that lets you quickly deploy a Docker container to the Cloud provider of your choice for less than the cost of AWS, right from the [**command-line**](https://docs.akash.network/guides/cli).
 
 * Define your Docker image, CPU, Memory, and Storage in a **deploy.yaml** file.
 * Set your price, receive bids from providers in seconds, and select the lowest price.
 * Deploy your application without having to set up, configure, or manage servers.
 * Scale your application from a single container to hundreds of deployments.
-
-{% hint style="info" %}
-Want to dive straight in? Start with our [**Quick Start Guide**](guides/cli.md).
-{% endhint %}
 
 ### What is the Akash Deployment Marketplace?
 
