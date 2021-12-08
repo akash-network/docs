@@ -162,7 +162,7 @@ The `signedBy` section allows you to state attributes that must be signed by one
 
 The `deployment` section defines how to deploy the services. It is a mapping of service name to deployment configuration.
 
-Each service to be deployed has an entry in the `deployment`. This entry is maps datacenter profiles to [compute profiles](stack-definition-language.md#profilescompute) to create a final desired configuration for the resources required for the service.
+Each service to be deployed has an entry in the `deployment`. This entry is maps datacenter profiles to [compute profiles](stack-definition-language.md#profiles.compute) to create a final desired configuration for the resources required for the service.
 
 Example:
 
