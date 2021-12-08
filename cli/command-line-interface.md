@@ -1,12 +1,12 @@
 # CLI Commands
 
-The software to run the **Network**, the **Platform**, and the command-line client used to interact with them are all currently distributed in the `akash` Command Line Interface \(CLI\) application.
+The software to run the **Network**, the **Platform**, and the command-line client used to interact with them are all currently distributed in the `akash` Command Line Interface (CLI) application.
 
 ## The Akash CLI
 
 The Akash command line utility
 
-```text
+```
   -h, --help   help for akash
 ```
 
@@ -14,27 +14,27 @@ The Akash command line utility
 
 Below are links to the top level commands. Click one of the links to see the available commands.
 
-* [akash ](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_.md)     - 
-* [akash ](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_.md)     - 
-* [akash add-genesis-account](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_add-genesis-account.md)     - Add a genesis account to genesis.json
-* [akash collect-gentxs](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_collect-gentxs.md)     - Collect genesis txs and output a genesis.json file
-* [akash debug](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_debug.md)     - Tool for helping with debugging your application
-* [akash deploy](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_deploy.md)     - Akash deploy tool commands
-* [akash events](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_events.md)     - Prints out akash events in real time
-* [akash export](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_export.md)     - Export state to JSON
-* [akash gentx](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_gentx.md)     - Generate a genesis tx carrying a self delegation
-* [akash init](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_init.md)     - Initialize private validator, p2p, genesis, and application configuration files
-* [akash keys](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_keys.md)     - Manage your application's keys
-* [akash migrate](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_migrate.md)     - Migrate genesis to a specified target version
-* [akash provider](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_provider.md)     - Akash provider commands
-* [akash query](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_query.md)     - Querying subcommands
-* [akash start](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_start.md)     - Run the full node
-* [akash status](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_status.md)     - Query remote node for status
-* [akash tendermint](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_tendermint.md)     - Tendermint subcommands
-* [akash tx](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_tx.md)     - Transactions subcommands
-* [akash unsafe-reset-all](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_unsafe-reset-all.md)     - Resets the blockchain database, removes address book files, and resets data/priv\_validator\_state.json to the genesis state
-* [akash validate-genesis](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_validate-genesis.md)     - validates the genesis file at the default location or at the location passed as an arg
-* [akash version](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash_version.md)     - Print the application binary version information
+* [akash ](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_.md)     -&#x20;
+* [akash ](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_.md)     -&#x20;
+* [akash add-genesis-account](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_add-genesis-account.md)     - Add a genesis account to genesis.json
+* [akash collect-gentxs](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_collect-gentxs.md)     - Collect genesis txs and output a genesis.json file
+* [akash debug](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_debug.md)     - Tool for helping with debugging your application
+* [akash deploy](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_deploy.md)     - Akash deploy tool commands
+* [akash events](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_events.md)     - Prints out akash events in real time
+* [akash export](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_export.md)     - Export state to JSON
+* [akash gentx](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_gentx.md)     - Generate a genesis tx carrying a self delegation
+* [akash init](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_init.md)     - Initialize private validator, p2p, genesis, and application configuration files
+* [akash keys](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_keys.md)     - Manage your application's keys
+* [akash migrate](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_migrate.md)     - Migrate genesis to a specified target version
+* [akash provider](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_provider.md)     - Akash provider commands
+* [akash query](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_query.md)     - Querying subcommands
+* [akash start](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_start.md)     - Run the full node
+* [akash status](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_status.md)     - Query remote node for status
+* [akash tendermint](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_tendermint.md)     - Tendermint subcommands
+* [akash tx](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_tx.md)     - Transactions subcommands
+* [akash unsafe-reset-all](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_unsafe-reset-all.md)     - Resets the blockchain database, removes address book files, and resets data/priv\_validator\_state.json to the genesis state
+* [akash validate-genesis](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_validate-genesis.md)     - validates the genesis file at the default location or at the location passed as an arg
+* [akash version](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_version.md)     - Print the application binary version information
 
 ## Send Tokens
 
@@ -42,13 +42,13 @@ Sign and send tokens to other account.
 
 **Usage**
 
-```text
+```
 akash tx bank send [from_key_or_address] [to_address] [amount] [flags]
 ```
 
 **Example**
 
-```text
+```
 $ akash tx bank send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000uakt --chain-id devnet -y
 
 {"height":"0","txhash":"116ED246AFF9F9B58036AECAA5EFE81AA7A788CC625CC2A4ADAFC68378834413","raw_log":"[]"}
@@ -56,7 +56,7 @@ $ akash tx bank send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000ua
 
 **More Info**
 
-```text
+```
 $ akash tx send -h
 Send funds from one account to another. Note, the'--from' flag is
 ignored as it is implied from [from_key_or_address].
@@ -100,13 +100,13 @@ Query for a transaction by hash in a committed block.
 
 **Usage**
 
-```text
+```
 $ akash query tx <txhash> -o json
 ```
 
 **Examples**
 
-```text
+```
 $ akash query tx BCAB9AAC8C4F920218757A0C4461AF6C380A2144B4762B4DE1CE014BE2714DA5 -o json
 
 {"height":"36","txhash":"BCAB9AAC8C4F920218757A0C4461AF6C380A2144B4762B4DE1CE014BE2714DA5","codespace":"","code":0,"data":"0A060A0473656E64","raw_log":"[{\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"send\"},{\"key\":\"sender\",\"value\":\"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf\"},{\"key\":\"module\",\"value\":\"bank\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug\"},{\"key\":\"sender\",\"value\":\"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf\"},{\"key\":\"amount\",\"value\":\"100000stake\"}]}]}]","logs":[{"msg_index":0,"log":"","events":[{"type":"message","attributes":[{"key":"action","value":"send"},{"key":"sender","value":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf"},{"key":"module","value":"bank"}]},{"type":"transfer","attributes":[{"key":"recipient","value":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug"},{"key":"sender","value":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf"},{"key":"amount","value":"100000stake"}]}]}],"info":"","gas_wanted":"200000","gas_used":"57508","tx":{"@type":"/cosmos.tx.v1beta1.Tx","body":{"messages":[{"@type":"/cosmos.bank.v1beta1.MsgSend","from_address":"akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf","to_address":"akash1zsgzee6vvx942c4c69vl859w9azn77j8uhduug","amount":[{"denom":"stake","amount":"100000"}]}],"memo":"","timeout_height":"0","extension_options":[],"non_critical_extension_options":[]},"auth_info":{"signer_infos":[{"public_key":{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A+hCkyWd4cWG0KD+GgCxHEOUzll1cl5VvoGgDvVIwF3E"},"mode_info":{"single":{"mode":"SIGN_MODE_DIRECT"}},"sequence":"1"}],"fee":{"amount":[],"gas_limit":"200000","payer":"","granter":""}},"signatures":["q3XqohxwkgaT0nLusXLaZ5aRGrcxbTUGS2pYN+tSPtkk10Ij+2YXs3LhXUxhcSNnTMABq4bIhJ3L/QDoz8Xp+w=="]},"timestamp":"2021-02-10T10:08:40Z"}
@@ -114,7 +114,7 @@ $ akash query tx BCAB9AAC8C4F920218757A0C4461AF6C380A2144B4762B4DE1CE014BE2714DA
 
 **More info**
 
-```text
+```
 $ akash query tx -h
 
 Usage:
@@ -134,19 +134,19 @@ Global Flags:
       --trace               print out full stack trace on errors
 ```
 
-## Bond\(Stake\) Tokens
+## Bond(Stake) Tokens
 
 Delegate some tokens to validator i.e., bonding tokens.
 
 **Usage**
 
-```text
+```
 $ akash tx staking delegate <validator-address> <amount-with-denom> --from <from-account> -y
 ```
 
 **Example**
 
-```text
+```
 $ akash tx staking delegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000uakt --chain-id devnet --from alice -y
 
 {"height":"0","txhash":"F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7","raw_log":"[]"}
@@ -154,7 +154,7 @@ $ akash tx staking delegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 
 
 **More info**
 
-```text
+```
 $ akash tx staking delegate -h
 Delegate an amount of liquid coins to a validator from your wallet.
 
@@ -197,13 +197,13 @@ Redelegate some tokens from one validator to another.
 
 **Usage**
 
-```text
+```
 $ akash tx staking redelegate <src-validator-address> <dest-validator-address> <amount-with-denom> --from <from-account> -y -o json
 ```
 
 **Example**
 
-```text
+```
 $ akash tx staking redelegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr 1000000uakt --chain-id devnet --from alice -y -o json
 
 {"height":"0","txhash":"295A56A7B4DA7DE3266329981945307FF73ACFF1CCD319D1E1AE53DF16E0125E","raw_log":"[]"}
@@ -211,7 +211,7 @@ $ akash tx staking redelegate akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92
 
 **More info**
 
-```text
+```
 $ akash tx staking redelegate -h
 Redelegate an amount of illiquid staking tokens from one validator to another.
 
@@ -251,19 +251,19 @@ Global Flags:
       --trace               print out full stack trace on errors
 ```
 
-## Undelegate\(unbond\) Tokens
+## Undelegate(unbond) Tokens
 
 Undelegate some tokens from validator i.e., unbonding tokens.
 
 **Usage**
 
-```text
+```
 $ akash tx staking unbond <validator-address> <amount-with-denom> --from <from-account> -y -o json
 ```
 
 **Example**
 
-```text
+```
 $ akash tx staking unbond akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 1000000uakt --chain-id devnet --from alice -y -o json
 
 {"height":"0","txhash":"F48C925F2F37766660D044DCAD0DC9A4CF51E454E184BC817EFD32ADA501ADD7","raw_log":"[]"}
@@ -271,7 +271,7 @@ $ akash tx staking unbond akashvaloper1qgjla78dk2yk2eh6dmjeejz6m374ykdtpgp92s 10
 
 **More info**
 
-```text
+```
 $ akash tx staking unbond -h
 Unbond an amount of bonded shares from a validator.
 
@@ -317,13 +317,13 @@ Withdraw rewards from validator
 
 **Usage**
 
-```text
+```
 $ akash tx distribution withdraw-rewards <validator-address> <amount-with-denom> --from <from-account> -y -o json
 ```
 
 **Example**
 
-```text
+```
 $ akash tx distribution withdraw-rewards akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr --chain-id devnet --from alice -y
 
 {"height":"0","txhash":"1BBB4A7A4D245C7534F366BABCE5BDD73776FB0430B3A241BFEEEF99445C52C3","raw_log":"[]"}
@@ -331,7 +331,7 @@ $ akash tx distribution withdraw-rewards akashvaloper16q6s0tauc3cks5us7f57wds8c8
 
 **More info**
 
-```text
+```
 $ akash tx distribution withdraw-rewards -h
 Withdraw rewards from a given delegation address,
 and optionally withdraw validator commission if the delegation address given is a validator operator.
@@ -382,13 +382,13 @@ Query all rewards earned by a delegator, optionally restrict to rewards from a s
 
 **Usage**
 
-```text
+```
 $ akash query distribution rewards <delegator-address> [<validator-address>] -o json
 ```
 
 **Examples**
 
-```text
+```
 $ akash query distribution rewards akash1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p akashvaloper16q6s0tauc3cks5us7f57wds8c8lqg4jq6dwddr -o json
 
 [{"denom":"uakt","amount":"69009.444000000000000000"}]
@@ -400,7 +400,7 @@ $ akash query distribution rewards akash1gghjut3ccd8ay0zduzj64hwre2fxs9ld75ru9p 
 
 **More info**
 
-```text
+```
 $ akash query distribution rewards -h
 
 Usage:
@@ -426,14 +426,14 @@ Query the total balance of an account or of a specific denomination.
 
 **Usage**
 
-```text
+```
 $ akash query bank balances <account-address>
 $ akash query bank balances <account-address> --denom=[denom]
 ```
 
 **Examples**
 
-```text
+```
 $ akash query bank balances akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
 
 {"balances":[{"denom":"stake","amount":"99899900000"},{"denom":"uakt","amount":"100000000000"}],"pagination":{"next_key":null,"total":"0"}}
@@ -441,7 +441,7 @@ $ akash query bank balances akash16q6s0tauc3cks5us7f57wds8c8lqg4jqs0qtaf -o json
 
 **More info**
 
-```text
+```
 $ akash query bank balances -h
 
 Usage:
@@ -473,13 +473,13 @@ Provide seed phrase to recover existing key instead of creating.
 
 **Usage**
 
-```text
+```
 $ akash keys add <key-name> --recover
 ```
 
 **Example**
 
-```text
+```
 $ akash keys add alice --recover
 > Enter your bip39 mnemonic
 close super rare vicious core supreme collect fatigue maid cupboard throw surge notable phrase brand actual high track stay visual afraid lot dizzy wedding
@@ -499,13 +499,13 @@ Export a private key from the local keybase in ASCII-armored encrypted format. E
 
 **Usage**
 
-```text
+```
 akash keys export <key-name>
 ```
 
 **Example**
 
-```text
+```
 $ akash keys export provider
 Enter passphrase to encrypt the exported key:
 -----BEGIN TENDERMINT PRIVATE KEY-----
@@ -525,13 +525,13 @@ Import a file with ASCII armored private key into the local keybase. Required ke
 
 **Usage**
 
-```text
+```
 $ akash keys import <key-name> <keyfile>
 ```
 
 **Example**
 
-```text
+```
 $ akash keys import provider key
 Enter passphrase to decrypt your key:
 ```
@@ -542,7 +542,7 @@ Generating a transaction can simply be done by appending the --generate-only fla
 
 Example:
 
-```text
+```
 akash tx send bob akash12wlzqjelrt87r3u56ps4m8lk7wavx5m5jg9cax 10000000uakt --chain-id devnet --generate-only
 ```
 
@@ -552,7 +552,7 @@ This will output the unsigned transaction as JSON in the console. We can also sa
 
 Signing a transaction using the CLI requires the unsigned transaction to be saved in a file.
 
-```text
+```
 $ akash tx sign unsigned_tx.json --chain-id devnet --from alice
 ```
 
@@ -560,7 +560,7 @@ This command will decode the unsigned transaction and sign it with SIGN\_MODE\_D
 
 **More Info**
 
-```text
+```
 Usage:
   akash tx sign [file] [flags]
 
@@ -594,14 +594,14 @@ Flags:
 
 Some useful flags to consider in the tx sign command:
 
-* --sign-mode: you may use amino-json to sign the transaction using SIGN\_MODE\_LEGACY\_AMINO\_JSON,
-* --offline: sign in offline mode. This means that the tx sign command doesn't connect to the node to retrieve the signer's account number and sequence, both needed for signing. In this case, you must manually supply the --account-number and --sequence flags. This is useful for offline signing, i.e. signing in a secure environment which doesn't have access to the internet.
+* \--sign-mode: you may use amino-json to sign the transaction using SIGN\_MODE\_LEGACY\_AMINO\_JSON,
+* \--offline: sign in offline mode. This means that the tx sign command doesn't connect to the node to retrieve the signer's account number and sequence, both needed for signing. In this case, you must manually supply the --account-number and --sequence flags. This is useful for offline signing, i.e. signing in a secure environment which doesn't have access to the internet.
 
 ## Encode a Transaction
 
-Encode transactions created with the --generate-only flag and signed with the sign command. It will read a transaction from , serialize it to the Amino wire protocol, and output it as base64. If you supply a dash \(-\) argument in place of an input filename, the command reads from standard input.
+Encode transactions created with the --generate-only flag and signed with the sign command. It will read a transaction from , serialize it to the Amino wire protocol, and output it as base64. If you supply a dash (-) argument in place of an input filename, the command reads from standard input.
 
-```text
+```
 $ akash tx encode signed-tx.json
 
 CpABCo0BChwvY29zbW9zLmJhbmsudjFiZXRhMS5Nc2dTZW5kEm0KLGFrYXNoMTZxNnMwdGF1YzNja3M1dXM3ZjU3d2RzOGM4bHFnNGpxczBxdGFmEixha2FzaDF6c2d6ZWU2dnZ4OTQyYzRjNjl2bDg1OXc5YXpuNzdqOHVoZHV1ZxoPCgVzdGFrZRIGMTAwMDAwElgKUApGCh8vY29zbW9zLmNyeXB0by5zZWNwMjU2azEuUHViS2V5EiMKIQPoQpMlneHFhtCg/hoAsRxDlM5ZdXJeVb6BoA71SMBdxBIECgIIfxgCEgQQwJoMGkB+VlYeHU81v4qxIOGpIKpmq7fzVB83Lvy5xvxpm37F6yZ9+XA56KzkMdHhpURmaFYF2567D0nE5e57UKfKF6Az
@@ -609,7 +609,7 @@ CpABCo0BChwvY29zbW9zLmJhbmsudjFiZXRhMS5Nc2dTZW5kEm0KLGFrYXNoMTZxNnMwdGF1YzNja3M1
 
 **More Info**
 
-```text
+```
 Usage:
   akash tx encode [file] [flags]
 
@@ -643,11 +643,11 @@ Global Flags:
       --trace               print out full stack trace on errors
 ```
 
-## Broadcasting a Transaction \(CLI\)
+## Broadcasting a Transaction (CLI)
 
 Broadcasting a transaction using the CLI requires the signed transaction to be saved in a file.
 
-```text
+```
 akash tx broadcast [file_path] [flags]
 ```
 
@@ -655,11 +655,11 @@ You may optionally pass the --broadcast-mode flag to specify which response to r
 
 * block: the CLI waits for the tx to be committed in a block.
 * sync: the CLI waits for a CheckTx execution response only.
-* async: the CLI returns immediately \(transaction might fail\).
+* async: the CLI returns immediately (transaction might fail).
 
 **More info**
 
-```text
+```
 Example:
 
 $ akash tx broadcast ./mysign.json
@@ -694,11 +694,11 @@ Global Flags:
       --trace               print out full stack trace on errors
 ```
 
-## Broadcasting a Transaction \(REST\)
+## Broadcasting a Transaction (REST)
 
-Broadcasting a transaction using the REST endpoint \(served by gRPC-gateway\) can be done by sending a POST request as follows, where the txBytes are the protobuf-encoded bytes of a signed transaction:
+Broadcasting a transaction using the REST endpoint (served by gRPC-gateway) can be done by sending a POST request as follows, where the txBytes are the protobuf-encoded bytes of a signed transaction:
 
-```text
+```
 curl -X POST -H "Content-Type: application/json" -d'{"tx_bytes":"{{txBytes}}","mode":"BROADCAST_MODE_SYNC"}' localhost:1317/cosmos/tx/v1beta1/txs
 ```
 
@@ -706,13 +706,12 @@ Here, `tx_bytes` value will be encoded tx of signed transaction.
 
 **Example**
 
-```text
+```
 $ $ curl -X POST -H "Content-Type: application/json" -d'{"tx_bytes":"CpABCo0BChwvY29zbW9zLmJhbmsudjFiZXRhMS5Nc2dTZW5kEm0KLGFrYXNoMTZxNnMwdGF1YzNja3M1dXM3ZjU3d2RzOGM4bHFnNGpxczBxdGFmEixha2FzaDF6c2d6ZWU2dnZ4OTQyYzRjNjl2bDg1OXc5YXpuNzdqOHVoZHV1ZxoPCgVzdGFrZRIGMTAwMDAwElgKUApGCh8vY29zbW9zLmNyeXB0by5zZWNwMjU2azEuUHViS2V5EiMKIQPoQpMlneHFhtCg/hoAsRxDlM5ZdXJeVb6BoA71SMBdxBIECgIIfxgCEgQQwJoMGkB+VlYeHU81v4qxIOGpIKpmq7fzVB83Lvy5xvxpm37F6yZ9+XA56KzkMdHhpURmaFYF2567D0nE5e57UKfKF6Az","mode":"BROADCAST_MODE_SYNC"}' localhost:1317/cosmos/tx/v1beta1/txs
 ```
 
-### Using CosmJS \(JavaScript & TypeScript\)
+### Using CosmJS (JavaScript & TypeScript)
 
-CosmJS aims to build client libraries in JavaScript that can be embedded in web applications. Please see [https://cosmos.github.io/cosmjs](https://cosmos.github.io/cosmjs) \(opens new window\) for more information. As of January 2021, CosmJS documentation is still work in progress.
+CosmJS aims to build client libraries in JavaScript that can be embedded in web applications. Please see [CosmJS documentation](https://cosmos.github.io/cosmjs/) for more information. As of January 2021, CosmJS documentation is still work in progress.
 
 Please go through this [code](https://github.com/chainapsis/keplr-example/blob/5c95ce0c4878f40ccf40931bc54a170af4a46fa2/src/main.js) to sign a transaction using CosmJS javascript library.
-
