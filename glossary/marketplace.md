@@ -29,7 +29,7 @@ In a very simple reverse auction:
 
 A typical application deployment on Akash will follow this flow:
 
-1. The tenant describes their desired deployment in \[SDL\], called a [deployment](marketplace.md#deployment).
+1. The tenant describes their desired deployment in \[SDL], called a [deployment](marketplace.md#deployment).
 2. The tenant submits that definition to the blockchain.
 3. Their submission generates an [order](marketplace.md#order) on the marketplace.
 4. Providers that would like to fulfill that order [bid](marketplace.md#bid) on it.
@@ -49,7 +49,7 @@ The general workflow is:
 
 The lifecycle of a typical application deployment is as follows:
 
-1. The tenant describes their desired deployment in \[SDL\], called a [deployment](marketplace.md#deployment).
+1. The tenant describes their desired deployment in \[SDL], called a [deployment](marketplace.md#deployment).
 2. The tenant submits that definition to the blockchain.
 3. Their submission generates an [order](marketplace.md#order) on the marketplace.
 4. Providers that would like to fulfill that order [bid](marketplace.md#bid) on it.
@@ -63,7 +63,7 @@ The lifecycle of a typical application deployment is as follows:
 
 ## Payments
 
-Leases are paid from deployment owner \(tenant\) to the provider through a deposit & withdraw mechanism.
+Leases are paid from deployment owner (tenant) to the provider through a deposit & withdraw mechanism.
 
 Tenants are required to submit a deposit when creating a deployment. Leases will be paid passively from the balance of this deposit. At any time, a lease provider may withdraw the balance owed to them from this deposit.
 
@@ -71,12 +71,12 @@ If the available funds in the deposit ever reaches zero, a provider may close th
 
 ### Escrow Accounts
 
-[Escrow accounts](escrow.md) are a mechanism that allow for time-based payments from one bank account to another without block-by-block micropayments. They also support holding funds for an account until an arbitrary event occurrs.
+[Escrow accounts](escrow.md) are a mechanism that allow for time-based payments from one account to another without block-by-block micropayments. They also support holding funds for an account until an arbitrary event occurs.
 
 Escrow accounts are necessary in akash for two primary reasons:
 
-1. Leases in Akash are priced in blocks - every new block, a payment from the tenant \(deployment owner\) to the provider \(lease holder\) is due. Performance and security considerations prohibit the naive approach of transferring tokens on every block.
-2. Bidding on an order should not be free \(for various reasons, including performance and security\). Akash requires a deposit for every bid. The deposit is returned to the bidder when the bid is closed.
+1. Leases in Akash are priced in blocks - every new block, a payment from the tenant (deployment owner) to the provider (lease holder) is due. Performance and security considerations prohibit the naive approach of transferring tokens on every block.
+2. Bidding on an order should not be free (for various reasons, including performance and security). Akash requires a deposit for every bid. The deposit is returned to the bidder when the bid is closed.
 
 ## Bid Deposits
 
@@ -90,10 +90,10 @@ Audited attributes allow users deploying applications to be more selective about
 
 ## On-Chain Parameters
 
-| Name | Initial Value | Description |
-| :--- | :--- | :--- |
-| `deployment_min_deposit` | `5akt` | Minimum deposit to make deployments.  Target: ~$10 |
-| `bid_min_deposit` | `50akt` | Deposit amount required to bid.  Target: ~$100 |
+| Name                     | Initial Value | Description                                         |
+| ------------------------ | ------------- | --------------------------------------------------- |
+| `deployment_min_deposit` | `5akt`        | Minimum deposit to make deployments.  Target: \~$10 |
+| `bid_min_deposit`        | `50akt`       | Deposit amount required to bid.  Target: \~$100     |
 
 ## Transactions
 
@@ -103,12 +103,12 @@ Creates a [deployment](marketplace.md#deployment), and open [groups](marketplace
 
 #### Parameters
 
-| Name | Description |
-| :--- | :--- |
-| `DeploymentID` | ID of Deployment. |
+| Name            | Description                                                     |
+| --------------- | --------------------------------------------------------------- |
+| `DeploymentID`  | ID of Deployment.                                               |
 | `DepositAmount` | Deposit amount.  Must be greater than `deployment_min_deposit`. |
-| `Version` | Hash of the manifest that is sent to the providers. |
-| `Groups` | A list of [group](marketplace.md#group) descriptons. |
+| `Version`       | Hash of the manifest that is sent to the providers.             |
+| `Groups`        | A list of [group](marketplace.md#group) descriptons.            |
 
 ### `DeploymentDeposit`
 
@@ -116,9 +116,9 @@ Add funds to a deployment's balance.
 
 #### Parameters
 
-| Name | Description |
-| :--- | :--- |
-| `DeploymentID` | ID of Deployment. |
+| Name            | Description                                                    |
+| --------------- | -------------------------------------------------------------- |
+| `DeploymentID`  | ID of Deployment.                                              |
 | `DepositAmount` | Deposit amount.  Must be greater than `deployment_min_deposit` |
 
 ### `GroupClose`
@@ -127,8 +127,8 @@ Closes a [group](marketplace.md#group) and any [orders](marketplace.md#order) fo
 
 #### Parameters
 
-| Name | Description |
-| :--- | :--- |
+| Name | Description  |
+| ---- | ------------ |
 | `ID` | ID of Group. |
 
 ### `GroupPause`
@@ -137,8 +137,8 @@ Puts a `PAUSED` state, and closes any and [orders](marketplace.md#order) for it.
 
 #### Parameters
 
-| Name | Description |
-| :--- | :--- |
+| Name | Description  |
+| ---- | ------------ |
 | `ID` | ID of Group. |
 
 ### `GroupStart`
@@ -147,8 +147,8 @@ Transitions a [group](marketplace.md#group) from state `PAUSED` to state `OPEN`.
 
 #### Parameters
 
-| Name | Description |
-| :--- | :--- |
+| Name | Description  |
+| ---- | ------------ |
 | `ID` | ID of Group. |
 
 ### `BidCreate`
@@ -157,10 +157,10 @@ Sent by a provider to bid on an open [order](marketplace.md#order). The required
 
 #### Parameters
 
-| name | description |
-| :--- | :--- |
-| `OrderID` | ID of Order |
-| `TTL` | Number of blocks this bid is valid for |
+| name      | description                                  |
+| --------- | -------------------------------------------- |
+| `OrderID` | ID of Order                                  |
+| `TTL`     | Number of blocks this bid is valid for       |
 | `Deposit` | Deposit amount.  `bid_min_deposit` if empty. |
 
 ### `BidClose`
@@ -171,30 +171,30 @@ When closing a lease, the bid's group will be put in state `PAUSED`.
 
 #### Parameters
 
-| name | description |
-| :--- | :--- |
-| `BidID` | ID of Bid |
+| name    | description |
+| ------- | ----------- |
+| `BidID` | ID of Bid   |
 
 #### State Transitions
 
 | Object | Previous State | New State |
-| :--- | :--- | :--- |
-| Bid | `ACTIVE` | `CLOSED` |
-| Lease | `ACTIVE` | `CLOSED` |
-| Order | `ACTIVE` | `CLOSED` |
-| Group | `OPEN` | `PAUSED` |
+| ------ | -------------- | --------- |
+| Bid    | `ACTIVE`       | `CLOSED`  |
+| Lease  | `ACTIVE`       | `CLOSED`  |
+| Order  | `ACTIVE`       | `CLOSED`  |
+| Group  | `OPEN`         | `PAUSED`  |
 
 ### `LeaseCreate`
 
 Sent by tenant to create a lease.
 
 1. Creates a `Lease` from the given [bid](marketplace.md#bid).
-2. Sets all non-winning [bids](marketplace.md#bid) to state `CLOSED` \(deposit returned\).
+2. Sets all non-winning [bids](marketplace.md#bid) to state `CLOSED` (deposit returned).
 
 #### Parameters
 
-| name | description |
-| :--- | :--- |
+| name    | description                                      |
+| ------- | ------------------------------------------------ |
 | `BidID` | [Bid](marketplace.md#bid) to create a lease from |
 
 ### `MarketWithdraw`
@@ -203,89 +203,88 @@ This withdraws balances earned by providing for leases and deposits of bids that
 
 #### Parameters
 
-| name | description |
-| :--- | :--- |
+| name    | description                        |
+| ------- | ---------------------------------- |
 | `Owner` | Provider ID to withdraw funds for. |
 
 ## Models
 
 ### Deployment
 
-| Name | Description |
-| :--- | :--- |
-| `ID.Owner` | account addres of tenant |
-| `ID.DSeq` | Arbitrary sequence number that identifies the deployment.  Defaults to block height. |
-| `State` | State of the deployment. |
-| `Version` | Hash of the manifest that is sent to the providers. |
+| Name       | Description                                                                          |
+| ---------- | ------------------------------------------------------------------------------------ |
+| `ID.Owner` | account addres of tenant                                                             |
+| `ID.DSeq`  | Arbitrary sequence number that identifies the deployment.  Defaults to block height. |
+| `State`    | State of the deployment.                                                             |
+| `Version`  | Hash of the manifest that is sent to the providers.                                  |
 
 #### State
 
-| Name | Description |
-| :--- | :--- |
-| `OPEN` | Orders may be created. |
+| Name     | Description                      |
+| -------- | -------------------------------- |
+| `OPEN`   | Orders may be created.           |
 | `CLOSED` | All groups are closed. Terminal. |
 
 ### Group
 
-| Name | Description |
-| :--- | :--- |
-| `ID.DeploymentID` | [Deployment](marketplace.md#deployment) ID of group. |
-| `ID.GSeq` | Arbitrary sequence number.  Internally incremented, starting at `1`. |
-| `State` | State of the group. |
+| Name              | Description                                                          |
+| ----------------- | -------------------------------------------------------------------- |
+| `ID.DeploymentID` | [Deployment](marketplace.md#deployment) ID of group.                 |
+| `ID.GSeq`         | Arbitrary sequence number.  Internally incremented, starting at `1`. |
+| `State`           | State of the group.                                                  |
 
 #### State
 
-| Name | Description |
-| :--- | :--- |
-| `OPEN` | Has an open or active order. |
+| Name     | Description                                |
+| -------- | ------------------------------------------ |
+| `OPEN`   | Has an open or active order.               |
 | `PAUSED` | Bid closed by provider.  May be restarted. |
-| `CLOSED` | No open or active orders.  Terminal. |
+| `CLOSED` | No open or active orders.  Terminal.       |
 
 ### Order
 
-| Name | Description |
-| :--- | :--- |
-| `ID.GroupID` | [Group](marketplace.md#group) ID of group. |
-| `ID.OSeq` | Arbitrary sequence number.  Internally incremented, starting at `1`. |
-| `State` | State of the order. |
+| Name         | Description                                                          |
+| ------------ | -------------------------------------------------------------------- |
+| `ID.GroupID` | [Group](marketplace.md#group) ID of group.                           |
+| `ID.OSeq`    | Arbitrary sequence number.  Internally incremented, starting at `1`. |
+| `State`      | State of the order.                                                  |
 
 #### State
 
-| Name | Description |
-| :--- | :--- |
-| `OPEN` | Accepting bids. |
-| `ACTIVE` | Open lease has been created. |
+| Name     | Description                                        |
+| -------- | -------------------------------------------------- |
+| `OPEN`   | Accepting bids.                                    |
+| `ACTIVE` | Open lease has been created.                       |
 | `CLOSED` | No active leases and not accepting bids. Terminal. |
 
 ### Bid
 
-| Name | Description |
-| :--- | :--- |
-| `ID.OrderID` | [Group](marketplace.md#group) ID of group. |
-| `ID.Provider` | Account address of provider. |
-| `State` | State of the bid. |
-| `EndsOn` | Height at which the bid ends if it is not already matched. |
-| `Price` | Bid price - amount to be paid on every block. |
+| Name          | Description                                                |
+| ------------- | ---------------------------------------------------------- |
+| `ID.OrderID`  | [Group](marketplace.md#group) ID of group.                 |
+| `ID.Provider` | Account address of provider.                               |
+| `State`       | State of the bid.                                          |
+| `EndsOn`      | Height at which the bid ends if it is not already matched. |
+| `Price`       | Bid price - amount to be paid on every block.              |
 
 #### State
 
-| Name | Description |
-| :--- | :--- |
-| `OPEN` | Awaiting matching. |
-| `ACTIVE` | Bid for an active lease \(winner\). |
+| Name     | Description                              |
+| -------- | ---------------------------------------- |
+| `OPEN`   | Awaiting matching.                       |
+| `ACTIVE` | Bid for an active lease (winner).        |
 | `CLOSED` | No active leases for this bid. Terminal. |
 
 ### Lease
 
-| Name | Description |
-| :--- | :--- |
-| `ID` | The same as the [bid](marketplace.md#bid) ID for the lease. |
-| `State` | State of the bid. |
+| Name    | Description                                                 |
+| ------- | ----------------------------------------------------------- |
+| `ID`    | The same as the [bid](marketplace.md#bid) ID for the lease. |
+| `State` | State of the bid.                                           |
 
 #### State
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                                              |
+| -------- | -------------------------------------------------------- |
 | `ACTIVE` | Active lease - tenant is paying provider on every block. |
-| `CLOSED` | No payments being made. Terminal. |
-
+| `CLOSED` | No payments being made. Terminal.                        |
