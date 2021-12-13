@@ -26,7 +26,7 @@ If you have not used Akashlytics Deploy previously, please use [this guide](http
 
 ![](../.gitbook/assets/manifestSelectInitial.png)
 
-* Copy and paste the SDL from [this site](https://github.com/tombeynon/cosmos-omnibus/blob/master/akash/deploy.yml) into the Akashlytics SDL editor window
+* Copy and paste the SDL from [this site](https://github.com/ovrclk/cosmos-omnibus/blob/master/akash/deploy.yml) into the Akashlytics SDL editor window
 * **NOTE -** the SDL within GitHub currently has a storage > size value of 120Gi.  Omnibus uses a compressed snapshot of the blockchain and when expanded 120GB of storage for the deployment will not be enough.  At the time of this writing adjusting the storage size to 350GB will suffice and allow some growth.  Please adjust the storage appropriately and as shown in the screenshot below.
 
 ![](../.gitbook/assets/sdlWithStorageAdjustment.png)
@@ -128,3 +128,8 @@ With the install of the Akash node complete, it must sync with the blockchain.  
 ### Chain JSON Config File
 
 * The [config file](https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json) used for the genesis URL, seed nodes, etc.
+
+### Cosmos Chain Registry
+
+* This [repo](https://github.com/cosmos/chain-registry) contains a chain.json for a number of cosmos-sdk based chains. A chain.json contains data that makes it easy to start running or interacting with a node.
+
