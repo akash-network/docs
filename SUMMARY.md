@@ -1,36 +1,62 @@
 # Table of contents
 
-* [Introduction](README.md)
-* [Features and Design](/design/README.md)
+* [What is Akash?](README.md)
+* [Technical Support](support.md)
+* [Stack Definition Language (SDL)](stack-definition-language.md)
 
-{% comment %}
-  * [Features](/design/features.md)
-{% endcomment %}
+## Deploy on Akash <a href="#guides" id="guides"></a>
 
-## Guides
+* [Apps on Akash](guides/awesome-akash.md)
+* [Desktop App](guides/deploy.md)
+* [Web App](guides/web.md)
+* [CLI](guides/cli.md)
 
-* [Overview](/guides/README.md)
-* [Choosing a Network](/guides/version.md)
-* [Install Akash](/guides/install.md)
-* [Wallet Setup](/guides/wallet/README.md)
-* [Funding your Account](/guides/wallet/funding.md)
-* [Deploy an Application](/guides/deploy/README.md)
-* [Run an Akash Node](/guides/node/README.md)
-  * [RPC Service](/guides/node/rpc-service.md)
-  * [API Service](/guides/node/api-service.md)
-  * [Run a Validator](/guides/node/validator.md)
+## Using Akash Tokens <a href="#token" id="token"></a>
+
+* [Get Free Tokens](token/funding.md)
+* [Buy Akash Tokens](token/buy.md)
+* [Keplr Wallet](token/keplr.md)
+
+## Release Notes
+
+* [Akash Version 0.14.0](release-notes/v0.14.0.md)
+
+## Tutorials <a href="#deploy" id="deploy"></a>
+
+* [Mine Raptoreum on Akash Network](deploy/mine-raptoreum-on-akash-network.md)
+* [Mixin Messenger for AKT](deploy/mixin-messenger-for-akt.md)
+* [Polygon on Akash](deploy/polygon-on-akash.md)
+* [Unstoppable Web 2.0](deploy/unstoppable-web-2.0.md)
+* [Multi-Tiered Deployment](deploy/multi-tier-app.md)
+* [Helium Validator](deploy/helium-validator.md)
+* [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
+* [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
+
+## Operations
+
+* [Akash Node Deployment Via Omnibus](operations/akash-node-deployment-via-omnibus.md)
+* [Run an Akash Node](operations/node/README.md)
+  * [RPC Service](operations/node/rpc-service.md)
+  * [API Service](operations/node/api-service.md)
   * [Upgrade to Akash 3.0](/guides/node/upgrades/akash-3.0.md)
-* [Become a Provider](/guides/provider/README.md)
-* [Common Commands](/guides/general-commands.md)
+* [Build a Cloud Provider](operations/provider/README.md)
+  * [Kubernetes Cluster](operations/provider/kubernetes-cluster.md)
+  * [gVisor Issue - No system-cgroup v2 Support](operations/provider/gvisor-issue-no-system-cgroup-v2-support.md)
+  * [Provider Networks](operations/provider/testnet.md)
+* [Running a Validator](operations/validator.md)
+* [Akash Audited Attributes](operations/akash-audited-attributes.md)
 
-## Documentation
+## Command Line Interface (CLI) <a href="#cli" id="cli"></a>
 
-* [Stack Definition Language](/sdl/README.md)
+* [Install Akash](cli/install.md)
+* [CLI Commands](cli/command-line-interface.md)
+* [Setup your Environment](cli/shell-variables.md)
+* [Create Your Account](cli/wallet.md)
 
-## Testnet Challenges
+## About Akash <a href="#glossary" id="glossary"></a>
 
-* [Overview](/testnet-challenges/README.md)
-  * [Guided Deployments](/testnet-challenges/guided-deployments.md)
-  * [Open-Ended Deployments](/testnet-challenges/open-ended-deployments.md)
-  * [Community Content](/testnet-challenges/community-content.md)
-  * [Network Support](/testnet-challenges/network-support.md)
+* [Security](glossary/security.md)
+* [Containers](glossary/platform.md)
+* [Marketplace](glossary/marketplace.md)
+* [Payments](glossary/escrow.md)
+* [Authentication](glossary/mtls.md)
