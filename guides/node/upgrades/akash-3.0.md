@@ -117,8 +117,8 @@ make akash
 Create the folder for the upgrade binary (`v0.16.0`) and copy the `akash` binary into the folder. This next step assumes that the `akash` binary was built from source and stored in the `current` (i.e., akash) directory:
 
 ```bash
-mkdir -p $HOME/.akash/cosmovisor/upgrades/v0.16.0/bin
-cp ./akash $HOME/.akash/cosmovisor/upgrades/v0.16.0/bin
+mkdir -p $HOME/.akash/cosmovisor/upgrades/akash_v0.15.0_cosmos_v0.44.x/bin
+cp ./akash $HOME/.akash/cosmovisor/upgrades/akash_v0.15.0_cosmos_v0.44.x/bin
 ```
 
 At the proposed block height, `cosmovisor` will automatically stop the current binary (`v2.0.0`), set the upgrade binary as the new current binary (`v0.16.0`), and then restart the node.
