@@ -19,6 +19,7 @@
   * [RPC Service](/guides/node/rpc-service.md)
   * [API Service](/guides/node/api-service.md)
   * [Run a Validator](/guides/node/validator.md)
+  * [Upgrade to Akash 3.0](/guides/node/upgrades/akash-3.0.md)
 * [Become a Provider](/guides/provider/README.md)
 * [Common Commands](/guides/general-commands.md)
 
