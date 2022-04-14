@@ -62,7 +62,7 @@ WantedBy=multi-user.target
 " >cosmovisor.service
 ```
 
-Cosmovisor can be configured to automatically download upgrade binaries. It is recommended that validators do not use the auto-download option and that the upgrade binary is prepared manually. If you would like to enable the auto-download option, update the following environment variable in the systemd configuration file:
+Cosmovisor can be configured to automatically download upgrade binaries. It is recommended that validators do not use the auto-download option and that the upgrade binary is compiled and placed manually. If you would like to enable the auto-download option, update the following environment variable in the systemd configuration file:
 
 ```bash
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
@@ -121,7 +121,7 @@ mkdir -p $HOME/.akash/cosmovisor/upgrades/akash_v0.15.0_cosmos_v0.44.x/bin
 cp ./akash $HOME/.akash/cosmovisor/upgrades/akash_v0.15.0_cosmos_v0.44.x/bin
 ```
 
-At the proposed block height, `cosmovisor` will automatically stop the current binary (`v2.0.0`), set the upgrade binary as the new current binary (`v0.16.0`), and then restart the node.
+At the proposed block height, `cosmovisor` will automatically stop the current binary (`v0.14.0`), set the upgrade binary as the new current binary (`v0.16.0`), and then restart the node.
 
 ### Option 2: Without Cosmovisor
 
