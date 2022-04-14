@@ -1,7 +1,7 @@
 
 ## Install Cosmovisor
 
-[Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor) is a process manager for running application binaries. Using Cosmovisor is not required but recommended for node operators that would like to automate the upgrade process.
+[Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor) is a process manager for running application binaries. Using Cosmovisor is not required but recommended for node operators who would like to automate the upgrade process.
 
 To install `cosmovisor`, run the following command:
 
