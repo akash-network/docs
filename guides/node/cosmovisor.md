@@ -56,6 +56,13 @@ Move the file to the systemd directory:
 sudo mv cosmovisor.service /lib/systemd/system/cosmovisor.service
 ```
 
+Make sure to stop your akash services if they are running already:
+
+```bash
+sudo systemctl stop akash
+sudo systemctl stop cosmovisor
+```
+
 Reload systemctl and start `cosmovisor`:
 
 ```bash
