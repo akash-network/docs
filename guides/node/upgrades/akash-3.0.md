@@ -121,7 +121,7 @@ mkdir -p $HOME/.akash/cosmovisor/upgrades/akash_v0.15.0_cosmos_v0.44.x/bin
 cp ./akash $HOME/.akash/cosmovisor/upgrades/akash_v0.15.0_cosmos_v0.44.x/bin
 ```
 
-At the proposed block height, `cosmovisor` will automatically stop the current binary (`v2.0.0`), set the upgrade binary as the new current binary (`v0.16.0`), and then restart the node.
+At the proposed block height, `cosmovisor` will automatically stop the current binary (`v0.14.0`), set the upgrade binary as the new current binary (`v0.16.0`), and then restart the node.
 
 ### Option 2: Without Cosmovisor
 
