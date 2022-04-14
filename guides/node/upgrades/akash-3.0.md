@@ -62,7 +62,7 @@ WantedBy=multi-user.target
 " >cosmovisor.service
 ```
 
-Cosmovisor can be configured to automatically download upgrade binaries. It is recommended that validators do not use the auto-download option and that the upgrade binary is prepared manually. If you would like to enable the auto-download option, update the following environment variable in the systemd configuration file:
+Cosmovisor can be configured to automatically download upgrade binaries. It is recommended that validators do not use the auto-download option and that the upgrade binary is compiled and placed manually. If you would like to enable the auto-download option, update the following environment variable in the systemd configuration file:
 
 ```bash
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
