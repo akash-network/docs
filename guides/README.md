@@ -24,6 +24,7 @@ will mean that you have to re-define the variable.
 * [Install Akash](/guides/install.md)
 * [Wallet Setup](/guides/wallet/README.md)
 * [Funding your Account](/guides/wallet/funding.md)
+* [Common Commands](/guides/general-commands.md)
 * [Deploy an Application](/guides/deploy/README.md)
 * [Run an Akash Node](/guides/node/README.md)
   * [RPC Service](/guides/node/rpc-service.md)
