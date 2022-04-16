@@ -20,7 +20,7 @@ The latest version of Go (`1.17`) is required. For more information, see [Go](ht
 
 ### Option 1: Using Cosmovisor
 
-The following instructions assume the `akash` and `cosmovisor` binaries are already installed and `cosmovisor` is set up as a systemd service. If this is not the case, please refer to [Start a node with Cosmovisor](../node/cosmovisor.md) for instructions on how to install and set up the binaries.
+The following instructions assume the `akash` and `cosmovisor` binaries are already installed and `cosmovisor` is set up as a systemd service. The section that follows will detail the install/configuration of Cosmovisor.  If additional details are necessary, visit [Start a node with Cosmovisor](../cosmovisor.md) for instructions on how to install and set up the binaries.
 
 **Cosmovisor 1.0 is required.**
 
@@ -37,7 +37,7 @@ go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0
 Check to ensure the installation was successful:
 
 ```bash
-cosmovisor version
+DAEMON_NAME=akash DAEMON_HOME=~/.akash cosmovisor version
 ```
 
 Update `cosmovisor` systemd service file and make sure the environment variables are set to the appropriate values (the following example includes the recommended settings):
@@ -118,7 +118,7 @@ Create the folder for the upgrade binary (`v0.16.0`) and copy the `akash` binary
 
 ```bash
 mkdir -p $HOME/.akash/cosmovisor/upgrades/akash_v0.15.0_cosmos_v0.44.x/bin
-cp ./akash $HOME/.akash/cosmovisor/upgrades/akash_v0.15.0_cosmos_v0.44.x/bin
+cp ./.cache/bin $HOME/.akash/cosmovisor/upgrades/akash_v0.15.0_cosmos_v0.44.x/bin
 ```
 
 At the proposed block height, `cosmovisor` will automatically stop the current binary (`v0.14.0`), set the upgrade binary as the new current binary (`v0.16.0`), and then restart the node.
