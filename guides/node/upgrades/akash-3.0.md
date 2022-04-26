@@ -4,9 +4,9 @@ This document provides guidelines for node operators upgrading from Akash Mainne
 
 ## Upgrade Details
 
-### Akash Network v0.16.0
+### Akash Network v0.16.1
 
-- [Release Notes](https://github.com/ovrclk/akash/releases/tag/v0.16.0)
+- [Release Notes](https://github.com/ovrclk/akash/releases/tag/v0.16.1)
 
 ### Akash Mainnet
 
@@ -104,24 +104,24 @@ sudo systemctl enable cosmovisor.service
 
 *Note: The following steps are not required if the auto-download option was enabled.*
 
-Either download the upgrade binary (`v0.16.0`) or build it from source:
+Either download the upgrade binary (`v0.16.1`) or build it from source:
 
 ```bash
 git clone https://github.com/ovrclk/akash
 cd akash
 git fetch --all
-git checkout v0.16.0
+git checkout v0.16.1
 make akash
 ```
 
-Create the folder for the upgrade binary (`v0.16.0`) and copy the `akash` binary into the folder. This next step assumes that the `akash` binary was built from source and stored in the `current` (i.e., akash) directory:
+Create the folder for the upgrade binary (`v0.16.1`) and copy the `akash` binary into the folder. This next step assumes that the `akash` binary was built from source and stored in the `current` (i.e., akash) directory:
 
 ```bash
 mkdir -p $HOME/.akash/cosmovisor/upgrades/akash_v0.15.0_cosmos_v0.44.x/bin
 cp ./.cache/bin $HOME/.akash/cosmovisor/upgrades/akash_v0.15.0_cosmos_v0.44.x/bin
 ```
 
-At the proposed block height, `cosmovisor` will automatically stop the current binary (`v0.14.0`), set the upgrade binary as the new current binary (`v0.16.0`), and then restart the node.
+At the proposed block height, `cosmovisor` will automatically stop the current binary (`v0.14.0`), set the upgrade binary as the new current binary (`v0.16.1`), and then restart the node.
 
 ### Option 2: Without Cosmovisor
 
@@ -129,12 +129,12 @@ Using Cosmovisor to perform the upgrade is not mandatory. Node operators also ha
 
 When the chain halts at the proposed upgrade height, stop the current process running `akash`.
 
-Either download the upgrade binary (`v0.16.0`) or build it from source:
+Either download the upgrade binary (`v0.16.1`) or build it from source:
 
 ```bash
 cd akash
 git fetch --all
-git checkout v0.16.0
+git checkout v0.16.1
 make install
 ```
 
