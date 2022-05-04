@@ -2,8 +2,8 @@
 
 We would want our own Akash node when we want to run:
 
-* Akash Validator - a full Akash Node is a prerequisite step to run a validator&#x20;
-* Akash Provider - a dedicated Akash Node is recommended for providers&#x20;
+* Akash Validator - a full Akash Node is a prerequisite step to run a validator
+* Akash Provider - a dedicated Akash Node is recommended for providers
 * Akash Production dApps - a dedicated Akash Node is best practice to eliminate reliance on public nodes when you take your distributed apps past the testing phase.
 
 In this guide we will review the Akash Node setup.
@@ -12,7 +12,7 @@ In this guide we will review the Akash Node setup.
 
 ### STEP1 - Install Akash Software
 
-In this step we will cover Installing the Akash software on a Linux server.  We will use an Ubuntu server for our examples.  The commands may need to be changed slightly depending on your Linux distribution.
+In this step we will cover Installing the Akash software on a Linux server. We will use an Ubuntu server for our examples. The commands may need to be changed slightly depending on your Linux distribution.
 
 _**Download and Install Akash**_
 
@@ -36,7 +36,7 @@ curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh 
 
 Add the Akash install location to the user’s path for ease of use.
 
-**NOTE -** below we provide the steps to add the Akash install directory to a user’s path on a Linux Ubuntu server.  Please take a look at a guide for your operating system and how to add a directory to a user’s path.
+**NOTE -** below we provide the steps to add the Akash install directory to a user’s path on a Linux Ubuntu server. Please take a look at a guide for your operating system and how to add a directory to a user’s path.
 
 _**Open the user’s path in an editor**_
 
@@ -76,7 +76,7 @@ _**Make the new path active in the current session**_
 ​​source /etc/environment
 ```
 
-_**Display the version of Akash software installed.  This confirms the software installed and that the new user path addition worked.**_
+_**Display the version of Akash software installed. This confirms the software installed and that the new user path addition worked.**_
 
 ```
 akash version
@@ -110,7 +110,7 @@ _**The moniker can be changed later, if needed, within the following file**_
 
 ### **STEP4 - Initialize New Node**
 
-In this step we will initialize our new Akash Node.  In the background several configuration files will be created which can be edited later as needed.
+In this step we will initialize our new Akash Node. In the background several configuration files will be created which can be edited later as needed.
 
 _**Before starting the node, we specify the Akash network and chain ID**_
 
@@ -134,7 +134,6 @@ _**Example/Expected Result**_
 <output truncated>
 
 },"upgrade":{},"vesting":{}},"chain_id":"akashnet-2","gentxs_dir":"","moniker":"chainzero","node_id":"2f4491952df08e69fd988c6f5d6ed21e25318fbc"}
-
 ```
 
 ### STEP5 - Set Minimum Gas Price
@@ -164,7 +163,7 @@ minimum-gas-prices = "0.025uakt"
 
 ### STEP6 - Copy the Genesis File
 
-Akash nodes need the Genesis file for the blockchain.  In this step we will gather the genesis.json file and make sure it is valid.
+Akash nodes need the Genesis file for the blockchain. In this step we will gather the genesis.json file and make sure it is valid.
 
 _**Copy the Genesis File**_
 
@@ -253,7 +252,7 @@ _**Fast Sync settings can be found in the following file**_
 
 _**Verify Fast Sync Settings**_
 
-* Most likely no changes will be necessary to config.toml and the default settings will be fine. But we will make sure.&#x20;
+* Most likely no changes will be necessary to config.toml and the default settings will be fine. But we will make sure.
 * Verify the fast\_sync field is set to true
 
 ```
@@ -263,7 +262,7 @@ _**Verify Fast Sync Settings**_
 fast_sync = true
 ```
 
-* Verify the Fast Sync version is set to v0.&#x20;
+* Verify the Fast Sync version is set to v0.
 * While version 0 is said to be the “legacy” version, in our experience this version works better.
 
 ```
@@ -310,8 +309,8 @@ akash start
 
 _**Check the status of the node**_
 
-* At first the node will show it is catching up.&#x20;
-* Eventually the node will show the height of the latest block.&#x20;
+* At first the node will show it is catching up.
+* Eventually the node will show the height of the latest block.
 * The latest block number can be found on the [Mintscan](https://www.mintscan.io/akash) website for comparison.
 
 ```
@@ -338,7 +337,7 @@ _**Tendermint specific configuration**_
 
 ### Akash Networks
 
-Within this guide the Akash mainnet is used and as specified in the AKASH\_NET value.  To launch a node on the testnet or edgenet and for additional network information, use this [guide](https://github.com/ovrclk/net).
+Within this guide the Akash mainnet is used and as specified in the AKASH\_NET value. To launch a node on the testnet or edgenet and for additional network information, use this [guide](https://github.com/ovrclk/net).
 
 ### State Pruning
 
@@ -351,4 +350,4 @@ There are several strategies for pruning state, please be aware that this is onl
 
 You can configure the node's pruning strategy at start time with the --pruning or by configuring the app.toml file.
 
-_**Validator Node Pruning Note**_** -** please do not use --pruning everything on validator nodes as it is known to cause issues. Instead use --pruning default.
+_**Validator Node Pruning Note**_\*\* -\*\* please do not use --pruning everything on validator nodes as it is known to cause issues. Instead use --pruning default.

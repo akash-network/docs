@@ -5,4 +5,3 @@ The RPC Service allows for both sending transactions to the network and for quer
 The RPC Service is configured in the `[rpc]` section of `~/.akash/config/config.toml`.
 
 By default, the service listens on port `26657`, but this can also be changed in the `[rpc]` section of `config.toml`.
-

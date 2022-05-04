@@ -20,7 +20,7 @@ The latest version of Go (`1.17`) is required. For more information, see [Go](ht
 
 ### Option 1: Using Cosmovisor
 
-The following instructions assume the `akash` and `cosmovisor` binaries are already installed and `cosmovisor` is set up as a systemd service. The section that follows will detail the install/configuration of Cosmovisor. If additional details are necessary, visit [Start a node with Cosmovisor](../../guides/node/cosmovisor.md) for instructions on how to install and set up the binaries.
+The following instructions assume the `akash` and `cosmovisor` binaries are already installed and `cosmovisor` is set up as a systemd service. The section that follows will detail the install/configuration of Cosmovisor. If additional details are necessary, visit [Start a node with Cosmovisor](../cosmovisor.md) for instructions on how to install and set up the binaries.
 
 **Cosmovisor 1.0 is required.**
 

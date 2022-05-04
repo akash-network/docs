@@ -2,7 +2,7 @@
 
 It is recommended to have a minimum system spec of 4vCPU 16GB RAM 256 GB SSD or better for a validator node. Lower specs will result in issues.
 
-Before setting up your validator node, make sure you've already gone through the [Full Node Setup](../akash-nodes/node/) guide.
+Before setting up your validator node, make sure you've already gone through the [Full Node Setup](node/) guide.
 
 > NOTE: it is not required to create a validator on Akash testnets unless specified in a challenge or otherwise. The akash team runs a centralized validator set to enable for easy and consistent testnet operations for developers trying out the platform for the first time.
 

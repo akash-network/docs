@@ -72,24 +72,19 @@
   * [Akash Audited Attributes](providers/akash-audited-attributes.md)
   * [Akash Provider Migration Guide - 0.14.X to 0.16.3](providers/akash-provider-migration-guide-0.14.x-to-0.16.3.md)
 * [Akash Nodes](akash-nodes/README.md)
-  * [Akash Node Deployment Via Omnibus](akash-nodes/akash-node-deployment-via-omnibus.md)
-  * [Run an Akash Node](akash-nodes/node/README.md)
-    * [RPC Service](akash-nodes/node/rpc-service.md)
-    * [API Service](akash-nodes/node/api-service.md)
-    * [Upgrade to Akash 3.0](akash-nodes/node/akash-3.0.md)
+  * [Akash Node Deployment Via Omnibus](operations/akash-node-deployment-via-omnibus.md)
+  * [Run an Akash Node](operations/node/README.md)
+    * [RPC Service](operations/node/rpc-service.md)
+    * [API Service](operations/node/api-service.md)
+    * [Upgrade to Akash 3.0](guides/node/upgrades/akash-3.0.md)
   * [Public RPC Nodes](akash-nodes/public-rpc-nodes.md)
 * [Validating](validating/README.md)
-  * [Running a Validator](validating/validator.md)
-
-## Command Line Interface (CLI) <a href="#cli" id="cli"></a>
-
-* [Install Akash](cli/install.md)
-* [CLI Commands](cli/command-line-interface.md)
-* [Setup your Environment](cli/shell-variables.md)
-* [Create Your Account](cli/wallet.md)
-
-***
-
+  * [Running a Validator](operations/validator.md)
+* [Command Line](command-line/README.md)
+  * [Install Akash](command-line/install.md)
+  * [CLI Commands](command-line/command-line-interface.md)
+  * [Setup your Environment](command-line/shell-variables.md)
+  * [Create Your Account](command-line/wallet.md)
 * [Features](features/README.md)
   * [Persistent Storage](features/persistent-storage/README.md)
     * [Persistent Storage Limitations](features/persistent-storage/persistent-storage-limitations.md)
@@ -126,11 +121,9 @@
       * [STEP 7 - Confirm Kubernetes Cluster](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-7-confirm-kubernetes-cluster.md)
       * [STEP 8 - Disable Swap on Kubernetes Hosts](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-8-disable-swap-on-kubernetes-hosts.md)
       * [STEP 9 - Review Firewall Policies](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-9-review-firewall-policies.md)
-
-## About Akash <a href="#glossary" id="glossary"></a>
-
-* [Security](glossary/security.md)
-* [Containers](glossary/platform.md)
-* [Marketplace](glossary/marketplace.md)
-* [Payments](glossary/escrow.md)
-* [Authentication](glossary/mtls.md)
+  * [Security](other-resources/security.md)
+  * [Containers](other-resources/platform.md)
+  * [Marketplace](other-resources/marketplace.md)
+  * [Payments](other-resources/escrow.md)
+  * [Authentication](other-resources/mtls.md)
+  * [Akash Provider Migration Guide - 0.14.X to 0.16.3](other-resources/akash-provider-migration-guide-0.14.x-to-0.16.3.md)

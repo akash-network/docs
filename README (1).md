@@ -15,11 +15,11 @@ Akash is an [**open source** ](https://github.com/ovrclk/akash)Cloud platform th
 
 ### What is the Akash Deployment Marketplace?
 
-The [Akash Marketplace](glossary/marketplace.md) is where users lease computing resources from Cloud providers before deploying a Docker container on the Akash Container Platform. The marketplace stores on-chain records of requests, bids, leases, and settlement payments using the Akash Token (AKT). Akash's blockchain is a [tendermint](https://github.com/tendermint/tendermint)-based application based on the [Cosmos SDK](https://github.com/cosmos/cosmos-sdk).
+The [Akash Marketplace](other-resources/marketplace.md) is where users lease computing resources from Cloud providers before deploying a Docker container on the Akash Container Platform. The marketplace stores on-chain records of requests, bids, leases, and settlement payments using the Akash Token (AKT). Akash's blockchain is a [tendermint](https://github.com/tendermint/tendermint)-based application based on the [Cosmos SDK](https://github.com/cosmos/cosmos-sdk).
 
 ### What is the Akash Container Platform?
 
-The [Akash Container Platform](glossary/platform.md) is a deployment platform for hosting and managing [containers](glossary/platform.md#containers) where users can run _**any**_ Cloud-Native application. Akash is built with a set of cloud management services including [Kubernetes](https://kubernetes.io) to orchestrate and manage containers.
+The [Akash Container Platform](other-resources/platform.md) is a deployment platform for hosting and managing [containers](other-resources/platform.md#containers) where users can run _**any**_ Cloud-Native application. Akash is built with a set of cloud management services including [Kubernetes](https://kubernetes.io) to orchestrate and manage containers.
 
 ### What is the cost to use Akash?
 
@@ -31,7 +31,7 @@ We are seeding the market with top-tier data center providers and negotiating lo
 
 ### How do I use Akash?
 
-If you're new to Akash, start with the [**Getting Started guide**](cli/install.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](akash-nodes/node/), a [validator guide](validating/validator.md), a [cloud provider guide](providers/build-a-cloud-provider/), and several [deployment guides](deployments/) for running various apps on Akash.
+If you're new to Akash, start with the [**Getting Started guide**](command-line/install.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](operations/node/), a [validator guide](operations/validator.md), a [cloud provider guide](providers/build-a-cloud-provider/), and several [deployment guides](deployments/) for running various apps on Akash.
 
 ### Why is Akash different than other Cloud platforms?
 
