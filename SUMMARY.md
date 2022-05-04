@@ -3,23 +3,58 @@
 * [What is Akash?](README.md)
 * [Technical Support](support.md)
 * [Stack Definition Language (SDL)](stack-definition-language.md)
-
-## Deploy on Akash <a href="#guides" id="guides"></a>
-
-* [Apps on Akash](guides/awesome-akash.md)
-* [Desktop App](guides/deploy.md)
-* [Web App](guides/web.md)
-* [CLI](guides/cli.md)
+* [Deployments](deployments/README.md)
+  * [Desktop App](deployments/desktop-app/README.md)
+    * [Akashlytics Deploy Installation](deployments/desktop-app/akashlytics-deploy-installation.md)
+    * [Initial Configuration](deployments/desktop-app/initial-configuration.md)
+    * [WordPress Deployment Example](deployments/desktop-app/wordpress-deployment-example.md)
+    * [Manage Deployments](deployments/desktop-app/manage-deployments.md)
+    * [Custom RPC Node](deployments/desktop-app/custom-rpc-node.md)
+  * [Akash CLI Booster](deployments/akash-cli-booster/README.md)
+    * [Getting Started with the CLI Booster](deployments/akash-cli-booster/getting-started-with-the-cli-booster.md)
+    * [Creating a Deployment with the CLI Booster](deployments/akash-cli-booster/creating-a-deployment-with-the-cli-booster.md)
+    * [Close a Deployment](deployments/akash-cli-booster/close-a-deployment.md)
+    * [List All Active Deployments](deployments/akash-cli-booster/list-all-active-deployments.md)
+    * [Access a Deployment’s Shell](deployments/akash-cli-booster/access-a-deployments-shell.md)
+    * [Obtain a Deployment’s Logs](deployments/akash-cli-booster/obtain-a-deployments-logs.md)
+  * [CLI](deployments/cli/README.md)
+    * [Streamlined Steps](deployments/cli/streamlined-steps/README.md)
+      * [Install the Akash Client](deployments/cli/streamlined-steps/install-the-akash-client.md)
+      * [Initialize Environment Variables](deployments/cli/streamlined-steps/initialize-environment-variables.md)
+      * [Create Akash Account and Certificate](deployments/cli/streamlined-steps/create-akash-account-and-certificate.md)
+      * [Create Test Deployment](deployments/cli/streamlined-steps/create-test-deployment.md)
+      * [Initialize Deployment Variables](deployments/cli/streamlined-steps/initialize-deployment-variables.md)
+      * [Review Bids](deployments/cli/streamlined-steps/review-bids.md)
+      * [Upload Manifest](deployments/cli/streamlined-steps/upload-manifest.md)
+      * [Close Deployment](deployments/cli/streamlined-steps/close-deployment.md)
+    * [Detailed Steps](deployments/cli/detailed-steps/README.md)
+      * [Part 1. Install Akash](deployments/cli/detailed-steps/part-1.-install-akash.md)
+      * [Part 2. Create an Account](deployments/cli/detailed-steps/part-2.-create-an-account.md)
+      * [Part 3. Fund your Account](deployments/cli/detailed-steps/part-3.-fund-your-account.md)
+      * [Part 4.  Configure your Network](deployments/cli/detailed-steps/part-4.-configure-your-network.md)
+      * [Part 5. Create your Configuration](deployments/cli/detailed-steps/part-5.-create-your-configuration.md)
+      * [Part 6. Create your Certificate](deployments/cli/detailed-steps/part-6.-create-your-certificate.md)
+      * [Part 7. Create your Deployment](deployments/cli/detailed-steps/part-7.-create-your-deployment.md)
+      * [Part 8. View your Bids](deployments/cli/detailed-steps/part-8.-view-your-bids.md)
+      * [Part 9. Create a Lease](deployments/cli/detailed-steps/part-9.-create-a-lease.md)
+      * [Part 10. Send the Manifest](deployments/cli/detailed-steps/part-10.-send-the-manifest.md)
+      * [Part 11. Update the Deployment](deployments/cli/detailed-steps/part-11.-update-the-deployment.md)
+  * [Apps on Akash](deployments/apps-on-akash.md)
+* [Providers](providers/README.md)
+  * [Build a Cloud Provider](providers/build-a-cloud-provider/README.md)
+    * [Kubernetes Cluster](providers/build-a-cloud-provider/kubernetes-cluster.md)
+    * [gVisor Issue - No system-cgroup v2 Support](providers/build-a-cloud-provider/gvisor-issue-no-system-cgroup-v2-support.md)
+    * [Provider Networks](providers/build-a-cloud-provider/provider-networks.md)
+  * [Custom Kubernetes Cluster Settings](providers/custom-kubernetes-cluster-settings/README.md)
+    * [VMware Tanzu](providers/custom-kubernetes-cluster-settings/vmware-tanzu.md)
+  * [Akash Audited Attributes](providers/akash-audited-attributes.md)
+  * [Akash Provider Migration Guide - 0.14.X to 0.16.3](providers/akash-provider-migration-guide-0.14.x-to-0.16.3.md)
 
 ## Using Akash Tokens <a href="#token" id="token"></a>
 
 * [Get Free Tokens](token/funding.md)
 * [Buy Akash Tokens](token/buy.md)
 * [Keplr Wallet](token/keplr.md)
-
-## Release Notes
-
-* [Akash Version 0.14.0](release-notes/v0.14.0.md)
 
 ## Tutorials <a href="#deploy" id="deploy"></a>
 
@@ -41,18 +76,6 @@
   * [Upgrade to Akash 3.0](guides/node/upgrades/akash-3.0.md)
 * [Running a Validator](operations/validator.md)
 * [Akash Audited Attributes](operations/akash-audited-attributes.md)
-
-***
-
-* [Providers](providers/README.md)
-  * [Build a Cloud Provider](providers/build-a-cloud-provider/README.md)
-    * [Kubernetes Cluster](providers/build-a-cloud-provider/kubernetes-cluster.md)
-    * [gVisor Issue - No system-cgroup v2 Support](providers/build-a-cloud-provider/gvisor-issue-no-system-cgroup-v2-support.md)
-    * [Provider Networks](providers/build-a-cloud-provider/provider-networks.md)
-  * [Custom Kubernetes Cluster Settings](providers/custom-kubernetes-cluster-settings/README.md)
-    * [VMware Tanzu](providers/custom-kubernetes-cluster-settings/vmware-tanzu.md)
-  * [Akash Audited Attributes](providers/akash-audited-attributes.md)
-  * [Akash Provider Migration Guide - 0.14.X to 0.16.3](providers/akash-provider-migration-guide-0.14.x-to-0.16.3.md)
 
 ## Command Line Interface (CLI) <a href="#cli" id="cli"></a>
 

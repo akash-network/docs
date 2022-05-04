@@ -1,6 +1,6 @@
 # STEP 3 - Export Provider Wallet
 
-In this section we will export the pre-existing, funded wallet to store the private key in a local file.  To conduct the commands in this section the Akash CLI must be installed which is detailed in this [guide](../../../guides/cli.md).
+In this section we will export the pre-existing, funded wallet to store the private key in a local file.  To conduct the commands in this section the Akash CLI must be installed which is detailed in this [guide](broken-reference).
 
 The wallet used will be used for the following purposes:
 
