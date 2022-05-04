@@ -20,9 +20,9 @@ The [Akash server on Discord](https://discord.com/invite/DxftX67) is a great pla
 
 **For help with:**
 
-* **Hackathons:** Message the **#hackathons** channel&#x20;
-* **Deployments:** Message the **#deployments** channel&#x20;
-* **Providers:** Message the **#providers** channel&#x20;
+* **Hackathons:** Message the **#hackathons** channel
+* **Deployments:** Message the **#deployments** channel
+* **Providers:** Message the **#providers** channel
 * **Validators:** Message the **#validators** channel
 
 ## Security Issues & Bug Bounties

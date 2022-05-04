@@ -34,8 +34,8 @@ A typical application deployment on Akash will follow this flow:
 3. Their submission generates an [order](marketplace.md#order) on the marketplace.
 4. Providers that would like to fulfill that order [bid](marketplace.md#bid) on it.
 5. After some period of time, a winning [bid](marketplace.md#bid) for the [order](marketplace.md#order) is chosen, and a [lease](marketplace.md#lease) is created.
-6. Once a [lease](marketplace.md#lease) has been created, the tenant submits a [manifest](../intro-to-akash/stack-definition-language.md) to the provider.
-7. The provider executes workloads as instructed by the [manifest](../intro-to-akash/stack-definition-language.md).
+6. Once a [lease](marketplace.md#lease) has been created, the tenant submits a [manifest](../stack-definition-language.md) to the provider.
+7. The provider executes workloads as instructed by the [manifest](../stack-definition-language.md).
 8. The workload is running - if it is a web application it can be visited
 9. The provider or tenant eventually closes the [lease](marketplace.md#lease), shutting down the workload.
 
@@ -54,8 +54,8 @@ The lifecycle of a typical application deployment is as follows:
 3. Their submission generates an [order](marketplace.md#order) on the marketplace.
 4. Providers that would like to fulfill that order [bid](marketplace.md#bid) on it.
 5. After some period of time, a winning [bid](marketplace.md#bid) for the [order](marketplace.md#order) is chosen, and a [lease](marketplace.md#lease) is created.
-6. Once a [lease](marketplace.md#lease) has been created, the tenant submits a [manifest](../intro-to-akash/stack-definition-language.md) to the provider.
-7. The provider executes workloads as instructed by the [manifest](../intro-to-akash/stack-definition-language.md).
+6. Once a [lease](marketplace.md#lease) has been created, the tenant submits a [manifest](../stack-definition-language.md) to the provider.
+7. The provider executes workloads as instructed by the [manifest](../stack-definition-language.md).
 8. The workload is running - if it is a web application it can be visited
 9. The provider or tenant eventually closes the [lease](marketplace.md#lease), shutting down the workload.
 
