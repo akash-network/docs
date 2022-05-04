@@ -1,8 +1,8 @@
 # Running a Validator
 
-It is recommended to have a minimum system spec of 4vCPU 16GB RAM 256 GB SSD or better for a validator node.   Lower specs will result in issues.
+It is recommended to have a minimum system spec of 4vCPU 16GB RAM 256 GB SSD or better for a validator node. Lower specs will result in issues.
 
-Before setting up your validator node, make sure you've already gone through the [Full Node Setup](node/) guide.
+Before setting up your validator node, make sure you've already gone through the [Full Node Setup](../akash-nodes/node/) guide.
 
 > NOTE: it is not required to create a validator on Akash testnets unless specified in a challenge or otherwise. The akash team runs a centralized validator set to enable for easy and consistent testnet operations for developers trying out the platform for the first time.
 
@@ -43,7 +43,7 @@ You can confirm that you are in the validator set by using a third party explore
 
 ## Edit Validator Description
 
-You can edit your validator's public description. This info is to identify your validator, and will be relied on by delegators to decide which validators to stake to. Make sure to provide input for every flag below. If a flag is not included in the command the field will default to empty \(`--moniker` defaults to the machine name\) if the field has never been set or remain the same if it has been set in the past.
+You can edit your validator's public description. This info is to identify your validator, and will be relied on by delegators to decide which validators to stake to. Make sure to provide input for every flag below. If a flag is not included in the command the field will default to empty (`--moniker` defaults to the machine name) if the field has never been set or remain the same if it has been set in the past.
 
 The `$AKASH_KEY_NAME` specifies the key for the validator which you are editing. If you choose to not include certain flags, remember that the `--from` flag must be included to identify the validator to update.
 
@@ -65,11 +65,11 @@ akash tx staking edit-validator
 **Note**: The `commission-rate` value must adhere to the following invariants:
 
 * Must be between 0 and the validator's `commission-max-rate`
-* Must not exceed the validator's `commission-max-change-rate` which is maximum
+*   Must not exceed the validator's `commission-max-change-rate` which is maximum
 
-  % point change rate **per day**. In other words, a validator can only change
+    % point change rate **per day**. In other words, a validator can only change
 
-  its commission once per day and within `commission-max-change-rate` bounds.
+    its commission once per day and within `commission-max-change-rate` bounds.
 
 ## View Validator Description
 
@@ -90,7 +90,7 @@ akash query slashing signing-info $AKASH_VALIDATOR_PUBKEY \
 
 ## Unjail Validator
 
-When a validator is "jailed" for downtime, you must submit an `Unjail` transaction from the operator account in order to be able to get block proposer rewards again \(depends on the zone fee distribution\).
+When a validator is "jailed" for downtime, you must submit an `Unjail` transaction from the operator account in order to be able to get block proposer rewards again (depends on the zone fee distribution).
 
 ```bash
 akash tx slashing unjail \
@@ -114,7 +114,7 @@ When attempting to perform routine maintenance or planning for an upcoming coord
 
 ## Common Problems
 
-### Problem \#1: My validator has `voting_power: 0`
+### Problem #1: My validator has `voting_power: 0`
 
 Your validator has become jailed. Validators get jailed, i.e. get removed from the active validator set, if they do not vote on `500` of the last `10000` blocks, or if they double sign.
 
@@ -134,7 +134,6 @@ akash status
 
 You may notice that your voting power is less than it used to be. That's because you got slashed for downtime!
 
-### Problem \#2: My `akash` crashes because of `too many open files`
+### Problem #2: My `akash` crashes because of `too many open files`
 
-The default number of files Linux can open \(per-process\) is `1024`. `akash` is known to open more than `1024` files. This causes the process to crash. A quick fix is to run `ulimit -n 4096` \(increase the number of open files allowed\) and then restart the process with `akash start`. If you are using `systemd` or another process manager to launch `akash` this may require some configuration at that level. See the [`systemd` configuration doc](https://github.com/ovrclk/docs/tree/1c9232aaec2197efbf4532e8883a247566cf9e28/guides/node/systemd.md) for details on how to configure `systemd` to aleviate this issue.
-
+The default number of files Linux can open (per-process) is `1024`. `akash` is known to open more than `1024` files. This causes the process to crash. A quick fix is to run `ulimit -n 4096` (increase the number of open files allowed) and then restart the process with `akash start`. If you are using `systemd` or another process manager to launch `akash` this may require some configuration at that level. See the [`systemd` configuration doc](https://github.com/ovrclk/docs/tree/1c9232aaec2197efbf4532e8883a247566cf9e28/guides/node/systemd.md) for details on how to configure `systemd` to aleviate this issue.

@@ -31,7 +31,7 @@ We are seeding the market with top-tier data center providers and negotiating lo
 
 ### How do I use Akash?
 
-If you're new to Akash, start with the [**Getting Started guide**](cli/install.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](operations/node/), a [validator guide](operations/validator.md), a [cloud provider guide](providers/build-a-cloud-provider/), and several [deployment guides](deployments/) for running various apps on Akash.
+If you're new to Akash, start with the [**Getting Started guide**](cli/install.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](akash-nodes/node/), a [validator guide](validating/validator.md), a [cloud provider guide](providers/build-a-cloud-provider/), and several [deployment guides](deployments/) for running various apps on Akash.
 
 ### Why is Akash different than other Cloud platforms?
 

@@ -6,7 +6,7 @@ In this guide, we will deploy a multi-tier web application on Akash. The example
 
 ### Before We Begin
 
-This guide is to be considered an extension of the [Deploy an Application](../deploy/broken-reference/) guide. Please ensure you have successfully completed all steps leading up to the "Create the Deployment Configuration" step in said guide, as they will not be discussed here.
+This guide is to be considered an extension of the [Deploy an Application](broken-reference/) guide. Please ensure you have successfully completed all steps leading up to the "Create the Deployment Configuration" step in said guide, as they will not be discussed here.
 
 ## Create the Deployment Configuration
 
@@ -175,7 +175,7 @@ Similar to the `profiles` entries, we must specify deployment criteria for both 
 
 #### Deployment
 
-Now that we have the SDL configured, let's deploy this application and see what happens. A more detailed guide on this process can be found in the [Deploy an Application](../deploy/broken-reference/) guide.
+Now that we have the SDL configured, let's deploy this application and see what happens. A more detailed guide on this process can be found in the [Deploy an Application](broken-reference/) guide.
 
 **Create the Deployment**
 

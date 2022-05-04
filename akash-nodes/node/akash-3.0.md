@@ -1,4 +1,4 @@
-# Upgrade Guide for Akash 3.0
+# Upgrade to Akash 3.0
 
 This document provides guidelines for node operators upgrading from Akash Mainnet from v2 to v3.
 
@@ -6,27 +6,27 @@ This document provides guidelines for node operators upgrading from Akash Mainne
 
 ### Akash Network v0.16.1
 
-- [Release Notes](https://github.com/ovrclk/akash/releases/tag/v0.16.1)
+* [Release Notes](https://github.com/ovrclk/akash/releases/tag/v0.16.1)
 
 ### Akash Mainnet
 
-- Upgrade Height: `[TBD]`
+* Upgrade Height: `[TBD]`
 
 ## Upgrade Guidelines
 
 ### Update Go
 
-The latest version of Go (`1.17`) is required. For more information, see [Go](https://golang.org/).
+The latest version of Go (`1.17`) is required. For more information, see [Go](https://golang.org).
 
 ### Option 1: Using Cosmovisor
 
-The following instructions assume the `akash` and `cosmovisor` binaries are already installed and `cosmovisor` is set up as a systemd service. The section that follows will detail the install/configuration of Cosmovisor.  If additional details are necessary, visit [Start a node with Cosmovisor](../cosmovisor.md) for instructions on how to install and set up the binaries.
+The following instructions assume the `akash` and `cosmovisor` binaries are already installed and `cosmovisor` is set up as a systemd service. The section that follows will detail the install/configuration of Cosmovisor. If additional details are necessary, visit [Start a node with Cosmovisor](../../guides/node/cosmovisor.md) for instructions on how to install and set up the binaries.
 
 **Cosmovisor 1.0 is required.**
 
 #### Configure Cosmovisor
 
-*Note: The following steps are not required if Cosmovisor v1.0 is already installed and configured to your preferred settings.*
+_Note: The following steps are not required if Cosmovisor v1.0 is already installed and configured to your preferred settings._
 
 To install `cosmovisor`, run the following command:
 
@@ -102,7 +102,7 @@ sudo systemctl enable cosmovisor.service
 
 #### Prepare Upgrade Binary
 
-*Note: The following steps are not required if the auto-download option was enabled.*
+_Note: The following steps are not required if the auto-download option was enabled._
 
 Either download the upgrade binary (`v0.16.1`) or build it from source:
 

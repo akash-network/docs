@@ -8,7 +8,7 @@ Ultimately this is a two container setup, one PostgreSQL server and one schedule
 
 ## Usage
 
-* Setup a [Filebase](https://filebase.com/) account and bucket \(or any S3 compatible storage host\).
+* Setup a [Filebase](https://filebase.com) account and bucket (or any S3 compatible storage host).
 * Set the environment variables in the [deploy.yml](https://github.com/ovrclk/akash-postgres-restore/blob/master/deploy.yml) and deploy on Akash
 * Use the URL and port Akash gives you to connect to the Postgres server, with the credentials you provided in the environment variables. For example cluster.ewr1p0.mainnet.akashian.io:31234
 
@@ -18,7 +18,7 @@ Alternatively add your own app container to the deploy.yml and expose the Postgr
 
 For example:
 
-```text
+```
 services:
   app: 
     image: myappimage:v1
@@ -64,4 +64,3 @@ You can run the application locally using Docker compose.
 Copy the `.env.sample` file to `.env` and populate
 
 Run `docker-compose up` to build and run the application
-
