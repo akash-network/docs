@@ -55,7 +55,8 @@
 
 ***
 
-* [Features](features.md)
+* [Features](features/README.md)
+  * [Test Page](features/test-page.md)
 * [Other Resources](other-resources.md)
 
 ## About Akash <a href="#glossary" id="glossary"></a>
