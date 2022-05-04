@@ -50,7 +50,7 @@ docker push mydockerhubuser/helium-on-akash:v0.0.1
 
 You can then change the `image` value in deploy.yml to your repository and version above.
 
-To update the miner on Akash, run the above to build it with the latest Helium image, incrementing the version number. Then close and re-deploy on Akash using the new version number. This process could be scripted relatively easily.
+To update the miner on Akash, run the above to build it with the latest Helium image, incrementing the version number. Then close and re-deploy on Akash using the new version number. This process could be scripted easily.
 
 ## Caveats
 
