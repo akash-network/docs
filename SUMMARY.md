@@ -56,7 +56,12 @@
 ***
 
 * [Features](features/README.md)
-  * [Test Page](features/test-page.md)
+  * [Persistent Storage](features/persistent-storage/README.md)
+    * [Persistent Storage Limitations](features/persistent-storage/persistent-storage-limitations.md)
+    * [Implementation Overview](features/persistent-storage/implementation-overview.md)
+    * [Persistent Storage SDL Deepdive](features/persistent-storage/persistent-storage-sdl-deepdive.md)
+    * [Troubleshooting](features/persistent-storage/troubleshooting.md)
+    * [Complete Persistent Storage Manifest/SDL Example](features/persistent-storage/complete-persistent-storage-manifest-sdl-example.md)
 * [Other Resources](other-resources.md)
   * [Experimental](other-resources/experimental/README.md)
     * [Akash Cloud Provider Build With Helm Charts](other-resources/experimental/akash-cloud-provider-build-with-helm-charts/README.md)
