@@ -10,10 +10,10 @@ Shell variables will be used throughout these guides to make the instructions so
 
 Closing or changing terminals will mean that you have to re-define the variable. Because of this, it is important to type the commands into a terminal where the variables have been defined.
 
-| Name | Description |
-| :--- | :--- |
-| `AKASH_KEY_NAME` | Key name of your choosing.  This documentation uses a value of "alice". |
-| `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` \(default\), `file`, `test`. |
+| Name                    | Description                                                                   |
+| ----------------------- | ----------------------------------------------------------------------------- |
+| `AKASH_KEY_NAME`        | Key name of your choosing. This documentation uses a value of "alice".        |
+| `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys. One of `os` (default), `file`, `test`. |
 
 ### 1. Define your Shell Variables
 
@@ -41,7 +41,7 @@ akash \
 
 You'll see a response similar to below:
 
-```text
+```
 - name: alice
   type: local
   address: akash1cz87pqkad72gggrv3t7y2x9z56h9gqghlnx3j3
@@ -96,7 +96,7 @@ akash \
 
 This will prompt the user to input a bip39 mnemonic and looks similar to:
 
-```text
+```
 > Enter your bip39 mnemonic
 diagram pony police cigar curious miracle multiply tiger salmon trade like month oven custom seven assume rail valid abuse forest mountain submit text print
 
@@ -121,7 +121,7 @@ akash \
 
 will output a response similar to:
 
-```text
+```
 Enter passphrase to decrypt your key:
 Enter passphrase to encrypt the exported key:
 -----BEGIN TENDERMINT PRIVATE KEY-----
@@ -152,4 +152,3 @@ export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 
 echo $AKASH_ACCOUNT_ADDRESS
 ```
-

@@ -18,7 +18,7 @@ Follow the getting started guide, and you will see the [instructions for audited
 
 Akash has a feature designed to allow you to _control_ your trust settings called **Audited Attributes**. Audited attributes allow users deploying applications to be more selective about which providers can run their apps. Anyone on the Akash Network can assign these attributes to Providers via an on-chain transaction.
 
-Akash's Stack Definition Language \(SDL\) allows you to define attributes such as the type of provider, region, CPU, Memory, Storage, and which auditors you want to trust. When you deploy on Akash, you can configure any attribute that restricts bids to only providers that meet your criteria.
+Akash's Stack Definition Language (SDL) allows you to define attributes such as the type of provider, region, CPU, Memory, Storage, and which auditors you want to trust. When you deploy on Akash, you can configure any attribute that restricts bids to only providers that meet your criteria.
 
 Auditors on the Akash Network review cloud providers and digitally sign the provider on-chain with their certificate. If you only accept bids from audited providers this means you are trusting the Auditor/Provider not just a Provider.
 
@@ -32,7 +32,7 @@ On the `akashnet-2` network, to ensure tenants have smooth and reliable service 
         - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
 ```
 
---or--
+\--or--
 
 ```bash
        attributes:
@@ -44,8 +44,8 @@ On the `akashnet-2` network, to ensure tenants have smooth and reliable service 
 
 Please note that all of the following can be substituted in the `datacenter` field above and should be chosen based on your needs:
 
-| Datacenter | Location |
-| :--- | :--- |
+| Datacenter           | Location                  |
+| -------------------- | ------------------------- |
 | `equinix-metal-ewr1` | New Jersey, United States |
 | `equinix-metal-sjc1` | California, United States |
 
@@ -53,7 +53,7 @@ Please note that all of the following can be substituted in the `datacenter` fie
 
 Before you can create a deployment, a [certificate](mtls.md) must first be created. **Your certificate needs to be created only once per account** and can be used across all deployments.To do this, run:
 
-```text
+```
 akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt
 ```
 
@@ -87,4 +87,3 @@ You should see a response similar to:
   "signatures": []
 }
 ```
-
