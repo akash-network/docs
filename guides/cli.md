@@ -10,11 +10,11 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 
 {% tabs %}
 {% tab title="MacOS" %}
-## MacOS
+### MacOS
 
 Before you install Akash, you will need to install the **XCode Command Line Tools**, and also we recommend using **Homebrew** to install Akash.
 
-### 1. Install XCode:
+#### 1. Install XCode:
 
 You will need to install Apple's XCode Command Line Tools. Run this command in Terminal:
 
@@ -22,7 +22,7 @@ You will need to install Apple's XCode Command Line Tools. Run this command in T
 xcode-select --install
 ```
 
-### 2. Install Homebrew:
+#### 2. Install Homebrew:
 
 If you do not have Homebrew, you can install Homebrew using:
 
@@ -30,7 +30,7 @@ If you do not have Homebrew, you can install Homebrew using:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-### 3. Install Akash:
+#### 3. Install Akash:
 
 Install `akash` using homebrew:
 
@@ -50,11 +50,11 @@ Congrats!
 {% endtab %}
 
 {% tab title="Linux" %}
-## Linux
+### Linux
 
 Download the archive for your system from the [release page](https://github.com/ovrclk/akash/releases), extract it, and install the `akash` binary into your path.
 
-#### GoDownloader
+**GoDownloader**
 
 Alternatively, install the latest version via [`godownloader`](https://github.com/goreleaser/godownloader) First, configure the version of the Akash Network `AKASH_VERSION`as a shell variable in your terminal:
 
@@ -88,7 +88,7 @@ echo $PATH
 {% endtab %}
 
 {% tab title="Source" %}
-## Source
+### Source
 
 Installing Akash suite from source
 
@@ -150,9 +150,7 @@ A minimum deposit of 5 AKT is required to deploy on Akash, and a small transacti
 
 ### [Join the Akash Community to get free AKT](../token/funding.md)
 
-
-
-## Part 4.  Configure your Network
+## Part 4. Configure your Network
 
 First configure the base URL (`$AKASH_NET`) for the Akash Network; copy and paste the command below:
 
@@ -284,41 +282,26 @@ EOF
 
 ## Part 6. Create your Certificate
 
-Before you can create a deployment, a [certificate](../glossary/mtls.md) must first be created. **Your certificate needs to be created only once per account** and can be used across all deployments.To do this, run:
+
+
+In this step we will create a local certificate and then store the certification on the block chain
+
+* NOTE - for those familiar with previous Akash CLI versions the following commands for cert creation have changed.  We believe the new command sets in this version make steps more clear.
+* Ensure that prior steps in this guide have been completed and that you have a funded wallet before attempting certificate creation.
+* **Your certificate needs to be created only once per account** and can be used across all deployments.
+
+#### Generate Cert
+
+* Note: If it errors with `Error: certificate error: cannot overwrite certificate`, then add `--overwrite` should you want to overwrite the cert. Normally you can ignore that error and proceed with publishing the cert (next step).
 
 ```
-akash tx cert create client --chain-id $AKASH_CHAIN_ID --keyring-backend os --from $AKASH_KEY_NAME --node $AKASH_NODE --fees 5000uakt
+akash tx cert generate client --from $AKASH_KEY_NAME
 ```
 
-You should see a response similar to:
+#### Publish Cert to the Blockchain
 
-```javascript
-{
-  "body": {
-    "messages": [
-      {
-        "@type": "/akash.cert.v1beta1.MsgCreateCertificate",
-        "owner": "akash1vns5ka3x69ekm3ecp8my8d5zfu8j23p5qew0w3",
-        "cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ3RENDQVdXZ0F3SUJBZ0lJRm1pcUJWcWZDVmt3Q2dZSUtvWkl6ajBFQXdJd1NqRTFNRE1HQTFVRUF4TXMKWVd0aGMyZ3hkbTV6Tld0aE0zZzJPV1ZyYlRObFkzQTRiWGs0WkRWNlpuVTRhakl6Y0RWeFpYY3dkek14RVRBUApCZ1ZuZ1FVQ0JoTUdkakF1TUM0eE1CNFhEVEl4TURNd01qSXpNak15TmxvWERUSXlNRE13TWpJek1qTXlObG93ClNqRTFNRE1HQTFVRUF4TXNZV3RoYzJneGRtNXpOV3RoTTNnMk9XVnJiVE5sWTNBNGJYazRaRFY2Wm5VNGFqSXoKY0RWeFpYY3dkek14RVRBUEJnVm5nUVVDQmhNR2RqQXVNQzR4TUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowRApBUWNEUWdBRUtaSTlmWGVPVzRCYXRwcU1mb1VTekx2b01lWGlpbEZTMnJhZlhKdUNObUlMVjJMaWhIZW5JdjJTCjV5Uzh1Zkh5QmNMSUI5aFE1VE81THRHSUpPdzIvYU0xTURNd0RnWURWUjBQQVFIL0JBUURBZ1F3TUJNR0ExVWQKSlFRTU1Bb0dDQ3NHQVFVRkJ3TUNNQXdHQTFVZEV3RUIvd1FDTUFBd0NnWUlLb1pJemowRUF3SURTUUF3UmdJaApBSjJzQ3ZodGNzWkRXUkQ2MU03ZkVCRUk5eEt5Z0UzRkd3K2tIYVhZYXl0TUFpRUE4cUZtb3FEc1Z0ZzhPSHc1Ck5iOEljd0hiNHVkc0RpTzRxaWhoL0owNWZKaz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
-        "pubkey": "LS0tLS1CRUdJTiBFQyBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFS1pJOWZYZU9XNEJhdHBxTWZvVVN6THZvTWVYaQppbEZTMnJhZlhKdUNObUlMVjJMaWhIZW5JdjJTNXlTOHVmSHlCY0xJQjloUTVUTzVMdEdJSk93Mi9RPT0KLS0tLS1FTkQgRUMgUFVCTElDIEtFWS0tLS0tCg=="
-      }
-    ],
-    "memo": "",
-    "timeout_height": "0",
-    "extension_options": [],
-    "non_critical_extension_options": []
-  },
-  "auth_info": {
-    "signer_infos": [],
-    "fee": {
-      "amount": [],
-      "gas_limit": "200000",
-      "payer": "",
-      "granter": ""
-    }
-  },
-  "signatures": []
-}
+```
+akash tx cert publish client --from $AKASH_KEY_NAME --gas-prices="0.025uakt" --gas="auto" --gas-adjustment=1.15
 ```
 
 ## Part 7. Create your Deployment
@@ -571,7 +554,7 @@ Note the bids will close automatically after 5 minutes, and you may get the resp
 bid not open
 ```
 
-If this happens, close your deployment and open a new deployment again.  To close your deployment run this command:
+If this happens, close your deployment and open a new deployment again. To close your deployment run this command:
 
 ```
 akash tx deployment close --from=$AKASH_KEY_NAME --fees 5000uakt
@@ -652,7 +635,7 @@ akash \
 
 Update the deploy.yml manifest file with the desired change.
 
-_**NOTE**_** -** not all attributes of the manifest file are eligible for deployment update.  If the hardware specs of the manifest are updated (I.e. CPU count), a re-deployment of the workload is necessary.  Other attributes, such as deployment count and funding, are eligible for updates.
+_**NOTE**_\*\* -\*\* not all attributes of the manifest file are eligible for deployment update. If the hardware specs of the manifest are updated (I.e. CPU count), a re-deployment of the workload is necessary. Other attributes, such as deployment count and funding, are eligible for updates.
 
 ### Issue Transaction for On Chain Update
 

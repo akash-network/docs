@@ -2,7 +2,7 @@
 
 ## **Akashlytics Deploy Overview**
 
-The Akashlytics Deploy Tool is a desktop application which simplifies the deployment process on the Akash Network.  Post deployment the tool provides a dashboard to view the status and details of workloads.  The dashboard also has the ability to perform administrative tasks including closing the deployment, updating the deployment, redeploying, and increasing the funding available to the deployment.
+The Akashlytics Deploy Tool is a desktop application which simplifies the deployment process on the Akash Network. Post deployment the tool provides a dashboard to view the status and details of workloads. The dashboard also has the ability to perform administrative tasks including closing the deployment, updating the deployment, redeploying, and increasing the funding available to the deployment.
 
 This guide will cover the following topics:
 
@@ -16,7 +16,7 @@ This guide will cover the following topics:
 
 ### **Requirements**
 
-#### **Akash wallet with your mnemonic phrase ready for this guide!**&#x20;
+#### **Akash wallet with your mnemonic phrase ready for this guide!**
 
 **Follow our** [**Keplr Wallet**](../token/keplr.md) **guide to create your first wallet.**
 
@@ -30,78 +30,78 @@ The Akashlytics Deploy software may be found at the project’s documentation [h
 
 {% tabs %}
 {% tab title="MacOS" %}
-### MacOS Installation
+#### MacOS Installation
 
-#### STEP1 - Locate the Downloaded DMG File
+**STEP1 - Locate the Downloaded DMG File**
 
 * After completing the download find the MacOS DMG in the Downloads directory.
 * Locate the DMG and double-click.
 
-![](../.gitbook/assets/MacOSDMGScreen.png)
+![](<../.gitbook/assets/MacOSDMGScreen (1).png>)
 
-#### STEP2 - Move Akashlytics Deploy to the Applications Directory
+**STEP2 - Move Akashlytics Deploy to the Applications Directory**
 
 * After installation - MacOS will prompt the user to move the Akashlytics Deploy shortcut to the Applications directory
 * Drag and drop the Akashlytics Deploy icon into the Applications folder from the prompt
 
 ![](../.gitbook/assets/MacOSDrapToApp.png)
 
-#### STEP3 - Launching the Tool
+**STEP3 - Launching the Tool**
 
 * With the installation completed - open MacOS Finder and type “akashlytics deploy”
 * Double click the Akashlytics Deploy icon
 
 ![](../.gitbook/assets/akashlyticsLaunch.png)
 
-#### STEP4 - Override MacOS Unidentified Developer Warning
+**STEP4 - Override MacOS Unidentified Developer Warning**
 
-When first launching Akashlytics Deploy your mac will have an “unidentified provider” warning preventing the application from launching.  As this software is created, maintained by the Akash community and can be trusted as such.  To get past this prompt do the following:
+When first launching Akashlytics Deploy your mac will have an “unidentified provider” warning preventing the application from launching. As this software is created, maintained by the Akash community and can be trusted as such. To get past this prompt do the following:
 
 * Click the Question Mark (“?”) icon provided on the warning message.
 
-![](<../.gitbook/assets/MacOSISecurityWarn (1).png>)
+![](../.gitbook/assets/MacOSISecurityWarn.png)
 
 * Press “Ok” to exit the warning message dialog box and follow the instructions that pop up.
 
-![](../.gitbook/assets/macOSOverride.png)
+![](<../.gitbook/assets/macOSOverride (1).png>)
 
 * Locate App within the MacOS Finder utility and Control-Click the icon
 * Select “Open”
 
-![](../.gitbook/assets/macOSFileOpen.png)
+![](<../.gitbook/assets/macOSFileOpen (1).png>)
 
 * You will be prompted with an “unidentified developer” dialog box
 * Click the “Open” button
 
-![](../.gitbook/assets/macOSFileOpen2.png)
+![](<../.gitbook/assets/macOSFileOpen2 (1).png>)
 {% endtab %}
 
 {% tab title="Windows" %}
-### Windows Installation
+#### Windows Installation
 
 Note: The installation steps captured in the steps and screenshots that follow were conducted on a Windows Server instance but the application install should be nearly identical on other Windows Platforms (I.e. Windows 10).
 
-#### STEP1 - Launch the Installer
+**STEP1 - Launch the Installer**
 
 * Find the installer on your computer and double click
 
-![](../.gitbook/assets/akashlyticsWindowsExplorer.png)
+![](<../.gitbook/assets/akashlyticsWindowsExplorer (1).png>)
 
-#### STEP2 - Windows Defender Warning
+**STEP2 - Windows Defender Warning**
 
-Depending on the Operating System version and installed/enabled security tools - Windows Defender may pop up with an “unrecognized app” message.  As this software is created, maintained by the Akash community and can be trusted as such.  We can get past this with the following steps.
+Depending on the Operating System version and installed/enabled security tools - Windows Defender may pop up with an “unrecognized app” message. As this software is created, maintained by the Akash community and can be trusted as such. We can get past this with the following steps.
 
 * Expand the available options on the warning prompt and select “Run anyway”
 
-![](../.gitbook/assets/akashlyticsWindowsDefender.png)
+![](<../.gitbook/assets/akashlyticsWindowsDefender (1).png>)
 
 * Feel free to use the default install options and follow the prompts.
 
-![](../.gitbook/assets/akashlticsWindowsInstall.png)
+![](<../.gitbook/assets/akashlticsWindowsInstall (1).png>)
 
 * On the last step of the install in the “Completing Akashlytics Deploy Setup” section - check the “Run Akashlytics Deploy” option (likely selected by default) and select “Finish”.
 
-![](../.gitbook/assets/akashlyticsWindowsInstallFinalStep.png)
+![](<../.gitbook/assets/akashlyticsWindowsInstallFinalStep (1).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -126,7 +126,7 @@ Should a need arise to delete the wallet click the ellipsis (triple dot icon) to
 
 #### **STEP2 - Certificate Creation**
 
-When first launching the tool there will not be a valid certificate.  To fix this select the ellipsis to the right of the Certificate status and click “Create Certificate”
+When first launching the tool there will not be a valid certificate. To fix this select the ellipsis to the right of the Certificate status and click “Create Certificate”
 
 ![](https://lh5.googleusercontent.com/D1Pq065Fv5vZesW6t2gj0UQzWVNy5k-9HM3ehq9oQQNfb7O0JJHgyYHvXECUvg2vUjg82K7XBNAZx\_MgevWi1aRJFgPNLMiV1TPxr9vyoXqpdKb5GPUxRjMmuUT6iKzO1Wb0lVlA=s0)
 
@@ -134,22 +134,22 @@ When first launching the tool there will not be a valid certificate.  To fix thi
 
 In this section we will use the tool to deploy our own example WordPress page on the Akash Network. You can follow the same process for any other workload so long as it is containerized and you have an appropriate SDL.
 
-#### **STEP1 -  Create the Deployment**
+#### **STEP1 - Create the Deployment**
 
 * From the Deployments pane click the “CREATE DEPLOYMENTS” button.
 
 ![](https://lh3.googleusercontent.com/cITOXBIBZWEZe7vFJfQYpzHEO6ZS8K4FPCI5mpRDAYFzdZ9FIV7dJtvUY8THbd7ll3UqpKjEd6ZdWb0EdUvUAdNXzea40JpXe9CoBR22NpfOge2AwtTuwmnJyVpdiHK2U2XMVNf8=s0)
 
-#### **STEP2 -  Checking Deployment Pre-Reqs**
+#### **STEP2 - Checking Deployment Pre-Reqs**
 
 * Before getting started make sure you have met the following requirements:
-  * 5AKT are available in wallet/escrow account.&#x20;
+  * 5AKT are available in wallet/escrow account.
   * Valid certificate (on chain and matching cert locally)
 * If everything is in order click the “CONTINUE” button
 
 ![](https://lh3.googleusercontent.com/19ivZkQtByvta\_6a8lV8nuPnxtn8PDcv6a65pSLansGB1JOsdVCcNWPk8pBLcRAzuZ\_Qdc3r9WaahdPj9vVCnXea5dBS-p3GekVPBAbo0uodNUb5tsEBSopdv4XjPhKXVPHV0Jkv=s0)
 
-#### **STEP3 -  Choose Template**
+#### **STEP3 - Choose Template**
 
 * The tool provides several sample templates including Games (Supermario, Minecraft, etc), and some more general (WordPress, Hello-World, etc)
 * To deploy a custom application select the Empty template option
@@ -157,7 +157,7 @@ In this section we will use the tool to deploy our own example WordPress page on
 
 ![](https://lh6.googleusercontent.com/70YVBS9Q\_lB5j7mHDnwcC8iNFJT6ueqarfPG9\_BnDcvmcBwgHDG24RyiTJDvbbvq-HngUgMnC05-Cex6QeiM-VbBxBIs78259J\_NUgexDIrkOfNBsfQ203WqwbGR1FC0b\_9MBx99=s0)
 
-#### **STEP4 -  Create Deployment**
+#### **STEP4 - Create Deployment**
 
 * If you select a empty template now would be the time to paste in your SDL
 * For this example we will be making a small change to the example SDL file. Change the domain name in the SDL’s “expose” section.
@@ -169,7 +169,7 @@ In this section we will use the tool to deploy our own example WordPress page on
 
 ![](https://lh3.googleusercontent.com/kuUkw36MAiq64xBgwLYUqF2Tp22UJG4LdymryZCQog2QxDrcxkfxQp-WFrgXgo6GJL\_S\_oPi3q\_EYZMr9jjdanjY9N0TuxwqQUk4iOqPHkFZKZuBRXQ47smegsyofNBgadRZCmvp=s0)
 
-#### **STEP5 -  Create Deployment Transaction**
+#### **STEP5 - Create Deployment Transaction**
 
 * Once the process has kicked off a screen will appear asking for a selection of Gas Fees and to add the request for bids on chain. Feel free to use the defaults and select the “APPROVE” button.
 
@@ -177,19 +177,19 @@ Note: The process to write the transaction to the chain may take a couple of min
 
 ![](https://lh3.googleusercontent.com/Os4DkJBJFNg4jQRzoLit0or0fZJJfqn0y70I0CQJd2v\_EK4IYQUeWaRG9RyPr4-HSsum0zs-sg5wK6BB6Hgmb543zTmvsgr4XEgOUp90KEEbVadX4x4fH81ZMJ4XXk\_GXnBiwK62=s0)
 
-#### **STEP6 -  Review/Accept Bids**
+#### **STEP6 - Review/Accept Bids**
 
 * After a minute or so a list of bids will display. Select the most affordable lease for this example deployment and then press “ACCEPT BID”
 
 ![](https://lh6.googleusercontent.com/n77KZpFFF\_-MKeGnk1MU0HSswyNc7mEvFWjOATz8QmFHRCxiovMbJf3FUlALQzARjZMUuMf1xmYhuQIQo5vM3FSpKmVfdZfSc9eKnTADLhibUeFCw0e64G8YpAELlb6mntyCm\_Ho=s0)
 
-#### **STEP7 -  Create Lease Transaction**
+#### **STEP7 - Create Lease Transaction**
 
 * Just as before leave the default selection for Gas Fees and click “APPROVE”
 
 ![](https://lh5.googleusercontent.com/j4X1OOUx6jI-t5jOoO-bRCGXOyLHbVcLFCaZkbc3yDc1jUUoQl1ZcKvONW3YpItamT8HzvcRo\_iQe4xBHFptTvu2MeqF8WSAk3xlVzsSMnBqBWOiIZNiU1K610MAZlNEMaz35Dms=s0)
 
-#### **STEP8 -  Post Deployment**
+#### **STEP8 - Post Deployment**
 
 Once the process is complete you can click the Deployments tab and select the new deployment. This is where you can interact with and retrieve information about the deployment.
 

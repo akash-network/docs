@@ -16,7 +16,7 @@ The Keplr wallet extension for Chrome may be found [here](https://chrome.google.
 
 After you have installed the extension the Keplr wallet should appear in the browser extension tray. To open the wallet simply click on the keplr icon in the extension tray.
 
-![](../.gitbook/assets/KeplrWalletVerify.png)
+![](<../.gitbook/assets/KeplrWalletVerify (1).png>)
 
 ### **Ensure Adequately Funded Keplr Wallet**
 
@@ -43,7 +43,7 @@ If all worked as intended you should see something like this.
 
 ### **Create Certificate for Transactions**
 
-The Akash Deploy instance must have access to a certificate to sign transactions placed onto the blockchain.  Since this is our first time using the tool no such certificate exists.  Let’s create one now.
+The Akash Deploy instance must have access to a certificate to sign transactions placed onto the blockchain. Since this is our first time using the tool no such certificate exists. Let’s create one now.
 
 * Click the “CERTIFICATE” tab
 * In the dialog box that appears select the “CREATE” button
@@ -63,7 +63,7 @@ Note - All transaction processes that interact on chain may take a few seconds t
 
 ## **Deployment of Sample Workload**
 
-When first launched, the Akash Deploy application displays an editing pane prepopulated with Stack Definition Language (SDL) for the Lunie Light application.  The sample application (Lunie Light) is a non-custodial, web wallet for Akash.  This is one of many pre-built deployments to choose from.  In subsequent sections, we will take a quick look at additional applications/SDLs within the Akash Deploy Gallery.
+When first launched, the Akash Deploy application displays an editing pane prepopulated with Stack Definition Language (SDL) for the Lunie Light application. The sample application (Lunie Light) is a non-custodial, web wallet for Akash. This is one of many pre-built deployments to choose from. In subsequent sections, we will take a quick look at additional applications/SDLs within the Akash Deploy Gallery.
 
 ### **Steps in Application Deployment**
 
@@ -96,10 +96,10 @@ When first launched, the Akash Deploy application displays an editing pane prepo
 
 ![](https://lh3.googleusercontent.com/zkMddw9w4iiyau77tUR\_bp3ARPVsGAFkhIyWUvnbQH4DQ1ZBiGbc5lYAKF9Zg9yt1hnhrY6-M7uEqA2R5H9Uuzt4PQflvGWdPtdLgO1VfmNHgRV2RjOKzNIlWNTwtCXxI1CfaOse=s0)
 
-* Once the bid has been accepted and the deployment setup an information window will pop up for the new deployment.  A couple things to note:
+* Once the bid has been accepted and the deployment setup an information window will pop up for the new deployment. A couple things to note:
   * Number of workload replicas
   * Available replicas
-  * In the case of web services workloads the exposed URI&#x20;
+  * In the case of web services workloads the exposed URI
 
 ![](https://lh4.googleusercontent.com/X\_OZsXq9d7IRHBzw0lSWbqjvdW5z6I3a4z4WFc1AqQp\_fIvZwmRBJulZ5QO3rTFeCgNPbNKs37ORDaD5GEzl\_s5yf2aIhHk2nJHkINOyQspDnBLT4BqTNWNyIJjAV4Ohj5CrFQ1M=s0)
 
@@ -157,7 +157,7 @@ Note that the information revealed is identical to the information first display
 
 ### **Close a Deployment**
 
-Akash Deploy makes it simple to close a deployment.  Follow the steps provided below to terminate the instance.
+Akash Deploy makes it simple to close a deployment. Follow the steps provided below to terminate the instance.
 
 * Navigate to “MY DEPLOYMENTS”
 
@@ -177,7 +177,7 @@ Akash Deploy makes it simple to close a deployment.  Follow the steps provided b
 
 ## **SDL Gallery**
 
-Akash Deploy has a rich selection of pre-defined SDL definition files for all kinds of popular software packages.  Within this section we will access the SDL Gallery, review the gallery categories, and use a specific SDL definition for additional deployment experience.
+Akash Deploy has a rich selection of pre-defined SDL definition files for all kinds of popular software packages. Within this section we will access the SDL Gallery, review the gallery categories, and use a specific SDL definition for additional deployment experience.
 
 ### **SDL Gallery Access and Overview**
 
@@ -187,7 +187,7 @@ Akash Deploy has a rich selection of pre-defined SDL definition files for all ki
 
 #### **Exploring SDL Categories and Available Software Deployments**
 
-Scroll through the SDL Gallery’s available categories and related definition files to reveal a wealth of available applications.&#x20;
+Scroll through the SDL Gallery’s available categories and related definition files to reveal a wealth of available applications.
 
 * SDL categories include :
   * Official
@@ -207,13 +207,13 @@ Scroll through the SDL Gallery’s available categories and related definition f
 
 ### **Example SDL exploration within the gallery**
 
-* Locate the “supermario” SDL file via the search bar at the top of the Gallery page and then click on the “SOURCE” link as depicted below.  This will open the git repository that the file lives in.
+* Locate the “supermario” SDL file via the search bar at the top of the Gallery page and then click on the “SOURCE” link as depicted below. This will open the git repository that the file lives in.
 
 ![](https://lh6.googleusercontent.com/gZjc6uH7-BuASiUvjZxCocM5L8s0edondSCvp0Shj35EoTfrdkxZne2w7B4hp161hsMOkd5\_37ou2FaxeMV8aC4ZUcz-OCA4\_z\_joN2DgqSfDD1TcO4T4zqgV2k4RtjxT1vJ0FsM=s0)
 
 ### **Utilize a SDL Gallery Definition in Deployment**
 
-In the prior section the SuperMario SDL was selected.  We will now use the SDL to deploy the SuperMario app on the network.
+In the prior section the SuperMario SDL was selected. We will now use the SDL to deploy the SuperMario app on the network.
 
 #### Deployment from the SDL Gallery
 

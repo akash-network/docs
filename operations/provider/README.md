@@ -6,13 +6,290 @@
 
 Placing a bid on an order requires a 5 AKT deposit. This deposit is fully refunded after the bid is won/lost.&#x20;
 
-The steps to create an Akash account are covered in the Provider setup section of this document.
+The steps to create an Akash account are covered in the Provider setup section of this [document](https://docs.akash.network/token/keplr).
 
 ### Kubernetes Cluster
 
 * A full Kubernetes cluster is required.
 * The cluster must have outbound internet access and be reachable from the internet.
 * Please use [this guide](https://docs.akash.network/operations/provider/kubernetes-cluster) for ALL Kubernetes related configurations.  This guide covers a _**full cluster build**_, should it be needed, AND important details for new/pre-existing cluster configurations of _**custom resource definitions and ingress controllers**_ for the Akash provider.
+
+### Custom Kubernetes Cluster Settings
+
+Akash Providers are deployed in many environments and we will make additions to these sections as when nuances are discovered.
+
+* [VMware Tanzu](broken-reference)
+
+## Quickstart Guides
+
+<details>
+
+<summary>Create a Kubernetes cluster and start your first provider</summary>
+
+```
+#!/bin/bash
+#This bootstrap makes some assumptions:
+#1 : 3 new bare-metal servers/vps/vm's using Debian 11 / must have root user and ssh password login enabled.
+#2 : A control machine with Debian 10/11 that will be seperate from the cluster. You will run this file from the control machine and use it to install Akash onto the cluster.
+#3 : Update USER, SSHPASS, NODE1, NODE2, NODE3 with your servers info.  You can add as many nodes as you like, just use the same format. "export NODEX=x.x.x.x@password"
+#set -e
+###Server settings
+USER=root #user on nodes to use/should be root.
+export NODE1=192.168.1.36@test #node IP
+export NODE2=192.168.1.26@test #node IP
+export NODE3=192.168.1.27@test #node IP
+###
+
+declare -a IPS
+readarray -t IPS <<< $(
+  env | \
+    grep '^NODE[[:digit:]]\+=' | sort | cut -d= -f2
+)
+echo "using pools ${IPS[*]}"
+
+
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root!"
+  exit
+fi
+
+
+COUNTER=0
+
+function depends(){
+apt-get update ; apt-get install -y python3-pip git sshpass software-properties-common snapd curl rsync libffi-dev
+python3 -m pip install ansible
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+git clone https://github.com/kubernetes-sigs/kubespray.git ; cd kubespray
+git checkout v2.18.0
+pip3 install -r requirements.txt
+}
+depends
+
+#Assign static IP to your Kubernetes Hosts and update the user and IP address below
+
+if [[ -f nodes.log ]]; then rm nodes.log; fi
+if [[ -f $HOME/.ssh/id_rsa ]]; then
+echo "Found SSH key on local machine"
+cat ~/.ssh/id_rsa.pub
+else
+echo "Making an SSH key on control machine"
+ssh-keygen -t rsa -C $(hostname) -f "$HOME/.ssh/id_rsa" -P "" ; cat ~/.ssh/id_rsa.pub
+fi
+
+for HOST in "${IPS[@]}"
+do
+COUNTER=$(( COUNTER + 1 ))
+IP=$(echo $HOST | cut -d'@' -f1)
+PASS=$(echo $HOST | cut -d'@' -f2)
+
+if ping -c 1 $IP &> /dev/null
+then
+echo "Found ping to $IP"
+else
+echo "All hosts not ready"
+exit
+fi
+
+echo $HOST
+echo $USER
+echo $IP
+echo $PASS
+echo $COUNTER
+export SSHPASS=$PASS
+echo $IP >> nodes.log
+
+if ssh -o BatchMode=yes -o ConnectTimeout=2 root@$IP exit
+then
+echo "Found good connection with correct SSH to $IP"
+else
+ssh-keyscan $IP >> ~/.ssh/known_hosts
+sshpass -e ssh-copy-id -i ~/.ssh/id_rsa.pub $USER@$IP
+ssh -n $USER@$IP "sed -i '/swap/ s/^/#/' /etc/fstab"
+ssh -n $USER@$IP echo "br_netfilter" >> /etc/modules
+ssh -n $USER@$IP hostnamectl set-hostname node${COUNTER} ; hostname -f
+ssh -n $USER@$IP "echo 127.0.1.1     node${COUNTER} > /etc/hosts ; cat /etc/hosts"
+ssh -n $USER@$IP reboot
+fi
+
+done
+unset SSHPASS
+echo "All hosts rebooted, waiting for them to all come online"
+sleep 3
+
+printf "Waiting for $(cat nodes.log | tail -n1):22"
+until nc -z $(cat nodes.log | tail -n1) 22 2>/dev/null; do
+    printf 'Found port 22 alive!  Waiting 15 more seconds for things to settle down...'
+    sleep 15
+done
+echo "up! Ready for Kubespraying!"
+
+function ansible(){
+#Setup ansible
+cp -rfp inventory/sample inventory/akash
+#Create config.yaml
+CONFIG_FILE=inventory/akash/hosts.yaml python3 contrib/inventory_builder/inventory.py $(cat nodes.log | sed -e :a -e '$!N; s/\n/ /; ta')
+cat inventory/akash/hosts.yaml
+#Enable gvisor for security
+ex inventory/akash/hosts.yaml <<eof
+2 insert
+  vars:
+    cluster_id: "1.0.0.1"
+    ansible_user: root
+    gvisor_enabled: true
+.
+xit
+eof
+echo "File Modified"
+cat inventory/akash/hosts.yaml
+}
+ansible
+
+function start_cluster(){
+#Run
+ansible-playbook -i inventory/akash/hosts.yaml -b -v --private-key=~/.ssh/id_rsa cluster.yml
+#Get the kubeconfig from master node
+rsync -av root@$(cat nodes.log | head -n1):/root/.kube/config kubeconfig
+#Use the new kubeconfig file for kubectl
+export KUBECONFIG=./kubeconfig
+#Get snap path right
+export PATH=$PATH:/snap/bin
+#Install kubectl and helm using snap
+snap install kubectl --classic
+snap install helm --classic
+#Change the name of the server address in kubeconfig to master
+sed -i "s/127.0.0.1/$(cat nodes.log | head -n1)/g" kubeconfig
+cp kubeconfig ../kubeconfig
+#Show the pods!
+}
+start_cluster
+
+sleep 5
+cd ..
+export KUBECONFIG=./kubeconfig
+kubectl get nodes -o wide
+
+#Run Helm
+export KUBECONFIG=$KUBECONFIG
+
+function add_helm(){
+helm repo add akash https://ovrclk.github.io/helm-charts
+helm repo update
+}
+add_helm
+
+function namespaces(){
+#Required for cluster creation, do not edit.
+kubectl create ns akash-services
+kubectl create ns ingress-nginx
+}
+namespaces
+
+kubectl label nodes --overwrite $NODE1 akash.network/role=ingress #ingress node, need at least one
+kubectl label nodes --overwrite $NODE2 akash.network/role=ingress #ingress node, need at least one
+
+kubectl label nodes --overwrite $NODE1 akash=provider #Sets first node as main node
+kubectl label nodes --overwrite $NODE2 akashrpc=rpc #Sets node as rpc node
+
+if [[ $RPC_MODE == "shared" ]]; then
+helm upgrade --install akash-provider akash/provider --namespace akash-services --set nodeSelector.akash=provider --set node=http://akash.c29r3.xyz:80/rpc --set attributes[0].key=region --set attributes[0].value=$REGION --set attributes[1].key=chia-plotting --set attributes[1].value=false --set attributes[2].key=host --set attributes[2].value=$DOMAIN --set attributes[3].key=cpu --set attributes[3].value=$CPU --set from=$ACCOUNT_ADDRESS --set key="$(cat ./key.pem | base64)" --set keysecret="$(echo $KEY_SECRET | base64)" --set chainid=$CHAIN_ID --set domain=$DOMAIN
+else
+helm upgrade --install akash-node akash/akash-node/ --namespace akash-services --set nodeSelector.akashrpc=rpc --set akash_node.from="$ACCOUNT_ADDRESS" --set akash_node.key="$(cat ./key.pem | base64)" --set akash_node.keysecret="$(echo $KEY_SECRET | base64)" --set akash_node.moniker="$MONIKER"
+echo "Waiting 15 seconds for node and provider to start" ; sleep 15
+RPC_NODE=$(kubectl get pods -o wide -n akash-services | grep $NODE2 | awk '{print $6}')
+helm upgrade --install akash-provider akash/provider --namespace akash-services --set nodeSelector.akash=provider --set node=http://$RPC_NODE:26657 --set attributes[0].key=region --set attributes[0].value=$REGION --set attributes[1].key=chia-plotting --set attributes[1].value=false --set attributes[2].key=host --set attributes[2].value=$DOMAIN --set attributes[3].key=cpu --set attributes[3].value=$CPU --set from=$ACCOUNT_ADDRESS --set key="$(cat ./key.pem | base64)" --set keysecret="$(echo $KEY_SECRET | base64)" --set chainid=$CHAIN_ID --set domain=$DOMAIN
+fi
+#Setup ingress and hostname operator
+helm upgrade --install akash-ingress akash/akash-ingress -n ingress-nginx --set domain=$DOMAIN
+helm upgrade --install hostname-operator akash/hostname-operator -n akash-services --set nodeSelector.akash=provider
+echo "INGRESS"
+kubectl get pods -o wide -n ingress-nginx
+echo "NODES"
+kubectl get nodes -n akash-services -o wide
+echo "PODS"
+kubectl get pods -n akash-services -o wide
+echo "Akash is ready!"
+```
+
+</details>
+
+<details>
+
+<summary>Already have a Kubernetes cluster? Start here!</summary>
+
+```
+#!/bin/bash
+#This bootstrap makes some assumptions:
+#1 : You have a working Kubernetes cluster and kubeconfig file.
+#2 : A control machine to run this bootstrap from and control your new cluster.  The control machine needs all the dependencies in the depends function.
+#3 : Update the Akash provider wallet settings before running.  You need to name NODE1 and NODE2 with the unique names your cluster uses. `kubectl get nodes`
+
+###Akash Provider Wallet Settings
+DOMAIN= #provider domain name
+ACCOUNT_ADDRESS= #your akash wallet address
+KEY_SECRET= #password to the exported private key of your wallet
+CHAIN_ID=akashnet-2
+MONIKER= #Unique name for your rpc node
+NODE1=node1 #This will be your provider node
+NODE2=node2 #This will be used for rpc node
+REGION= #Region of your servers (us-west, us-east, eu-west, etc)
+CPU= #AMD or Intel
+RPC_MODE=shared # "shared" or "solo"
+####
+
+#Run Helm
+export KUBECONFIG=$KUBECONFIG
+
+function add_helm(){
+helm repo add akash https://ovrclk.github.io/helm-charts
+helm repo update
+}
+add_helm
+
+function namespaces(){
+#Required for cluster creation, do not edit.
+kubectl create ns akash-services
+kubectl create ns ingress-nginx
+}
+namespaces
+
+kubectl label nodes --overwrite $NODE1 akash.network/role=ingress #ingress node, need at least one
+kubectl label nodes --overwrite $NODE2 akash.network/role=ingress #ingress node, need at least one
+
+kubectl label nodes --overwrite $NODE1 akash=provider #Sets first node as main node
+kubectl label nodes --overwrite $NODE2 akashrpc=rpc #Sets node as rpc node
+
+if [[ $RPC_MODE == "shared" ]]; then
+helm upgrade --install akash-provider akash/provider --namespace akash-services --set nodeSelector.akash=provider --set node=http://akash.c29r3.xyz:80/rpc --set attributes[0].key=region --set attributes[0].value=$REGION --set attributes[1].key=chia-plotting --set attributes[1].value=false --set attributes[2].key=host --set attributes[2].value=$DOMAIN --set attributes[3].key=cpu --set attributes[3].value=$CPU --set from=$ACCOUNT_ADDRESS --set key="$(cat ./key.pem | base64)" --set keysecret="$(echo $KEY_SECRET | base64)" --set chainid=$CHAIN_ID --set domain=$DOMAIN
+else
+helm upgrade --install akash-node akash/akash-node/ --namespace akash-services --set nodeSelector.akashrpc=rpc --set akash_node.from="$ACCOUNT_ADDRESS" --set akash_node.key="$(cat ./key.pem | base64)" --set akash_node.keysecret="$(echo $KEY_SECRET | base64)" --set akash_node.moniker="$MONIKER"
+echo "Waiting 15 seconds for node and provider to start" ; sleep 15
+RPC_NODE=$(kubectl get pods -o wide -n akash-services | grep $NODE2 | awk '{print $6}')
+helm upgrade --install akash-provider akash/provider --namespace akash-services --set nodeSelector.akash=provider --set node=http://$RPC_NODE:26657 --set attributes[0].key=region --set attributes[0].value=$REGION --set attributes[1].key=chia-plotting --set attributes[1].value=false --set attributes[2].key=host --set attributes[2].value=$DOMAIN --set attributes[3].key=cpu --set attributes[3].value=$CPU --set from=$ACCOUNT_ADDRESS --set key="$(cat ./key.pem | base64)" --set keysecret="$(echo $KEY_SECRET | base64)" --set chainid=$CHAIN_ID --set domain=$DOMAIN
+fi
+#Setup ingress and hostname operator
+helm upgrade --install akash-ingress akash/akash-ingress -n ingress-nginx --set domain=$DOMAIN
+helm upgrade --install hostname-operator akash/hostname-operator -n akash-services --set nodeSelector.akash=provider
+echo "INGRESS"
+kubectl get pods -o wide -n ingress-nginx
+echo "NODES"
+kubectl get nodes -n akash-services -o wide
+echo "PODS"
+kubectl get pods -n akash-services -o wide
+echo "Akash is ready!"
+```
+
+
+
+
+
+
+
+
+
+
+
+</details>
 
 ## Akash Provider Setup
 
@@ -22,7 +299,9 @@ The following sections will explore each step of the Akash provider setup in det
 
 ### STEP1 - Select a Host to Run the Akash Provider
 
-The Akash provider can be installed on any Kubernetes master or worker node. Or if preferred the provider may be installed on a separate host outside of the Kubernetes cluster.
+The Akash provider can be installed on any Kubernetes master or worker node.  Or if preferred the provider may be installed on a separate host outside of the Kubernetes cluster.
+
+* NOTE - if the Provider is installed on a Kubernetes host - ensure that it does not reside on the same host as the Ingress Controller as this could cause TCP port 8443 conflicts.
 
 ### STEP2 - Install Akash Software
 
@@ -53,10 +332,7 @@ vi /etc/environment
 _View within text editor prior to the update:_
 
 ```
-PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
-~                                                                                                                                                                                                          
-~                                                                                                                                                                                                          
-~  
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"                                                                   
 ```
 
 _Add the following directory, which is the Akash install location, to PATH:_
@@ -69,9 +345,6 @@ _View within the text editor following the update:_
 
 ```
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/root/bin"
-~                                                                                                                                                                                                          
-~                                                                                                                                                                                                          
-~ 
 ```
 
 _Make the new path active in the current session:_
@@ -90,7 +363,7 @@ _Expected result_:
 
 ```
 root@node2:~# akash version
-v0.14.0
+v0.14.1
 ```
 
 ### STEP3 - Create/Import Akash Account
@@ -187,44 +460,24 @@ Use the host that the Akash software was installed on for this section.
 
 _**Deployment Domain**_
 
-* Create the environment variable of DEPLOYMENT\_HOSTNAME&#x20;
+* Create the environment variable of PROVIDER\_AKASH\_DOMAIN&#x20;
 * This domain is used whenever a lease owner needs to speak directly with the provider to send a manifest or get a lease status&#x20;
-* The public DNS record for the domain should point to the Kubernetes ingress controller
-* ```
-  export DEPLOYMENT_HOSTNAME=<provider-host-domain-name>
-  ```
+
+```
+export PROVIDER_AKASH_DOMAIN=<provider-host-domain-name>
+```
 
 _**Create provider.yaml File**_
 
 * Create a file with the name of provider.yaml and add the contents below
+* **NOTE** - Please replace <`PROVIDER_AKASH_DOMAIN>` variable with your akash domain (i.e. `provider.<yourdomain>.com`)
+* _**Attributes**_** -** a thorough discussion of provider attributes can be found [here](https://docs.akash.network/operations/akash-audited-attributes).
 
 ```
-host: https://$DEPLOYMENT_HOSTNAME:8443
+host: https://<PROVIDER_AKASH_DOMAIN>:8443
 attributes:
   - key: host
     value: <nameOfYourOrganization>
-```
-
-* Review [this guide](https://docs.akash.network/operations/akash-audited-attributes#standard-attributes) for a discussion on Akash standard attributes and how/why to use on your provider.
-
-_**Example of Creating Provider File**_
-
-* These screenshots shows the previous steps for further clarity
-
-```
-root@node1:~# export DEPLOYMENT_HOSTNAME=chainzeroakash.net
-root@node1:~# vi provider.yaml
-```
-
-* File details within an editor
-
-```
-host: https://$DEPLOYMENT_HOSTNAME:8443
-attributes:
-  - key: host
-    value: chainzero
-~                                                                                                                                                                                                          
-~   
 ```
 
 _**Create the Akash Provider**_
@@ -238,10 +491,14 @@ _**Create the Akash Provider**_
 export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
 AKASH_PROVIDER_KEY=<key-name>
 AKASH_HOME=<keyring-location>
+
+export AKASH_GAS_PRICES=0.025uakt
+export AKASH_GAS=auto
+export AKASH_GAS_ADJUSTMENT=1.3
 ```
 
 ```
-akash tx provider create provider.yaml --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND --node=$AKASH_NODE --chain-id=$AKASH_CHAIN_ID --fees 5000uakt
+akash tx provider create provider.yaml --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND --node=$AKASH_NODE --chain-id=$AKASH_CHAIN_ID
 ```
 
 _**Example of Creating the Provider**_
@@ -253,7 +510,7 @@ AKASH_HOME=/root/.akash
 ```
 
 ```
-root@node1:~# akash tx provider create provider.yaml --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND --node=$AKASH_NODE --chain-id=$AKASH_CHAIN_ID --fees 5000uakt
+root@node1:~# akash tx provider create provider.yaml --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --keyring-backend=$AKASH_KEYRING_BACKEND --node=$AKASH_NODE --chain-id=$AKASH_CHAIN_ID
 
 Enter keyring passphrase:
 
@@ -266,34 +523,22 @@ confirm transaction before signing and broadcasting [y/N]: y
 root@node1:~#
 ```
 
+
+
 ### STEP6 - Create a TLS Certificate
 
-Create a TLS certificate for your provider. The certificate will be stored on the blockchain.
+#### Generate Server Certificate
+
+* Note: If it errors with `Error: certificate error: cannot overwrite certificate`, then add `--overwrite` should you want to overwrite the cert. Normally you can ignore that error and proceed with publishing the cert (next step).
 
 ```
-akash tx cert create server $DEPLOYMENT_HOSTNAME --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --node=$AKASH_NODE --fees 5000uakt
+akash tx cert generate server $PROVIDER_AKASH_DOMAIN --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --node=$AKASH_NODE --gas-prices="0.025uakt" --gas="auto" --gas-adjustment=1.15
 ```
 
-_**Example of Creating the Certificate**_
+#### Publish Certificate
 
 ```
-root@node1:~# 
-
-root@node1:~# akash tx cert create server $DEPLOYMENT_HOSTNAME --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --node=$AKASH_NODE --fees 5000uakt
-
-Enter keyring passphrase:
-
-no certificate found for address akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx. generating new...
-
-Enter keyring passphrase:
-
-{"body":{"messages":[{"@type":"/akash.cert.v1beta1.MsgCreateCertificate","owner":"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx","cert":"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNFRENDQWJhZ0F3SUJBZ0lJRnJYcVY3ZU9BRTR3Q2dZSUtvWkl6ajBFQXdJd1NqRTFNRE1HQTFVRUF4TXMKWVd0aGMyZ3hlRzE2T1dWek9XRjVPV3h1T1hneWJUTnhPR1JzZFRCaGJIaG1NR3gwWTJVM2VXdHFabmd4RVRBUApCZ1ZuZ1FVQ0JoTUdkakF1TUM0eE1CNFhEVEl4TVRFd09URTFNamd5TWxvWERUSXlNVEV3T1RFMU1qZ3lNbG93ClNqRTFNRE1HQTFVRUF4TXNZV3RoYzJneGVHMTZPV1Z6T1dGNU9XeHVPWGd5YlROeE9HUnNkVEJoYkhobU1HeDAKWTJVM2VXdHFabmd4RVRBUEJnVm5nUVVDQmhNR2RqQXVNQzR4TUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowRApBUWNEUWdBRTYrY1Q0ZkprQ3FjK01ibGdKdldjREhLK3BGL1JLb241V3NLSGdqODZDNnZpT2dGa3ZhRzVocGdZCkV2SXl2YkwvdHNxdjFtZ0I3ZzNnRG1ZTnNFaSt0YU9CaFRDQmdqQU9CZ05WSFE4QkFmOEVCQU1DQkRBd0hRWUQKVlIwbEJCWXdGQVlJS3dZQkJRVUhBd0lHQ0NzR0FRVUZCd01CTUF3R0ExVWRFd0VCL3dRQ01BQXdIUVlEVlIwUgpCQll3RklJU1kyaGhhVzU2WlhKdllXdGhjMmd1Ym1WME1DUUdBMVVkSGdFQi93UWFNQmlnRmpBVWdoSmphR0ZwCmJucGxjbTloYTJGemFDNXVaWFF3Q2dZSUtvWkl6ajBFQXdJRFNBQXdSUUloQU01c3NzaWJ6alpsRmdBWE9vdVQKTWc5YlBUeFBGNHNTZGNzcUFwOW9xSjh2QWlCQ2V0c2pwanlXWUhmdFBELzV0eGJVNFhqNUg4NWltYzY2d0lHSApqUFZCNnc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==","pubkey":"LS0tLS1CRUdJTiBFQyBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFNitjVDRmSmtDcWMrTWJsZ0p2V2NESEsrcEYvUgpLb241V3NLSGdqODZDNnZpT2dGa3ZhRzVocGdZRXZJeXZiTC90c3F2MW1nQjdnM2dEbVlOc0VpK3RRPT0KLS0tLS1FTkQgRUMgUFVCTElDIEtFWS0tLS0tCg=="}],"memo":"","timeout_height":"0","extension_options":[],"non_critical_extension_options":[]},"auth_info":{"signer_infos":[],"fee":{"amount":[{"denom":"uakt","amount":"5000"}],"gas_limit":"200000","payer":"","granter":""}},"signatures":[]}
-
-confirm transaction before signing and broadcasting [y/N]: y
-
-{"height":"3413739","txhash":"7E7D6E588956E39607DF7986A7B1FF75327D8456C3D18A2581BABDC5EB24E623","codespace":"","code":0,"data":"0A190A17636572742D6372656174652D6365727469666963617465","raw_log":"[{\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"cert-create-certificate\"},{\"key\":\"sender\",\"value\":\"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8\"},{\"key\":\"sender\",\"value\":\"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx\"},{\"key\":\"amount\",\"value\":\"5000uakt\"}]}]}]","logs":[{"msg_index":0,"log":"","events":[{"type":"message","attributes":[{"key":"action","value":"cert-create-certificate"},{"key":"sender","value":"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx"}]},{"type":"transfer","attributes":[{"key":"recipient","value":"akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"},{"key":"sender","value":"akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx"},{"key":"amount","value":"5000uakt"}]}]}],"info":"","gas_wanted":"200000","gas_used":"90954","tx":null,"timestamp":""}
-
-root@node1:~#
+akash tx cert publish server --chain-id $AKASH_CHAIN_ID --keyring-backend $AKASH_KEYRING_BACKEND --from $AKASH_PROVIDER_KEY --home=$AKASH_HOME --node=$AKASH_NODE --gas-prices="0.025uakt" --gas="auto" --gas-adjustment=1.15
 ```
 
 ### STEP7 - Configure Kubectl
@@ -375,23 +620,36 @@ node3   Ready    <none>                 6d2h   v1.22.3
 
 ### STEP8 - Start the Provider
 
-In our final step the provider is started.
+In our final step the provider is started.  We will run the provider process as a service to ensure it remains active across server reboots.
 
-_**Kubernetes Domain**_
+_**Domain Name Notes**_
 
-* Create the environment variable of KUBERNETES\_HOSTNAME
-* The variable will be used as the value for --cluster-public-hostname during provider start up and is the publicly accessible hostname of the Kubernetes cluster.
+* The variable used as the value for --cluster-public-hostname during provider start up and is the publicly accessible hostname of the Kubernetes cluster.
 * If multiple master nodes exist in the Kubernetes cluster, either the DNS record should point to the IP addresses of all master nodes or an alternative load balancing strategy should be used.
-* **NOTE -** within this guide --cluster-public-hostname (Kubernetes Cluster) and  --deployment-ingress-domain (Ingress Controller) point to the same domain name but often the domains will be different.
+
+_**Store Keyring Passphrase**_
 
 ```
-export KUBERNETES_HOSTNAME=chainzeroakash.net
+echo "mypassword" | tee /root/akash/key-pass.txt
 ```
 
-_**Start Provider**_
+_**Create Script**_
 
 ```
-akash provider run \
+cat > /root/akash/start-provider.sh << 'EOF'
+#!/usr/bin/env bash
+
+export AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
+export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)"
+export AKASH_HOME=/root/.akash
+export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
+export AKASH_PROVIDER_KEY=<REPLACE-WITH-PROVIDER-KEY>
+export PROVIDER_INGRESS_DOMAIN=<REPLACE-WITH-PUBLIC-DOMAIN>
+export PROVIDER_AKASH_DOMAIN=<REPLACE-WITH-PUBLIC-DOMAIN>
+
+cd /root/akash
+( sleep 2s; cat key-pass.txt; cat key-pass.txt ) | \
+  /root/bin/akash provider run \
   --home $AKASH_HOME \
   --chain-id $AKASH_CHAIN_ID \
   --node $AKASH_NODE \
@@ -400,7 +658,7 @@ akash provider run \
   --fees 1000uakt \
   --kubeconfig $KUBECONFIG \
   --cluster-k8s true \
-  --deployment-ingress-domain $DEPLOYMENT_HOSTNAME \
+  --deployment-ingress-domain $PROVIDER_INGRESS_DOMAIN \
   --deployment-ingress-static-hosts true \
   --bid-price-strategy scale \
   --bid-price-cpu-scale 0.001 \
@@ -409,28 +667,85 @@ akash provider run \
   --bid-price-endpoint-scale 0 \
   --bid-deposit 5000000uakt \
   --cluster-node-port-quantity 1000 \
-  --cluster-public-hostname $KUBERNETES_HOSTNAME
+  --cluster-public-hostname $PROVIDER_AKASH_DOMAIN
+
+EOF
 ```
 
-_**Expected Output**_
-
-* When the provider starts the initial output should look like the following.&#x20;
-* The full output is not displayed but only the first lines indicating a successful start
+_**Make Script Executable**_
 
 ```
-root@node1:~# akash provider run   --home $AKASH_HOME   --chain-id $AKASH_CHAIN_ID   --node $AKASH_NODE   --keyring-backend=file   --from $AKASH_PROVIDER_KEY   --fees 1000uakt   --kubeconfig $KUBECONFIG   --cluster-k8s true   --deployment-ingress-domain $DEPLOYMENT_HOSTNAME   --deployment-ingress-static-hosts true   --bid-price-strategy scale   --bid-price-cpu-scale 0.001   --bid-price-memory-scale 0.001   --bid-price-storage-scale 0.00001   --bid-price-endpoint-scale 0   --bid-deposit 5000000uakt   --cluster-node-port-quantity 1000   --cluster-public-hostname $KUBERNETES_HOSTNAME
+chmod +x /root/akash/start-provider.sh
+```
 
-Enter keyring passphrase:
-Enter keyring passphrase:
+_**Create Service**_
 
-I[2021-11-09|16:00:48.251] found leases                                 module=provider-cluster cmp=service num-active=0
-I[2021-11-09|16:00:48.251] found deployments                            module=provider-cluster cmp=service num-active=0 num-skipped=0
-D[2021-11-09|16:00:48.251] inventory ready                              module=provider-cluster cmp=service cmp=inventory-service
-D[2021-11-09|16:00:48.251] inventory fetched                            module=provider-cluster cmp=service cmp=inventory-service nodes=1
-D[2021-11-09|16:00:48.251] node resources                               module=provider-cluster cmp=service cmp=inventory-service node-id=solo available-cpu="units:<val:\"5000\" > " available-memory="quantity:<val:\"34359738368\" > " available-storage="quantity:<val:\"549755813888\" > "
-I[2021-11-09|16:00:49.982] syncing sequence                             cmp=client/broadcaster local=2 remote=2
-I[2021-11-09|16:00:51.558] found orders                                 module=bidengine-service count=109
-D[2021-11-09|16:00:51.558] creating catchup order                       module=bidengine-service order=order/akash1057uu9jaehgqwk5g8g85nuq3esu0n2wxhejk9z/2200682/1/1
-D[2021-11-09|16:00:51.558] creating catchup order                       module=bidengine-service order=order/akash109pttclfdj6erune0e8v9zed2pkvczq63u8yzp/3411023/1/1
-D[2021-11-09|16:00:51.558] creating catchup order                       module=bidengine-service order=order/akash109pttclfdj6erune0e8v9zed2pkvczq63u8yzp/3411064/1/1
+```
+cat > /etc/systemd/system/akash-provider.service << 'EOF'
+[Unit]
+Description=Akash Provider
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/root/akash/start-provider.sh
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=15
+StartLimitInterval=200
+StartLimitBurst=10
+#LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+_**Start and Persist the Provider Service**_
+
+```
+systemctl daemon-reload
+systemctl start akash-provider
+systemctl enable akash-provider
+```
+
+_**Confirm the Provide Status**_
+
+```
+journalctl -u akash-provider --since '5 min ago' -f
+```
+
+
+
+### STEP9 - Create the Hostname Operator Service
+
+```
+cat /etc/systemd/system/akash-hostname-operator.service
+[Unit]
+Description=Akash Hostname Operator
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=akash provider hostname-operator
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=15
+StartLimitInterval=200
+StartLimitBurst=10
+#LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
+
+### STEP10- Start the Hostname Operator Service
+
+```
+systemctl start akash-hostname-operator
+systemctl enable akash-hostname-operato
 ```

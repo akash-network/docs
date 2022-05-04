@@ -38,7 +38,7 @@
 * [Run an Akash Node](operations/node/README.md)
   * [RPC Service](operations/node/rpc-service.md)
   * [API Service](operations/node/api-service.md)
-  * [Upgrade to Akash 3.0](/guides/node/upgrades/akash-3.0.md)
+  * [Upgrade to Akash 3.0](guides/node/upgrades/akash-3.0.md)
 * [Build a Cloud Provider](operations/provider/README.md)
   * [Kubernetes Cluster](operations/provider/kubernetes-cluster.md)
   * [gVisor Issue - No system-cgroup v2 Support](operations/provider/gvisor-issue-no-system-cgroup-v2-support.md)
@@ -52,6 +52,11 @@
 * [CLI Commands](cli/command-line-interface.md)
 * [Setup your Environment](cli/shell-variables.md)
 * [Create Your Account](cli/wallet.md)
+
+***
+
+* [Features](features.md)
+* [Other Resources](other-resources.md)
 
 ## About Akash <a href="#glossary" id="glossary"></a>
 
