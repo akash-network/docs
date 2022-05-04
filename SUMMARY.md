@@ -39,12 +39,20 @@
   * [RPC Service](operations/node/rpc-service.md)
   * [API Service](operations/node/api-service.md)
   * [Upgrade to Akash 3.0](guides/node/upgrades/akash-3.0.md)
-* [Build a Cloud Provider](operations/provider/README.md)
-  * [Kubernetes Cluster](operations/provider/kubernetes-cluster.md)
-  * [gVisor Issue - No system-cgroup v2 Support](operations/provider/gvisor-issue-no-system-cgroup-v2-support.md)
-  * [Provider Networks](operations/provider/testnet.md)
 * [Running a Validator](operations/validator.md)
 * [Akash Audited Attributes](operations/akash-audited-attributes.md)
+
+***
+
+* [Providers](providers/README.md)
+  * [Build a Cloud Provider](providers/build-a-cloud-provider/README.md)
+    * [Kubernetes Cluster](providers/build-a-cloud-provider/kubernetes-cluster.md)
+    * [gVisor Issue - No system-cgroup v2 Support](providers/build-a-cloud-provider/gvisor-issue-no-system-cgroup-v2-support.md)
+    * [Provider Networks](providers/build-a-cloud-provider/provider-networks.md)
+  * [Custom Kubernetes Cluster Settings](providers/custom-kubernetes-cluster-settings/README.md)
+    * [VMware Tanzu](providers/custom-kubernetes-cluster-settings/vmware-tanzu.md)
+  * [Akash Audited Attributes](providers/akash-audited-attributes.md)
+  * [Akash Provider Migration Guide - 0.14.X to 0.16.3](providers/akash-provider-migration-guide-0.14.x-to-0.16.3.md)
 
 ## Command Line Interface (CLI) <a href="#cli" id="cli"></a>
 

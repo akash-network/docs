@@ -31,7 +31,7 @@ We are seeding the market with top-tier data center providers and negotiating lo
 
 ### How do I use Akash?
 
-If you're new to Akash, start with the [**Getting Started guide**](cli/install.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](operations/node/), a [validator guide](operations/validator.md), a [cloud provider guide](operations/provider/), and several [deployment guides](guides/awesome-akash.md) for running various apps on Akash.
+If you're new to Akash, start with the [**Getting Started guide**](cli/install.md) and go from there. Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](operations/node/), a [validator guide](operations/validator.md), a [cloud provider guide](broken-reference), and several [deployment guides](guides/awesome-akash.md) for running various apps on Akash.
 
 ### Why is Akash different than other Cloud platforms?
 
@@ -42,8 +42,6 @@ Like Airbnb for server hosting, Akash is a marketplace that gives you control ov
 ### Why is Akash different than other decentralized platforms?
 
 Akash hosts [containers](./#what-is-a-container) where users can run _**any**_ Cloud-Native application. There is no need to re-write the entire internet in a new proprietary language, and there is no vendor lock-in to prevent you from switching Cloud providers. The deployment file is transferred over a private peer-to-peer network isolated from the blockchain. Asset transfer occurs off-chain over mTLS to provide the security and performance required by mission-critical applications running on the Cloud.
-
-
 
 ### What is the Stack Definition Language (SDL)?
 

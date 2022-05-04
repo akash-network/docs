@@ -1,5 +1,7 @@
 # Build a Cloud Provider
 
+
+
 ## Prerequisites of an Akash Provider
 
 ### Wallet Funding - Minimum of 5 AKT
@@ -310,6 +312,8 @@ The Akash software install process on a Linux server is shown in this step.
 _**Specify the Akash Version**_
 
 * These commands will retrieve the latest, stable version of the Akash software_**,**_ store the version in a local variable, and install that version.
+
+
 
 ```
 AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
@@ -716,8 +720,6 @@ _**Confirm the Provide Status**_
 journalctl -u akash-provider --since '5 min ago' -f
 ```
 
-
-
 ### STEP9 - Create the Hostname Operator Service
 
 ```
@@ -741,11 +743,9 @@ StartLimitBurst=10
 WantedBy=multi-user.target
 ```
 
-
-
 ### STEP10- Start the Hostname Operator Service
 
 ```
 systemctl start akash-hostname-operator
-systemctl enable akash-hostname-operato
+systemctl enable akash-hostname-operator
 ```
