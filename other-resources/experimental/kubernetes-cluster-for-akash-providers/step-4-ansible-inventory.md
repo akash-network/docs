@@ -1,0 +1,172 @@
+# STEP 4 - Ansible Inventory
+
+Ansible will use an inventory file to determine the hosts Kubernetes should be installed on.
+
+## **Inventory File**
+
+* Use the following commands on the Ansible host and in the “kubespray” directory
+* Replace the IP addresses in the declare command with the addresses of your Kubernetes hosts **** (master and worker nodes)
+* Running these commands will create a hosts.yaml file within the kubespray/inventory/akash directory
+* NOTE - ensure that you are still within the Python virtual environment when running these commands.  Your cursor should have a “(venv)” prefix.  If needed - re-enter the virtual environment by issuing:
+  * `source venv/bin/activate`
+
+```
+cd ~/kubespray
+
+cp -rfp inventory/sample inventory/akash
+
+#REPLACE IP ADDRESSES BELOW WITH YOUR KUBERNETES CLUSTER IP ADDRESSES
+declare -a IPS=(10.0.10.136 10.0.10.239 10.0.10.253 10.0.10.9)
+
+CONFIG_FILE=inventory/akash/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
+```
+
+### **Expected Result (Example)**
+
+```
+(venv) root@ip-10-0-10-145:/home/ubuntu/kubespray# CONFIG_FILE=inventory/akash/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
+
+DEBUG: Adding group all
+DEBUG: Adding group kube_control_plane
+DEBUG: Adding group kube_node
+DEBUG: Adding group etcd
+DEBUG: Adding group k8s_cluster
+DEBUG: Adding group calico_rr
+DEBUG: adding host node1 to group all
+DEBUG: adding host node2 to group all
+DEBUG: adding host node3 to group all
+DEBUG: adding host node4 to group all
+DEBUG: adding host node1 to group etcd
+DEBUG: adding host node2 to group etcd
+DEBUG: adding host node3 to group etcd
+DEBUG: adding host node1 to group kube_control_plane
+DEBUG: adding host node2 to group kube_control_plane
+DEBUG: adding host node3 to group kube_control_plane
+
+DEBUG: adding host node1 to group kube_node
+DEBUG: adding host node2 to group kube_node
+DEBUG: adding host node3 to group kube_node
+DEBUG: adding host node4 to group kube_node
+```
+
+### **Verification of Generated File**
+
+* Open the hosts.yaml file in VI (Visual Editor) or nano
+* Update the kube\_control\_plane category if needed with full list of hosts that should be master nodes
+
+```
+vi ~/kubespray/inventory/akash/hosts.yaml
+```
+
+#### **Example hosts.yaml File**
+
+```
+all:
+  hosts:
+    node1:
+      ansible_host: 10.0.10.136
+      ip: 10.0.10.136
+      access_ip: 10.0.10.136
+    node2:
+      ansible_host: 10.0.10.239
+      ip: 10.0.10.239
+      access_ip: 10.0.10.239
+    node3:
+      ansible_host: 10.0.10.253
+      ip: 10.0.10.253
+      access_ip: 10.0.10.253
+    node4:
+      ansible_host: 10.0.10.9
+      ip: 10.0.10.9
+      access_ip: 10.0.10.9
+  children:
+    kube_control_plane:
+      hosts:
+        node1:
+        node2:
+        node3:
+    kube_node:
+      hosts:
+        node1:
+        node2:
+        node3:
+        node4:
+    etcd:
+      hosts:
+        node1:
+        node2:
+        node3:
+    k8s_cluster:
+      children:
+        kube_control_plane:
+        kube_node:
+    calico_rr:
+      hosts: {}
+```
+
+## Manual Edits/Insertions of the hosts.yaml Inventory File
+
+* Open the hosts.yaml file in VI (Visual Editor) or nano
+
+```
+vi ~/kubespray/inventory/akash/hosts.yaml
+```
+
+* Within the YAML file’s “all” stanza and prior to the “hosts” sub-stanza level  - insert the following vars stanza
+
+```
+vars:
+  cluster_id: "1.0.0.1"
+  ansible_user: root
+  gvisor_enabled: true
+```
+
+* The hosts.yaml file should look like this once finished
+
+```
+all:
+  vars:
+    cluster_id: "1.0.0.1"
+    ansible_user: root
+    gvisor_enabled: true
+  hosts:
+    node1:
+      ansible_host: 10.0.10.136
+      ip: 10.0.10.136
+      access_ip: 10.0.10.136
+    node2:
+      ansible_host: 10.0.10.239
+      ip: 10.0.10.239
+      access_ip: 10.0.10.239
+    node3:
+      ansible_host: 10.0.10.253
+      ip: 10.0.10.253
+      access_ip: 10.0.10.253
+    node4:
+      ansible_host: 10.0.10.9
+      ip: 10.0.10.9
+      access_ip: 10.0.10.9
+  children:
+    kube_control_plane:
+      hosts:
+        node1:
+        node2:
+        node3:
+    kube_node:
+      hosts:
+        node1:
+        node2:
+        node3:
+        node4:
+    etcd:
+      hosts:
+        node1:
+        node2:
+        node3:
+    k8s_cluster:
+      children:
+        kube_control_plane:
+        kube_node:
+    calico_rr:
+      hosts: {}
+```

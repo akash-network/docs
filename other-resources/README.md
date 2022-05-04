@@ -1,3 +1,2 @@
 # Other Resources
 
-GH
