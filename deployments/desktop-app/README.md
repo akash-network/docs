@@ -6,10 +6,10 @@ The Akashlytics Deploy Tool is a desktop application which simplifies the deploy
 
 This guide will cover the following topics:
 
-* [Installation package download instructions and installation](broken-reference)
-* [Initial Configuration](broken-reference)
-* [Walkthrough of a example WordPress deployment using the tool](broken-reference)
-* [Manage Deployments](broken-reference)
-*   [Define a custom RPC node](broken-reference)
+* [Installation package download instructions and installation](akashlytics-deploy-installation.md)
+* [Initial Configuration](initial-configuration.md)
+* [Walkthrough of a example WordPress deployment using the tool](wordpress-deployment-example.md)
+* [Manage Deployments](manage-deployments.md)
+*   [Define a custom RPC node](custom-rpc-node.md)
 
     ### ****

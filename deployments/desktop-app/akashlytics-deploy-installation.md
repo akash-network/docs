@@ -4,7 +4,7 @@
 
 An Akash wallet with available mnemonic phrase will be needed.&#x20;
 
-Follow our [Keplr Wallet](broken-reference) guide to create your first wallet if necessary.
+Follow our [Keplr Wallet](../../token/keplr.md) guide to create your first wallet if necessary.
 
 ## **Akashlytics Deploy Installation**
 

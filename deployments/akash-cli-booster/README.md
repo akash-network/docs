@@ -4,9 +4,9 @@ The Akash CLI Booster was created to make the use of the current command line to
 
 The Akash CLI Booster will receive continued updates and new features.  Review the latest updates and through list of current features [here](https://github.com/arno01/akash-tools/tree/main/cli-booster).
 
-* [Getting Started with the CLI Booster](broken-reference)
-* [Creating Deployments](broken-reference)
-* [Close a Deployment](broken-reference)
-* [List All Active Deployments](broken-reference)
-* [Access a Deployment’s Shell](broken-reference)
-* [Obtain a Deployment’s Logs](broken-reference)
+* [Getting Started with the CLI Booster](getting-started-with-the-cli-booster.md)
+* [Creating Deployments](creating-a-deployment-with-the-cli-booster.md)
+* [Close a Deployment](close-a-deployment.md)
+* [List All Active Deployments](list-all-active-deployments.md)
+* [Access a Deployment’s Shell](access-a-deployments-shell.md)
+* [Obtain a Deployment’s Logs](obtain-a-deployments-logs.md)

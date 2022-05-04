@@ -7,7 +7,7 @@ In this section we will configure the following:
 
 **STEP1 - Import Existing Wallet**
 
-* The first thing you will need is a [wallet](broken-reference) with a mnemonic phrase you have access to.
+* The first thing you will need is a[ wallet ](../../token/keplr.md)with a mnemonic phrase you have access to.
 * In the tool you can choose a name for this wallet. This will not affect the functionality of the tool but is just an easy way to track what wallet is currently in use.
 * Next choose a password that you will remember for the wallet.
 

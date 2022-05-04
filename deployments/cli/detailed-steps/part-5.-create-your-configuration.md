@@ -10,7 +10,7 @@ curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deplo
 
 ### Modify your Configuration
 
-You may use the sample deployment file as-is or modify it for your own needs as desscribed in our [SDL (Stack Definition Language)](../../../sdl/) documentation. A typical modification would be to reference your own image instead of our demo app image.
+You may use the sample deployment file as-is or modify it for your own needs as dsscribed in our [SDL (Stack Definition Language)](../../../sdl/) documentation. A typical modification would be to reference your own image instead of our demo app image.
 
 #### EXAMPLE CONFIGURATION:
 

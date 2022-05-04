@@ -6,5 +6,5 @@ The **Akash** command-line client is used to interact with deployments. The `aka
 
 We offer two guides to assist in getting started with the Akash CLI:
 
-* [Streamlined Steps](broken-reference)
-* [Detailed Steps](broken-reference)
+* [Streamlined Steps](streamlined-steps/)
+* [Detailed Steps](detailed-steps/)
