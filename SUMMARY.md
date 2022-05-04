@@ -55,6 +55,13 @@
     * [Verify HTTPS](integrations/tls-termination-of-akash-deployments/verify-https.md)
     * [Troubleshooting](integrations/tls-termination-of-akash-deployments/troubleshooting.md)
   * [Chia on Akash](integrations/chia-on-akash.md)
+  * [Polygon on Akash](integrations/polygon-on-akash.md)
+  * [Mine Raptoreum on Akash Network](integrations/mine-raptoreum-on-akash-network.md)
+  * [Unstoppable Web 2.0](integrations/unstoppable-web-2.0.md)
+  * [Multi-Tiered Deployment](integrations/multi-tier-app.md)
+  * [Helium Validator](integrations/helium-validator.md)
+  * [PostgreSQL restore/backup](integrations/postgresql-restore-backup.md)
+  * [Ruby on Rails with Sia and Auth0](integrations/ruby-on-rails-with-sia-and-auth0.md)
 * [Providers](providers/README.md)
   * [Build a Cloud Provider](providers/build-a-cloud-provider/README.md)
     * [Kubernetes Cluster](providers/build-a-cloud-provider/kubernetes-cluster.md)
@@ -64,16 +71,6 @@
     * [VMware Tanzu](providers/custom-kubernetes-cluster-settings/vmware-tanzu.md)
   * [Akash Audited Attributes](providers/akash-audited-attributes.md)
   * [Akash Provider Migration Guide - 0.14.X to 0.16.3](providers/akash-provider-migration-guide-0.14.x-to-0.16.3.md)
-
-## Tutorials <a href="#deploy" id="deploy"></a>
-
-* [Mine Raptoreum on Akash Network](deploy/mine-raptoreum-on-akash-network.md)
-* [Polygon on Akash](deploy/polygon-on-akash.md)
-* [Unstoppable Web 2.0](deploy/unstoppable-web-2.0.md)
-* [Multi-Tiered Deployment](deploy/multi-tier-app.md)
-* [Helium Validator](deploy/helium-validator.md)
-* [PostgreSQL restore/backup](deploy/postgresql-restore-backup.md)
-* [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
 
 ## Operations
 
