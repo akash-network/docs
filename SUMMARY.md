@@ -1,8 +1,14 @@
 # Table of contents
 
-* [What is Akash?](README.md)
-* [Technical Support](support.md)
-* [Stack Definition Language (SDL)](stack-definition-language.md)
+* [Intro to Akash](README.md)
+  * [What is Akash?](intro-to-akash/readme.md)
+  * [Technical Support](intro-to-akash/support.md)
+  * [Stack Definition Language (SDL)](intro-to-akash/stack-definition-language.md)
+* [Tokens and Wallets](tokens-and-wallets/README.md)
+  * [Get Free Tokens](tokens-and-wallets/funding.md)
+  * [Buy Akash Tokens](tokens-and-wallets/buy.md)
+  * [Keplr Wallet](tokens-and-wallets/keplr.md)
+  * [Mixin Messenger for AKT](tokens-and-wallets/mixin-messenger-for-akt.md)
 * [Deployments](deployments/README.md)
   * [Desktop App](deployments/desktop-app/README.md)
     * [Akashlytics Deploy Installation](deployments/desktop-app/akashlytics-deploy-installation.md)
@@ -50,16 +56,9 @@
   * [Akash Audited Attributes](providers/akash-audited-attributes.md)
   * [Akash Provider Migration Guide - 0.14.X to 0.16.3](providers/akash-provider-migration-guide-0.14.x-to-0.16.3.md)
 
-## Using Akash Tokens <a href="#token" id="token"></a>
-
-* [Get Free Tokens](token/funding.md)
-* [Buy Akash Tokens](token/buy.md)
-* [Keplr Wallet](token/keplr.md)
-
 ## Tutorials <a href="#deploy" id="deploy"></a>
 
 * [Mine Raptoreum on Akash Network](deploy/mine-raptoreum-on-akash-network.md)
-* [Mixin Messenger for AKT](deploy/mixin-messenger-for-akt.md)
 * [Polygon on Akash](deploy/polygon-on-akash.md)
 * [Unstoppable Web 2.0](deploy/unstoppable-web-2.0.md)
 * [Multi-Tiered Deployment](deploy/multi-tier-app.md)

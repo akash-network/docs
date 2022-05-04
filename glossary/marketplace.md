@@ -34,8 +34,8 @@ A typical application deployment on Akash will follow this flow:
 3. Their submission generates an [order](marketplace.md#order) on the marketplace.
 4. Providers that would like to fulfill that order [bid](marketplace.md#bid) on it.
 5. After some period of time, a winning [bid](marketplace.md#bid) for the [order](marketplace.md#order) is chosen, and a [lease](marketplace.md#lease) is created.
-6. Once a [lease](marketplace.md#lease) has been created, the tenant submits a [manifest](../stack-definition-language.md) to the provider.
-7. The provider executes workloads as instructed by the [manifest](../stack-definition-language.md).
+6. Once a [lease](marketplace.md#lease) has been created, the tenant submits a [manifest](../intro-to-akash/stack-definition-language.md) to the provider.
+7. The provider executes workloads as instructed by the [manifest](../intro-to-akash/stack-definition-language.md).
 8. The workload is running - if it is a web application it can be visited
 9. The provider or tenant eventually closes the [lease](marketplace.md#lease), shutting down the workload.
 
@@ -54,12 +54,10 @@ The lifecycle of a typical application deployment is as follows:
 3. Their submission generates an [order](marketplace.md#order) on the marketplace.
 4. Providers that would like to fulfill that order [bid](marketplace.md#bid) on it.
 5. After some period of time, a winning [bid](marketplace.md#bid) for the [order](marketplace.md#order) is chosen, and a [lease](marketplace.md#lease) is created.
-6. Once a [lease](marketplace.md#lease) has been created, the tenant submits a [manifest](../stack-definition-language.md) to the provider.
-7. The provider executes workloads as instructed by the [manifest](../stack-definition-language.md).
+6. Once a [lease](marketplace.md#lease) has been created, the tenant submits a [manifest](../intro-to-akash/stack-definition-language.md) to the provider.
+7. The provider executes workloads as instructed by the [manifest](../intro-to-akash/stack-definition-language.md).
 8. The workload is running - if it is a web application it can be visited
 9. The provider or tenant eventually closes the [lease](marketplace.md#lease), shutting down the workload.
-
-
 
 ## Payments
 
@@ -90,10 +88,10 @@ Audited attributes allow users deploying applications to be more selective about
 
 ## On-Chain Parameters
 
-| Name                     | Initial Value | Description                                         |
-| ------------------------ | ------------- | --------------------------------------------------- |
-| `deployment_min_deposit` | `5akt`        | Minimum deposit to make deployments.  Target: \~$10 |
-| `bid_min_deposit`        | `50akt`       | Deposit amount required to bid.  Target: \~$100     |
+| Name                     | Initial Value | Description                                        |
+| ------------------------ | ------------- | -------------------------------------------------- |
+| `deployment_min_deposit` | `5akt`        | Minimum deposit to make deployments. Target: \~$10 |
+| `bid_min_deposit`        | `50akt`       | Deposit amount required to bid. Target: \~$100     |
 
 ## Transactions
 
@@ -103,12 +101,12 @@ Creates a [deployment](marketplace.md#deployment), and open [groups](marketplace
 
 #### Parameters
 
-| Name            | Description                                                     |
-| --------------- | --------------------------------------------------------------- |
-| `DeploymentID`  | ID of Deployment.                                               |
-| `DepositAmount` | Deposit amount.  Must be greater than `deployment_min_deposit`. |
-| `Version`       | Hash of the manifest that is sent to the providers.             |
-| `Groups`        | A list of [group](marketplace.md#group) descriptons.            |
+| Name            | Description                                                    |
+| --------------- | -------------------------------------------------------------- |
+| `DeploymentID`  | ID of Deployment.                                              |
+| `DepositAmount` | Deposit amount. Must be greater than `deployment_min_deposit`. |
+| `Version`       | Hash of the manifest that is sent to the providers.            |
+| `Groups`        | A list of [group](marketplace.md#group) descriptons.           |
 
 ### `DeploymentDeposit`
 
@@ -116,10 +114,10 @@ Add funds to a deployment's balance.
 
 #### Parameters
 
-| Name            | Description                                                    |
-| --------------- | -------------------------------------------------------------- |
-| `DeploymentID`  | ID of Deployment.                                              |
-| `DepositAmount` | Deposit amount.  Must be greater than `deployment_min_deposit` |
+| Name            | Description                                                   |
+| --------------- | ------------------------------------------------------------- |
+| `DeploymentID`  | ID of Deployment.                                             |
+| `DepositAmount` | Deposit amount. Must be greater than `deployment_min_deposit` |
 
 ### `GroupClose`
 
@@ -157,11 +155,11 @@ Sent by a provider to bid on an open [order](marketplace.md#order). The required
 
 #### Parameters
 
-| name      | description                                  |
-| --------- | -------------------------------------------- |
-| `OrderID` | ID of Order                                  |
-| `TTL`     | Number of blocks this bid is valid for       |
-| `Deposit` | Deposit amount.  `bid_min_deposit` if empty. |
+| name      | description                                 |
+| --------- | ------------------------------------------- |
+| `OrderID` | ID of Order                                 |
+| `TTL`     | Number of blocks this bid is valid for      |
+| `Deposit` | Deposit amount. `bid_min_deposit` if empty. |
 
 ### `BidClose`
 
@@ -211,12 +209,12 @@ This withdraws balances earned by providing for leases and deposits of bids that
 
 ### Deployment
 
-| Name       | Description                                                                          |
-| ---------- | ------------------------------------------------------------------------------------ |
-| `ID.Owner` | account addres of tenant                                                             |
-| `ID.DSeq`  | Arbitrary sequence number that identifies the deployment.  Defaults to block height. |
-| `State`    | State of the deployment.                                                             |
-| `Version`  | Hash of the manifest that is sent to the providers.                                  |
+| Name       | Description                                                                         |
+| ---------- | ----------------------------------------------------------------------------------- |
+| `ID.Owner` | account addres of tenant                                                            |
+| `ID.DSeq`  | Arbitrary sequence number that identifies the deployment. Defaults to block height. |
+| `State`    | State of the deployment.                                                            |
+| `Version`  | Hash of the manifest that is sent to the providers.                                 |
 
 #### State
 
@@ -227,27 +225,27 @@ This withdraws balances earned by providing for leases and deposits of bids that
 
 ### Group
 
-| Name              | Description                                                          |
-| ----------------- | -------------------------------------------------------------------- |
-| `ID.DeploymentID` | [Deployment](marketplace.md#deployment) ID of group.                 |
-| `ID.GSeq`         | Arbitrary sequence number.  Internally incremented, starting at `1`. |
-| `State`           | State of the group.                                                  |
+| Name              | Description                                                         |
+| ----------------- | ------------------------------------------------------------------- |
+| `ID.DeploymentID` | [Deployment](marketplace.md#deployment) ID of group.                |
+| `ID.GSeq`         | Arbitrary sequence number. Internally incremented, starting at `1`. |
+| `State`           | State of the group.                                                 |
 
 #### State
 
-| Name     | Description                                |
-| -------- | ------------------------------------------ |
-| `OPEN`   | Has an open or active order.               |
-| `PAUSED` | Bid closed by provider.  May be restarted. |
-| `CLOSED` | No open or active orders.  Terminal.       |
+| Name     | Description                               |
+| -------- | ----------------------------------------- |
+| `OPEN`   | Has an open or active order.              |
+| `PAUSED` | Bid closed by provider. May be restarted. |
+| `CLOSED` | No open or active orders. Terminal.       |
 
 ### Order
 
-| Name         | Description                                                          |
-| ------------ | -------------------------------------------------------------------- |
-| `ID.GroupID` | [Group](marketplace.md#group) ID of group.                           |
-| `ID.OSeq`    | Arbitrary sequence number.  Internally incremented, starting at `1`. |
-| `State`      | State of the order.                                                  |
+| Name         | Description                                                         |
+| ------------ | ------------------------------------------------------------------- |
+| `ID.GroupID` | [Group](marketplace.md#group) ID of group.                          |
+| `ID.OSeq`    | Arbitrary sequence number. Internally incremented, starting at `1`. |
+| `State`      | State of the order.                                                 |
 
 #### State
 
