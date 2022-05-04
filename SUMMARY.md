@@ -57,7 +57,7 @@
 
 * [Features](features/README.md)
   * [Test Page](features/test-page.md)
-* [Other Resources](other-resources/README.md)
+* [Other Resources](other-resources.md)
   * [Experimental](other-resources/experimental/README.md)
     * [Akash Cloud Provider Build With Helm Charts](other-resources/experimental/akash-cloud-provider-build-with-helm-charts/README.md)
       * [STEP 1 - Prerequisites of an Akash Provider](other-resources/experimental/akash-cloud-provider-build-with-helm-charts/step-1-prerequisites-of-an-akash-provider.md)

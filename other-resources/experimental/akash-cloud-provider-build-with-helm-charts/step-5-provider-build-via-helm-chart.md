@@ -1,7 +1,5 @@
 # STEP 5 - Provider Build via Helm Chart
 
-
-
 ## **Environment Variables**
 
 * Declare the following environment variables for Helm

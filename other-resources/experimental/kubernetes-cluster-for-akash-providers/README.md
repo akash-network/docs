@@ -1,7 +1,5 @@
 # Kubernetes Cluster for Akash Providers
 
-
-
 ## **Overview**
 
 Akash leases are deployed via Kubernetes pods on provider clusters.  This guide details the build of the provider’s Kubernetes control plane and worker nodes.
