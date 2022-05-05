@@ -13,25 +13,24 @@ ACCOUNT_ADDRESS=<wallet-address-exported-previously-into-key.pem-file>
 KEY_SECRET=<password-used-for-private-key-export>
 DOMAIN=<domain-name-of-provider>
 MONIKER=<identifier-of-node-on-chain>
+NODE=http://<IP_address_of_your_RPC_node>:26657
+AKASH_VERSION=<current_akash_version>
 ```
 
 ## **Provider Helm Chart Build**
 
-
-
-* Add the following if you are running your own RPC server.&#x20;
-  * \--set node="http://\<IP-ADDRESS-OF-YOUR-RPC-NODE>:26657"
 * Additionally consider personalizing the attributes - listed in the ./provider/values.yaml file.  For example - edit the organization attribute with your own org name.
 
 ```
 helm install akash-provider akash/provider -n akash-services \
+     --set keyringbackend="os"
      --set from="$ACCOUNT_ADDRESS" \
      --set key="$(cat ./key.pem | base64)" \
      --set keysecret="$(echo $KEY_SECRET | base64)" \
      --set domain="$DOMAIN" \
-     --set node="http://<IP-ADDRESS-OF-YOUR-RPC-NODE>:26657" \
-     --set chainid="edgenet-1" \
-     --set image.tag="0.15.0-rc15" \
+     --set node="$NODE" \
+     --set chainid="akashnet-2" \
+     --set image.tag="$AKASH_VERSION" \
      --set gas=auto \
      --set gasadjustment=1.3 \
      --set gasprices=0.025uakt
