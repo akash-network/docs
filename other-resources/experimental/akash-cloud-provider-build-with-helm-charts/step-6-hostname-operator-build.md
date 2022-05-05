@@ -3,7 +3,7 @@
 * Run the following command to build the Kubernetes hostname operator
 
 ```
-helm install hostname-operator akash/hostname-operator -n akash-services --set image.tag="0.16.4-rc0"
+helm install hostname-operator akash/hostname-operator -n akash-services --set image.tag="$AKASH_VERSION"
 ```
 
 #### Expected/Example Output
@@ -22,3 +22,20 @@ NOTES:
   echo "Visit http://127.0.0.1:8080 to use your application"
   kubectl --namespace akash-services port-forward $POD_NAME 8080:$CONTAINER_PORT
 ```
+
+## **Hostname Operator Confirmation**
+
+```
+kubectl get pods -n akash-services
+```
+
+#### **Expected output (example and name following akash-provider will differ)**
+
+```
+root@node1:~# kubectl get pods -n akash-services
+
+NAME                                 READY   STATUS    RESTARTS   AGE
+akash-provider-76966c6795-lvphs      1/1     Running   0          16m
+hostname-operator-84977c6fd9-qvnsm   1/1     Running   0          3m29s
+```
+

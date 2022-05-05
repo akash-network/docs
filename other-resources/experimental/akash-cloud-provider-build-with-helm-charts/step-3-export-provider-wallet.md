@@ -15,5 +15,5 @@ The wallet used will be used for the following purposes:
 ```
 cd ~
 
-akash keys export <key-name> > key.pem
+akash keys export <key-name> --keyring-backend test > key.pem
 ```
