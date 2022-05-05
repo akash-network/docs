@@ -132,6 +132,7 @@
       * [STEP 7 - Confirm Kubernetes Cluster](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-7-confirm-kubernetes-cluster.md)
       * [STEP 8 - Disable Swap on Kubernetes Hosts](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-8-disable-swap-on-kubernetes-hosts.md)
       * [STEP 9 - Review Firewall Policies](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-9-review-firewall-policies.md)
+    * [Provider Persistent Storage Enablement](other-resources/experimental/provider-persistent-storage-enablement.md)
   * [Security](glossary/security.md)
   * [Containers](glossary/platform.md)
   * [Marketplace](glossary/marketplace.md)
