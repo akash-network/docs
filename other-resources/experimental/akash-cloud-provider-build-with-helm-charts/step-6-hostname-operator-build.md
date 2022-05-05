@@ -3,7 +3,7 @@
 * Run the following command to build the Kubernetes hostname operator
 
 ```
-helm install hostname-operator akash/hostname-operator -n akash-services --set image.tag="0.16.4-rc0"
+helm install hostname-operator akash/hostname-operator -n akash-services --set image.tag="AKASH_VERSION"
 ```
 
 #### Expected/Example Output

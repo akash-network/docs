@@ -19,11 +19,9 @@ AKASH_VERSION=<current_akash_version>
 
 ## **Provider Helm Chart Build**
 
-* Additionally consider personalizing the attributes - listed in the ./provider/values.yaml file.  For example - edit the organization attribute with your own org name.
-
 ```
 helm install akash-provider akash/provider -n akash-services \
-     --set keyringbackend="os"
+     --set keyringbackend="test" \
      --set from="$ACCOUNT_ADDRESS" \
      --set key="$(cat ./key.pem | base64)" \
      --set keysecret="$(echo $KEY_SECRET | base64)" \
