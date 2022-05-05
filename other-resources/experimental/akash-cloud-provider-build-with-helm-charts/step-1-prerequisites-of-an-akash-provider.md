@@ -16,4 +16,10 @@ If you need assistance in building a new cluster, visit the [Kubernetes Cluster 
 
 Akash Providers need to run their own blockchain RPC node to remove dependence on public nodes.  This is a strict requirement.  The RPC node should not run as a deployment on the Testnet network as no long running workloads should run in that environment and deployments running for more than several hours be deleted.
 
-Build your own RPC node via these[ instructions.](broken-reference)
+Build your own RPC node via these [instructions](../../../akash-nodes/run-an-akash-node/rpc-service.md).
+
+## Custom Kubernetes Cluster Settings
+
+Akash Providers are deployed in many environments and we will make additions to these sections as when nuances are discovered.
+
+* [VMware Tanzu](../../../providers/custom-kubernetes-cluster-settings/vmware-tanzu.md)

@@ -20,7 +20,7 @@ The steps to create an Akash account are covered in the Provider setup section o
 
 Akash Providers are deployed in many environments and we will make additions to these sections as when nuances are discovered.
 
-* [VMware Tanzu](broken-reference)
+* [VMware Tanzu](../custom-kubernetes-cluster-settings/vmware-tanzu.md)
 
 ## Quickstart Guides
 
