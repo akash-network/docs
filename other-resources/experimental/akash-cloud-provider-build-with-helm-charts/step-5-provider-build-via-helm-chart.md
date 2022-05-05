@@ -19,6 +19,27 @@ AKASH_VERSION=<current_akash_version>
 
 ## **Provider Helm Chart Build**
 
+### **Provider Withdrawl Period**
+
+* Akash providers may dictate how often they withdrawl funds consumed by active deployments/tenants
+* Few things to consider regarding the provider withdrawl period:
+  * The default withdrawl setting in the Helm Charts is one (1) hour
+  * An advantage of the one hour default setting is assurance that a deployment may not consume it's escrow account dramatically.  If the withdrawl period were set to 24 hours instead - the deployment could exhaust the amount in escrow in one hour (for example) but the provider would not calculate this until many hours later and the deployment would essentially operate for free in the interim.
+  * A disadvantage of frequent withdrawls is the possibility of losing profitability based on fees incurred by the providers withdrawl transactions.  If the provider hosts primarily low resource workloads, it is very possible that fees could exceed deployment cost/profit.
+
+#### OPTIONAL - Update the Provider Withdrawl Period
+
+* If it is desired to change the withdrawl period from the default one hour setting, include the following set command in the `helm install akash-provider` command covered in the next section.
+* In this example the wihtdrawl period would be set to 24 hours.
+
+```
+--set withdrawalperiod=24h
+```
+
+### **Provider Build**
+
+* Issue the following command to build your Akash Provider
+
 ```
 helm install akash-provider akash/provider -n akash-services \
      --set keyringbackend="test" \
