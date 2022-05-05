@@ -1,6 +1,28 @@
 # Verifications
 
-## View Ceph Configuration
+Several provider verifications and troubleshooting options are presented in this section which aid in persistent storage investigations including:
+
+* [Ceph Status and Health](verifications.md#view-ceph-status-and-health)
+* [Ceph Configuration and Detailed Health](verifications.md#view-ceph-configuration-and-detailed-health)
+* [Ceph Related Pod Status](verifications.md#view-ceph-related-pods-status)
+* [Kubernetes General Events](verifications.md#kubernetes-general-events)
+
+## Ceph Status and Health
+
+```
+kubectl -n rook-ceph get cephclusters
+```
+
+#### **Example Output**
+
+```
+root@node1:~/helm-charts/charts# kubectl -n rook-ceph get cephclusters
+
+NAME        DATADIRHOSTPATH   MONCOUNT   AGE   PHASE   MESSAGE                        HEALTH      EXTERNAL
+rook-ceph   /var/lib/rook     1          69m   Ready   Cluster created successfully   HEALTH_OK
+```
+
+## Ceph Configuration and Detailed Health
 
 ```
 kubectl -n rook-ceph describe cephclusters
@@ -8,18 +30,27 @@ kubectl -n rook-ceph describe cephclusters
 
 #### **Example Output (Tail Only)**
 
+* Ensure the name is correct in the Nodes section
+* Review any output of interest in the Events section
+
 ```
+ Storage:
+    Config:
+      Osds Per Device:  3
+    Nodes:
+      Name:  node2
+      Resources:
+    Use All Devices:                        true
+  Wait Timeout For Healthy OSD In Minutes:  10
 Status:
   Ceph:
     Capacity:
-      Bytes Available:  107353726976
+      Bytes Available:  107333730304
       Bytes Total:      107369988096
-      Bytes Used:       16261120
-      Last Updated:     2022-02-16T21:24:12Z
+      Bytes Used:       36257792
+      Last Updated:     2022-05-05T18:43:50Z
     Health:             HEALTH_OK
-    Last Changed:       2022-02-16T20:07:44Z
-    Last Checked:       2022-02-16T21:24:12Z
-    Previous Health:    HEALTH_WARN
+    Last Checked:       2022-05-05T18:43:50Z
     Versions:
       Mgr:
         ceph version 16.2.5 (0883bdea7337b95e4b611c768c0279868462204a) pacific (stable):  1
@@ -30,8 +61,8 @@ Status:
       Overall:
         ceph version 16.2.5 (0883bdea7337b95e4b611c768c0279868462204a) pacific (stable):  5
   Conditions:
-    Last Heartbeat Time:   2022-02-16T21:24:13Z
-    Last Transition Time:  2022-02-16T20:05:32Z
+    Last Heartbeat Time:   2022-05-05T18:43:51Z
+    Last Transition Time:  2022-05-05T17:34:32Z
     Message:               Cluster created successfully
     Reason:                ClusterCreated
     Status:                True
@@ -48,7 +79,7 @@ Status:
 Events:       <none>
 ```
 
-## **View Ceph Related Pods**
+## **Ceph Related Pod Status**
 
 ```
 kubectl -n rook-ceph get pods
@@ -77,4 +108,40 @@ rook-ceph-osd-1-69d59cf974-ftbtm                  1/1     Running     0         
 rook-ceph-osd-2-bc9dc46c5-mspfs                   1/1     Running     0          77m
 rook-ceph-osd-prepare-node2-x4qqv                 0/1     Completed   0          76m
 rook-ceph-tools-6646766697-lgngb                  1/1     Running     0          79m
+```
+
+## Kubernetes General Events
+
+* Enters a scrolling events output which would display persistent storage logs and issues if present
+
+```
+kubectl get events --sort-by='.metadata.creationTimestamp' -A -w
+```
+
+#### Example Output from a Healthy Cluster
+
+```
+root@node1:~/helm-charts/charts# kubectl get events --sort-by='.metadata.creationTimestamp' -A -w
+
+warning: --watch or --watch-only requested, --sort-by will be ignored
+
+NAMESPACE        LAST SEEN   TYPE     REASON              OBJECT                                     MESSAGE
+akash-services   37m         Normal   ScalingReplicaSet   deployment/akash-provider                  Scaled up replica set akash-provider-6bf9986cdc to 1
+akash-services   37m         Normal   Scheduled           pod/akash-provider-6bf9986cdc-btvlg        Successfully assigned akash-services/akash-provider-6bf9986cdc-btvlg to node2
+akash-services   37m         Normal   SuccessfulCreate    replicaset/akash-provider-6bf9986cdc       Created pod: akash-provider-6bf9986cdc-btvlg
+akash-services   37m         Normal   SuccessfulDelete    replicaset/akash-provider-76966c6795       Deleted pod: akash-provider-76966c6795-lvphs
+akash-services   37m         Normal   Created             pod/akash-provider-6bf9986cdc-btvlg        Created container provider
+akash-services   36m         Normal   Killing             pod/akash-provider-76966c6795-lvphs        Stopping container provider
+akash-services   37m         Normal   Pulled              pod/akash-provider-6bf9986cdc-btvlg        Container image "ghcr.io/ovrclk/akash:0.16.4-rc0" already present on machine
+akash-services   37m         Normal   ScalingReplicaSet   deployment/akash-provider                  Scaled down replica set akash-provider-76966c6795 to 0
+akash-services   37m         Normal   Started             pod/akash-provider-6bf9986cdc-btvlg        Started container provider
+akash-services   30m         Normal   SuccessfulCreate    replicaset/inventory-operator-645fddd5cc   Created pod: inventory-operator-645fddd5cc-86jr9
+akash-services   30m         Normal   ScalingReplicaSet   deployment/inventory-operator              Scaled up replica set inventory-operator-645fddd5cc to 1
+akash-services   30m         Normal   Scheduled           pod/inventory-operator-645fddd5cc-86jr9    Successfully assigned akash-services/inventory-operator-645fddd5cc-86jr9 to node2
+akash-services   30m         Normal   Pulling             pod/inventory-operator-645fddd5cc-86jr9    Pulling image "ghcr.io/ovrclk/k8s-inventory-operator"
+akash-services   30m         Normal   Created             pod/inventory-operator-645fddd5cc-86jr9    Created container inventory-operator
+akash-services   30m         Normal   Started             pod/inventory-operator-645fddd5cc-86jr9    Started container inventory-operator
+akash-services   30m         Normal   Pulled              pod/inventory-operator-645fddd5cc-86jr9    Successfully pulled image "ghcr.io/ovrclk/k8s-inventory-operator" in 5.154257083s
+ingress-nginx    12m         Normal   RELOAD              pod/ingress-nginx-controller-59xcv         NGINX reload triggered due to a change in configuration
+ingress-nginx    12m         Normal   RELOAD              pod/ingress-nginx-controller-tk8zj         NGINX reload triggered due to a change in configuration
 ```

@@ -1,7 +1,5 @@
 # Check Persistent Storage Health
 
-## Persistent Storage Status Check
-
 ```
 ROOK_PATH=${AKASH_ROOT}/_docs/rook/test ./script/rook.sh health
 ```
