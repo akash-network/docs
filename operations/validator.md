@@ -1,14 +1,27 @@
 # Running a Validator
 
-It is recommended to have a minimum system spec of 4vCPU 16GB RAM 256 GB SSD or better for a validator node. Lower specs will result in issues.
-
-Before setting up your validator node, make sure you've already gone through the [Full Node Setup](broken-reference) guide.
-
-> NOTE: it is not required to create a validator on Akash testnets unless specified in a challenge or otherwise. The akash team runs a centralized validator set to enable for easy and consistent testnet operations for developers trying out the platform for the first time.
-
-## What is a Validator?
+## What is an Akash Validator?
 
 Validators are responsible for committing new blocks to the blockchain through voting. A validator's stake is slashed if they become unavailable or sign blocks at the same height. Please read about [Sentry Node Architecture](https://forum.cosmos.network/t/sentry-node-architecture-overview/454) to learn how to protect your node from DDOS attacks and to ensure high-availability on mainnet.
+
+## Akash Validator General Info
+
+### Validator Hardware Requirements and Recommendations
+
+* CPU - 4/8 Core
+* Memory - 8/16GB
+* Disk - SSD or NVMe
+
+### Active Validator Set
+
+* 100 (current) which was extended from 85 recently
+* Tokens to stake to be active = more than last active validator
+* Check with the command `$votingpower` in the Akash Discord server's > validators-status channel for current requirements to get into the active validator set
+* You can stake by yourself or from external wallets within your community
+
+### Akash Node Build
+
+Before setting up your validator node, make sure you've already gone through the [Full Node Setup](broken-reference) guide.
 
 ## Create Your Validator
 
