@@ -14,24 +14,11 @@ Within the kubespray directory use the following commands for the purpose of:
 * Installing Ansible and other necessary packages specified in the requirements.txt file
 
 ```
+cd ~/kubespray
+
 virtualenv --python=python3 venv
 
 source venv/bin/activate
-
-rm requirements.txt
-
-cat > requirements.txt << 'EOF'
-ansible==4.8.0
-ansible-core==2.11.6
-cryptography==2.8
-jinja2==2.11.3
-netaddr==0.7.19
-pbr==5.4.4
-jmespath==0.9.5
-ruamel.yaml==0.16.10
-ruamel.yaml.clib==0.2.6
-MarkupSafe==1.1.1
-EOF
 
 pip3 install -r requirements.txt
 ```

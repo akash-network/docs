@@ -39,6 +39,12 @@ While you could use a single Kubernetes host in testing and dev this would not b
 
 Install Kubespray on a machine that has connectivity to the hosts that will serve as the Kubernetes cluster.  Kubespray should not be installed on the Kubernetes hosts themselves but rather on a machine that has connectivity to the Kubernetes hosts.
 
+### Kubespray Host Recommendation
+
+We recommend installing Kubespray on Ubuntu 22.04.  Versions prior it Ubuntu 20.X may experience issues with recent Ansible versions specified in later steps.
+
+### Clone the Kubespray Project
+
 Obtain Kubespray and navigate into the created local directory:
 
 ```
