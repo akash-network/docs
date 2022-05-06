@@ -54,3 +54,13 @@ git clone https://github.com/kubernetes-sigs/kubespray.git
 
 cd kubespray
 ```
+
+## Cluster Updates
+
+To update the Kubernetes cluster in the future, ensure to pull the latest Kubespray version to take advantage of recent bug fixes and enhancements.
+
+```
+cd ~/kubespray
+
+git pull https://github.com/kubernetes-sigs/kubespray.git
+```
