@@ -130,7 +130,7 @@
       * [STEP 5 - Enable gVisor](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-5-enable-gvisor.md)
       * [STEP 6 - Create Kubernetes Cluster](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-6-create-kubernetes-cluster.md)
       * [STEP 7 - Confirm Kubernetes Cluster](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-7-confirm-kubernetes-cluster.md)
-      * [STEP 8 - Review Firewall Policies](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-8-review-firewall-policies.md)
+      * [STEP 8 - Review Firewall Policies](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-9-review-firewall-policies.md)
     * [Provider Persistent Storage Enablement](other-resources/experimental/provider-persistent-storage-enablement/README.md)
       * [Clone Akash Repo](other-resources/experimental/provider-persistent-storage-enablement/clone-akash-repo.md)
       * [Environmental Variable Config](other-resources/experimental/provider-persistent-storage-enablement/environmental-variable-config.md)

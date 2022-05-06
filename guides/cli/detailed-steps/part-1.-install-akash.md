@@ -39,7 +39,7 @@ akash version
 ```
 scarruthers@Scotts-MacBook-Pro Downloads % akash version
 
-v0.14.1
+v0.16.3
 ```
 {% endtab %}
 

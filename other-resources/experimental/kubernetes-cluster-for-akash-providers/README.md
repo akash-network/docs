@@ -15,4 +15,4 @@ The Kubernetes Cluster created is then ready for the Akash Provider build detail
 * [Enable gVisor](step-5-enable-gvisor.md)
 * [Create Kubernetes Cluster](step-6-create-kubernetes-cluster.md)
 * [Confirm Kubernetes Cluster](step-7-confirm-kubernetes-cluster.md)
-* [Review Firewall Policies](step-8-review-firewall-policies.md)
+* [Review Firewall Policies](step-9-review-firewall-policies.md)
