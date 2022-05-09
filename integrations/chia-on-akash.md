@@ -109,6 +109,77 @@ deployment:
       count: 1
 ```
 
+## Bladebit Plotting
+
+Plotting in Bladebit has never been easier!  There are a few things to note before you start using Bladebit instead of Madmax.  Bladebit is so fast it can create plots faster than most home/consumer internet connections (1Gbps).  Keeping that in mind we recommend you only increase the THREADS= and cpu units if you have a connection > 1Gbps. If you are luck enough to have a multi-gigabit connection, try the following settings...\
+\
+15 minute plots = 8 cpu \
+10 minute plots = 32 cpu\
+7 minutes = 64 CPU \
+4 minutes = 100 cpu\
+3 minutes = 186 cpu
+
+\
+For a standard 1Gbps connection use the recommended settings below:
+
+```
+version: "2.0"
+
+services:
+  chia:
+    image: cryptoandcoffee/akash-chia:88
+    expose:
+      - port: 8080
+        as: 80
+        proto: tcp
+        to:
+          - global: true
+    env:
+      - CONTRACT=
+      - FARMERKEY=
+      - REMOTE_LOCATION=local
+        #Choose local to access finished plots through web interface or set to upload and finished plots will be sent to SSH destination path like /root/plots
+      - PLOTTER=blade
+        #Choose your plotter software - madmax or blade (testnet only)
+      - THREADS=8
+        #Must match CPU units
+      - UPLOAD_BACKGROUND=true
+        #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
+###################################################################
+# Uncomment the variables below and set REMOTE_LOCATION=upload to enable remote uploading
+#      - REMOTE_HOST=changeme.com #SSH upload host
+#      - REMOTE_LOCATION=changeme #SSH upload location like /root/plots
+#      - REMOTE_PORT=22 #SSH upload port
+#      - REMOTE_USER=changeme #SSH upload user
+#      - REMOTE_PASS=changme #SSH upload password
+profiles:
+  compute:
+    chia:
+      resources:
+        cpu:
+          units: 8.0
+        memory:
+          size: 420Gi
+        storage:
+          size: 915Gi
+  placement:
+    akash:
+      signedBy:
+        anyOf:
+          - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
+      attributes:
+        chia-plotting: "true"
+      pricing:
+        chia:
+          denom: uakt
+          amount: 100000
+deployment:
+  chia:
+    akash:
+      profile: chia
+      count: 1
+```
+
 ## Downloading  plots
 
 To access the Chia Plot Manager, click on the \`Uri\` link on the deployment detail page.  \
