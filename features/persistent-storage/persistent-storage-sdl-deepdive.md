@@ -116,7 +116,7 @@ profiles:
           - size: 1Gi
             attributes:
               persistent: true
-              class: beta2
+              class: beta3
 ```
 
 #### Multiple Container Share of a Single Persistent Volume
@@ -158,7 +158,7 @@ profiles:
             size: 1Gi
             attributes:
               persistent: true
-              class: beta2
+              class: beta3
     postgres-profile:
       resources:
         cpu:
@@ -171,5 +171,5 @@ profiles:
             size: 10Gi
             attributes:
               persistent: true
-              class: beta2
+              class: beta3
 ```
