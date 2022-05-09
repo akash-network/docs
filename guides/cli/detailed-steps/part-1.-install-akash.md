@@ -114,7 +114,7 @@ akash version
 ```
 root@node2:~# akash version
 
-v0.14.0
+v0.16.3
 ```
 {% endtab %}
 
