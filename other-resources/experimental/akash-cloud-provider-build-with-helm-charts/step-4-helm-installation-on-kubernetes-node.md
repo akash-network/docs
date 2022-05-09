@@ -3,9 +3,9 @@
 *   Install Helm on a Kubernetes Master Node
 
     ```
-    wget https://get.helm.sh/helm-v3.6.2-linux-amd64.tar.gz
+    wget https://get.helm.sh/helm-v3.8.2-linux-amd64.tar.gz
 
-    tar -zxvf helm-v3.6.2-linux-amd64.tar.gz
+    tar -zxvf helm-v3.8.2-linux-amd64.tar.gz
 
     mv linux-amd64/helm /usr/local/bin/helm
 
@@ -27,5 +27,5 @@ helm version
 ```
 root@node1:~# helm version
 
-version.BuildInfo{Version:"v3.6.2", GitCommit:"ee407bdf364942bcb8e8c665f82e15aa28009b71", GitTreeState:"clean", GoVersion:"go1.16.5"}
+version.BuildInfo{Version:"v3.8.2", GitCommit:"ee407bdf364942bcb8e8c665f82e15aa28009b71", GitTreeState:"clean", GoVersion:"go1.16.5"}
 ```

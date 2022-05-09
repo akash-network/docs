@@ -1,4 +1,4 @@
-# STEP 5 - Provider Build via Helm Chart
+# STEP 6 - Provider Build via Helm Chart
 
 ## **Environment Variables**
 
@@ -6,13 +6,11 @@
 * Replace the variable  with your own settings
 * Notes on settings and values
   * [ ] Domain should be a publicly accessible DNS name dedicated for your provider use such as myprovider.com.  More info on provider domain name use is available [here](broken-reference).
-  * [ ] The moniker does not consequence and can be any identifier of your choosing
 
 ```
-ACCOUNT_ADDRESS=<wallet-address-exported-previously-into-key.pem-file>
-KEY_SECRET=<password-used-for-private-key-export>
-DOMAIN=<domain-name-of-provider>
-MONIKER=<identifier-of-node-on-chain>
+ACCOUNT_ADDRESS=akash1XXXX #akash provicer address that starts with `akash1`
+KEY_PASSWORD=12341234 #set to the password you have entered upon `akash keys export <key-name> > key.pem`; this is for the akash-provider pod to decrypt the key
+DOMAIN=test.com  #Register certains DNS A and wildcard address as specific in previous step, i.e. `provider.test.com` DNS A record and `*.ingress.test.com` DNS wildcard record
 NODE=http://<IP_address_of_your_RPC_node>:26657
 AKASH_VERSION=<current_akash_version>
 ```
@@ -30,13 +28,15 @@ AKASH_VERSION=<current_akash_version>
 #### OPTIONAL - Update the Provider Withdrawl Period
 
 * If it is desired to change the withdrawl period from the default one hour setting, include the following set command in the `helm install akash-provider` command covered in the next section.
-* In this example the wihtdrawl period would be set to 24 hours.
-
-```
---set withdrawalperiod=24h
-```
+* In the example the Provider Build section of this doc the  withdrawl period has been set to 24 hours.  Please adjust as preferred.
 
 ### **Provider Build**
+
+* Ensure you are applying the latest version of subsequent Helm Charts install/upgrade steps
+
+```
+helm repo update
+```
 
 * Issue the following command to build your Akash Provider
 
@@ -45,14 +45,16 @@ helm install akash-provider akash/provider -n akash-services \
      --set keyringbackend="test" \
      --set from="$ACCOUNT_ADDRESS" \
      --set key="$(cat ./key.pem | base64)" \
-     --set keysecret="$(echo $KEY_SECRET | base64)" \
+     --set keysecret="$(echo $KEY_PASSWORD | base64)" \
      --set domain="$DOMAIN" \
      --set node="$NODE" \
      --set chainid="akashnet-2" \
      --set image.tag="$AKASH_VERSION" \
+     --set AKASH_FEES=5123uakt \
      --set gas=auto \
-     --set gasadjustment=1.3 \
+     --set gasadjustment=1.25 \
      --set gasprices=0.025uakt
+     --set withdrawalperiod=24h
 ```
 
 #### **Expected output**
