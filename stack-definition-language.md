@@ -10,6 +10,7 @@ A complete deployment has the following sections:
 * [services](stack-definition-language.md#services)
 * [profiles](stack-definition-language.md#profiles)
 * [deployment](stack-definition-language.md#deployment)
+* [persistent storage](features/persistent-storage/)
 
 An example deployment configuration can be found [here](https://github.com/ovrclk/docs/tree/62714bb13cfde51ce6210dba626d7248847ba8c1/sdl/deployment.yaml).
 
