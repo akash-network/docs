@@ -187,10 +187,12 @@ If you are using your own RPC node - as recommended for Providers - ensure the n
 
 ### **STEP2 - Upgrade Provider**
 
-**Update Current CRDs**
+**Delete Current CRDs**
 
 ```
-kubectl apply --server-side -f https://raw.githubusercontent.com/ovrclk/helm-charts/main/charts/akash-provider/templates/crds.yaml
+kubectl delete crd manifests.akash.network
+kubectl delete crd providerhosts.akash.network
+kubectl delete crd storageclassinfos.akash.network
 ```
 
 #### Add/Update the Helm Repo
