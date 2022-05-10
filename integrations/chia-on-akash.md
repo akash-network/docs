@@ -113,16 +113,15 @@ deployment:
 
 Plotting in Bladebit has never been easier!  There are a few things to note before you start using Bladebit instead of Madmax.  Bladebit is so fast it can create plots faster than most home/consumer internet connections (1Gbps).  Keeping that in mind we recommend you only increase the `THREADS=` and `cpu units` beyond 32 if you have a connection > 1Gbps.\
 \
-**Recommended Bladebit CPU Settings for 1Gbps Connections:**
-
-20 minute plots = 8 cpu \
-15 minute plots = 16 cpu\
-10 minute plots = 32 cpu\
+**Recommended Bladebit CPU Settings for 1Gbps Connections:**\
+****\~20 minute plots = 8 cpu \
+\~15 minute plots = 16 cpu\
+\~10 minute plots = 32 cpu\
 \
-**Recommended CPU Settings for Multi-Gigabit Connections:**\
-****7 minutes = 64 CPU \
-4 minutes = 100 cpu\
-3 minutes = 186 cpu\
+**Recommended Bladebit CPU Settings for Multi-Gigabit Connections:**\
+****\~7 minutes plots = 64 CPU \
+\~4 minutes plots = 100 cpu\
+\~3 minutes plots = 186 cpu\
 \
 For a standard 1Gbps connection use the settings below, otherwise adjust the CPU units to match the plot time you want to achieve.
 
