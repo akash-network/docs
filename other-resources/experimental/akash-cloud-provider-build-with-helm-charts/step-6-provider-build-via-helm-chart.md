@@ -5,7 +5,7 @@
 * Declare the following environment variables for Helm
 * Replace the variable  with your own settings
 * Notes on settings and values
-  * [ ] Domain should be a publicly accessible DNS name dedicated for your provider use such as myprovider.com.  More info on provider domain name use is available [here](broken-reference).
+  * [ ] Domain should be a publicly accessible DNS name dedicated for your provider use such as myprovider.com.
 
 ```
 ACCOUNT_ADDRESS=akash1XXXX #akash provicer address that starts with `akash1`
@@ -53,7 +53,7 @@ helm install akash-provider akash/provider -n akash-services \
      --set AKASH_FEES=5123uakt \
      --set gas=auto \
      --set gasadjustment=1.25 \
-     --set gasprices=0.025uakt
+     --set gasprices=0.025uakt \
      --set withdrawalperiod=24h
 ```
 
