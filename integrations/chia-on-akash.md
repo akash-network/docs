@@ -111,16 +111,20 @@ deployment:
 
 ## Bladebit Plotting
 
-Plotting in Bladebit has never been easier!  There are a few things to note before you start using Bladebit instead of Madmax.  Bladebit is so fast it can create plots faster than most home/consumer internet connections (1Gbps).  Keeping that in mind we recommend you only increase the THREADS= and cpu units if you have a connection > 1Gbps. If you are luck enough to have a multi-gigabit connection, try the following settings...\
+Plotting in Bladebit has never been easier!  There are a few things to note before you start using Bladebit instead of Madmax.  Bladebit is so fast it can create plots faster than most home/consumer internet connections (1Gbps).  Keeping that in mind we recommend you only increase the `THREADS=` and `cpu units` beyond 32 if you have a connection > 1Gbps.\
 \
-15 minute plots = 8 cpu \
-10 minute plots = 32 cpu\
-7 minutes = 64 CPU \
-4 minutes = 100 cpu\
-3 minutes = 186 cpu
+**Recommended Bladebit CPU Settings for 1Gbps Connections:**
 
+20 minute plots = 8 cpu \
+15 minute plots = 16 cpu\
+10 minute plots = 32 cpu\
 \
-For a standard 1Gbps connection use the recommended settings below:
+**Recommended CPU Settings for Multi-Gigabit Connections:**\
+****7 minutes = 64 CPU \
+4 minutes = 100 cpu\
+3 minutes = 186 cpu\
+\
+For a standard 1Gbps connection use the settings below, otherwise adjust the CPU units to match the plot time you want to achieve.
 
 ```
 version: "2.0"
@@ -141,7 +145,7 @@ services:
         #Choose local to access finished plots through web interface or set to upload and finished plots will be sent to SSH destination path like /root/plots
       - PLOTTER=blade
         #Choose your plotter software - madmax or blade (testnet only)
-      - THREADS=8
+      - THREADS=16
         #Must match CPU units
       - UPLOAD_BACKGROUND=true
         #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
@@ -157,7 +161,7 @@ profiles:
     chia:
       resources:
         cpu:
-          units: 8.0
+          units: 16.0
         memory:
           size: 420Gi
         storage:
@@ -201,11 +205,11 @@ aria2c -c -s 16 -x 16 -k 64M -j 1 $plot_download_url
 
 ## Choosing a provider
 
-Akash has partnered with Chia to provide $0.20/plots on `Bigtractorplotting.com`.   Please choose this provider for all your plotting.&#x20;
+Akash has partnered with Chia to provide $0.20/plots on `Bigtractorplotting.com.`
 
 ## Waiting for bids...
 
-If Akashlytics hangs on "Waiting for Bids" that could be an indication that all providers are full at the moment.  The recommended fix is to reduce the requested storage amount from `1Ti` to something more reasonable like `512Gi`
+If Akashlytics hangs on "Waiting for Bids" that could be an indication that all providers are full at the moment.  The recommended fix is to reduce the requested storage amount from `1Ti` to something more reasonable like `768Gi`
 
 ```
 profiles:
@@ -218,7 +222,7 @@ profiles:
           size: 6Gi
 #Chia blockchain is currently ~40gb as of November 2021 / if you are plotting please use at least 256Gi
         storage:
-          size: 512Gi
+          size: 768Gi
 ```
 
 ## How to speed up plotting?
