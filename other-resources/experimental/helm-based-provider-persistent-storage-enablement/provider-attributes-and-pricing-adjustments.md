@@ -38,7 +38,7 @@ helm upgrade akash-provider akash/provider -n akash-services \
   --set gasadjustment=1.25 \
   --set gasprices=0.025uakt \
   --set withdrawalperiod=24h \
-  --set bidpricestoragescale="0.00016,beta3=0.00016" \
+  --set bidpricestoragescale="beta2=0.00016\,beta3=0.00016" \
   --set node="$NODE" \
   --set attributes[0].key="region" \
   --set attributes[0].value="us-west" \
