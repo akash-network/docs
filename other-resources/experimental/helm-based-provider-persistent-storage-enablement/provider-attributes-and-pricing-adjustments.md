@@ -14,65 +14,78 @@ In the subsequent section persistent storage attributes will be defined.  Use th
 ## Attribute Adjustments
 
 * Conduct the steps in this section on the Kubernetes master from which the provider was configured in prior steps
-
-### Clone Repo
-
-Clone the Akash GitHub repository and move into the cloned directory for subsequent steps.
-
-```
-cd ~
-
-git clone https://github.com/ovrclk/helm-charts.git 
-```
-
-### Adjust Attributes
-
-* Make updates to Provider settings for persistent storage
+* Adjust the following key-values pairs as necessary:
+  * Update the value of the `capabilities/storage/2/class` key to the correct storage class such as `"beta2"`
+  * Update the region value from current `us-west` to an appropriate value such as `us-east` OR `eu-west`
 
 ```
-cd ~/helm-charts/charts/akash-provider
-
-vi values.yaml
-```
-
-* Adjust the attributes section of the values.yaml file as follows
-* The capabilities attributes are necessary to receive bids on persistent storage deployments
-* Update the value of the `capabilities/storage/2/class` key to the correct storage class
-
-```
-attributes:
-  - key: capabilities/storage/1/class
-    value: default
-  - key: capabilities/storage/1/persistent
-    value: true
-  - key: capabilities/storage/2/class
-    value: <beta1|beta2|beta3>
-  - key: capabilities/storage/2/persistent
-    value: true
+helm upgrade akash-provider akash/provider -n akash-services \
+  --set keyringbackend="test" \
+  --set from="$KEY_NAME" \
+  --set key="$(cat ./key.pem | base64)" \
+  --set keysecret="$(echo $KEY_PASSWORD | base64)" \
+  --set domain="$DOMAIN" \
+  --set chainid="akashnet-2" \
+  --set image.tag="$AKASH_VERSION" \
+  --set gas=auto \
+  --set gasadjustment=1.25 \
+  --set gasprices=0.025uakt \
+  --set withdrawalperiod=24h \
+  --set bidpricestoragescale="0.00016,beta3=0.00016" \
+  --set node="http://akash-node-1:26657" \
+  --set attributes[0].key="region" \
+  --set attributes[0].value="us-west" \
+  --set attributes[1].key="host" \
+  --set attributes[1].value="akash" \
+  --set attributes[2].key="tier" \
+  --set attributes[2].value="community" \
+  --set attributes[3].key="capabilities/storage/1/class" \
+  --set attributes[3].value="default" \
+  --set attributes[4].key="capabilities/storage/1/persistent" \
+  --set attributes[4].value="true" \
+  --set attributes[5].key="capabilities/storage/2/class" \
+  --set attributes[5].value="<beta1|beta2|beta3>" \
+  --set attributes[6].key="capabilities/storage/2/persistent" \
+  --set attributes[6].value="true"
 ```
 
 #### Example Completed Attributes Section
 
-* Note - a Provider could also take this opportunity to update their non-persistent storage specific attributes at this time if needed as well.  For example - update the organization name to your own.
-
 ```
-attributes:
-  - key: region
-    value: us-west
-  - key: host
-    value: akash
-  - key: tier
-    value: community
-  - key: organization
-    value: akash.network
-  - key: capabilities/storage/1/class
-    value: default
-  - key: capabilities/storage/1/persistent
-    value: true
-  - key: capabilities/storage/2/class
-    value: beta2
-  - key: capabilities/storage/2/persistent
-    value: true
+cd ~
+
+helm uninstall akash-provider -n akash-services
+
+helm repo update
+
+helm install akash-provider akash/provider -n akash-services \
+  --set keyringbackend="test" \
+  --set from="$KEY_NAME" \
+  --set key="$(cat ./key.pem | base64)" \
+  --set keysecret="$(echo $KEY_PASSWORD | base64)" \
+  --set domain="$DOMAIN" \
+  --set chainid="akashnet-2" \
+  --set image.tag="$AKASH_VERSION" \
+  --set gas=auto \
+  --set gasadjustment=1.25 \
+  --set gasprices=0.025uakt \
+  --set withdrawalperiod=24h \
+  --set bidpricestoragescale="0.00016,beta3=0.00016" \
+  --set node="http://akash-node-1:26657" \
+  --set attributes[0].key="region" \
+  --set attributes[0].value="us-east" \
+  --set attributes[1].key="host" \
+  --set attributes[1].value="akash" \
+  --set attributes[2].key="tier" \
+  --set attributes[2].value="community" \
+  --set attributes[3].key="capabilities/storage/1/class" \
+  --set attributes[3].value="default" \
+  --set attributes[4].key="capabilities/storage/1/persistent" \
+  --set attributes[4].value="true" \
+  --set attributes[5].key="capabilities/storage/2/class" \
+  --set attributes[5].value="beta2" \
+  --set attributes[6].key="capabilities/storage/2/persistent" \
+  --set attributes[6].value="true"
 ```
 
 ## Update Provider Attributes

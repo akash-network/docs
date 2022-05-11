@@ -36,7 +36,7 @@ profiles:
             size: 1Gi
             attributes:
               persistent: true
-              class: beta3
+              class: beta2
     postgres-profile:
       resources:
         cpu:
@@ -49,7 +49,7 @@ profiles:
             size: 1Gi
             attributes:
               persistent: true
-              class: beta3
+              class: beta2
   placement:
     westcoast:
       attributes:

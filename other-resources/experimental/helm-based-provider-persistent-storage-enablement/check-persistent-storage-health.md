@@ -3,15 +3,14 @@
 ## Persistent Storage Status Check
 
 ```
-ROOK_PATH=${AKASH_ROOT}/_docs/rook/test ./script/rook.sh health
+kubectl -n rook-ceph get cephclusters
 ```
 
 ### **Expected Output**
 
 ```
-root@node1:~/akash# ROOK_PATH=${AKASH_ROOT}/_docs/rook/test ./script/rook.sh health
+root@node1:~/akash# kubectl -n rook-ceph get cephclusters
 
-Wait for rook deploy... 0s
-Checking CEPH cluster state: [Created]
-Creating CEPH cluster is done. [HEALTH_OK]
+NAME        DATADIRHOSTPATH   MONCOUNT   AGE     PHASE   MESSAGE                        HEALTH      EXTERNAL
+rook-ceph   /var/lib/rook     1          5m18s   Ready   Cluster created successfully   HEALTH_OK
 ```
