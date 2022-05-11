@@ -6,7 +6,7 @@ Placing a bid on an order requires a 5 AKT deposit placed into collateral per bi
 
 As every deployment request bid requires 5 AKT to be deposited in the escrow account, it's always good to have more so your provider can keep bidding. If your provider is ready to offer 10 deployments, then it's best to have 5 x 10 = 50 AKT and a little more to make sure provider can pay the fees for broadcasting the transactions on Akash Network.
 
-The steps to create an Akash wallet are covered in the Provider setup section of this document (_**Parts 1-3 )**_.
+The steps to create an Akash wallet are covered in the Provider setup section of this [document](../../../guides/cli/detailed-steps/part-1.-install-akash.md) (_**Parts 1-3 )**_.
 
 ## **Kubernetes Cluster**
 
