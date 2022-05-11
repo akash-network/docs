@@ -31,6 +31,7 @@ kubectl -n rook-ceph describe cephclusters
 #### **Example Output (Tail Only)**
 
 * Ensure the name is correct in the Nodes section
+* The `Health` key should have a value of `HEALTH_OK` as shown in example output below
 * Review any output of interest in the Events section
 
 ```

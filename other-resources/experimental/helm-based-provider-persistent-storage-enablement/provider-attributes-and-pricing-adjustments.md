@@ -18,6 +18,8 @@ In the subsequent section persistent storage attributes will be defined.  Use th
   * Update the value of the `capabilities/storage/2/class` key to the correct storage class such as `"beta2"`
   * Update the region value from current `us-west` to an appropriate value such as `us-east` OR `eu-west`
 
+#### Command Template
+
 ```
 helm upgrade akash-provider akash/provider -n akash-services \
   --set keyringbackend="test" \
@@ -49,16 +51,16 @@ helm upgrade akash-provider akash/provider -n akash-services \
   --set attributes[6].value="true"
 ```
 
-#### Example Completed Attributes Section
+#### Run Following Commands
+
+* Edit example attributes as necessary
 
 ```
 cd ~
 
-helm uninstall akash-provider -n akash-services
-
 helm repo update
 
-helm install akash-provider akash/provider -n akash-services \
+helm upgrade akash-provider akash/provider -n akash-services \
   --set keyringbackend="test" \
   --set from="$KEY_NAME" \
   --set key="$(cat ./key.pem | base64)" \
@@ -88,50 +90,18 @@ helm install akash-provider akash/provider -n akash-services \
   --set attributes[6].value="true"
 ```
 
-## Update Provider Attributes
-
-### Pricing Adjustments
-
-* Use the AKASH\_BID\_PRICE\_STORAGE\_SCALE environment variable to set provider pricing detail
-* Use the values as indicated in the sample for initial testing
-
-### Enact Attribute Updates
+#### Expected/Example Output
 
 ```
-cd ~/helm-charts/charts
-
-helm upgrade akash-provider ./akash-provider -n akash-services \
-     --set from="$ACCOUNT_ADDRESS" \
-     --set key="$(cat ~/key.pem | base64)" \
-     --set keysecret="$(echo $KEY_SECRET | base64)" \
-     --set domain="$DOMAIN" \
-     --set node="$NODE" \
-     --set chainid="akashnet-2" \
-     --set image.tag="$AKASH_VERSION" \
-     --set bidpricestoragescale="0.0001\,beta2=0.002"
-```
-
-#### Expected Result
-
-```
-Release "akash-provider" has been upgraded. Happy Helming!
 NAME: akash-provider
-LAST DEPLOYED: Mon Mar  7 17:16:20 2022
+LAST DEPLOYED: Wed May 11 13:45:56 2022
 NAMESPACE: akash-services
 STATUS: deployed
-REVISION: 2
+REVISION: 1
 TEST SUITE: None
 ```
 
-## **Restart Provider Pod**
-
-### **Capture the Name of Provider Pod**
-
-```
-kubectl get pods -n akash-services
-```
-
-#### Expected Provider Status
+## Expected Provider Status
 
 * Note - the Helm upgrade will spawn a new provider pod
 * Possible the prior provider pod may show with a status of deleting on initial view and then would eventually disappear from output
