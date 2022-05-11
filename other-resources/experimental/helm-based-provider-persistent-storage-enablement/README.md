@@ -17,24 +17,17 @@ Please take into consideration the following Akash recommendations:
 
 Get started within the following sections:
 
-* [Clone Akash Repo](../provider-persistent-storage-enablement/clone-akash-repo.md)
-* [Environmental Variable Config](../provider-persistent-storage-enablement/environmental-variable-config.md)
-* [Retrieve Nodes](../provider-persistent-storage-enablement/retrieve-nodes.md)
-* [Edit Cluster.yaml Config](../provider-persistent-storage-enablement/edit-cluster.yaml-config.md)
-* [Deploy Persistent Storage](../provider-persistent-storage-enablement/deploy-persistent-storage.md)
-* [Check Persistent Storage Health](../provider-persistent-storage-enablement/check-persistent-storage-health.md)
+* [Environment Review](environment-review.md)
+* [Deploy Persistent Storage](deploy-persistent-storage.md)
+* [Check Persistent Storage Health](check-persistent-storage-health.md)
 * [Provider Attributes and Pricing Adjustments](../provider-persistent-storage-enablement/provider-attributes-and-pricing-adjustments.md)
-* [Label Nodes For Storage Classes](../provider-persistent-storage-enablement/label-nodes-for-storage-classes.md)
-* [Inventory Operator](../provider-persistent-storage-enablement/inventory-operator.md)
+* [Label Nodes For Storage Classes](label-nodes-for-storage-classes.md)
+* [Inventory Operator](inventory-operator.md)
 * [Verifications](../provider-persistent-storage-enablement/verifications.md)
-*   [Teardown](../provider-persistent-storage-enablement/teardown.md)\
+* [Teardown](../provider-persistent-storage-enablement/teardown.md)\
 
 
-    \
-     <a href="#attribute-adjustments" id="attribute-adjustments"></a>
-    -----------------------------------------------------------------
-
-    \
-     <a href="#ensure-unformatted-drives" id="ensure-unformatted-drives"></a>
-    -------------------------------------------------------------------------
+\
+ <a href="#ensure-unformatted-drives" id="ensure-unformatted-drives"></a>
+-------------------------------------------------------------------------
 
