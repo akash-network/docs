@@ -12,47 +12,43 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 
 {% tabs %}
 {% tab title="MacOS" %}
-### MacOS
+## MacOS
 
-Before you install Akash, you will need to install the **XCode Command Line Tools**, and also we recommend using **Homebrew** to install Akash.
+### 1. Download and Install Akash
 
-#### 1. Install XCode:
-
-You will need to install Apple's XCode Command Line Tools. Open Terminal on your Mac. Click the copy icon in the code box below and paste the command on your Terminal prompt
-
-![](<../.gitbook/assets/image (1) (1).png>)
+* These commands will retrieve the latest, stable version of the Akash software, store the version in a local variable, and install that version.
 
 ```
-xcode-select --install
+cd ~/Downloads
+
+AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
+
+curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "v$AKASH_VERSION"
 ```
 
-Installing XCode may take a while. Go grab a cup of coffee.
+### 2. Move the Akash Binary
 
-#### 2. Install Homebrew:
-
-If you do not have Homebrew, you can install Homebrew using:
+* Move the binary file into a directory included in your path
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+sudo mv ./bin/akash /usr/local/bin
 ```
 
-Install `akash` using homebrew:
+### 3. Verify Akash Installation
 
-```
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/colinlowenberg/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
-brew tap ovrclk/tap
-brew install akash
-brew link akash --force
-```
-
-Once installed, verify the installation by running `akash version`
+* Verify the installation by using a simple command to check the Akash version
 
 ```
 akash version
 ```
 
-Congrats, now it's time to[ create your wallet.](wallet.md)
+* Expect/Example Output
+
+```
+akash version
+
+v0.16.3
+```
 {% endtab %}
 
 {% tab title="Linux" %}

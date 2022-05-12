@@ -37,7 +37,7 @@ akash version
 * Expect/Example Output
 
 ```
-scarruthers@Scotts-MacBook-Pro Downloads % akash version
+akash version
 
 v0.16.3
 ```
