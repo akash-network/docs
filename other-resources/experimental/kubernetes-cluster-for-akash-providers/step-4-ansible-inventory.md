@@ -173,3 +173,10 @@ all:
     calico_rr:
       hosts: {}
 ```
+
+## Additional Kubespray Documentation
+
+Use these resources for a more through understanding of Kubespray and for troubleshooting purposes
+
+* [Adding/replacing a node](https://github.com/kubernetes-sigs/kubespray/blob/9dfade5641a43c/docs/nodes.md)
+* [Upgrading Kubernetes in Kubespray](https://github.com/kubernetes-sigs/kubespray/blob/e9c89132485989/docs/upgrades.md)
