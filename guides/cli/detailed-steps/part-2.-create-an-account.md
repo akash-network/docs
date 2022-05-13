@@ -12,6 +12,12 @@ Verify you have the shell variables set up . The below command should return the
 echo $AKASH_KEY_NAME
 ```
 
+We now need to point Akash to where the keys are stored for your configuration. To do this we will set the AKASH\_KEYRING\_BACKEND environmental variable.
+
+```bash
+AKASH_KEYRING_BACKEND=os
+```
+
 Copy and paste this command into Terminal to create an Akash account:
 
 ```bash
@@ -24,12 +30,6 @@ Read the output and save your mnemonic phrase is a safe place. Let's set a Shell
 export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
 
 echo $AKASH_ACCOUNT_ADDRESS
-```
-
-We now need to point Akash to where the keys are stored for your configuration. To do this we will set the AKASH\_KEYRING\_BACKEND environmental variable.
-
-```bash
-AKASH_KEYRING_BACKEND=os
 ```
 
 Note that if you close your Terminal window this variable will not be saved.

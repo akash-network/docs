@@ -7,6 +7,30 @@ The wallet used will be used for the following purposes:
 * Pay for provider transaction gas fees
 * Pay for bid collateral which is discussed further in this section
 
+## List Available Keys
+
+* Print the key names available in the local OS keychain for use in the subsequent step
+
+```
+akash keys list
+```
+
+### Example/Expected Output
+
+```
+akash keys list
+- name: ""
+  type: local
+  address: akash1<redacted>
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"<redacted>"}'
+  mnemonic: ""
+- name: mykey
+  type: local
+  address: akash1<redacted>
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"<redacted>"}'
+  mnemonic: ""
+```
+
 ## **Export Private Key to Local File**
 
 * The key-name can be any name of your choice

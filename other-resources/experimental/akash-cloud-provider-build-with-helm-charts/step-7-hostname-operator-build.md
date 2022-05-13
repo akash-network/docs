@@ -1,9 +1,9 @@
-# Step 6 - Hostname Operator Build
+# Step 7 - Hostname Operator Build
 
 * Run the following command to build the Kubernetes hostname operator
 
 ```
-helm install hostname-operator akash/hostname-operator -n akash-services --set image.tag="$AKASH_VERSION"
+helm install hostname-operator akash/hostname-operator -n akash-services
 ```
 
 #### Expected/Example Output

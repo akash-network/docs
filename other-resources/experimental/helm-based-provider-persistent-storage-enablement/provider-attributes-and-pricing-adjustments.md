@@ -15,7 +15,7 @@ In the subsequent section persistent storage attributes will be defined.  Use th
 
 * Conduct the steps in this section on the Kubernetes master from which the provider was configured in prior steps
 * Adjust the following key-values pairs as necessary with the `helm upgrade` command:
-  * Update the value of the `capabilities/storage/2/class` key to the correct storage class such as `"beta2"`
+  * Update the values of the `bidpricestoragescale` and `attributes[5].value` keys to the correct class type (I.e. `beta2`)
   * Update the region value from current `us-west` to an appropriate value such as `us-east` OR `eu-west`
 * Ensure that necessary [environment variables](../akash-cloud-provider-build-with-helm-charts/step-6-provider-build-via-helm-chart.md) are in place prior to issuing
 
@@ -38,7 +38,7 @@ helm upgrade akash-provider akash/provider -n akash-services \
   --set gasadjustment=1.25 \
   --set gasprices=0.025uakt \
   --set withdrawalperiod=24h \
-  --set bidpricestoragescale="beta2=0.00016\,beta3=0.00016" \
+  --set bidpricestoragescale="0.00016,<beta1|beta2|beta3>=0.00016" \
   --set node="$NODE" \
   --set attributes[0].key="region" \
   --set attributes[0].value="us-west" \
@@ -65,6 +65,40 @@ NAMESPACE: akash-services
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
+```
+
+## Verify Provider Settings
+
+* Issue the following command to verify values applied by Helm&#x20;
+
+```
+helm -n akash-services get values akash-provider
+```
+
+### Example/Expected Output
+
+```
+helm -n akash-services get values akash-provider
+
+USER-SUPPLIED VALUES:
+attributes:
+- key: region
+  value: europe
+- key: host
+  value: akash
+- key: tier
+...
+...
+bidpricestoragescale: "0.00016"
+chainid: akashnet-2
+domain: REDACTED
+from: akash1REDACTED
+gas: auto
+gasadjustment: "1.25"
+gasprices: 0.025uakt
+image:
+  tag: 0.16.4-rc0
+...
 ```
 
 ## Provider Status

@@ -12,7 +12,7 @@ We encourage becoming familiar with Rook and Ceph prior to configuring Akash per
 
 Please take into consideration the following Akash recommendations:
 
-* Persistent storage should only be enabled on Kubernetes nodes that are NOT serving as control-plane/master nodes.
+* Persistent storage should only be enabled on Kubernetes nodes that are NOT serving as control-plane/master nodes.  This does not apply if you are running all-in-one node deployment.
 * Ceph will only deploy it’s distributed file system on unformatted volumes  A node must have unformatted volumes mounted to serve persistent storage capabilities.
 
 Get started within the following sections:

@@ -16,9 +16,11 @@ helm uninstall inventory-operator -n akash-services
 
 ## Resetting Persistent Storage Drives
 
+**WARNING** - issue the script in this section with extreme caution.  If one pics the wrong drive - all data will be irrevocably gone!
+
 Disks on nodes used by Rook for osds can be reset to a usable, unformatted state with the following method.
 
-Execute the following script on each node that participated in Rook cluster with a list of comma separated devices that need to be wiped.  Example drives sda,sdc, and sdg used in example below.
+Execute the following script on each node that participated in Rook cluster with a list of comma separated devices that need to be wiped.  Example drives sda, sdc, and sdg used in example below.
 
 ### **Script**
 

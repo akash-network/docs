@@ -8,11 +8,10 @@
   * [ ] Domain should be a publicly accessible DNS name dedicated for your provider use such as myprovider.com.
 
 ```
-ACCOUNT_ADDRESS=akash1XXXX #akash provicer address that starts with `akash1`
+ACCOUNT_ADDRESS=akash1XXXX #akash provider address that starts with `akash1`
 KEY_PASSWORD=12341234 #set to the password you have entered upon `akash keys export <key-name> > key.pem`; this is for the akash-provider pod to decrypt the key
 DOMAIN=test.com  #Register certains DNS A and wildcard address as specific in previous step, i.e. `provider.test.com` DNS A record and `*.ingress.test.com` DNS wildcard record
-NODE=http://<IP_address_of_your_RPC_node>:26657
-AKASH_VERSION=<current_akash_version>
+NODE=http://<IP_address_of_your_RPC_node>:26657  # if you are going to deploy Akash RPC Node using Helm-Charts then set it to `http://akash-node-1:26657`
 ```
 
 ## **Provider Helm Chart Build**
@@ -50,7 +49,6 @@ helm install akash-provider akash/provider -n akash-services \
      --set node="$NODE" \
      --set chainid="akashnet-2" \
      --set image.tag="$AKASH_VERSION" \
-     --set AKASH_FEES=5123uakt \
      --set gas=auto \
      --set gasadjustment=1.25 \
      --set gasprices=0.025uakt \
