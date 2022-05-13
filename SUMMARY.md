@@ -121,6 +121,8 @@
       * [STEP 6 - Create Kubernetes Cluster](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-6-create-kubernetes-cluster.md)
       * [STEP 7 - Confirm Kubernetes Cluster](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-7-confirm-kubernetes-cluster.md)
       * [STEP 8 - Review Firewall Policies](other-resources/experimental/kubernetes-cluster-for-akash-providers/step-9-review-firewall-policies.md)
+      * [Additional K8s Resources](other-resources/experimental/kubernetes-cluster-for-akash-providers/additional-k8s-resources/README.md)
+        * [Kubespray Hosts.Yaml Examples](other-resources/experimental/kubernetes-cluster-for-akash-providers/additional-k8s-resources/kubespray-hosts.yaml-examples.md)
     * [Akash Cloud Provider Build With Helm Charts](other-resources/experimental/akash-cloud-provider-build-with-helm-charts/README.md)
       * [STEP 1 - Prerequisites of an Akash Provider](other-resources/experimental/akash-cloud-provider-build-with-helm-charts/step-1-prerequisites-of-an-akash-provider.md)
       * [STEP 2 - Kubernetes Configurations](other-resources/experimental/akash-cloud-provider-build-with-helm-charts/step-2-kubernetes-configurations.md)
