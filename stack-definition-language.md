@@ -26,14 +26,14 @@ Indicates version of Akash configuration file. Currently only `"2.0"` is accepte
 
 The top-level `services` entry contains a map of workloads to be ran on the Akash deployment. Each key is a service name; values are a map containing the following keys:
 
-| Name         | Required | Meaning                                                                                                                                                                                            |
-| ------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `image`      | Yes      | Docker image of the container                                                                                                                                                                      |
-| `depends-on` | No       | <p><em><strong>NOTE - field is marked for future use currently has no impact on deployments.</strong></em>  </p><p></p><p>List of services which must be brought up before the current service</p> |
-| `command`    | No       | Custom command use when executing container                                                                                                                                                        |
-| `args`       | No       | Arguments to custom command use when executing the container                                                                                                                                       |
-| `env`        | No       | Environment variables to set in running container. See [services.env](stack-definition-language.md#services.env)                                                                                   |
-| `expose`     | No       | Entities allowed to connect to the services. See [services.expose](stack-definition-language.md#services.expose)                                                                                   |
+| Name         | Required | Meaning                                                                                                          |
+| ------------ | -------- | ---------------------------------------------------------------------------------------------------------------- |
+| `image`      | Yes      | Docker image of the container                                                                                    |
+| `depends-on` | No       | _**NOTE - field is marked for future use and currently has no impact on deployments.**_                          |
+| `command`    | No       | Custom command use when executing container                                                                      |
+| `args`       | No       | Arguments to custom command use when executing the container                                                     |
+| `env`        | No       | Environment variables to set in running container. See [services.env](stack-definition-language.md#services.env) |
+| `expose`     | No       | Entities allowed to connect to the services. See [services.expose](stack-definition-language.md#services.expose) |
 
 ### services.env
 
