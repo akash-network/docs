@@ -3,7 +3,7 @@
 Upload the manifest using the values from above step:
 
 ```bash
-akash provider send-manifest deploy.yaml --node $AKASH_NODE --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER --home ~/.akash --from $AKASH_KEY_NAME
+akash provider send-manifest deploy.yml --node $AKASH_NODE --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER --home ~/.akash --from $AKASH_KEY_NAME
 ```
 
 ### Confirm the URL
