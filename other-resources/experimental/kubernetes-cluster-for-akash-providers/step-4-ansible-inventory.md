@@ -63,6 +63,8 @@ vi ~/kubespray/inventory/akash/hosts.yaml
 
 #### **Example hosts.yaml File**
 
+* Additional hosts.yaml examples, based on different Kubernetes cluster topologies, may be found [here](additional-k8s-resources/kubespray-hosts.yaml-examples.md)
+
 ```
 all:
   hosts:
