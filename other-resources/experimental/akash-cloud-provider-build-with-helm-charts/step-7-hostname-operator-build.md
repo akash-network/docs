@@ -1,6 +1,9 @@
 # Step 7 - Hostname Operator Build
 
 * Run the following command to build the Kubernetes hostname operator
+* Note - if a need arises to use a different software version other than the one defined in the values.yaml Helm file - include the following switch.  In most circumstances this should not be necessary.
+  * `--set image.tag=<image-name>`
+  * Example: `--set image.tag=0.16.4-rc1`
 
 ```
 helm install hostname-operator akash/hostname-operator -n akash-services

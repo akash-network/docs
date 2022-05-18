@@ -38,6 +38,9 @@ helm repo update
 ```
 
 * Issue the following command to build your Akash Provider
+* Note - if a need arises to use a different software version other than the one defined in the values.yaml Helm file - include the following switch.  In most circumstances this should not be necessary.
+  * `--set image.tag=<image-name>`
+  * Example: `--set image.tag=0.16.4-rc1`
 
 ```
 helm install akash-provider akash/provider -n akash-services \
@@ -48,7 +51,6 @@ helm install akash-provider akash/provider -n akash-services \
      --set domain="$DOMAIN" \
      --set node="$NODE" \
      --set chainid="akashnet-2" \
-     --set image.tag="$AKASH_VERSION" \
      --set gas=auto \
      --set gasadjustment=1.25 \
      --set gasprices=0.025uakt \
