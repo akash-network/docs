@@ -4,11 +4,10 @@
 
 We recommend using the Kubespray project to deploy a cluster. Kubespray uses Ansible to make the deployment of a Kubernetes cluster easy.
 
-The recommended minimum number of hosts is four for a production Provider Kubernetes cluster. This is meant to allow:
+The recommended minimum number of hosts is four. This is meant to allow:
 
-* Three hosts serving as a redundant control plane/master instances
+* Three hosts serving as a redundant master nodes
 * One host to serve as Kubernetes worker node to host provider leases
-* NOTE - the number of control plane nodes in the cluster should always be an odd number to allow the cluster to reach consensus.&#x20;
 * NOTE - if you intended to build a provider with persistent storage please refer to host requirements detailed [here](https://docs.akash.network/testnet-technical-docs/provider-persistent-storage-enablement).
 
 While you could use a single Kubernetes host in testing and dev this would not be recommended for production.

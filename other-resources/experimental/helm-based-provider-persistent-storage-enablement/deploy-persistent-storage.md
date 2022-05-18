@@ -33,7 +33,7 @@ helm install akash-rook akash/akash-rook -n akash-services --set nodes[0].name="
 ### Multiple Persistent Storage Nodes Build
 
 * Use this Helm Chart command in an environment in which multiple nodes will host persistent storage
-* In this example command two nodes are targeted for persistent storage.  Continue to define additional nodes as necessary using this syntax - for example a third node would be included with as `nodes[2].name="`NODE-NAME`",nodes[2].config=""`
+* In this example command two nodes are targeted for persistent storage.  Continue to define additional nodes as necessary using this syntax - for example a third node would be included such as `nodes[2].name="`NODE-NAME`",nodes[2].config=""`
 
 ```
 helm install akash-rook akash/akash-rook -n akash-services --set nodes[0].name="NODE-NAME",nodes[0].config="",nodes[1].name="NODE-NAME",nodes[1].config=""
