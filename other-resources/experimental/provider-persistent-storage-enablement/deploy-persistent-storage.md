@@ -1,11 +1,34 @@
 # Deploy Persistent Storage
 
-## Ensure Unformatted Drives
+## Ensure Unformatted Volume Exist
 
 * Rook-Ceph will automatically discover free, raw partitions.  Use the following command on the host that will serve persistent storage to ensure the intended partition as no file system.
 
 ```
 lsblk -f
+```
+
+### Example/Expected Output
+
+* In this example we find the unformatted partition of `xvdf` which would be used as the persistent storage volume
+
+```
+root@node2:~# lsblk -f
+NAME     FSTYPE   FSVER LABEL           UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+loop0    squashfs 4.0                                                              0   100% /snap/core18/2344
+loop1    squashfs 4.0                                                              0   100% /snap/amazon-ssm-agent/5163
+loop2    squashfs 4.0                                                              0   100% /snap/core20/1405
+loop3    squashfs 4.0                                                              0   100% /snap/lxd/22923
+loop4    squashfs 4.0                                                              0   100% /snap/snapd/15177
+loop5    squashfs 4.0                                                              0   100% /snap/snapd/15534
+loop6    squashfs 4.0                                                              0   100% /snap/core20/1434
+loop7    squashfs 4.0                                                              0   100% /snap/core18/2409
+loop8    squashfs 4.0                                                              0   100% /snap/amazon-ssm-agent/5656
+xvda
+├─xvda1  ext4     1.0   cloudimg-rootfs e7879b8a-f914-4210-998a-d47604682e59   39.5G    18% /
+├─xvda14
+└─xvda15 vfat     FAT32 UEFI            594C-4810                              99.1M     5% /boot/efi
+xvdf
 ```
 
 ## **Execute Rook Deployment**

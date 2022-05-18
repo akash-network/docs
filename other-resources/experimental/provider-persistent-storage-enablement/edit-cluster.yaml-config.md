@@ -24,7 +24,17 @@ vi cluster.yaml
 
 #### **Post cluster.yaml Update**
 
+* Single persistent storage node example:
+
 ```
     nodes: # <<< PUT YOUR NODES HERE
       - name: node2
+```
+
+* Multiple persistent storage nodes example:
+
+```
+    nodes: # <<< PUT YOUR NODES HERE
+      - name: node2
+      - name: node3
 ```
