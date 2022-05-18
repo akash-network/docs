@@ -2,7 +2,7 @@
 
 ## Why use Akash?
 
-Welcome [Chia](https://www.chia.net) community! We are excited to announce support for Chia on the [Akash](https://akash.network) network! You can now run nodes, plotting, and farming on our marketplace of compute. Below you will find details on how to configure your deployment for different use cases. Akash is a part of the [Cosmos](https://cosmos.network) ecosystem of blockchains.
+Welcome [Chia](https://www.chia.net/) community! We are excited to announce support for Chia on the [Akash](https://akash.network/) network! You can now run nodes, plotting, and farming on our marketplace of compute. Below you will find details on how to configure your deployment for different use cases. Akash is a part of the [Cosmos](https://cosmos.network/) ecosystem of blockchains.
 
 ## Plotting Demo
 
@@ -195,8 +195,8 @@ To download plots, click an invididual plot in the Chia Plot Manager and click o
 
 ## Speed up downloads
 
-Windows/Mac/Linux : Use a download manager like [DownThemAll](https://www.downthemall.net) on Chrome/Firefox/Opera\
-Linux/CLI: Use [aria2](https://aria2.github.io) : `apt-get install aria2`
+Windows/Mac/Linux : Use a download manager like [DownThemAll](https://www.downthemall.net/) on Chrome/Firefox/Opera\
+Linux/CLI: Use [aria2](https://aria2.github.io/) : `apt-get install aria2`
 
 ```
 aria2c -c -s 16 -x 16 -k 64M -j 1 $plot_download_url
