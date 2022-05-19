@@ -79,7 +79,6 @@
     * [STEP3 - Choose a Node Moniker](akash-nodes/run-an-akash-node/step3-choose-a-node-moniker.md)
     * [STEP4 - Initialize New Node](akash-nodes/run-an-akash-node/step4-initialize-new-node.md)
     * [STEP5 - Set Minimum Gas Price](akash-nodes/run-an-akash-node/step5-set-minimum-gas-price.md)
-    * [STEP5 - Set Minimum Gas Price](akash-nodes/run-an-akash-node/step5-set-minimum-gas-price-1.md)
     * [STEP6 - Copy the Genesis File](akash-nodes/run-an-akash-node/step6-copy-the-genesis-file.md)
     * [STEP7 - Add Seed and Peer Nodes](akash-nodes/run-an-akash-node/step7-add-seed-and-peer-nodes.md)
     * [STEP8 - Fast Sync](akash-nodes/run-an-akash-node/step8-fast-sync.md)

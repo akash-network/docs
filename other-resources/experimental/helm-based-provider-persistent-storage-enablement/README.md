@@ -23,7 +23,7 @@ Get started within the following sections:
 * [Provider Attributes and Pricing Adjustments](provider-attributes-and-pricing-adjustments.md)
 * [Label Nodes For Storage Classes](label-nodes-for-storage-classes.md)
 * [Inventory Operator](inventory-operator.md)
-* [Verifications](../provider-persistent-storage-enablement/verifications.md)
+* [Verifications](broken-reference)
 * [Teardown](teardown.md)\
 
 
