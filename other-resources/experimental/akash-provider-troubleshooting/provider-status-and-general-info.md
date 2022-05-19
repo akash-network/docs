@@ -4,6 +4,7 @@ Use the verifications included in this section for the following purposes:
 
 * [Determine Provider Status](provider-status-and-general-info.md#provider-status)
 * [Review Provider Configuration](provider-status-and-general-info.md#provider-configuration-review)
+* [Current Versions of Provider's Akash and Kubernetes Installs](provider-status-and-general-info.md#current-versions-of-providers-akash-and-kubernetes-installs)&#x20;
 
 ## Provider Status
 
@@ -135,4 +136,12 @@ info:
   email: ""
   website: ""
 owner: akash1q7spv2cw06yszgfp4f9ed59lkka6ytn8g4tkjf
+```
+
+## Current Versions of Provider's Akash and Kubernetes Installs
+
+* Command may be issued from any source with internet connectivity
+
+```
+curl -sk https://provider.mainnet-1.ca.aksh.pw:8443/version | jq,    
 ```

@@ -114,13 +114,6 @@ kubectl get ingress -A
 
 ```
 NAMESPACE                                       NAME                                                  CLASS                 HOSTS                                                 ADDRESS                   PORTS   AGE
-akash-services                                  akash-ingress-node-api                                nginx                 api.akashtesting.xyz                                  10.0.10.122,10.0.10.236   80      3d23h
-
-akash-services                                  akash-ingress-node-grpc                               nginx                 grpc.akashtesting.xyz                                 10.0.10.122,10.0.10.236   80      3d23h
-
-akash-services                                  akash-ingress-node-p2p                                nginx                 p2p.akashtesting.xyz                                  10.0.10.122,10.0.10.236   80      3d23h
-
-akash-services                                  akash-ingress-node-rpc                                nginx                 rpc.akashtesting.xyz                                  10.0.10.122,10.0.10.236   80      3d23h
 
 akash-services                                  akash-ingress-provider                                nginx                 provider.akashtesting.xyz                             10.0.10.122,10.0.10.236   80      3d23h
 
