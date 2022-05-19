@@ -84,7 +84,7 @@ $ make deps-install
 $ make install
 ```
 
-Akash is developed and tested with [golang 1.16+](https://golang.org/). Building requires a working [golang](https://golang.org/) installation, a properly set `GOPATH`, and `$GOPATH/bin` present in `$PATH`.
+Akash is developed and tested with [golang 1.16+](https://golang.org). Building requires a working [golang](https://golang.org) installation, a properly set `GOPATH`, and `$GOPATH/bin` present in `$PATH`.
 
 Once you have the dependencies properly setup, download and build `akash` using `make install`
 {% endtab %}

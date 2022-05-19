@@ -8,7 +8,7 @@ Ultimately this is a two container setup, one PostgreSQL server and one schedule
 
 ## Usage
 
-* Setup a [Filebase](https://filebase.com/) account and bucket (or any S3 compatible storage host).
+* Setup a [Filebase](https://filebase.com) account and bucket (or any S3 compatible storage host).
 * Set the environment variables in the [deploy.yml](https://github.com/ovrclk/akash-postgres-restore/blob/master/deploy.yml) and deploy on Akash
 * Use the URL and port Akash gives you to connect to the Postgres server, with the credentials you provided in the environment variables. For example cluster.ewr1p0.mainnet.akashian.io:31234
 
