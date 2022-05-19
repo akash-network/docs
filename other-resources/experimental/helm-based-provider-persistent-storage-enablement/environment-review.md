@@ -46,5 +46,3 @@ xvda
 └─xvda15 vfat     FAT32 UEFI            594C-4810                              99.1M     5% /boot/efi
 xvdf
 ```
-
-##

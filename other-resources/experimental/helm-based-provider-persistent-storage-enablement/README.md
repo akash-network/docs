@@ -17,13 +17,16 @@ Please take into consideration the following Akash recommendations:
 
 Get started within the following sections:
 
+
+
+* [Persistent Storage Requirements](persistent-storage-requirements.md)
 * [Environment Review](environment-review.md)
 * [Deploy Persistent Storage](deploy-persistent-storage.md)
 * [Check Persistent Storage Health](check-persistent-storage-health.md)
 * [Provider Attributes and Pricing Adjustments](provider-attributes-and-pricing-adjustments.md)
 * [Label Nodes For Storage Classes](label-nodes-for-storage-classes.md)
 * [Inventory Operator](inventory-operator.md)
-* [Verifications](../provider-persistent-storage-enablement/verifications.md)
+* [Verifications](broken-reference)
 * [Teardown](teardown.md)\
 
 

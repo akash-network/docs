@@ -133,6 +133,7 @@
       * [STEP 8 - Ingress Controller Install](other-resources/experimental/akash-cloud-provider-build-with-helm-charts/step-8-ingress-controller-install.md)
       * [Step 9 - Firewall Rule Review](other-resources/experimental/akash-cloud-provider-build-with-helm-charts/step-9-firewall-rule-review.md)
     * [Helm Based Provider Persistent Storage Enablement](other-resources/experimental/helm-based-provider-persistent-storage-enablement/README.md)
+      * [Persistent Storage Requirements](other-resources/experimental/helm-based-provider-persistent-storage-enablement/persistent-storage-requirements.md)
       * [Environment Review](other-resources/experimental/helm-based-provider-persistent-storage-enablement/environment-review.md)
       * [Storage Class Types](other-resources/experimental/helm-based-provider-persistent-storage-enablement/storage-class-types.md)
       * [Deploy Persistent Storage](other-resources/experimental/helm-based-provider-persistent-storage-enablement/deploy-persistent-storage.md)
