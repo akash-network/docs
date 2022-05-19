@@ -12,9 +12,9 @@ Follow our [Keplr Wallet](../../token/keplr.md) guide to create your first walle
 
 The Akashlytics Deploy software download may be initiated via the desired link below.
 
-* [Windows OS](https://github.com/Akashlytics/akashlytics-deploy/releases/download/v0.13.0/Akashlytics-Deploy-0.13.0.exe)
-* [MacOS](https://github.com/Akashlytics/akashlytics-deploy/releases/download/v0.13.0/Akashlytics-Deploy-0.13.0.dmg)
-* [Linux OS](https://github.com/Akashlytics/akashlytics-deploy/releases/download/v0.13.0/Akashlytics-Deploy-0.13.0.AppImage)
+* [Windows OS](https://github.com/Akashlytics/akashlytics-deploy/releases/download/v0.13.1/Akashlytics-Deploy-0.13.1.exe)
+* [MacOS](https://github.com/Akashlytics/akashlytics-deploy/releases/download/v0.13.1/Akashlytics-Deploy-0.13.1.dmg)
+* [Linux OS](https://github.com/Akashlytics/akashlytics-deploy/releases/download/v0.13.1/Akashlytics-Deploy-0.13.1.AppImage)
 
 The Akashlytics Deploy project’s documentation may be found [here](https://www.akashlytics.com/deploy).
 
