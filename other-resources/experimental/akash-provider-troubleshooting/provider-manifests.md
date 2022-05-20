@@ -12,15 +12,18 @@ Use the verifications included in this section for the following purposes:
 Issue the commands in this section from a control plane node within the Kubernetes cluster or a machine that has kubectl communication with the cluster.
 
 ```
-kubectl get manifests -n lease
+kubectl -n lease get manifests --show-labels
 ```
 
 ### Example Output
 
-```
-NAME                                            AGE
+* The show-labels options includes display of associated DSEQ / OSEQ / GSEQ / Owner labels
 
-moc58fca3ccllfrqe49jipp802knon0cslo332qge55qk   13m
+```
+kubectl -n lease get manifests --show-labels
+
+NAME                                            AGE   LABELS
+h644k9qp92e0qeakjsjkk8f3piivkuhgc6baon9tccuqo   26h   akash.network/lease.id.dseq=5950031,akash.network/lease.id.gseq=1,akash.network/lease.id.oseq=1,akash.network/lease.id.owner=akash15745vczur53teyxl4k05u250tfvp0lvdcfqx27,akash.network/lease.id.provider=akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx,akash.network/namespace=h644k9qp92e0qeakjsjkk8f3piivkuhgc6baon9tccuqo,akash.network=true
 ```
 
 ## Retrieve Manifest Detail From Provider
