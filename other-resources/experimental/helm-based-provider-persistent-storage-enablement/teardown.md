@@ -5,7 +5,7 @@ If a problem is experienced during persistent storage enablement, follow these s
 ## Remove Akash Rook Helm Chart
 
 ```
-helm uninstall akash-rook-n akash-services
+helm uninstall akash-rook -n akash-services
 ```
 
 ## Remove Akash Inventory Operator
@@ -16,7 +16,7 @@ helm uninstall inventory-operator -n akash-services
 
 ## Resetting Persistent Storage Drives
 
-**WARNING** - issue the script in this section with extreme caution.  If one pics the wrong drive - all data will be irrevocably gone!
+**WARNING** - issue the script in this section with extreme caution.  If one picks the wrong drive - all data will be irrevocably gone!
 
 Disks on nodes used by Rook for osds can be reset to a usable, unformatted state with the following method.
 

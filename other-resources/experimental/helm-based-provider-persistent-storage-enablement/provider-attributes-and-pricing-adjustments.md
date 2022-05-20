@@ -1,21 +1,10 @@
 # Provider Attributes and Pricing Adjustments
 
-## Storage Class Types <a href="#storage-class-types" id="storage-class-types"></a>
-
-In the subsequent section persistent storage attributes will be defined.  Use the chart below to determine your provider's storage class.
-
-| Class Name | Throughput/Approx matching device |
-| ---------- | --------------------------------- |
-| beta1      | hdd                               |
-| beta2      | ssd                               |
-| beta3      | NVMe                              |
-| default    | Provider defined default class    |
-
 ## Attribute Adjustments
 
 * Conduct the steps in this section on the Kubernetes master from which the provider was configured in prior steps
 * Adjust the following key-values pairs as necessary with the `helm upgrade` command:
-  * Update the values of the `bidpricestoragescale` and `attributes[5].value` keys to the correct class type (I.e. `beta2`)
+  * Update the values of the `bidpricestoragescale` and `attributes[5].value` keys to the correct class type (I.e. `beta2`).  Reference the [Storage Class Types](storage-class-types.md) doc section for additional details.
   * Update the region value from current `us-west` to an appropriate value such as `us-east` OR `eu-west`
 * Ensure that necessary [environment variables](../akash-cloud-provider-build-with-helm-charts/step-6-provider-build-via-helm-chart.md) are in place prior to issuing
 
