@@ -14,49 +14,49 @@ If you have not used Akashlytics Deploy previously, please use [this guide](http
 
 * Our Akash Node install begins by creating a new deployment
 
-![](../.gitbook/assets/deploymentsHomeScreen.png)
+![](<../.gitbook/assets/deploymentsHomeScreen (1).png>)
 
 * A number of checks are completed to make sure we are ready to deploy a new app onto Akash
 * Revisit the Akashlytics Deploy guide for tips if any checks fail
 
-![](<../.gitbook/assets/akashlyticsBaseVerify (1).png>)
+![](../.gitbook/assets/akashlyticsBaseVerify.png)
 
 * To install the Akash Node we will use a custom SDL file
 * Select the “Empty” option so that we can copy/paste the Akash Node SDL in the next step
 
-![](<../.gitbook/assets/manifestSelectInitial (1).png>)
+![](../.gitbook/assets/manifestSelectInitial.png)
 
 * Copy and paste the SDL from [this site](https://github.com/ovrclk/cosmos-omnibus/blob/master/akash/deploy.yml) into the Akashlytics SDL editor window
 * **NOTE -** the SDL within GitHub currently has a storage > size value of 120Gi. Omnibus uses a compressed snapshot of the blockchain and when expanded 120GB of storage for the deployment will not be enough. At the time of this writing adjusting the storage size to 350GB will suffice and allow some growth. Please adjust the storage appropriately and as shown in the screenshot below.
 
-![](<../.gitbook/assets/sdlWithStorageAdjustment (1).png>)
+![](../.gitbook/assets/sdlWithStorageAdjustment.png)
 
 * Accept the initial deposit of 5 AKT into the deployment’s escrow account
 * The escrow can be refilled easily within Akashlytics Deploy at any time
 
-![](<../.gitbook/assets/acceptDeposit (1) (1).png>)
+![](<../.gitbook/assets/acceptDeposit (1) (1) (1).png>)
 
 * Approve the transaction fee to allow the deployment to continue
 
-![](../.gitbook/assets/transactionFeeDeployAccept.png)
+![](<../.gitbook/assets/transactionFeeDeployAccept (1).png>)
 
 * Select a provider from the bid list
 
-![](../.gitbook/assets/bidSelect.png)
+![](<../.gitbook/assets/bidSelect (1).png>)
 
 * Accept the transaction fee to create a lease with the provider
 
-![](../.gitbook/assets/bidTransactionFee.png)
+![](<../.gitbook/assets/bidTransactionFee (1).png>)
 
 ### Akashlytics Deploy Complete
 
 * Once the deployment is complete the lease details are shown
 
-![](<../.gitbook/assets/deploymentComplete (1) (1) (1).png>)
+![](<../.gitbook/assets/deploymentComplete (1) (1) (2).png>)
 
 * After some time the Available/Ready Replicas fields will update to show the current node count. It may be necessary to refresh the screen for this count to update.
 
-![](../.gitbook/assets/deploymentCounts.png)
+![](<../.gitbook/assets/deploymentCounts (1).png>)
 
 ## Confirmation of Node Deployment
 
@@ -67,14 +67,14 @@ With the install of the Akash node complete, it must sync with the blockchain. O
 * While the blockchain snapshot is downloading, the following logs should be visible within Akashlytics
 * We can know that the snapshot download is not yet complete if we see this message in the logs
 
-![](../.gitbook/assets/snapshotDownloading.png)
+![](<../.gitbook/assets/snapshotDownloading (1).png>)
 
 ### Snapshot Download Completed
 
 * After the snapshot download completes the logs will begin showing blockchain sync activity
 * Example output shown should look something like this but with the current blocks on the chain
 
-![](../.gitbook/assets/snapshotDownloadComplete.png)
+![](<../.gitbook/assets/snapshotDownloadComplete (1).png>)
 
 ### Akash Node Verifications
 
@@ -84,7 +84,7 @@ With the install of the Akash node complete, it must sync with the blockchain. O
 
 * Begin by capturing the deployment’s public URI from Akashlytics
 
-![](../.gitbook/assets/nodeUIR.png)
+![](<../.gitbook/assets/nodeUIR (1).png>)
 
 #### Confirm Blockchain Sync
 
@@ -92,28 +92,28 @@ With the install of the Akash node complete, it must sync with the blockchain. O
 * If the Node deployed successfully we should view a list of RPC endpoints
 * Click the link to visit the Node’s status page
 
-![](<../.gitbook/assets/rpcStatusLink (1) (1) (2).png>)
+![](<../.gitbook/assets/rpcStatusLink (1) (1) (1) (2).png>)
 
 * Look for the “latest\_block\_height” field
 
-![](<../.gitbook/assets/rpcStatusVerification (1).png>)
+![](../.gitbook/assets/rpcStatusVerification.png)
 
 * Open [Mintscan](https://www.mintscan.io/akash), a popular blockchain explorer, to compare the captured “latest\_block\_height” value to the latest block displayed in the explorer
 * The block height from the Akash Node and Mintscan will not be exactly match but should be close to each other
 
-![](../.gitbook/assets/mintscanBlockHeight.png)
+![](<../.gitbook/assets/mintscanBlockHeight (1).png>)
 
 #### Confirm Peer Nodes
 
 * Navigate back to the home page for your Node
 * Click the link for “net\_info”
 
-![](../.gitbook/assets/rpcNetInfoLink.png)
+![](<../.gitbook/assets/rpcNetInfoLink (1).png>)
 
 * Find the section with the name of “peers”
 * Here we can determine what other Akash nodes our node is connected to and the status of these connections
 
-![](<../.gitbook/assets/rpcNetInfoData (1).png>)
+![](../.gitbook/assets/rpcNetInfoData.png)
 
 ## Additional Information
 
