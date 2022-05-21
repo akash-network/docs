@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Intro to Akash](README.md)
-  * [What is Akash?](readme/what-is-akash.md)
   * [Technical Support](support.md)
   * [Stack Definition Language (SDL)](stack-definition-language.md)
 * [Tokens and Wallets](tokens-and-wallets/README.md)
