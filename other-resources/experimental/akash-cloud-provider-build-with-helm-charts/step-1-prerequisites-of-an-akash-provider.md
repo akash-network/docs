@@ -20,6 +20,10 @@ Akash Providers need to run their own blockchain RPC node to remove dependence o
 
 Build your own RPC node via these [instructions](../../../akash-nodes/run-an-akash-node/).
 
+## CPU Support
+
+Only x86\_64 processors are officially supported by Akash for provider Kubernetes nodes at this time.  This may change in the future and when ARM processors are supported it will be announced and documented.
+
 ## Custom Kubernetes Cluster Settings
 
 Akash Providers are deployed in many environments and we will make additions to these sections as when nuances are discovered.

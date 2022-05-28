@@ -6,6 +6,10 @@ An Akash wallet with available mnemonic phrase will be needed.&#x20;
 
 Follow our [Keplr Wallet](../../token/keplr.md) guide to create your first wallet if necessary.
 
+## CPU Support
+
+Only x86\_64 processors are officially supported for Akash deployments.  This may change in the future and when ARM processors are supported it will be announced and documented.
+
 ## **Akashlytics Deploy Installation**
 
 ### **Software Access and Download Instructions**

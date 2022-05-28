@@ -1,5 +1,11 @@
 # Part 7. Create your Deployment
 
+## CPU Support
+
+Only x86\_64 processors are officially supported for Akash deployments.  This may change in the future and when ARM processors are supported it will be announced and documented.
+
+## Akash Deployment
+
 To deploy on Akash, run:
 
 ```bash
