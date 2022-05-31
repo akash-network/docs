@@ -42,5 +42,5 @@ helm install akash-rook akash/akash-rook -n akash-services --set nodes[0].name="
 #### Example Command
 
 ```
-helm install akash-rook akash/akash-rook -n akash-services --set nodes[0].name="node2",nodes[0].config="",nodes[1].name="node3",nodes[1].config=""
+helm install akash-rook akash/akash-rook -n akash-services --set nodes[0].name="node2",nodes[0].config="",nodes[1].name="node3",nodes[1].config="",nodes[2].name="node4",nodes[2].config=""
 ```

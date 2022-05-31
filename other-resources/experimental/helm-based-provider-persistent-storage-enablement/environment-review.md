@@ -15,6 +15,7 @@ root@node1:~/akash# kubectl get nodes -ojson | jq -r '.items[].metadata.labels."
 
 node1
 node2
+node3
 ```
 
 ## Ensure Unformatted Drives

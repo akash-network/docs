@@ -2,11 +2,11 @@
 
 In the subsequent sections persistent storage attributes will be defined.  Use the chart below to determine your provider's storage class.
 
-| Class Name | Throughput/Approx matching device |
-| ---------- | --------------------------------- |
-| beta1      | hdd                               |
-| beta2      | ssd                               |
-| beta3      | NVMe                              |
-| default    | Provider defined default class    |
+| Class Name | Throughput/Approx matching device | Number of OSD |
+| ---------- | --------------------------------- | ------------- |
+| beta1      | hdd                               | 2             |
+| beta2      | ssd                               | 3             |
+| beta3      | NVMe                              | 5             |
+| default    | Provider defined default class    | N/A           |
 
 ##
