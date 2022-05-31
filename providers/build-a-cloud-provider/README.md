@@ -1,7 +1,5 @@
 # Build a Cloud Provider
 
-
-
 ## Prerequisites of an Akash Provider
 
 ### Wallet Funding - Minimum of 5 AKT
@@ -14,7 +12,7 @@ The steps to create an Akash account are covered in the Provider setup section o
 
 * A full Kubernetes cluster is required.
 * The cluster must have outbound internet access and be reachable from the internet.
-* Please use [this guide](https://docs.akash.network/operations/provider/kubernetes-cluster) for ALL Kubernetes related configurations.  This guide covers a _**full cluster build**_, should it be needed, AND important details for new/pre-existing cluster configurations of _**custom resource definitions and ingress controllers**_ for the Akash provider.
+* Please use [this guide ](kubernetes-cluster.md)for ALL Kubernetes related configurations.  This guide covers a _**full cluster build**_, should it be needed, AND important details for new/pre-existing cluster configurations of _**custom resource definitions and ingress controllers**_ for the Akash provider.
 
 ### Custom Kubernetes Cluster Settings
 
