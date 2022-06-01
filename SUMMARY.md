@@ -66,6 +66,8 @@
     * [Kubernetes Cluster](providers/build-a-cloud-provider/kubernetes-cluster.md)
     * [gVisor Issue - No system-cgroup v2 Support](providers/build-a-cloud-provider/gvisor-issue-no-system-cgroup-v2-support.md)
     * [Provider Networks](providers/build-a-cloud-provider/provider-networks.md)
+  * [Community Provider Solutions](providers/community-provider-solutions/README.md)
+    * [Praetor](providers/community-provider-solutions/praetor.md)
   * [Custom Kubernetes Cluster Settings](providers/custom-kubernetes-cluster-settings/README.md)
     * [VMware Tanzu](providers/custom-kubernetes-cluster-settings/vmware-tanzu.md)
   * [Akash Audited Attributes](providers/akash-audited-attributes.md)
