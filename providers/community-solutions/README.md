@@ -1,4 +1,4 @@
-# Community Provider Solutions
+# Community Solutions
 
 The Akash community drives innovation in Provider tooling.  Our highlighted community contributions include:
 
