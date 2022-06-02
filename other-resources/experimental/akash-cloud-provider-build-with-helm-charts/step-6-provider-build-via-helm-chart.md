@@ -10,7 +10,7 @@
 ```
 ACCOUNT_ADDRESS=akash1XXXX #akash provider address that starts with `akash1`
 KEY_PASSWORD=12341234 #set to the password you have entered upon `akash keys export <key-name> > key.pem`; this is for the akash-provider pod to decrypt the key
-DOMAIN=test.com  #Register certains DNS A and wildcard address as specific in previous step, i.e. `provider.test.com` DNS A record and `*.ingress.test.com` DNS wildcard record
+DOMAIN=test.com  #Registers DNS A and wildcard address as specified in previous step, i.e. `provider.test.com` DNS A record and `*.ingress.test.com` DNS wildcard record
 NODE=http://<IP_address_of_your_RPC_node>:26657  # if you are going to deploy Akash RPC Node using Helm-Charts then set it to `http://akash-node-1:26657`
 ```
 
