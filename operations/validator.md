@@ -11,6 +11,7 @@ Validators are responsible for committing new blocks to the blockchain through v
 * CPU - 4/8 Core
 * Memory - 8/16GB
 * Disk - SSD or NVMe
+  * Size - 512GB or larger
 
 ### Active Validator Set
 
