@@ -9,7 +9,7 @@ Use the verifications included in this section for the following purposes:
 
 ### Command Template
 
-Issue the commands in this section from any machine that has the [Akash CLI](../../../guides/cli/detailed-steps/) installed.
+Issue the commands in this section from any machine that has the [Akash CLI](../../../../guides/cli/detailed-steps/) installed.
 
 * **Note** - ensure queries are not limited only to leases created by your account by issuing `unset AKASH_FROM` prior to the `akash query market` command execution
 
@@ -48,7 +48,7 @@ For accurate earning potential based on today's actual financial/other realities
 
 ### Command Syntax
 
-Issue the commands in this section from any machine that has the [Akash CLI](../../../guides/cli/detailed-steps/) installed.
+Issue the commands in this section from any machine that has the [Akash CLI](../../../../guides/cli/detailed-steps/) installed.
 
 **Note** - ensure queries are not limited only to leases created by your account by issuing `unset AKASH_FROM` prior to the `akash query market` command execution
 
