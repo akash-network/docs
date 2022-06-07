@@ -48,4 +48,16 @@ xvda
 xvdf
 ```
 
-##
+## LVM Package <a href="#lvm-package" id="lvm-package"></a>
+
+Ceph OSDs have a dependency on LVM in the following scenarios:
+
+* OSDs are created on raw devices or partitions
+* If encryption is enabled (`encryptedDevice: true` in the cluster CR)
+* A `metadata` device is specified
+
+For persistent storage use the OSDs are created on raw partitions.  Issue the following command on each node serving persistent storage.
+
+```
+apt-get install -y lvm2
+```
