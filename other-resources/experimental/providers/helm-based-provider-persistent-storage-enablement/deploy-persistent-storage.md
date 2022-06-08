@@ -40,13 +40,17 @@ helm install akash-rook akash/akash-rook -n akash-services --set nodes[0].name="
 
 * Use this Helm Chart command in an environment in which multiple nodes will host persistent storage
 * In this example command two nodes are targeted for persistent storage.  Continue to define additional nodes as necessary using this syntax - for example a third node would be included such as `nodes[2].name="`NODE-NAME`",nodes[2].config=""`
+* In this example command we are using the following Ceph settings:
+  * MGR (manager) count 2 which is the minimum recommended value.  Also note that the maximum accept value is also 2.  Thus this setting should always be of count 2.
+  * MON (monitor) count 3 which is the minimum recommended value.
+  * OSDs count of 3 which is appropriate for SSD disks.  Adjust `-set osdsPerDevice` as necessary based on the disk type and the recommended settings [here](persistent-storage-requirements.md).
 
 ```
-helm install akash-rook akash/akash-rook -n akash-services --set nodes[0].name="NODE-NAME",nodes[0].config="",nodes[1].name="NODE-NAME",nodes[1].config=""
+helm install akash-rook akash/akash-rook -n akash-services -set mgrCount=2 --set monCount=3 --set osdsPerDevice=3 --set nodes[0].name="NODE-NAME",nodes[0].config="",nodes[1].name="NODE-NAME",nodes[1].config=""
 ```
 
 #### Example Command
 
 ```
-helm install akash-rook akash/akash-rook -n akash-services --set nodes[0].name="node2",nodes[0].config="",nodes[1].name="node3",nodes[1].config="",nodes[2].name="node4",nodes[2].config=""
+helm install akash-rook akash/akash-rook -n akash-services -set mgrCount=2 --set monCount=3 --set osdsPerDevice=3 --set nodes[0].name="node2",nodes[0].config="",nodes[1].name="node3",nodes[1].config="",nodes[2].name="node4",nodes[2].config=""
 ```
