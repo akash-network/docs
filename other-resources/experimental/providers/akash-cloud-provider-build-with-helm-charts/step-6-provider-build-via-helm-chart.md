@@ -44,7 +44,6 @@ helm repo update
 
 ```
 helm install akash-provider akash/provider -n akash-services \
-     --set keyringbackend="test" \
      --set from="$ACCOUNT_ADDRESS" \
      --set key="$(cat ./key.pem | base64)" \
      --set keysecret="$(echo $KEY_PASSWORD | base64)" \
