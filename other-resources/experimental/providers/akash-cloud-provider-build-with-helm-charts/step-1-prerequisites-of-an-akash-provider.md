@@ -18,7 +18,7 @@ If you need assistance in building a new cluster, visit the [Kubernetes Cluster 
 
 Akash Providers need to run their own blockchain RPC node to remove dependence on public nodes.  This is a strict requirement.&#x20;
 
-Build your own RPC node via these [instructions](../../../../akash-nodes/run-an-akash-node/).
+We have recently released documentation guiding thru the process of building a [RPC node via Helm Charts](../../akash-nodes/akash-node-via-helm-charts/) with state sync.
 
 ## CPU Support
 
