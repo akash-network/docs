@@ -83,12 +83,8 @@ attributes:
 ...
 ...
 bidpricestoragescale: "0.00016"
-chainid: akashnet-2
 domain: REDACTED
 from: akash1REDACTED
-gas: auto
-gasadjustment: "1.25"
-gasprices: 0.025uakt
 image:
   tag: 0.16.4-rc0
 ...
