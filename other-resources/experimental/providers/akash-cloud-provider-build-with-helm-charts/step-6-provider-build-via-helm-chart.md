@@ -37,6 +37,8 @@ NODE=http://<IP_address_of_your_RPC_node>:26657  # if you are going to deploy Ak
 helm repo update
 ```
 
+#### Create a provider.yaml File
+
 * Issue the following command to build your Akash Provider
 
 ```

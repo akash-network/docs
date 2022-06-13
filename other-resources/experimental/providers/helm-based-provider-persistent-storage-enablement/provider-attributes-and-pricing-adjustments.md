@@ -8,13 +8,17 @@
   * Update the region value from current `us-west` to an appropriate value such as `us-east` OR `eu-west`
 * Ensure that necessary [environment variables](../akash-cloud-provider-build-with-helm-charts/step-6-provider-build-via-helm-chart.md) are in place prior to issuing
 
-#### Helm Chart Upgrade Commands and Template
+#### Helm Chart Update
 
 ```
 cd ~
 
 helm repo update
+```
 
+#### Create a Provider-storage.yaml File
+
+```
 cat > provider-storage.yaml << EOF
 ---
 bidpricestoragescale: "0.00016,beta2=0.00016" # set your storage class here: beta1, beta2 or beta3!
