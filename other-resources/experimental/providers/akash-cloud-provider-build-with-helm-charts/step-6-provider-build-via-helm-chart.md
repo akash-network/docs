@@ -38,22 +38,28 @@ helm repo update
 ```
 
 * Issue the following command to build your Akash Provider
-* Note - if a need arises to use a different software version other than the one defined in the values.yaml Helm file - include the following switch.  In most circumstances this should not be necessary.
-  * `--set image.tag=<image-name>`
-  * Example: `--set image.tag=0.16.4-rc1`
 
 ```
-helm install akash-provider akash/provider -n akash-services \
-     --set from="$ACCOUNT_ADDRESS" \
-     --set key="$(cat ./key.pem | base64)" \
-     --set keysecret="$(echo $KEY_PASSWORD | base64)" \
-     --set domain="$DOMAIN" \
-     --set node="$NODE" \
-     --set chainid="akashnet-2" \
-     --set gas=auto \
-     --set gasadjustment=1.25 \
-     --set gasprices=0.025uakt \
-     --set withdrawalperiod=24h
+cat > provider.yaml << EOF
+---
+from: "$ACCOUNT_ADDRESS"
+key: "$(cat ./key.pem | openssl base64 -A)"
+keysecret: "$(echo $KEY_PASSWORD | openssl base64 -A)"
+domain: "$DOMAIN"
+node: "$NODE"
+withdrawalperiod: 24h
+attributes:
+  - key: region
+    value: "<YOUR REGION>"   # set your region here, e.g. "us-west"
+  - key: host
+    value: akash
+  - key: tier
+    value: community
+  - key: organization
+    value: "<YOUR ORG>"      # set your organization name here
+EOF
+
+helm install akash-provider akash/provider -n akash-services -f provider.yaml
 ```
 
 #### **Expected output**
@@ -65,6 +71,17 @@ NAMESPACE: akash-services
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
+```
+
+## Specific Version
+
+If a need arises to use a different software version other than the one defined in the values.yaml Helm file - include the following section in the provider.yaml file and re-run the helm install command. In most circumstances this should not be necessary.
+
+* Example:
+
+```
+image:
+  tag: 0.16.4-rc4
 ```
 
 ## **Provider Confirmation**

@@ -15,34 +15,30 @@ cd ~
 
 helm repo update
 
-helm upgrade akash-provider akash/provider -n akash-services \
-  --set keyringbackend="test" \
-  --set from="$ACCOUNT_ADDRESS" \
-  --set key="$(cat ./key.pem | base64)" \
-  --set keysecret="$(echo $KEY_PASSWORD | base64)" \
-  --set domain="$DOMAIN" \
-  --set chainid="akashnet-2" \
-  --set image.tag="$AKASH_VERSION" \
-  --set gas=auto \
-  --set gasadjustment=1.25 \
-  --set gasprices=0.025uakt \
-  --set withdrawalperiod=24h \
-  --set bidpricestoragescale="0.00016,<beta1|beta2|beta3>=0.00016" \
-  --set node="$NODE" \
-  --set attributes[0].key="region" \
-  --set attributes[0].value="us-west" \
-  --set attributes[1].key="host" \
-  --set attributes[1].value="akash" \
-  --set attributes[2].key="tier" \
-  --set attributes[2].value="community" \
-  --set attributes[3].key="capabilities/storage/1/class" \
-  --set attributes[3].value="default" \
-  --set attributes[4].key="capabilities/storage/1/persistent" \
-  --set attributes[4].value="true" \
-  --set attributes[5].key="capabilities/storage/2/class" \
-  --set attributes[5].value="<beta1|beta2|beta3>" \
-  --set attributes[6].key="capabilities/storage/2/persistent" \
-  --set attributes[6].value="true"
+cat > provider-storage.yaml << EOF
+---
+bidpricestoragescale: "0.00016,beta2=0.00016" # set your storage class here: beta1, beta2 or beta3!
+attributes:
+  - key: region
+    value: "<YOUR REGION>"   # set your region here, e.g. "us-west"
+  - key: host
+    value: akash
+  - key: tier
+    value: community
+  - key: organization
+    value: "<YOUR ORG>"      # set your organization name here
+  - key: capabilities/storage/1/class
+    value: default
+  - key: capabilities/storage/1/persistent
+    value: true
+  - key: capabilities/storage/2/class
+    value: beta2             # set your storage class here: beta1, beta2 or beta3!
+  - key: capabilities/storage/2/persistent
+    value: true
+EOF
+
+# Make sure you have "provider.yaml" previously created!
+helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml -f provider-storage.yaml
 ```
 
 #### Expected/Example Output
