@@ -40,7 +40,11 @@ attributes:
   - key: capabilities/storage/2/persistent
     value: true
 EOF
+```
 
+#### Upgrade the Helm Install
+
+```
 # Make sure you have "provider.yaml" previously created!
 helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml -f provider-storage.yaml
 ```
