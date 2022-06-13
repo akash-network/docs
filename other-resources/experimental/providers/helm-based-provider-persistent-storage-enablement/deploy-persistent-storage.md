@@ -29,9 +29,10 @@ vi rook.yaml
 
 #### Specify Following Settings within the Rook Yaml File
 
-* **Note** - the Helm chart's values.yaml file has a persistent storage class setting equal to `beta2`.  Refer to [Storage Class Types](storage-class-types.md) doc section for further info.  If a different class is needed, include a switch with the helm install command such as `--set persistent_storage.class=beta3.`
-* **Note** - using the default Helm Chart values - the build will attempt to use ALL un-initialized disks / partitions on specified nodes.  If this is not desired, add the following/example switch to the `helm install` command.
-  * `--set useAllDevices=false --set deviceFilter="^nvme."`&#x20;
+* **Note** - the Helm chart's values.yaml file has a persistent storage class setting equal to `beta2`.  Refer to [Storage Class Types](storage-class-types.md) doc section for further info.  If a different class is needed, include a setting in the rook.yaml file such as: `persistent_storage.class: beta3`
+* **Note** - using the default Helm Chart values - the build will attempt to use ALL un-initialized disks / partitions on specified nodes.  If this is not desired, include a setting in the rook.yaml file such as:&#x20;
+  * `useAllDevices: false`
+  * `deviceFilter: "^nvme."`
 
 #### Example rook.yaml File
 
@@ -67,7 +68,7 @@ helm install akash-rook akash/akash-rook -n akash-services -f rook.yaml
 * In this example command we are using the following Ceph settings:
   * MGR (manager) count 2 which is the minimum recommended value.  Also note that the maximum accepted value is also 2.  Thus this setting should always be of count 2.
   * MON (monitor) count 3 which is the minimum recommended value.
-  * OSDs count of 3 which is appropriate for SSD disks.  Adjust `--set osdsPerDevice` as necessary based on the disk type and the recommended settings [here](persistent-storage-requirements.md).
+  * OSDs count of 3 which is appropriate for SSD disks.  Adjust `osdsPerDevice` as necessary based on the disk type and the recommended settings [here](persistent-storage-requirements.md).
 
 ```
 cat > rook.yaml << EOF
