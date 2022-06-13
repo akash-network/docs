@@ -40,6 +40,9 @@ helm repo update
 #### Create a provider.yaml File
 
 * Issue the following command to build your Akash Provider
+* Update the following keys for your unique use case
+  * `region`
+  * `organization`
 
 ```
 cat > provider.yaml << EOF
