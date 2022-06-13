@@ -4,9 +4,9 @@
 
 Install Helm and add the Akash repo if not done previously by following the steps in this [guide](../akash-cloud-provider-build-with-helm-charts/step-4-helm-installation-on-kubernetes-node.md)**.**
 
-## **Rook Deployment**
+All steps in this section should be conducted from the Kubernetes master node on which Helm has been installed.
 
-* Step in this section should be conducted from the Kubernetes master node on which Helm has been installed
+## **Rook Deployment**
 
 ```
 kubectl create -f https://raw.githubusercontent.com/ovrclk/helm-charts/provider-0.157.0/charts/akash-rook/crds.yaml
