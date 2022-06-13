@@ -9,7 +9,7 @@ All steps in this section should be conducted from the Kubernetes master node on
 ## **Rook Deployment**
 
 ```
-kubectl create -f https://raw.githubusercontent.com/ovrclk/helm-charts/provider-0.157.0/charts/akash-rook/crds.yaml
+kubectl create -f https://raw.githubusercontent.com/ovrclk/helm-charts/provider-0.172.0/charts/akash-rook/crds.yaml
 ```
 
 ## Persistent Storage Deployment
