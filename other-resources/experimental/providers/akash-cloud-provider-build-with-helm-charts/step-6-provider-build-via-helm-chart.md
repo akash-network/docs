@@ -63,7 +63,11 @@ attributes:
   - key: organization
     value: "<YOUR ORG>"      # set your organization name here
 EOF
+```
 
+#### **Install the Provider Helm Chart**
+
+```
 helm install akash-provider akash/provider -n akash-services -f provider.yaml
 ```
 
