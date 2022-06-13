@@ -3,8 +3,8 @@
 ## Attribute Adjustments
 
 * Conduct the steps in this section on the Kubernetes master from which the provider was configured in prior steps
-* Adjust the following key-values pairs as necessary with the `helm upgrade` command:
-  * Update the values of the `bidpricestoragescale` and `attributes[5].value` keys to the correct class type (I.e. `beta2`).  Reference the [Storage Class Types](storage-class-types.md) doc section for additional details.
+* Adjust the following key-values pairs as necessary within the `provider-storage.yaml` file created below:
+  * Update the values of the `capabilities/storage/2/class` key to the correct class type (I.e. `beta2`).  Reference the [Storage Class Types](storage-class-types.md) doc section for additional details.
   * Update the region value from current `us-west` to an appropriate value such as `us-east` OR `eu-west`
 * Ensure that necessary [environment variables](../akash-cloud-provider-build-with-helm-charts/step-6-provider-build-via-helm-chart.md) are in place prior to issuing
 
