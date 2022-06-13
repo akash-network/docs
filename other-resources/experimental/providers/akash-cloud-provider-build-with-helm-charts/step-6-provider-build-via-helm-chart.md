@@ -26,8 +26,8 @@ NODE=http://<IP_address_of_your_RPC_node>:26657  # if you are going to deploy Ak
 
 #### OPTIONAL - Update the Provider Withdrawl Period
 
-* If it is desired to change the withdrawl period from the default one hour setting, include the following set command in the `helm install akash-provider` command covered in the next section.
-* In the example the Provider Build section of this doc the  withdrawl period has been set to 24 hours.  Please adjust as preferred.
+* If it is desired to change the withdrawl period from the default one hour setting, update the `withdrawalperiod` setting in the provider.yaml file created subsequently in this section.
+* In the example the Provider Build section of this doc the withdrawl period has been set to 24 hours.  Please adjust as preferred.
 
 ### **Provider Build**
 
