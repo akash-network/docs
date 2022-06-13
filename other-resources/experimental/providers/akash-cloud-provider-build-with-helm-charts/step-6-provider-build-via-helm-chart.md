@@ -64,7 +64,20 @@ EOF
 helm install akash-provider akash/provider -n akash-services -f provider.yaml
 ```
 
-#### **Expected output**
+#### **Provider Bid Defaults**
+
+* When a provider is created the default bid engine settings are used.  If desired these settings could be updated and added to the `provider.yaml` file.  But we would recommend initially using the default values.
+* Note -  the `bidpricestoragescale` value will get overridden by `-f provider-storage.yaml` covered in [Provider Persistent Storage](../helm-based-provider-persistent-storage-enablement/) documentation.
+* Note -  if you want to use a shellScript bid price strategy, pass the bid price script via `bidpricescript` variable detailed in the bid pricing script doc.  This will automatically suppress all `bidprice<cpu|memory|endpoint|storage>scale` settings.
+
+```
+bidpricecpuscale: "0.004" # cpu pricing scale in uakt per millicpu
+bidpricememoryscale: "0.0016" # memory pricing scale in uakt per megabyte
+bidpriceendpointscale: "0" # endpoint pricing scale in uakt per endpoint
+bidpricestoragescale: "0.00016" # storage pricing scale in uakt per megabyte
+```
+
+#### **Expected Output of Provider Helm Install**
 
 ```
 NAME: akash-provider
