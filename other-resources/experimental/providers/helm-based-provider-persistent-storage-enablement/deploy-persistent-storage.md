@@ -60,6 +60,17 @@ nodes:
 EOF
 ```
 
+#### Example `rook.yaml` file creation
+
+```
+cat > rook.yaml << EOF
+---
+nodes:
+  - name: node2
+    config: ""
+EOF
+```
+
 #### Install the Provider Helm Chart
 
 ```
@@ -88,6 +99,22 @@ nodes:
   - name: "<NODE1>"  # CHANGE to your node name!
     config: ""
   - name: "<NODE2>"  # CHANGE to your node name!
+    config: ""
+EOF
+```
+
+#### Example `rook.yaml` file
+
+```
+cat > rook.yaml << EOF
+---
+mgrCount: 2
+monCount: 3
+osdsPerDevice: 3
+nodes:
+  - name: node2
+    config: ""
+  - name: node3
     config: ""
 EOF
 ```
