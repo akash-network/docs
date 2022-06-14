@@ -81,7 +81,7 @@ helm install akash-rook akash/akash-rook -n akash-services -f rook.yaml
 
 * Use this Helm Chart command in an environment in which multiple nodes will host persistent storage
 * Replace `NODE-NAME` in the Helm command provided with the name of the node on which persistent storage will be hosted.  It is important to use the Kubernetes name of the target node as collected from `kubectl get nodes` in a previous step.
-* In this example command two nodes are targeted for persistent storage.  Continue to define additional nodes as necessary using this syntax - for example a third node would be included such as `nodes[2].name="`NODE-NAME`",nodes[2].config=""`
+* In this example command two nodes are targeted for persistent storage.&#x20;
 * In this example command we are using the following Ceph settings:
   * MGR (manager) count 2 which is the minimum recommended value.  Also note that the maximum accepted value is also 2.  Thus this setting should always be of count 2.
   * MON (monitor) count 3 which is the minimum recommended value.
