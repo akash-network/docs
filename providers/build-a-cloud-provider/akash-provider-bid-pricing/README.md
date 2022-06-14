@@ -10,5 +10,5 @@ Review these sections for Provider pricing and bid info:
 * [Run Provider Pricing Calc](run-provider-pricing-calc.md)
 * [Script Execution Templates](script-execution-templates.md)
 * [Example Command Use](example-command-use.md)
-* [Provider Bid Customization](provider-bid-customization.md)
+* [Provider Bid Customization](../akash-cloud-provider-build-with-helm-charts/step-6-provider-bid-customization.md)
 

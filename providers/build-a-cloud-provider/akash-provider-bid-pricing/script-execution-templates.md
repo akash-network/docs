@@ -17,7 +17,7 @@
 * In this example the following resource specs are provided (note in this input example CPU/Memory/Storage are entered in their raw format - I.e. 1 vCPU is entered as 1000):
   * 2 Kubernetes Worker Nodes
   * 1 vCPU (per node)
-  * 524 GB RAM
+  * 512 GB RAM
   * 2 TB Ephemeral Storage (per node)
   * 1 TB Persistent Storage of type Beta3/NVME (per node)
 

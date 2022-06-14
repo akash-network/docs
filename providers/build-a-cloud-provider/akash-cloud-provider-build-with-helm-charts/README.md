@@ -13,6 +13,7 @@ Overview and links to the steps involved:
 * [Export Provider Wallet](step-3-export-provider-wallet.md)
 * [Helm Installation on Kubernetes Node](step-4-helm-installation-on-kubernetes-node.md)
 * [Domain Name Review](step-5-domain-name-review.md)
+* [Provider Bid Customization](step-6-provider-bid-customization.md)
 * [Provider Build via Helm Chart](step-6-provider-build-via-helm-chart.md)
 * [Hostname Operator Build](step-7-hostname-operator-build.md)
 * [Ingress Controller Install](step-8-ingress-controller-install.md)
