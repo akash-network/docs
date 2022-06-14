@@ -22,7 +22,13 @@ kubectl create -f https://raw.githubusercontent.com/ovrclk/helm-charts/provider-
 #### Specify Following Settings within the Rook Yaml File
 
 * In the steps that follow in this section we create a `rook.yaml` file to specify persistent storage settings.  Review the default values listed below and include in the rook.yaml file if any non-defaults are needed.
-* **Note** - the Helm chart's values.yaml file has a persistent storage class setting equal to `beta2`.  Refer to [Storage Class Types](storage-class-types.md) doc section for further info.  If a different class is needed, include a setting in the rook.yaml file such as: `persistent_storage.class: beta3`
+* **Note** - the Helm chart's values.yaml file has a persistent storage class setting equal to `beta2`.  Refer to [Storage Class Types](storage-class-types.md) doc section for further info.  If a different class is needed, include a setting in the rook.yaml file such as:
+
+```
+persistent_storage:
+  class: beta3
+```
+
 * **Note** - using the default Helm Chart values - the build will attempt to use ALL un-initialized disks / partitions on specified nodes.  If this is not desired, include a setting in the rook.yaml file such as:&#x20;
   * `useAllDevices: false`
   * `deviceFilter: "^nvme."`
@@ -30,7 +36,8 @@ kubectl create -f https://raw.githubusercontent.com/ovrclk/helm-charts/provider-
 #### Example rook.yaml File Additions
 
 ```
-persistent_storage.class: beta3
+persistent_storage:
+  class: beta3
 
 useAllDevices: false
 deviceFilter: "^nvme."
