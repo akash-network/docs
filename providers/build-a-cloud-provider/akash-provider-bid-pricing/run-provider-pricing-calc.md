@@ -13,5 +13,5 @@ In this step we will detail:
 * Details on the input to the scripts are reviewed in the subsequent section
 
 ```
-./charts/akash-provider/scripts/price_script_generic.sh <<<  <kubernetes-worker-node-specs-input>
+./charts/akash-provider/scripts/price_script_generic.sh <<<  <deployment-order-request-specs>
 ```
