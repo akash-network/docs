@@ -21,5 +21,5 @@ wget -c "$SNAP_URL"
 
 SNAP="${SNAP_URL##*/}"
 
-tar xzvf "$SNAP"
+tar xzvf "$SNAP" --force-local
 ```
