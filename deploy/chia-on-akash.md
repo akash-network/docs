@@ -93,7 +93,7 @@ version: "2.0"
 
 services:
   chia:
-    image: cryptoandcoffee/akash-chia:199
+    image: cryptoandcoffee/akash-chia:200
     expose:
       - port: 8080
         as: 80
@@ -192,7 +192,7 @@ version: "2.0"
 
 services:
   chia:
-    image: cryptoandcoffee/akash-chia:199
+    image: cryptoandcoffee/akash-chia:200
     expose:
       - port: 8080
         as: 80
