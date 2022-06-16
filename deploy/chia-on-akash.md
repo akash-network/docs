@@ -8,9 +8,9 @@ Welcome [Chia](https://www.chia.net/) community! We are excited to announce supp
 
 ![](<../.gitbook/assets/Summer Sale for Chia Plots 5.png>)
 
-For the following providers who are participating in the sale, expect to see these prices! Each provider has been benchmarked and tested to create a $0.10/plot! Please wait up to 60 seconds to see bids from all the providers.
-
 ### Providers
+
+For the following providers who are participating in the sale, expect to see these prices! Each provider has been benchmarked and tested to create a $0.10/plot! Please wait up to 60 seconds to see bids from all the providers.
 
 ```
 ### bigtractorplotting.com :
@@ -31,7 +31,7 @@ MadMax @ $42/month for 99 Minute Plots
 
 ### Required SDL&#x20;
 
-Copy and Paste on of the sale compatible SDL into [Akashlytics](../guides/deploy/akashlytics-deploy-installation.md) :&#x20;
+To make sure you get the sale price from the providers, please Copy and Paste the SDL into [Akashlytics](../guides/deploy/akashlytics-deploy-installation.md) :&#x20;
 
 [BladeBit Summer Sale SDL](chia-on-akash.md#bladebit-ram-plotting)&#x20;
 
@@ -49,7 +49,7 @@ For additional help we recommend you [follow our full deployment guide](../guide
 
 Akash uses its blockchain to manage your container deployment and accounting. To deploy on Akash you will need to fund your wallet with at least 10 AKT.  Each time you create a deployment, 5 AKT will be used for escrow and to fund the deployment.  If the deployment is canceled, the balance of the escrow is returned to you.  You can spin up deployments without worrying about any long term contracts and you can cancel anytime.
 
-## Demo
+## Plotting Demo
 
 {% embed url="https://www.youtube.com/watch?v=xCNoXI6_Tf8" %}
 @DigitalSpaceport
