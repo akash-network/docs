@@ -85,7 +85,7 @@ Have more questions? Find our team in [Discord](https://discord.com/invite/DxftX
 ## MadMax Disk Plotting
 
 **Recommended MadMax CPU Settings for 1Gbps Connections:**\
-****\~75 minute plots = 8 cpu / 715Gi Storage
+****\~75 minute plots = 8 cpu / 815Gi Storage
 
 ```yaml
 ---
@@ -113,7 +113,7 @@ services:
      #Set to "upload" and finished plots will be uploaded to a SSH destination like user@ip:/home/user/plots
       - CPU_UNITS=8
       - MEMORY_UNITS=6Gi
-      - STORAGE_UNITS=715Gi
+      - STORAGE_UNITS=815Gi
      #Must match CPU/Memory/Storage units defined in resources.
     #############################OPTIONAL##############################
      #Uncomment the variables below when set FINAL_LOCATION=upload to enable remote uploading
@@ -150,7 +150,7 @@ profiles:
         memory:
           size: 6Gi
         storage:
-          size: 715Gi
+          size: 815Gi
   placement:
     akash:
       signedBy:
@@ -285,10 +285,6 @@ Linux/CLI: Use [aria2](https://aria2.github.io/) : `apt-get install aria2`
 ```
 aria2c -c -s 16 -x 16 -k 64M -j 1 $plot_download_url
 ```
-
-## Choosing a provider
-
-Akash has partnered with Chia to provide $0.20/plots on `Bigtractorplotting.com.`
 
 ## Waiting for bids...
 
