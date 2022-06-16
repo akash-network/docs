@@ -81,7 +81,7 @@
       * [STEP 4 - Helm Installation on Kubernetes Node](providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-4-helm-installation-on-kubernetes-node.md)
       * [Step 5 - Domain Name Review](providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-5-domain-name-review.md)
       * [STEP 6 - Provider Build via Helm Chart](providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-6-provider-build-via-helm-chart.md)
-      * [STEP 7 - Provider Bid Customization](providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-7-provider-bid-customization.md)
+      * [STEP 7 - Provider Bid Customization](providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-6-provider-bid-customization.md)
       * [Step 8 - Hostname Operator Build](providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-7-hostname-operator-build.md)
       * [STEP 9 - Ingress Controller Install](providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-8-ingress-controller-install.md)
       * [Step 10 - Firewall Rule Review](providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-9-firewall-rule-review.md)

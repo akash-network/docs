@@ -14,7 +14,7 @@ Overview and links to the steps involved:
 * [Helm Installation on Kubernetes Node](step-4-helm-installation-on-kubernetes-node.md)
 * [Domain Name Review](step-5-domain-name-review.md)
 * [Provider Build via Helm Chart](step-6-provider-build-via-helm-chart.md)
-* [Provider Bid Customization](step-7-provider-bid-customization.md)
+* [Provider Bid Customization](step-6-provider-bid-customization.md)
 * [Hostname Operator Build](step-7-hostname-operator-build.md)
 * [Ingress Controller Install](step-8-ingress-controller-install.md)
 * [Firewall Rule Review](step-9-firewall-rule-review.md)
