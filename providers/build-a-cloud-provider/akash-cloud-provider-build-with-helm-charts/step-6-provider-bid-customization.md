@@ -7,5 +7,10 @@
 ### **Example Bid/Price Script syntax:**
 
 ```
-helm upgrade akash-provider --set bidpricescript="$(cat ./helm-charts/charts/akash-provider/scripts/price_script_generic.sh | openssl base64 -A)"
+cd provider
+
+wget https://raw.githubusercontent.com/ovrclk/helm-charts/main/charts/akash-provider/scripts/price_script_generic.sh
+
+# adjust target prices to your needs in price_script_generic.sh file
+helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml --set bidpricescript="$(cat price_script_generic.sh | openssl base64 -A)"
 ```
