@@ -8,19 +8,34 @@ Welcome [Chia](https://www.chia.net/) community! We are excited to announce supp
 
 ![](<../.gitbook/assets/Summer Sale for Chia Plots 5.png>)
 
-## Demo
+For the following providers who are participating in the sale, expect to see these prices! Each provider has been benchmarked and tested to create a $0.10/plot! Please wait up to 60 seconds to see bids from all the providers.
 
-{% embed url="https://www.youtube.com/watch?v=HLhrSeDemBI" %}
-Jonmichael Hands - VP of Storage Business Development at Chia
-{% endembed %}
+### Providers
 
-{% embed url="https://youtu.be/RY2cjiizk5k?t=1434" %}
-Andrew Mello - Head of Mining at Akash
-{% endembed %}
+```
+### bigtractorplotting.com :
 
-{% embed url="https://www.youtube.com/watch?v=xCNoXI6_Tf8" %}
-@DigitalSpaceport
-{% endembed %}
+Bladebit @ $556/month for 8 Minute Plots
+MadMax @ $59/month for 71 Minute Plots
+
+### xch.computer:
+
+Bladebit @ $363/month for 12 Minute Plots
+MadMax @ $44/month for 95 Minute Plots
+
+### akash.world:
+
+Bladebit @ $174/month for 24 Minute Plots
+MadMax @ $42/month for 99 Minute Plots
+```
+
+### Required SDL&#x20;
+
+Copy and Paste on of the sale compatible SDL into [Akashlytics](../guides/deploy/akashlytics-deploy-installation.md) :&#x20;
+
+[BladeBit Summer Sale SDL](chia-on-akash.md#bladebit-ram-plotting)&#x20;
+
+[MadMax Summer Sale SDL](chia-on-akash.md#madmax-disk-plotting)
 
 ## Windows/Linux/Mac Users
 
@@ -33,6 +48,20 @@ For additional help we recommend you [follow our full deployment guide](../guide
 ## How does this work?
 
 Akash uses its blockchain to manage your container deployment and accounting. To deploy on Akash you will need to fund your wallet with at least 10 AKT.  Each time you create a deployment, 5 AKT will be used for escrow and to fund the deployment.  If the deployment is canceled, the balance of the escrow is returned to you.  You can spin up deployments without worrying about any long term contracts and you can cancel anytime.
+
+## Demo
+
+{% embed url="https://www.youtube.com/watch?v=xCNoXI6_Tf8" %}
+@DigitalSpaceport
+{% endembed %}
+
+{% embed url="https://www.youtube.com/watch?v=HLhrSeDemBI" %}
+Jonmichael Hands - VP of Storage Business Development at Chia
+{% endembed %}
+
+{% embed url="https://youtu.be/RY2cjiizk5k?t=1434" %}
+Andrew Mello - Head of Mining at Akash
+{% endembed %}
 
 ## Default wallet
 
