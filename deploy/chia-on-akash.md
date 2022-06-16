@@ -12,22 +12,11 @@ Welcome [Chia](https://www.chia.net/) community! We are excited to announce supp
 
 For the following providers who are participating in the sale, expect to see these prices! Each provider has been benchmarked and tested to create a $0.10/plot! Please wait up to 60 seconds to see bids from all the providers.
 
-```
-### bigtractorplotting.com :
-
-Bladebit @ $556/month for 8 Minute Plots
-MadMax @ $59/month for 71 Minute Plots
-
-### xch.computer:
-
-Bladebit @ $363/month for 12 Minute Plots
-MadMax @ $44/month for 95 Minute Plots
-
-### akash.world:
-
-Bladebit @ $174/month for 24 Minute Plots
-MadMax @ $42/month for 99 Minute Plots
-```
+| Providers              | BladeBit Price           | MadMax Price           |
+| ---------------------- | ------------------------ | ---------------------- |
+| bigtractorplotting.com | $556 \| 8 Minute Plots   | $59 \| 71 Minute Plots |
+| xch.computer           | $363 \| 12 Minute Plots  | $44 \| 95 Minute Plots |
+| akash.world            | $174  \| 24 Minute Plots | $42 \| 99 Minute Plots |
 
 ### Required SDL&#x20;
 
