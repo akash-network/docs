@@ -4,9 +4,23 @@
 
 Welcome [Chia](https://www.chia.net/) community! We are excited to announce support for Chia on the [Akash](https://akash.network/) network! You can now run nodes, plotting, and farming on our marketplace of compute. Below you will find details on how to configure your deployment for different use cases. Akash is a part of the [Cosmos](https://cosmos.network/) ecosystem of blockchains.
 
-## Plotting Demo
+## Summer Sale
+
+![](<../.gitbook/assets/Summer Sale for Chia Plots 5.png>)
+
+## Demo
 
 {% embed url="https://www.youtube.com/watch?v=HLhrSeDemBI" %}
+Jonmichael Hands - VP of Storage Business Development at Chia
+{% endembed %}
+
+{% embed url="https://youtu.be/RY2cjiizk5k?t=1434" %}
+Andrew Mello - Head of Mining at Akash
+{% endembed %}
+
+{% embed url="https://www.youtube.com/watch?v=xCNoXI6_Tf8" %}
+@DigitalSpaceport
+{% endembed %}
 
 ## Windows/Linux/Mac Users
 
@@ -23,6 +37,8 @@ Akash uses its blockchain to manage your container deployment and accounting. To
 ## Default wallet
 
 Akash uses [Keplr](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en) as the desktop wallet. Advanced users can follow the [CLI instruction](../guides/cli/)s.
+
+Once you have set up your Keplr wallet and imported the address to Akashlytics you are ready to create your first deployment. Follow the instructions in Akashlytics to create a certificate, then click on _Create Deployment_.
 
 ## Quickest way to get more AKT
 
@@ -44,19 +60,20 @@ To fund your deployment you will need AKT in your account. The fastest way to do
 
 Have more questions? Find our team in [Discord](https://discord.com/invite/DxftX67) and [Telegram](https://t.me/AkashNW).
 
-## Deploying Chia Plotting on Akash
 
-Once you have set up your Keplr wallet and imported the address to Akashlytics you are ready to create your first deployment. Follow the instructions in Akashlytics to create a certificate, then click on _Create Deployment_.
 
-When prompted to _Choose Template_ select _Empty_ as we will copy-and-paste the deploy.yaml file from this repository (listed below). Choose _Empty_ for the template and paste the deploy.yaml file adjusting your wallet address and pool variables as desired.
+## MadMax Disk Plotting
 
-```
+**Recommended MadMax CPU Settings for 1Gbps Connections:**\
+****\~75 minute plots = 8 cpu / 715Gi Storage
+
+```yaml
 ---
 version: "2.0"
 
 services:
   chia:
-    image: cryptoandcoffee/akash-chia:88
+    image: cryptoandcoffee/akash-chia:199
     expose:
       - port: 8080
         as: 80
@@ -64,23 +81,46 @@ services:
         to:
           - global: true
     env:
-      - CONTRACT=
-      - FARMERKEY=
-      - REMOTE_LOCATION=local
-        #Choose local to access finished plots through web interface or set to upload and finished plots will be sent to SSH destination path like /root/plots
+    #############################REQUIRED##############################
+      - VERSION=1.3.5 
+     #Always check https://github.com/Chia-Network/chia-blockchain/releases
+      - CONTRACT=xch16txqvdlh67m9stvwmx848xzpgesd60swqxll3rrnnafunuluflds03jkt4
+      - FARMERKEY=847b826e653279b9e54ce66a1c55cbfdb1ddc4118e70038cdfbaa7e5cb0a785087bc3a6f055f01bbbf84a2c6a3be4a97
       - PLOTTER=madmax
-        #Choose your plotter software - madmax or blade (testnet only)
-      - THREADS=8
-        #Must match CPU units
-      - UPLOAD_BACKGROUND=true
-        #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
-###################################################################
-# Uncomment the variables below and set REMOTE_LOCATION=upload to enable remote uploading
-#      - REMOTE_HOST=changeme.com #SSH upload host
-#      - REMOTE_LOCATION=changeme #SSH upload location like /root/plots
-#      - REMOTE_PORT=22 #SSH upload port
-#      - REMOTE_USER=changeme #SSH upload user
-#      - REMOTE_PASS=changme #SSH upload password
+     #Choose your plotter software - madmax, bladebit, bladebit-disk
+      - FINAL_LOCATION=upload
+     #Set to "local" to access finished plots through web interface.
+     #Set to "upload" and finished plots will be uploaded to a SSH destination like user@ip:/home/user/plots
+      - CPU_UNITS=8
+      - MEMORY_UNITS=6Gi
+      - STORAGE_UNITS=715Gi
+     #Must match CPU/Memory/Storage units defined in resources.
+    #############################OPTIONAL##############################
+     #Uncomment the variables below when set FINAL_LOCATION=upload to enable remote uploading
+      #- REMOTE_HOST=changeme.com #SSH upload host
+      #- REMOTE_LOCATION=changeme #SSH upload location like /root/plots
+      #- REMOTE_PORT=22 #SSH upload port
+      #- REMOTE_USER=changeme #SSH upload user
+      #- REMOTE_PASS=changme #SSH upload password
+      #- UPLOAD_BACKGROUND=true
+     #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
+      #- RAMCACHE=32G
+      #Used only for PLOTTER=bladebit-disk, you must increase the memory resources requested below with this additional cache size.
+      #- RCLONE=true
+     #When true must also update JSON_RCLONE and add any destination in same format.
+      #- TOTAL_UPLOADS=1000
+     #Set the total number of parallel uploads allowed to an rclone destination
+      #- ENDPOINT_LOCATION=google
+     #Only used for RCLONE=true
+      #- ENDPOINT_DIR=plots 
+     #Only used for RCLONE=true
+      #- JSON_RCLONE=
+      #  [google]\n
+      #  type = x\n
+      #  scope = x\n
+      #  token = x\n
+      #  root_folder_id = x
+     #Example of STORJ config for RCLONE=true.  If you want to use your own endpoint please escape each line with a backslash n, like in the example.
 profiles:
   compute:
     chia:
@@ -88,9 +128,9 @@ profiles:
         cpu:
           units: 8.0
         memory:
-          size: 8Gi
+          size: 6Gi
         storage:
-          size: 915Gi
+          size: 715Gi
   placement:
     akash:
       signedBy:
@@ -109,7 +149,7 @@ deployment:
       count: 1
 ```
 
-## Bladebit Plotting
+## Bladebit RAM Plotting
 
 Plotting with Bladebit has never been easier!  There are a few things to note before you start using Bladebit instead of Madmax.  Bladebit is so fast it can create plots faster than most home/consumer internet connections (1Gbps) can download them.  To compensate for this we can adjust the Bladebit plotting speed by changing the CPU count of the deployment.\
 \
@@ -126,12 +166,13 @@ Plotting with Bladebit has never been easier!  There are a few things to note be
 \
 For a standard 1Gbps connection use the settings below, otherwise adjust the CPU units to match the plot time you want to achieve.
 
-```
+```yaml
+---
 version: "2.0"
 
 services:
   chia:
-    image: cryptoandcoffee/akash-chia:88
+    image: cryptoandcoffee/akash-chia:199
     expose:
       - port: 8080
         as: 80
@@ -139,33 +180,56 @@ services:
         to:
           - global: true
     env:
+    #############################REQUIRED##############################
+      - VERSION=1.3.5 
+     #Always check https://github.com/Chia-Network/chia-blockchain/releases
       - CONTRACT=
       - FARMERKEY=
-      - REMOTE_LOCATION=local
-        #Choose local to access finished plots through web interface or set to upload and finished plots will be sent to SSH destination path like /root/plots
-      - PLOTTER=blade
-        #Choose your plotter software - madmax or blade (testnet only)
-      - THREADS=16
-        #Must match CPU units
-      - UPLOAD_BACKGROUND=true
-        #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
-###################################################################
-# Uncomment the variables below and set REMOTE_LOCATION=upload to enable remote uploading
-#      - REMOTE_HOST=changeme.com #SSH upload host
-#      - REMOTE_LOCATION=changeme #SSH upload location like /root/plots
-#      - REMOTE_PORT=22 #SSH upload port
-#      - REMOTE_USER=changeme #SSH upload user
-#      - REMOTE_PASS=changme #SSH upload password
+      - PLOTTER=bladebit
+     #Choose your plotter software - madmax, bladebit, bladebit-disk
+      - FINAL_LOCATION=upload
+     #Set to "local" to access finished plots through web interface.
+     #Set to "upload" and finished plots will be uploaded to a SSH destination like user@ip:/home/user/plots
+      - CPU_UNITS=32
+      - MEMORY_UNITS=430Gi
+      - STORAGE_UNITS=1200Gi
+     #Must match CPU/Memory/Storage units defined in resources.
+    #############################OPTIONAL##############################
+     #Uncomment the variables below when set FINAL_LOCATION=upload to enable remote uploading
+      #- REMOTE_HOST=changeme.com #SSH upload host
+      #- REMOTE_LOCATION=changeme #SSH upload location like /root/plots
+      #- REMOTE_PORT=22 #SSH upload port
+      #- REMOTE_USER=changeme #SSH upload user
+      #- REMOTE_PASS=changme #SSH upload password
+      #- UPLOAD_BACKGROUND=true
+     #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
+      #- RAMCACHE=32G
+      #Used only for PLOTTER=bladebit-disk, you must increase the memory resources requested below with this additional cache size.
+      #- RCLONE=true
+     #When true must also update JSON_RCLONE and add any destination in same format.
+      #- TOTAL_UPLOADS=1000
+     #Set the total number of parallel uploads allowed to an rclone destination
+      #- ENDPOINT_LOCATION=google
+     #Only used for RCLONE=true
+      #- ENDPOINT_DIR=plots 
+     #Only used for RCLONE=true
+      #- JSON_RCLONE=
+      #  [google]\n
+      #  type = x\n
+      #  scope = x\n
+      #  token = x\n
+      #  root_folder_id = x
+     #Example of STORJ config for RCLONE=true.  If you want to use your own endpoint please escape each line with a backslash n, like in the example.
 profiles:
   compute:
     chia:
       resources:
         cpu:
-          units: 16.0
+          units: 32
         memory:
-          size: 420Gi
+          size: 430Gi
         storage:
-          size: 915Gi
+          size: 1200Gi
   placement:
     akash:
       signedBy:
