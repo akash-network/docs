@@ -10,9 +10,9 @@ Welcome [Chia](https://www.chia.net/) community! We are excited to announce supp
 
 ### Providers
 
-For the following providers who are participating in the sale, expect to see these prices! Each provider has been benchmarked and tested to create a $0.10/plot! Please wait up to 60 seconds to see bids from all the providers.
+For the following providers who are participating in the sale, expect to see these prices in Akashlytics! Each provider has been benchmarked and tested to create a $0.10/plot. &#x20;
 
-| Providers              | BladeBit Price           | MadMax Price           |
+| On-Sale Providers      | BladeBit Price / Month   | MadMax Price  / Month  |
 | ---------------------- | ------------------------ | ---------------------- |
 | bigtractorplotting.com | $556 \| 8 Minute Plots   | $59 \| 71 Minute Plots |
 | xch.computer           | $363 \| 12 Minute Plots  | $44 \| 95 Minute Plots |
@@ -25,6 +25,8 @@ To make sure you get the sale price from the providers, please Copy and Paste th
 [BladeBit Summer Sale SDL](chia-on-akash.md#bladebit-ram-plotting)&#x20;
 
 [MadMax Summer Sale SDL](chia-on-akash.md#madmax-disk-plotting)
+
+Please wait up to 60 seconds to see bids from all the providers.
 
 ## Windows/Linux/Mac Users
 
