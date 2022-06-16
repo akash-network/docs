@@ -90,6 +90,8 @@ helm install akash-rook akash/akash-rook -n akash-services -f rook.yaml
 #### Populate the `rook.yaml` **F**ile
 
 ```
+cd ~/provider
+
 cat > rook.yaml << EOF
 ---
 mgrCount: 2

@@ -1,4 +1,4 @@
-# STEP 7 - Provider Build via Helm Chart
+# STEP 6 - Provider Build via Helm Chart
 
 ## **Environment Variables**
 
@@ -45,6 +45,12 @@ helm repo update
   * `organization`
 
 ```
+cd ~
+
+mkdir provider
+
+cd provider
+
 cat > provider.yaml << EOF
 ---
 from: "$ACCOUNT_ADDRESS"
