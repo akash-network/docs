@@ -11,7 +11,7 @@ The Akash Validator will be built with the following attributes:
 * The Sentry nodes and the Akash Validator will launched on the Akash Network as deployments
 * This guide will detail the launch of the deployments via the Akashlytics Deploy tool for ease
 
-Sections within this Guide:
+### Sections within this Guide
 
 [Akashlytics Deploy Review](akashlytics-deploy-review.md)
 
