@@ -7,6 +7,5 @@ In the subsequent sections persistent storage attributes will be defined.  Use t
 | beta1      | hdd                               | 2             |
 | beta2      | ssd                               | 3             |
 | beta3      | NVMe                              | 5             |
-| default    | Provider defined default class    | N/A           |
 
 ##

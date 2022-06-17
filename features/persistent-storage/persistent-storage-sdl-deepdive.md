@@ -23,16 +23,13 @@ A storage volume may have the following attributes._**persistent**_ - determines
 
 ### Storage Class Types
 
-The class allows selection of a storage type.  Only providers capable of delivering the storage type will bid on the lease.\
-\
-The selection of the default class allows the provider to assign their default storage type to the lease.
+The class allows selection of a storage type.  Only providers capable of delivering the storage type will bid on the lease.
 
 | Class Name | Throughput/Approx matching device |
 | ---------- | --------------------------------- |
 | beta1      | hdd                               |
 | beta2      | ssd                               |
 | beta3      | NVMe                              |
-| default    | Provider defined default class    |
 
 ## Services Section
 
