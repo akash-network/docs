@@ -268,14 +268,217 @@ deployment:
       count: 1
 ```
 
-## Downloading  plots
+## Downloading plots
 
 To access the Chia Plot Manager, click on the \`Uri\` link on the deployment detail page.  \
 To download plots, click an invididual plot in the Chia Plot Manager and click on Download/Open.
 
 ![Chia Plot Manager](<../.gitbook/assets/image (5).png>)
 
-\*Once your download has finished - Delete the plot from the container - to make room for new plots!  Plots will continue to be created as long as there is enough free space available in the container (Max 1Tb) and the deployment is fully funded.&#x20;
+\*Once your download has finished - Delete the plot from the container - to make room for new plots!  Plots will continue to be created as long as there is enough free space available in the container (Max 32Tb) and the deployment is fully funded.&#x20;
+
+## Uploading plots
+
+If you want to upload plots created on Akash directly to a remote destination such as your farm or a storage provider, you have 2 main options.
+
+### SSH
+
+Upload your plots to any SSH destination by modifying the `env:`
+
+```yaml
+    env:
+    #############################REQUIRED##############################
+      - VERSION=1.3.5 
+     #Always check https://github.com/Chia-Network/chia-blockchain/releases
+      - CONTRACT=
+      - FARMERKEY=
+      - PLOTTER=bladebit
+     #Choose your plotter software - madmax, bladebit, bladebit-disk
+      - FINAL_LOCATION=upload
+     #Set to "local" to access finished plots through web interface.
+     #Set to "upload" and finished plots will be uploaded to a SSH destination like user@ip:/home/user/plots
+      - CPU_UNITS=32
+      - MEMORY_UNITS=430Gi
+      - STORAGE_UNITS=1200Gi
+     #Must match CPU/Memory/Storage units defined in resources.
+    #############################OPTIONAL##############################
+     #Uncomment the variables below when set FINAL_LOCATION=upload to enable remote uploading
+      - REMOTE_HOST=changeme.com #SSH upload host
+      - REMOTE_LOCATION=changeme #SSH upload localtion like /root/plots
+      - REMOTE_PORT=22 #SSH upload port
+      - REMOTE_USER=changeme #SSH upload user
+      - REMOTE_PASS=changme #SSH upload password
+      - UPLOAD_BACKGROUND=true
+     #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
+      #- RAMCACHE=32G
+      #Used only for PLOTTER=bladebit-disk, you must increase the memory resources requested below with this additional cache size.
+      #- RCLONE=true
+     #When true must also update JSON_RCLONE and add any destination in same format.
+      #- TOTAL_UPLOADS=1000
+     #Set the total number of parallel uploads allowed to an rclone destination
+      #- ENDPOINT_LOCATION=google
+     #Only used for RCLONE=true
+      #- ENDPOINT_DIR=plots 
+     #Only used for RCLONE=true
+      #- JSON_RCLONE=
+      #  [google]\n
+      #  type = x\n
+      #  scope = x\n
+      #  token = x\n
+      #  root_folder_id = x
+     #Example of STORJ config for RCLONE=true.  If you want to use your own endpoint please escape each line with a backslash n, like in the example.
+
+```
+
+### Rclone
+
+Upload your plots to any [Rclone](https://rclone.org/) endpoint!  You need to first create a connection to your endpoint on a standard client so that you have a valid configuration in `~/.config/rclone/rclone.conf`  You need to modify this block and add `\n` to the end of each line to make it valid for Akash.  Below you can find examples of how the `env:` should look.
+
+### Rclone to Dropbox
+
+Change the `replaceme` values below to match your client settings
+
+```yaml
+    env:
+    #############################REQUIRED##############################
+      - VERSION=1.3.5 
+     #Always check https://github.com/Chia-Network/chia-blockchain/releases
+      - CONTRACT=
+      - FARMERKEY=
+      - PLOTTER=bladebit
+     #Choose your plotter software - madmax, bladebit, bladebit-disk
+      - FINAL_LOCATION=upload
+     #Set to "local" to access finished plots through web interface.
+     #Set to "upload" and finished plots will be uploaded to a SSH destination like user@ip:/home/user/plots
+      - CPU_UNITS=42
+      - MEMORY_UNITS=430Gi
+      - STORAGE_UNITS=1200Gi
+     #Must match CPU/Memory/Storage units defined in resources.
+    #############################OPTIONAL##############################
+     #Uncomment the variables below when set FINAL_LOCATION=upload to enable remote uploading
+      #- REMOTE_HOST=changeme.com #SSH upload host
+      #- REMOTE_LOCATION=changeme #SSH upload location like /root/plots
+      #- REMOTE_PORT=22 #SSH upload port
+      #- REMOTE_USER=changeme #SSH upload user
+      #- REMOTE_PASS=changme #SSH upload password
+      #- UPLOAD_BACKGROUND=true
+     #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
+      #- RAMCACHE=32G
+     #Used only for PLOTTER=bladebit-disk, you must increase the memory resources requested below with this additional cache size.
+      - RCLONE=true
+     #When true must also update JSON_RCLONE and add any destination in same format.
+      - TOTAL_UPLOADS=8
+     #Set the total number of parallel uploads allowed to an Rclone destination
+      - ENDPOINT_LOCATION=dropbox
+     #Name of Rclone endpoint
+      - ENDPOINT_DIR=replaceme
+        #Upload directory on Dropbox
+      - JSON_RCLONE=
+        [dropbox]\n
+        type = dropbox\n
+        client_id = replaceme\n
+        client_secret = replaceme\n
+        token = {"access_token":"replaceme","expiry":"replaceme"}
+     #Example of Dropbox config for RCLONE=true.  If you want to use your own endpoint please escape each line with a backslash n, like in the example.
+```
+
+### Rclone to Google Drive
+
+Change the `replaceme` values below to match your client settings
+
+```yaml
+    env:
+    #############################REQUIRED##############################
+      - VERSION=1.3.5 
+     #Always check https://github.com/Chia-Network/chia-blockchain/releases
+      - CONTRACT=
+      - FARMERKEY=
+      - PLOTTER=bladebit
+     #Choose your plotter software - madmax, bladebit, bladebit-disk
+      - FINAL_LOCATION=upload
+     #Set to "local" to access finished plots through web interface.
+     #Set to "upload" and finished plots will be uploaded to a SSH destination like user@ip:/home/user/plots
+      - CPU_UNITS=42
+      - MEMORY_UNITS=430Gi
+      - STORAGE_UNITS=1200Gi
+     #Must match CPU/Memory/Storage units defined in resources.
+    #############################OPTIONAL##############################
+     #Uncomment the variables below when set FINAL_LOCATION=upload to enable remote uploading
+      #- REMOTE_HOST=changeme.com #SSH upload host
+      #- REMOTE_LOCATION=changeme #SSH upload location like /root/plots
+      #- REMOTE_PORT=22 #SSH upload port
+      #- REMOTE_USER=changeme #SSH upload user
+      #- REMOTE_PASS=changme #SSH upload password
+      #- UPLOAD_BACKGROUND=true
+     #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
+      #- RAMCACHE=32G
+     #Used only for PLOTTER=bladebit-disk, you must increase the memory resources requested below with this additional cache size.
+      - RCLONE=true
+     #When true must also update JSON_RCLONE and add any destination in same format.
+      - TOTAL_UPLOADS=8
+     #Set the total number of parallel uploads allowed to an Rclone destination
+      - ENDPOINT_LOCATION=google
+     #Name of Rclone endpoint
+      - ENDPOINT_DIR=replaceme
+     #Upload directory on Google
+      - JSON_RCLONE=
+        [google]\n
+        type = drive\n
+        scope = drive\n
+        token = {"access_token":"replaceme","token_type":"Bearer","refresh_token":"replaceme","expiry":"replaceme"}\n
+        root_folder_id = replaceme
+     #Example of Google config for RCLONE=true.  If you want to use your own endpoint please escape each line with a backslash n, like in the example.
+
+```
+
+### Rclone to Storj
+
+Change the `replaceme` values below to match your client settings
+
+```yaml
+    env:
+    #############################REQUIRED##############################
+      - VERSION=1.3.5 
+     #Always check https://github.com/Chia-Network/chia-blockchain/releases
+      - CONTRACT=
+      - FARMERKEY=
+      - PLOTTER=bladebit
+     #Choose your plotter software - madmax, bladebit, bladebit-disk
+      - FINAL_LOCATION=upload
+     #Set to "local" to access finished plots through web interface.
+     #Set to "upload" and finished plots will be uploaded to a SSH destination like user@ip:/home/user/plots
+      - CPU_UNITS=42
+      - MEMORY_UNITS=430Gi
+      - STORAGE_UNITS=1200Gi
+     #Must match CPU/Memory/Storage units defined in resources.
+    #############################OPTIONAL##############################
+     #Uncomment the variables below when set FINAL_LOCATION=upload to enable remote uploading
+      #- REMOTE_HOST=changeme.com #SSH upload host
+      #- REMOTE_LOCATION=changeme #SSH upload location like /root/plots
+      #- REMOTE_PORT=22 #SSH upload port
+      #- REMOTE_USER=changeme #SSH upload user
+      #- REMOTE_PASS=changme #SSH upload password
+      #- UPLOAD_BACKGROUND=true
+     #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
+      #- RAMCACHE=32G
+     #Used only for PLOTTER=bladebit-disk, you must increase the memory resources requested below with this additional cache size.
+      - RCLONE=true
+     #When true must also update JSON_RCLONE and add any destination in same format.
+      - TOTAL_UPLOADS=8
+     #Set the total number of parallel uploads allowed to an Rclone destination
+      - ENDPOINT_LOCATION=storj
+     #Name of Rclone endpoint
+      - ENDPOINT_DIR=replaceme
+     #Upload directory on Storj
+      - JSON_RCLONE=
+        [storj]\n
+        type = storj\n
+        api_key = replaceme\n
+        passphrase = replaceme\n
+        satellite_address = replaceme\n
+        access_grant = replaceme
+     #Example of Storj config for RCLONE=true.  If you want to use your own endpoint please escape each line with a backslash n, like in the example.
+```
 
 ## Speed up downloads
 
