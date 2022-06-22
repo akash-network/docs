@@ -52,24 +52,17 @@ _Gain access to an active Akash deployment’s CLI/shell_
 ![](https://lh3.googleusercontent.com/BgF4dAJD-W3HKaLJM4xvmLk-BWxN7-OjD5QknE7kWV9K938u3MTZj0slv5VgFd8eC41QF0JmUtzcc4pCcu5PbG-HhgtDp7QCfIokY5AI1vlewgDo1E4QMKo4AXsUMMQOw7USXjSa=s0)
 
 ```
-akash provider lease-shell --from <key-name> --dseq <dseq-number> --tty --provider=<provider-address> <service-name> /bin/sh
+akash provider lease-shell --from <key-name> --dseq <dseq-number> --tty --provider=<provider-address> <service-name> /bin/sh --node $AKASH_NODE
 ```
 
 * Example command fully populated
-*
+* Note - the container instance must have a /bin/sh shell for the command to work in this exact syntax.  If this were an Alpine container base image /bin/sh would need to become /bin/ash and this serves as an example of possible edit to the command syntax based on container type.
+* Prior establishment of the AKASH\_KEY\_NAME and AKASH\_PROVIDER environment variables would be necessary to allow this syntax
 
-    * Note - the container instance must have a /bin/sh shell for the command to work in this exact syntax.  If this were an Alpine container base image /bin/sh would need to become /bin/ash and this serves as an example of possible edit to the command syntax based on container type.
+```
+akash provider lease-shell --from $AKASH_KEY_NAME --dseq 226186 --tty --provider=$AKASH_PROVIDER web /bin/sh --node $AKASH_NODE
+```
 
-    ```
-    akash provider lease-shell --from mykey --dseq 226186 --tty --provider=akash1gx4aevud37w4d6kfd5szgp87lmkqvumaz57yww web /bin/sh
-    ```
-
-    * Example command fully populated using environment variables
-    * Prior establishment of the AKASH\_KEY\_NAME and AKASH\_PROVIDER environment variables would be necessary to allow this syntax
-
-    ```
-    akash provider lease-shell --from $AKASH_KEY_NAME --dseq 226186 --tty --provider=$AKASH_PROVIDER web /bin/sh
-    ```
 
 
 * Expected output example
