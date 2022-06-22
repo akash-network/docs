@@ -8,6 +8,17 @@ The setup of a Kubernetes cluster is the responsibility of the provider. This gu
 
 The Kubernetes Cluster created is then ready for the Akash Provider build detailed [here](../akash-cloud-provider-build-with-helm-charts/).
 
+## Prerequisites
+
+The Kubernetes instructions in this guide are intended for audiences that have the following skills sets and knowledge.
+
+* **Server Administration Skills** - necessary for setting up servers/network making up the Kubernetes cluster
+* **Kubernetes Experience** - a base level of Kubernetes administration is highly recommended
+
+Please consider using the [Praetor](../../community-solutions/praetor.md) application to build an Akash Provider for small and medium sized environments which require little customization.
+
+## Guide Sections
+
 * [Clone the Kubespray Project](step-1-clone-the-kubespray-project.md)
 * [Install Ansible](step-2-install-ansible.md)
 * [Ansible Access to Kubernetes Cluster](step-3-ansible-access-to-kubernetes-cluster.md)
