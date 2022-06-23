@@ -13,7 +13,7 @@ helm -n akash-services uninstall akash-node
 ## **Install Akash Node as a Kubernetes Pod**
 
 ```
-helm install akash-node akash/akash-node -n akash-services --set image.tag=0.16.4-rc2 --set state_sync.enabled=trueroot@node1:~# helm install akash-node akash/akash-node -n akash-services --set image.tag=0.16.4-rc2 --set state_sync.enabled=true
+helm install akash-node akash/akash-node -n akash-services --set image.tag=0.16.4-rc2 --set state_sync.enabled=true
 ```
 
 ### **Expected/Sample Output**
