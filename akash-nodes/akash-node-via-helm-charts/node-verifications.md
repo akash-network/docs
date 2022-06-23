@@ -41,9 +41,10 @@ akash-node-1-78954d745c-xgkhx   1/1     Running   0          50s
 ## Verify Akash Node Sync via Logs
 
 * Ensure that the Akash Node pod has errors of concerns in logs and that the blockchain sync is progressing
+* Replace the `name-of-pod` variable with `akash-node` pod name displayed in the previous step
 
 ```
-kubectl logs <name-of-node-pod> -n akash-services
+kubectl logs <name-of-pod> -n akash-services | grep -iv peer | tail
 ```
 
 ### Expected/Sample Output
@@ -51,16 +52,16 @@ kubectl logs <name-of-node-pod> -n akash-services
 ```
 kubectl logs akash-node-1-78954d745c-xgkhx -n akash-services | grep -iv peer | tail
 
-4:54PM INF indexed block height=6260707 module=txindex
-4:54PM INF Timed out dur=4928.97849 height=6260708 module=consensus round=0 step=1
-4:54PM INF received proposal module=consensus proposal={"Type":32,"block_id":{"hash":"F887995CC8AAF5DF842C4F06B70D42C00B9BF5C669C8FD9527E4913F675FEE2D","parts":{"hash":"3A6DDADC168E36A428BFCA020E24FFEE68488A1C2F782FD15BDD092B94CC2EA7","total":1}},"height":6260708,"pol_round":-1,"round":0,"signature":"cCYOvKBc3j3swyb6na8dj2WEjYs56gbNgg/ldYv2NHqsUUp0VCWu/XXC7DOdQ1IGUOcMJTtSDDc9pErBpVnnBw==","timestamp":"2022-06-10T16:54:35.018532747Z"}
-4:54PM INF received complete proposal block hash=F887995CC8AAF5DF842C4F06B70D42C00B9BF5C669C8FD9527E4913F675FEE2D height=6260708 module=consensus
-4:54PM INF finalizing commit of block hash=F887995CC8AAF5DF842C4F06B70D42C00B9BF5C669C8FD9527E4913F675FEE2D height=6260708 module=consensus num_txs=0 root=6F7415C62DE816E38BB745E6712605601D757F787742B07A3C43E7B2BE3B1295
-4:54PM INF minted coins from module account amount=8707778uakt from=mint module=x/bank
-4:54PM INF executed block height=6260708 module=state num_invalid_txs=0 num_valid_txs=0
-4:54PM INF commit synced commit=436F6D6D697449447B5B36312038382032303020313835203938203637203230382036302031363620343020393320323435203135352036382031313720323031203139312031343220313631203138203731203233352039392036322032343020313931203231392032323620323232203131332031372034385D3A3546383745347D
-4:54PM INF committed state app_hash=3D58C8B96243D03CA6285DF59B4475C9BF8EA11247EB633EF0BFDBE2DE711130 height=6260708 module=state num_txs=0
-4:54PM INF indexed block height=6260708 module=txindex
+2:07PM INF Applied snapshot chunk to ABCI app chunk=16 format=1 height=6442000 module=statesync total=26
+2:07PM INF Applied snapshot chunk to ABCI app chunk=17 format=1 height=6442000 module=statesync total=26
+2:07PM INF Applied snapshot chunk to ABCI app chunk=18 format=1 height=6442000 module=statesync total=26
+2:07PM INF Applied snapshot chunk to ABCI app chunk=19 format=1 height=6442000 module=statesync total=26
+2:07PM INF Discovered new snapshot format=1 hash=":��6u�^�/G号Ĝ��d]��W�]/\x11�S�N*�" height=6443000 module=statesync
+2:07PM INF Discovered new snapshot format=1 hash="�\x1bkn\x18��_��\x06���8��,��\f�Jp�\x01Ft�\t�~" height=6442500 module=statesync
+2:07PM INF Applied snapshot chunk to ABCI app chunk=20 format=1 height=6442000 module=statesync total=26
+2:07PM INF Applied snapshot chunk to ABCI app chunk=21 format=1 height=6442000 module=statesync total=26
+2:07PM INF Applied snapshot chunk to ABCI app chunk=22 format=1 height=6442000 module=statesync total=26
+2:07PM INF Applied snapshot chunk to ABCI app chunk=23 format=1 height=6442000 module=statesync total=26
 ```
 
 ## Akash Node Status
