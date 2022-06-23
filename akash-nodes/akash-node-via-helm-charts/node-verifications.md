@@ -49,7 +49,7 @@ kubectl logs <name-of-node-pod> -n akash-services
 ### Expected/Sample Output
 
 ```
-kubectl logs akash-node-1-78954d745c-g46pf -n akash-services | grep -iv peer | tail
+kubectl logs akash-node-1-78954d745c-xgkhx -n akash-services | grep -iv peer | tail
 
 4:54PM INF indexed block height=6260707 module=txindex
 4:54PM INF Timed out dur=4928.97849 height=6260708 module=consensus round=0 step=1
