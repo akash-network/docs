@@ -65,13 +65,21 @@ kubectl logs akash-node-1-78954d745c-xgkhx -n akash-services | grep -iv peer | t
 
 ## Akash Node Status
 
+### Access Pod Shell
+
 * Access the Kubernetes shell of the Akash Node deployment to view sync status
 
 ```
 kubectl exec --stdin --tty -n akash-services <pod-name> -- /bin/bash
 ```
 
-### Expected/Sample Output
+### Verify Node Status
+
+```
+akash status
+```
+
+#### Expected/Sample Output
 
 * Note the following expected values:
   * `catching_up` - should be `false` once your Node is in sync with the blockchain
