@@ -39,7 +39,7 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 *   Make the new path active in the current session
 
     ```
-    ​​. /etc/environment
+    . /etc/environment
     ```
 
 ### Verify New Path Settings and Akash Install
@@ -53,6 +53,6 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 
 ```
 root@ip-10-0-10-146:~# akash version
-v0.16.3
+v0.16.4
 ```
 
