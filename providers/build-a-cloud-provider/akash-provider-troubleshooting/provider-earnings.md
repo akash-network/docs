@@ -18,7 +18,7 @@ Use the commands detailed in this section to gather the daily earnings history o
   * PROVIDER - populate value with your provider address
 
 ```
-xport AKASH_NODE=<your-RPC-node-address>
+export AKASH_NODE=<your-RPC-node-address>
 
 PROVIDER=<your-provider-address>; STEP=23.59; BLOCK_TIME=6; HEIGHT=$(akash query block | jq -r '.block.header.height'); for i in $(seq 0 23); do BLOCK=$(echo "scale=0; ($HEIGHT-((60/$BLOCK_TIME)*60*($i*$STEP)))/1" | bc); HT=$(akash query block $BLOCK | jq -r '.block.header.time'); AL=$(akash query market lease list --height $BLOCK --provider $PROVIDER --gseq 0 --oseq 0 --page 1 --limit 200 --state active -o json | jq -r '.leases | length'); DCOST=$(akash query market lease list --height $BLOCK --provider $PROVIDER --gseq 0 --oseq 0 --page 1 --limit 200 -o json --state active | jq --argjson bt $BLOCK_TIME -c -r '(([.leases[].lease.price.amount // 0|tonumber] | add)*(60/$bt)*60*24)/pow(10;6)'); BALANCE=$(akash query bank balances --height $BLOCK $PROVIDER -o json | jq -r '.balances[].amount // 0|tonumber/pow(10;6)'); IN_ESCROW=$(echo "($AL * 5)" | bc); TOTAL=$( echo "($BALANCE+$IN_ESCROW)" | bc); printf "%8d\t%.32s\t%4d\t%12.4f\t%12.6f\t%4d\t%12.4f\n" $BLOCK $HT $AL $DCOST $BALANCE $IN_ESCROW $TOTAL; done
 ```
@@ -77,8 +77,6 @@ akash query market lease list --provider akash1yvu4hhnvs84v4sv53mzu5ntf7fxf4cfup
 ### Example Output
 
 ```
-akash query market lease list --provider akash1yvu4hhnvs84v4sv53mzu5ntf7fxf4cfup9s22j --page 1 --limit 1000 -o json | jq -r '([.leases[].escrow_payment.withdrawn.amount|tonumber] | add) / pow(10;6)'
-
 8.003348
 ```
 
