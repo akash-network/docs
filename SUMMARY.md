@@ -111,7 +111,7 @@
       * [Provider Lease Management](providers/build-a-cloud-provider/akash-provider-troubleshooting/provider-lease-management.md)
       * [Provider Manifests](providers/build-a-cloud-provider/akash-provider-troubleshooting/provider-manifests.md)
       * [Provider Earnings](providers/build-a-cloud-provider/akash-provider-troubleshooting/provider-earnings.md)
-    * [Dangling Deployments](providers/build-a-cloud-provider/dangling-deployments.md)
+      * [Dangling Deployments](providers/build-a-cloud-provider/akash-provider-troubleshooting/dangling-deployments.md)
     * [Akash Provider Bid Pricing](providers/build-a-cloud-provider/akash-provider-bid-pricing/README.md)
       * [Download Git Repository](providers/build-a-cloud-provider/akash-provider-bid-pricing/download-git-repository.md)
       * [Run Provider Pricing Calc](providers/build-a-cloud-provider/akash-provider-bid-pricing/run-provider-pricing-calc.md)

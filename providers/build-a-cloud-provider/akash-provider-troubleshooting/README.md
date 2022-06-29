@@ -9,3 +9,4 @@ The guide is broken down into the following categories:
 * [Provider Lease Management](provider-lease-management.md)
 * [Provider Manifests](provider-manifests.md)
 * [Provider Earnings](provider-earnings.md)
+* Dangling Deployments
