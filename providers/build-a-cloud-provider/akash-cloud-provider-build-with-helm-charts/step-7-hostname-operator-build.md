@@ -6,7 +6,7 @@
   * Example: `--set image.tag=0.16.4-rc1`
 
 ```
-helm install hostname-operator akash/hostname-operator -n akash-services
+helm install hostname-operator ovrclk/hostname-operator -n akash-services
 ```
 
 #### Expected/Example Output
