@@ -110,7 +110,8 @@ bidpricestoragescale: "0.00016" # storage pricing scale in uakt per megabyte
 #### **Install the Provider Helm Chart**
 
 ```
-helm install akash-provider akash/provider -n akash-services -f provider.yaml
+helm repo add ovrclk https://ovrclk.github.io/helm-charts
+helm install akash-provider ovrclk/provider -n akash-services -f provider.yaml
 ```
 
 #### **Expected Output of Provider Helm Install**
