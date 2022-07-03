@@ -3,7 +3,7 @@
 *   Build the Kubernetes ingress controller
 
     ```
-    helm install akash-ingress akash/akash-ingress -n ingress-nginx --set domain=$DOMAIN
+    helm install akash-ingress ovrclk/akash-ingress -n ingress-nginx --set domain=$DOMAIN
     ```
 
 #### Expected Output
