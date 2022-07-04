@@ -14,53 +14,49 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 {% tab title="MacOS" %}
 ## MacOS
 
-Before you install Akash, you will need to install the **XCode Command Line Tools**, and also we recommend using **Homebrew** to install Akash.
+### 1. Download and Install Akash
 
-### 1. Install XCode:
+* These commands will retrieve the latest, stable version of the Akash software, store the version in a local variable, and install that version.
 
-You will need to install Apple's XCode Command Line Tools. Open Terminal on your Mac.  Click the copy icon in the code box below and paste the command on your Terminal prompt
+```
+cd ~/Downloads
 
-![](../.gitbook/assets/image.png)
+AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
 
-```text
-xcode-select --install
+curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "v$AKASH_VERSION"
 ```
 
-Installing XCode may take a while. Go grab a cup of coffee.
+### 2. Move the Akash Binary
 
-### 2. Install Homebrew:
+* Move the binary file into a directory included in your path
 
-If you do not have Homebrew, you can install Homebrew using:
-
-```text
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+sudo mv ./bin/akash /usr/local/bin
 ```
 
-Install `akash` using homebrew:
+### 3. Verify Akash Installation
 
-```text
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/colinlowenberg/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
-brew tap ovrclk/tap
-brew install akash
-brew link akash --force
+* Verify the installation by using a simple command to check the Akash version
+
 ```
-
-Once installed, verify the installation by running `akash version`
-
-```text
 akash version
 ```
 
-Congrats, now it's time to[ create your wallet.](wallet.md)
+* Expect/Example Output
+
+```
+akash version
+
+v0.16.3
+```
 {% endtab %}
 
 {% tab title="Linux" %}
-## Linux
+### Linux
 
 Download the archive for your system from the [release page](https://github.com/ovrclk/akash/releases), extract it, and install the `akash` binary into your path.
 
-#### GoDownloader
+**GoDownloader**
 
 Alternatively, install the latest version via [`godownloader`](https://github.com/goreleaser/godownloader) First, configure the version of the Akash Network `AKASH_VERSION`as a shell variable in your terminal:
 
@@ -76,11 +72,11 @@ The final step is to make sure that the akash binaries are available in your she
 {% endtab %}
 
 {% tab title="Source" %}
-## Source
+### Source
 
 Installing Akash suite from source
 
-```text
+```
 $ go get -d github.com/ovrclk/akash
 $ cd $GOPATH/src/github.com/ovrclk/akash
 $ git checkout "v$AKASH_VERSION"
@@ -93,4 +89,3 @@ Akash is developed and tested with [golang 1.16+](https://golang.org/). Building
 Once you have the dependencies properly setup, download and build `akash` using `make install`
 {% endtab %}
 {% endtabs %}
-

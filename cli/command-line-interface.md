@@ -14,27 +14,27 @@ The Akash command line utility
 
 Below are links to the top level commands. Click one of the links to see the available commands.
 
-* [akash ](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_.md)     -&#x20;
-* [akash ](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_.md)     -&#x20;
-* [akash add-genesis-account](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_add-genesis-account.md)     - Add a genesis account to genesis.json
-* [akash collect-gentxs](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_collect-gentxs.md)     - Collect genesis txs and output a genesis.json file
-* [akash debug](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_debug.md)     - Tool for helping with debugging your application
-* [akash deploy](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_deploy.md)     - Akash deploy tool commands
-* [akash events](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_events.md)     - Prints out akash events in real time
-* [akash export](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_export.md)     - Export state to JSON
-* [akash gentx](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_gentx.md)     - Generate a genesis tx carrying a self delegation
-* [akash init](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_init.md)     - Initialize private validator, p2p, genesis, and application configuration files
-* [akash keys](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_keys.md)     - Manage your application's keys
-* [akash migrate](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_migrate.md)     - Migrate genesis to a specified target version
-* [akash provider](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_provider.md)     - Akash provider commands
-* [akash query](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_query.md)     - Querying subcommands
-* [akash start](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_start.md)     - Run the full node
-* [akash status](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_status.md)     - Query remote node for status
-* [akash tendermint](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_tendermint.md)     - Tendermint subcommands
-* [akash tx](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_tx.md)     - Transactions subcommands
-* [akash unsafe-reset-all](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_unsafe-reset-all.md)     - Resets the blockchain database, removes address book files, and resets data/priv\_validator\_state.json to the genesis state
-* [akash validate-genesis](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_validate-genesis.md)     - validates the genesis file at the default location or at the location passed as an arg
-* [akash version](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_version.md)     - Print the application binary version information
+* [akash ](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_.md)-
+* [akash ](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_.md)-
+* [akash add-genesis-account](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_add-genesis-account.md) - Add a genesis account to genesis.json
+* [akash collect-gentxs](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_collect-gentxs.md) - Collect genesis txs and output a genesis.json file
+* [akash debug](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_debug.md) - Tool for helping with debugging your application
+* [akash deploy](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_deploy.md) - Akash deploy tool commands
+* [akash events](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_events.md) - Prints out akash events in real time
+* [akash export](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_export.md) - Export state to JSON
+* [akash gentx](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_gentx.md) - Generate a genesis tx carrying a self delegation
+* [akash init](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_init.md) - Initialize private validator, p2p, genesis, and application configuration files
+* [akash keys](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_keys.md) - Manage your application's keys
+* [akash migrate](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_migrate.md) - Migrate genesis to a specified target version
+* [akash provider](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_provider.md) - Akash provider commands
+* [akash query](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_query.md) - Querying subcommands
+* [akash start](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_start.md) - Run the full node
+* [akash status](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_status.md) - Query remote node for status
+* [akash tendermint](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_tendermint.md) - Tendermint subcommands
+* [akash tx](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_tx.md) - Transactions subcommands
+* [akash unsafe-reset-all](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_unsafe-reset-all.md) - Resets the blockchain database, removes address book files, and resets data/priv\_validator\_state.json to the genesis state
+* [akash validate-genesis](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_validate-genesis.md) - validates the genesis file at the default location or at the location passed as an arg
+* [akash version](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_version.md) - Print the application binary version information
 
 ## Send Tokens
 

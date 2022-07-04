@@ -1,6 +1,6 @@
 # Ruby on Rails with Sia and Auth0
 
-**Repository**: [ovrclk/akash-on-rails](https://github.com/ovrclk/akash-on-rails)  
+**Repository**: [ovrclk/akash-on-rails](https://github.com/ovrclk/akash-on-rails)\
 **Demo**: [pin.akash.host](https://pin.akash.host/)
 
 This is an example Rails Pinterest clone hosted on Akash. There are a few extra features to make the most of decentralised hosting:
@@ -17,7 +17,7 @@ This is an example Rails Pinterest clone hosted on Akash. There are a few extra 
 
 * Runs the rails server and hosts the actual website.
 * Connects to the Postgres container for a persistent database.
-* Hosts files on [Filebase](https://filebase.com/) \([Sia](https://sia.tech/), [Skynet](https://siasky.net/), and [Storj](https://www.storj.io/) hosting currently\).
+* Hosts files on [Filebase](https://filebase.com/) ([Sia](https://sia.tech/), [Skynet](https://siasky.net/), and [Storj](https://www.storj.io/) hosting currently).
 * Uses [Auth0](https://auth0.com/) for user login and registration.
 
 ### Cron container
@@ -90,4 +90,3 @@ You can run the application locally using Docker compose.
 Copy the `.env.sample` file to `.env` and populate.
 
 Run `docker-compose up` to build and run the application.
-

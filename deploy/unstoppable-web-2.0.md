@@ -8,7 +8,7 @@ The repository is structured as a monorepo - with infrastructure configuration, 
 
 ### Decentralized infrastructure
 
-| DNS                                | Frontend                     | Backend                        | <p>Redundant </p><p>Database</p>    |
+| DNS                                | Frontend                     | Backend                        | <p>Redundant</p><p>Database</p>     |
 | ---------------------------------- | ---------------------------- | ------------------------------ | ----------------------------------- |
 |                                    |                              |                                |                                     |
 | [Handshake](https://handshake.org) | [Skynet](https://siasky.net) | [Akash](https://akash.network) | [Postgresql](http://postgresql.org) |
@@ -27,7 +27,7 @@ The application code, technology choices, and configuration used in this reposit
 
 ### Deployed Demo
 
-A deployed [live demo](https://0000ac8v9uf92otn28omnuqfan0qd05f3gjrsfoonjpjl3m3ir7qds8.siasky.net/#) was deployed using the steps in this guide.&#x20;
+A deployed [live demo](https://0000ac8v9uf92otn28omnuqfan0qd05f3gjrsfoonjpjl3m3ir7qds8.siasky.net/#) was deployed using the steps in this guide.
 
 ## Guide
 

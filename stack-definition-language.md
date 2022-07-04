@@ -10,6 +10,7 @@ A complete deployment has the following sections:
 * [services](stack-definition-language.md#services)
 * [profiles](stack-definition-language.md#profiles)
 * [deployment](stack-definition-language.md#deployment)
+* [persistent storage](features/persistent-storage/)
 
 An example deployment configuration can be found [here](https://github.com/ovrclk/docs/tree/62714bb13cfde51ce6210dba626d7248847ba8c1/sdl/deployment.yaml).
 
@@ -25,14 +26,14 @@ Indicates version of Akash configuration file. Currently only `"2.0"` is accepte
 
 The top-level `services` entry contains a map of workloads to be ran on the Akash deployment. Each key is a service name; values are a map containing the following keys:
 
-| Name         | Required | Meaning                                                                                                           |
-| ------------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
-| `image`      | Yes      | Docker image of the container                                                                                     |
-| `depends-on` | No       | List of services which must be brought up before the current service                                              |
-| `command`    | No       | Custom command use when executing container                                                                       |
-| `args`       | No       | Arguments to custom command use when executing the container                                                      |
-| `env`        | No       | Environment variables to set in running container. See [services.env](stack-definition-language.md#services.env)  |
-| `expose`     | No       | Entities allowed to connect to the services.  See [services.expose](stack-definition-language.md#services.expose) |
+| Name         | Required | Meaning                                                                                                          |
+| ------------ | -------- | ---------------------------------------------------------------------------------------------------------------- |
+| `image`      | Yes      | Docker image of the container                                                                                    |
+| `depends-on` | No       | _**NOTE - field is marked for future use and currently has no impact on deployments.**_                          |
+| `command`    | No       | Custom command use when executing container                                                                      |
+| `args`       | No       | Arguments to custom command use when executing the container                                                     |
+| `env`        | No       | Environment variables to set in running container. See [services.env](stack-definition-language.md#services.env) |
+| `expose`     | No       | Entities allowed to connect to the services. See [services.expose](stack-definition-language.md#services.expose) |
 
 ### services.env
 
@@ -48,13 +49,13 @@ env:
 
 `expose` is a list describing what can connect to the service. Each entry is a map containing one or more of the following fields:
 
-| Name     | Required | Meaning                                                                                                         |
-| -------- | -------- | --------------------------------------------------------------------------------------------------------------- |
-| `port`   | Yes      | Container port to expose                                                                                        |
-| `as`     | No       | Port number to expose the container port as                                                                     |
-| `accept` | No       | List of hosts to accept connections for                                                                         |
-| `proto`  | No       | Protocol type (`tcp`,`http`, or `https`)                                                                        |
-| `to`     | No       | List of entities allowed to connect.  See [services.expose.to](stack-definition-language.md#services.expose.to) |
+| Name     | Required | Meaning                                                                                                        |
+| -------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| `port`   | Yes      | Container port to expose                                                                                       |
+| `as`     | No       | Port number to expose the container port as                                                                    |
+| `accept` | No       | List of hosts to accept connections for                                                                        |
+| `proto`  | No       | Protocol type (`tcp`,`http`, or `https`)                                                                       |
+| `to`     | No       | List of entities allowed to connect. See [services.expose.to](stack-definition-language.md#services.expose.to) |
 
 The `port` value governs the default `proto` value as follows:
 

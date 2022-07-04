@@ -1,5 +1,15 @@
 # Technical Support
 
+## Support Chat on Discord
+
+The [Akash server on Discord](https://discord.com/invite/DxftX67) is a great place to find friendly help from the Akash developer community. Come say hello and ask a question!
+
+**For help with:**
+
+* **Deployments:** Message the **#deployments** channel
+* **Providers:** Message the **#providers** channel
+* **Validators:** Message the **#validators-mainnet** channel
+
 ## Support Forum on Discourse
 
 The [Akash Support Forum](https://forum.akash.network) is the best place to ask for help with an issue, report a bug, share your projects, discuss proposals, and submit feature requests.
@@ -13,17 +23,6 @@ The [Akash Support Forum](https://forum.akash.network) is the best place to ask 
 * Provider address if it is specific to a provider
 
 Please post on the forum before submitting your issue to the [Akash project on GitHub.](https://github.com/ovrclk/akash)
-
-## Support Chat on Discord
-
-The [Akash server on Discord](https://discord.com/invite/DxftX67) is a great place to find friendly help from the Akash developer community. Come say hello and ask a question!
-
-**For help with:**
-
-* **Hackathons:** Message the **#hackathons** channel&#x20;
-* **Deployments:** Message the **#deployments** channel&#x20;
-* **Providers:** Message the **#providers** channel&#x20;
-* **Validators:** Message the **#validators** channel
 
 ## Security Issues & Bug Bounties
 

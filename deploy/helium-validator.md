@@ -7,7 +7,7 @@ This repository includes everything needed to run a Helium validator on Akash. T
 The main files to understand are:
 
 * `Dockerfile` - Installs AWS CLI on top of the [Helium validator docker image](https://quay.io/team-helium/validator) and sets boot.sh to run whenever the container starts.
-* `boot.sh` - Downloads the swarm\_key from S3 \(if it exists\), starts the miner and prints the address. It then uploads the swarm\_key if it didn't download it earlier \(new miner\).
+* `boot.sh` - Downloads the swarm\_key from S3 (if it exists), starts the miner and prints the address. It then uploads the swarm\_key if it didn't download it earlier (new miner).
 * `deploy.yml` - Example/working Akash deployment configuration. This is setup to use my image which may or may not be up to date. See below to create and host your own image if needed.
 
 ## Requirements
@@ -18,7 +18,7 @@ The main files to understand are:
 
 ## Run the container locally
 
-```text
+```
 docker run --publish 2154:2154/tcp -e AWS_ACCESS_KEY=mykey -e AWS_SECRET_KEY=mysecret -e S3_KEY_PATH=mybucket/miner1/swarm_key tombeynon/helium-on-akash
 ```
 
@@ -30,7 +30,7 @@ Either clone this repository or create a `deploy.yml` file. Enter your S3 bucket
 
 Deploy as [per the docs](https://docs.akash.network/guides/deploy) or using a [deploy UI](https://github.com/tombeynon/akash-deploy).
 
-Once the container is deployed, check the logs to see your address once the server starts \(can take a while\). If your swarm\_key didn't exist in S3 before, the new one should have been uploaded. Subsequent deploys using the same S3 details will now use the same swarm\_key.
+Once the container is deployed, check the logs to see your address once the server starts (can take a while). If your swarm\_key didn't exist in S3 before, the new one should have been uploaded. Subsequent deploys using the same S3 details will now use the same swarm\_key.
 
 ## Build your own image
 
@@ -41,7 +41,7 @@ There are a couple of reasons to run your own image:
 
 Create a dockerhub account first, then build the image as follows:
 
-```text
+```
 git clone git@github.com:tombeynon/helium-on-akash.git
 cd helium-on-akash
 docker build . -t mydockerhubuser/helium-on-akash:v0.0.1
@@ -50,7 +50,7 @@ docker push mydockerhubuser/helium-on-akash:v0.0.1
 
 You can then change the `image` value in deploy.yml to your repository and version above.
 
-To update the miner on Akash, run the above to build it with the latest Helium image, incrementing the version number. Then close and re-deploy on Akash using the new version number. This process could be scripted relatively easily.
+To update the miner on Akash, run the above to build it with the latest Helium image, incrementing the version number. Then close and re-deploy on Akash using the new version number. This process could be scripted easily.
 
 ## Caveats
 
@@ -64,4 +64,3 @@ To update the miner on Akash, run the above to build it with the latest Helium i
 * [https://docs.helium.com/mine-hnt/validators/validator-deployment-guide](https://docs.helium.com/mine-hnt/validators/validator-deployment-guide)
 * [https://explorer.helium.wtf/validators](https://explorer.helium.wtf/validators)
 * [https://testnet-api.helium.wtf/v1/validators/](https://testnet-api.helium.wtf/v1/validators/%7B%7BADDRESS%7D%7D)
-
