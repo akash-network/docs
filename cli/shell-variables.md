@@ -6,14 +6,14 @@ Note it is important to type the commands into a terminal where the variables ha
 
 ### Environment Variables
 
-| Name                    | Description                                                                   |
-| ----------------------- | ----------------------------------------------------------------------------- |
-| `AKASH_NET`             | Akash network configuration base URL.                                         |
-| `AKASH_VERSION`         | Akash version to install for your network.                                    |
-| `AKASH_CHAINID`         | Chain ID of the Akash network for [IBC](broken-reference/).                   |
-| `AKASH_NODE`            | Akash RPC endpoint URL and port number.                                       |
-| `AKASH_KEY_NAME`        | Key name of your choosing. This documentation uses a value of "alice".        |
-| `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys. One of `os` (default), `file`, `test`. |
+| Name                    | Description                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------ |
+| `AKASH_NET`             | Akash network configuration base URL.                                          |
+| `AKASH_VERSION`         | Akash version to install for your network.                                     |
+| `AKASH_CHAIN_ID`         | Chain ID of the Akash network for [IBC](broken-reference).                     |
+| `AKASH_NODE`            | Akash RPC endpoint URL and port number.                                        |
+| `AKASH_KEY_NAME`        | Key name of your choosing.  This documentation uses a value of "alice".        |
+| `AKASH_KEYRING_BACKEND` | Keyring backend to use for local keys.  One of `os` (default), `file`, `test`. |
 
 ### Environment Variables and flags
 
