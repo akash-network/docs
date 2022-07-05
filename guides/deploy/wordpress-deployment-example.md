@@ -6,36 +6,30 @@ In this section we will use the tool to deploy our own example WordPress page on
 
 * From the Deployments pane click the “CREATE DEPLOYMENTS” button.
 
-![](https://lh3.googleusercontent.com/cITOXBIBZWEZe7vFJfQYpzHEO6ZS8K4FPCI5mpRDAYFzdZ9FIV7dJtvUY8THbd7ll3UqpKjEd6ZdWb0EdUvUAdNXzea40JpXe9CoBR22NpfOge2AwtTuwmnJyVpdiHK2U2XMVNf8=s0)
+![](../../.gitbook/assets/alCreateDeployment.png)
 
-#### **STEP2 -  Checking Deployment Pre-Reqs**
-
-* Before getting started make sure you have met the following requirements:
-  * 5AKT are available in wallet/escrow account.&#x20;
-  * Valid certificate (on chain and matching cert locally)
-* If everything is in order click the “CONTINUE” button
-
-![](https://lh3.googleusercontent.com/19ivZkQtByvta\_6a8lV8nuPnxtn8PDcv6a65pSLansGB1JOsdVCcNWPk8pBLcRAzuZ\_Qdc3r9WaahdPj9vVCnXea5dBS-p3GekVPBAbo0uodNUb5tsEBSopdv4XjPhKXVPHV0Jkv=s0)
-
-#### **STEP3 -  Choose Template**
+#### **STEP2 -  Choose Template**
 
 * The tool provides several sample templates including Games (Supermario, Minecraft, etc), and some more general (WordPress, Hello-World, etc)
-* To deploy a custom application select the Empty template option
-* Press “CONTINUE” with the WordPress template selected
+* To deploy a custom application select the `Browse template gallery` option
+* Then search for the `wordpress` template and select the template from the search results
 
-![](https://lh6.googleusercontent.com/70YVBS9Q\_lB5j7mHDnwcC8iNFJT6ueqarfPG9\_BnDcvmcBwgHDG24RyiTJDvbbvq-HngUgMnC05-Cex6QeiM-VbBxBIs78259J\_NUgexDIrkOfNBsfQ203WqwbGR1FC0b\_9MBx99=s0)
+![](../../.gitbook/assets/alBrowseTemplateGallery.png)
 
-#### **STEP4 -  Create Deployment**
+![](../../.gitbook/assets/alWordpressSelect.png)
 
-* If you select a empty template now would be the time to paste in your SDL
-* For this example we will be making a small change to the example SDL file. Change the domain name in the SDL’s “expose” section.
-  * In a production system we would want a real domain name. Since this is an example we can use something fake.
+#### **STEP3 - Proceed with Deployment**
 
-![](https://lh5.googleusercontent.com/snngoD7lecf77Y5PZBjqfrnhCTCxgm555meZRGl4oPQX8yZXsv0im7JEbNYGGF46wRiFmLSokFIoSVkP4rGGBwKSnx6vaIzejiGKz\_-XR8VFoUGhr-TZ1-lZakr68744b-iS5IBt=s0)
+* At this stage we could review/customize the Akash SDL deployment recipe if desired but in this example we will proceed with the default settings and press the `DEPLOY` button
 
-* Once you have changed the domain name, enter a name for your deployment in the bottom pane and press “CREATE DEPLOYMENT”.
+![](../../.gitbook/assets/alDeployNoChanges.png)
 
-![](https://lh3.googleusercontent.com/kuUkw36MAiq64xBgwLYUqF2Tp22UJG4LdymryZCQog2QxDrcxkfxQp-WFrgXgo6GJL\_S\_oPi3q\_EYZMr9jjdanjY9N0TuxwqQUk4iOqPHkFZKZuBRXQ47smegsyofNBgadRZCmvp=s0)
+#### **STEP4 - SDL Verification**
+
+* Screen will appear which provides an additional opportunity to customize the SDL but we will again proceed with no edits by pressing the `CREATE DEPLOYMENT` button
+* Accept the Deployment Deposit pop up as which specifies that 5AKT will be placed into an escrow account for deployment cost
+
+![](../../.gitbook/assets/alCreateDeployment2.png)
 
 #### **STEP5 -  Create Deployment Transaction**
 
@@ -49,7 +43,7 @@ Note: The process to write the transaction to the chain may take a couple of min
 
 * After a minute or so a list of bids will display. Select the most affordable lease for this example deployment and then press “ACCEPT BID”
 
-![](https://lh6.googleusercontent.com/n77KZpFFF\_-MKeGnk1MU0HSswyNc7mEvFWjOATz8QmFHRCxiovMbJf3FUlALQzARjZMUuMf1xmYhuQIQo5vM3FSpKmVfdZfSc9eKnTADLhibUeFCw0e64G8YpAELlb6mntyCm\_Ho=s0)
+![](<../../.gitbook/assets/alAcceptBid (1).png>)
 
 #### **STEP7 -  Create Lease Transaction**
 
@@ -59,12 +53,18 @@ Note: The process to write the transaction to the chain may take a couple of min
 
 #### **STEP8 -  Post Deployment**
 
-Once the process is complete you can click the Deployments tab and select the new deployment. This is where you can interact with and retrieve information about the deployment.
+While the deployment is becoming active the `LOGS` tab is displayed. &#x20;
 
-![](https://lh3.googleusercontent.com/hYHbU35JXkBV0GsZCg0VrIeBcIE0MJyxoPTjHUCWg-o3qhnUcHRS39p1U4kCqlrnHGMURw1U4okbXLE2Ei4lgJhI2JYHkgpa3fM0lsxXLtHkC9ZavW8QRHJKHmwBPJUooly9f1vP=s0)
+When the deployment appears to be complete, select the `LEASES` tab.
+
+![](../../.gitbook/assets/alSelectLeasesTab.png)
+
+#### STEP9 - Navigate to the Deployment URI
 
 * To easily navigate to the page you spun up click the icon to the right of the Akash URL
 
 Note: The Wordpress site may take a couple of minutes to load depending on the status of the deployment
 
-![](https://lh4.googleusercontent.com/ShhvDqBaKAEap3KywKlF8eggHb2b2wL7VVX3STX2euLxFUGvcDEdMitMexutzZIgTGrK9R78JgPrSOj3uBBFLQdUXO\_eVghvFV3e\_poO46OgZyVFG7IDY00\_OScdtwsjwWmz0-R3=s0)
+![](../../.gitbook/assets/alNavigateToURI.png)
+
+![](../../.gitbook/assets/alWordPressGUI.png)

@@ -27,5 +27,4 @@ Should a need arise to delete the wallet click the ellipsis (triple dot icon) to
 
 When first launching the tool there will not be a valid certificate.  To fix this select the ellipsis to the right of the Certificate status and click “Create Certificate”.
 
-![](https://lh5.googleusercontent.com/D1Pq065Fv5vZesW6t2gj0UQzWVNy5k-9HM3ehq9oQQNfb7O0JJHgyYHvXECUvg2vUjg82K7XBNAZx\_MgevWi1aRJFgPNLMiV1TPxr9vyoXqpdKb5GPUxRjMmuUT6iKzO1Wb0lVlA=s0)
-
+![](../../.gitbook/assets/alCert.png)
