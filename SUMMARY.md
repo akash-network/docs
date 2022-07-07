@@ -181,6 +181,7 @@
         * [Akash Validator Deployment](other-resources/experimental/omnibus/akash-validator-with-tmkms/akash-validator-deployment.md)
         * [TMKMS Setup](other-resources/experimental/omnibus/akash-validator-with-tmkms/tmkms-setup.md)
         * [Start and Verify the TMKMS Service](other-resources/experimental/omnibus/akash-validator-with-tmkms/start-and-verify-the-tmkms-service.md)
+    * [Akash Provider Attribute Updates](other-resources/experimental/akash-provider-attribute-updates.md)
   * [Security](glossary/security.md)
   * [Containers](glossary/platform.md)
   * [Marketplace](glossary/marketplace.md)
