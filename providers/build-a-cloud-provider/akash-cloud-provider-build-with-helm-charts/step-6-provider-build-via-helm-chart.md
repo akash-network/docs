@@ -54,7 +54,7 @@ cd provider
 cat > provider.yaml << EOF
 ---
 from: "$ACCOUNT_ADDRESS"
-key: "$(cat ./key.pem | openssl base64 -A)"
+key: "$(cat ~/key.pem | openssl base64 -A)"
 keysecret: "$(echo $KEY_PASSWORD | openssl base64 -A)"
 domain: "$DOMAIN"
 node: "$NODE"
