@@ -1,21 +1,18 @@
-# Step 9 - Domain Name Review
+# Step 5 - Domain Name Review
 
-Our guide defines a domain which all of the charts will use for their ingress routes. For our example we use yourdomain.com.
+Add A records on your external DNS servers for Akash Provider related domains.&#x20;
 
-Add A records for the IP addresses of all Kubernetes worker nodes and point to nodes.yourdomain.com.
+### Akash Provider Domain Records
 
-To get the external IP of your worker nodes, run the following command on your Kubernetes cluster.
-
-```
-kubectl get nodes -A -o wide
-```
-
-Your DNS records should look something like this:
+* Replace yourdomain.com with your own domain name
+* Direct A records to public IP address of a single Kubernetes worker node
 
 ```
-*.ingress 300 IN CNAME nodes.yourdomain.com.
-nodes 300 IN A x.x.x.x
-nodes 300 IN A x.x.x.x
-nodes 300 IN A x.x.x.x
-provider 300 IN CNAME nodes.yourdomain.com.
+*.ingress.yourdomain.com
+
+provider.yourdomain.com
 ```
+
+### Example DNS Configuration
+
+![](../../../.gitbook/assets/dnsExample.png)
