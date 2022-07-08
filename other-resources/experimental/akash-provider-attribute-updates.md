@@ -1,5 +1,11 @@
 # Akash Provider Attribute Updates
 
+## Initial Guidance and Assumptions
+
+* Conduct all steps in this guide from a Kubernetes master node in your Akash Provider cluster.
+* Guide assumes that your Akash Provider was installed via Helm Charts as detailed in this [guide](../../providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/).
+* Guide assumes that the Kubernetes master node used has Helm installed.  Refer to this [guide](../../providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-4-helm-installation-on-kubernetes-node.md) step if a Helm install is needed.  Return to this guide once Helm install is completed.
+
 ## Pre-Update Attribute Captures
 
 * Prior to updating the Provider's attributes, capture the current attributes
@@ -8,6 +14,8 @@
 ### On Chain Current Attributes Capture
 
 #### Command Template
+
+* Replace the `<provider-address>` variable with the address of your provider
 
 ```
 akash query provider get <provder-address>
@@ -24,7 +32,7 @@ akash query provider get akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx
 ```
 attributes:
 - key: region
-  value: us-west
+  value: us-central
 - key: host
   value: akash
 - key: tier
@@ -40,80 +48,66 @@ owner: akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx
 
 ## Provider Update
 
-### **Environment Variables**
+### Capture Current Provider Settings to File
 
-* Declare the following environment variables for Helm
-* Replace the variable  with your own settings
-
-```
-ACCOUNT_ADDRESS=akash1XXXX #akash provider address that starts with `akash1`
-KEY_PASSWORD=12341234 #set to the password you have entered upon `akash keys export <key-name> > key.pem`; this is for the akash-provider pod to decrypt the key
-DOMAIN=test.com  #Registers DNS A and wildcard address as specified in previous step, i.e. `provider.test.com` DNS A record and `*.ingress.test.com` DNS wildcard record
-NODE=http://<IP_address_of_your_RPC_node>:26657  # if you are going to deploy Akash RPC Node using Helm-Charts then set it to `http://akash-node-1:26657`
-```
-
-*   Ensure you are applying the latest version of subsequent Helm Charts install/upgrade steps
-
-    ```
-    helm repo update
-    ```
-
-### Create a provider.yaml File
-
-* Issue the following command to update your Akash Provider
-* Update and/or add to the attributes keys for your unique use case
+* Issue this command to capture current provider settings and write to file
 
 ```
 cd ~
 
-mkdir provider
-
-cd provider
-
-cat > provider.yaml << EOF
----
-from: "$ACCOUNT_ADDRESS"
-key: "$(cat ~/key.pem | openssl base64 -A)"
-keysecret: "$(echo $KEY_PASSWORD | openssl base64 -A)"
-domain: "$DOMAIN"
-node: "$NODE"
-withdrawalperiod: 24h
-attributes:
-  - key: region
-    value: "<YOUR REGION>"   # set your region here, e.g. "us-west"
-  - key: host
-    value: akash
-  - key: tier
-    value: community
-  - key: organization
-    value: "<YOUR ORG>"      # set your organization name here
-EOF
+helm -n akash-services get values akash-provider | grep -v ^USER > provider.yaml
 ```
 
-#### Example/Fully Populated Provider YAML File
+### Update Provider Settings
+
+* Open the file containing the current provider settings and update attribute key-value pairs as desired
 
 ```
-from: "$ACCOUNT_ADDRESS"
-key: "$(cat ~/key.pem | openssl base64 -A)"
-keysecret: "$(echo $KEY_PASSWORD | openssl base64 -A)"
-domain: "$DOMAIN"
-node: "$NODE"
-withdrawalperiod: 24h
+cd ~
+
+vi provider.yaml
+```
+
+#### Example Provider YAML Update
+
+* If compared to the initial `provider.yaml` file - updates have been made to the `region` and `organization` values have been updated
+
+```
 attributes:
-  - key: region
-    value: eu-west
-  - key: host
-    value: akash
-  - key: tier
-    value: community
-  - key: organization
-    value: chainzero
+- key: region
+  value: eu-west
+- key: host
+  value: akash
+- key: tier
+  value: community
+- key: organization
+  value: chainzero
+domain: akashtesting.xyz
+from: akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx
+key: <redacted>
+keysecret: <redacted>
+node: http://akash.c29r3.xyz:80/rpc
+withdrawalperiod: 24h
 ```
 
 ### Update Provider
 
 ```
+cd ~
+
 helm upgrade akash-provider akash/provider -n akash-services -f provider.yaml
+```
+
+#### Expected Output of Helm Upgrade
+
+```
+Release "akash-provider" has been upgraded. Happy Helming!
+NAME: akash-provider
+LAST DEPLOYED: Fri Jul  8 14:31:24 2022
+NAMESPACE: akash-services
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
 ```
 
 ## Post Update Verifications
