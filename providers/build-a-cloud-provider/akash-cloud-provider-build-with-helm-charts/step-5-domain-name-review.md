@@ -1,8 +1,10 @@
 # Step 5 - Domain Name Review
 
+## Overview
+
 Add A records on your external DNS servers for Akash Provider related domains.&#x20;
 
-### Akash Provider Domain Records
+## Akash Provider Domain Records
 
 * Replace yourdomain.com with your own domain name
 * Direct A records to public IP address of a single Kubernetes worker node
@@ -13,6 +15,6 @@ Add A records on your external DNS servers for Akash Provider related domains.&#
 provider.yourdomain.com
 ```
 
-### Example DNS Configuration
+## Example DNS Configuration
 
 ![](../../../.gitbook/assets/dnsExample.png)
