@@ -2,12 +2,12 @@
 
 ## Overview
 
-Add A records on your external DNS servers for Akash Provider related domains.&#x20;
+Add DNS (type A) records for your Akash Provider related domains on your DNS hosting provider.
 
 ## Akash Provider Domain Records
 
 * Replace yourdomain.com with your own domain name
-* Direct A records to public IP address of a single Kubernetes worker node
+* DNS (type A) records should point to public IP address of a single Kubernetes worker node of your choice
 
 ```
 *.ingress.yourdomain.com
