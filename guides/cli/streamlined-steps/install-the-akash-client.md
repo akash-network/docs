@@ -2,7 +2,7 @@
 
 
 
-The below set of steps downloads the environment for easier setup. For advanced usage, check [Install Akash CLI](install-the-akash-client.md#install-akash-cli-client)&#x20;
+The below set of steps downloads the environment for easier setup. For advanced usage, check [Install Akash CLI client](../detailed-steps/part-1.-install-akash.md).
 
 ## Download Source Code
 
