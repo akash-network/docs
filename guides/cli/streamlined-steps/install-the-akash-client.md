@@ -1,4 +1,8 @@
-# Install the Akash Client
+# Install streamlined environment locally
+
+
+
+The below set of steps downloads the environment for easier setup. For advanced usage, check [Install Akash CLI](install-the-akash-client.md#install-akash-cli-client)&#x20;
 
 ## Download Source Code
 

@@ -1,10 +1,18 @@
-# Part 1. Install Akash
+# Part 1. Install Akash CLI
 
 Select a tab below to view instructions for MacOS, Linux, or compiling from source.
 
 {% tabs %}
 {% tab title="MacOS" %}
 ## MacOS
+
+
+
+
+
+Simplest way to install Akash is using Homebrew using `brew install ovrclk/tap/akash`. Below are steps for binary download.
+
+###
 
 ### 1. Download and Install Akash
 
