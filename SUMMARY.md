@@ -63,6 +63,7 @@
   * [Ruby on Rails with Sia and Auth0](deploy/ruby-on-rails-with-sia-and-auth0.md)
 * [Providers](providers/README.md)
   * [Build a Cloud Provider](providers/build-a-cloud-provider/README.md)
+    * [Hardware and Software Recommendations](providers/build-a-cloud-provider/hardware-and-software-recommendations.md)
     * [Kubernetes Cluster for Akash Providers](providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/README.md)
       * [STEP 1 - Clone the Kubespray Project](providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-1-clone-the-kubespray-project.md)
       * [STEP 2 - Install Ansible](providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-2-install-ansible.md)

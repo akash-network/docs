@@ -22,7 +22,7 @@ The Akashlytics Deploy software download may be initiated via the desired link b
 
 The Akashlytics Deploy project’s documentation may be found [here](https://www.akashlytics.com/deploy).
 
-![](../../.gitbook/assets/AkashlyticsDownloadScreen.png)
+![](<../../.gitbook/assets/AkashlyticsDownloadScreen (1).png>)
 
 {% tabs %}
 {% tab title="MacOS" %}
@@ -95,7 +95,7 @@ Depending on the Operating System version and installed/enabled security tools -
 
 * Feel free to use the default install options and follow the prompts.
 
-![](<../../.gitbook/assets/akashlticsWindowsInstall (1).png>)
+![](../../.gitbook/assets/akashlticsWindowsInstall.png)
 
 * On the last step of the install in the “Completing Akashlytics Deploy Setup” section - check the “Run Akashlytics Deploy” option (likely selected by default) and select “Finish”.
 
