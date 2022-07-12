@@ -17,4 +17,4 @@ provider.yourdomain.com
 
 ## Example DNS Configuration
 
-![](../../../.gitbook/assets/dnsExample.png)
+![](../../../.gitbook/assets/namecheapCapture.png)
