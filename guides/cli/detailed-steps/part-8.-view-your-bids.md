@@ -3,7 +3,7 @@
 After a short time, you should see bids from providers for this deployment with the following command:
 
 ```bash
-akash query market bid list --owner=$AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ
+akash query market bid list --owner=$AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ --state=open
 ```
 
 ### Choose a Provider
@@ -66,12 +66,12 @@ bids:
 
 For this example, we will choose `akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal` Run this command to set the provider shell variable:
 
-```bash
+```sh
 AKASH_PROVIDER=akash10cl5rm0cqnpj45knzakpa4cnvn5amzwp4lhcal
 ```
 
 Verify we have the right value populated by running:
 
-```
+```sh
 echo $AKASH_PROVIDER
 ```

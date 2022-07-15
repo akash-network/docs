@@ -10,12 +10,12 @@ In this step we will create a local certificate and then store the certification
 
 * Note: If it errors with `Error: certificate error: cannot overwrite certificate`, then add `--overwrite` should you want to overwrite the cert. Normally you can ignore that error and proceed with publishing the cert (next step).
 
-```
+```sh
 akash tx cert generate client --from $AKASH_KEY_NAME
 ```
 
 #### Publish Cert to the Blockchain
 
-```
-akash tx cert publish client --from $AKASH_KEY_NAME --gas-prices="0.025uakt" --gas="auto" --gas-adjustment=1.15
+```sh
+akash tx cert publish client --from $AKASH_KEY_NAME
 ```

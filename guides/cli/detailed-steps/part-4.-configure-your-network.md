@@ -1,14 +1,12 @@
 # Part 4.  Configure your Network
 
-
-
 First configure the base URL (`$AKASH_NET`) for the Akash Network; copy and paste the command below:
 
 ```bash
 AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
 ```
 
-#### Version
+## Version
 
 Next configure the version of the Akash Network `AKASH_VERSION`; copy and paste the command below:
 
@@ -16,7 +14,7 @@ Next configure the version of the Akash Network `AKASH_VERSION`; copy and paste 
 AKASH_VERSION="$(curl -s "$AKASH_NET/version.txt")"
 ```
 
-#### Chain ID
+## Chain ID
 
 The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exported to the shell.
 
@@ -24,7 +22,7 @@ The akash CLI will recogonize `AKASH_CHAIN_ID` environment variable when exporte
 export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
 ```
 
-#### Network Node
+## Network Node
 
 You need to select a node on the network to connect to, using an RPC endpoint. To configure the`AKASH_NODE` environment variable use this export command:
 
@@ -32,7 +30,7 @@ You need to select a node on the network to connect to, using an RPC endpoint. T
 export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)"
 ```
 
-#### Confirm your network variables are setup
+## Confirm your network variables are setup
 
 Your values may differ depending on the network you're connecting to.
 
@@ -44,7 +42,27 @@ You should see something similar to:
 
 `http://135.181.60.250:26657 akashnet-2 os`
 
-### Check your Account Balance
+## Set Additional Environment Variables
+
+Set the below set of environment variables to ensure smooth operations
+
+| Variable | Description | Recommended Value
+| -- | -- | -- |
+| AKASH_GAS | Gas limit to set per-transaction; set to "auto" to calculate sufficient gas automatically | `auto`
+| AKASH_GAS_ADJUSTMENT | Adjustment factor to be multiplied against the estimate returned by the tx simulation | `1.15`
+| AKASH_GAS_PRICES | Gas prices in decimal format to determine the transaction fee | `0.025uakt`
+| AKASH_SIGN_MODE | Signature mode | `amino-json`
+| AKASH_CHAIN_ID | The network chain ID | `akashnet-2`
+
+```sh
+export AKASH_GAS=auto
+export AKASH_GAS_ADJUSTMENT=1.25
+export AKASH_GAS_PRICES=0.025uakt
+export AKASH_CHAIN_ID=akashnet-2
+export AKASH_SIGN_MODE=amino-json
+```
+
+## Check your Account Balance
 
 Check your account has sufficient balance by running:
 

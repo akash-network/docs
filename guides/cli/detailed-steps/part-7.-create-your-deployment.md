@@ -8,8 +8,8 @@ Only x86\_64 processors are officially supported for Akash deployments.  This ma
 
 To deploy on Akash, run:
 
-```bash
-akash tx deployment create deploy.yml --from $AKASH_KEY_NAME --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --gas-prices="0.025uakt" --gas="auto" --gas-adjustment=1.15
+```sh
+akash tx deployment create deploy.yml --from $AKASH_KEY_NAME 
 ```
 
 You should see a response similar to:

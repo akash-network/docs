@@ -2,15 +2,15 @@
 
 Create a lease for the bid from the chosen provider above by running this command:
 
-```bash
-akash tx market lease create --chain-id $AKASH_CHAIN_ID --node $AKASH_NODE --owner $AKASH_ACCOUNT_ADDRESS --dseq $AKASH_DSEQ --gseq $AKASH_GSEQ --oseq $AKASH_OSEQ --provider $AKASH_PROVIDER --from $AKASH_KEY_NAME --gas-prices="0.025uakt" --gas="auto" --gas-adjustment=1.15
+```sh
+akash tx market lease create --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER --from $AKASH_KEY_NAME
 ```
 
 ### Confirm the Lease
 
 You can check the status of your lease by running:
 
-```bash
+```sh
 akash query market lease list --owner $AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ
 ```
 
@@ -22,8 +22,8 @@ bid not open
 
 If this happens, close your deployment and open a new deployment again.  To close your deployment run this command:
 
-```
-akash tx deployment close --node $AKASH_NODE --chain-id $AKASH_CHAIN_ID --dseq $AKASH_DSEQ  --owner $AKASH_ACCOUNT_ADDRESS --from $AKASH_KEY_NAME --keyring-backend $AKASH_KEYRING_BACKEND -y --gas-prices="0.025uakt" --gas="auto" --gas-adjustment=1.15
+```sh
+akash tx deployment close --dseq $AKASH_DSEQ  --owner $AKASH_ACCOUNT_ADDRESS --from $AKASH_KEY_NAME 
 ```
 
 If your lease was successful you should see a response that ends with:
