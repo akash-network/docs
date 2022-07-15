@@ -6,17 +6,18 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 {% tab title="MacOS" %}
 ## MacOS
 
+The simplest way to install Akash is using Homebrew using:
 
-
-The simplest way to install Akash is using Homebrew using `brew install ovrclk/tap/akash`. Below are steps for binary download.
-
-
-
-### 1. Download and Install Akash
-
-* These commands will retrieve the latest, stable version of the Akash software, store the version in a local variable, and install that version.
-
+```sh
+brew install ovrclk/tap/akash
 ```
+If you do not have homebrew, follow the below steps for installing the Akash Binary.
+
+### Download Akash Binary
+
+These commands will retrieve the latest, stable version of the Akash software, store the version in a local variable, and install that version.
+
+```sh
 cd ~/Downloads
 
 AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
@@ -24,41 +25,43 @@ AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/ma
 curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "v$AKASH_VERSION"
 ```
 
-### 2. Move the Akash Binary
+### Move the Akash Binary
 
-* Move the binary file into a directory included in your path
+Move the binary file into a directory included in your path
 
 ```
 sudo mv ./bin/akash /usr/local/bin
 ```
 
-### 3. Verify Akash Installation
+### Verify Akash Installation
 
-* Verify the installation by using a simple command to check the Akash version
+Verify the installation by using a simple command to check the Akash version
 
-```
+```sh
 akash version
 ```
 
-* Expect/Example Output
+Expect/Example Output
 
-```
-akash version
-
+```sh
 v0.16.3
 ```
 {% endtab %}
 
 {% tab title="Linux" %}
+
 ## Linux
 
+The simplest way to install Akash is using Homebrew using:
 
+```sh
+brew install ovrclk/tap/akash
+```
+If you do not have homebrew, follow the below steps for installing the Akash Binary.
 
-## **Specify the Akash Version**
+### Download Akash Binary
 
-
-
-* These commands will retrieve the latest, stable version of the Akash software_**,**_ store the version in a local variable, and install that version.
+These commands will retrieve the latest, stable version of the Akash software_**,**_ store the version in a local variable, and install that version.
 
 ```
 cd ~
@@ -68,64 +71,61 @@ AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/ma
 curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "v$AKASH_VERSION"
 ```
 
-
-
-## **Add Akash Install Location to User’s Path**
+### Add Akash Install Location to User’s Path
 
 Add the software’s install location to the user’s path for easy use of Akash commands.
 
-**NOTE** - below we provide the steps to add the Akash install directory to a user’s path on a Linux Ubuntu server.  Please take a look at a guide for your operating system and how to add a directory to a user’s path.
+**NOTE:**  Below we provide the steps to add the Akash install directory to a user’s path on a Linux Ubuntu server.  Please take a look at a guide for your operating system and how to add a directory to a user’s path.
 
-* Open the user’s path file in an editor:
+Open the user’s path file in an editor:
 
 ```
 vi /etc/environment
 ```
 
-* View within text editor prior to the update:
+View within text editor prior to the update:
 
 ```
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 ```
 
-* Add the following directory, which is the Akash install location, to PATH
-* In this example the active user is root.  If logged in as another username, replace /root with your current/home directory.
+Add the following directory, which is the Akash install location, to `PATH`. In this example the active user is root. If logged in as another username, replace /root with your current/home directory.
 
-```
+```sh
 /root/bin
 ```
 
-* View within the text editor following the update:
+View within the text editor following the update:
 
-```
+```sh
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/root/bin"
 ```
 
 ## Make the Path Active in the Current Session
 
 ```
-. /etc/environment
+source /etc/environment
 ```
 
 ## Verify Akash Install
 
-* Display the version of Akash software installed. This confirms the software installed and that the new user path addition worked.
+Display the version of Akash software installed. This confirms the software installed and that the new user path addition worked.
 
-```
+```sh
 akash version
 ```
 
-## Expected/Example Result
+Expected/Example Result
 
 ```
-root@node2:~# akash version
-
 v0.16.3
 ```
+
 {% endtab %}
 
 {% tab title="Source" %}
-## Source
+
+## From Source
 
 Installing Akash suite from source:
 
@@ -137,11 +137,8 @@ $ make deps-install
 $ make install
 ```
 
-
-
 Akash is developed and tested with [golang 1.16+](https://golang.org/). Building requires a working [golang](https://golang.org/) installation, a properly set `GOPATH`, and `$GOPATH/bin` present in `$PATH`.
 
 Once you have the dependencies properly setup, download and build `akash` using `make install`
 {% endtab %}
 {% endtabs %}
-
