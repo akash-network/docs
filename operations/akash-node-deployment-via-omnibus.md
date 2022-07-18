@@ -34,7 +34,7 @@ If you have not used Akashlytics Deploy previously, please use [this guide](http
 * Accept the initial deposit of 5 AKT into the deployment’s escrow account
 * The escrow can be refilled easily within Akashlytics Deploy at any time
 
-![](<../.gitbook/assets/acceptDeposit (1) (1) (1).png>)
+![](<../.gitbook/assets/acceptDeposit (1) (1) (1) (2).png>)
 
 * Approve the transaction fee to allow the deployment to continue
 
@@ -52,7 +52,7 @@ If you have not used Akashlytics Deploy previously, please use [this guide](http
 
 * Once the deployment is complete the lease details are shown
 
-![](<../.gitbook/assets/deploymentComplete (1) (1) (2).png>)
+![](<../.gitbook/assets/deploymentComplete (1) (1) (1) (2) (1).png>)
 
 * After some time the Available/Ready Replicas fields will update to show the current node count. It may be necessary to refresh the screen for this count to update.
 
@@ -92,7 +92,7 @@ With the install of the Akash node complete, it must sync with the blockchain. O
 * If the Node deployed successfully we should view a list of RPC endpoints
 * Click the link to visit the Node’s status page
 
-![](<../.gitbook/assets/rpcStatusLink (1) (1) (1) (2).png>)
+![](<../.gitbook/assets/rpcStatusLink (1) (1) (1) (2) (2).png>)
 
 * Look for the “latest\_block\_height” field
 

@@ -126,7 +126,7 @@ Memory : 32Gb\
 
 ****
 
-![](<../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (4) (1).png>)
 
 [PCPartPicker Part List](https://pcpartpicker.com/list/mgpRFg)
 
@@ -167,7 +167,7 @@ Recommended System Requirements
 128GB DDR4\
 4TB NVMe / 2x 18TB HDD
 
-![](<../../.gitbook/assets/image (9).png>)
+![](<../../.gitbook/assets/image (4) (2).png>)
 
 [PCPartPicker Part List](https://pcpartpicker.com/list/jJBbC6)
 

@@ -1,12 +1,9 @@
-# Get Free Tokens
+# Developer Tokens
 
-## Get free tokens by joining the Akash Community
+Developers can request funding by joining the Akash Community. &#x20;
 
-Developers can request funding by joining the Akash Community.
+If you need tokens to experiment with your first deployment on Akash, please make a request via our Discord server and in the `general-chat` channel.
 
 * [ ] [Install Akash and create an account](../cli/install.md)
-* [ ] [Join our community forum](https://forum.akash.network/login)
-* [ ] [Connect with Github with your profile](https://forum.akash.network/my/preferences/account)
-* [ ] [Connect with GitHub with the Faucet to get tokens ](https://drip.akash.network)(20 $AKT)
-* [ ] [Propose a Project to the Community](https://forum.akash.network/c/grants/new/) (up to $1,000)
-* [ ] [Submit a Grant Applicatio](https://forum.akash.network/c/grants/apply/)n (up to $100,000)
+* [ ] [Join our Discord server](https://discord.com/invite/DxftX67)
+* [ ] [Submit a Grant Application](https://forum.akash.network/t/how-to-apply-for-developer-grants/685)

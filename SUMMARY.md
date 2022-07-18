@@ -4,7 +4,7 @@
   * [Technical Support](support.md)
   * [Stack Definition Language (SDL)](stack-definition-language.md)
 * [Tokens and Wallets](tokens-and-wallets/README.md)
-  * [Get Free Tokens](token/funding.md)
+  * [Developer Tokens](token/funding.md)
   * [Buy Akash Tokens](token/buy.md)
   * [Keplr Wallet](token/keplr.md)
   * [Mixin Messenger for AKT](deploy/mixin-messenger-for-akt.md)
