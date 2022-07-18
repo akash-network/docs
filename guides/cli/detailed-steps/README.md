@@ -17,4 +17,4 @@ If you desire an easier way to get started with the Akash CLI, consider our [Str
 * [Create a Lease](part-9.-create-a-lease.md)
 * [Send the Manifest](part-10.-send-the-manifest.md)
 * [Update the Deployment](part-11.-update-the-deployment.md)
-* [Close the Deployment](part-12.-close-the-deployment.md)
+* [Close Deployment](part-12.-close-deployment.md#close-the-deployment)
