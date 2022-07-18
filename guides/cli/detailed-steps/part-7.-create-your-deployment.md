@@ -4,6 +4,8 @@
 
 Only x86\_64 processors are officially supported for Akash deployments.  This may change in the future and when ARM processors are supported it will be announced and documented.
 
+You can try building your docker image by [specifying the target platform as linux/amd64](https://stackoverflow.com/a/69119815/8215759) if you are on a mac with Apple Sillicon.
+
 ## Akash Deployment
 
 To deploy on Akash, run:
