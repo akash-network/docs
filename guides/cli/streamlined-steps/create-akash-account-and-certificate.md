@@ -9,10 +9,23 @@ If you do not have an Akash account and need to create one, follow the steps in 
 
 ## **Import Pre-Existing Account**
 
-* Follow instructions to enter the account mnemonic after command is executed
+* Follow instructions create a new key named `deploy`
+* You will be prompted to enter the account mnemonic for import
 
 ```
 akash keys add deploy --recover
+```
+
+### Confirm Key Creation in Local Key Chain
+
+```
+akash keys list
+```
+
+### Create/Export Key Environment Variable
+
+```
+export AKASH_KEY_NAME=deploy
 ```
 
 ## Create your Certificate
@@ -30,8 +43,6 @@ In this step we will create a local certificate and then store the certification
 ```
 akash tx cert generate client --from $AKASH_KEY_NAME
 ```
-
-
 
 #### Publish Cert to the Blockchain
 

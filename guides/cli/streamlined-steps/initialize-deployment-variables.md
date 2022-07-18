@@ -6,11 +6,13 @@
 * Amongst other variables, the deployment ID (DSEQ) is captured and set as an env variable
 
 ```
+apt install jq
+
 source demo.sh
 ```
 
 ## Verify Deployment Status
 
 ```
-akash query deployment
+akash query deployment get
 ```

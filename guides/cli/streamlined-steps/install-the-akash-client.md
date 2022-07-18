@@ -19,6 +19,10 @@ cd demo
 ## Install Akash CLI Client
 
 ```
+apt install make
+
+apt-get install unzip
+
 make install
 ```
 
