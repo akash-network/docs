@@ -6,4 +6,4 @@ If you need tokens to experiment with your first deployment, please make a reque
 
 * [ ] [Install Akash and create an account](../cli/install.md)
 * [ ] [Join our Discord server](https://discord.com/invite/DxftX67)
-* [ ] [Submit a Grant Application](https://forum.akash.network/t/how-to-apply-for-developer-grants/685)
+* [ ] [Submit a Grant Application](https://forum.akash.network/t/2022-grant-applications-submit-here/3453)
