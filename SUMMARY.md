@@ -28,6 +28,7 @@
       * [Part 9. Create a Lease](guides/cli/detailed-steps/part-9.-create-a-lease.md)
       * [Part 10. Send the Manifest](guides/cli/detailed-steps/part-10.-send-the-manifest.md)
       * [Part 11. Update the Deployment](guides/cli/detailed-steps/part-11.-update-the-deployment.md)
+      * [Part 12. Close the Deployment](guides/cli/detailed-steps/part-12.-close-the-deployment.md)
     * [Streamlined Steps](guides/cli/streamlined-steps/README.md)
       * [Install streamlined environment locally](guides/cli/streamlined-steps/install-the-akash-client.md)
       * [Initialize Environment Variables](guides/cli/streamlined-steps/initialize-environment-variables.md)

@@ -5,7 +5,7 @@ Create a deployment configuration [deploy.yaml](https://github.com/ovrclk/docs/t
 You can use cURL to download the file:
 
 ```
-curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yaml
+curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yml
 ```
 
 ### Modify your Configuration
