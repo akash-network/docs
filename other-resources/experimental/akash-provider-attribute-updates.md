@@ -6,6 +6,13 @@
 * Guide assumes that your Akash Provider was installed via Helm Charts as detailed in this [guide](../../providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/).
 * Guide assumes that the Kubernetes master node used has Helm installed.  Refer to this [guide](../../providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-4-helm-installation-on-kubernetes-node.md) step if a Helm install is needed.  Return to this guide once Helm install is completed.
 
+## Caveats
+
+### Attributes in Active Leases
+
+* If your provider has active leases, attributes that were used during the creation of those leases cannot be updated
+* Example - if a lease was created and is active on your provider with `key=region` and `value=us-east`- it would not be possible to update the `region` attribute without closing those active leases prior
+
 ## Pre-Update Attribute Captures
 
 * Prior to updating the Provider's attributes, capture the current attributes
