@@ -480,7 +480,7 @@ Change the `replaceme` values below to match your client settings
      #Example of Storj config for RCLONE=true.  If you want to use your own endpoint please escape each line with a backslash n, like in the example.
 ```
 
-## Rclone to multiple endpoints
+### Rclone to multiple endpoints
 
 &#x20;\* You must use cryptoandcoffee/akash-chia:246 or later! \
 \
@@ -509,7 +509,7 @@ It's possible to configure multiple endpoints.  Add the following to your variab
 
 In this example the finished plots will be uploaded to Google/Dropbox/Storj at random.  Please ensure your ENDPOINT\_DIR (folder) exists on all the endpoints.
 
-## Rclone to multiple folders
+### Rclone to multiple folders
 
 &#x20;\* You must use cryptoandcoffee/akash-chia:246 or later! \
 \
