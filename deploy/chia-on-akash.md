@@ -480,6 +480,48 @@ Change the `replaceme` values below to match your client settings
      #Example of Storj config for RCLONE=true.  If you want to use your own endpoint please escape each line with a backslash n, like in the example.
 ```
 
+## Rclone to multiple endpoints
+
+&#x20;\* You must use cryptoandcoffee/akash-chia:246 or later! \
+\
+It's possible to configure multiple endpoints.  Add the following to your variables and your endpoints will be shuffled and a random endpoint will be chosen for the upload destination.
+
+```
+      - SHUFFLE_RCLONE_ENDPOINT=true
+      - JSON_RCLONE=
+        [google]\n
+        type = drive\n
+        scope = drive\n
+        token = {"access_token":"replaceme","token_type":"Bearer","refresh_token":"replaceme","expiry":"replaceme"}\n
+        root_folder_id = replaceme\n
+        [dropbox]\n
+        type = dropbox\n
+        client_id = replaceme\n
+        client_secret = replaceme\n
+        token = {"access_token":"replaceme","expiry":"replaceme"}\n
+        [storj]\n
+        type = storj\n
+        api_key = replaceme\n
+        passphrase = replaceme\n
+        satellite_address = replaceme\n
+        access_grant = replaceme
+```
+
+In this example the finished plots will be uploaded to Google/Dropbox/Storj at random.  Please ensure your ENDPOINT\_DIR (folder) exists on all the endpoints.
+
+## Rclone to multiple folders
+
+&#x20;\* You must use cryptoandcoffee/akash-chia:246 or later! \
+\
+It's possible to configure multiple folders.  Add the following to your variables and your folders will be shuffled and a random folder will be chosen for the upload destination.
+
+```
+      - SHUFFLE_RCLONE_DIR=true
+      - ENDPOINT_DIR="plotz-1 plotz-2 plotz-3 plotz-4 plotz-5"
+```
+
+In this example the finished plots will be uploaded to a single ENDPOINT\_LOCATION but the folder will be randomly chosen from your list.  Use a single space to upload to multiple folders.
+
 ## Speed up downloads
 
 Windows/Mac/Linux : Use a download manager like [DownThemAll](https://www.downthemall.net/) on Chrome/Firefox/Opera\
