@@ -4,7 +4,7 @@ When starting a deployment on a provider that already has a deployment from the 
 
 ### Migration Steps
 
-You can migrate an IP address between two deployments on the same provider. This is done by using the `akash provider migrate-endpoints` command.&#x20;
+You can migrate an IP address between two active deployments on the same provider. This is done by using the `akash provider migrate-endpoints` command.&#x20;
 
 To migrate an endpoint between two deployments, the endpoint must be declared with identical names in both deployments.
 
