@@ -3,7 +3,7 @@
 create server api certificate
 
 ```
-akash tx cert create server [space separated dns names and/or IP addresses] [flags]
+akash tx cert generate server [space separated dns names and/or IP addresses] [flags]
 ```
 
 ### Options
