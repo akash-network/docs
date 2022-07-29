@@ -3,7 +3,7 @@
 create/update api certificates
 
 ```
-akash tx cert create [flags]
+akash tx cert generate [flags]
 ```
 
 ### Options
