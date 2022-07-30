@@ -22,7 +22,7 @@ endpoints:
 
 In the services stanza we create the association with the endpoint detailed previously.
 
-In this example we have a service running a docker container with port 4000 globally exposed. Additionally the `myendpoint` endpoint is defined via the `ip` key .
+In this example we have a service running a docker container with port `3000` globally exposed. Additionally the `myendpoint` endpoint is defined via the `ip` key .
 
 _**NOTE**_ - if an endpoint is declared in an SDL, it must be used at least once. Specifying an endpoint name that is not declared results in an error during deployment.
 
