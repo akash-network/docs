@@ -35,5 +35,5 @@ services:
        as: 80
        to:
          - global: true
-           ip: "myendpoint"
+           ip: myendpoint
 ```
