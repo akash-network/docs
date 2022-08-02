@@ -2,7 +2,9 @@
 
 ## Environment Requirements
 
-For hosting of persistent storage please note the following, strict requirements for production use
+For hosting of persistent storage please note the following, strict requirements for production use.
+
+At least three Ceph OSDs are normally required for redundancy and high availability.
 
 **Single storage node configuration**
 
