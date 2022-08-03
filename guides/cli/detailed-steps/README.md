@@ -4,6 +4,12 @@ Explore detailed steps and options of the Akash CLI.  In this guide we will defi
 
 If you desire an easier way to get started with the Akash CLI, consider our [Streamlined Steps ](../streamlined-steps/)documentation.
 
+### Deploy on Akash and Let Us Know&#x20;
+
+Please let us know when you have deployed production apps on Akash.
+
+Drop the details of your app in our Discord deployments channel [here](https://discord.com/channels/747885925232672829/771909909335506955) and flag `@Admin`.
+
 ### Overview of Verbose Steps
 
 * [Install Akash](part-1.-install-akash.md)

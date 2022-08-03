@@ -10,6 +10,10 @@ This guide will cover the following topics:
 * [Initial Configuration](initial-configuration.md)
 * [Walkthrough of a example WordPress deployment using the tool](wordpress-deployment-example.md)
 * [Manage Deployments](manage-deployments.md)
-*   [Define a custom RPC node](custom-rpc-node.md)
+* [Define a custom RPC node](custom-rpc-node.md)
 
-    ### ****
+## Deploy on Akash and Let Us Know&#x20;
+
+Please let us know when you have deployed production apps on Akash.
+
+Drop the details of your app in our Discord deployments channel [here](https://discord.com/channels/747885925232672829/771909909335506955) and flag `@Admin`.
