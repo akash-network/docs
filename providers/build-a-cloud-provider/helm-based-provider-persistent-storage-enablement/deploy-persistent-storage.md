@@ -85,7 +85,7 @@ helm install akash-rook akash/akash-rook -n akash-services -f rook.yaml
 * In this example command we are using the following Ceph settings:
   * MGR (manager) count 2 which is the minimum recommended value.  Also note that the maximum accepted value is also 2.  Thus this setting should always be of count 2.
   * MON (monitor) count 3 which is the minimum recommended value.
-  * OSDs count of 3 which is appropriate for SSD disks.  Adjust `osdsPerDevice` as necessary based on the disk type and the recommended settings [here](persistent-storage-requirements.md).
+  * OSDs count of 1 which is appropriate for SSD disks.  Adjust `osdsPerDevice` as necessary based on the disk type and the recommended settings [here](persistent-storage-requirements.md).
 
 #### Populate the `rook.yaml` **F**ile
 
@@ -96,7 +96,7 @@ cat > rook.yaml << EOF
 ---
 mgrCount: 2
 monCount: 3
-osdsPerDevice: 3
+osdsPerDevice: 1
 nodes:
   - name: "<NODE1>"  # CHANGE to your node name!
     config: ""

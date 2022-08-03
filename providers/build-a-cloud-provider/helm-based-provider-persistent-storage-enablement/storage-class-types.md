@@ -4,8 +4,6 @@ In the subsequent sections persistent storage attributes will be defined.  Use t
 
 | Class Name | Throughput/Approx matching device | Number of OSD |
 | ---------- | --------------------------------- | ------------- |
-| beta1      | hdd                               | 2             |
-| beta2      | ssd                               | 3             |
-| beta3      | NVMe                              | 5             |
-
-##
+| beta1      | hdd                               | 1             |
+| beta2      | ssd                               | 1             |
+| beta3      | NVMe                              | 1 or 2        |
