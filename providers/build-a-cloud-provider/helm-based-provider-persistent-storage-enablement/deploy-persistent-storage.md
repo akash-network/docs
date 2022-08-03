@@ -112,7 +112,7 @@ cat > rook.yaml << EOF
 ---
 mgrCount: 2
 monCount: 3
-osdsPerDevice: 3
+osdsPerDevice: 1
 nodes:
   - name: node2
     config: ""
