@@ -10,7 +10,7 @@ helm install akash-inventory-operator akash/akash-inventory-operator -n akash-se
 #### Expected Output
 
 ```
-root@node1:~/helm-charts/charts# helm install akash-inventory-operator akash/inventory-operator -n akash-services
+root@node1:~/helm-charts/charts# helm install akash-inventory-operator akash/akash-inventory-operator -n akash-services
 
 NAME: akash-inventory-operator
 LAST DEPLOYED: Thu May  5 18:15:57 2022

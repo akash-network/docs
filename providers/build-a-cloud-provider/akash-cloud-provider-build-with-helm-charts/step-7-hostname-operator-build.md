@@ -1,4 +1,4 @@
-# Step 8 - Hostname Operator Build
+# Step 7 - Hostname Operator Build
 
 * Run the following command to build the Kubernetes hostname operator
 * Note - if a need arises to use a different software version other than the one defined in the values.yaml Helm file - include the following switch.  In most circumstances this should not be necessary.
@@ -6,13 +6,13 @@
   * Example: `--set image.tag=0.16.4-rc1`
 
 ```
-helm install akash-hostname-operator akash/akash-hostname-operator -n akash-services
+helm install hostname-operator akash/hostname-operator -n akash-services
 ```
 
 #### Expected/Example Output
 
 ```
-NAME: akash-hostname-operator
+NAME: hostname-operator
 LAST DEPLOYED: Thu Apr 28 19:06:30 2022
 NAMESPACE: akash-services
 STATUS: deployed
@@ -34,9 +34,11 @@ kubectl get pods -n akash-services
 
 #### **Expected output (example and name following akash-provider will differ)**
 
-<pre><code>root@node1:~# kubectl get pods -n akash-services
+```
+root@node1:~# kubectl get pods -n akash-services
 
 NAME                                 READY   STATUS    RESTARTS   AGE
 akash-provider-76966c6795-lvphs      1/1     Running   0          16m
-<strong>akash-hostname-operator-84977c6fd9-qvnsm   1/1     Running   0          3m29s</strong></code></pre>
+hostname-operator-84977c6fd9-qvnsm   1/1     Running   0          3m29s
+```
 
