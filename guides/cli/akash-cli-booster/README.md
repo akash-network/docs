@@ -8,7 +8,7 @@ The Akash CLI Booster will receive continued updates and new features.  Review t
 
 Have an idea for a project to deploy on Akash? Already working on a project? Maybe you’ve already deployed a project (or many projects!) to the network?
 
-We love seeing what our community is building. Once your deployment is live, head over to our Discord and share the details of your app in our Deployments channel and tag @Admin.
+We love seeing what our community is building. Once your deployment is live, head over to our Discord and share the details of your app in our [Deployments channel](https://discord.com/channels/747885925232672829/771909909335506955) and tag @Admin.
 
 Once you share your app, someone from the Akash team may reach out to spotlight your app across our newsletter, blog, and social media.
 
