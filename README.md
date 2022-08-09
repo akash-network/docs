@@ -34,8 +34,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
     </li>
-    <li><a href="#how-does-the-marketplace-work">How does the Marketplace work?</a></li>
-    <li><a href="#how-does-security-work-on-akash">How does Security work on Akash?</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -102,14 +100,7 @@ Networking - allowing connectivity to and between workloads - can be configured 
 
 No. You can update your deployment. However, only some fields in the Akash stack definition file are mutable. The **image**, **command**, **args**, **env** and **exposed ports** can be modified, but compute resources and placement criteria cannot.
 
-## Getting Started
-
-If you're new to Akash, start with the [**Getting Started guide**](guides/install.md) and go from there. 
-Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](operator/node/), a [validator guide](operator/validator.md), a [cloud provider guide](operator/provider/), and several [deployment guides](deploy/awesome-akash.md) for running various apps on Akash.
-
-Official thread: [Click here](https://docs.akash.network/)
-
-## How does the Marketplace work
+### How does the Marketplace work
 
 The Akash Marketplace revolves around [Deployments](decentralized-cloud/marketplace.md#deployment), which fully describe the resources that a tenant is requesting from the network. [Deployments](decentralized-cloud/marketplace.md#deployment) contain [Groups](decentralized-cloud/marketplace.md#group), which is a grouping of resources that are meant to be leased together from a single provider.
 
@@ -142,7 +133,7 @@ A typical application deployment on Akash will follow this flow:
 
 
 
-## How does **Security** work on Akash?
+### How does **Security** work on Akash?
 
 With Akash, you decide **who** you want to trust.
 
@@ -168,6 +159,13 @@ Follow the getting started guide, and you will see the [instructions for audited
 
 Yes, but currently it does not have providers. We encourage developers to use Mainnet and provide tokens to do that. To request tokens, please follow the [Activation Funding](guides/funding.md#activation-funding) guide.
 
+
+## Getting Started
+
+If you're new to Akash, start with the [**Getting Started guide**](guides/install.md) and go from there. 
+Akash's community has written several more advanced guides for learning about Akash: a [node operator guide](operator/node/), a [validator guide](operator/validator.md), a [cloud provider guide](operator/provider/), and several [deployment guides](deploy/awesome-akash.md) for running various apps on Akash.
+
+Official thread: [Click here](https://docs.akash.network/)
 
 <!-- ROADMAP -->
 ## Roadmap
