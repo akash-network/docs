@@ -24,6 +24,8 @@ We have recently released documentation guiding thru the process of building a [
 
 Only x86\_64 processors are officially supported by Akash for provider Kubernetes nodes at this time.  This may change in the future and when ARM processors are supported it will be announced and documented.
 
+You can try building your docker image by [specifying the target platform as linux/amd64](https://stackoverflow.com/a/69119815/8215759) if you are on a mac with Apple Sillicon.
+
 ## Custom Kubernetes Cluster Settings
 
 Akash Providers are deployed in many environments and we will make additions to these sections as when nuances are discovered.
