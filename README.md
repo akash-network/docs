@@ -54,7 +54,7 @@ Akash means "sky" in ancient Sanskrit; sky is where the clouds meet ☁️
 
 ### How to use Akash?
 
-You can get started right from the [**command-line**](https://docs.akash.network/guides/cli) or use the [**desktop GUI**](guides/deploy/)****
+You can get started right from the [**command-line**](https://docs.akash.network/guides/cli) or use the [**desktop GUI**](guides/deploy/)
 
 * Define your Docker image, CPU, Memory, and Storage in a [**deploy.yaml**](stack-definition-language.md) file.
 * Set your price, receive bids from providers in seconds, and select the lowest price.
