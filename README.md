@@ -30,20 +30,12 @@
     </li>
     <li>
       <a href="#faqs">FAQs</a>
-      <ul>
-        <li><a href="#akash-deployment-marketplace">Akash Deployment Marketplace</a></li>
-        <li><a href="#akash-container-platform">Akash Container Platform</a></li>
-        <li><a href="#cost-to-use-akash">Cost to use Akash</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
-      <!-- <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul> -->
     </li>
     <li><a href="#how-does-the-marketplace-work">How does the Marketplace work?</a></li>
+    <li><a href="#how-does-security-work-on-akash">How does Security work on Akash?</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
