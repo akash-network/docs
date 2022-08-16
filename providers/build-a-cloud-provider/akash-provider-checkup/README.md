@@ -12,5 +12,6 @@ The guide is broken down into the following sections:
 * [Shell Access Verification](step-3-shell-access-verification.md)
 * [Provider DNS Verification](step-4-provider-dns-verification.md)
 * [Provider Logs](step-5-provider-logs.md)
+* [Verify Current Provider Settings](step-6-verify-current-provider-settings.md)
 * [Additional Verifications](step-6-additional-verifications.md)
 * [Contact Technical Support](contact-technical-support.md)
