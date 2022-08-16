@@ -20,4 +20,4 @@ akash tx cert publish client --from $AKASH_KEY_NAME
 ### SEE ALSO
 
 * [akash tx cert](akash_tx_cert.md)	 - Certificates transaction subcommands
-* [akash tx cert revoke](aakash_tx_cert_revoke.md)	 - Revoke certificate
+* [akash tx cert revoke](akash_tx_cert_revoke.md)	 - Revoke certificate
