@@ -38,7 +38,7 @@ akash tx cert generate server [space separated dns names and/or IP addresses] [f
 ### Options inherited from parent commands
 
 ```
-      --chain-id string   The network chain ID
+--chain-id string   The network chain ID
 ```
 
 ### SEE ALSO
