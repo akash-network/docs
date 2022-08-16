@@ -8,13 +8,13 @@ akash tx cert publish [flags]
 ### Options
 
 ```
-  -h, --help   help for create
+-h, --help   help for create
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --chain-id string   The network chain ID
+--chain-id string   The network chain ID
 ```
 
 ### SEE ALSO
