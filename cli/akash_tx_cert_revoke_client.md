@@ -7,7 +7,7 @@ akash tx cert revoke client --from $AKASH_KEY_NAME [flags]
 ### Options
 
 ```
-  -h, --help   help for revoke
+-h, --help   help for revoke
 ```
 
 ### Options inherited from parent commands
