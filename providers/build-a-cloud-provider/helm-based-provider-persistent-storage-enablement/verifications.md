@@ -37,7 +37,7 @@ kubectl -n rook-ceph describe cephclusters
 ```
  Storage:
     Config:
-      Osds Per Device:  3
+      Osds Per Device:  1
     Nodes:
       Name:  node2
       Resources:
@@ -105,8 +105,6 @@ rook-ceph-mgr-a-6cd6ff8c9f-z6fvk                  1/1     Running     0         
 rook-ceph-mon-a-79fdcc8b9c-nr5vf                  1/1     Running     0          77m
 rook-ceph-operator-bf9c6fd7-px76k                 1/1     Running     0          79m
 rook-ceph-osd-0-747fcf4864-mrq6f                  1/1     Running     0          77m
-rook-ceph-osd-1-69d59cf974-ftbtm                  1/1     Running     0          77m
-rook-ceph-osd-2-bc9dc46c5-mspfs                   1/1     Running     0          77m
 rook-ceph-osd-prepare-node2-x4qqv                 0/1     Completed   0          76m
 rook-ceph-tools-6646766697-lgngb                  1/1     Running     0          79m
 ```

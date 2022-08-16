@@ -4,13 +4,13 @@
 * The Operator reports the free space available to the Akash Provider
 
 ```
-helm install inventory-operator akash/inventory-operator -n akash-services
+helm install inventory-operator akash/akash-inventory-operator -n akash-services
 ```
 
 #### Expected Output
 
 ```
-root@node1:~/helm-charts/charts# helm install inventory-operator akash/inventory-operator -n akash-services
+root@node1:~/helm-charts/charts# helm install inventory-operator akash/akash-inventory-operator -n akash-services
 
 NAME: inventory-operator
 LAST DEPLOYED: Thu May  5 18:15:57 2022

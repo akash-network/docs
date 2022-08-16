@@ -33,7 +33,7 @@ akash provider lease-status --from $AKASH_ACCOUNT_ADDRESS
   "ips": {
     "web": [
       {
-        "Port": 8080,
+        "Port": 3000,
         "ExternalPort": 80,
         "Protocol": "TCP",
         "IP": "198.204.231.229"
