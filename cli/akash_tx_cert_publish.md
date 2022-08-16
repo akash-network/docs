@@ -3,7 +3,7 @@
 publish certificate to the blockchain
 
 ```
-akash tx cert publish client --from $AKASH_KEY_NAME
+akash tx cert publish [flags]
 ```
 ### Options
 
@@ -19,5 +19,6 @@ akash tx cert publish client --from $AKASH_KEY_NAME
 
 ### SEE ALSO
 
-* [akash tx cert](akash_tx_cert.md)	 - Certificates transaction subcommands
-* [akash tx cert revoke](akash_tx_cert_revoke.md)	 - Revoke certificate
+* [akash tx cert publish client](akash_tx_cert_publish_client.md) - Publish client certificate
+* [akash tx cert publish server](akash_tx_cert_publish_server.md) - Publish server certificate
+* [akash tx cert revoke](akash_tx_cert_revoke.md) - Revoke certificate
