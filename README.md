@@ -29,7 +29,7 @@ The [**Akash Container Platform**](glossary/platform.md) is a deployment platfor
 
 ### What is the cost to use Akash?
 
-The cost of hosting your application using Akash is about one-third the cost of Amazon AWS, Google Cloud Platform (GCP), and Microsoft Azure. You can check the prices live using the [**Akashlytics.com price comparison tool**](https://akashlytics.com/price-compare).
+The cost of hosting your application using Akash is about one-third the cost of Amazon AWS, Google Cloud Platform (GCP), and Microsoft Azure. You can check the prices live using the [**Cloudmos.io price comparison tool**](https://cloudmos.io/price-compare).
 
 ### How do I use Akash?
 

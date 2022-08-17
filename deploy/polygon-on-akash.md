@@ -24,7 +24,7 @@ If you want a deeper understanding of Polygon and Akash, see these architecture 
 
 ## Akash Application Tools
 
-This [_**guide**_](https://docs.akash.network/guides/deploy) _\*\*\*\*_ provides step by step instructions on how to deploy an app on Akash using a desktop tool named Akashlytics Deploy.
+This [_**guide**_](https://docs.akash.network/guides/deploy) _\*\*\*\*_ provides step by step instructions on how to deploy an app on Akash using a desktop tool named Cloudmos Deploy.
 
 ## Technical Support Channels
 

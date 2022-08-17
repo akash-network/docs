@@ -1,6 +1,6 @@
 # Custom RPC Node
 
-Specify a custom RPC or API node within Akashlytics Deploy by using the steps outlined in this section.  The custom node option can point to a RPC node we have created and manage ourselves.  Or we can point to an alternative public RPC node that was not selected by Akashlytics Deploy auto selection.
+Specify a custom RPC or API node within Cloudmos Deploy by using the steps outlined in this section.  The custom node option can point to a RPC node we have created and manage ourselves.  Or we can point to an alternative public RPC node that was not selected by Cloudmos Deploy auto selection.
 
 [Enable Custom Node Use](custom-rpc-node.md#step-1-enable-custom-node-use)
 

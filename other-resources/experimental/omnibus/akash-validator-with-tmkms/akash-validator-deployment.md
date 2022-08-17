@@ -1,13 +1,13 @@
 # Akash Validator Deployment
 
-## Akashlytics Deploy
+## Cloudmos Deploy
 
-* Within this guide we will use the Akashlytics Deploy application to create the Akash Validator
-* Please review our[ Akashlytics Deploy ](../../../../guides/deploy/)docs to install and configuration the application if this is your first time using
+* Within this guide we will use the Cloudmos Deploy application to create the Akash Validator
+* Please review our[ Cloudmos Deploy ](../../../../guides/deploy/)docs to install and configuration the application if this is your first time using
 
 ## Create the Akash Validator Deployment
 
-* Use the steps that follow - within Akashlytics Deploy - to create your Akash Validator deployment
+* Use the steps that follow - within Cloudmos Deploy - to create your Akash Validator deployment
 
 ### Create New Deployment
 

@@ -2,13 +2,13 @@
 
 For the purpose of demonstrating the use of fractional uAKT we will utilize the popular Hello World web application and SDL that can be found in the [Awesome Akash repository](https://github.com/ovrclk/awesome-akash/blob/master/supermario/deploy.yaml).  The example SDL file will be modified to take advantage of the new fractional uAKT option.
 
-The [Akashlytics Deploy](https://docs.akash.network/guides/deploy) application will be used to launch the deployment.
+The [Cloudmos Deploy](https://docs.akash.network/guides/deploy) application will be used to launch the deployment.
 
-## **Example Fractional uAKT Use in Akashlytics Deploy**
+## **Example Fractional uAKT Use in Cloudmos Deploy**
 
 
 
-Within Akashlytics Deploy:
+Within Cloudmos Deploy:
 
 * [ ] Create a new deployment
 * [ ] Select Hello-world from the available templates

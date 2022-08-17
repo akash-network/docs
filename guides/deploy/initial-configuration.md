@@ -13,7 +13,7 @@ In this section we will configure the following:
 
 ![](https://lh4.googleusercontent.com/dCDPg7h0GCboGGryK5QgzsTk8ngnsoRimfS6MJ9cx7vPWx1G40FSeGu2rAj8w-YiLsgSyD9OTDlNZTg1ZEJjZLcNMjAbP2vajnDAE\_RETz6XLF1JDnGW64DQg2ujaVwNXIrEkDVU=s0)
 
-Note: The funds available in the pre-existing wallet instance should now be available to Akashlytics and displayed in the upper left corner of the application (52.943 AKT in the provided example)
+Note: The funds available in the pre-existing wallet instance should now be available to Cloudmos and displayed in the upper left corner of the application (52.943 AKT in the provided example)
 
 _**Wallet Funding Note**_
 

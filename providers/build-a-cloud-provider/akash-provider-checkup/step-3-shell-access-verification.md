@@ -2,7 +2,7 @@
 
 * Tenants should have access to their deployment’s Linux shell which can be used for basic troubleshooting and administration.
 * Within this step we will ensure that there are no issues with shell access into a deployment running on your provider.
-* Open the shell for the Hello Akash World test deployment and within Akashlytics via the deployment’s SHELL tab as demonstrated
+* Open the shell for the Hello Akash World test deployment and within Cloudmos via the deployment’s SHELL tab as demonstrated
 
 ![](../../../../.gitbook/assets/deploymentShellAccess.png)
 
