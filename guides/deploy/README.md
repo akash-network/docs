@@ -6,7 +6,7 @@ The Cloudmos Deploy Tool is a desktop application which simplifies the deploymen
 
 This guide will cover the following topics:
 
-* [Installation package download instructions and installation](akashlytics-deploy-installation.md)
+* [Installation package download instructions and installation](cloudmos-deploy-installation.md)
 * [Initial Configuration](initial-configuration.md)
 * [Walkthrough of a example WordPress deployment using the tool](wordpress-deployment-example.md)
 * [Manage Deployments](manage-deployments.md)

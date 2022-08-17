@@ -16,9 +16,9 @@ Only x86\_64 processors are officially supported for Akash deployments.  This ma
 
 The Cloudmos Deploy software download may be initiated via the desired link below.
 
-* [Windows OS](https://github.com/Akashlytics/akashlytics-deploy/releases/download/v0.14.3/Akashlytics-Deploy-0.14.3.exe)
-* [MacOS](https://github.com/Akashlytics/akashlytics-deploy/releases/download/v0.14.3/Akashlytics-Deploy-0.14.3.dmg)
-* [Linux OS](https://github.com/Akashlytics/akashlytics-deploy/releases/download/v0.14.3/Akashlytics-Deploy-0.14.3.AppImage)
+* [Windows OS](https://github.com/maxmaxlabs/cloudmos-deploy/releases/download/v0.14.3/Akashlytics-Deploy-0.14.3.exe)
+* [MacOS](https://github.com/maxmaxlabs/cloudmos-deploy/releases/download/v0.14.3/Akashlytics-Deploy-0.14.3.dmg)
+* [Linux OS](https://github.com/maxmaxlabs/cloudmos-deploy/releases/download/v0.14.3/Akashlytics-Deploy-0.14.3.AppImage)
 
 The Cloudmos Deploy project’s documentation may be found [here](https://cloudmos.io/cloud-deploy).
 

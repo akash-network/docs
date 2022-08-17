@@ -2,7 +2,7 @@
 
 In prep for the Akash Provider checkup steps performed in this guide, please ensure the following prerequisites are in place:
 
-* [Familiarity with Cloudmos Deploy](prerequisites.md#familiarity-with-akashlytics-deploy)
+* [Familiarity with Cloudmos Deploy](prerequisites.md#familiarity-with-cloudmos-deploy)
 * [Obtain Provider Address](prerequisites.md#obtain-provider-address)
 * [Familiarity with Your Provider’s Attributes](prerequisites.md#familiarity-with-your-providers-attributes)
 
