@@ -1,7 +1,7 @@
 # STEP 2 - Inbound Communication Verifications
 
 * In this step we will verify functionality of inbound communication for active deployments on our provider
-* Within the Akashlytics Deployment detail pane > navigate to the LEASES tab > and click the URL of the test deployment
+* Within the Cloudmos Deployment detail pane > navigate to the LEASES tab > and click the URL of the test deployment
 
 ![](../../../../.gitbook/assets/akashlyticsInboundVerification.png)
 

@@ -4,20 +4,20 @@ In this guide we will cover the deployment of an Akash Node using Cosmos Omnibus
 
 For fine tuning of the Akash Node check the _Additional Information_ section.
 
-## Akashlytics Deployment of a Node
+## Cloudmos Deployment of a Node
 
-### Akashlytics Deploy Overview
+### Cloudmos Deploy Overview
 
-If you have not used Akashlytics Deploy previously, please use [this guide](https://docs.akash.network/guides/deploy) to get started. The guide includes steps to install the app and to set up a wallet for Akash deployments. Once the Akashlytics Deploy tool is installed, return to this guide to walk through the Akash Node deployment.
+If you have not used Cloudmos Deploy previously, please use [this guide](https://docs.akash.network/guides/deploy) to get started. The guide includes steps to install the app and to set up a wallet for Akash deployments. Once the Cloudmos Deploy tool is installed, return to this guide to walk through the Akash Node deployment.
 
-### Akashlytics Deploy Walkthrough
+### Cloudmos Deploy Walkthrough
 
 * Our Akash Node install begins by creating a new deployment
 
 ![](<../.gitbook/assets/deploymentsHomeScreen (1).png>)
 
 * A number of checks are completed to make sure we are ready to deploy a new app onto Akash
-* Revisit the Akashlytics Deploy guide for tips if any checks fail
+* Revisit the Cloudmos Deploy guide for tips if any checks fail
 
 ![](../.gitbook/assets/akashlyticsBaseVerify.png)
 
@@ -26,13 +26,13 @@ If you have not used Akashlytics Deploy previously, please use [this guide](http
 
 ![](../.gitbook/assets/manifestSelectInitial.png)
 
-* Copy and paste the SDL from [this site](https://github.com/ovrclk/cosmos-omnibus/blob/master/akash/deploy.yml) into the Akashlytics SDL editor window
+* Copy and paste the SDL from [this site](https://github.com/ovrclk/cosmos-omnibus/blob/master/akash/deploy.yml) into the Cloudmos SDL editor window
 * **NOTE -** the SDL within GitHub currently has a storage > size value of 120Gi. Omnibus uses a compressed snapshot of the blockchain and when expanded 120GB of storage for the deployment will not be enough. At the time of this writing adjusting the storage size to 350GB will suffice and allow some growth. Please adjust the storage appropriately and as shown in the screenshot below.
 
 ![](../.gitbook/assets/sdlWithStorageAdjustment.png)
 
 * Accept the initial deposit of 5 AKT into the deployment’s escrow account
-* The escrow can be refilled easily within Akashlytics Deploy at any time
+* The escrow can be refilled easily within Cloudmos Deploy at any time
 
 ![](<../.gitbook/assets/acceptDeposit (1) (1) (1) (2).png>)
 
@@ -48,7 +48,7 @@ If you have not used Akashlytics Deploy previously, please use [this guide](http
 
 ![](<../.gitbook/assets/bidTransactionFee (1).png>)
 
-### Akashlytics Deploy Complete
+### Cloudmos Deploy Complete
 
 * Once the deployment is complete the lease details are shown
 
@@ -64,7 +64,7 @@ With the install of the Akash node complete, it must sync with the blockchain. O
 
 ### Snapshot Download Progress
 
-* While the blockchain snapshot is downloading, the following logs should be visible within Akashlytics
+* While the blockchain snapshot is downloading, the following logs should be visible within Cloudmos
 * We can know that the snapshot download is not yet complete if we see this message in the logs
 
 ![](<../.gitbook/assets/snapshotDownloading (1).png>)
@@ -82,7 +82,7 @@ With the install of the Akash node complete, it must sync with the blockchain. O
 
 #### Capture Deployment Address
 
-* Begin by capturing the deployment’s public URI from Akashlytics
+* Begin by capturing the deployment’s public URI from Cloudmos
 
 ![](<../.gitbook/assets/nodeUIR (1).png>)
 

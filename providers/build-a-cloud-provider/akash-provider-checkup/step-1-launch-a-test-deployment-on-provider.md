@@ -2,7 +2,7 @@
 
 In the first step of our checkup, we will launch a test deployment that our provider should bid on. We will subsequently accept the bid from our provider, ensure that the lease was created successfully, and then fully test access to the deployment for verification of inbound communications.
 
-Launch the Akashlytics Deploy application to complete the sections that follow.
+Launch the Cloudmos Deploy application to complete the sections that follow.
 
 ## Create Deployment
 

@@ -10,7 +10,7 @@ Welcome [Chia](https://www.chia.net/) community! We are excited to announce supp
 
 ### Providers
 
-For the following providers who are participating in the sale, expect to see these prices in Akashlytics! Each provider has been benchmarked and tested to create a $0.10/plot. &#x20;
+For the following providers who are participating in the sale, expect to see these prices in Cloudmos! Each provider has been benchmarked and tested to create a $0.10/plot. &#x20;
 
 | On-Sale Providers      | BladeBit Price / Month   | MadMax Price  / Month  |
 | ---------------------- | ------------------------ | ---------------------- |
@@ -20,7 +20,7 @@ For the following providers who are participating in the sale, expect to see the
 
 ### Required SDL&#x20;
 
-To make sure you get the sale price from the providers, please Copy and Paste the SDL into [Akashlytics](../guides/deploy/akashlytics-deploy-installation.md) :&#x20;
+To make sure you get the sale price from the providers, please Copy and Paste the SDL into [Cloudmos](../guides/deploy/cloudmos-deploy-installation.md) :&#x20;
 
 [BladeBit Summer Sale SDL](chia-on-akash.md#bladebit-ram-plotting)&#x20;
 
@@ -31,10 +31,10 @@ Please wait up to 60 seconds to see bids from all the providers.
 ## Windows/Linux/Mac Users
 
 1. Install [Keplr](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en) wallet as a browser plugin&#x20;
-2. Install [Akashlytics](https://akashlytics.com/deploy) and import your AKT wallet address from Keplr.&#x20;
+2. Install [Cloudmos Deploy](https://cloudmos.io/cloud-deploy) and import your AKT wallet address from Keplr.&#x20;
 3. [Fund your wallet](https://github.com/ovrclk/awesome-akash/tree/chia/chia#Quickest-way-to-get-more-AKT)
 
-For additional help we recommend you [follow our full deployment guide](../guides/deploy/akashlytics-deploy-installation.md) in parallel with this guide.
+For additional help we recommend you [follow our full deployment guide](../guides/deploy/cloudmos-deploy-installation.md) in parallel with this guide.
 
 ## How does this work?
 
@@ -58,7 +58,7 @@ Andrew Mello - Head of Mining at Akash
 
 Akash uses [Keplr](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en) as the desktop wallet. Advanced users can follow the [CLI instruction](../guides/cli/)s.
 
-Once you have set up your Keplr wallet and imported the address to Akashlytics you are ready to create your first deployment. Follow the instructions in Akashlytics to create a certificate, then click on _Create Deployment_.
+Once you have set up your Keplr wallet and imported the address to Cloudmos you are ready to create your first deployment. Follow the instructions in Cloudmos to create a certificate, then click on _Create Deployment_.
 
 ## Quickest way to get more AKT
 
@@ -76,7 +76,7 @@ To fund your deployment you will need AKT in your account. The fastest way to do
 2. Send 10 ATOM to your new Cosmos wallet address inside Keplr (this address will start with cosmos)
 3. Go to [Osmosis Assets](https://app.osmosis.zone/assets) > next to Cosmos Hub - ATOM click on Deposit.  This step will deposit ATOM from your Keplr wallet onto the Osmosis platform.  Press Connect Wallet to connect your Keplr wallet to Osmosis.
 4. Now go back to [Osmosis Homepage](https://app.osmosis.zone/?from=ATOM\&to=AKT) and ensure ATOM > AKT is selected to complete the swap.  This step swaps your ATOM you deposited onto the Osmosis platform into any other supported coin.
-5. Return to the [Osmosis Assets](https://app.osmosis.zone/assets) page to withdraw your AKT to your Keplr wallet.  This step withdraws AKT from the Osmosis platform back into your Keplr wallet.  You can now send AKT to Akashlytics.
+5. Return to the [Osmosis Assets](https://app.osmosis.zone/assets) page to withdraw your AKT to your Keplr wallet.  This step withdraws AKT from the Osmosis platform back into your Keplr wallet.  You can now send AKT to Cloudmos.
 
 Have more questions? Find our team in [Discord](https://discord.com/invite/DxftX67) and [Telegram](https://t.me/AkashNW).
 
@@ -533,7 +533,7 @@ aria2c -c -s 16 -x 16 -k 64M -j 1 $plot_download_url
 
 ## Waiting for bids...
 
-If Akashlytics hangs on "Waiting for Bids" that could be an indication that all providers are full at the moment.  The recommended fix is to reduce the requested storage amount from `1Ti` to something more reasonable like `768Gi`
+If Cloudmos hangs on "Waiting for Bids" that could be an indication that all providers are full at the moment.  The recommended fix is to reduce the requested storage amount from `1Ti` to something more reasonable like `768Gi`
 
 ```
 profiles:

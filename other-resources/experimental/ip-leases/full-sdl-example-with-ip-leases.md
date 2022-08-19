@@ -12,7 +12,7 @@ endpoints:
  
 services:
  web:
-   image: akashlytics/hello-akash-world:0.1.4
+   image: akashlytics/hello-akash-world:0.2.0
    expose:
      - port: 3000
        as: 80

@@ -1,4 +1,4 @@
-# Akashlytics Deploy Installation
+# Cloudmos Deploy Installation
 
 ## **Before Getting Started**
 
@@ -10,17 +10,17 @@ Follow our [Keplr Wallet](../../token/keplr.md) guide to create your first walle
 
 Only x86\_64 processors are officially supported for Akash deployments.  This may change in the future and when ARM processors are supported it will be announced and documented.
 
-## **Akashlytics Deploy Installation**
+## **Cloudmos Deploy Installation**
 
 ### **Software Access and Download Instructions**
 
-The Akashlytics Deploy software download may be initiated via the desired link below.
+The Cloudmos Deploy software download may be initiated via the desired link below.
 
-* [Windows OS](https://github.com/Akashlytics/akashlytics-deploy/releases/download/v0.14.3/Akashlytics-Deploy-0.14.3.exe)
-* [MacOS](https://github.com/Akashlytics/akashlytics-deploy/releases/download/v0.14.3/Akashlytics-Deploy-0.14.3.dmg)
-* [Linux OS](https://github.com/Akashlytics/akashlytics-deploy/releases/download/v0.14.3/Akashlytics-Deploy-0.14.3.AppImage)
+* [Windows OS](https://github.com/maxmaxlabs/cloudmos-deploy/releases/download/v0.15.0/Cloudmos-Deploy-0.15.0.exe)
+* [MacOS](https://github.com/maxmaxlabs/cloudmos-deploy/releases/download/v0.15.0/Cloudmos-Deploy-0.15.0.dmg)
+* [Linux OS](https://github.com/maxmaxlabs/cloudmos-deploy/releases/download/v0.15.0/Cloudmos-Deploy-0.15.0.AppImage)
 
-The Akashlytics Deploy project’s documentation may be found [here](https://www.akashlytics.com/deploy).
+The Cloudmos Deploy project’s documentation may be found [here](https://cloudmos.io/cloud-deploy).
 
 ![](<../../.gitbook/assets/AkashlyticsDownloadScreen (1).png>)
 
@@ -35,17 +35,17 @@ The Akashlytics Deploy project’s documentation may be found [here](https://www
 
 ![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LrNFlfuifzmQ\_NMKu9C-887967055%2Fuploads%2FJ4Gme2vGJERzhsmkBuVO%2FMacOSDMGScreen.png?alt=media\&token=4aa671ae-4a58-4cd3-b9af-6a07b166bdaa)
 
-#### STEP2 - Move Akashlytics Deploy to the Applications Directory
+#### STEP2 - Move Cloudmos Deploy to the Applications Directory
 
-* After installation - MacOS will prompt the user to move the Akashlytics Deploy shortcut to the Applications directory
-* Drag and drop the Akashlytics Deploy icon into the Applications folder from the prompt
+* After installation - MacOS will prompt the user to move the Cloudmos Deploy shortcut to the Applications directory
+* Drag and drop the Cloudmos Deploy icon into the Applications folder from the prompt
 
 ![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LrNFlfuifzmQ\_NMKu9C-887967055%2Fuploads%2FFqQtQMGB0mpwBFXUEl9U%2FMacOSDrapToApp.png?alt=media\&token=52846cd2-2f21-4185-bb29-36b0e49724e8)
 
 #### STEP3 - Launching the Tool
 
-* With the installation completed - open MacOS Finder and type “akashlytics deploy”
-* Double click the Akashlytics Deploy icon
+* With the installation completed - open MacOS Finder and type “Cloudmos deploy”
+* Double click the Cloudmos Deploy icon
 
 ![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LrNFlfuifzmQ\_NMKu9C-887967055%2Fuploads%2Fb1ffi1K08QEnaubHV71P%2FakashlyticsLaunch.png?alt=media\&token=474d2a3d-242d-437d-8948-a12764222245)
 
@@ -53,7 +53,7 @@ The Akashlytics Deploy project’s documentation may be found [here](https://www
 
 #### STEP4 - Override MacOS Unidentified Developer Warning
 
-When first launching Akashlytics Deploy your mac will have an “unidentified provider” warning preventing the application from launching.  As this software is created, maintained by the Akash community and can be trusted as such.  To get past this prompt do the following:
+When first launching Cloudmos Deploy your mac will have an “unidentified provider” warning preventing the application from launching.  As this software is created, maintained by the Akash community and can be trusted as such.  To get past this prompt do the following:
 
 * Click the Question Mark (“?”) icon provided on the warning message.
 
@@ -97,7 +97,7 @@ Depending on the Operating System version and installed/enabled security tools -
 
 ![](../../.gitbook/assets/akashlticsWindowsInstall.png)
 
-* On the last step of the install in the “Completing Akashlytics Deploy Setup” section - check the “Run Akashlytics Deploy” option (likely selected by default) and select “Finish”.
+* On the last step of the install in the “Completing Cloudmos Deploy Setup” section - check the “Run Cloudmos Deploy” option (likely selected by default) and select “Finish”.
 
 ![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LrNFlfuifzmQ\_NMKu9C-887967055%2Fuploads%2FBwQw101cy7r7Rm1QK9Oc%2FakashlyticsWindowsInstallFinalStep.png?alt=media\&token=91ee9b99-32b1-467b-9f78-9f1703566f4d)
 {% endtab %}

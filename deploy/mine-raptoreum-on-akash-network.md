@@ -13,7 +13,7 @@ Welcome [**Raptoreum**](https://raptoreum.com) \*\*\*\* miners! [**Akash**](http
 ## Windows/Linux/Mac Users
 
 1. Install [**Keplr**](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en) \*\*\*\* wallet as a browser plugin
-2. Install [**Akashlytics**](https://akashlytics.com/deploy) \*\*\*\* and import your AKT wallet address from Keplr
+2. Install [**Cloudmos Deploy**](https://cloudmos.io/cloud-deploy) \*\*\*\* and import your AKT wallet address from Keplr
 3. [**Fund your wallet**](https://github.com/ovrclk/awesome-akash/blob/raptoreum/raptoreum-miner/README.md#Quickest-way-to-get-more-AKT)
 
 For additional help we recommend you [**follow our full deployment guide**](https://docs.akash.network/guides/deploy) \*\*\*\* in parallel with this guide.
@@ -42,13 +42,13 @@ To fund your deployment you will need AKT in your account. The fastest way to do
 2. Send 10 ATOM to your new Cosmos wallet address inside Keplr (this address will start with _cosmos_).
 3. Go to \*\*\*\* [**Osmosis Assets**](https://app.osmosis.zone/assets) > next to _Cosmos Hub - ATOM_ click on _Deposit_. This step will deposit ATOM from your Keplr wallet onto the Osmosis platform. Press _Connect Wallet_ to connect your Keplr wallet to Osmosis.
 4. Now go back to \*\*\*\* [**Osmosis Homepage**](https://app.osmosis.zone/?from=ATOM\&to=AKT) \*\*\*\* and ensure _ATOM > AKT_ is selected to complete the swap. This step swaps your ATOM you deposited onto the Osmosis platform into any other supported coin.
-5. Return to the \*\*\*\* [**Osmosis Assets**](https://app.osmosis.zone/assets) page to withdraw your AKT to your Keplr wallet. This step withdraws AKT from the Osmosis platform back into your Keplr wallet. You can now send AKT to Akashlytics
+5. Return to the \*\*\*\* [**Osmosis Assets**](https://app.osmosis.zone/assets) page to withdraw your AKT to your Keplr wallet. This step withdraws AKT from the Osmosis platform back into your Keplr wallet. You can now send AKT to Cloudmos
 
 Have more questions? Find our team in \*\*\*\* [**Discord**](https://discord.com/invite/DxftX67) and [**Telegram**](https://t.me/AkashNW).
 
 ## Deploying on Akash
 
-Once you have set up your Keplr wallet and imported the address to Akashlytics you are ready to create your first deployment. Follow the instructions in Akashlytics to create a certificate, then click on _Create Deployment_.
+Once you have set up your Keplr wallet and imported the address to Cloudmos you are ready to create your first deployment. Follow the instructions in Cloudmos to create a certificate, then click on _Create Deployment_.
 
 When prompted to _Choose Template_ select _Empty_ as we will copy-and-paste the deploy.yaml file from this repository (listed below). Choose _Empty_ for the template and paste the deploy.yaml file adjusting your wallet address and pool variables as desired.
 
@@ -107,7 +107,7 @@ Akash is a marketplace of compute. Providers set their own prices for compute re
 
 _TUNE=no-tune_ variable in deploy.yaml to _TUNE=full-tune_
 
-No tune will start mining right away - with no performance tuning of the container. Without this expect a lower hashrate. Be warned, tuning can take at least 3 hours before mining begins - so do not expect to see hashrate on the pool immediately. You can check your logs in Akashlytics.
+No tune will start mining right away - with no performance tuning of the container. Without this expect a lower hashrate. Be warned, tuning can take at least 3 hours before mining begins - so do not expect to see hashrate on the pool immediately. You can check your logs in Cloudmos.
 
 ### Increase the deployment size on Akash
 
