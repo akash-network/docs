@@ -31,7 +31,7 @@ Below are links to the top level commands. Click one of the links to see the ava
 * [akash start](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_start.md) - Run the full node
 * [akash status](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_status.md) - Query remote node for status
 * [akash tendermint](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_tendermint.md) - Tendermint subcommands
-* [akash tx](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_tx.md) - Transactions subcommands
+* [akash tx](akash\_tx.md) - Transactions subcommands
 * [akash unsafe-reset-all](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_unsafe-reset-all.md) - Resets the blockchain database, removes address book files, and resets data/priv\_validator\_state.json to the genesis state
 * [akash validate-genesis](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_validate-genesis.md) - validates the genesis file at the default location or at the location passed as an arg
 * [akash version](https://github.com/ovrclk/docs/tree/ed6bc0143968bc6e4e92c26c5dad6427f048bc2d/cli/akash\_version.md) - Print the application binary version information
