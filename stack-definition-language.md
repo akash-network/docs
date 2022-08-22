@@ -47,6 +47,12 @@ env:
 
 ### services.expose
 
+#### Notes Regarding Port Use in the Expose Stanza
+
+* HTTPS is possible in Akash deployments but only self signed certs are generated.
+* To implement signed certs the deployment must be front ended via a solution such as Cloudflare.  If interested in this path, we have created docs for [Cloudflare with Akash](deploy/tls-termination-of-akash-deployments/).
+* In the SDL it is only necessary to expose port 80 for web apps. With this specification both ports 80 and 443 are exposed.
+
 `expose` is a list describing what can connect to the service. Each entry is a map containing one or more of the following fields:
 
 | Name     | Required | Meaning                                                                                                        |
@@ -54,7 +60,7 @@ env:
 | `port`   | Yes      | Container port to expose                                                                                       |
 | `as`     | No       | Port number to expose the container port as                                                                    |
 | `accept` | No       | List of hosts to accept connections for                                                                        |
-| `proto`  | No       | Protocol type (`tcp`,`http`, or `https`)                                                                       |
+| `proto`  | No       | Protocol type (`tcp or http`)                                                                                  |
 | `to`     | No       | List of entities allowed to connect. See [services.expose.to](stack-definition-language.md#services.expose.to) |
 
 The `port` value governs the default `proto` value as follows:
@@ -62,7 +68,6 @@ The `port` value governs the default `proto` value as follows:
 | `port`     | `proto` default |
 | ---------- | --------------- |
 | 80         | http            |
-| 443        | https           |
 | all others | tcp             |
 
 ### services.expose.to
