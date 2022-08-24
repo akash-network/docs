@@ -33,7 +33,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-akash-v0.16.3
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.1-akash-v0.16.3
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
@@ -96,7 +96,7 @@ deployment:
 
 * An escrow account is created for the deployment that is deducted from by the provider for the cost of the workload over time
 * By default 5 AKT is specified as the initial escrow deposit
-* If a deployment's escrow becomes $0 in the future the lease with the provider will be closed.  Consider increasing the initial deposit to an amount that will be enough to fund the deployment for some time.  And/or consider a strategy to ensure the escrow is re-funded on a periodic basis to ensure no disruption to your validator.
+* If a deployment's escrow runs out of funds (0 AKT), the lease will be closed by the provider. Consider increasing the initial deposit to an amount that will be enough to fund the deployment for some time. And/or consider a strategy to ensure the escrow is re-funded on a periodic basis to ensure no disruption to your validator.
 * When ready select `DEPOSIT` to proceed and `APPROVE` any Transaction/gas fee prompts that follow
 
 ![](../../../../.gitbook/assets/validatorDeploymentDeposit.png)
@@ -111,7 +111,7 @@ deployment:
 ### Deployment Logs
 
 * The `LOGS` pane for the new Deployment will display
-* NOTE - after a period of time the logs will display a `Back-off restarting failed container` message.  This is expected as the container will not start until it has established a connection with the TMKMS server in subsequent steps.
+* NOTE - after a period of time the logs will display a `Back-off restarting failed container` message. This is expected as the container will not start until it has established a connection with the TMKMS server in subsequent steps.
 * Select the `LEASES` tab to proceed into the next step
 
 ![](../../../../.gitbook/assets/validatorDeploymentLogs.png)

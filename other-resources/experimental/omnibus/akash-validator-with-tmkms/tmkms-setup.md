@@ -39,8 +39,8 @@ cd ~
 git clone https://github.com/iqlusioninc/tmkms.git
 cd ~/tmkms
 cargo install tmkms --features=softsign
-tmkms init config
-tmkms softsign keygen ./config/secrets/secret_connection_key
+mkdir /etc/tmkms
+tmkms init /etc/tmkms/
 ```
 
 ### Copy Validator Private Key into TMKMS Config File
@@ -62,11 +62,11 @@ tmkms softsign import ~/tmkms/config/secrets/priv_validator_key.json ~/tmkms/con
 ### **Delete Private Key File on the Validator**
 
 * Conduct this step on the Akash Validator machine
-* Delete the `priv_validator_key.json` from  your validator node and store it safely offline in case of an emergency. The `priv_validator_key` will be what TMKMS will use to sign for your validator.
-* Return to the TMKMS server after this step is complete for subsequent steps in this section
+* Securely delete the priv\_validator\_key.json from your validator node and store it safely offline in case of an emergency. The `priv_validator_key` will be what TMKMS will use to sign for your validator.
+* Return to the TMKMS server after this step to complete subsequent steps in this section
 
 ```
-rm ~/.akash/config/priv_validator_key.json
+shred -uvz ~/.akash/config/priv_validator_key.json
 ```
 
 ## **Modify tmkms.toml**
@@ -108,7 +108,7 @@ path = "/root/tmkms/config/secrets/priv_validator_key"
 [[validator]]
 chain_id = "akashnet-2"
 addr = "tcp://<akash-provider-address>:<akash-deployment-port>"
-secret_key = "/root/tmkms/config/secrets/secret_connection_key"
+secret_key = "/etc/tmkms/secrets/kms-identity.key"
 protocol_version = "v0.34"
 reconnect = true
 ```
@@ -129,7 +129,7 @@ state_file = "/root/tmkms/config/state/priv_validator_state.json"
 
 ### Software-based Signer Configuration
 
-[[providers.softsign]]
+[[providers.softsign]]co
 chain_ids = ["akashnet-2"]
 key_type = "consensus"
 path = "/root/tmkms/config/secrets/priv_validator_key"
@@ -139,7 +139,7 @@ path = "/root/tmkms/config/secrets/priv_validator_key"
 [[validator]]
 chain_id = "akashnet-2"
 addr = "tcp://provider.mainnet-1.ca.aksh.pw:31508"
-secret_key = "/root/tmkms/config/secrets/secret_connection_key"
+secret_key = "/etc/tmkms/secrets/kms-identity.key"
 protocol_version = "v0.34"
 reconnect = true
 ```
