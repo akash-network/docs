@@ -12,6 +12,7 @@ Within the kubespray directory use the following commands for the purpose of:
 
 * Opening a Python virtual environment for the Ansible install
 * Installing Ansible and other necessary packages specified in the requirements.txt file
+* Please remember to `cd kubepsray; source venv/bin/activate` each time you want to use `ansible-playbook` command as detailed below.
 
 ```
 cd ~/kubespray

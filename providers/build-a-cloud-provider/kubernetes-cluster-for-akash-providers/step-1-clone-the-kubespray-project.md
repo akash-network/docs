@@ -51,17 +51,11 @@ Obtain Kubespray and navigate into the created local directory:
 ```
 cd ~
 
-git clone https://github.com/kubernetes-sigs/kubespray.git
+git clone -b v2.19.0 --depth=1 https://github.com/kubernetes-sigs/kubespray.git
 
 cd kubespray
 ```
 
 ## Cluster Updates
 
-To update the Kubernetes cluster in the future, ensure to pull the latest Kubespray version to take advantage of recent bug fixes and enhancements.
-
-```
-cd ~/kubespray
-
-git pull https://github.com/kubernetes-sigs/kubespray.git
-```
+To update the Kubernetes cluster in the future, review the[ latest Kubespray documentation](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/upgrades.md) to take advantage of recent bug fixes and enhancements.
