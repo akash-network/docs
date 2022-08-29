@@ -6,123 +6,343 @@ Install Helm and add the Akash repo if not done previously by following the step
 
 All steps in this section should be conducted from the Kubernetes master node on which Helm has been installed.
 
-## **Rook Deployment**
+Rook has published the following Helm charts for the Ceph storage provider:
 
-```
-kubectl create -f https://raw.githubusercontent.com/ovrclk/helm-charts/provider-0.172.0/charts/akash-rook/crds.yaml
-```
+* Rook Ceph Operator: Starts the Ceph Operator, which will watch for Ceph CRs (custom resources)
+* Rook Ceph Cluster: Creates Ceph CRs that the operator will use to configure the cluster
+
+The Helm charts are intended to simplify deployment and upgrades.
 
 ## Persistent Storage Deployment
 
 * **Note** - if any issues are encountered during the Rook deployment, tear down the Rook-Ceph components via the steps listed [here](teardown.md) and begin anew.
 * Deployment typically takes approximately 10 minutes to complete**.**
 
-### **Rook YAML File and Desired Settings**
+### Migration procedure
 
-#### Specify Following Settings within the Rook Yaml File
+If you already have the `akash-rook` helm chart installed, make sure to use the following documentation:
 
-* In the steps that follow in this section we create a `rook.yaml` file to specify persistent storage settings.  Review the default values listed below and include in the rook.yaml file if any non-defaults are needed.
-* **Note** - the Helm chart's values.yaml file has a persistent storage class setting equal to `beta2`.  Refer to [Storage Class Types](storage-class-types.md) doc section for further info.  If a different class is needed, include a setting in the rook.yaml file such as:
+* [Migration from akash-rook to the upstream rook-ceph Helm Charts](https://gist.github.com/andy108369/cd3ab76884f9006611a2becb4b3ccb4f)
 
-```
-persistent_storage:
-  class: beta3
-```
+### Rook Ceph repository
 
-* **Note** - using the default Helm Chart values - the build will attempt to use ALL un-initialized disks / partitions on specified nodes.  If this is not desired, include a setting in the rook.yaml file such as:&#x20;
-  * `useAllDevices: false`
-  * `deviceFilter: "^nvme."`
+#### Add Repo
 
-#### Example rook.yaml File Additions
+* Add the Rook repo to Helm
 
 ```
-persistent_storage:
-  class: beta3
-
-useAllDevices: false
-deviceFilter: "^nvme."
+helm repo add rook-release https://charts.rook.io/release
 ```
 
-### Single Persistent Storage Settings
-
-* Use this Helm Chart command in an environment in which a single node will host persistent storage
-* Replace `NODE-NAME` in the Helm command provided with the name of the node on which persistent storage will be hosted.  It is important to use the Kubernetes name of the target node as collected from `kubectl get nodes` in a previous step.
-* Single persistent storage node build isn't recommended for production and should be used mostly for testing. Refer to the production recommendations [here](deploy-persistent-storage.md#multiple-persistent-storage-nodes-build).
-
-#### Populate the `rook.yaml` **F**ile
+* Expected/Example Result
 
 ```
-cat > rook.yaml << EOF
----
-nodes:
-  - name: "<NODE1>"  # CHANGE to your node name!
-    config: ""
+# helm repo add rook-release https://charts.rook.io/release
+
+"rook-release" has been added to your repositories
+```
+
+#### Verify Repo
+
+* Verify the Rook repo has been added
+
+```
+helm search repo rook-release --version 1.9.9
+```
+
+* Expected/Example Result
+
+```
+# helm search repo rook-release --version 1.9.9
+
+NAME                          	CHART VERSION	APP VERSION	DESCRIPTION                                       
+rook-release/rook-ceph        	v1.9.9       	v1.9.9     	File, Block, and Object Storage Services for yo...
+rook-release/rook-ceph-cluster	v1.9.9       	v1.9.9     	Manages a single Ceph cluster namespace for Rook  
+```
+
+### **Deployment Steps**
+
+#### **STEP 1 - Install Ceph Operator Helm Chart**
+
+**TESTING**
+
+> For additional Operator chart values refer to [this](https://github.com/rook/rook/blob/v1.9.9/deploy/charts/rook-ceph/values.yaml) page.
+
+You can disable default resource limits by using the following yaml config, this is useful when testing:
+
+```
+cat > rook-ceph-operator.values.yml << 'EOF'
+resources:
+csi:
+  csiRBDProvisionerResource:
+  csiRBDPluginResource:
+  csiCephFSProvisionerResource:
+  csiCephFSPluginResource:
+  csiNFSProvisionerResource:
+  csiNFSPluginResource:
 EOF
 ```
 
-#### Example `rook.yaml` file creation
+Install the Operator chart:
 
 ```
-cat > rook.yaml << EOF
----
-nodes:
-  - name: node2
-    config: ""
+helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.9.9 -f rook-ceph-operator.values.yml
+```
+
+**PRODUCTION**
+
+> No customization is required by default.
+
+* Install the Operator chart:
+
+```
+helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.9.9
+```
+
+#### STEP 2 - Install Ceph Cluster Helm Chart
+
+> For additional Cluster chart values refer to [this](https://github.com/rook/rook/blob/v1.9.9/deploy/charts/rook-ceph-cluster/values.yaml) page.\
+> For custom storage configuration refer to [this](https://rook.io/docs/rook/v1.9/ceph-cluster-crd.html#storage-configuration-specific-devices) example.
+
+**TESTING / ALL-IN-ONE**
+
+> * Update `deviceFilter` to match your disks
+> * Change storageClass name from `beta3` to one you are planning to use based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
+> * Add your nodes you want the Ceph storage to use the disks on under the `nodes` section; (make sure to change `node1`, `node2`, ... to your K8s node names!
+>
+> When planning all-in-one production provider with multiple storage drives (minimum 3):
+>
+> * Change `failureDomain` to `osd`
+> * Change `min_size` to `2`and size to `3`
+> * Comment or remove `resources:` field to make sure Ceph services will get enough resources before running them
+
+```
+cat > rook-ceph-cluster.values.yml << 'EOF'
+operatorNamespace: rook-ceph
+
+configOverride: |
+  [global]
+  osd_pool_default_pg_autoscale_mode = on
+  osd_pool_default_size = 1
+  osd_pool_default_min_size = 1
+
+cephClusterSpec:
+  resources:
+
+  mon:
+    count: 1
+  mgr:
+    count: 1
+
+  storage:
+    useAllNodes: false
+    useAllDevices: false
+    deviceFilter: "^nvme."
+    config:
+      osdsPerDevice: "1"
+    nodes:
+    - name: "node1"
+      config:
+
+cephBlockPools:
+  - name: akash-deployments
+    spec:
+      failureDomain: host
+      replicated:
+        size: 1
+      parameters:
+        min_size: "1"
+        bulk: "true"
+    storageClass:
+      enabled: true
+      name: beta3
+      isDefault: true
+      reclaimPolicy: Delete
+      allowVolumeExpansion: true
+      parameters:
+        # RBD image format. Defaults to "2".
+        imageFormat: "2"
+        # RBD image features. Available for imageFormat: "2". CSI RBD currently supports only `layering` feature.
+        imageFeatures: layering
+        # The secrets contain Ceph admin credentials.
+        csi.storage.k8s.io/provisioner-secret-name: rook-csi-rbd-provisioner
+        csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph
+        csi.storage.k8s.io/controller-expand-secret-name: rook-csi-rbd-provisioner
+        csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph
+        csi.storage.k8s.io/node-stage-secret-name: rook-csi-rbd-node
+        csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
+        # Specify the filesystem type of the volume. If not specified, csi-provisioner
+        # will set default as `ext4`. Note that `xfs` is not recommended due to potential deadlock
+        # in hyperconverged settings where the volume is mounted on the same node as the osds.
+        csi.storage.k8s.io/fstype: ext4
+
+  - name: akash-nodes
+    spec:
+      failureDomain: host
+      replicated:
+        size: 1
+      parameters:
+        min_size: "1"
+    storageClass:
+      enabled: true
+      name: akash-nodes
+      isDefault: false
+      reclaimPolicy: Delete
+      allowVolumeExpansion: true
+      parameters:
+        # RBD image format. Defaults to "2".
+        imageFormat: "2"
+        # RBD image features. Available for imageFormat: "2". CSI RBD currently supports only `layering` feature.
+        imageFeatures: layering
+        # The secrets contain Ceph admin credentials.
+        csi.storage.k8s.io/provisioner-secret-name: rook-csi-rbd-provisioner
+        csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph
+        csi.storage.k8s.io/controller-expand-secret-name: rook-csi-rbd-provisioner
+        csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph
+        csi.storage.k8s.io/node-stage-secret-name: rook-csi-rbd-node
+        csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
+        # Specify the filesystem type of the volume. If not specified, csi-provisioner
+        # will set default as `ext4`. Note that `xfs` is not recommended due to potential deadlock
+        # in hyperconverged settings where the volume is mounted on the same node as the osds.
+        csi.storage.k8s.io/fstype: ext4
+
+# Do not create default Ceph file systems, object stores
+cephFileSystems:
+cephObjectStores:
+
+# Spawn rook-ceph-tools, useful for troubleshooting
+toolbox:
+  enabled: true
+  resources:
 EOF
 ```
 
-#### Install the Provider Helm Chart
+**PRODUCTION**
+
+> * Update `deviceFilter` to match your disks
+> * Change storageClass name from `beta3` to one you are planning to use based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
+> * Update `osdsPerDevice` based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
+> * Add your nodes you want the Ceph storage to use the disks on under the `nodes` section; (make sure to change `node1`, `node2`, ... to your K8s node names!
 
 ```
-helm install akash-rook akash/akash-rook -n akash-services -f rook.yaml
-```
+cat > rook-ceph-cluster.values.yml << 'EOF'
+operatorNamespace: rook-ceph
 
-### Multiple Persistent Storage Settings
+configOverride: |
+  [global]
+  osd_pool_default_pg_autoscale_mode = on
+  osd_pool_default_size = 3
+  osd_pool_default_min_size = 2
 
-* Use this Helm Chart command in an environment in which multiple nodes will host persistent storage
-* Replace `NODE-NAME` in the Helm command provided with the name of the node on which persistent storage will be hosted.  It is important to use the Kubernetes name of the target node as collected from `kubectl get nodes` in a previous step.
-* In this example command two nodes are targeted for persistent storage.&#x20;
-* In this example command we are using the following Ceph settings:
-  * MGR (manager) count 2 which is the minimum recommended value.  Also note that the maximum accepted value is also 2.  Thus this setting should always be of count 2.
-  * MON (monitor) count 3 which is the minimum recommended value.
-  * OSDs count of 1 which is appropriate for SSD disks.  Adjust `osdsPerDevice` as necessary based on the disk type and the recommended settings [here](persistent-storage-requirements.md).
+cephClusterSpec:
+  #resources:
 
-#### Populate the `rook.yaml` **F**ile
+  mon:
+    count: 3
+  mgr:
+    count: 2
 
-```
-cd ~/provider
+  storage:
+    useAllNodes: false
+    useAllDevices: false
+    deviceFilter: "^nvme."
+    config:
+      osdsPerDevice: "2"
+    nodes:
+    - name: "node1"
+      config:
+    - name: "node2"
+      config:
+    - name: "node3"
+      config:
 
-cat > rook.yaml << EOF
----
-mgrCount: 2
-monCount: 3
-osdsPerDevice: 1
-nodes:
-  - name: "<NODE1>"  # CHANGE to your node name!
-    config: ""
-  - name: "<NODE2>"  # CHANGE to your node name!
-    config: ""
+cephBlockPools:
+  - name: akash-deployments
+    spec:
+      failureDomain: host
+      replicated:
+        size: 3
+      parameters:
+        min_size: "2"
+        bulk: "true"
+    storageClass:
+      enabled: true
+      name: beta3
+      isDefault: true
+      reclaimPolicy: Delete
+      allowVolumeExpansion: true
+      parameters:
+        # RBD image format. Defaults to "2".
+        imageFormat: "2"
+        # RBD image features. Available for imageFormat: "2". CSI RBD currently supports only `layering` feature.
+        imageFeatures: layering
+        # The secrets contain Ceph admin credentials.
+        csi.storage.k8s.io/provisioner-secret-name: rook-csi-rbd-provisioner
+        csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph
+        csi.storage.k8s.io/controller-expand-secret-name: rook-csi-rbd-provisioner
+        csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph
+        csi.storage.k8s.io/node-stage-secret-name: rook-csi-rbd-node
+        csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
+        # Specify the filesystem type of the volume. If not specified, csi-provisioner
+        # will set default as `ext4`. Note that `xfs` is not recommended due to potential deadlock
+        # in hyperconverged settings where the volume is mounted on the same node as the osds.
+        csi.storage.k8s.io/fstype: ext4
+
+  - name: akash-nodes
+    spec:
+      failureDomain: host
+      replicated:
+        size: 3
+      parameters:
+        min_size: "2"
+    storageClass:
+      enabled: true
+      name: akash-nodes
+      isDefault: false
+      reclaimPolicy: Delete
+      allowVolumeExpansion: true
+      parameters:
+        # RBD image format. Defaults to "2".
+        imageFormat: "2"
+        # RBD image features. Available for imageFormat: "2". CSI RBD currently supports only `layering` feature.
+        imageFeatures: layering
+        # The secrets contain Ceph admin credentials.
+        csi.storage.k8s.io/provisioner-secret-name: rook-csi-rbd-provisioner
+        csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph
+        csi.storage.k8s.io/controller-expand-secret-name: rook-csi-rbd-provisioner
+        csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph
+        csi.storage.k8s.io/node-stage-secret-name: rook-csi-rbd-node
+        csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
+        # Specify the filesystem type of the volume. If not specified, csi-provisioner
+        # will set default as `ext4`. Note that `xfs` is not recommended due to potential deadlock
+        # in hyperconverged settings where the volume is mounted on the same node as the osds.
+        csi.storage.k8s.io/fstype: ext4
+
+# Do not create default Ceph file systems, object stores
+cephFileSystems:
+cephObjectStores:
+
+# Spawn rook-ceph-tools, useful for troubleshooting
+toolbox:
+  enabled: true
+  #resources:
 EOF
 ```
 
-#### Example `rook.yaml` file
+* Install the Cluster chart:
 
 ```
-cat > rook.yaml << EOF
----
-mgrCount: 2
-monCount: 3
-osdsPerDevice: 1
-nodes:
-  - name: node2
-    config: ""
-  - name: node3
-    config: ""
-EOF
+helm upgrade --install --create-namespace -n rook-ceph rook-ceph-cluster \
+   --set operatorNamespace=rook-ceph rook-release/rook-ceph-cluster --version 1.9.9 -f rook-ceph-cluster.values.yml
 ```
 
-#### Install the Provider Helm Chart
+#### STEP 3 - Label the storageClass
+
+> This label is mandatory and is [used](https://github.com/ovrclk/k8s-inventory-operator/blob/v0.1.4/ceph.go#L185) by the Akash's `inventory-operator` for searching the storageClass.
+
+* Change beta3 to your storageClass you have picked before
 
 ```
-helm install akash-rook akash/akash-rook -n akash-services -f rook.yaml
+kubectl label sc akash-nodes akash.network=true
+kubectl label sc beta3 akash.network=true
 ```

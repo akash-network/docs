@@ -33,14 +33,7 @@ lsblk -f
 ```
 root@node2:~# lsblk -f
 NAME     FSTYPE   FSVER LABEL           UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
-loop0    squashfs 4.0                                                              0   100% /snap/amazon-ssm-agent/5163
-loop1    squashfs 4.0                                                              0   100% /snap/core18/2344
-loop2    squashfs 4.0                                                              0   100% /snap/core20/1405
-loop3    squashfs 4.0                                                              0   100% /snap/core20/1434
-loop4    squashfs 4.0                                                              0   100% /snap/lxd/22923
-loop5    squashfs 4.0                                                              0   100% /snap/snapd/15177
-loop6    squashfs 4.0                                                              0   100% /snap/snapd/15534
-loop7    squashfs 4.0                                                              0   100% /snap/core18/2409
+
 xvda
 ├─xvda1  ext4     1.0   cloudimg-rootfs e7879b8a-f914-4210-998a-d47604682e59   39.4G    18% /
 ├─xvda14
