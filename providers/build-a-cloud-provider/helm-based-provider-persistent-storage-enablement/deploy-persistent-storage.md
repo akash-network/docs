@@ -235,7 +235,10 @@ configOverride: |
   osd_pool_default_min_size = 2
 
 cephClusterSpec:
-  #resources:
+  resources:
+    prepareosd:
+      limits:
+        memory: "800Mi"
 
   mon:
     count: 3
