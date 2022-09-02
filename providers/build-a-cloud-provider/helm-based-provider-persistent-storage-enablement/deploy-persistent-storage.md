@@ -110,7 +110,7 @@ helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/ro
 > * Change storageClass name from `beta3` to one you are planning to use based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
 > * Add your nodes you want the Ceph storage to use the disks on under the `nodes` section; (make sure to change `node1`, `node2`, ... to your K8s node names!
 >
-> When planning all-in-one production provider with multiple storage drives (minimum 3):
+> When planning all-in-one production provider (or a single storage node) with multiple storage drives (minimum 3):
 >
 > * Change `failureDomain` to `osd`
 > * Change `min_size` to `2`and size to `3`
@@ -223,6 +223,8 @@ EOF
 > * Change storageClass name from `beta3` to one you are planning to use based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
 > * Update `osdsPerDevice` based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
 > * Add your nodes you want the Ceph storage to use the disks on under the `nodes` section; (make sure to change `node1`, `node2`, ... to your K8s node names!
+> * When planning a single storage node with multiple storage drives (minimum 3):
+>   * Change `failureDomain` to `osd`
 
 ```
 cat > rook-ceph-cluster.values.yml << 'EOF'
@@ -348,4 +350,15 @@ helm upgrade --install --create-namespace -n rook-ceph rook-ceph-cluster \
 ```
 kubectl label sc akash-nodes akash.network=true
 kubectl label sc beta3 akash.network=true
+```
+
+#### STEP 4 - Update Failure Domain (Single Storage Node or All-In-One Scenarios Only)
+
+> When running a single storage node or all-in-one, make sure to change the failure domain from `host` to `osd` for the `device_health_metrics` (before Ceph Quincy v17 / rook-ceph v1.10.x) pool or the `.mgr` pool if otherwise:
+
+```
+kubectl -n rook-ceph exec -it $(kubectl -n rook-ceph get pod -l "app=rook-ceph-tools" -o jsonpath='{.items[0].metadata.name}') -- bash
+
+ceph osd crush rule create-replicated replicated_rule_osd default osd
+ceph osd pool set device_health_metrics crush_rule replicated_rule_osd
 ```
