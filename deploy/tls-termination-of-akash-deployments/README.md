@@ -6,14 +6,14 @@ Currently only self-signed certificates are available from Akash Providers.
 
 In this guide we detail a Cloudflare TLS termination strategy which will give Akash deployments valid public certificates.  Cloudflare will proxy traffic intended for the Akash deployment and allow end to end encrypted communication.
 
-[Prerequisites](broken-reference)
+**STEP 1** - [Prerequisites](prerequisites.md)
 
-[Akash with TLS Example](broken-reference)
+**STEP 2** - [Akash with TLS Example](akash-with-tls-example.md)
 
-[Find IP Address of Deployment](broken-reference)
+**STEP 3** - [Find IP Address of Deployment](find-ip-address-of-deployment.md)
 
-[Cloudflare Configuration](broken-reference)
+**STEP 4** -[ Cloudflare Configuration](cloudflare-configuration.md)
 
-[Verify HTTPS](broken-reference)
+**STEP 5** - [Verify HTTPS](verify-https.md)
 
-[Troubleshooting](broken-reference)
+**STEP 6** - [Troubleshooting](troubleshooting.md)

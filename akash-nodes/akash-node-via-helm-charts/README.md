@@ -6,6 +6,6 @@ The Akash Node build detailed takes advantage of "state sync" which allows rapid
 
 Steps in this guide include:
 
-* [Prepare Kubernetes Cluster](prepare-kubernetes-cluster.md)
-* [Akash Node Installation](akash-node-installation.md)
-* [Node Verifications](node-verifications.md)
+* **STEP 1** - [Prepare Kubernetes Cluster](prepare-kubernetes-cluster.md)
+* **STEP 2** - [Akash Node Installation](akash-node-installation.md)
+* **STEP 3** - [Node Verifications](node-verifications.md)
