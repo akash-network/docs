@@ -16,12 +16,53 @@ cd ~
 helm repo update
 ```
 
-#### Create a Provider-storage.yaml File
+### Capture and Edit provider.yaml File
+
+* In this section we will capture the current provider settings and add necessary persistent storage elements
+
+#### **Capture Current Provider Settings and Write to File**
 
 ```
-cat > provider-storage.yaml << EOF
----
+cd ~
+
+helm -n akash-services get values akash-provider > provider.yaml
+```
+
+#### **Update provider.yaml File With Persistent Storage Settings**
+
+* Open the `provider.yaml` file with your favorite editor (I.e. `vi` or `vim`) and add the following
+
+```
+attributes:
+<keep the existing ones and add the following ones:>
+  - key: capabilities/storage/1/class
+    value: default
+  - key: capabilities/storage/1/persistent
+    value: true
+  - key: capabilities/storage/2/class
+    value: beta2             # set your storage class here: beta1, beta2 or beta3!
+  - key: capabilities/storage/2/persistent
+    value: true
+```
+
+And add this attribute if you are not using the bid pricing script:
+
+```
 bidpricestoragescale: "0.00016,beta2=0.00016" # set your storage class here: beta1, beta2 or beta3!
+```
+
+#### Finalized provider.yaml File
+
+* Post additions discussed above, your `provider.yaml` file should look something like this:
+
+```
+---
+from: "$ACCOUNT_ADDRESS"
+key: "$(cat ~/key.pem | openssl base64 -A)"
+keysecret: "$(echo $KEY_PASSWORD | openssl base64 -A)"
+domain: "$DOMAIN"
+node: "$NODE"
+withdrawalperiod: 24h
 attributes:
   - key: region
     value: "<YOUR REGION>"   # set your region here, e.g. "us-west"
@@ -39,14 +80,15 @@ attributes:
     value: beta2             # set your storage class here: beta1, beta2 or beta3!
   - key: capabilities/storage/2/persistent
     value: true
-EOF
+
+bidpricestoragescale: "0.00016,beta2=0.00016" # set your storage class here: beta1, beta2 or beta3!
 ```
 
-#### Upgrade the Helm Install
+### Upgrade the Helm Install
 
 ```
 # Make sure you have "provider.yaml" previously created!
-helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml -f provider-storage.yaml
+helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml
 ```
 
 #### Expected/Example Output
