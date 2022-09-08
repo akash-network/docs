@@ -14,9 +14,7 @@ DOMAIN=test.com  #Registers DNS A and wildcard address as specified in previous 
 NODE=http://<IP_address_of_your_RPC_node>:26657  # if you are going to deploy Akash RPC Node using Helm-Charts then set it to `http://akash-node-1:26657`
 ```
 
-## **Provider Helm Chart Build**
-
-### **Provider Withdraw Period**
+## **Provider Withdraw Period**
 
 * Akash providers may dictate how often they withdraw funds consumed by active deployments/tenants escrow accounts
 * Few things to consider regarding the provider withdraw period:
@@ -29,7 +27,7 @@ NODE=http://<IP_address_of_your_RPC_node>:26657  # if you are going to deploy Ak
 * If it is desired to change the withdrawl period from the default one hour setting, update the `withdrawalperiod` setting in the provider.yaml file created subsequently in this section.
 * In the example the Provider Build section of this doc the withdrawl period has been set to 24 hours.  Please adjust as preferred.
 
-### **Provider Build**
+## **Provider Build Prep**
 
 * Ensure you are applying the latest version of subsequent Helm Charts install/upgrade steps
 
@@ -37,7 +35,7 @@ NODE=http://<IP_address_of_your_RPC_node>:26657  # if you are going to deploy Ak
 helm repo update
 ```
 
-#### Create a provider.yaml File
+### Create a provider.yaml File
 
 * Issue the following command to build your Akash Provider
 * Update the following keys for your unique use case
@@ -71,7 +69,7 @@ attributes:
 EOF
 ```
 
-**Example provider.yaml File Creation**
+#### **Example provider.yaml File Creation**
 
 ```
 root@linux-server ~ % cat > provider.yaml << EOF
@@ -94,7 +92,38 @@ attributes:
 EOF
 ```
 
-**Provider Bid Defaults**
+### &#x20;Verification of provider.yaml File
+
+* &#x20;Issue the following commands to verify the `provider.yaml` file created in previous steps
+
+```
+cd ~/provider
+
+cat provider.yaml
+```
+
+#### Example provider.yaml Verification Output
+
+* Ensure there are no empty values
+
+```
+from: akash1<REDACTED>
+key: LS0tLS1CRU<REDACTED>0tLS0tCg==
+keysecret: QUtB<REDACTED>XIK
+node: http://<rpc-address>:26657
+withdrawalperiod: 24h
+attributes:
+- key: region
+  value: us-east
+- key: host
+  value: akash
+- key: tier
+  value: community
+- key: organization
+  value: mycompany
+```
+
+## **Provider Bid Defaults**
 
 * When a provider is created the default bid engine settings are used.  If desired these settings could be updated and added to the `provider.yaml` file.  But we would recommend initially using the default values.
 * Note -  the `bidpricestoragescale` value will get overridden by `-f provider-storage.yaml` covered in [Provider Persistent Storage](../helm-based-provider-persistent-storage-enablement/) documentation.
@@ -107,7 +136,7 @@ bidpriceendpointscale: "0" # endpoint pricing scale in uakt per endpoint
 bidpricestoragescale: "0.00016" # storage pricing scale in uakt per megabyte
 ```
 
-#### **Install the Provider Helm Chart**
+## **Install the Provider Helm Chart**
 
 ```
 helm install akash-provider akash/provider -n akash-services -f provider.yaml
