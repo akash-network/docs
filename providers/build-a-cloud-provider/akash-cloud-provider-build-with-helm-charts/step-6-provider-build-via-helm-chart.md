@@ -2,16 +2,37 @@
 
 ## **Environment Variables**
 
-* Declare the following environment variables for Helm
-* Replace the variable  with your own settings
-* Notes on settings and values
-  * Domain should be a publicly accessible DNS name dedicated for your provider use such as myprovider.com.
+* Declare the following environment variables for Helm use
+* Replace the variables with your own settings
+
+1. Set akash provider address that starts with `akash1`
+
+> This allows the akash-provider to decrypt the key
 
 ```
-ACCOUNT_ADDRESS=akash1XXXX #akash provider address that starts with `akash1`
-KEY_PASSWORD=12341234 #set to the password you have entered upon `akash keys export <key-name> > key.pem`; this is for the akash-provider pod to decrypt the key
-DOMAIN=test.com  #Registers DNS A and wildcard address as specified in previous step, i.e. `provider.test.com` DNS A record and `*.ingress.test.com` DNS wildcard record
-NODE=http://<IP_address_of_your_RPC_node>:26657  # if you are going to deploy Akash RPC Node using Helm-Charts then set it to `http://akash-node-1:26657`
+ACCOUNT_ADDRESS=akash1XXXX
+```
+
+2\.  Set the password you have entered upon akash keys export > key.pem
+
+```
+KEY_PASSWORD=12341234
+```
+
+3\.  Set your domain. Register DNS A and wildcard address as specified in previous step, i.e. `provider.test.com` DNS A record and `*.ingress.test.com` DNS wildcard record.
+
+> Domain should be a publicly accessible DNS name dedicated for your provider use such as myprovider.com.
+
+```
+DOMAIN=test.com
+```
+
+4\.  Set the Akash RPC node for your provider to use
+
+> If you are going to deploy Akash RPC Node using Helm-Charts then set the node to http://akash-node-1:26657 It is recommended that you install your own Akash RPC node. Follow [this guide](../../../akash-nodes/akash-node-via-helm-charts/) to do so.
+
+```
+NODE=http://akash-node-1:26657
 ```
 
 ## **Provider Withdraw Period**
