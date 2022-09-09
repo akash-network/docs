@@ -19,6 +19,7 @@ helm repo update
 ### Capture and Edit provider.yaml File
 
 * In this section we will capture the current provider settings and add necessary persistent storage elements
+* _**NOTE**_ - the `bidpricestoragescale` setting in the `provider.yaml` file will be ignored if the [bid pricing script](../akash-provider-bid-pricing/) is used.
 
 #### **Capture Current Provider Settings and Write to File**
 
