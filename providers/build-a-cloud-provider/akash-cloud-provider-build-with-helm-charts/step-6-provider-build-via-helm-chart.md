@@ -21,7 +21,7 @@ KEY_PASSWORD=12341234
 
 3\.  Set your domain. Register DNS A and wildcard address as specified in previous step, i.e. `provider.test.com` DNS A record and `*.ingress.test.com` DNS wildcard record.
 
-> Domain should be a publicly accessible DNS name dedicated for your provider use such as myprovider.com.
+> Domain should be a publicly accessible DNS name dedicated for your provider use such as test.com.
 
 ```
 DOMAIN=test.com

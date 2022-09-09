@@ -7,7 +7,7 @@ The wallet used will be used for the following purposes:
 * Pay for provider transaction gas fees
 * Pay for bid collateral which is discussed further in this section
 
-> Make sure to create a new Akash account for the provider and do not reuse an account used for deployment purposes.  When testing - bids will not be generated from your provider if the deployment orders are created with the same key as the provider.
+> Make sure to create a new Akash account for the provider and do not reuse an account used for deployment purposes.  Bids will not be generated from your provider if the deployment orders are created with the same key as the provider.
 
 ## List Available Keys
 
