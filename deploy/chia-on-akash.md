@@ -91,7 +91,7 @@ version: "2.0"
 
 services:
   chia:
-    image: cryptoandcoffee/akash-chia:200
+    image: cryptoandcoffee/akash-chia:262
     expose:
       - port: 8080
         as: 80
@@ -100,13 +100,13 @@ services:
           - global: true
     env:
     #############################REQUIRED##############################
-      - VERSION=1.3.5 
+      - VERSION=1.5.1
      #Always check https://github.com/Chia-Network/chia-blockchain/releases
-      - CONTRACT=xch16txqvdlh67m9stvwmx848xzpgesd60swqxll3rrnnafunuluflds03jkt4
-      - FARMERKEY=847b826e653279b9e54ce66a1c55cbfdb1ddc4118e70038cdfbaa7e5cb0a785087bc3a6f055f01bbbf84a2c6a3be4a97
+      - CONTRACT=
+      - FARMERKEY=
       - PLOTTER=madmax
      #Choose your plotter software - madmax, bladebit, bladebit-disk
-      - FINAL_LOCATION=upload
+      - FINAL_LOCATION=local
      #Set to "local" to access finished plots through web interface.
      #Set to "upload" and finished plots will be uploaded to a SSH destination like user@ip:/home/user/plots
       - CPU_UNITS=8
@@ -124,27 +124,28 @@ services:
      #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
       #- RAMCACHE=32G
       #Used only for PLOTTER=bladebit-disk, you must increase the memory resources requested below with this additional cache size.
-      #- RCLONE=true
+      #- RCLONE=false
      #When true must also update JSON_RCLONE and add any destination in same format.
       #- TOTAL_UPLOADS=1000
      #Set the total number of parallel uploads allowed to an rclone destination
-      #- ENDPOINT_LOCATION=google
+      #- ENDPOINT_LOCATION=
      #Only used for RCLONE=true
-      #- ENDPOINT_DIR=plots 
+      #- ENDPOINT_DIR=
      #Only used for RCLONE=true
       #- JSON_RCLONE=
-      #  [google]\n
-      #  type = x\n
-      #  scope = x\n
-      #  token = x\n
-      #  root_folder_id = x
+      #  [storj]\n
+      #  type = storj\n
+      #  api_key = x\n
+      #  passphrase = x\n
+      #  satellite_address = x@x:7777\n
+      #  access_grant = replaceme
      #Example of STORJ config for RCLONE=true.  If you want to use your own endpoint please escape each line with a backslash n, like in the example.
 profiles:
   compute:
     chia:
       resources:
         cpu:
-          units: 8.0
+          units: 8
         memory:
           size: 6Gi
         storage:
@@ -154,6 +155,7 @@ profiles:
       signedBy:
         anyOf:
           - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
+          - "akash18qa2a2ltfyvkyj0ggj3hkvuj6twzyumuaru9s4"
       attributes:
         chia-plotting: "true"
       pricing:
@@ -190,7 +192,7 @@ version: "2.0"
 
 services:
   chia:
-    image: cryptoandcoffee/akash-chia:200
+    image: cryptoandcoffee/akash-chia:262
     expose:
       - port: 8080
         as: 80
@@ -199,17 +201,17 @@ services:
           - global: true
     env:
     #############################REQUIRED##############################
-      - VERSION=1.3.5 
+      - VERSION=1.5.1
      #Always check https://github.com/Chia-Network/chia-blockchain/releases
       - CONTRACT=
       - FARMERKEY=
       - PLOTTER=bladebit
      #Choose your plotter software - madmax, bladebit, bladebit-disk
-      - FINAL_LOCATION=upload
+      - FINAL_LOCATION=local
      #Set to "local" to access finished plots through web interface.
      #Set to "upload" and finished plots will be uploaded to a SSH destination like user@ip:/home/user/plots
       - CPU_UNITS=32
-      - MEMORY_UNITS=430Gi
+      - MEMORY_UNITS=420Gi
       - STORAGE_UNITS=1200Gi
      #Must match CPU/Memory/Storage units defined in resources.
     #############################OPTIONAL##############################
@@ -223,20 +225,21 @@ services:
      #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
       #- RAMCACHE=32G
       #Used only for PLOTTER=bladebit-disk, you must increase the memory resources requested below with this additional cache size.
-      #- RCLONE=true
+      #- RCLONE=false
      #When true must also update JSON_RCLONE and add any destination in same format.
       #- TOTAL_UPLOADS=1000
      #Set the total number of parallel uploads allowed to an rclone destination
-      #- ENDPOINT_LOCATION=google
+      #- ENDPOINT_LOCATION=
      #Only used for RCLONE=true
-      #- ENDPOINT_DIR=plots 
+      #- ENDPOINT_DIR=
      #Only used for RCLONE=true
       #- JSON_RCLONE=
-      #  [google]\n
-      #  type = x\n
-      #  scope = x\n
-      #  token = x\n
-      #  root_folder_id = x
+      #  [storj]\n
+      #  type = storj\n
+      #  api_key = x\n
+      #  passphrase = x\n
+      #  satellite_address = x@x:7777\n
+      #  access_grant = replaceme
      #Example of STORJ config for RCLONE=true.  If you want to use your own endpoint please escape each line with a backslash n, like in the example.
 profiles:
   compute:
@@ -245,7 +248,7 @@ profiles:
         cpu:
           units: 32
         memory:
-          size: 430Gi
+          size: 420Gi
         storage:
           size: 1200Gi
   placement:
@@ -253,6 +256,7 @@ profiles:
       signedBy:
         anyOf:
           - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
+          - "akash18qa2a2ltfyvkyj0ggj3hkvuj6twzyumuaru9s4"
       attributes:
         chia-plotting: "true"
       pricing:
@@ -286,23 +290,23 @@ Upload your plots to any SSH destination by modifying the `env:`
 ```yaml
     env:
     #############################REQUIRED##############################
-      - VERSION=1.3.5 
+      - VERSION=1.5.1
      #Always check https://github.com/Chia-Network/chia-blockchain/releases
       - CONTRACT=
       - FARMERKEY=
       - PLOTTER=bladebit
      #Choose your plotter software - madmax, bladebit, bladebit-disk
-      - FINAL_LOCATION=upload
+      - FINAL_LOCATION=local
      #Set to "local" to access finished plots through web interface.
      #Set to "upload" and finished plots will be uploaded to a SSH destination like user@ip:/home/user/plots
       - CPU_UNITS=32
-      - MEMORY_UNITS=430Gi
+      - MEMORY_UNITS=420Gi
       - STORAGE_UNITS=1200Gi
      #Must match CPU/Memory/Storage units defined in resources.
     #############################OPTIONAL##############################
      #Uncomment the variables below when set FINAL_LOCATION=upload to enable remote uploading
       - REMOTE_HOST=changeme.com #SSH upload host
-      - REMOTE_LOCATION=changeme #SSH upload localtion like /root/plots
+      - REMOTE_LOCATION=changeme #SSH upload location like /root/plots
       - REMOTE_PORT=22 #SSH upload port
       - REMOTE_USER=changeme #SSH upload user
       - REMOTE_PASS=changme #SSH upload password
@@ -310,20 +314,21 @@ Upload your plots to any SSH destination by modifying the `env:`
      #Change to true to enable multiple background uploading of plots, this is the best option to use use 100% of your bandwidth.
       #- RAMCACHE=32G
       #Used only for PLOTTER=bladebit-disk, you must increase the memory resources requested below with this additional cache size.
-      #- RCLONE=true
+      #- RCLONE=false
      #When true must also update JSON_RCLONE and add any destination in same format.
       #- TOTAL_UPLOADS=1000
      #Set the total number of parallel uploads allowed to an rclone destination
-      #- ENDPOINT_LOCATION=google
+      #- ENDPOINT_LOCATION=
      #Only used for RCLONE=true
-      #- ENDPOINT_DIR=plots 
+      #- ENDPOINT_DIR=
      #Only used for RCLONE=true
       #- JSON_RCLONE=
-      #  [google]\n
-      #  type = x\n
-      #  scope = x\n
-      #  token = x\n
-      #  root_folder_id = x
+      #  [storj]\n
+      #  type = storj\n
+      #  api_key = x\n
+      #  passphrase = x\n
+      #  satellite_address = x@x:7777\n
+      #  access_grant = replaceme
      #Example of STORJ config for RCLONE=true.  If you want to use your own endpoint please escape each line with a backslash n, like in the example.
 ```
 
@@ -338,7 +343,7 @@ Change the `replaceme` values below to match your client settings
 ```yaml
     env:
     #############################REQUIRED##############################
-      - VERSION=1.3.5 
+      - VERSION=1.5.1 
      #Always check https://github.com/Chia-Network/chia-blockchain/releases
       - CONTRACT=
       - FARMERKEY=
@@ -386,7 +391,7 @@ Change the `replaceme` values below to match your client settings
 ```yaml
     env:
     #############################REQUIRED##############################
-      - VERSION=1.3.5 
+      - VERSION=1.5.1 
      #Always check https://github.com/Chia-Network/chia-blockchain/releases
       - CONTRACT=
       - FARMERKEY=
@@ -434,7 +439,7 @@ Change the `replaceme` values below to match your client settings
 ```yaml
     env:
     #############################REQUIRED##############################
-      - VERSION=1.3.5 
+      - VERSION=1.5.1 
      #Always check https://github.com/Chia-Network/chia-blockchain/releases
       - CONTRACT=
       - FARMERKEY=
