@@ -13,6 +13,7 @@ NOTE - two wallets will be necessary to test Authorized Spend.
 ### **Syntax**
 
 * Replace wallet placeholders with actual addresses
+* Ensure that `uakt` is used as denomination for the `fund-amount` and as shown in `Example Use`.
 
 ```
 akash tx deployment authz grant <deploy-wallet> <fund-amount> --from <funding-wallet>
