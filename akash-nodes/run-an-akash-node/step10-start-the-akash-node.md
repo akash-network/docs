@@ -11,6 +11,8 @@ In this section we will create a script and a related service to start the node.
 * Create a script to start the Akash Node
 
 ```
+cd ~
+
 cat <<EOF | tee /usr/local/bin/start-node.sh
 #!/usr/bin/env bash
 
