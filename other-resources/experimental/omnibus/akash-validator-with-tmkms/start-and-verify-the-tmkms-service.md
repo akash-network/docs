@@ -22,13 +22,11 @@ tmkms start -c $HOME/tmkms/config/tmkms.toml
 
 ### Log Messages Indicating Successful TMKMS Connection
 
-* _**NOTE**_ - these verifications and log entries will not be seen until after the Stunnel Client is created and configured
 * Eventually the following TMKMS log messages should display indicating successful connection between the TMKMS server and the Akash validator
 
 ```
-2022-09-15T00:08:10.604353Z  INFO tmkms::connection::tcp: KMS node ID: 7a1f7c7f726d94787045cca9fee05c1ec67cd09a
-2022-09-15T00:08:10.899641Z  INFO tmkms::session: [akashnet-2@tcp://127.0.0.1:36658] connected to validator successfully
-2022-09-15T00:08:10.899670Z  WARN tmkms::session: [akashnet-2@tcp://127.0.0.1:36658]: unverified validator peer ID! (aa9cdfb9e1af2d8033168f562941a95c98545372)
+2022-07-06T14:45:15.099703Z  INFO tmkms::session: [akashnet-2@tcp://provider.mainnet-1.ca.aksh.pw:31508] connected to validator successfully
+2022-07-06T14:45:15.099920Z  WARN tmkms::session: [akashnet-2@tcp://provider.mainnet-1.ca.aksh.pw:31508]: unverified validator peer ID! (1c0716972c63d3322dd5f1e93b3720442f2e52dc)
 ```
 
 ### Active Validator Set Log Messages

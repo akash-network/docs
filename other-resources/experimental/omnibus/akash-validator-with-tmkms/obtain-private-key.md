@@ -4,7 +4,7 @@ In the [TMKMS Setup](broken-reference) section of this guide we will import the 
 
 If you have a pre-existing Akash Validator the private key from this instance may be used.
 
-If this is a new Akash Validator - create an Akash validator instance for the purpose of private key generation, capture the private key, and then shut down the validator.  Use the instructions in [Akash Node Deployment Via Omnibus](../../../../operations/akash-node-deployment-via-omnibus.md) to easily build an Akash Node for this purpose and to obtai the validator private key as detailed below.  It is NOT necessary to complete the additional steps to turn the Node into a Validator.  Completing only the Node build will allow the capture of the needed Validator private key.
+If this is a new Akash Validator - create an Akash validator instance for the purpose of private key generation, capture the private key, and then shut down the validator.
 
 ### Example Validator Private Key Retrieval
 
