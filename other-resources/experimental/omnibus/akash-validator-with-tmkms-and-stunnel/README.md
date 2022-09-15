@@ -10,8 +10,10 @@ The Validator deployment will take advantage of statesync for rapid blockchain s
 
 Sections in this guide:
 
-* [Validator Topology](validator-topology.md)
-* [Obtain Private Key](obtain-private-key.md)
-* [Akash Validator Deployment](akash-validator-deployment.md)
-* [TMKMS Setup](broken-reference)
-* [Start and Verify the TMKMS Service](start-and-verify-the-tmkms-service.md)
+* [STEP 1 - Validator Topology](validator-topology.md)
+* [STEP 2 - Obtain Private Key](obtain-private-key.md)
+* [STEP 3 - Akash Validator Deployment](akash-validator-deployment.md)
+* [STEP 4 - TMKMS Setup](tmkms-setup.md)
+* [STEP 5 - Start and Verify the TMKMS Service](start-and-verify-the-tmkms-service.md)
+* [STEP 6 - Stunnel Client](stunnel-client.md)
+* [STEP 7 - Verify Validator Status](verify-validator-status.md)
