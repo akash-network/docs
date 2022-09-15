@@ -55,7 +55,8 @@ tmkms init /etc/tmkms/
 
 <pre><code><strong>cd ~/tmkms
 </strong><strong>mkdir -p config/secrets
-</strong>vi ~/tmkms/config/secrets/priv_validator_key.json</code></pre>
+</strong>mkdir config/state
+vi ~/tmkms/config/secrets/priv_validator_key.json</code></pre>
 
 * Copy/paste the validator private key into the `priv_validator_key.json` file
 
@@ -113,7 +114,7 @@ vi ~/tmkms/config/tmkms.toml
 [[chain]]
 id = "akashnet-2"
 key_format = { type = "bech32", account_key_prefix = "akashpub", consensus_key_prefix = "akashvalconspub" }
-state_file = "/etc/tmkms/state/priv_validator_state.json"
+state_file = "/root/tmkms/config/state/priv_validator_state.json"
 
 ## Signing Provider Configuration
 
