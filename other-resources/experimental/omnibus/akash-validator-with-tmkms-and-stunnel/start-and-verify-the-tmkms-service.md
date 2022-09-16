@@ -5,7 +5,7 @@ All steps in this section should be performed on the TMKMS server unless otherwi
 ## Start the TMKMS Service
 
 ```
-tmkms start -c $HOME/tmkms/config/tmkms.toml
+tmkms start -c /etc/tmkms/tmkms.toml
 ```
 
 ### Initial Log Messages

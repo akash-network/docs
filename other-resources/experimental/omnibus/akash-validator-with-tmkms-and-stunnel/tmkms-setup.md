@@ -4,7 +4,7 @@
 
 * In a future step in this guide we deploy a Stunnel client which must co-exist on the same machine as the TMKMS server
 * For simplicity we use Docker Compose to build the Stunnel client
-* We do not offer a TMKMS image based on security concerns in using a third party TMKMS image.  However you may want to consider using the Linux instructions below for TMKMS server build and get a container image yourself so that both the TKMKS server and the Stunnel client may both be deployed as containers on the single host.
+* We do not offer a TMKMS image based on security concerns in using a third party TMKMS image.  However you may want to consider using the Linux instructions below for TMKMS server build and create a container image yourself so that both the TKMKS server and the Stunnel client may both be deployed as containers on the single host.
 
 ## Prepare TMKMS Dependencies (Ubuntu Instructions)
 
@@ -53,10 +53,9 @@ tmkms init /etc/tmkms/
 
 * Create the `priv_validator_key.json` file
 
-<pre><code><strong>cd ~/tmkms
-</strong><strong>mkdir -p config/secrets
-</strong>mkdir config/state
-vi ~/tmkms/config/secrets/priv_validator_key.json</code></pre>
+```
+vi /etc/tmkms/secrets/priv_validator_key.json
+```
 
 * Copy/paste the validator private key into the `priv_validator_key.json` file
 
@@ -79,7 +78,7 @@ vi ~/tmkms/config/secrets/priv_validator_key.json</code></pre>
 ### **Import the Private Validator Key into TMKMS**
 
 ```
-tmkms softsign import ~/tmkms/config/secrets/priv_validator_key.json ~/tmkms/config/secrets/priv_validator_key
+tmkms softsign import /etc/tmkms/secrets/priv_validator_key.json /etc/tmkms/secrets/priv_validator_key.softsign
 ```
 
 ### **Delete Private Key File on the Validator**
@@ -97,40 +96,44 @@ shred -uvz ~/.akash/config/priv_validator_key.json
 * Begin by deleting the existing `tmkms.toml` file and re-creating anew
 
 ```
-#Remove command will report `No such file or directory` if it did not exist prior
-rm ~/tmkms/config/tmkms.toml
+rm /etc/tmkms/tmkms.toml
 
-vi ~/tmkms/config/tmkms.toml
+vi /etc/tmkms/tmkms.toml
 ```
 
 * Copy the following configuration into the new `tmkms.toml` file
 * No edits to the file syntax below should be necessary
 
 ```
+# Tendermint KMS configuration file
+
 ## Chain Configuration
 
-### Cosmos Hub Network
+### akashnet-2-dev Network
 
 [[chain]]
-id = "akashnet-2"
+id = "akashnet-2-dev"
 key_format = { type = "bech32", account_key_prefix = "akashpub", consensus_key_prefix = "akashvalconspub" }
-state_file = "/root/tmkms/config/state/priv_validator_state.json"
+state_file = "/etc/tmkms/state/akashnet-2-dev-consensus.json"
 
 ## Signing Provider Configuration
 
 ### Software-based Signer Configuration
 
 [[providers.softsign]]
-chain_ids = ["akashnet-2"]
+chain_ids = ["akashnet-2-dev"]
 key_type = "consensus"
-path = "/root/tmkms/config/secrets/priv_validator_key"
+path = "/etc/tmkms/secrets/priv_validator_key.softsign"
 
 ## Validator Configuration
 
 [[validator]]
-chain_id = "akashnet-2"
-addr = "tcp://127.0.0.1:36658"
+chain_id = "akashnet-2-dev"
+## peer id doesn't seem to work https://github.com/iqlusioninc/tmkms/issues/599
+##addr = "tcp://<peer-id>@127.0.0.1:26658"
+addr = "tcp://127.0.0.1:26658"
 secret_key = "/etc/tmkms/secrets/kms-identity.key"
 protocol_version = "v0.34"
 reconnect = true
+EOF
 ```
