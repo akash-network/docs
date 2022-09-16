@@ -77,6 +77,10 @@ networks:
     external: false
 ```
 
+#### Pre-Shared Key (PSK)
+
+* Ensure the PSK field matches the value defined earlier in the [Akash Validator Deployment](akash-validator-deployment.md) section
+
 ### Example `docker-compose.yaml` File
 
 ```

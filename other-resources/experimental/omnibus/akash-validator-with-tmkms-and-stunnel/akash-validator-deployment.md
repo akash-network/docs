@@ -3,11 +3,12 @@
 ## Cloudmos Deploy
 
 * Within this guide we will use the Cloudmos Deploy application to create the Akash Validator
-* Please review our[ Cloudmos Deploy ](../../../../guides/deploy/)docs to install and configuration the application if this is your first time using
+* Please review our[ Cloudmos Deploy ](../../../../guides/deploy/)docs to install and configure the application if this is your first time using
 
 ## Create the Akash Validator Deployment
 
 * Use the steps that follow - within Cloudmos Deploy - to create your Akash Validator deployment
+* The Akash SDL used additionally spins up a Stunnel server to facilitate secure communication with the TMKMS server created in later steps
 
 ### Create New Deployment
 
@@ -26,11 +27,16 @@
 * Copy the following Akash SDL into the Editor pane
 * Reference the [Populated Editor](akash-validator-deployment.md#populated-editor) section of this guide for further clarity
 * Note that the SDL is using persistent storage to allow data residency should your deployment restart.  Data will only persist thru the life of the associated Akash lease.
-* Select the `CREATE DEPLOYMENT` button to proceed
 
 > To ensure the most to update SDL is utilized, view the latest version [here](https://github.com/ovrclk/cosmos-omnibus/blob/09679171d513586b5e1a9aafe73db55ebdbf5098/\_examples/validator-and-tmkms/deploy.yml).
 
-> No edits of this SDL are necessary for Akash Validator creation.  Feel free to update the moniker to your own value but the moniker has no real consequence.
+#### SDL Edits
+
+* Consider updating the Pre-Shared Key (PSK) value in the  `proxy` service > `env` stanza to your own unique value.  The pre-shared key must match that which is defined in the upcoming [Stunnel Client](stunnel-client.md) configuration.
+* Update the MONIKER in the `node` service > `env` stanza to your own name/organization name.
+*   No additional edits of this SDL are necessary for Akash Validator creation.
+
+
 
 ```
 ---
@@ -125,6 +131,8 @@ deployment:
 #### Populated Editor
 
 > _**NOTE**_- SDL spans past the view in this panel and bottom portion is not displayed
+
+* Select the `CREATE DEPLOYMENT` button to proceed
 
 <figure><img src="../../../../.gitbook/assets/validatorSDL.png" alt=""><figcaption></figcaption></figure>
 
