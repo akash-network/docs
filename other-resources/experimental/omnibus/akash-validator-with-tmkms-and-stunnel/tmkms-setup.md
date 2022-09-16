@@ -129,11 +129,8 @@ path = "/etc/tmkms/secrets/priv_validator_key.softsign"
 
 [[validator]]
 chain_id = "akashnet-2-dev"
-## peer id doesn't seem to work https://github.com/iqlusioninc/tmkms/issues/599
-##addr = "tcp://<peer-id>@127.0.0.1:26658"
-addr = "tcp://127.0.0.1:26658"
+addr = "tcp://127.0.0.1:36658"
 secret_key = "/etc/tmkms/secrets/kms-identity.key"
 protocol_version = "v0.34"
 reconnect = true
-EOF
 ```

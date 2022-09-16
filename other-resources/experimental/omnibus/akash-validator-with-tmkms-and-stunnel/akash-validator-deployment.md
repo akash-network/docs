@@ -3,12 +3,11 @@
 ## Cloudmos Deploy
 
 * Within this guide we will use the Cloudmos Deploy application to create the Akash Validator
-* Please review our[ Cloudmos Deploy ](../../../../guides/deploy/)docs to install and configure the application if this is your first time using
+* Please review our[ Cloudmos Deploy ](../../../../guides/deploy/)docs to install and configuration the application if this is your first time using
 
 ## Create the Akash Validator Deployment
 
 * Use the steps that follow - within Cloudmos Deploy - to create your Akash Validator deployment
-* The Akash SDL used additionally spins up a Stunnel server to facilitate secure communication with the TMKMS server created in later steps
 
 ### Create New Deployment
 
