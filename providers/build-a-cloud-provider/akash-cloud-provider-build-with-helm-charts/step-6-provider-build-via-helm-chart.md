@@ -62,6 +62,10 @@ helm repo update
 * Update the following keys for your unique use case
   * `region`
   * `organization`
+* Optional Parameters - the following parameters may be added at the same level as `from` and `key` if you which to advertise your support email address, company website URL, and HostURI.
+  * `email`
+  * `website`
+  * `hosturi`
 
 ```
 cd ~
@@ -176,13 +180,13 @@ TEST SUITE: None
 
 ## Specific Version
 
-If a need arises to use a different software version other than the one defined in the values.yaml Helm file - include the following section in the provider.yaml file and re-run the helm install command. In most circumstances this should not be necessary.
+If a need arises to use a different software version other than the one defined in the Chart.yaml Helm file - include the following section in the provider.yaml file and re-run the helm install command. In most circumstances this should not be necessary.
 
 * Example:
 
 ```
 image:
-  tag: 0.16.4-rc4
+  tag: 0.16.6
 ```
 
 ## **Provider Confirmation**

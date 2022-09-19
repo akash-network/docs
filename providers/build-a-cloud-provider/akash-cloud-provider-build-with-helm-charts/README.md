@@ -6,14 +6,6 @@ An Akash Provider leases compute to users launching new deployments. Follow the 
 
 This guide uses a single Kubernetes master node.
 
-## Lease Withdraw Known Bug and Temp Workaround
-
-* A known bug exists in Akash version 0.16.4 in which providers are not withdrawing from active leases properly.
-* Following your provider build using this guide, use these steps to determine if your provider is being impacted by this bug and to implement a temp workaround:
-
-> * To verify if your provider is being impacted by this bug follow the steps covered [here](https://gist.github.com/andy108369/3b396076c5426fa666e66fea22e2b4ef).
-> * To apply the temporary workaround for this bug, implement the steps covered [here](https://github.com/ovrclk/akash/issues/1635#issuecomment-1168944395) .
-
 ## Overview and links to the steps involved in Akash Provider Build:
 
 * [Prerequisites of an Akash Provider](step-1-prerequisites-of-an-akash-provider.md)
