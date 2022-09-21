@@ -62,10 +62,9 @@ helm repo update
 * Update the following keys for your unique use case
   * `region`
   * `organization`
-* Optional Parameters - the following parameters may be added at the same level as `from` and `key` if you which to advertise your support email address, company website URL, and HostURI.
+* Optional Parameters - the following parameters may be added at the same level as `from` and `key` if you which to advertise your support email address and company website URL.
   * `email`
   * `website`
-  * `hosturi`
 
 ```
 cd ~
