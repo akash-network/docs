@@ -60,7 +60,7 @@ env:
 | `port`   | Yes      | Container port to expose                                                                                       |
 | `as`     | No       | Port number to expose the container port as                                                                    |
 | `accept` | No       | List of hosts to accept connections for                                                                        |
-| `proto`  | No       | Protocol type (`tcp or http`)                                                                                  |
+| `proto`  | No       | Protocol type (`tcp, udp, or http`)                                                                            |
 | `to`     | No       | List of entities allowed to connect. See [services.expose.to](stack-definition-language.md#services.expose.to) |
 
 The `port` value governs the default `proto` value as follows:
