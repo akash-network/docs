@@ -118,12 +118,14 @@ vi ~/kubespray/inventory/akash/hosts.yaml
 ```
 
 * Within the YAML file’s “all” stanza and prior to the “hosts” sub-stanza level  - insert the following vars stanza
+* We currently recommend the Calico `checksum offload` setting due to this [issue](https://github.com/kubernetes-sigs/kubespray/pull/9261#issuecomment-1248844913)
 
 ```
 vars:
   cluster_id: "1.0.0.1"
   ansible_user: root
   gvisor_enabled: true
+  calico_feature_detect_override: "ChecksumOffloadBroken=true"
 ```
 
 * The hosts.yaml file should look like this once finished
@@ -134,6 +136,7 @@ all:
     cluster_id: "1.0.0.1"
     ansible_user: root
     gvisor_enabled: true
+    calico_feature_detect_override: "ChecksumOffloadBroken=true"
   hosts:
     node1:
       ansible_host: 10.0.10.136
