@@ -13,14 +13,14 @@ The Akash Validator will be built with the following attributes:
 
 ### Sections within this Guide
 
-[Cloudmos Deploy Review](cloudmos-deploy-review.md)
+[STEP 1 - Cloudmos Deploy Review](cloudmos-deploy-review.md)
 
-[FileBase Buckets](filebase-buckets.md)
+[STEP 2 - FileBase Buckets](filebase-buckets.md)
 
-[Akash SDL Review](akash-sdl-review.md)
+[STEP 3 - Akash SDL Review](akash-sdl-review.md)
 
-[Cloudmos Initial Deployment](cloudmos-initial-deployment.md)
+[STEP 4 - Cloudmos Initial Deployment](cloudmos-initial-deployment.md)
 
-[Edit SDL with Known IDs](edit-sdl-with-known-ids.md)
+[STEP 5 - Edit SDL with Known IDs](edit-sdl-with-known-ids.md)
 
-[Redeploy Validator and Sentries with Cloudmos](redeploy-validator-and-sentries-with-cloudmos.md)
+[STEP 6 - Redeploy Validator and Sentries with Cloudmos](redeploy-validator-and-sentries-with-cloudmos.md)

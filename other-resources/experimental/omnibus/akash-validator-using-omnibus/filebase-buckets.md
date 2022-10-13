@@ -2,8 +2,8 @@
 
 The Omnibus framework used to build our Akash Validator will store the following info in a S3 bucket for re-use when a deployment is restarted.  All data stored will be encrypted.
 
-* Validator's private key
-* Node IDs - more detail on the use of these IDs later in this guide
+* _Validator's Private Key_
+* _Node IDs_ - more detail on the use of these IDs later in this guide
 
 ## Bucket Creation
 
@@ -17,4 +17,4 @@ Create the following buckets within FileBase for upcoming use in the Validator b
 
 ## Access Keys
 
-Visit the FileBase \`Access Keys\` menu option and capture the Key and Secret for use in subsequent steps.
+Visit the FileBase \`Access Keys\` menu option and capture the `KEY` and `SECRET` for use in subsequent steps.

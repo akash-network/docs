@@ -5,10 +5,10 @@ In this step we will revisit and edit our initial SDL file with the known Valida
 ## Validator Service Update
 
 * Update the following entry in the SDL under the Validator service
-* Use the node1 and node2 IDs captured in the previous steps as the comma separated values of this variable
 
 `AKASH_UNCONDITIONAL_PEER_IDS`
 
+* Use the node1 and node2 IDs captured in the previous steps as the comma separated values of this variable
 * Once populated this variable should appear as below in the greater section (example IDs shown and should be your own)
 
 ```
@@ -35,12 +35,12 @@ In this step we will revisit and edit our initial SDL file with the known Valida
 ## Node Service Update
 
 * Update the following entries in the SDL under the node1 and node2 services
-* Use the validator ID captured in the previous steps as the comma separated values of this variable
 
 `AKASH_PRIVATE_PEER_IDS`
 
 `AKASH_UNCONDITIONAL_PEER_IDS`
 
+* Use the validator ID captured in the previous steps as the comma separated values of this variable
 * Once populated these variables should appear as below in the greater section (example ID shown and should be your own)
 * Only `node1` example shown. Identical updates should be made to the `node2` service as well.
 

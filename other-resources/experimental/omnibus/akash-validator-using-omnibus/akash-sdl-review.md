@@ -10,12 +10,13 @@ Copy the SDL located in the repository into a local editor for customizations co
 
 ## Initial SDL Customizations
 
-All SDL edits necessary are environment variable related.  Within the SDL, we will only edit values within the Services > ENV sections.  All other segments of the SDL can be used from the template without need to edit.
+All SDL edits necessary are environment variable related.  Within the SDL, we will only edit values within the `services` section and  `env` subsections.  All other segments of the SDL can be used from the template without need to edit.
 
 ### Validator Service
 
-* The first service listed in the SDL that requires customization is for the `validator` instance as shown below.
-* **NOTE** - eventually we will need to additionally update the AKASH\_UNCONDITIONAL\_PEER\_IDS variable. But at this point in the process these IDs - which are the IDs of the Sentry nodes are not known - and based on this we will update this field later.
+* The first service listed in the SDL and which requires customization is the `validator` service
+* Recommended `env` variable updates are detailed in the code block below
+* **NOTE** - eventually we will need to additionally update the AKASH\_UNCONDITIONAL\_PEER\_IDS variable. But at this point in the process these IDs - which are the IDs of the Sentry nodes - are not known.  Based on this we will update this field later.
 
 Update the following env variables with suggested values:
 
@@ -61,8 +62,9 @@ validator:
 
 ### Sentry Node #1 Service
 
-* The second service encountered in the SDL that requires customization is for the `node1` instance as shown below.
-* **NOTE** - eventually we will need to additionally update the `AKASH_PRIVATE_PEER_IDS` and `AKASH_UNCONDITIONAL_PEER_IDS`  variables.  But at this point in the process these IDs - which is the ID of the Validator node is not known - and based on this we will update this field later.
+* The second service listed in the SDL that requires customization is for the `node1` service.
+* Recommended `env` variable updates are detailed in the code block below
+* **NOTE** - eventually we will need to additionally update the `AKASH_PRIVATE_PEER_IDS` and `AKASH_UNCONDITIONAL_PEER_IDS`  variables.  But at this point in the process these IDs - which is the ID of the Validator node - is not known. We will update these fields later.
 
 Update the following env variables with suggested values:
 
@@ -98,12 +100,13 @@ KEY_PATH=akashnode1
       - S3_KEY=<redacted>
       - S3_SECRET=<redacted>
       - KEY_PASSWORD=<redacted>
-      - KEY_PATH=<redacted>
+      - KEY_PATH=akashnode1
 ```
 
 ### Sentry Node #2 Service
 
-* The third and final service encountered in the SDL that requires customization is for the `node2` instance as shown below.
+* The third and final service list in the SDL that requires customization is for the `node2` service.
+* Recommended `env` variable updates are detailed in the code block below
 * **NOTE** - eventually we will need to additionally update the `AKASH_PRIVATE_PEER_IDS` and `AKASH_UNCONDITIONAL_PEER_IDS` variables. But at this point in the process these IDs - which is the ID of the Validator node is not known - and based on this we will update this field later.
 
 Update the following env variables with suggested values:
@@ -117,7 +120,7 @@ S3_SECRET=<specify the secret captured in FileBase>
 
 KEY_PASSWORD=<password of your choice that is used in encryption of files in FileBase>
 
-KEY_PATH=akashnode1
+KEY_PATH=akashnode2
 ```
 
 #### Example/Populated Variables
@@ -140,5 +143,5 @@ KEY_PATH=akashnode1
       - S3_KEY=<redacted>
       - S3_SECRET=<redacted>
       - KEY_PASSWORD=<redacted>
-      - KEY_PATH=<redacted>
+      - KEY_PATH=akashnode2
 ```
