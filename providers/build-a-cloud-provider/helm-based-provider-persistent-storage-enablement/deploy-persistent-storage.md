@@ -354,11 +354,11 @@ kubectl label sc beta3 akash.network=true
 
 #### STEP 4 - Update Failure Domain (Single Storage Node or All-In-One Scenarios Only)
 
-> When running a single storage node or all-in-one, make sure to change the failure domain from `host` to `osd` for the `device_health_metrics` (before Ceph Quincy v17 / rook-ceph v1.10.x) pool or the `.mgr` pool if otherwise:
+> When running a single storage node or all-in-one, make sure to change the failure domain from `host` to `osd` for the `.mgr` pool.
 
 ```
 kubectl -n rook-ceph exec -it $(kubectl -n rook-ceph get pod -l "app=rook-ceph-tools" -o jsonpath='{.items[0].metadata.name}') -- bash
 
 ceph osd crush rule create-replicated replicated_rule_osd default osd
-ceph osd pool set device_health_metrics crush_rule replicated_rule_osd
+ceph osd pool set .mgr crush_rule replicated_rule_osd
 ```
