@@ -1,5 +1,15 @@
 # Persistent Storage Requirements
 
+
+
+## Environment Overview
+
+When planning persistent storage, take into account the network (between the storage nodes) as a factor which will cause the latency, causing slower disk throughput / IOPS. This might not be suitable for heavy IOPS applications such as Solana validator.&#x20;
+
+In this case the "all-in-one" provider configuration might be desirable to avoid the network affecting the storage performance. I.e. for the best disk performance, the pods should run where persistent storage has been deployed.&#x20;
+
+It is advised to run control-plane / etcd separately, for sake of performance and security. We recommend to benchmark your storage with this [script](https://github.com/masonr/yet-another-bench-script) before and after deploying Persistent Storage. This will help know the difference before starting to advertising your provider on the Akash network.
+
 ## Environment Requirements
 
 For hosting of persistent storage please note the following, strict requirements for production use.
