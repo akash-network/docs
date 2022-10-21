@@ -29,7 +29,7 @@ akash tx deployment authz grant akash17ck7uhkpjjj45fw9s9vpv7jn0m97958vjjxmf8 200
 
 ### **Description**
 
-To view wallets authorized to spend from the funding wallet
+To view wallets authorized to spend from the funding wallet to a specific deploy wallet
 
 ### **Syntax**
 
@@ -61,6 +61,10 @@ pagination:
 ```
 
 ## View Authorizations Created - All Deploy Wallets
+
+### **Description**
+
+To view ALL wallets authorized to spend from the funding wallet
 
 ### **Syntax**
 
