@@ -25,7 +25,7 @@ akash tx deployment authz grant <deploy-wallet> <fund-amount> --from <funding-wa
 akash tx deployment authz grant akash17ck7uhkpjjj45fw9s9vpv7jn0m97958vjjxmf8 20000000uakt --from akash10x24jqyplwk37nynqy0pqaez5sx9fqrll59hl9
 ```
 
-## View Authorizations Created
+## View Authorization Created - Specific Deploy Wallet
 
 ### **Description**
 
@@ -58,6 +58,20 @@ grants:
 pagination:
   next_key: null
   total: "0"
+```
+
+## View Authorizations Created - All Deploy Wallets
+
+### **Syntax**
+
+```
+akash query authz granter-grants <funding-wallet-address>
+```
+
+### **Example Use**
+
+```
+akash query authz granter-grants akash10x24jqyplwk37nynqy0pqaez5sx9fqrll59hl9
 ```
 
 ## Change Amount of Authorized Funds
