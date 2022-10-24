@@ -1,4 +1,4 @@
-# Part 5. Create your Configuration
+# Create your Configuration
 
 Create a deployment configuration [deploy.yaml](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/sdl/README.md).
 
@@ -10,7 +10,7 @@ curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deplo
 
 ### Modify your Configuration
 
-You may use the sample deployment file as-is or modify it for your own needs as dsscribed in our [SDL (Stack Definition Language)](../../../sdl/) documentation. A typical modification would be to reference your own image instead of our demo app image.
+You may use the sample deployment file as-is or modify it for your own needs as described in our [SDL (Stack Definition Language)](../../../sdl/) documentation. A typical modification would be to reference your own image instead of our demo app image.
 
 #### EXAMPLE CONFIGURATION:
 
