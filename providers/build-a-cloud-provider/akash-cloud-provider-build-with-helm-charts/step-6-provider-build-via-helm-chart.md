@@ -22,6 +22,8 @@ KEY_PASSWORD=12341234
 3\.  Set your domain. Register DNS A and wildcard address as specified in previous step, i.e. `provider.test.com` DNS A record and `*.ingress.test.com` DNS wildcard record.
 
 > Domain should be a publicly accessible DNS name dedicated for your provider use such as test.com.
+>
+> The domain specified in this variable will also be used by Helm in the Ingress Controller install in upcoming steps.  The domain provided will be included in auto-generated URIs for web app deployments such as `abc123.ingress.test.com` in our example.
 
 ```
 DOMAIN=test.com
