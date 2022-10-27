@@ -1,5 +1,11 @@
 # STEP 6 - Provider Build via Helm Chart
 
+## **Overview**
+
+In this section the Akash Provider will be installed and customized via the use of Helm Charts.
+
+> _**NOTE**_ - when the Helm Chart is installed the Provider instance/details will be created on the blockchain.  The associated transaction for Provider creation is detailed [here](../../../cli/akash\_tx\_provider\_create.md).
+
 ## **Environment Variables**
 
 * Declare the following environment variables for Helm use
