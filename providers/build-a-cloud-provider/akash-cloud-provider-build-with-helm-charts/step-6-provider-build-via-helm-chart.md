@@ -4,7 +4,7 @@
 
 In this section the Akash Provider will be installed and customized via the use of Helm Charts.
 
-> _**NOTE**_ - when the Helm Chart is installed the Provider instance/details will be created on the blockchain.  The associated transaction for Provider creation is detailed [here](../../../cli/akash\_tx\_provider\_create.md).
+> _**NOTE**_ - when the Helm Chart is installed the Provider instance/details will be created on the blockchain and your provider will be registered in the Akash open cloud marketplace.  The associated transaction for Provider creation is detailed [here](../../../cli/akash\_tx\_provider\_create.md).
 
 ## **Environment Variables**
 
@@ -29,7 +29,9 @@ KEY_PASSWORD=12341234
 
 > Domain should be a publicly accessible DNS name dedicated for your provider use such as test.com.
 >
-> The domain specified in this variable will also be used by Helm in the Ingress Controller install in upcoming steps.  The domain provided will be included in auto-generated URIs for web app deployments such as `abc123.ingress.test.com` in our example.
+>
+>
+> The domain specified in this variable will be used by Helm during the Provider chart install process to produce the "provider.yourdomain.com" sub-domain name and the "ingress.yourdomain.com" sub-domain name. The domain specified will also be used by Helm during the Ingress Controller install steps coming up in this guide. Once your provider is up and running the \*.ingress.yourdomain.com URI will be used for web app deployments such as abc123.ingress.yourdomain.com.
 
 ```
 DOMAIN=test.com

@@ -16,12 +16,4 @@ The steps outlined above will guide the user through the creation of an Akash Pr
 
 The Akash Helm Chart repository can be accessed [here](https://github.com/ovrclk/helm-charts).
 
-| Chart Name               | Description                                                        |   |
-| ------------------------ | ------------------------------------------------------------------ | - |
-| akash-provider           | Installs an Akash provider (required)                              |   |
-| akash-ingress            | Installs the Akash Ingress resources (required)                    |   |
-| akash-hostname-operator  | An operator to map Ingress objects to Akash deployments (required) |   |
-| akash-node               | Installs an Akash RPC node (required)                              |   |
-| akash-inventory-operator | An operator required for persistent storage (optional)             |   |
-| akash-ip-operator        | An operator required for ip marketplace (optional)                 |   |
-| akash-metallb            | A dependency required for ip marketplace (optional)                |   |
+<table><thead><tr><th>Chart Name</th><th>Description</th><th data-hidden></th></tr></thead><tbody><tr><td>akash-provider</td><td>Installs an Akash provider (required)</td><td></td></tr><tr><td>akash-ingress</td><td>Installs the Akash Ingress resources (required)</td><td></td></tr><tr><td>akash-hostname-operator</td><td>An operator to map Ingress objects to Akash deployments (required)</td><td></td></tr><tr><td>akash-node</td><td>Installs an Akash RPC node (required)</td><td></td></tr><tr><td>akash-inventory-operator</td><td>An operator required for persistent storage (optional)</td><td></td></tr><tr><td>akash-ip-operator</td><td>An operator required for ip marketplace (optional)</td><td></td></tr><tr><td>akash-metallb</td><td>A dependency required for ip marketplace (optional)</td><td></td></tr></tbody></table>
