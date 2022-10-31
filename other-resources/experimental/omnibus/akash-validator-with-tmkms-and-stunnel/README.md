@@ -2,7 +2,7 @@
 
 **NOTE** - the steps in this guide are currently deemed experimental pending security enhancements that will be introduced prior to becoming production grade.  At this time, please only use this guide for experimentation or non-production use.
 
-In this guide we will create an Akash Validator as a deployment.  The Tendermint Key Management System (TMKMS) will be used so that we do not store the validator's private key on the validator server itself.
+In this guide we will create an Akash Validator as a deployment on the Akash network.  The Tendermint Key Management System (TMKMS) will be used so that we do not store the validator's private key on the validator server itself.
 
 An implementation of Stunnel is included to provide secure peer to peer communication between the Akash validator and the TMKMS server.
 
@@ -17,3 +17,4 @@ Sections in this guide:
 * [STEP 5 - Start and Verify the TMKMS Service](start-and-verify-the-tmkms-service.md)
 * [STEP 6 - Stunnel Client](stunnel-client.md)
 * [STEP 7 - Verify Validator Status](verify-validator-status.md)
+* [Additional Resources](additional-resources.md)

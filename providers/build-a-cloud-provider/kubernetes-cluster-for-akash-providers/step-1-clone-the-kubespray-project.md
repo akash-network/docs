@@ -13,7 +13,11 @@ The recommended minimum number of hosts is four for a production Provider Kubern
 
 While you could use a single Kubernetes host in testing and dev this would not be recommended for production.
 
-## Kubernetes Cluster Hardware Requirements and Recommendations
+## Kubernetes Cluster Software/Hardware Requirements and Recommendations
+
+### Software Recommendation
+
+Akash Providers have been tested on Ubuntu 22.04 with the default Linux kernel. Your experience may vary should install be attempted using a different Linux distro/kernel.
 
 ### Kubernetes Master Node Requirements
 

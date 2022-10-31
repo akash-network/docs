@@ -136,10 +136,9 @@ akash tx slashing unjail \
 ### Ensure Validator Sync
 
 * Ensure that the field \`catching\_up\` is false and that the latest block corresponds to the current block of the blockchain
-
-```
-akash status
-```
+* ```
+  akash status
+  ```
 
 #### Example Output when Validator is in Sync
 

@@ -4,6 +4,8 @@
 
 Building an Akash Validator is simplified via the use of Cosmos Omnibus and as detailed in this guide.
 
+> _**NOTE**_ - using the procedures in this guide the Validator private key will be stored within the associated Akash deployment.  Ensure that only known, trusted providers are used for such deployments.  Additionally consider storing the private key outside of the deployment through the use of TMKMS or similar solution.
+
 The Akash Validator will be built with the following attributes:
 
 * Two Sentry nodes will be created to protect the validator from distributed denial of service (DDOS) attacks
