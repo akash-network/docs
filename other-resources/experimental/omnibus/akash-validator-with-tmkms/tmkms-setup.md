@@ -81,7 +81,7 @@ vi ~/tmkms/config/tmkms.toml
 
 * Copy the following configuration into the new `tmkms.toml` file
 * Updating this file with your Akash validator URI - in the `addr` field - is the only edit that should be necessary
-* The Akash validator URI was revealed and captured in the [Akash Validator Deployment](../akash-validator-with-tmkms-and-stunnel/akash-validator-deployment.md) section of this guide
+* The Akash validator URI was revealed and captured in the [Akash Validator Deployment](../../../../validating/akash-validator-with-tmkms-and-stunnel/akash-validator-deployment.md) section of this guide
 * Refer to the [example](tmkms-setup.md#example-tmkms.toml-file) for further clarification
 
 ```

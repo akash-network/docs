@@ -8,8 +8,8 @@ The Validator deployment will take advantage of statesync for rapid blockchain s
 
 Sections in this guide:
 
-* [Validator Topology](../akash-validator-with-tmkms-and-stunnel/validator-topology.md)
-* [Obtain Private Key](../akash-validator-with-tmkms-and-stunnel/obtain-private-key.md)
-* [Akash Validator Deployment](../akash-validator-with-tmkms-and-stunnel/akash-validator-deployment.md)
+* [Validator Topology](../../../../validating/akash-validator-with-tmkms-and-stunnel/validator-topology.md)
+* [Obtain Private Key](../../../../validating/akash-validator-with-tmkms-and-stunnel/obtain-private-key.md)
+* [Akash Validator Deployment](../../../../validating/akash-validator-with-tmkms-and-stunnel/akash-validator-deployment.md)
 * [TMKMS Setup](broken-reference)
-* [Start and Verify the TMKMS Service](../akash-validator-with-tmkms-and-stunnel/start-and-verify-the-tmkms-service.md)
+* [Start and Verify the TMKMS Service](../../../../validating/akash-validator-with-tmkms-and-stunnel/start-and-verify-the-tmkms-service.md)
