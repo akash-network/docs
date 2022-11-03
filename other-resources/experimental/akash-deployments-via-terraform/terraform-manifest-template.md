@@ -22,7 +22,7 @@ terraform {
   required_providers {
     akash = {
       source = "cloud-j-luna/akash"
-      version = "0.0.3"
+      version = "0.0.5"
     }
   }
 }
@@ -37,7 +37,7 @@ terraform {
 provider "akash" {
   account_address = "akash1<redacted>"
   keyring_backend = "os"
-  key_name = "examplekey"
+  key_name = "mykey"
   node = "https://akash-rpc.polkachu.com:443"
   chain_id = "akashnet-2"
   chain_version = "0.16.4"
