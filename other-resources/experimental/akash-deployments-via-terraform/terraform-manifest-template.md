@@ -37,7 +37,7 @@ terraform {
 provider "akash" {
   account_address = "akash1<redacted>"
   keyring_backend = "os"
-  key_name = "mykey"
+  key_name = "examplekey"
   node = "https://akash-rpc.polkachu.com:443"
   chain_id = "akashnet-2"
   chain_version = "0.16.4"

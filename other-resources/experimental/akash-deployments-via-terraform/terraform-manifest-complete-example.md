@@ -7,7 +7,7 @@ terraform {
   required_providers {
     akash = {
       source = "cloud-j-luna/akash"
-      version = "0.0.3"
+      version = "0.0.5"
     }
   }
 }
