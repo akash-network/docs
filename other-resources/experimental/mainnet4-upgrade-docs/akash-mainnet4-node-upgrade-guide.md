@@ -120,7 +120,7 @@ Restart `cosmovisor` to ensure the environment variables have been updated:
 ```
 systemctl daemon-reload
 systemctl start akash
-systemctl enable
+systemctl enable akash
 ```
 
 Check the status of the `cosmovisor` service:
