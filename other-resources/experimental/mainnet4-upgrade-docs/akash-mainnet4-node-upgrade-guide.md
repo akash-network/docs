@@ -112,15 +112,15 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 Move the file to the systemd directory:
 
 ```
-sudo mv cosmovisor.service /lib/systemd/system/cosmovisor.service
+sudo mv cosmovisor.service /etc/systemd/system/akash.service
 ```
 
 Restart `cosmovisor` to ensure the environment variables have been updated:
 
 ```
-sudo systemctl stop cosmovisor
-sudo systemctl daemon-reload
-sudo systemctl start cosmovisor
+systemctl daemon-reload
+systemctl start akash
+systemctl enable
 ```
 
 Check the status of the `cosmovisor` service:
