@@ -22,6 +22,22 @@ description: >-
 
 The latest version of Go (1.19) is required. For more information, see [Go](https://golang.org/).
 
+## Common Steps for All Upgrade Options
+
+In the sections that follow both `Cosmovisor` and `non-Cosmovisor` upgrade paths are provided.  Prior to detailing specifics steps for these upgrade paths, in this section we cover steps required regardless of upgrade path chosen.
+
+> _**Note**_: The following steps are not required if the auto-download option is enabled for Cosmovisor.
+
+Either [download the Akash binary](https://github.com/ovrclk/akash/releases/tag/v0.18.0) (v0.18.0) or build it from source:
+
+```
+git clone https://github.com/ovrclk/akash
+cd akash
+git fetch --all
+git checkout v0.18.0
+make akash
+```
+
 ## Option 1: Upgrade Using Cosmovisor
 
 The following instructions assume the `akash` and `cosmovisor` binaries are already installed and cosmovisor is set up as a systemd service.&#x20;
@@ -46,26 +62,35 @@ Check to ensure the installation was successful:
 DAEMON_NAME=akash DAEMON_HOME=~/.akash cosmovisor version
 ```
 
-Update `cosmovisor` systemd service file and make sure the environment variables are set to the appropriate values (the following example includes the recommended settings):
+Update `cosmovisor` systemd service file and make sure the environment variables are set to the appropriate values (the following example includes the recommended settings).
+
+* _**NOTE**_ - `UNSAFE_SKIP_BACKUP=false` is set to false indicating that a backup is enabled.  The `DAEMON_DATA_BACKUP_DIR` will dictate where the backup is stored.
+* _**NOTE**_ - with `UNSAFE_SKIP_BACKUP`  set to false, Cosmovisor will make a copy of the entire chain.  Please ensure that your node has sufficient space to accommodate this chain backup which may be large.
+* _**NOTE**_ - It is preferable if you start your service under a dedicated non-system user other than root.
 
 ```
-echo "[Unit]
-Description=Cosmovisor daemon
+[Unit]
+Description=Akash with cosmovisor
+Requires=network-online.target
 After=network-online.target
+
 [Service]
+User=root
+Group=root
+ExecStart=/root/go/bin/cosmovisor run start
+
+Restart=always
+RestartSec=10
+LimitNOFILE=4096
 Environment="DAEMON_NAME=akash"
-Environment="DAEMON_HOME=${HOME}/.akash"
+Environment="DAEMON_HOME=/root/.akash"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
-Environment="UNSAFE_SKIP_BACKUP=false"
-User=${USER}
-ExecStart=${GOBIN}/cosmovisor start
-Restart=always
-RestartSec=3
-LimitNOFILE=4096
+Environment="DAEMON_LOG_BUFFER_SIZE=512"
+Environment="UNSAFE_SKIP_BACKUP=true"
+
 [Install]
 WantedBy=multi-user.target
-" >cosmovisor.service
 ```
 
 Cosmovisor can be configured to automatically download upgrade binaries. It is recommended that validators do not use the auto-download option and that the upgrade binary is compiled and placed manually.&#x20;
@@ -112,19 +137,7 @@ sudo systemctl enable cosmovisor.service
 
 ### Prepare Upgrade Binary
 
-> _**Note**_: The following steps are not required if the auto-download option was enabled.
-
-Either [download the Akash binary](https://github.com/ovrclk/akash/releases/tag/v0.18.0) (v0.18.0) or build it from source:
-
-```
-git clone https://github.com/ovrclk/akash
-cd akash
-git fetch --all
-git checkout v0.18.0
-make akash
-```
-
-Create the folder for the upgrade binary (v0.18.0) and copy the akash binary into the folder.&#x20;
+Create the folder for the upgrade binary (v0.18.0) - cloned in this [step](akash-mainnet4-node-upgrade-guide.md#common-steps-for-all-upgrade-options) - and copy the akash binary into the folder.&#x20;
 
 This next step assumes that the akash binary was built from source and stored in the current (i.e., akash) directory:
 
@@ -145,16 +158,7 @@ Node operators also have the option to manually update the `akash` binary at the
 
 When the chain halts at the proposed upgrade height, stop the current process running `akash`.
 
-Either download the upgrade binary (v0.18.0) or build it from source:
-
-```
-cd akash
-git fetch --all
-git checkout v0.18.0
-make install
-```
-
-Ensure the `akash` binary has been updated:
+Either download the Akash upgrade binary (v0.18.0) or build from source - completed in this [step](akash-mainnet4-node-upgrade-guide.md#common-steps-for-all-upgrade-options) -  and ensure the `akash` binary has been updated:
 
 ```
 akash version
