@@ -3,7 +3,6 @@
 * [Intro to Akash](README.md)
   * [Technical Support](support.md)
   * [Stack Definition Language (SDL)](stack-definition-language.md)
-* [Mainnet4 Upgrade Docs](mainnet4-upgrade-docs.md)
 * [Tokens and Wallets](tokens-and-wallets/README.md)
   * [Developer Tokens](token/funding.md)
   * [Buy Akash Tokens](token/buy.md)
