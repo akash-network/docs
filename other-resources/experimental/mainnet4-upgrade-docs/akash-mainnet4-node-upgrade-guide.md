@@ -20,7 +20,7 @@ description: >-
 
 ### Update Go
 
-The latest version of Go (1.17) is required. For more information, see [Go](https://golang.org/).
+The latest version of Go (1.19) is required. For more information, see [Go](https://golang.org/).
 
 ## Option 1: Upgrade Using Cosmovisor
 
