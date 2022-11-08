@@ -37,7 +37,7 @@ The section that follows will detail the install/configuration of Cosmovisor. If
 To install `cosmovisor` by running the following command:
 
 ```
-go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0
+go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0 
 ```
 
 Check to ensure the installation was successful:
@@ -114,7 +114,7 @@ sudo systemctl enable cosmovisor.service
 
 > _**Note**_: The following steps are not required if the auto-download option was enabled.
 
-Either download the Akash binary (v0.18.0) or build it from source:
+Either [download the Akash binary](https://github.com/ovrclk/akash/releases/tag/v0.18.0) (v0.18.0) or build it from source:
 
 ```
 git clone https://github.com/ovrclk/akash
