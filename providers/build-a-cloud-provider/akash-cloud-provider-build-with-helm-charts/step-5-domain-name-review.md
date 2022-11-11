@@ -9,6 +9,8 @@ Add DNS (type A) records for your Akash Provider related domains on your DNS hos
 * Replace yourdomain.com with your own domain name
 * DNS (type A) records should point to public IP address of a single Kubernetes worker node of your choice
 
+> _**NOTE**_ - do not use Cloudflare or any other TLS proxy solution for your Provider DNS A records.
+
 ```
 *.ingress.yourdomain.com
 
