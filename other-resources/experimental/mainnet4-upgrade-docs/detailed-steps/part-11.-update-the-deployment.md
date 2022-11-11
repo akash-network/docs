@@ -9,11 +9,11 @@ _**NOTE:**_\*\* Not all attributes of the manifest file are eligible for deploym
 ### Issue Transaction for On Chain Update
 
 ```
-akash tx deployment update deploy.yml --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME 
+provider-services tx deployment update deploy.yml --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME 
 ```
 
 ### Send Updated Manifest to Provider
 
 ```
-akash provider send-manifest deploy.yml --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER --from $AKASH_KEY_NAME
+provider-services send-manifest deploy.yml --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER --from $AKASH_KEY_NAME
 ```
