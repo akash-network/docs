@@ -50,13 +50,13 @@ NODE=http://akash-node-1:26657
 * Akash providers may dictate how often they withdraw funds consumed by active deployments/tenants escrow accounts
 * Few things to consider regarding the provider withdraw period:
   * The default withdraw setting in the Helm Charts is one (1) hour
-  * An advantage of the one hour default setting is assurance that a deployment may not breach the escrow account dramatically.  If the withdraw period were set to 24 hours instead - the deployment could exhaust the amount in escrow in one hour (for example) but the provider would not calculate this until many hours later and the deployment would essentially operate for free in the interim.
+  * An advantage of the one hour default setting is assurance that a deployment may not breach the escrow account dramatically.  If the withdraw period were set to 12 hours instead - the deployment could exhaust the amount in escrow in one hour (for example) but the provider would not calculate this until many hours later and the deployment would essentially operate for free in the interim.
   * A disadvantage of frequent withdraws is the possibility of losing profitability based on fees incurred by the providers withdraw transactions.  If the provider hosts primarily low resource workloads, it is very possible that fees could exceed deployment cost/profit.
 
 #### OPTIONAL - Update the Provider Withdraw Period
 
-* If it is desired to change the withdrawl period from the default one hour setting, update the `withdrawalperiod` setting in the provider.yaml file created subsequently in this section.
-* In the example the Provider Build section of this doc the withdrawl period has been set to 24 hours.  Please adjust as preferred.
+* If it is desired to change the withdrawal period from the default one hour setting, update the `withdrawalperiod` setting in the provider.yaml file created subsequently in this section.
+* In the example the Provider Build section of this doc the withdrawal period has been set to 12 hours.  Please adjust as preferred.
 
 ## **Provider Build Prep**
 
@@ -90,7 +90,7 @@ key: "$(cat ~/key.pem | openssl base64 -A)"
 keysecret: "$(echo $KEY_PASSWORD | openssl base64 -A)"
 domain: "$DOMAIN"
 node: "$NODE"
-withdrawalperiod: 24h
+withdrawalperiod: 12h
 attributes:
   - key: region
     value: "<YOUR REGION>"   # set your region here, e.g. "us-west"
@@ -113,7 +113,7 @@ key: "$(cat ./key.pem | openssl base64 -A)"
 keysecret: "$(echo $KEY_PASSWORD | openssl base64 -A)"
 domain: "$DOMAIN"
 node: "$NODE"
-withdrawalperiod: 24h
+withdrawalperiod: 12h
 attributes:
   - key: region
     value: us-east
@@ -145,7 +145,7 @@ from: akash1<REDACTED>
 key: LS0tLS1CRU<REDACTED>0tLS0tCg==
 keysecret: QUtB<REDACTED>XIK
 node: http://<rpc-address>:26657
-withdrawalperiod: 24h
+withdrawalperiod: 12h
 attributes:
 - key: region
   value: us-east
