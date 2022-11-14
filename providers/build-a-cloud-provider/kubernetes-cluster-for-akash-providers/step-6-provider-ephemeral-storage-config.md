@@ -2,7 +2,7 @@
 description: Configure provider to offer sufficient ephemeral storage
 ---
 
-# STEP 6 - Provider Ephemeral Storage Config
+# STEP 6 - Provider Ephemeral Storage Config (OPTIONAL)
 
 ## Overview
 
