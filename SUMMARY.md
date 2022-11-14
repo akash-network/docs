@@ -227,6 +227,7 @@
         * [Send the Manifest](other-resources/experimental/mainnet4-upgrade-docs/detailed-steps/part-10.-send-the-manifest.md)
         * [Update the Deployment](other-resources/experimental/mainnet4-upgrade-docs/detailed-steps/part-11.-update-the-deployment.md)
         * [Close Deployment](other-resources/experimental/mainnet4-upgrade-docs/detailed-steps/close-deployment.md)
+    * [Provider Ephemeral Storage Config](other-resources/experimental/provider-ephemeral-storage-config.md)
   * [Security](glossary/security.md)
   * [Containers](glossary/platform.md)
   * [Marketplace](glossary/marketplace.md)
