@@ -74,7 +74,7 @@
       * [STEP 3 - Ansible Access to Kubernetes Cluster](providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-3-ansible-access-to-kubernetes-cluster.md)
       * [STEP 4 - Ansible Inventory](providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-4-ansible-inventory.md)
       * [STEP 5 - Enable gVisor](providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-5-enable-gvisor.md)
-      * [STEP 6 - Provider Ephemeral Storage Config](providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-6-provider-ephemeral-storage-config.md)
+      * [STEP 6 - Provider Ephemeral Storage Config (OPTIONAL)](providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-6-provider-ephemeral-storage-config-optional.md)
       * [STEP 7 - Create Kubernetes Cluster](providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-6-create-kubernetes-cluster.md)
       * [STEP 8 - Confirm Kubernetes Cluster](providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-7-confirm-kubernetes-cluster.md)
       * [STEP 9 - Review Firewall Policies](providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-9-review-firewall-policies.md)
