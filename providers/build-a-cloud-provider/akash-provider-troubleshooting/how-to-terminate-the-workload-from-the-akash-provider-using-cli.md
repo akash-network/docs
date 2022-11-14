@@ -1,4 +1,4 @@
-# Akash Provider FAQ
+# How to terminate the workload from the Akash Provider using CLI
 
 ## How to terminate the workload from the Akash Provider using CLI
 
