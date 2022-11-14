@@ -5,6 +5,6 @@
 Should you need to close the deployment follow this step.
 
 ```
-akash tx deployment close --from $AKASH_KEY_NAME
+provider-services tx deployment close --from $AKASH_KEY_NAME
 ```
 

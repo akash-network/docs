@@ -2,7 +2,7 @@
 description: Configure provider to offer sufficient ephemeral storage
 ---
 
-# Provider Ephemeral Storage Config
+# STEP 6 - Provider Ephemeral Storage Config
 
 ## Overview
 
@@ -227,6 +227,8 @@ kubectl get pods -A -o wide | grep <your node>
 ```
 
 ## Make applications aware of the new nodefs location
+
+> If you aren't using `rook-ceph` / `velero`, then skip this section
 
 ### Ceph's rook-ceph-operator
 
