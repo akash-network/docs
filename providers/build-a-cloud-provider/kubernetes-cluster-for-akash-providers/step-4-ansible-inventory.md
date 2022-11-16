@@ -124,7 +124,6 @@ vi ~/kubespray/inventory/akash/hosts.yaml
 vars:
   cluster_id: "1.0.0.1"
   ansible_user: root
-  gvisor_enabled: true
   calico_feature_detect_override: "ChecksumOffloadBroken=true"
 ```
 
@@ -135,7 +134,6 @@ all:
   vars:
     cluster_id: "1.0.0.1"
     ansible_user: root
-    gvisor_enabled: true
     calico_feature_detect_override: "ChecksumOffloadBroken=true"
   hosts:
     node1:

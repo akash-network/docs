@@ -23,7 +23,7 @@ Please consider using the [Praetor](../../community-solutions/praetor.md) applic
 * [Install Ansible](step-2-install-ansible.md)
 * [Ansible Access to Kubernetes Cluster](step-3-ansible-access-to-kubernetes-cluster.md)
 * [Ansible Inventory](step-4-ansible-inventory.md)
-* [Enable gVisor](step-5-enable-gvisor.md)
+* [Additional Verifications](step-5-enable-gvisor.md)
 * [Provider Ephemeral Storage Config](step-6-provider-ephemeral-storage-config.md)
 * [Create Kubernetes Cluster](step-6-create-kubernetes-cluster.md)
 * [Confirm Kubernetes Cluster](step-7-confirm-kubernetes-cluster.md)
