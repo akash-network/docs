@@ -52,13 +52,11 @@ Set the below set of environment variables to ensure smooth operations
 | AKASH\_GAS\_ADJUSTMENT | Adjustment factor to be multiplied against the estimate returned by the tx simulation     | `1.15`            |
 | AKASH\_GAS\_PRICES     | Gas prices in decimal format to determine the transaction fee                             | `0.025uakt`       |
 | AKASH\_SIGN\_MODE      | Signature mode                                                                            | `amino-json`      |
-| AKASH\_CHAIN\_ID       | The network chain ID                                                                      | `akashnet-2`      |
 
 ```
 export AKASH_GAS=auto
 export AKASH_GAS_ADJUSTMENT=1.25
 export AKASH_GAS_PRICES=0.025uakt
-export AKASH_CHAIN_ID=akashnet-2
 export AKASH_SIGN_MODE=amino-json
 ```
 
