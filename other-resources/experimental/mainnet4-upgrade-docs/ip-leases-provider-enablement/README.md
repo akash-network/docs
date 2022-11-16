@@ -4,6 +4,8 @@ In this guide we detail the enablement of IP Leases on a pre-existing Akash prov
 
 Please be aware of the following prerequisites prior to getting started.&#x20;
 
+> _**NOTE**_ - IP Leases enablement is an optional step for Akash providers.  Some providers may not have available public IP address pools and/or other requirements for enabling this feature.
+
 ## Prerequisites&#x20;
 
 * Provider IP Leases enablement is only supported for Akash providers built using [Helm Charts](../../../../providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/)
