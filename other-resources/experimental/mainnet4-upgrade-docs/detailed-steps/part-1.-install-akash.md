@@ -9,7 +9,8 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 The simplest way to install Akash is using Homebrew using:
 
 ```
-brew install ovrclk/tap/akash
+brew tap ovrclk/tap
+brew install akash-provider-services
 ```
 
 If you do not have homebrew, follow the below steps for installing the Akash Binary.
@@ -55,7 +56,8 @@ v0.1.0
 The simplest way to install Akash is using Homebrew using:
 
 ```
-brew install ovrclk/tap/akash
+brew tap ovrclk/tap
+brew install akash-provider-services
 ```
 
 If you do not have homebrew, follow the below steps for installing the Akash Binary.
