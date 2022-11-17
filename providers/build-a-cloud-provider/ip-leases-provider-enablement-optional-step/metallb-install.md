@@ -54,6 +54,8 @@ EOF
 
 Based on MetalLB via Kubespray guidance documented [here](https://github.com/kubernetes-sigs/kubespray/blob/v2.20.0/docs/metallb.md)
 
+The Kubespray flags provided bellow should go into your Provider's Kubespray inventory file and under the vars section.  Our reference Provider Kubespray inventory file - used during initial Provider Kubernetes cluster build - is located [here](https://docs.akash.network/providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-4-ansible-inventory#manual-edits-insertions-of-the-hosts.yaml-inventory-file).
+
 ```
 # akash provider needs metallb pool name set to `default` - https://github.com/ovrclk/provider-services/blob/v0.1.0-rc13/cluster/kube/metallb/client.go#L43
 metallb_pool_name: default
