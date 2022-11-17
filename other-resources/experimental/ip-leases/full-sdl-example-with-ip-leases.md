@@ -1,6 +1,6 @@
 # Full SDL Example with IP Leases
 
-Sections of the following SDL was used in prior sections of this guide.  Providing the full SDL for context and placement clarity.
+Sections of the following SDL was used in prior sections of this guide. Providing the full SDL for context and placement clarity.
 
 ```
 ---

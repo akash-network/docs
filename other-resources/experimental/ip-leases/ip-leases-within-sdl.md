@@ -10,7 +10,7 @@ In this example we name the endpoint `myendpoint` but could be any name of your 
 
 The kind is defined as `ip` which is the only valid option at this time. This adds a requirement that the SDL leases exactly one IPv4 address from a provider.
 
-_**NOTE**_ - the endpoint name must be unique across your deployments on a single provider.  Using the example - if we tried to use `myendpoint` in another deployment and on the same provider - no IP lease would be created on that second deployment.
+_**NOTE**_ - the endpoint name must be unique across your deployments on a single provider. Using the example - if we tried to use `myendpoint` in another deployment and on the same provider - no IP lease would be created on that second deployment.
 
 ```
 endpoints:
