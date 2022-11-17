@@ -9,8 +9,7 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 The simplest way to install Akash is using Homebrew using:
 
 ```
-brew tap ovrclk/tap
-brew install akash-provider-services
+brew install ovrclk/tap/akash
 ```
 
 If you do not have homebrew, follow the below steps for installing the Akash Binary.
@@ -24,7 +23,7 @@ cd ~/Downloads
 
 AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
 
-curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "v$AKASH_VERSION"
+curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "v$AKASH_VERSION"
 ```
 
 #### Move the Akash Binary
@@ -46,7 +45,7 @@ provider-services version
 Expect/Example Output
 
 ```
-v0.1.0
+v0.18.0
 ```
 {% endtab %}
 
@@ -56,8 +55,7 @@ v0.1.0
 The simplest way to install Akash is using Homebrew using:
 
 ```
-brew tap ovrclk/tap
-brew install akash-provider-services
+brew install ovrclk/tap/akash
 ```
 
 If you do not have homebrew, follow the below steps for installing the Akash Binary.
@@ -71,7 +69,7 @@ cd ~
 
 AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
 
-curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "v$AKASH_VERSION"
+curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "v$AKASH_VERSION"
 ```
 
 #### Add Akash Install Location to User’s Path
@@ -115,13 +113,13 @@ source /etc/environment
 Display the version of Akash software installed. This confirms the software installed and that the new user path addition worked.
 
 ```
-provider-services version
+akash version
 ```
 
 Expected/Example Result
 
 ```
-v0.1.0
+v0.16.3
 ```
 {% endtab %}
 
