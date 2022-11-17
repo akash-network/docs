@@ -88,6 +88,9 @@ Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_LOG_BUFFER_SIZE=512"
 Environment="UNSAFE_SKIP_BACKUP=true"
+Environment="AKASH_PRUNING=nothing"
+Environment="AKASH_IAVL_DISABLE_FASTNODE=false"
+Environment="AKASH_CONSENSUS_TIMEOUT_PRECOMMIT_DELTA=0ms"
 
 [Install]
 WantedBy=multi-user.target
@@ -163,5 +166,17 @@ Either download the Akash upgrade binary (v0.18.0) or build from source - comple
 ```
 akash version
 ```
+
+Update configuration with
+
+```sh
+akash init
+```
+
+Set the following configuration:
+
+* set pruning=nothing  or use export AKASH_PRUNING=nothing
+* set iavl-disable-fastnode = false or use export AKASH_IAVL_DISABLE_FASTNODE=false
+* set timeout_precommit_delta = "0ms" or use export AKASH_CONSENSUS_TIMEOUT_PRECOMMIT_DELTA=0ms
 
 Restart the process running `akash`.
