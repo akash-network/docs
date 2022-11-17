@@ -1,4 +1,4 @@
-# Part 2. Create an Account
+# Create an Account
 
 Configure the name of your key. The command below will set the name of your key to `myWallet`, run the below command and replace `myWallet` with a name of your choice:
 
@@ -21,13 +21,13 @@ AKASH_KEYRING_BACKEND=os
 Copy and paste this command into Terminal to create an Akash account:
 
 ```bash
-akash keys add $AKASH_KEY_NAME
+provider-services keys add $AKASH_KEY_NAME
 ```
 
 Read the output and save your mnemonic phrase is a safe place. Let's set a Shell Variable in Terminal `AKASH_ACCOUNT_ADDRESS` to save your account address for later.
 
 ```bash
-export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
+export AKASH_ACCOUNT_ADDRESS="$(provider-services keys show $AKASH_KEY_NAME -a)"
 
 echo $AKASH_ACCOUNT_ADDRESS
 ```

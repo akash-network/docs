@@ -3,7 +3,7 @@
 Upload the manifest using the values from above step:
 
 ```
-provider-services send-manifest deploy.yml --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER --from $AKASH_KEY_NAME
+akash provider send-manifest deploy.yml --dseq $AKASH_DSEQ --provider $AKASH_PROVIDER --from $AKASH_KEY_NAME
 ```
 
 ### Confirm the URL
@@ -11,7 +11,7 @@ provider-services send-manifest deploy.yml --dseq $AKASH_DSEQ --provider $AKASH_
 Now that the manifest is uploaded, your image is deployed. You can retrieve the access details by running the below:
 
 ```
-provider-services lease-status --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --provider $AKASH_PROVIDER
+akash provider lease-status --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --provider $AKASH_PROVIDER
 ```
 
 You should see a response similar to:
@@ -44,7 +44,7 @@ You can access the application by visiting the hostnames mapped to your deployme
 You can view your application logs to debug issues or watch progress like so:
 
 ```bash
-provider-services lease-logs \
+akash provider lease-logs \
   --dseq "$AKASH_DSEQ" \
   --provider "$AKASH_PROVIDER" \
   --from "$AKASH_KEY_NAME"

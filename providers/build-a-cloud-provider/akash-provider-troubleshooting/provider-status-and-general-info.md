@@ -16,7 +16,7 @@ Obtain live Provider status including:
 
 ### Command Template
 
-Issue the commands in this section from any machine that has the [Akash CLI](../../../other-resources/experimental/mainnet3-legacy-docs/detailed-steps/) installed.
+Issue the commands in this section from any machine that has the [Akash CLI](../../../guides/cli/detailed-steps/) installed.
 
 ```
 akash provider status <provider-address>
@@ -95,7 +95,7 @@ Review the Provider’s attribute, and Host URI with the status command
 
 ### Command Template
 
-Issue the commands in this section from any machine that has the [Akash CLI](../../../other-resources/experimental/mainnet3-legacy-docs/detailed-steps/) installed.
+Issue the commands in this section from any machine that has the [Akash CLI](../../../guides/cli/detailed-steps/) installed.
 
 ```
 akash query provider get <akash-address>

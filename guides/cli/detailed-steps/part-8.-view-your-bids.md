@@ -3,7 +3,7 @@
 After a short time, you should see bids from providers for this deployment with the following command:
 
 ```bash
-provider-services query market bid list --owner=$AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ --state=open
+akash query market bid list --owner=$AKASH_ACCOUNT_ADDRESS --node $AKASH_NODE --dseq $AKASH_DSEQ --state=open
 ```
 
 ### Choose a Provider

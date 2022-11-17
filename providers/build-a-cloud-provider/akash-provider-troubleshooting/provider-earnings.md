@@ -60,7 +60,7 @@ Use the commands detailed in this section to gather the total earnings of your p
 
 ### Command Template
 
-Issue the commands in this section from any machine that has the [Akash CLI](../../../other-resources/experimental/mainnet3-legacy-docs/detailed-steps/) installed.
+Issue the commands in this section from any machine that has the [Akash CLI](../../../guides/cli/detailed-steps/) installed.
 
 * **Note** - ensure queries are not limited only to leases created by your account by issuing `unset AKASH_FROM` prior to the `akash query market` command execution
 
@@ -97,7 +97,7 @@ For accurate earning potential based on today's actual financial/other realities
 
 ### Command Syntax
 
-Issue the commands in this section from any machine that has the [Akash CLI](../../../other-resources/experimental/mainnet3-legacy-docs/detailed-steps/) installed.
+Issue the commands in this section from any machine that has the [Akash CLI](../../../guides/cli/detailed-steps/) installed.
 
 **Note** - ensure queries are not limited only to leases created by your account by issuing `unset AKASH_FROM` prior to the `akash query market` command execution
 
