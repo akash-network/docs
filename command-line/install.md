@@ -21,7 +21,7 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 ```
 cd ~/Downloads
 
-AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
+AKASH_VERSION=0.1.0
 
 curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "v$AKASH_VERSION"
 ```
@@ -62,7 +62,7 @@ Alternatively, install the latest version via [`godownloader`](https://github.co
 
 ```bash
 # configure akash version
-AKASH_VERSION="$(curl -s "https://raw.githubusercontent.com/ovrclk/net/master/mainnet/version.txt")"
+AKASH_VERSION=0.1.0
 
 # install akash 
 curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "v$AKASH_VERSION"
