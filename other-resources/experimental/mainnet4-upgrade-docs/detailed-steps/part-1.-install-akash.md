@@ -45,7 +45,7 @@ provider-services version
 Expect/Example Output
 
 ```
-v0.18.0
+v0.1.0
 ```
 {% endtab %}
 
@@ -113,13 +113,13 @@ source /etc/environment
 Display the version of Akash software installed. This confirms the software installed and that the new user path addition worked.
 
 ```
-akash version
+provider-services version
 ```
 
 Expected/Example Result
 
 ```
-v0.16.3
+v0.1.0
 ```
 {% endtab %}
 
