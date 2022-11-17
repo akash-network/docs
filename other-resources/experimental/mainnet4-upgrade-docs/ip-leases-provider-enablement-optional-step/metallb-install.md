@@ -15,7 +15,7 @@ helm -n metallb-system install metallb metallb/metallb --version 0.13.7
 ### Expose your MetalLB Controller to the Akash IP Operator
 
 ```
-kubectl -n metallb-system expose deployment controller --overrides='{"spec":{"ports":[{"protocol":"TCP","name":"monitoring","port":7472}]}}'
+kubectl -n metallb-system expose deployment metallb-controller --name=controller --overrides='{"spec":{"ports":[{"protocol":"TCP","name":"monitoring","port":7472}]}}'
 ```
 
 ### Apply your MetalLB Config
@@ -73,5 +73,5 @@ metallb_ip_range:
 * Kubespray your cluster with this config and then expose your MetalLB controller for the Akash IP Operator access it
 
 ```
-kubectl -n metallb-system expose deployment controller
+kubectl -n metallb-system expose deployment controller --overrides='{"spec":{"ports":[{"protocol":"TCP","name":"monitoring","port":7472}]}}'
 ```

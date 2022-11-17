@@ -1,4 +1,4 @@
-# Install Akash CLI
+# Part 1. Install Akash CLI
 
 Select a tab below to view instructions for MacOS, Linux, or compiling from source.
 
@@ -39,13 +39,13 @@ sudo mv ./bin/akash /usr/local/bin
 Verify the installation by using a simple command to check the Akash version
 
 ```
-provider-services version
+akash version
 ```
 
 Expect/Example Output
 
 ```
-v0.18.0
+v0.16.3
 ```
 {% endtab %}
 

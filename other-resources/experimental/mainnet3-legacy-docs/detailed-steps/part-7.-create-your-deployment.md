@@ -1,4 +1,4 @@
-# Create your Deployment
+# Part 7. Create your Deployment
 
 ## CPU Support
 
@@ -9,7 +9,7 @@ Only x86\_64 processors are officially supported for Akash deployments. This may
 To deploy on Akash, run:
 
 ```
-provider-services tx deployment create deploy.yml --from $AKASH_KEY_NAME 
+akash tx deployment create deploy.yml --from $AKASH_KEY_NAME 
 ```
 
 You should see a response similar to:

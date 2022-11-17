@@ -6,9 +6,10 @@
   * 32 vCPU&#x20;
   * 420 GB RAM&#x20;
   * 1 TB Ephemeral Storage
+  * 1 IP Leases Quantity
 
 ```
-./charts/akash-provider/scripts/price_script_generic.sh <<<  '[{"memory":'"$((420*(1024**3)))"',"cpu":'"$((32*1000))"',"storage":[{"class":"ephemeral","size":'"$((1*(1024**4)))"'}],"count":1,"endpoint_quantity":1}]'
+./charts/akash-provider/scripts/price_script_generic.sh <<< '[{"memory":'"$((420*(1024**3)))"',"cpu":'"$((32*1000))"',"storage":[{"class":"ephemeral","size":'"$((1*(1024**4)))"'}],"count":1,"endpoint_quantity":1,"ip_lease_quantity":1}]'
 ```
 
 ## Two Deployments with Persistent Storage
@@ -18,8 +19,9 @@
   * 512 GB RAM  (per deployment)
   * 2 TB Ephemeral Storage  (per deployment)
   * 1 TB Persistent Storage of type Beta3/NVME  (per deployment)
+  * 1 IP Leases Quantity
 
 ```
-./charts/akash-provider/scripts/price_script_generic.sh <<< '[{"memory":536870912,"cpu":1000,"storage":[{"class":"beta3","size":1073741824},{"class":"ephemeral","size":2147483648}],"count":1,"endpoint_quantity":1},{"memory":536870912,"cpu":1000,"storage":[{"class":"beta3","size":1073741824},{"class":"ephemeral","size":2147483648}],"count":1,"endpoint_quantity":1}]'
+./charts/akash-provider/scripts/price_script_generic.sh <<< '[{"memory":536870912,"cpu":1000,"storage":[{"class":"beta3","size":1073741824},{"class":"ephemeral","size":2147483648}],"count":1,"endpoint_quantity":1,"ip_lease_quantity":0},{"memory":536870912,"cpu":1000,"storage":[{"class":"beta3","size":1073741824},{"class":"ephemeral","size":2147483648}],"count":1,"endpoint_quantity":2,"ip_lease_quantity":2}]'
 ```
 
