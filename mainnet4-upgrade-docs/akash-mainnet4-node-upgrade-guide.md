@@ -24,7 +24,7 @@ The latest version of Go (1.19) is required. For more information, see [Go](http
 
 ## Common Steps for All Upgrade Options
 
-In the sections that follow both `Cosmovisor` and `non-Cosmovisor` upgrade paths are provided.  Prior to detailing specifics steps for these upgrade paths, in this section we cover steps required regardless of upgrade path chosen.
+In the sections that follow both `Cosmovisor` and `non-Cosmovisor` upgrade paths are provided. Prior to detailing specifics steps for these upgrade paths, in this section we cover steps required regardless of upgrade path chosen.
 
 > _**Note**_: The following steps are not required if the auto-download option is enabled for Cosmovisor.
 
@@ -40,7 +40,7 @@ make akash
 
 ## Option 1: Upgrade Using Cosmovisor
 
-The following instructions assume the `akash` and `cosmovisor` binaries are already installed and cosmovisor is set up as a systemd service.&#x20;
+The following instructions assume the `akash` and `cosmovisor` binaries are already installed and cosmovisor is set up as a systemd service.
 
 The section that follows will detail the install/configuration of Cosmovisor. If additional details are necessary, visit [Start a node with Cosmovisor ](https://github.com/ovrclk/docs/blob/anil/v3-instructions/guides/node/cosmovisor.md)for instructions on how to install and set up the binaries.
 
@@ -64,8 +64,8 @@ DAEMON_NAME=akash DAEMON_HOME=~/.akash cosmovisor version
 
 Update `cosmovisor` systemd service file and make sure the environment variables are set to the appropriate values (the following example includes the recommended settings).
 
-* _**NOTE**_ - `UNSAFE_SKIP_BACKUP=false` is set to false indicating that a backup is enabled.  The `DAEMON_DATA_BACKUP_DIR` will dictate where the backup is stored.
-* _**NOTE**_ - with `UNSAFE_SKIP_BACKUP`  set to false, Cosmovisor will make a copy of the entire chain.  Please ensure that your node has sufficient space to accommodate this chain backup which may be large.
+* _**NOTE**_ - `UNSAFE_SKIP_BACKUP=false` is set to false indicating that a backup is enabled. The `DAEMON_DATA_BACKUP_DIR` will dictate where the backup is stored.
+* _**NOTE**_ - with `UNSAFE_SKIP_BACKUP` set to false, Cosmovisor will make a copy of the entire chain. Please ensure that your node has sufficient space to accommodate this chain backup which may be large.
 * _**NOTE**_ - It is preferable if you start your service under a dedicated non-system user other than root.
 
 ```
@@ -91,12 +91,13 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 Environment="AKASH_PRUNING=nothing"
 Environment="AKASH_IAVL_DISABLE_FASTNODE=false"
 Environment="AKASH_CONSENSUS_TIMEOUT_PRECOMMIT_DELTA=0ms"
+Environment="AKASH_STATESYNC_SNAPSHOT_INTERVAL=0"
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-Cosmovisor can be configured to automatically download upgrade binaries. It is recommended that validators do not use the auto-download option and that the upgrade binary is compiled and placed manually.&#x20;
+Cosmovisor can be configured to automatically download upgrade binaries. It is recommended that validators do not use the auto-download option and that the upgrade binary is compiled and placed manually.
 
 If you would like to enable the auto-download option, update the following environment variable in the systemd configuration file:
 
@@ -104,7 +105,7 @@ If you would like to enable the auto-download option, update the following envir
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
 ```
 
-Cosmovisor will automatically create a backup of the data directory at the time of the upgrade and before the migration.&#x20;
+Cosmovisor will automatically create a backup of the data directory at the time of the upgrade and before the migration.
 
 If you would like to disable the auto-backup, update the following environment variable in the systemd configuration file:
 
@@ -140,7 +141,7 @@ sudo systemctl enable cosmovisor.service
 
 ### Prepare Upgrade Binary
 
-Create the folder for the upgrade binary (v0.18.0) - cloned in this [step](akash-mainnet4-node-upgrade-guide.md#common-steps-for-all-upgrade-options) - and copy the akash binary into the folder.&#x20;
+Create the folder for the upgrade binary (v0.18.0) - cloned in this [step](akash-mainnet4-node-upgrade-guide.md#common-steps-for-all-upgrade-options) - and copy the akash binary into the folder.
 
 This next step assumes that the akash binary was built from source and stored in the current (i.e., akash) directory:
 
@@ -150,18 +151,17 @@ mkdir -p $HOME/.akash/cosmovisor/upgrades/v0.18.0/bin
 cp ./.cache/bin $HOME/.akash/cosmovisor/upgrades/v0.18.0/bin
 ```
 
-At the proposed block height, `cosmovisor` will automatically stop the current binary (v0.16.X), set the upgrade binary as the new current binary (v0.18.0), and then restart the node.\
-
+At the proposed block height, `cosmovisor` will automatically stop the current binary (v0.16.X), set the upgrade binary as the new current binary (v0.18.0), and then restart the node.\\
 
 ## Option 2: Upgrade Without Cosmovisor
 
-Using Cosmovisor to perform the upgrade is not mandatory.&#x20;
+Using Cosmovisor to perform the upgrade is not mandatory.
 
 Node operators also have the option to manually update the `akash` binary at the time of the upgrade. Doing it before the upgrade height will stop the node.
 
 When the chain halts at the proposed upgrade height, stop the current process running `akash`.
 
-Either download the Akash upgrade binary (v0.18.0) or build from source - completed in this [step](akash-mainnet4-node-upgrade-guide.md#common-steps-for-all-upgrade-options) -  and ensure the `akash` binary has been updated:
+Either download the Akash upgrade binary (v0.18.0) or build from source - completed in this [step](akash-mainnet4-node-upgrade-guide.md#common-steps-for-all-upgrade-options) - and ensure the `akash` binary has been updated:
 
 ```
 akash version
@@ -169,14 +169,15 @@ akash version
 
 Update configuration with
 
-```sh
+```
 akash init
 ```
 
 Set the following configuration:
 
-* set pruning=nothing  or use export AKASH_PRUNING=nothing
-* set iavl-disable-fastnode = false or use export AKASH_IAVL_DISABLE_FASTNODE=false
-* set timeout_precommit_delta = "0ms" or use export AKASH_CONSENSUS_TIMEOUT_PRECOMMIT_DELTA=0ms
+* set pruning=nothing or use export AKASH\_PRUNING=nothing
+* set iavl-disable-fastnode = false or use export AKASH\_IAVL\_DISABLE\_FASTNODE=false
+* set timeout\_precommit\_delta = "0ms" or use export AKASH\_CONSENSUS\_TIMEOUT\_PRECOMMIT\_DELTA=0ms
+* To prevent `panic: runtime error: invalid memory address or nil pointer dereference error on cosmos-sdk's createSnapshot ... incrVersionReaders` use export AKASH\_STATESYNC\_SNAPSHOT\_INTERVAL=0
 
 Restart the process running `akash`.
