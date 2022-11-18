@@ -20,7 +20,7 @@ description: >-
 
 ### Update Go
 
-The latest version of Go (1.19) is required. For more information, see [Go](https://golang.org/).
+The use Go version 1.19.2 is required. For more information, see [Go](https://golang.org/).
 
 ## Common Steps for All Upgrade Options
 
@@ -35,7 +35,7 @@ git clone https://github.com/ovrclk/akash
 cd akash
 git fetch --all
 git checkout v0.18.1
-make akash
+GO_LINKMODE="internal" CGO_ENABLED=0 make akash
 ```
 
 ## Option 1: Upgrade Using Cosmovisor
