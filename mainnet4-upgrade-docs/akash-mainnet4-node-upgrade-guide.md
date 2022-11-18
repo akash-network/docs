@@ -16,6 +16,10 @@ description: >-
 
 * Upgrade Height: `8526250`
 
+### Snapshot Services
+
+* [autostake](https://autostake.net/networks/akash#services)
+
 ## Upgrade Guidelines
 
 ### Update Go
@@ -90,7 +94,6 @@ Environment="DAEMON_LOG_BUFFER_SIZE=512"
 Environment="UNSAFE_SKIP_BACKUP=true"
 Environment="AKASH_PRUNING=nothing"
 Environment="AKASH_IAVL_DISABLE_FASTNODE=false"
-Environment="AKASH_CONSENSUS_TIMEOUT_PRECOMMIT_DELTA=0ms"
 Environment="AKASH_STATESYNC_SNAPSHOT_INTERVAL=0"
 
 [Install]
@@ -187,12 +190,6 @@ export AKASH_PRUNING=nothing
 
 ```
 export AKASH_IAVL_DISABLE_FASTNODE=false
-```
-
-* Set AKASH\_CONSENSUS\_TIMEOUT\_PRECOMMIT\_DELTA to `0ms`
-
-```
-export AKASH_CONSENSUS_TIMEOUT_PRECOMMIT_DELTA=0ms
 ```
 
 * To prevent panic: `runtime error: invalid memory address or nil pointer dereference error on cosmos-sdk's createSnapshot ... incrVersionReaders`
