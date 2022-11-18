@@ -2,6 +2,15 @@
 
 Update your pre-existing Akash provider to support IP Leases.
 
+### Attribute Update
+
+Update your provider to advertise the following attribute.  Without this attribute the provider will not bid on IP Leases orders.
+
+```
+- key: ip-lease
+  value: true
+```
+
 ### Command Template
 
 ```

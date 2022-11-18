@@ -37,12 +37,3 @@ services:
          - global: true
            ip: myendpoint
 ```
-
-## Attributes
-
-Include the attribute key-value pair of `ip-lease: true` in the SDL.  This ensures that only provider advertising this attribute will bid on the workload.
-
-```
-     attributes:
-        ip-lease: true
-```
