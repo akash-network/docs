@@ -33,6 +33,8 @@ profiles:
  
  placement:
    dcloud:
+     attributes:
+        ip-lease: true
      pricing:
        web:
          denom: uakt
