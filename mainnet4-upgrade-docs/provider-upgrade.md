@@ -38,6 +38,22 @@ helm upgrade akash-node akash/akash-node -n akash-services -f akash-node-values.
 
 ### Akash Provider
 
+#### Manifest Backup
+
+* Backup all provider manifest prior to initiating the upgrade process
+
+```
+kubectl -n lease get manifests -o yaml > manifests-backup.yaml
+
+kubectl -n lease get providerhosts -o yaml > providerhosts-backup.yaml
+ 
+# this is only valid for akash-ip-operator
+
+kubectl -n lease get providerleasedips -o yaml > providerleasedips-backup.yaml
+```
+
+#### Provider Upgrade
+
 ```
 helm -n akash-services get values akash-provider | grep -v '^USER-SUPPLIED VALUES' > akash-provider-values.yml
 ```
