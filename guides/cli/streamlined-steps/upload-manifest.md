@@ -13,5 +13,5 @@ provider-services send-manifest sdl/big-dipper.yaml --provider $AKASH_PROVIDER
 * Retrieve the deployment’s URL and mapped ports
 
 ```
-akash provider lease-status --provider $AKASH_PROVIDER
+provider-services provider lease-status --provider $AKASH_PROVIDER
 ```
