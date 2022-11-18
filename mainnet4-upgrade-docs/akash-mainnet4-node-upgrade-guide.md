@@ -173,32 +173,11 @@ Update configuration with
 akash init
 ```
 
-#### Additional Settings
+Set the following configuration:
 
-> _**NOTE**_ - we strong suggest using environment variables over manually modifying the config.toml / app.toml
-
-* Set AKASH\_PRUNING to `nothing`
-
-```
-export AKASH_PRUNING=nothing
-```
-
-* Set AKASH\_IAVL\_FASTNODE\_ENABLED to `false`&#x20;
-
-```
-export AKASH_IAVL_DISABLE_FASTNODE=false
-```
-
-* Set AKASH\_CONSENSUS\_TIMEOUT\_PRECOMMIT\_DELTA to `0ms`
-
-```
-export AKASH_CONSENSUS_TIMEOUT_PRECOMMIT_DELTA=0ms
-```
-
-* To prevent panic: `runtime error: invalid memory address or nil pointer dereference error on cosmos-sdk's createSnapshot ... incrVersionReaders`
-
-```
-export AKASH_STATESYNC_SNAPSHOT_INTERVAL=0
-```
+* set pruning=nothing or use export AKASH\_PRUNING=nothing
+* set iavl-disable-fastnode = false or use export AKASH\_IAVL\_DISABLE\_FASTNODE=false
+* set timeout\_precommit\_delta = "0ms" or use export AKASH\_CONSENSUS\_TIMEOUT\_PRECOMMIT\_DELTA=0ms
+* To prevent `panic: runtime error: invalid memory address or nil pointer dereference error on cosmos-sdk's createSnapshot ... incrVersionReaders` use export AKASH\_STATESYNC\_SNAPSHOT\_INTERVAL=0
 
 Restart the process running `akash`.
