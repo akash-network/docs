@@ -1,7 +1,5 @@
 ---
-description: >-
-  Akash Provider upgrade to version 0.18.0 required post Mainnet4 network
-  upgrade
+description: Akash Provider upgrade required post Mainnet4 network upgrade
 ---
 
 # Provider Upgrade
@@ -12,9 +10,9 @@ The upgrade instructions provided in this guide pertain to Akash providers insta
 
 If your provider was installed using Praetor, please visit the [Praetor Discord](http://discord.gg/uzUCHTF93D) server for upgrade guidance and inquiries.
 
-> All providers _**MUST**_ upgrade their Akash Provider and related components (RPC Node, CRDs, etc) on the date of the `Mainnet4` upgrade (November 17th 2022) to avoid disruption.  Providers which are not upgrade post `Mainnet4` will be unable to bid on new orders.  Pre-existing deployments on non-upgraded providers will not incur service disruption. But the ability to bid on new deployments, allow container shell access, and other features will be impacted until the provider is upgraded to `0.18.0`.
+> All providers _**MUST**_ upgrade their Akash Provider and related components (RPC Node, CRDs, etc) on the date of the `Mainnet4` upgrade (November 17th 2022) to avoid disruption.  Providers which are not upgrade post `Mainnet4` will be unable to bid on new orders.  Pre-existing deployments on non-upgraded providers will not incur service disruption. But the ability to bid on new deployments, allow container shell access, and other features will be impacted until the provider's RPC nodes are upgraded to `0.18.0` and Providers are upgraded to use Provider Services version `0.1.0`.
 
-> _**NOTE**_ - please do not attempt to upgrade your provider until the `Mainnet4` upgrade has been completed.  The Helm Charts will be updated to the use the `0.18.0` binary on the day of the `Mainnet4` upgrade.
+> _**NOTE**_ - please do not attempt to upgrade your provider until the `Mainnet4` upgrade has been completed.  The Helm Charts will be updated to the use the correct/current binaries on the day of the `Mainnet4` upgrade.
 
 ## Provider Upgrade Procedure
 
