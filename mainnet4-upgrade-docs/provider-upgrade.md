@@ -38,9 +38,24 @@ helm upgrade akash-node akash/akash-node -n akash-services -f akash-node-values.
 
 ### Akash Provider
 
+#### Annotate CRDs
+
+Annotate your current CRDs if you haven't yet, they are normally delivered by the helm-charts, but they were missing in some releases. They prevent CRD from being removed upon helm uninstall.
+
+```
+kubectl annotate crd manifests.akash.network helm.sh/resource-policy=keep
+kubectl annotate crd providerhosts.akash.network helm.sh/resource-policy=keep
+kubectl annotate crd providerleasedips.akash.network helm.sh/resource-policy=keep
+```
+
+> If you get some errors, ignore them. Most likely you already have these annotations set in place.&#x20;
+>
+> It is normal if you do not have providerleasedips yet, it comes with mainnet4 upgrade only.
+
 #### Manifest Backup
 
 * Backup all provider manifest prior to initiating the upgrade process
+* You can restore them later if you lose them (e.g. by using kubectl apply -f manifests-backup.yaml). To verify the CRD contents use kubectl -n lease get manifests command. (Change manifests to providerhosts or providerleasedips depending on CRD you are verifying).
 
 ```
 kubectl -n lease get manifests -o yaml > manifests-backup.yaml
