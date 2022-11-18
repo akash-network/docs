@@ -3,5 +3,5 @@
 * Close an active deployment when desired
 
 ```
-akash tx deployment close
+provider-services tx deployment close
 ```

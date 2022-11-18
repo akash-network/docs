@@ -3,7 +3,7 @@
 ## List Bids Received from Providers
 
 ```
-akash query market bid list
+provider-services query market bid list
 ```
 
 ## **Choose Provider**
@@ -19,11 +19,11 @@ AKASH_PROVIDER=<provider-address>
 ## Create Lease
 
 ```
-akash tx market lease create --provider $AKASH_PROVIDER
+provider-services tx market lease create --provider $AKASH_PROVIDER
 ```
 
 ## **Confirm Lease Creation**
 
 ```
-akash query market lease list
+provider-services query market lease list
 ```

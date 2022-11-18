@@ -13,13 +13,13 @@ If you do not have an Akash account and need to create one, follow the steps in 
 * You will be prompted to enter the account mnemonic for import
 
 ```
-akash keys add deploy --recover
+provider-services keys add deploy --recover
 ```
 
 ### Confirm Key Creation in Local Key Chain
 
 ```
-akash keys list
+provider-services keys list
 ```
 
 ### Create/Export Key Environment Variable
@@ -41,11 +41,11 @@ In this step we will create a local certificate and then store the certification
 * Note: If it errors with `Error: certificate error: cannot overwrite certificate`, then add `--overwrite` should you want to overwrite the cert. Normally you can ignore that error and proceed with publishing the cert (next step).
 
 ```
-akash tx cert generate client --from $AKASH_KEY_NAME
+provider-services tx cert generate client --from $AKASH_KEY_NAME
 ```
 
 #### Publish Cert to the Blockchain
 
 ```
-akash tx cert publish client --from $AKASH_KEY_NAME --gas-prices="0.025uakt" --gas="auto" --gas-adjustment=1.15
+provider-services tx cert publish client --from $AKASH_KEY_NAME --gas-prices="0.025uakt" --gas="auto" --gas-adjustment=1.15
 ```

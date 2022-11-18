@@ -32,5 +32,5 @@ make install
 * Output that displays the installed Akash client version equals a successful install and verification
 
 ```
-akash version
+provider-services version
 ```

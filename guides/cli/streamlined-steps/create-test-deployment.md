@@ -9,5 +9,5 @@ unset AKASH_DSEQ
 ### **Create Deployment**
 
 ```
-akash tx deployment create sdl/big-dipper.yaml
+provider-services tx deployment create sdl/big-dipper.yaml
 ```

@@ -14,5 +14,5 @@ source demo.sh
 ## Verify Deployment Status
 
 ```
-akash query deployment get
+provider-services query deployment get
 ```
