@@ -177,17 +177,19 @@ akash init
 
 > _**NOTE**_ - we strong suggest using environment variables over manually modifying the config.toml / app.toml
 
+* Set AKASH\_PRUNING to `nothing`
+
 ```
 export AKASH_PRUNING=nothing
 ```
 
-* Set iavl-disable-fastnode to `false`
+* Set AKASH\_IAVL\_FASTNODE\_ENABLED to `false`&#x20;
 
 ```
 export AKASH_IAVL_DISABLE_FASTNODE=false
 ```
 
-* Set timeout\_precommit\_delta to `0ms`
+* Set AKASH\_CONSENSUS\_TIMEOUT\_PRECOMMIT\_DELTA to `0ms`
 
 ```
 export AKASH_CONSENSUS_TIMEOUT_PRECOMMIT_DELTA=0ms
