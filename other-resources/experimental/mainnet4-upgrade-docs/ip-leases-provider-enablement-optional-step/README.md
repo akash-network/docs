@@ -1,4 +1,4 @@
-# IP Leases - Provider Enablement
+# IP Leases - Provider Enablement (Optional Step)
 
 In this guide we detail the enablement of IP Leases on a pre-existing Akash provider.
 

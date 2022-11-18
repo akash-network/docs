@@ -6,6 +6,8 @@ Following the release of Akash Mainnet4 - and the associated split of Akash netw
 
 > _**NOTE**_ - The syntax updates are rather simple in that they only impact the beginning of command sets with a shift from `akash` (I.e. `akash tx create`) to `provider-services` (I.e. `provider-services tx create`).
 
+> _**NOTE**_ - please visit this [Detailed CLI Steps](../other-resources/experimental/mainnet4-upgrade-docs/detailed-steps/) doc for details on installing the Akash CLI and additional command sets.
+
 In these release notes we detail the new CLI syntax for deployment creation and for the purpose of illustration. The prior CLI command syntax (pre-Mainnet4) will be included for clarity as users transition to a new common syntax.
 
 These changes only impact Akash CLI use and have no impact on application use of Cloudmos Deploy, Praetor App, Akash Helm Charts, etc.

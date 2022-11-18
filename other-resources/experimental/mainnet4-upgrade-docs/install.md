@@ -39,15 +39,15 @@ sudo mv ./bin/akash /usr/local/bin
 * Verify the installation by using a simple command to check the Akash version
 
 ```
-akash version
+provider-services version
 ```
 
 * Expect/Example Output
 
 ```
-akash version
+provider-services version
 
-v0.16.3
+v0.1.0
 ```
 {% endtab %}
 
