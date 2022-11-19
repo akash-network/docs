@@ -1,5 +1,11 @@
 # CLI Commands
 
+> _**NOTE -**_ with the Mainnet4 update Akash network and provider services were separated into two repositories.  The command prefixes in this guide - such as `akash` in the example command `akash version`- are relevant to the akash network repo binary.  The `provider-services` repo binary `-` which is used for deployment purposes - have equal commands with the `provider-services` prefix such as example command `provider-services version.`
+>
+> ``
+>
+> Additional info on `provider-services` commands is available in the [Akash CLI Guide.](../other-resources/experimental/mainnet4-upgrade-docs/detailed-steps/)
+
 The software to run the **Network**, the **Platform**, and the command-line client used to interact with them are all currently distributed in the `akash` Command Line Interface (CLI) application.
 
 ## The Akash CLI

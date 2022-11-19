@@ -2,7 +2,7 @@
 
 Akash CLI use has been streamlined in this guide.  With the use of pre-defined environment variables, CLI commands are very concise.
 
-For a more through review of the Akash CLI, including direct use of variables, visit the [Verbose Steps](../detailed-steps/) guide.
+For a more through review of the Akash CLI, including direct use of variables, visit the [Verbose Steps](../../../guides/cli/detailed-steps/) guide.
 
 ### Akash Wants to Spotlight Your Work&#x20;
 
