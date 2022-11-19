@@ -80,7 +80,7 @@ helm upgrade akash-provider akash/provider -n akash-services -f akash-provider-v
 ### Hostname Operator
 
 ```
-helm upgrade hostname-operator akash/akash-hostname-operator -n akash-services
+helm upgrade akash-hostname-operator akash/akash-hostname-operator -n akash-services
 ```
 
 ### Inventory Operator
