@@ -85,7 +85,7 @@ helm upgrade akash-provider akash/provider -n akash-services -f akash-provider-v
 helm uninstall hostname-operator -n akash-services
 ```
 
-#### Install the Hostname Operator
+#### Install/Upgrade the Hostname Operator
 
 ```
 helm upgrade --install akash-hostname-operator akash/akash-hostname-operator -n akash-services
