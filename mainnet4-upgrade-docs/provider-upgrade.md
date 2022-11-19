@@ -79,8 +79,16 @@ helm upgrade akash-provider akash/provider -n akash-services -f akash-provider-v
 
 ### Hostname Operator
 
+#### Ensure Any Prior Hostname Operator Instances are Uninstalled
+
 ```
-helm upgrade akash-hostname-operator akash/akash-hostname-operator -n akash-services
+helm uninstall hostname-operator -n akash-services
+```
+
+#### Install the Hostname Operator
+
+```
+helm upgrade --install akash-hostname-operator akash/akash-hostname-operator -n akash-services
 ```
 
 ### Inventory Operator
