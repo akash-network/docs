@@ -2,8 +2,6 @@
 
 Explore detailed steps and options of the Akash CLI.  In this guide we will define each environment variable and use within each command.
 
-If you desire an easier way to get started with the Akash CLI, consider our [Streamlined Steps ](../../streamlined-steps/)documentation.
-
 ### Akash Wants to Spotlight Your Work&#x20;
 
 Have an idea for a project to deploy on Akash? Already working on a project? Maybe you’ve already deployed a project (or many projects!) to the network?
