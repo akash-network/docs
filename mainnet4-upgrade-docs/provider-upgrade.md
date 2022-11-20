@@ -110,3 +110,9 @@ helm -n ingress-nginx get values akash-ingress | grep -v '^USER-SUPPLIED VALUES'
 ```
 helm upgrade akash-ingress akash/akash-ingress -n ingress-nginx -f akash-ingress-values.yml
 ```
+
+* Issue following to unblock the akash-provider `8443/tcp port` in case you have been using a very old `akash-ingress` helm chart which used the deployment k8s kind of resource
+
+```
+kubectl -n ingress-nginx delete deployment ingress-nginx-controller
+```
