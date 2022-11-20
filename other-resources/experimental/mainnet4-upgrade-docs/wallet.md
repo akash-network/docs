@@ -148,7 +148,7 @@ provider-services \
 You can now set the Shell Variable `AKASH_ACCOUNT_ADDRESS` for your account address:
 
 ```bash
-export AKASH_ACCOUNT_ADDRESS="$(akash keys show $AKASH_KEY_NAME -a)"
+export AKASH_ACCOUNT_ADDRESS="$(provider-services keys show $AKASH_KEY_NAME -a)"
 
 echo $AKASH_ACCOUNT_ADDRESS
 ```
