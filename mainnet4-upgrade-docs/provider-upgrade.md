@@ -71,13 +71,6 @@ kubectl -n lease get providerleasedips -o yaml > providerleasedips-backup.yaml
 helm -n akash-services get values akash-provider | grep -v '^USER-SUPPLIED VALUES' > akash-provider-values.yml
 ```
 
-* With the release of the akash-provider helm-chart version 4.0.5, the provider is now deployed as a StatefulSet.&#x20;
-* &#x20;Use the following step to uninstall any pre-existing Provider instances which used `Deployment` kubernetes resource type before deploying a new one. But first, backup the values using `helm get values ....` command as covered in prior step.
-
-```
-helm -n akash-services uninstall akash-provider
-```
-
 * Prior to executing the Helm Upgrade command - inspect `akash-provider-values.yml` for `image tag` and remove it if present
 
 ```
