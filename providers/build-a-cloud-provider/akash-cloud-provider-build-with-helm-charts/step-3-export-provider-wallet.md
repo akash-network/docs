@@ -1,6 +1,6 @@
 # STEP 3 - Export Provider Wallet
 
-In this section we will export the pre-existing, funded wallet to store the private key in a local file.  To conduct the commands in this section the Akash CLI must be installed which is detailed in this [guide](https://docs.akash.network/guides/cli/detailed-steps/part-1.-install-akash) (STEP 1 only).
+In this section we will export the pre-existing, funded wallet to store the private key in a local file.  To conduct the commands in this section the Akash CLI must be installed which is detailed in this [guide ](../../../other-resources/experimental/mainnet4-upgrade-docs/detailed-steps/)(STEP 1 only).
 
 The wallet used will be used for the following purposes:
 
@@ -14,13 +14,13 @@ The wallet used will be used for the following purposes:
 * Print the key names available in the local OS keychain for use in the subsequent step
 
 ```
-akash keys list
+provider-services keys list
 ```
 
 ### Example/Expected Output
 
 ```
-akash keys list
+provider-services keys list
 - name: ""
   type: local
   address: akash1<redacted>
@@ -41,5 +41,5 @@ akash keys list
 ```
 cd ~
 
-akash keys export <key-name> > key.pem
+provider-services keys export <key-name> > key.pem
 ```

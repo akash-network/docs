@@ -23,7 +23,9 @@ By default certificate is valid for 365 days from the moment of issuing
 #### Client (aka tenant) certificate
 
 ```
-akash tx cert create client --from=main
+provider-services tx cert generate client --from $AKASH_KEY_NAME
+
+provider-services tx cert publish client --from $AKASH_KEY_NAME
 ```
 
 #### Provider certificate
@@ -31,8 +33,8 @@ akash tx cert create client --from=main
 It is important for provider to list same domain(s) as hostURI in provider attributes For example if `HostURI: https://example.com` the `example.com` must be listed as one of the domains in the certificate
 
 ```
-#akash tx cert create server [list of domains provider is serving on] --from=main
-akash tx cert create server example.com example1.com --from=main
+#provider-services tx cert create server [list of domains provider is serving on] --from=main
+provider-services tx cert create server example.com example1.com --from=main
 ```
 
 Locally certificates and it's respective private key are stored in single file in akash home directory. The name of the file is stated as `<address>.pem`. For example certificate created with key `main` the file will be named as `akash1gp3scyd8aye3z8szf3mpqzgsg4csyplcqehxus.pem`
@@ -58,7 +60,7 @@ Use following flags to set custom period of validity
 certificate valid for 180days after issuing
 
 ```
-akash tx cert create client --from=main --naf=180d
+provider-services tx cert generate client --from=main --naf=180d
 ```
 
 **example2**
@@ -66,7 +68,7 @@ akash tx cert create client --from=main --naf=180d
 certificate valid for 180days after date of start
 
 ```
-akash tx cert create client --from=main --naf="2022-03-19T18:35:03-04:00" --naf=180d
+provider-services tx cert generate client --from=main --naf="2022-03-19T18:35:03-04:00" --naf=180d
 ```
 
 **example3**
@@ -74,17 +76,17 @@ akash tx cert create client --from=main --naf="2022-03-19T18:35:03-04:00" --naf=
 certificate valid for 365days after date of start
 
 ```
-akash tx cert create client --from=main --naf="2022-03-19T18:35:03-04:00"
+provider-services tx cert generate client --from=main --naf="2022-03-19T18:35:03-04:00"
 ```
 
 ### Revoke
 
 ```
-akash tx cert revoke --from=main
+provider-services tx cert revoke --from=main
 ```
 
 ```
-akash tx cert revoke --from=main --serial=<serial #>
+provider-services tx cert revoke --from=main --serial=<serial #>
 ```
 
 ## Query
@@ -92,12 +94,12 @@ akash tx cert revoke --from=main --serial=<serial #>
 To query certificates for particular account
 
 ```
-akash query cert list --owner="$(akash keys show main -a)"
+provider-services query cert list --owner="$(akash keys show main -a)"
 ```
 
 To filter by state
 
 ```
-akash query cert list --owner="$(akash keys show main -a)" --state=valid
-akash query cert list --owner="$(akash keys show main -a)" --state=revoked
+provider-services query cert list --owner="$(akash keys show main -a)" --state=valid
+provider-services query cert list --owner="$(akash keys show main -a)" --state=revoked
 ```

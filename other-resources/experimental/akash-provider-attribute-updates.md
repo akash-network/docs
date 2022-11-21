@@ -25,13 +25,13 @@
 * Replace the `<provider-address>` variable with the address of your provider
 
 ```
-akash query provider get <provder-address>
+provider-services query provider get <provder-address>
 ```
 
 #### Example Command
 
 ```
-akash query provider get akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx
+provider-services query provider get akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx
 ```
 
 #### Expected/Example Output
@@ -124,13 +124,13 @@ TEST SUITE: None
 #### Command Template
 
 ```
-akash query provider get <provder-address>
+provider-services query provider get <provder-address>
 ```
 
 #### Example Command
 
 ```
-akash query provider get akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx
+provider-services query provider get akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx
 ```
 
 #### Expected/Example Output

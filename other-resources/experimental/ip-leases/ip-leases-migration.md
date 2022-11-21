@@ -15,13 +15,13 @@ To migrate an endpoint between two deployments, the endpoint must be declared wi
 * The DSEQ specified should be that of the deployment the IP address should be migrated to
 
 ```
-akash provider migrate-endpoints --from <key-name> --dseq <dseq-number> --provider=<provider-address> <endpoint-name>
+provider-services migrate-endpoints --from <key-name> --dseq <dseq-number> --provider=<provider-address> <endpoint-name>
 ```
 
 #### Migrate Command Example
 
 ```
-akash provider migrate-endpoints --from mykey --dseq 250172 --provider=akash16l4nf3z6xttgk673q536p873axmy8c7aggre3g myendpoint
+provider-services migrate-endpoints --from mykey --dseq 250172 --provider=akash16l4nf3z6xttgk673q536p873axmy8c7aggre3g myendpoint
 ```
 
 ## Migration Example

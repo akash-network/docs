@@ -16,22 +16,22 @@ Obtain live Provider status including:
 
 ### Command Template
 
-Issue the commands in this section from any machine that has the [Akash CLI](../../../guides/cli/detailed-steps/) installed.
+Issue the commands in this section from any machine that has the [Akash CLI ](../../../other-resources/experimental/mainnet4-upgrade-docs/detailed-steps/)installed.
 
 ```
-akash provider status <provider-address>
+provider-services status <provider-address>
 ```
 
 ### Example Command Use
 
 ```
-akash provider status akash1q7spv2cw06yszgfp4f9ed59lkka6ytn8g4tkjf
+provider-services status akash1q7spv2cw06yszgfp4f9ed59lkka6ytn8g4tkjf
 ```
 
 ### Example Output
 
 ```
-akash provider status akash1wxr49evm8hddnx9ujsdtd86gk46s7ejnccqfmy
+provider-services status akash1wxr49evm8hddnx9ujsdtd86gk46s7ejnccqfmy
 {
   "cluster": {
     "leases": 3,
@@ -95,16 +95,16 @@ Review the Provider’s attribute, and Host URI with the status command
 
 ### Command Template
 
-Issue the commands in this section from any machine that has the [Akash CLI](../../../guides/cli/detailed-steps/) installed.
+Issue the commands in this section from any machine that has the [Akash CLI](../../../other-resources/archived-resources/mainnet3-legacy-docs/detailed-steps/) installed.
 
 ```
-akash query provider get <akash-address>
+provider-services query provider get <akash-address>
 ```
 
 ### Example Command Use
 
 ```
-akash query provider get <address>
+provider-services query provider get <address>
 ```
 
 ### Example Output
