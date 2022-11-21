@@ -19,19 +19,19 @@ _Execute command sets within a running Akash deployment_
 ![](https://lh3.googleusercontent.com/BgF4dAJD-W3HKaLJM4xvmLk-BWxN7-OjD5QknE7kWV9K938u3MTZj0slv5VgFd8eC41QF0JmUtzcc4pCcu5PbG-HhgtDp7QCfIokY5AI1vlewgDo1E4QMKo4AXsUMMQOw7USXjSa=s0)
 
 ```
-akash provider lease-shell --from <key-name> --dseq <dseq-number> --provider=<provider-address> <service-name> <command-to-execute>
+provider-services lease-shell --from <key-name> --dseq <dseq-number> --provider=<provider-address> <service-name> <command-to-execute>
 ```
 
 *   Example command fully populated
 
     ```
-    akash provider lease-shell --from mykey --dseq 226186 --provider=akash1gx4aevud37w4d6kfd5szgp87lmkqvumaz57yww web cat /etc/passwd
+    provider-services lease-shell --from mykey --dseq 226186 --provider=akash1gx4aevud37w4d6kfd5szgp87lmkqvumaz57yww web cat /etc/passwd
     ```
 * Example command fully populated using environment variables
 * Prior establishment of the AKASH\_KEY\_NAME and AKASH\_PROVIDER environment variables would be necessary to allow this syntax
 
 ```
-akash provider lease-shell --from $AKASH_KEY_NAME --dseq 226186 --provider=$AKASH_PROVIDER web cat /etc/passwd
+provider-services lease-shell --from $AKASH_KEY_NAME --dseq 226186 --provider=$AKASH_PROVIDER web cat /etc/passwd
 ```
 
 * Expected output example
@@ -52,7 +52,7 @@ _Gain access to an active Akash deployment’s CLI/shell_
 ![](https://lh3.googleusercontent.com/BgF4dAJD-W3HKaLJM4xvmLk-BWxN7-OjD5QknE7kWV9K938u3MTZj0slv5VgFd8eC41QF0JmUtzcc4pCcu5PbG-HhgtDp7QCfIokY5AI1vlewgDo1E4QMKo4AXsUMMQOw7USXjSa=s0)
 
 ```
-akash provider lease-shell --from <key-name> --dseq <dseq-number> --tty --provider=<provider-address> <service-name> /bin/sh --node $AKASH_NODE
+provider-services lease-shell --from <key-name> --dseq <dseq-number> --tty --provider=<provider-address> <service-name> /bin/sh --node $AKASH_NODE
 ```
 
 * Example command fully populated
@@ -60,7 +60,7 @@ akash provider lease-shell --from <key-name> --dseq <dseq-number> --tty --provid
 * Prior establishment of the AKASH\_KEY\_NAME and AKASH\_PROVIDER environment variables would be necessary to allow this syntax
 
 ```
-akash provider lease-shell --from $AKASH_KEY_NAME --dseq 226186 --tty --provider=$AKASH_PROVIDER web /bin/sh --node $AKASH_NODE
+provider-services lease-shell --from $AKASH_KEY_NAME --dseq 226186 --tty --provider=$AKASH_PROVIDER web /bin/sh --node $AKASH_NODE
 ```
 
 
@@ -81,20 +81,20 @@ _Copy a file from an active Akash deployment to a local file instance for inspec
 ![](https://lh3.googleusercontent.com/BgF4dAJD-W3HKaLJM4xvmLk-BWxN7-OjD5QknE7kWV9K938u3MTZj0slv5VgFd8eC41QF0JmUtzcc4pCcu5PbG-HhgtDp7QCfIokY5AI1vlewgDo1E4QMKo4AXsUMMQOw7USXjSa=s0)
 
 ```
-akash provider lease-shell --from <key-name> --dseq <dseq-number> --provider=<provider-address> <service-name> <command-to-execute> > <local-file-name>
+provider-services lease-shell --from <key-name> --dseq <dseq-number> --provider=<provider-address> <service-name> <command-to-execute> > <local-file-name>
 ```
 
 * Example command fully populated
 
 ```
-akash provider lease-shell --from mykey --dseq 226186 --provider=akash1gx4aevud37w4d6kfd5szgp87lmkqvumaz57yww web cat /etc/passwd > local_copy_of_passwd
+provider-services lease-shell --from mykey --dseq 226186 --provider=akash1gx4aevud37w4d6kfd5szgp87lmkqvumaz57yww web cat /etc/passwd > local_copy_of_passwd
 ```
 
 * Example command fully populated using environment variables
 * Prior establishment of the AKASH\_KEY\_NAME and AKASH\_PROVIDER environment variables would be necessary to allow this syntax
 
 ```
-akash provider lease-shell --from $AKASH_KEY_NAME --dseq 226186 --provider=$AKASH_PROVIDER web cat /etc/passwd > local_copy_of_passwd
+provider-services lease-shell --from $AKASH_KEY_NAME --dseq 226186 --provider=$AKASH_PROVIDER web cat /etc/passwd > local_copy_of_passwd
 ```
 
 * Expected output example

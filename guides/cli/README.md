@@ -6,5 +6,5 @@ The **Akash** command-line client is used to interact with deployments. The `aka
 
 We offer two guides to assist in getting started with the Akash CLI:
 
-* [Detailed Steps](detailed-steps/)
+* [Detailed Steps](../../other-resources/experimental/mainnet4-upgrade-docs/detailed-steps/)
 * [Akash CLI Booster](akash-cli-booster/)

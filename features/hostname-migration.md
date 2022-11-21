@@ -32,14 +32,14 @@ The example hostname migration will continue with the two deployment scenarios p
 * Hostname migration command syntax with variable bracketing as such \<variable-name>
 
 ```
-akash provider migrate-hostnames --from <key-name> --dseq <dseq-number> --provider=<provider-address> <hostname>
+provider-services migrate-hostnames --from <key-name> --dseq <dseq-number> --provider=<provider-address> <hostname>
 ```
 
 * Example, populated hostname migration command
 * In referencing the deployment DSEQ the hostname is migrated to the UpdatedDeployment instance with a DSEQ of 241064 and simultaneously removing the hostname from OriginalDeployment (DSEQ 241027)
 
 ```
-akash provider migrate-hostnames --from mykey --dseq 241064 --provider=akash1gx4aevud37w4d6kfd5szgp87lmkqvumaz57yww supermariotest.akash.network
+provider-services migrate-hostnames --from mykey --dseq 241064 --provider=akash1gx4aevud37w4d6kfd5szgp87lmkqvumaz57yww supermariotest.akash.network
 ```
 
 ## **Validation of Hostname Migration**
@@ -53,7 +53,7 @@ Validations of hostname migration are provided in the sample OriginalDeployment 
 * The syntax for the lease-status command is as follows
 
 ```
-akash provider lease-status --node $AKASH_NODE --home ~/.akash --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --provider $AKASH_PROVIDER
+provider-services lease-status --node $AKASH_NODE --home ~/.akash --dseq $AKASH_DSEQ --from $AKASH_KEY_NAME --provider $AKASH_PROVIDER
 ```
 
 
