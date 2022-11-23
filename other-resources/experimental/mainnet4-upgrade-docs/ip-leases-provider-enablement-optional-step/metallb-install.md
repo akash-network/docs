@@ -72,6 +72,8 @@ metallb_ip_range:
   - 66.70.218.96/28
 ```
 
+### Expose your MetalLB Controller to the Akash IP Operator
+
 * Kubespray your cluster with this config and then expose your MetalLB controller for the Akash IP Operator access it
 
 ```
