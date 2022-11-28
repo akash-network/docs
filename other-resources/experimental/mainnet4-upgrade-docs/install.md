@@ -6,7 +6,9 @@ description: >-
 
 # Install Akash
 
-The software to run **Akash** and the command-line client used to interact with them are all distributed in the `akash`application. The `akash` command is used to run the Akash Network.
+The software to run **Akash** and the command-line client used to interact with them are all distributed in the `akash`application. The `` `provider-services` `` commands are used to interact with the Akash Network.
+
+Visit this [guide](detailed-steps/) for a through walk through of the Akash CLI, environment variable declarations, and an example deployment onto the Akash network.
 
 Select a tab below to view instructions for MacOS, Linux, or compiling from source.
 
