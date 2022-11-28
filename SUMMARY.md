@@ -4,7 +4,7 @@
   * [Technical Support](support.md)
   * [Stack Definition Language (SDL)](stack-definition-language.md)
 * [Mainnet4 Upgrade Docs](mainnet4-upgrade-docs/README.md)
-  * [Akash v0.18.1 CLI Release Notes](mainnet4-upgrade-docs/akash-v0.18.0-cli-release-notes.md)
+  * [Akash Provider Services v0.1.0 CLI Release Notes](mainnet4-upgrade-docs/akash-v0.18.0-cli-release-notes.md)
   * [Akash Mainnet4 Node Upgrade Guide](mainnet4-upgrade-docs/akash-mainnet4-node-upgrade-guide.md)
   * [Provider Upgrade](mainnet4-upgrade-docs/provider-upgrade.md)
 * [Tokens and Wallets](tokens-and-wallets/README.md)
