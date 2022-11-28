@@ -79,13 +79,13 @@ The persistent volume is mounted within the container’s local /var/lib/postgre
           mount: /var/lib/postgres
 ```
 
-### Alternative Uses of Params Storage
+## Alternative Uses of Params Storage
 
-#### Default Name Use
+### Default Name Use
 
 In this example the params > storage section is defined for a storage profile using the default (no name explicitly defined) profile
 
-_**Services Section**_
+#### _**Services Section**_
 
 ```
 services:
@@ -97,7 +97,7 @@ services:
           mount: /var/lib/postgres
 ```
 
-**Profiles Section**
+#### **Profiles Section**
 
 ```
 profiles:
@@ -111,61 +111,6 @@ profiles:
         storage:
           - size: 512Mi
           - size: 1Gi
-            attributes:
-              persistent: true
-              class: beta3
-```
-
-#### Multiple Container Share of a Single Persistent Volume
-
-In the following example two containers mount a single persistent volume.  Both containers would have access to the single volume, named data, via the specified local directory.
-
-_**Services Section**_
-
-```
-services:
-  postgres:
-    image: postgres/postgres
-    params:
-      storage:
-        data:
-          mount: /var/lib/postgres
-  grafana:
-    image: grafana/grafana
-    params:
-      storage:
-        data:
-          mount: /var/lib/grafana
-```
-
-_**Profiles Section**_
-
-```
-profiles:
-  compute:
-    grafana-profile:
-      resources:
-        cpu:
-          units: 1
-        memory:
-          size: 1Gi
-        storage:
-          - size: 512Mi
-          - name: data
-            size: 1Gi
-            attributes:
-              persistent: true
-              class: beta3
-    postgres-profile:
-      resources:
-        cpu:
-          units: 1
-        memory:
-          size: 1Gi
-        storage:
-          - size: 512Mi
-          - name: data
-            size: 1Gi
             attributes:
               persistent: true
               class: beta3

@@ -128,7 +128,6 @@
   * [Custom Kubernetes Cluster Settings](providers/custom-kubernetes-cluster-settings/README.md)
     * [VMware Tanzu](providers/custom-kubernetes-cluster-settings/vmware-tanzu.md)
   * [Akash Audited Attributes](providers/akash-audited-attributes.md)
-  * [Akash Provider Migration Guide - 0.14.X to 0.16.3](providers/akash-provider-migration-guide-0.14.x-to-0.16.3.md)
 * [Akash Nodes](akash-nodes/README.md)
   * [Akash Node Via Helm Charts](akash-nodes/akash-node-via-helm-charts/README.md)
     * [Prepare Kubernetes Cluster](akash-nodes/akash-node-via-helm-charts/prepare-kubernetes-cluster.md)
