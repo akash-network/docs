@@ -22,7 +22,7 @@ These commands will retrieve the latest, stable version of the Akash software, s
 ```
 cd ~/Downloads
 
-AKASH_VERSION=0.1.0
+AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
 
 curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "v$AKASH_VERSION"
 ```
@@ -69,7 +69,11 @@ These commands will retrieve the latest, stable version of the Akash software\_*
 ```
 cd ~
 
-AKASH_VERSION=0.1.0
+apt install jq -y
+
+apt install unzip -y
+
+AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
 
 curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "v$AKASH_VERSION"
 ```
@@ -107,7 +111,7 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 ### Make the Path Active in the Current Session
 
 ```
-source /etc/environment
+. /etc/environment
 ```
 
 ### Verify Akash Install

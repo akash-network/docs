@@ -23,7 +23,7 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 ```
 cd ~/Downloads
 
-AKASH_VERSION=0.1.0
+AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
 
 curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "v$AKASH_VERSION"
 ```
@@ -63,8 +63,12 @@ Download the archive for your system from the [release page](https://github.com/
 Alternatively, install the latest version via [`godownloader`](https://github.com/goreleaser/godownloader) First, configure the version of the Akash Network `AKASH_VERSION`as a shell variable in your terminal:
 
 ```bash
+# install necessary utilities
+apt install jq -y
+apt install unzip -y
+
 # configure akash version
-AKASH_VERSION=0.1.0
+AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
 
 # install akash 
 curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "v$AKASH_VERSION"
