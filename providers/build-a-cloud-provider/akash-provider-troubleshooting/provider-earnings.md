@@ -97,7 +97,7 @@ For accurate earning potential based on today's actual financial/other realities
 
 ### Command Syntax
 
-Issue the commands in this section from any machine that has the [Akash CLI](../../../other-resources/archived-resources/mainnet3-legacy-docs/detailed-steps/) installed.
+Issue the commands in this section from any machine that has the [Akash CLI](broken-reference) installed.
 
 **Note** - ensure queries are not limited only to leases created by your account by issuing `unset AKASH_FROM` prior to the `akash query market` command execution
 

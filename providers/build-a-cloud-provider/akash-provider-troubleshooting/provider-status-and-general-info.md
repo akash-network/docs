@@ -95,7 +95,7 @@ Review the Provider’s attribute, and Host URI with the status command
 
 ### Command Template
 
-Issue the commands in this section from any machine that has the [Akash CLI](../../../other-resources/archived-resources/mainnet3-legacy-docs/detailed-steps/) installed.
+Issue the commands in this section from any machine that has the [Akash CLI](broken-reference) installed.
 
 ```
 provider-services query provider get <akash-address>

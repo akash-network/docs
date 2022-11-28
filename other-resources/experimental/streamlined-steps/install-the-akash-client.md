@@ -2,7 +2,7 @@
 
 
 
-The below set of steps downloads the environment for easier setup. For advanced usage, check [Install Akash CLI client](../../archived-resources/mainnet3-legacy-docs/detailed-steps/part-1.-install-akash.md).
+The below set of steps downloads the environment for easier setup. For advanced usage, check [Install Akash CLI client](broken-reference).
 
 ## Download Source Code
 
