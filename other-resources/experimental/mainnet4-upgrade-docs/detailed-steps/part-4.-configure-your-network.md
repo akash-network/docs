@@ -11,7 +11,7 @@ AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
 Next configure the version of the Akash Network `AKASH_VERSION`; copy and paste the command below:
 
 ```bash
-AKASH_VERSION=0.1.0
+AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
 ```
 
 ## Chain ID
