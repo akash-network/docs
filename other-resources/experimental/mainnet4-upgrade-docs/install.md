@@ -25,7 +25,7 @@ cd ~/Downloads
 
 AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
 
-curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "v$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "$AKASH_VERSION"
 ```
 
 ### 2. Move the Akash Binary
@@ -71,7 +71,7 @@ apt install unzip -y
 AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
 
 # install akash 
-curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "v$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "$AKASH_VERSION"
 ```
 
 The final step is to make sure that the akash binaries are available in your shell `PATH`. [This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.
