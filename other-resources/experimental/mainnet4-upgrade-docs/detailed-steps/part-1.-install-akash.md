@@ -24,7 +24,7 @@ cd ~/Downloads
 
 AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
 
-curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "v$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s --$AKASH_VERSION"
 ```
 
 #### Move the Akash Binary
@@ -75,7 +75,7 @@ apt install unzip -y
 
 AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
 
-curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "v$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "$AKASH_VERSION"
 ```
 
 #### Add Akash Install Location to User’s Path
