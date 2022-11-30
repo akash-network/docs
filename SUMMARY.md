@@ -206,7 +206,7 @@
     * [Akash Provider Attribute Updates](other-resources/experimental/akash-provider-attribute-updates.md)
     * [Hardware and Software Recommendations](other-resources/experimental/hardware-and-software-recommendations.md)
     * [Streamlined Steps](other-resources/experimental/streamlined-steps/README.md)
-      * [Install streamlined environment locally](other-resources/experimental/streamlined-steps/install-the-akash-client.md)
+      * [Install the Akash CLI](other-resources/experimental/streamlined-steps/install-the-akash-client.md)
       * [Initialize Environment Variables](other-resources/experimental/streamlined-steps/initialize-environment-variables.md)
       * [Create Akash Account and Certificate](other-resources/experimental/streamlined-steps/create-akash-account-and-certificate.md)
       * [Create Test Deployment](other-resources/experimental/streamlined-steps/create-test-deployment.md)

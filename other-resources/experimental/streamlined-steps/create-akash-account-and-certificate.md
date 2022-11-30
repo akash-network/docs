@@ -9,11 +9,11 @@ If you do not have an Akash account and need to create one, follow the steps in 
 
 ## **Import Pre-Existing Account**
 
-* Follow instructions create a new key named `deploy`
+* Follow instructions create a new key/account named `myWallet`
 * You will be prompted to enter the account mnemonic for import
 
 ```
-provider-services keys add deploy --recover
+provider-services keys add myWallet --recover
 ```
 
 ### Confirm Key Creation in Local Key Chain
@@ -22,17 +22,28 @@ provider-services keys add deploy --recover
 provider-services keys list
 ```
 
+#### Example/Expected Output
+
+```
+provider-services keys list
+
+- name: myWallet
+  type: local
+  address: akash1f53f<REDACTED>fud7
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A21Z<REDACTED>WObs"}'
+  mnemonic: ""
+```
+
 ### Create/Export Key Environment Variable
 
 ```
-export AKASH_KEY_NAME=deploy
+export AKASH_KEY_NAME=myWallet
 ```
 
 ## Create your Certificate
 
 In this step we will create a local certificate and then store the certification on the block chain
 
-* NOTE - for those familiar with previous Akash CLI versions the following commands for cert creation have changed.  We believe the new command sets in this version make steps more clear.
 * Ensure that prior steps in this guide have been completed and that you have a funded wallet before attempting certificate creation.
 * **Your certificate needs to be created only once per account** and can be used across all deployments.
 

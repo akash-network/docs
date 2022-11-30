@@ -2,7 +2,7 @@
 
 Akash CLI use has been streamlined in this guide.  With the use of pre-defined environment variables, CLI commands are very concise.
 
-For a more through review of the Akash CLI, including direct use of variables, visit the [Verbose Steps](broken-reference) guide.
+For a more through review of the Akash CLI, including direct use of variables, visit the [CLI Detailed Steps](../mainnet4-upgrade-docs/detailed-steps/) guide.
 
 ### Akash Wants to Spotlight Your Work&#x20;
 
@@ -16,7 +16,7 @@ This is a great opportunity to connect with the team at Akash Network and to spo
 
 ### Overview of Streamlined Akash CLI Use
 
-* [Install the Akash Client](install-the-akash-client.md)
+* [Install the Akash CLI](install-the-akash-client.md)
 * [Initialize Environment Variables](initialize-environment-variables.md)
 * [Create Akash Account and Certificate](create-akash-account-and-certificate.md)
 * [Create Test Deployment](create-test-deployment.md)
