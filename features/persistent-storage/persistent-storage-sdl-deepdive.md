@@ -66,6 +66,7 @@ profiles:
             size: 1Gi
             attributes:
               persistent: true
+              class: beta3
 ```
 
 ### Storage
