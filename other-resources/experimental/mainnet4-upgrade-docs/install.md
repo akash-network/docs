@@ -33,7 +33,7 @@ curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godown
 * Move the binary file into a directory included in your path
 
 ```
-sudo mv ./bin/akash /usr/local/bin
+sudo mv ./bin/provider-services /usr/local/bin
 ```
 
 ### 3. Verify Akash Installation
