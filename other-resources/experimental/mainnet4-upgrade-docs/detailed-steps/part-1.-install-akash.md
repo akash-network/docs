@@ -24,7 +24,8 @@ cd ~/Downloads
 
 AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
 
-curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s --$AKASH_VERSION"
+#NOTE that this download may take several minutes to complete
+curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "$AKASH_VERSION"
 ```
 
 #### Move the Akash Binary
