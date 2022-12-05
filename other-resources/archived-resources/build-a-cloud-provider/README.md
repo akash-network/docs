@@ -365,7 +365,7 @@ _Expected result_:
 
 ```
 root@node2:~# akash version
-v0.14.1
+v0.1.0
 ```
 
 ### STEP3 - Create/Import Akash Account
