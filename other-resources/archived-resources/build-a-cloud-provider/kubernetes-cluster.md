@@ -686,8 +686,8 @@ kubectl kustomize _docs/kustomize/akash-services/ | kubectl apply -f -
 cat >> _docs/kustomize/akash-hostname-operator/kustomization.yaml <<'EOF'
 images:
   - name: ghcr.io/ovrclk/akash:stable
-    newName: ghcr.io/ovrclk/akash
-    newTag: 0.14.1
+    newName: ghcr.io/ovrclk/provider-services
+    newTag: 0.1.0
 EOF
 
 kubectl kustomize _docs/kustomize/akash-hostname-operator | kubectl apply -f -
@@ -702,10 +702,10 @@ The Akash provider requires an ingress controller in the Kubernetes cluster.
 * On the Kubernetes master node, download and install the ingress controller YAML files
 
 ```
-wget https://raw.githubusercontent.com/ovrclk/akash/v0.14.1/_run/ingress-nginx-class.yaml
+wget https://raw.githubusercontent.com/ovrclk/provider-services/v0.1.0/_run/ingress-nginx-class.yaml
 kubectl apply -f ./ingress-nginx-class.yaml
 
-wget https://raw.githubusercontent.com/ovrclk/akash/v0.14.1/_run/ingress-nginx.yaml
+wget https://raw.githubusercontent.com/ovrclk/provider-services/v0.1.0/_run/ingress-nginx.yaml
 kubectl apply -f ./ingress-nginx.yaml
 ```
 

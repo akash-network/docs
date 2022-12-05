@@ -131,7 +131,7 @@ akash-services   37m         Normal   SuccessfulCreate    replicaset/akash-provi
 akash-services   37m         Normal   SuccessfulDelete    replicaset/akash-provider-76966c6795       Deleted pod: akash-provider-76966c6795-lvphs
 akash-services   37m         Normal   Created             pod/akash-provider-6bf9986cdc-btvlg        Created container provider
 akash-services   36m         Normal   Killing             pod/akash-provider-76966c6795-lvphs        Stopping container provider
-akash-services   37m         Normal   Pulled              pod/akash-provider-6bf9986cdc-btvlg        Container image "ghcr.io/ovrclk/akash:0.16.4-rc0" already present on machine
+akash-services   37m         Normal   Pulled              pod/akash-provider-6bf9986cdc-btvlg        Container image "ghcr.io/ovrclk/akash:0.1.0" already present on machine
 akash-services   37m         Normal   ScalingReplicaSet   deployment/akash-provider                  Scaled down replica set akash-provider-76966c6795 to 0
 akash-services   37m         Normal   Started             pod/akash-provider-6bf9986cdc-btvlg        Started container provider
 akash-services   30m         Normal   SuccessfulCreate    replicaset/inventory-operator-645fddd5cc   Created pod: inventory-operator-645fddd5cc-86jr9
