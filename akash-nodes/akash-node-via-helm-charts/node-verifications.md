@@ -16,7 +16,7 @@ helm -n akash-services get values akash-node
 
 USER-SUPPLIED VALUES:
 image:
-  tag: 0.16.4
+  tag: 0.18.1
 state_sync:
   enabled: true
 ```

@@ -18,7 +18,7 @@ provider "akash" {
   key_name = "mykey"
   node = "https://akash-rpc.polkachu.com:443"
   chain_id = "akashnet-2"
-  chain_version = "0.16.4"
+  chain_version = "0.1.0"
 }
 
 resource "akash_deployment" "hello_world" {

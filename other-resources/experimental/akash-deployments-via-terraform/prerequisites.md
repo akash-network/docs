@@ -10,6 +10,6 @@ The Terraform client for Windows, MacOS, and Linux is available [here](https://w
 
 ## **Akash**
 
-The Akash CLI is necessary and the recommended version is 0.16.4.
+The Akash CLI is necessary and the recommended version is 0.1.0.
 
 Akash CLI install instructions are available [here](https://docs.akash.network/guides/cli/detailed-steps/part-1.-install-akash)**.**  Note only the \`Install Akash CLI\` and \`Create/Fund Account\` sections of this guide are necessary for Terraform use.

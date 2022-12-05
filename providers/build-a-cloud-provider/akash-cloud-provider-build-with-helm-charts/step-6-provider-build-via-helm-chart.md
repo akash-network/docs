@@ -195,7 +195,7 @@ If a need arises to use a different software version other than the one defined 
 
 ```
 image:
-  tag: 0.16.6
+  tag: 0.1.0
 ```
 
 ## **Provider Confirmation**

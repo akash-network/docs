@@ -6,6 +6,12 @@ In this step we will cover Installing the Akash software on a Linux server.  We 
 
 ## Download and Install Akash
 
+### Install the Linux unzip utility if needed
+
+```
+sudo apt install zip
+```
+
 ### Install Latest Stable Akash Version
 
 ```
@@ -17,5 +23,5 @@ apt install unzip -y
 
 AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/akash/releases/latest | jq -r '.tag_name')"
 
-curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "$AKASH_VERSION"
+curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "v$AKASH_VERSION"
 ```

@@ -129,7 +129,7 @@ bidpricestoragescale: "0.00016"
 domain: REDACTED
 from: akash1REDACTED
 image:
-  tag: 0.16.4-rc0
+  tag: 0.1.0
 ...
 ```
 
