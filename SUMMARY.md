@@ -172,7 +172,7 @@
   * [Install Akash](other-resources/experimental/mainnet4-upgrade-docs/install.md)
   * [Setup your Environment](other-resources/experimental/mainnet4-upgrade-docs/shell-variables.md)
   * [Create Your Account](other-resources/experimental/mainnet4-upgrade-docs/wallet.md)
-  * [CLI Commands](cli/command-line-interface.md)
+  * [CLI Commands](command-line/cli-commands.md)
 * [Features](features/README.md)
   * [IP Leases](other-resources/experimental/ip-leases/README.md)
     * [IP Leases Features and Limitations](other-resources/experimental/ip-leases/ip-leases-features-and-limitations.md)
