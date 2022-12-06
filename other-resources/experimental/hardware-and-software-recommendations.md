@@ -167,7 +167,7 @@ Recommended System Requirements
 128GB DDR4\
 4TB NVMe / 2x 18TB HDD
 
-![](<../../.gitbook/assets/image (10) (1) (1) (2).png>)
+![](<../../.gitbook/assets/image (10) (1) (1).png>)
 
 [PCPartPicker Part List](https://pcpartpicker.com/list/jJBbC6)
 

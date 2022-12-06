@@ -34,7 +34,7 @@ If you have not used Cloudmos Deploy previously, please use [this guide](https:/
 * Accept the initial deposit of 5 AKT into the deployment’s escrow account
 * The escrow can be refilled easily within Cloudmos Deploy at any time
 
-![](<../.gitbook/assets/acceptDeposit (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../.gitbook/assets/acceptDeposit (1) (1) (1) (1) (1) (1) (1) (3).png>)
 
 * Approve the transaction fee to allow the deployment to continue
 
@@ -52,7 +52,7 @@ If you have not used Cloudmos Deploy previously, please use [this guide](https:/
 
 * Once the deployment is complete the lease details are shown
 
-![](<../.gitbook/assets/deploymentComplete (1) (1) (1) (1) (1) (1).png>)
+![](<../.gitbook/assets/deploymentComplete (1) (1) (1) (1) (1) (1) (2).png>)
 
 * After some time the Available/Ready Replicas fields will update to show the current node count. It may be necessary to refresh the screen for this count to update.
 
