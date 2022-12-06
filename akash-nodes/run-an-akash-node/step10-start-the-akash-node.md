@@ -16,6 +16,10 @@ cd ~
 cat <<EOF | tee /usr/local/bin/start-node.sh
 #!/usr/bin/env bash
 
+Environment="AKASH_PRUNING=nothing" 
+Environment="AKASH_IAVL_DISABLE_FASTNODE=false"
+Environment="AKASH_STATESYNC_SNAPSHOT_INTERVAL=0" 
+
 /root/bin/akash start
 EOF
 ```
