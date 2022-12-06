@@ -34,7 +34,7 @@ If you have not used Cloudmos Deploy previously, please use [this guide](https:/
 * Accept the initial deposit of 5 AKT into the deployment’s escrow account
 * The escrow can be refilled easily within Cloudmos Deploy at any time
 
-![](<../.gitbook/assets/acceptDeposit (1) (1) (1) (1) (1) (1) (1) (3).png>)
+![](<../.gitbook/assets/acceptDeposit (1) (1) (1) (1) (1) (1) (1) (2).png>)
 
 * Approve the transaction fee to allow the deployment to continue
 

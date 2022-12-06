@@ -321,7 +321,7 @@ Global Flags:
       --trace               print out full stack trace on errors
 ```
 
-## Withdraw Rewards
+### Withdraw Rewards
 
 Withdraw rewards from validator
 
@@ -529,7 +529,7 @@ VmSk+mQl2tpra7dHt2Dm2z4S2unH2kbjXaOZTK/9NGQsw3TSb6GkwBU7WizTCmN/
 -----END TENDERMINT PRIVATE KEY-----
 ```
 
-## Import Key
+### Import Key
 
 Import a file with ASCII armored private key into the local keybase. Required key password to import key.
 

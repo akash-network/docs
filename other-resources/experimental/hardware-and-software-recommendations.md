@@ -126,7 +126,7 @@ Memory : 32Gb\
 
 ****
 
-![](<../../.gitbook/assets/image (10) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (10) (1) (1) (2).png>)
 
 [PCPartPicker Part List](https://pcpartpicker.com/list/mgpRFg)
 
