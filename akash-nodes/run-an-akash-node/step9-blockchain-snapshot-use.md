@@ -4,12 +4,6 @@ We could let our node catch up to the current block but this would take a very l
 
 **NOTE** - at the time of this writing the snapshot is 200GB and could take some time to pull down.
 
-### Install JQ
-
-```
-apt install jq
-```
-
 ### Remove Existing Data
 
 ```
