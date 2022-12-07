@@ -180,13 +180,13 @@ akash init
 
 > _**NOTE**_ - we strong suggest using environment variables over manually modifying the config.toml / app.toml
 
-* Set AKASH\_PRUNING to `nothing`
+* To prevent `panic: cannot delete latest saved version` error
 
 ```
 export AKASH_PRUNING=nothing
 ```
 
-* Set AKASH\_IAVL\_FASTNODE\_ENABLED to `false`&#x20;
+* To prevents `panic: runtime error: invalid memory address or nil pointer dereference` error
 
 ```
 export AKASH_IAVL_DISABLE_FASTNODE=false
