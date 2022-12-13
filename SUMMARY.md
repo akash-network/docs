@@ -221,6 +221,7 @@
       * [Create Akash Deployment](other-resources/experimental/akash-deployments-via-terraform/create-akash-deployment.md)
       * [Close Akash Deployment](other-resources/experimental/akash-deployments-via-terraform/close-akash-deployment.md)
       * [Terraform Manifest - Complete Example](other-resources/experimental/akash-deployments-via-terraform/terraform-manifest-complete-example.md)
+    * [Akash Mainnet5 Node Upgrade Guide](other-resources/experimental/akash-mainnet4-node-upgrade-guide.md)
   * [Security](glossary/security.md)
   * [Containers](glossary/platform.md)
   * [Marketplace](glossary/marketplace.md)
