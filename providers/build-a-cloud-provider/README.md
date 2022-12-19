@@ -8,7 +8,7 @@ Our curated guide to building your decentralized provider follows these sequenti
 * **STEP 2** - [Build your Cloud Provider via Helm Charts](akash-cloud-provider-build-with-helm-charts/)
 * **STEP 3** - [Complete a CheckUp of your New Provider](akash-provider-checkup/)
 * **STEP 4** - [Enable Persistent Storage on your Cloud Provider](helm-based-provider-persistent-storage-enablement/)
-* **STEP 5** - [Provider Troubleshooting](akash-provider-troubleshooting/)
+* **STEP 5** - [Provider Troubleshooting](../akash-provider-troubleshooting/)
 
 ## Helm Chart Repository for Akash Providers
 
