@@ -10,7 +10,7 @@ The upgrade instructions provided in this guide pertain to Akash providers insta
 
 If your provider was installed using Praetor, please visit the [Praetor Discord](http://discord.gg/uzUCHTF93D) server for upgrade guidance and inquiries.
 
-> All providers _**MUST**_ upgrade their Akash Provider and related components (RPC Node only) on the date of the `Mainnet5` upgrade (December 21st 2022) to avoid disruption.  Provider RPC Nodes which are not upgrade post `Mainnet5` will be unable to bid on new orders.  Pre-existing deployments on non-upgraded providers will not incur service disruption. But the ability to bid on new deployments will be impacted until the provider's RPC nodes are upgraded to `0.20.0` .
+> All providers _**MUST**_ upgrade their Akash Provider components (RPC Node only) on the date of the `Mainnet5` upgrade (December 21st 2022) to avoid disruption.  Provider RPC Nodes which are not upgrade post `Mainnet5` will be unable to bid on new orders.  Pre-existing deployments on non-upgraded providers will not incur service disruption. But the ability to bid on new deployments will be impacted until the provider's RPC nodes are upgraded to `0.20.0` .
 
 > _**NOTE**_ - please do not attempt to upgrade your provider RPC modes until the `Mainnet5` upgrade has been completed.  The Helm Charts will be updated to the use the correct/current binaries on the day of the `Mainnet5` upgrade.
 
