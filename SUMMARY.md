@@ -192,7 +192,7 @@
   * [Hostname Migration](features/hostname-migration.md)
 * [Upgrades](upgrades/README.md)
   * [Akash Mainnet5 Node Upgrade Guide](upgrades/v0.20.0-upgrade-docs.md)
-* [Mainnet4 Upgrade Docs](mainnet5-upgrade-docs/README.md)
+* [Mainnet5 Upgrade Docs](mainnet5-upgrade-docs/README.md)
   * [Akash Provider Services v0.1.0 CLI Release Notes](mainnet5-upgrade-docs/akash-v0.18.0-cli-release-notes.md)
   * [Provider Upgrade](mainnet5-upgrade-docs/provider-upgrade.md)
 * [Other Resources](other-resources.md)
@@ -232,3 +232,4 @@
       * [Kubernetes Cluster](other-resources/archived-resources/build-a-cloud-provider/kubernetes-cluster.md)
       * [gVisor Issue - No system-cgroup v2 Support](other-resources/archived-resources/build-a-cloud-provider/gvisor-issue-no-system-cgroup-v2-support.md)
       * [Provider Networks](other-resources/archived-resources/build-a-cloud-provider/provider-networks.md)
+    * [Provider Upgrade](other-resources/archived-resources/provider-upgrade.md)
