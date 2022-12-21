@@ -14,6 +14,12 @@ If your provider was installed using Praetor, please visit the [Praetor Discord]
 
 > _**NOTE**_ - please do not attempt to upgrade your provider RPC modes until the `Mainnet5` upgrade has been completed.  The Helm Charts will be updated to the use the correct/current binaries on the day of the `Mainnet5` upgrade.
 
+## Network Upgrade Schedule
+
+Countdown to network upgrade is listed below.  Please await announcement that the network upgrade is complete prior to initiating RPC node upgrades.
+
+[Network Upgrade Countdown](https://www.mintscan.io/akash/blocks/8998907)
+
 ## Provider Upgrade Procedure
 
 ### Update Local Helm Repo
