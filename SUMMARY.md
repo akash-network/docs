@@ -145,6 +145,7 @@
     * [RPC Service](akash-nodes/run-an-akash-node/rpc-service.md)
     * [API Service](akash-nodes/run-an-akash-node/api-service.md)
   * [Public RPC Nodes](akash-nodes/public-rpc-nodes.md)
+  * [API Endpoints](akash-nodes/api-endpoints.md)
 * [Validating](validating/README.md)
   * [Running a Validator](operations/validator.md)
   * [Akash Validator with TMKMS and Stunnel](validating/akash-validator-with-tmkms-and-stunnel/README.md)
