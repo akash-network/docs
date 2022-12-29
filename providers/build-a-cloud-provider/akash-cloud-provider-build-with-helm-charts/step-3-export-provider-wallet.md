@@ -38,8 +38,47 @@ provider-services keys list
 * The key-name can be any name of your choice
 * Note the passphrase used to protect the private key as it will be used in future steps
 
+> _**NOTE**_ - The passhprase MUST be at least 8 characters long. Otherwise provider will encounter `failed to decrypt private key: ciphertext decryption failed error` when `keys import` is executed.
+
+### STEP 1 - Export Provider Key
+
 ```
 cd ~
 
-provider-services keys export <key-name> > key.pem
+provider-services keys export mykey1
+```
+
+#### Expected/Example Output
+
+```
+provider-services keys export mykey1
+
+Enter passphrase to encrypt the exported key:                          
+Enter keyring passphrase:                                              
+-----BEGIN TENDERMINT PRIVATE KEY-----
+kdf: bcrypt
+salt: REDACTED
+type: secp256k1
+
+REDACTED
+-----END TENDERMINT PRIVATE KEY-----
+```
+
+### &#x20;STEP 2 - Create key.pem and Copy Output Into File
+
+* Copy the contents of the prior step into the `key.pem` file
+
+> _**NOTE -**_ file should contain only what's between `-----BEGIN TENDERMINT PRIVATE KEY-----` and  `-----END TENDERMINT PRIVATE KEY-----` (including the `BEGIN` and `END` lines):
+
+#### Example/Expected File Contents
+
+```
+cat key.pem
+-----BEGIN TENDERMINT PRIVATE KEY-----
+kdf: bcrypt
+salt: REDACTED
+type: secp256k1
+
+REDACTED
+-----END TENDERMINT PRIVATE KEY-----
 ```
