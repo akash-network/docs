@@ -126,7 +126,7 @@ You should see a response similar to:
     }
   ],
   "info":"",
-  "gas_wanted":"200000",
+  "gas_wanted":"100000",
   "gas_used":"94653",
   "tx":null,
   "timestamp":""
