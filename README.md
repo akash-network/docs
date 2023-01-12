@@ -1,18 +1,18 @@
 ---
-description: Akash means "open space" or "sky" in ancient Sanskrit.
+description: >-
+  Akash means “open space” or “sky” in ancient Sanskrit. The sky is where the
+  clouds meet.
 ---
 
 # Intro to Akash
 
-Akash Network is a decentralized cloud marketplace where tenants purchase cloud-grade compute in an [**open**](https://github.com/ovrclk/akash) market from providers in a permissionless manner. The network is maintained by a network of validators and governed by AKT stakers.
-
-Akash means "sky" in ancient Sanskrit; sky is where the clouds meet ☁️
+Akash is an open network that lets users buy and sell computing resources securely and efficiently. Purpose-built for public utility.
 
 ## Common Questions
 
 ### How to use Akash?
 
-You can get started right from the [**command-line**](https://docs.akash.network/guides/cli) or use the [**desktop GUI**](guides/deploy/)****
+You can get started right from the [**command-line**](https://docs.akash.network/guides/cli) or use the [**desktop GUI**](guides/deploy/)\*\*\*\*
 
 * Define your Docker image, CPU, Memory, and Storage in a [**deploy.yaml**](stack-definition-language.md) file.
 * Set your price, receive bids from providers in seconds, and select the lowest price.

@@ -7,7 +7,7 @@ Each node serving persistent storage should have `akash.network/storageclasses` 
 * Ensure that this command is issued - one at a time - for all nodes serving persistent storage
 * Replace the `storageclasses` value with the proper storage class and as clarified in the example command
 
-> _**NOTE**_ - ensure ALL nodes in the Kubernetes cluster should receive this label
+> _**NOTE**_ - ensure ALL nodes in the Kubernetes cluster receive this label
 
 ```
 kubectl label node <node-name> akash.network/storageclasses=<beta1|beta2|beta3> --overwrite

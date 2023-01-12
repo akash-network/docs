@@ -11,5 +11,5 @@ Sections in this guide:
 * [Validator Topology](../../../../validating/akash-validator-with-tmkms-and-stunnel/validator-topology.md)
 * [Obtain Private Key](../../../../validating/akash-validator-with-tmkms-and-stunnel/obtain-private-key.md)
 * [Akash Validator Deployment](../../../../validating/akash-validator-with-tmkms-and-stunnel/akash-validator-deployment.md)
-* [TMKMS Setup](broken-reference)
+* [TMKMS Setup](tmkms-setup.md)
 * [Start and Verify the TMKMS Service](../../../../validating/akash-validator-with-tmkms-and-stunnel/start-and-verify-the-tmkms-service.md)
