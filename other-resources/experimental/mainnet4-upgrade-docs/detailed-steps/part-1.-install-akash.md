@@ -9,7 +9,8 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 The simplest way to install Akash is using Homebrew using:
 
 ```
-brew tap ovrclk/tap
+brew untap ovrclk/tap
+brew tap akash-network/tap
 brew install akash-provider-services
 ```
 
@@ -22,10 +23,10 @@ These commands will retrieve the latest, stable version of the Akash software, s
 ```
 cd ~/Downloads
 
-AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
+AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/provider/releases/latest | jq -r '.tag_name')"
 
 #NOTE that this download may take several minutes to complete
-curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash -s -- "$AKASH_VERSION"
 ```
 
 #### Move the Akash Binary
@@ -47,17 +48,16 @@ provider-services version
 Expect/Example Output
 
 ```
-v0.1.0
+v0.2.0
 ```
 {% endtab %}
 
 {% tab title="Linux" %}
-### Linux
-
 The simplest way to install Akash is using Homebrew using:
 
 ```
-brew tap ovrclk/tap
+brew untap ovrclk/tap
+brew tap akash-network/tap
 brew install akash-provider-services
 ```
 
@@ -74,9 +74,9 @@ apt install jq -y
 
 apt install unzip -y
 
-AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
+AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/provider/releases/latest | jq -r '.tag_name')"
 
-curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash -s -- "$AKASH_VERSION"
 ```
 
 #### Add Akash Install Location to User’s Path
@@ -126,7 +126,7 @@ provider-services version
 Expected/Example Result
 
 ```
-v0.1.0
+v0.2.0
 ```
 {% endtab %}
 
@@ -136,8 +136,10 @@ v0.1.0
 Installing Akash suite from source:
 
 ```
-$ go get -d github.com/ovrclk/akash
-$ cd $GOPATH/src/github.com/ovrclk/akash
+$ go get -d github.com/akash-network/provider
+$ cd $GOPATH/src/github.com/akash-network/provider
+$ AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
+$ AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/provider/releases/latest | jq -r '.tag_name')"
 $ git checkout "v$AKASH_VERSION"
 $ make deps-install
 $ make install

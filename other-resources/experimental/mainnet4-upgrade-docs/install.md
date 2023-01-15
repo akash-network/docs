@@ -23,10 +23,10 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 ```
 cd ~/Downloads
 
-AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
+AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/provider/releases/latest | jq -r '.tag_name')"
 
 #NOTE that this download may take several minutes to complete
-curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash -s -- "$AKASH_VERSION"
 ```
 
 ### 2. Move the Akash Binary
@@ -69,10 +69,10 @@ apt install jq -y
 apt install unzip -y
 
 # configure akash version
-AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/provider-services/releases/latest | jq -r '.tag_name')"
+AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/provider/releases/latest | jq -r '.tag_name')"
 
 # install akash 
-curl -sfL https://raw.githubusercontent.com/ovrclk/provider-services/main/godownloader.sh | bash -s -- "$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash -s -- "$AKASH_VERSION"
 ```
 
 The final step is to make sure that the akash binaries are available in your shell `PATH`. [This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.
@@ -84,8 +84,10 @@ The final step is to make sure that the akash binaries are available in your she
 Installing Akash suite from source
 
 ```
-$ go get -d github.com/ovrclk/akash
-$ cd $GOPATH/src/github.com/ovrclk/akash
+$ go get -d github.com/akash-network/provider
+$ cd $GOPATH/src/github.com/akash-network/provider
+$ AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
+$ AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/provider/releases/latest | jq -r '.tag_name')"
 $ git checkout "v$AKASH_VERSION"
 $ make deps-install
 $ make install
