@@ -23,10 +23,8 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 ```
 cd ~/Downloads
 
-AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/provider/releases/latest | jq -r '.tag_name')"
-
 #NOTE that this download may take several minutes to complete
-curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash -s -- "$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash
 ```
 
 ### 2. Move the Akash Binary
@@ -68,11 +66,8 @@ Alternatively, install the latest version via [`godownloader`](https://github.co
 apt install jq -y
 apt install unzip -y
 
-# configure akash version
-AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/provider/releases/latest | jq -r '.tag_name')"
-
 # install akash 
-curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash -s -- "$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash
 ```
 
 The final step is to make sure that the akash binaries are available in your shell `PATH`. [This page](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix) contains instructions for setting the PATH on Linux.

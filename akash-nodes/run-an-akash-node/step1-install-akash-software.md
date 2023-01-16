@@ -15,7 +15,7 @@ apt install jq -y
 
 apt install unzip -y
 
-AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/node/releases/latest | jq -r '.tag_name')"
+AKASH_VERSION="$(curl -s https://api.github.com/repos/ovrclk/akash/releases/latest | jq -r '.tag_name')"
 
-curl -sfL https://raw.githubusercontent.com/akash-network/node/master/godownloader.sh | bash -s -- "$AKASH_VERSION"
+curl https://raw.githubusercontent.com/ovrclk/akash/master/godownloader.sh | sh -s -- "$AKASH_VERSION"
 ```

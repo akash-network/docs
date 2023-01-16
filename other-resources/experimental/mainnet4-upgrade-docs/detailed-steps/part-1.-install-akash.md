@@ -23,10 +23,8 @@ These commands will retrieve the latest, stable version of the Akash software, s
 ```
 cd ~/Downloads
 
-AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/provider/releases/latest | jq -r '.tag_name')"
-
 #NOTE that this download may take several minutes to complete
-curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash -s -- "$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash
 ```
 
 #### Move the Akash Binary
@@ -74,9 +72,7 @@ apt install jq -y
 
 apt install unzip -y
 
-AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/provider/releases/latest | jq -r '.tag_name')"
-
-curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash -s -- "$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash
 ```
 
 #### Add Akash Install Location to User’s Path
