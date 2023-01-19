@@ -11,7 +11,10 @@
 
     mv linux-amd64/helm /usr/local/bin/helm
 
-    helm repo add akash https://ovrclk.github.io/helm-charts
+    ###Remove any potential prior repo instances
+    helm repo remove akash
+
+    helm repo add akash https://akash-network.github.io/helm-charts
     ```
 
 

@@ -230,8 +230,4 @@
   * [Authentication](glossary/mtls.md)
   * [Archived Resources](other-resources/archived-resources/README.md)
     * [Akash Provider Services v0.1.0 CLI Release Notes](other-resources/archived-resources/akash-v0.18.0-cli-release-notes.md)
-    * [Build a Cloud Provider](other-resources/archived-resources/build-a-cloud-provider/README.md)
-      * [Kubernetes Cluster](other-resources/archived-resources/build-a-cloud-provider/kubernetes-cluster.md)
-      * [gVisor Issue - No system-cgroup v2 Support](other-resources/archived-resources/build-a-cloud-provider/gvisor-issue-no-system-cgroup-v2-support.md)
-      * [Provider Networks](other-resources/archived-resources/build-a-cloud-provider/provider-networks.md)
     * [Provider Upgrade](other-resources/archived-resources/provider-upgrade.md)

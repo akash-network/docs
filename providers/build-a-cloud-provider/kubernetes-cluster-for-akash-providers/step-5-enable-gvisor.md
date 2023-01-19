@@ -1,4 +1,4 @@
-# STEP 5 - Enable gVisor
+# STEP 5 - Additional Verifications/Config
 
 In this section we will enable gVisor which provides basic container security.
 
@@ -24,4 +24,4 @@ container_manager: containerd
 
 ## **gVisor Issue - No system-cgroup v2 Support**
 
-If you are using a newer systemd version,  your container will get stuck in ContainerCreating state on your provider with gVisor enabled. Please reference [this document ](../../../other-resources/archived-resources/build-a-cloud-provider/gvisor-issue-no-system-cgroup-v2-support.md)for details regarding this issue and the recommended workaround.
+If you are using a newer systemd version,  your container will get stuck in ContainerCreating state on your provider with gVisor enabled. Please reference [this document ](broken-reference)for details regarding this issue and the recommended workaround.

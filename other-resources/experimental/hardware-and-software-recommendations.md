@@ -18,27 +18,27 @@ Web based setup / Requires [Keplr](https://www.keplr.app/) wallet and uses SSH t
 
 Requires terminal skills and general knowledge of dev-ops. &#x20;
 
-#### [k3s](https://k3s.io/) + [Helm Charts](https://github.com/ovrclk/helm-charts)
+#### [k3s](https://k3s.io/) + [Helm Charts](https://github.com/akash-network/helm-charts)
 
 The most lightweight option for Kubernetes with the lowest minimum specifications.
 
-#### [microk8s](https://microk8s.io/) + [Helm Charts](https://github.com/ovrclk/helm-charts)
+#### [microk8s](https://microk8s.io/) + [Helm Charts](https://github.com/akash-network/helm-charts)
 
 Built into Ubuntu by default - microk8s requires snapd is a great way to easily manage a large cluster
 
-#### [Rancher](https://rancher.com/) + [Helm Charts](https://github.com/ovrclk/helm-charts)
+#### [Rancher](https://rancher.com/) + [Helm Charts](https://github.com/akash-network/helm-charts)
 
 Rancher uses Docker to create a Kubernetes cluster on the master and worker nodes
 
 ### Advanced Difficulty
 
-#### [Kubespray](https://github.com/kubernetes-sigs/kubespray) + [Helm Charts](https://github.com/ovrclk/helm-charts)
+#### [Kubespray](https://github.com/kubernetes-sigs/kubespray) + [Helm Charts](https://github.com/akash-network/helm-charts)
 
 Configure bare-metal hosts on-prem or in datacenters to create a Kubernetes cluster using etcd.
 
 ### Additional Paths
 
-#### [k3sup](https://github.com/alexellis/k3sup) + [Helm Charts](https://github.com/ovrclk/helm-charts)
+#### [k3sup](https://github.com/alexellis/k3sup) + [Helm Charts](https://github.com/akash-network/helm-charts)
 
 Easily create a Kubernetes cluster with a simple CLI.&#x20;
 

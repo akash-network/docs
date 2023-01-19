@@ -5,7 +5,7 @@
 ```
 cd ~
 
-git clone https://github.com/ovrclk/helm-charts.git
+git clone https://github.com/akash-network/helm-charts.git
 
 cd ~/helm-charts
 ```
