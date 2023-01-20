@@ -51,6 +51,17 @@ env:
 
 * HTTPS is possible in Akash deployments but only self signed certs are generated.
 * To implement signed certs the deployment must be front ended via a solution such as Cloudflare.  If interested in this path, we have created docs for [Cloudflare with Akash](deploy/tls-termination-of-akash-deployments/).
+* You can expose any other port besides 80 as the ingress port (HTTP, HTTPS) port using as: 80 directive if the app understands HTTP / HTTPS.  Example of exposing a React web app using this method:
+
+```
+      - port: 3000
+        as: 80
+        to:
+          - global: true
+        accept:
+          - www.mysite.com
+```
+
 * In the SDL it is only necessary to expose port 80 for web apps. With this specification both ports 80 and 443 are exposed.
 
 `expose` is a list describing what can connect to the service. Each entry is a map containing one or more of the following fields:
@@ -63,11 +74,15 @@ env:
 | `proto`  | No       | Protocol type (`tcp, udp, or http`)                                                                            |
 | `to`     | No       | List of entities allowed to connect. See [services.expose.to](stack-definition-language.md#services.expose.to) |
 
-The `port` value governs the default `proto` value as follows:
+The `as` value governs the default `proto` value as follows:
+
+> _**NOTE**_ - when as is not set, it will default to the value set by the port mandatory directive.
+
+> _**NOTE**_ - when one exposes as: 80 (HTTP), the Kubernetes ingress controler makes the application available over HTTPS as well, though with the default self-signed ingress certs.
 
 | `port`     | `proto` default |
 | ---------- | --------------- |
-| 80         | http            |
+| 80         | http, https     |
 | all others | tcp             |
 
 ### services.expose.to
