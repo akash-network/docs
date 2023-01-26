@@ -37,6 +37,8 @@
       * [Access a Deployment’s Shell](guides/cli/akash-cli-booster/access-a-deployments-shell.md)
       * [Obtain a Deployment’s Logs](guides/cli/akash-cli-booster/obtain-a-deployments-logs.md)
   * [Apps on Akash](guides/apps-on-akash.md)
+  * [Deployment Definitions](guides/deployment-definitions/README.md)
+    * [Akash GSEQ and OSEQ Description and Utility](guides/deployment-definitions/akash-gseq-and-oseq-description-and-utility.md)
 * [Integrations](deploy/README.md)
   * [TLS Termination of Akash Deployments](deploy/tls-termination-of-akash-deployments/README.md)
     * [Prerequisites](deploy/tls-termination-of-akash-deployments/prerequisites.md)
