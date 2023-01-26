@@ -2,9 +2,13 @@
 
 ## How to terminate the workload from the Akash Provider using CLI
 
-#### Impact of Steps Detailed in the K8s Cluster
+#### Impact of Steps Detailed in the K8s Cluster\\
 
-Steps outline in this section will terminate the deployment in K8s cluster and remove the manifest.
+* Steps outlined in this section will terminate the deployment in K8s cluster and remove the manifest.
+* Providers can close the bid to get the provider escrow back.
+* Closing the bid will terminate the associated application running on the provider.
+* Closing the bid closes the lease (payment channel), meaning the tenant won't get any further charge for the deployment from the moment the bid is closed.
+* Providers cannot close the deployment orders.  Only the tenants can close deployment orders and only then would the deployment escrow be returned to the tenant.
 
 #### Impact of Steps Detailed on the Blockchain
 
