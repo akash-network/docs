@@ -4,7 +4,7 @@
 
 An Akash wallet with available mnemonic phrase will be needed.
 
-Follow our [Keplr Wallet](../../token/keplr.md) guide to create your first wallet if necessary.
+Follow our [Keplr Wallet](../../tokens-and-wallets/keplr.md) guide to create your first wallet if necessary.
 
 ## CPU Support
 
@@ -22,7 +22,7 @@ The Cloudmos Deploy software download may be initiated via the desired link belo
 
 The Cloudmos Deploy project’s documentation may be found [here](https://cloudmos.io/cloud-deploy).
 
-![](../../.gitbook/assets/AkashlyticsDownloadScreen.png)
+![](<../../.gitbook/assets/AkashlyticsDownloadScreen (1).png>)
 
 {% tabs %}
 {% tab title="MacOS" %}
@@ -93,7 +93,7 @@ Depending on the Operating System version and installed/enabled security tools -
 
 * Feel free to use the default install options and follow the prompts.
 
-![](<../../.gitbook/assets/akashlticsWindowsInstall (1).png>)
+![](../../.gitbook/assets/akashlticsWindowsInstall.png)
 
 * On the last step of the install in the “Completing Cloudmos Deploy Setup” section - check the “Run Cloudmos Deploy” option (likely selected by default) and select “Finish”.
 

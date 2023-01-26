@@ -1,6 +1,6 @@
 # STEP 3 - Export Provider Wallet
 
-In this section we will export the pre-existing, funded wallet to store the private key in a local file.  To conduct the commands in this section the Akash CLI must be installed which is detailed in this [guide ](../../../other-resources/experimental/mainnet4-upgrade-docs/detailed-steps/)(STEP 1 only).
+In this section we will export the pre-existing, funded wallet to store the private key in a local file.  To conduct the commands in this section the Akash CLI must be installed which is detailed in this [guide ](../../../guides/cli/detailed-steps/)(STEP 1 only).
 
 The wallet used will be used for the following purposes:
 

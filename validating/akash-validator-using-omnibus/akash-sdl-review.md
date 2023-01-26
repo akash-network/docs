@@ -1,6 +1,6 @@
 # Akash SDL Review
 
-Akash deployments are created using [Stack Definition Language (SDL)](../../../../stack-definition-language.md) files that serve as the recipe for your deployments.  In this section we detail the Omnibus SDL used for the Akash Validator deployment.
+Akash deployments are created using [Stack Definition Language (SDL)](../../readme/stack-definition-language.md) files that serve as the recipe for your deployments.  In this section we detail the Omnibus SDL used for the Akash Validator deployment.
 
 ## Akash Validator SDL Template
 

@@ -1,12 +1,10 @@
 # Relevant SDL Declaration and Example Use
 
-For the purpose of demonstrating the use of fractional uAKT we will utilize the popular Hello World web application and SDL that can be found in the [Awesome Akash repository](https://github.com/ovrclk/awesome-akash/blob/master/supermario/deploy.yaml).  The example SDL file will be modified to take advantage of the new fractional uAKT option.
+For the purpose of demonstrating the use of fractional uAKT we will utilize the popular Hello World web application and SDL that can be found in the [Awesome Akash repository](https://github.com/akash-network/awesome-akash). The example SDL file will be modified to take advantage of the new fractional uAKT option.
 
 The [Cloudmos Deploy](https://docs.akash.network/guides/deploy) application will be used to launch the deployment.
 
 ## **Example Fractional uAKT Use in Cloudmos Deploy**
-
-
 
 Within Cloudmos Deploy:
 
@@ -17,8 +15,6 @@ Within Cloudmos Deploy:
 
 ![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LrNFlfuifzmQ\_NMKu9C-887967055%2Fuploads%2F4iI0PjLQlYtrotySEIS6%2FfractionalHelloWorld.png?alt=media\&token=24b93d25-d5aa-4e8b-aebd-cf14ce7892f7)
 
-
-
 ## Edit the Template with a Fractional uAKT Amount
 
 * Update the template to use a fractional uAKT amount of 100.1 as seen in the capture
@@ -27,8 +23,6 @@ Within Cloudmos Deploy:
 * Proceed thru the remaining steps to complete the deployment
 
 ![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LrNFlfuifzmQ\_NMKu9C-887967055%2Fuploads%2FxB48MXLbSpBdYfnfUHC7%2FtestnetFractionalUpdated.png?alt=media\&token=0eb1cfd9-e8a0-4e87-8939-424ad2ab1ee0)
-
-
 
 * The SDL should be as follows post update
 
@@ -72,8 +66,6 @@ deployment:
 ```
 
 ## Verification of Fractional uAKT Use
-
-
 
 The verification of fractional uAKT functionality comes in two forms:
 

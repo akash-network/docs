@@ -4,7 +4,7 @@ description: How to Mine Raptoreum (RTM) on Akash Network
 
 # Mine Raptoreum on Akash Network
 
-![](<../.gitbook/assets/raptoreumAkashlytics (1).png>)
+![](../.gitbook/assets/raptoreumAkashlytics.png)
 
 ## Why use Akash?
 

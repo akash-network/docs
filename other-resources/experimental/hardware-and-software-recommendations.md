@@ -82,7 +82,7 @@ CPU: 6 core / 12 threads\
 Memory : 32Gb\
 Disk: 1Tb
 
-![](<../../.gitbook/assets/image (10) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (14).png>)
 
 [PCPartPicker Part List](https://pcpartpicker.com/list/WsvYW4)
 
@@ -126,7 +126,7 @@ Memory : 32Gb\
 
 ****
 
-![](<../../.gitbook/assets/image (10) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (15).png>)
 
 [PCPartPicker Part List](https://pcpartpicker.com/list/mgpRFg)
 
@@ -150,7 +150,7 @@ CPU: 20 Core / 40 Thread Intel Xeon\
 Memory : 128GB DDR4\
 Disk: 4TB SSD/SAS
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (3).png>)
 
 Dell R720 | 128Gb DDD4 | 3.5" SSD/HD SAS&#x20;
 
@@ -167,7 +167,7 @@ Recommended System Requirements
 128GB DDR4\
 4TB NVMe / 2x 18TB HDD
 
-![](<../../.gitbook/assets/image (10) (1) (1) (1) (2).png>)
+![](<../../.gitbook/assets/image (5).png>)
 
 [PCPartPicker Part List](https://pcpartpicker.com/list/jJBbC6)
 
@@ -192,7 +192,7 @@ Recommended System Requirements
 128GB DDR4\
 4TB SSD / 2TB NVMe / 8TB HD SAS
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (17).png>)
 
 [AsRock Rack ROMED6U-2L2T](https://www.asrockrack.com/general/productdetail.asp?Model=ROMED6U-2L2T#Specifications)
 
@@ -210,7 +210,7 @@ Recommended System Requirements
 512GB DDR4\
 4TB SSD / 2TB NVMe / 8TB HD SAS
 
-![](<../../.gitbook/assets/image (8).png>)
+![](<../../.gitbook/assets/image (9).png>)
 
 Buy on [Newegg](https://www.newegg.com/supermicro-mbd-h11dsi-n702-ma015-o-dual-amd-epyc-7000-series/p/N82E16813183691)
 

@@ -7,7 +7,7 @@ In this section we will configure the following:
 
 **STEP1 - Import Existing Wallet**
 
-* The first thing you will need is a[ wallet ](../../token/keplr.md)with a mnemonic phrase you have access to.
+* The first thing you will need is a[ wallet ](../../tokens-and-wallets/keplr.md)with a mnemonic phrase you have access to.
 * In the tool you can choose a name for this wallet. This will not affect the functionality of the tool but is just an easy way to track what wallet is currently in use.
 * Next choose a password that you will remember for the wallet.
 
@@ -17,7 +17,7 @@ Note: The funds available in the pre-existing wallet instance should now be avai
 
 _**Wallet Funding Note**_
 
-If you are just getting started with Akash and need funds to experiment, please visit the [Akash Faucet](https://drip.akash.network/login) to receive initial AKT funds.  An active GitHub account will be needed to grab funds from the faucet.
+If you are just getting started with Akash and need funds to experiment, please visit the [Akash Faucet](https://drip.akash.network/login) to receive initial AKT funds. An active GitHub account will be needed to grab funds from the faucet.
 
 _**Wallet Deletion Note**_
 
@@ -25,6 +25,6 @@ Should a need arise to delete the wallet click the ellipsis (triple dot icon) to
 
 #### **STEP2 - Certificate Creation**
 
-When first launching the tool there will not be a valid certificate.  To fix this select the ellipsis to the right of the Certificate status and click “Create Certificate”.
+When first launching the tool there will not be a valid certificate. To fix this select the ellipsis to the right of the Certificate status and click “Create Certificate”.
 
 ![](../../.gitbook/assets/alCert.png)

@@ -6,5 +6,5 @@ The **** command-line client is used to interact with deployments. The `provider
 
 We offer two guides to assist in getting started with the Akash CLI:
 
-* [Detailed Steps](../../other-resources/experimental/mainnet4-upgrade-docs/detailed-steps/)
+* [Detailed Steps](detailed-steps/)
 * [Akash CLI Booster](akash-cli-booster/)

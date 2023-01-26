@@ -2,7 +2,7 @@
 
 
 
-The below set of steps downloads the environment for easier setup. For advanced usage, check the [Akash CLI Detailed Steps](../mainnet4-upgrade-docs/detailed-steps/) guide.
+The below set of steps downloads the environment for easier setup. For advanced usage, check the [Akash CLI Detailed Steps](../../../guides/cli/detailed-steps/) guide.
 
 ## Download Source Code
 

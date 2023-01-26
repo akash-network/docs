@@ -275,7 +275,7 @@ deployment:
 To access the Chia Plot Manager, click on the \`Uri\` link on the deployment detail page.\
 To download plots, click an invididual plot in the Chia Plot Manager and click on Download/Open.
 
-![Chia Plot Manager](<../.gitbook/assets/image (5) (1).png>)
+![Chia Plot Manager](<../.gitbook/assets/image (13).png>)
 
 \*Once your download has finished - Delete the plot from the container - to make room for new plots! Plots will continue to be created as long as there is enough free space available in the container (Max 32Tb) and the deployment is fully funded.
 

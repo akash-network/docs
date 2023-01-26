@@ -16,7 +16,7 @@ Obtain live Provider status including:
 
 ### Command Template
 
-Issue the commands in this section from any machine that has the [Akash CLI ](../../../other-resources/experimental/mainnet4-upgrade-docs/detailed-steps/)installed.
+Issue the commands in this section from any machine that has the [Akash CLI ](../../guides/cli/detailed-steps/)installed.
 
 ```
 provider-services status <provider-address>

@@ -11,6 +11,8 @@ helm -n akash-services get values akash-node
 
 ### **Expected/Sample Output**
 
+* If custom values were included with the `helm install` command the following output is expected (example)
+
 ```
 helm -n akash-services get values akash-node
 
@@ -19,6 +21,13 @@ image:
   tag: 0.18.1
 state_sync:
   enabled: true
+```
+
+* If no custom values were included with the `helm install` command the following output is expected
+
+```
+USER-SUPPLIED VALUES:
+null
 ```
 
 ## Verify Akash Node Pod Status

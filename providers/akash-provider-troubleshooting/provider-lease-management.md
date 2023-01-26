@@ -11,7 +11,7 @@ Use the verifications included in this section for the following purposes:
 
 ### Command Template
 
-Issue the commands in this section from any machine that has the [Akash CLI](../../../other-resources/experimental/mainnet4-upgrade-docs/detailed-steps/) installed.
+Issue the commands in this section from any machine that has the [Akash CLI](../../guides/cli/detailed-steps/) installed.
 
 ```
 provider-services query market lease list --provider <provider-address> --gseq 0 --oseq 0 --page 1 --limit 500 --state active
