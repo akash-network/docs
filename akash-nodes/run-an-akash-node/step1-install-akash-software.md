@@ -17,5 +17,6 @@ apt install unzip -y
 
 AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/node/releases/latest | jq -r '.tag_name')"
 
-curl -sfL curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash | bash -s -- "$AKASH_VERSION"
+curl -sfL https://raw.githubusercontent.com/akash-network/node/main/install.sh | bash
 ```
+

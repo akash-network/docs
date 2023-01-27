@@ -52,7 +52,7 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 * Expected result (version displayed may be different)
 
 ```
-root@ip-10-0-10-146:~# provider-services version
+root@ip-10-0-10-146:~# akash version
 
-v0.2.0
+v0.22.0
 ```
