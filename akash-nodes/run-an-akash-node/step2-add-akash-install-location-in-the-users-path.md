@@ -47,12 +47,12 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 *   Display the version of Akash software installed.  This confirms the software installed and that the new user path addition worked.
 
     ```
-    akash version
+    provider-services version
     ```
 * Expected result (version displayed may be different)
 
 ```
-root@ip-10-0-10-146:~# akash version
+root@ip-10-0-10-146:~# provider-services version
 
-v0.20.0
+v0.2.0
 ```
