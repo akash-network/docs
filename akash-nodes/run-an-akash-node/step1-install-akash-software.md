@@ -15,8 +15,6 @@ apt install jq -y
 
 apt install unzip -y
 
-AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/node/releases/latest | jq -r '.tag_name')"
-
 curl -sfL https://raw.githubusercontent.com/akash-network/node/master/install.sh | bash
 ```
 
