@@ -65,6 +65,7 @@ akash tx staking create-validator \
   --min-self-delegation="1" \
   --gas="auto" \
   --gas-prices="0.025uakt" \
+  --gas-adjustment=1.5 \
   --from="$AKASH_KEY_NAME"
 ```
 
@@ -91,6 +92,7 @@ akash tx staking edit-validator
   --chain-id="$AKASH_CHAIN_ID" \
   --gas="auto" \
   --gas-prices="0.025uakt" \
+  --gas-adjustment=1.5 \
   --from="$AKASH_KEY_NAME" \
   --commission-rate="0.10"
 ```
