@@ -12,3 +12,4 @@ The guide is broken down into the following categories:
 * [Provider Manifests](provider-manifests.md)
 * [Provider Earnings](provider-earnings.md)
 * [Dangling Deployments](dangling-deployments.md)
+* [Heal Broken Deployment Replicas by Returning Lost command to Manifests](heal-broken-deployment-replicas-by-returning-lost-command-to-manifests.md)
