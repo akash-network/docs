@@ -144,6 +144,7 @@ cat provider.yaml
 from: akash1<REDACTED>
 key: LS0tLS1CRU<REDACTED>0tLS0tCg==
 keysecret: QUtB<REDACTED>XIK
+domain: test.com
 node: http://<rpc-address>:26657
 withdrawalperiod: 12h
 attributes:
