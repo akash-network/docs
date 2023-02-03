@@ -10,16 +10,11 @@ In this section we will create a script and a related service to start the node.
 
 * Create a script to start the Akash Node
 
-> _**TODO**_ -  _****_  the _**\`**_AKASH\_PRUNING=nothing\` setting should be removed once the underlying issue is rectified but is currently needed
-
 ```
 cd ~
 
 cat <<EOF | tee /usr/local/bin/start-node.sh
 #!/usr/bin/env bash
-
-# prevents "panic: cannot delete latest saved version" error
-export AKASH_PRUNING=nothing
 
 # prevents "panic: runtime error: invalid memory address or nil pointer dereference" error
 export AKASH_IAVL_DISABLE_FASTNODE=false
