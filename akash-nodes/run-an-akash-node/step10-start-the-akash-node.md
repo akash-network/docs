@@ -16,12 +16,6 @@ cd ~
 cat <<EOF | tee /usr/local/bin/start-node.sh
 #!/usr/bin/env bash
 
-# prevents "panic: runtime error: invalid memory address or nil pointer dereference" error
-export AKASH_IAVL_DISABLE_FASTNODE=false
-
-# prevents "panic: runtime error: invalid memory address or nil pointer dereference" error on cosmos-sdk's `createSnapshot ... incrVersionReaders`
-export AKASH_STATESYNC_SNAPSHOT_INTERVAL=0
-
 /root/bin/akash start
 EOF
 ```
