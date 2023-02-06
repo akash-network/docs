@@ -55,7 +55,7 @@ Obtain Kubespray and navigate into the created local directory:
 ```
 cd ~
 
-git clone -b v2.20.0 --depth=1 https://github.com/kubernetes-sigs/kubespray.git
+git clone -b v2.21.0 --depth=1 https://github.com/kubernetes-sigs/kubespray.git
 
 cd kubespray
 ```

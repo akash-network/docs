@@ -5,7 +5,7 @@
 *   Install Helm on a Kubernetes Master Node
 
     ```
-    wget https://get.helm.sh/helm-v3.9.4-linux-amd64.tar.gz
+    wget https://get.helm.sh/helm-v3.11.0-linux-amd64.tar.gz
 
     tar -zxvf helm-v3.9.4-linux-amd64.tar.gz
 

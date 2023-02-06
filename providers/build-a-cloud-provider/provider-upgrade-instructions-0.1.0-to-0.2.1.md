@@ -49,7 +49,7 @@ helm repo update akash
 ```
 # helm search repo akash/provider
 NAME          	CHART VERSION	APP VERSION	DESCRIPTION                          
-akash/provider	4.2.0        	0.2.1      	Installs an Akash provider (required)
+akash/provider	4.2.3        	0.2.1      	Installs an Akash provider (required)
 ```
 
 **STEP5** - Update akash-provider helm-chart
