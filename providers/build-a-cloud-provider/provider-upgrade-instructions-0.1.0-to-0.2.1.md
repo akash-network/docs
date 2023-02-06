@@ -31,7 +31,7 @@ kubectl patch crd manifests.akash.network --type='json' -p='[{"op": "add", "path
 **STEP2** - Delete `akash-provider-statefulset-restart` cronjob
 
 ```
-kubectl -n akash-services delete cronjob akash-provider-statefulset-restart
+kubectl -n akash-services delete cronjob.batch/akash-provider-statefulset-restart rolebinding.rbac.authorization.k8s.io/provider-restart role.rbac.authorization.k8s.io/provider-restart serviceaccount/provider-restart
 ```
 
 **STEP3** - Update helm-chart repo
