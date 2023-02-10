@@ -19,11 +19,11 @@ kubectl label ns akash-services akash.network/name=akash-services akash.network=
 * Execute on these steps on a Kubernetes master node
 
 ```
-wget https://get.helm.sh/helm-v3.8.2-linux-amd64.tar.gz
+wget https://get.helm.sh/helm-v3.11.0-linux-amd64.tar.gz
 
 tar -zxvf helm-v3.11.0-linux-amd64.tar.gz
 
-mv linux-amd64/helm /usr/local/bin/helm
+install linux-amd64/helm /usr/local/bin/helm
 
 ###Remove any potential prior repo instances
 helm repo remove akash

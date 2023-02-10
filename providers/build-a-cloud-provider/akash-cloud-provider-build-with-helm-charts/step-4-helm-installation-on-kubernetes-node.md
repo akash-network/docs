@@ -7,9 +7,9 @@
     ```
     wget https://get.helm.sh/helm-v3.11.0-linux-amd64.tar.gz
 
-    tar -zxvf helm-v3.11.0-linux-amd64.tar.gz
+    tar -zxvf helm-v3.9.4-linux-amd64.tar.gz
 
-    install linux-amd64/helm /usr/local/bin/helm
+    mv linux-amd64/helm /usr/local/bin/helm
 
     ###Remove any potential prior repo instances
     helm repo remove akash
