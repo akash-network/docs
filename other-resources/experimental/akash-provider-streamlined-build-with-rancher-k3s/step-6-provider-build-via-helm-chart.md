@@ -188,17 +188,6 @@ REVISION: 1
 TEST SUITE: None
 ```
 
-## Specific Version
-
-If a need arises to use a different software version other than the one defined in the Chart.yaml Helm file - include the following section in the provider.yaml file and re-run the helm install command. In most circumstances this should not be necessary.
-
-* Example:
-
-```
-image:
-  tag: 0.1.0
-```
-
 ## **Provider Confirmation**
 
 ```
