@@ -47,17 +47,17 @@ helm repo add rook-release https://charts.rook.io/release
 * Verify the Rook repo has been added
 
 ```
-helm search repo rook-release --version 1.10.3
+helm search repo rook-release --version v1.10.11
 ```
 
 * Expected/Example Result
 
 ```
-# helm search repo rook-release --version 1.10.3
+# helm search repo rook-release --version v1.10.11
 
 NAME                          	CHART VERSION	APP VERSION	DESCRIPTION                                       
-rook-release/rook-ceph        	v1.10.3       	v1.10.3     	File, Block, and Object Storage Services for yo...
-rook-release/rook-ceph-cluster	v1.10.3       	v1.10.3     	Manages a single Ceph cluster namespace for Rook  
+rook-release/rook-ceph        	v1.10.11       	v1.10.11     	File, Block, and Object Storage Services for yo...
+rook-release/rook-ceph-cluster	v1.10.11       	v1.10.11     	Manages a single Ceph cluster namespace for Rook  
 ```
 
 ### **Deployment Steps**
