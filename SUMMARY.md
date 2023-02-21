@@ -124,6 +124,7 @@
     * [Provider Earnings](providers/akash-provider-troubleshooting/provider-earnings.md)
     * [Dangling Deployments](providers/akash-provider-troubleshooting/dangling-deployments.md)
     * [Heal Broken Deployment Replicas by Returning Lost command to Manifests](providers/akash-provider-troubleshooting/heal-broken-deployment-replicas-by-returning-lost-command-to-manifests.md)
+    * [Rotate K8s & etcd Certs / Fix When They Expire](providers/akash-provider-troubleshooting/rotate-k8s-and-etcd-certs-fix-when-they-expire.md)
   * [Community Solutions](providers/community-solutions/README.md)
     * [Praetor](providers/community-solutions/praetor.md)
   * [Custom Kubernetes Cluster Settings](providers/custom-kubernetes-cluster-settings/README.md)
