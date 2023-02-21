@@ -1,4 +1,4 @@
-# Rotate K8s & etcd Certs / Fix When They Expire
+# Maintaining and Rotating Kubernetes/etcd Certificates: A How-To Guide
 
 > The following doc is based on [https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/) & [https://txconsole.com/certificate-renewal-manually-in-kubernetes/](https://txconsole.com/certificate-renewal-manually-in-kubernetes/)
 

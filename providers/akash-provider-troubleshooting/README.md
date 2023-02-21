@@ -13,4 +13,4 @@ The guide is broken down into the following categories:
 * [Provider Earnings](provider-earnings.md)
 * [Dangling Deployments](dangling-deployments.md)
 * [Heal Broken Deployment Replicas by Returning Lost command to Manifests](heal-broken-deployment-replicas-by-returning-lost-command-to-manifests.md)
-* [Rotate K8s & etcd Certs / Fix When They Expire](rotate-k8s-and-etcd-certs-fix-when-they-expire.md)
+* [Maintaining and Rotating Kubernetes/etcd Certificates: A How-To Guide](maintaining-and-rotating-kubernetes-etcd-certificates-a-how-to-guide.md)
