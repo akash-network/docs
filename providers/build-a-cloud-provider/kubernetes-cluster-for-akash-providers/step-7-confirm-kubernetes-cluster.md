@@ -1,4 +1,4 @@
-# STEP 7 - Confirm Kubernetes Cluster
+# STEP 8 - Confirm Kubernetes Cluster
 
 A couple of quick Kubernetes cluster checks are in order before moving into next steps.
 
@@ -62,4 +62,16 @@ nodelocaldns-7znkj                        1/1     Running   0               4m28
 nodelocaldns-g8dqm                        1/1     Running   0               4m27s
 nodelocaldns-gf58m                        1/1     Running   0               4m28s
 nodelocaldns-n88fj                        1/1     Running   0               4m28s
+```
+
+## Verify etcd Status and Health
+
+> &#x20;Commands should be run on the control plane node to ensure health of the Kubernetes `etcd` database
+
+```
+export $(grep -v '^#' /etc/etcd.env | xargs -d '\n')
+etcdctl -w table member list
+etcdctl endpoint health --cluster -w table
+etcdctl endpoint status --cluster -w table
+etcdctl check perf
 ```
