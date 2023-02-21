@@ -104,7 +104,7 @@ kubectl -n metallb-system get cm config -o yaml > config.yaml
 docker run -d -v $(pwd):/var/input quay.io/metallb/configmaptocrs
 ```
 
-This will produce a new config file - r`esources.yaml`.
+This will produce a new config file - `resources.yaml`.
 
 3\). Apply the new config
 
