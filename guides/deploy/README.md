@@ -1,4 +1,4 @@
-# Desktop App
+# Cloudmos Deploy
 
 ## Cloudmos Deploy Overview
 
@@ -6,11 +6,10 @@ Cloudmos Deploy Tool is a web based application which simplifies the deployment 
 
 This guide will cover the following topics:
 
-* [Installation package download instructions and installation](broken-reference)
-* [Initial Configuration](broken-reference)
-* [Walkthrough of a example WordPress deployment using the tool](broken-reference)
-* [Manage Deployments](broken-reference)
-* [Define a custom RPC node](broken-reference)
+* [Cloudmos Deploy Access](cloudmos-deploy-installation.md)
+* [Minecraft Deployment Example](wordpress-deployment-example.md)
+* [Manage Deployments](manage-deployments.md)
+* [Define a custom RPC node](custom-rpc-node.md)
 
 ### Akash Wants to Spotlight Your Work
 
