@@ -2,17 +2,17 @@
 
 ## Cloudmos Deploy Overview
 
-The Cloudmos Deploy Tool is a desktop application which simplifies the deployment process on the Akash Network.  Post deployment the tool provides a dashboard to view the status and details of workloads.  The dashboard also has the ability to perform administrative tasks including closing the deployment, updating the deployment, redeploying, and increasing the funding available to the deployment.
+Cloudmos Deploy Tool is a web based application which simplifies the deployment process on the Akash Network. Post deployment the tool provides a dashboard to view the status and details of workloads. The dashboard also has the ability to perform administrative tasks including closing the deployment, updating the deployment, redeploying, and increasing the funding available to the deployment.
 
 This guide will cover the following topics:
 
-* [Installation package download instructions and installation](cloudmos-deploy-installation.md)
-* [Initial Configuration](initial-configuration.md)
-* [Walkthrough of a example WordPress deployment using the tool](wordpress-deployment-example.md)
-* [Manage Deployments](manage-deployments.md)
-* [Define a custom RPC node](custom-rpc-node.md)
+* [Installation package download instructions and installation](broken-reference)
+* [Initial Configuration](broken-reference)
+* [Walkthrough of a example WordPress deployment using the tool](broken-reference)
+* [Manage Deployments](broken-reference)
+* [Define a custom RPC node](broken-reference)
 
-### Akash Wants to Spotlight Your Work&#x20;
+### Akash Wants to Spotlight Your Work
 
 Have an idea for a project to deploy on Akash? Already working on a project? Maybe you’ve already deployed a project (or many projects!) to the network?
 

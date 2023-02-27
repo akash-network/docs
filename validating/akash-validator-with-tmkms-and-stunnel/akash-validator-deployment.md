@@ -3,7 +3,7 @@
 ## Cloudmos Deploy
 
 * Within this guide we will use the Cloudmos Deploy application to create the Akash Validator
-* Please review our[ Cloudmos Deploy ](../../../../guides/deploy/)docs to install and configure the application if this is your first time using
+* Please review our[ Cloudmos Deploy ](broken-reference)docs to install and configure the application if this is your first time using
 
 ## Create the Akash Validator Deployment
 
@@ -14,13 +14,13 @@
 
 * Use the `CREATE DEPLOYMENT` button to launch a new deployment
 
-![](../../../../.gitbook/assets/validatorCreateDeployment.png)
+![](../../.gitbook/assets/validatorCreateDeployment.png)
 
 ### Empty Template Option
 
 * Select the `Empty` option as we will be copying a pre-constructed Akash SDL for the deployment
 
-![](../../../../.gitbook/assets/validatorBlankTemplate.png)
+![](../../.gitbook/assets/validatorBlankTemplate.png)
 
 ### Copy SDL into Editor
 
@@ -134,7 +134,7 @@ deployment:
 
 * Select the `CREATE DEPLOYMENT` button to proceed
 
-<figure><img src="../../../../.gitbook/assets/validatorSDL.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/validatorSDL.png" alt=""><figcaption></figcaption></figure>
 
 ### Deployment Deposit
 
@@ -143,14 +143,14 @@ deployment:
 * If a deployment's escrow runs out of funds (0 AKT), the lease will be closed by the provider. Consider increasing the initial deposit to an amount that will be enough to fund the deployment for some time. And/or consider a strategy to ensure the escrow is re-funded on a periodic basis to ensure no disruption to your validator.
 * When ready select `DEPOSIT` to proceed and `APPROVE` any Transaction/gas fee prompts that follow
 
-![](../../../../.gitbook/assets/validatorDeploymentDeposit.png)
+![](../../.gitbook/assets/validatorDeploymentDeposit.png)
 
 ### Select Akash Provider
 
 * A list of Akash Providers that have bid on your deployment is displayed
 * Choose the desired Provider from the list and then select `ACCEPT BID` to proceed
 
-![](../../../../.gitbook/assets/validatorSelectProvider.png)
+![](../../.gitbook/assets/validatorSelectProvider.png)
 
 ### Deployment Logs
 
@@ -158,7 +158,7 @@ deployment:
 * _**NOTE**_ - after a period of time the logs will display a `Back-off restarting failed container` message. This is expected as the container will not start until it has established a connection with the TMKMS server in subsequent steps.
 * Select the `LEASES` tab to proceed into the next step
 
-![](../../../../.gitbook/assets/validatorDeploymentLogs.png)
+![](../../.gitbook/assets/validatorDeploymentLogs.png)
 
 ### Capture Deployment URI and Port
 
@@ -170,4 +170,4 @@ deployment:
 > * _**Signer Port**_ - using the Forwarded Port field and capturing the port forward to `36658` which in this example is `31684`
 > * _**Proxy/RPC Port**_ -using the Forwarded Port field and capturing the port forward to `36657` which in this example is `32675`
 
-<figure><img src="../../../../.gitbook/assets/akashValdiatorForwardedPorts.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/akashValdiatorForwardedPorts.png" alt=""><figcaption></figcaption></figure>

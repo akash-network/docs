@@ -20,7 +20,7 @@ For the following providers who are participating in the sale, expect to see the
 
 ### Required SDL
 
-To make sure you get the sale price from the providers, please Copy and Paste the SDL into [Cloudmos](../guides/deploy/cloudmos-deploy-installation.md) :
+To make sure you get the sale price from the providers, please Copy and Paste the SDL into [Cloudmos](broken-reference) :
 
 [BladeBit Summer Sale SDL](chia-on-akash.md#bladebit-ram-plotting)
 
@@ -34,7 +34,7 @@ Please wait up to 60 seconds to see bids from all the providers.
 2. Install [Cloudmos Deploy](https://cloudmos.io/cloud-deploy) and import your AKT wallet address from Keplr.
 3. [Fund your wallet](https://github.com/ovrclk/awesome-akash/tree/chia/chia#Quickest-way-to-get-more-AKT)
 
-For additional help we recommend you [follow our full deployment guide](../guides/deploy/cloudmos-deploy-installation.md) in parallel with this guide.
+For additional help we recommend you [follow our full deployment guide](broken-reference) in parallel with this guide.
 
 ## How does this work?
 

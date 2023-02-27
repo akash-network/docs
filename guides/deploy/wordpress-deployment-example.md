@@ -1,70 +1,55 @@
-# WordPress Deployment Example
+# Minecraft Deployment Example
 
-In this section we will use the tool to deploy our own example WordPress page on the Akash Network. You can follow the same process for any other workload so long as it is containerized and you have an appropriate SDL.
+In this section we will use Cloudmos Deploy to launch an example Minecraft deployment on the Akash Network. You can follow the same process for any other workload so long as it is containerized and you have an appropriate SDL.
 
-#### **STEP1 -  Create the Deployment**
+#### **STEP 1 -  Create the Deployment**
 
-* From the Deployments pane click the “CREATE DEPLOYMENTS” button.
+* From the Dashboard/primary pane click the `CREATE DEPLOYMENT` button
 
-![](../../.gitbook/assets/alCreateDeployment.png)
+<figure><img src="../../.gitbook/assets/cloudCreateDeployment.png" alt=""><figcaption></figcaption></figure>
 
-#### **STEP2 -  Choose Template**
+#### **STEP 2 - Create Certficate**
 
-* The tool provides several sample templates including Games (Supermario, Minecraft, etc), and some more general (WordPress, Hello-World, etc)
-* To deploy a custom application select the `Browse template gallery` option
-* Then search for the `wordpress` template and select the template from the search results
+* A number of checks are performed to ensure necessary funds and certificates are available to launch a deployment.
+* If this is your first deployment with Cloudmos Deploy a `CREATE CERTIFICATE` prompt will be displayed.  Select the `CREATE CERTIFICATE` button and accept transaction fee prompt from Keplr to proceed.
 
-![](../../.gitbook/assets/alBrowseTemplateGallery.png)
+<figure><img src="../../.gitbook/assets/cloudmosCreateCert.png" alt=""><figcaption></figcaption></figure>
 
-![](../../.gitbook/assets/alWordpressSelect.png)
+**STEP 3 -  Choose Deployment Template**
 
-#### **STEP3 - Proceed with Deployment**
+* The tool provides several sample templates launch of popular applications
+* Select the `Minecraft` template for our initial deployment
 
-* At this stage we could review/customize the Akash SDL deployment recipe if desired but in this example we will proceed with the default settings and press the `DEPLOY` button
+<figure><img src="../../.gitbook/assets/cloudmosSelectTemplate (1).png" alt=""><figcaption></figcaption></figure>
 
-![](../../.gitbook/assets/alDeployNoChanges.png)
+#### **STEP 4 - Proceed with Deployment**
 
-#### **STEP4 - SDL Verification**
+* At this stage we could review/customize the Akash SDL deployment template if desired but in this example we will proceed with the default settings and by pressing the `DEPLOY` button
+
+<figure><img src="../../.gitbook/assets/cloudmosProceedWithDeployment.png" alt=""><figcaption></figcaption></figure>
+
+#### **STEP 5 - SDL Verification**
 
 * Screen will appear which provides an additional opportunity to customize the SDL but we will again proceed with no edits by pressing the `CREATE DEPLOYMENT` button
-* Accept the Deployment Deposit pop up as which specifies that 5AKT will be placed into an escrow account for deployment cost
+* Subsequently accept the Deployment Deposit pop up which specifies that 5AKT will be placed into an escrow account for deployment cost and then the Keplr transaction fee prompt
 
-![](../../.gitbook/assets/alCreateDeployment2.png)
+<figure><img src="../../.gitbook/assets/cloudmosSDLReview.png" alt=""><figcaption></figcaption></figure>
 
-#### **STEP5 -  Create Deployment Transaction**
+#### **STEP 6 -  Review/Accept Bid**
 
-* Once the process has kicked off a screen will appear asking for a selection of Gas Fees and to add the request for bids on chain. Feel free to use the defaults and select the “APPROVE” button.
+* After a minute or so a list of bids will display.&#x20;
+* Select the most affordable, preferred provider and then press `ACCEPT BID`
 
-Note: The process to write the transaction to the chain may take a couple of minutes to complete. This is true of every step that results in a on chain transaction.
+> _**NOTE**_ - list of bids and providers may be different in your deployment
 
-![](https://lh3.googleusercontent.com/Os4DkJBJFNg4jQRzoLit0or0fZJJfqn0y70I0CQJd2v\_EK4IYQUeWaRG9RyPr4-HSsum0zs-sg5wK6BB6Hgmb543zTmvsgr4XEgOUp90KEEbVadX4x4fH81ZMJ4XXk\_GXnBiwK62=s0)
+* Accept the Keplr transaction fee prompt to proceed
 
-#### **STEP6 -  Review/Accept Bids**
+<figure><img src="../../.gitbook/assets/cloudmosAcceptBid.png" alt=""><figcaption></figcaption></figure>
 
-* After a minute or so a list of bids will display. Select the most affordable lease for this example deployment and then press “ACCEPT BID”
+#### **STEP 7 -  Post Deployment**
 
-![](<../../.gitbook/assets/alAcceptBid (1).png>)
+* While the deployment is becoming active the `LOGS` tab is displayed.
+* When the deployment appears to be complete, select the `LEASES` tab.
+* The `LEASES` tab confirms the successful deployment of our example Minecraft application
 
-#### **STEP7 -  Create Lease Transaction**
-
-* Just as before leave the default selection for Gas Fees and click “APPROVE”
-
-![](https://lh5.googleusercontent.com/j4X1OOUx6jI-t5jOoO-bRCGXOyLHbVcLFCaZkbc3yDc1jUUoQl1ZcKvONW3YpItamT8HzvcRo\_iQe4xBHFptTvu2MeqF8WSAk3xlVzsSMnBqBWOiIZNiU1K610MAZlNEMaz35Dms=s0)
-
-#### **STEP8 -  Post Deployment**
-
-While the deployment is becoming active the `LOGS` tab is displayed. &#x20;
-
-When the deployment appears to be complete, select the `LEASES` tab.
-
-![](../../.gitbook/assets/alSelectLeasesTab.png)
-
-#### STEP9 - Navigate to the Deployment URI
-
-* To easily navigate to the page you spun up click the icon to the right of the Akash URL
-
-Note: The Wordpress site may take a couple of minutes to load depending on the status of the deployment
-
-![](../../.gitbook/assets/alNavigateToURI.png)
-
-![](../../.gitbook/assets/alWordPressGUI.png)
+<figure><img src="../../.gitbook/assets/cloudmosLeasesTab.png" alt=""><figcaption></figcaption></figure>

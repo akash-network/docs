@@ -3,7 +3,7 @@
 ## Cloudmos Deploy
 
 * Within this guide we will use the Cloudmos Deploy application to create the Akash Validator
-* Please review our[ Cloudmos Deploy ](../../../../guides/deploy/)docs to install and configuration the application if this is your first time using
+* Please review our[ Cloudmos Deploy ](broken-reference)docs to install and configuration the application if this is your first time using
 
 ## Create the Akash Validator Deployment
 
