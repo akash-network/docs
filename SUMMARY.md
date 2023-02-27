@@ -9,7 +9,7 @@
   * [Keplr Wallet](tokens-and-wallets/keplr.md)
   * [Mixin Messenger for AKT](tokens-and-wallets/mixin-messenger-for-akt.md)
 * [Deployments](guides/README.md)
-  * [Desktop App](guides/deploy/README.md)
+  * [Cloudmos Deploy](guides/deploy/README.md)
     * [Cloudmos Deploy Access](guides/deploy/cloudmos-deploy-installation.md)
     * [Minecraft Deployment Example](guides/deploy/wordpress-deployment-example.md)
     * [Manage Deployments](guides/deploy/manage-deployments.md)
