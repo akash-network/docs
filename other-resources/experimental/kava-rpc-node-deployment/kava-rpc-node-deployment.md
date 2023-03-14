@@ -10,7 +10,18 @@
 
 <figure><img src="../../../.gitbook/assets/akashConsoleProceedWithDeployment.png" alt=""><figcaption></figcaption></figure>
 
-* Assign the Deployment an appropriate name and proceed by selecting `Create Deployment`&#x20;
+* Assign the Deployment an appropriate name and then click `Review SDL`
+
+<figure><img src="../../../.gitbook/assets/akashConsoleEditSDL.png" alt=""><figcaption></figcaption></figure>
+
+* The Kava RPC Node snapshot is updated every 24 hours and must be changed in the Akash SDL
+* Obtain the latest snapshot URL [here](https://polkachu.com/tendermint\_snapshots/kava).  Find the `DOWNLOAD` hyperlink > right click > and Copy Link Address.
+* Replace the snapshot URL in the field highlighted in the depiction below with the new URL.  Ensure the `- SNAPSHOT_URL=` portion of the field is left in place followed by the actual URL such as: `SNAPSHOT_URL=<URL>`
+* Select `Save & Close` when this single Akash SDL update is in place.
+
+<figure><img src="../../../.gitbook/assets/akashConsoleSnapshotUpdate.png" alt=""><figcaption></figcaption></figure>
+
+* Proceed by selecting `Create Deployment`&#x20;
 
 <figure><img src="../../../.gitbook/assets/akashConsoleCreateDeployment.png" alt=""><figcaption></figcaption></figure>
 
