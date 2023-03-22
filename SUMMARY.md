@@ -128,6 +128,7 @@
     * [Dangling Deployments](providers/akash-provider-troubleshooting/dangling-deployments.md)
     * [Heal Broken Deployment Replicas by Returning Lost command to Manifests](providers/akash-provider-troubleshooting/heal-broken-deployment-replicas-by-returning-lost-command-to-manifests.md)
     * [Maintaining and Rotating Kubernetes/etcd Certificates: A How-To Guide](providers/akash-provider-troubleshooting/maintaining-and-rotating-kubernetes-etcd-certificates-a-how-to-guide.md)
+    * [Force New ReplicaSet Workaround](providers/akash-provider-troubleshooting/force-new-replicaset-workaround.md)
   * [Community Solutions](providers/community-solutions/README.md)
     * [Praetor](providers/community-solutions/praetor.md)
   * [Custom Kubernetes Cluster Settings](providers/custom-kubernetes-cluster-settings/README.md)
