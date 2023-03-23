@@ -86,7 +86,7 @@ EOF
 Install the Operator chart:
 
 ```
-helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.10.3 -f rook-ceph-operator.values.yml
+helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.10.11 -f rook-ceph-operator.values.yml
 ```
 
 **PRODUCTION**
@@ -96,7 +96,7 @@ helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/ro
 * Install the Operator chart:
 
 ```
-helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.10.3
+helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.10.11
 ```
 
 #### STEP 2 - Install Ceph Cluster Helm Chart
@@ -338,7 +338,7 @@ EOF
 
 ```
 helm upgrade --install --create-namespace -n rook-ceph rook-ceph-cluster \
-   --set operatorNamespace=rook-ceph rook-release/rook-ceph-cluster --version 1.10.3 -f rook-ceph-cluster.values.yml
+   --set operatorNamespace=rook-ceph rook-release/rook-ceph-cluster --version 1.10.11 -f rook-ceph-cluster.values.yml
 ```
 
 #### STEP 3 - Label the storageClass
