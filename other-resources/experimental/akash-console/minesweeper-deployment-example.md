@@ -66,3 +66,13 @@ The Deployment management pane allows actions including:
 * _**Update/Delete Deployment**_ - ability to manage the active deployment by updating application image or closing the deployment.
 
 <figure><img src="../../../.gitbook/assets/akashConsoleDeploymentComplete.png" alt=""><figcaption></figcaption></figure>
+
+### STEP 8 - Access Deployment
+
+Access the Deployment's URL via the exposed link.
+
+<figure><img src="../../../.gitbook/assets/akashConsoleURL.png" alt=""><figcaption></figcaption></figure>
+
+Example display of the Minesweeper web app within the Akash Deployment.
+
+<figure><img src="../../../.gitbook/assets/akashConsoleAccess.png" alt=""><figcaption></figcaption></figure>
