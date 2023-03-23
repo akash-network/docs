@@ -122,9 +122,7 @@ vi ~/kubespray/inventory/akash/hosts.yaml
 
 ```
 vars:
-  cluster_id: "1.0.0.1"
   ansible_user: root
-  calico_feature_detect_override: "ChecksumOffloadBroken=true"
 ```
 
 * The hosts.yaml file should look like this once finished
@@ -132,9 +130,7 @@ vars:
 ```
 all:
   vars:
-    cluster_id: "1.0.0.1"
     ansible_user: root
-    calico_feature_detect_override: "ChecksumOffloadBroken=true"
   hosts:
     node1:
       ansible_host: 10.0.10.136

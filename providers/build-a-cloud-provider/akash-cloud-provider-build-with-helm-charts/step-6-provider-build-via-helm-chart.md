@@ -16,13 +16,13 @@ In this section the Akash Provider will be installed and customized via the use 
 > This allows the akash-provider to decrypt the key
 
 ```
-ACCOUNT_ADDRESS=akash1XXXX
+export ACCOUNT_ADDRESS=akash1XXXX
 ```
 
 2\.  Set the password you have entered upon akash keys export > key.pem
 
 ```
-KEY_PASSWORD=12341234
+export KEY_PASSWORD=12341234
 ```
 
 3\.  Set your domain. Register DNS A and wildcard address as specified in previous step, i.e. `provider.test.com` DNS A record and `*.ingress.test.com` DNS wildcard record.
@@ -34,7 +34,7 @@ KEY_PASSWORD=12341234
 > The domain specified in this variable will be used by Helm during the Provider chart install process to produce the "provider.yourdomain.com" sub-domain name and the "ingress.yourdomain.com" sub-domain name. The domain specified will also be used by Helm during the Ingress Controller install steps coming up in this guide. Once your provider is up and running the \*.ingress.yourdomain.com URI will be used for web app deployments such as abc123.ingress.yourdomain.com.
 
 ```
-DOMAIN=test.com
+export DOMAIN=test.com
 ```
 
 4\.  Set the Akash RPC node for your provider to use
@@ -42,7 +42,7 @@ DOMAIN=test.com
 > If you are going to deploy Akash RPC Node using Helm-Charts then set the node to http://akash-node-1:26657 It is recommended that you install your own Akash RPC node. Follow [this guide](../../../akash-nodes/akash-node-via-helm-charts/) to do so.
 
 ```
-NODE=http://akash-node-1:26657
+export NODE=http://akash-node-1:26657
 ```
 
 ## **Provider Withdraw Period**
