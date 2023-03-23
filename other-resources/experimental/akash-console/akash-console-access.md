@@ -20,6 +20,6 @@ Ensure that an Akash account with sufficient AKT balance is selected in Keplr pr
 
 ## Connect Wallet
 
-xxx
+Use the `Connect Wallet` button to connect the account selected in Keplr in the prior step to the Akash Console.
 
 <figure><img src="../../../.gitbook/assets/akashConsoleConnectWallet.png" alt=""><figcaption></figcaption></figure>
