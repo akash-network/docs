@@ -12,7 +12,7 @@ Akash is an open network that lets users buy and sell computing resources secure
 
 ### How to use Akash?
 
-You can get started right from the [**command-line**](https://docs.akash.network/guides/cli) or use the [**desktop GUI**](broken-reference)\*\*\*\*
+You can get started right from the [**command-line**](https://docs.akash.network/guides/cli) or use the [**web app**](guides/deploy/)\*\*\*\*
 
 * Define your Docker image, CPU, Memory, and Storage in a [**deploy.yaml**](readme/stack-definition-language.md) file.
 * Set your price, receive bids from providers in seconds, and select the lowest price.
