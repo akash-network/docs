@@ -1,16 +1,17 @@
-# Akash Console
+# Cloudmos Deploy
 
-## Akash Console Overview
+## Cloudmos Deploy Overview
 
-The Akash Console is a web based application which simplifies the deployment process of applications onto the Akash Network. Post deployment the tool provides a dashboard to view the status and details of workloads. The dashboard also has the ability to perform administrative tasks including closing the deployment, updating the deployment, redeploying, and increasing the funding available to the deployment.
+Cloudmos Deploy Tool is a web based application which simplifies the deployment process on the Akash Network. Post deployment the tool provides a dashboard to view the status and details of workloads. The dashboard also has the ability to perform administrative tasks including closing the deployment, updating the deployment, redeploying, and increasing the funding available to the deployment.
 
 This guide will cover the following topics:
 
-* [Akash Console Access](akash-console-access.md)
-* [Example Access Deployment via Akash Console](minesweeper-deployment-example.md)
-* [Deployment Management via Akash Console](deployment-management.md)
+* [Cloudmos Deploy Access](cloudmos-deploy-installation.md)
+* [Minecraft Deployment Example](wordpress-deployment-example.md)
+* [Manage Deployments](manage-deployments.md)
+* [Define a custom RPC node](custom-rpc-node.md)
 
-## Akash Wants to Spotlight Your Work
+### Akash Wants to Spotlight Your Work
 
 Have an idea for a project to deploy on Akash? Already working on a project? Maybe you’ve already deployed a project (or many projects!) to the network?
 
