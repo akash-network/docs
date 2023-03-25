@@ -14,7 +14,7 @@ GitHub issue description can be found [here](https://github.com/akash-network/su
 cat > /usr/local/bin/akash-force-new-replicasets.sh <<'EOF'
 #!/bin/bash
 #
-# Version: 0.1 - 22 March 2023
+# Version: 0.2 - 25 March 2023
 # Files:
 # - /usr/local/bin/akash-force-new-replicasets.sh
 # - /etc/cron.d/akash-force-new-replicasets
@@ -29,18 +29,7 @@ kubectl get deployment -l akash.network/manifest-service -A -o=jsonpath='{range 
     kubectl -n $ns rollout status --timeout=10s deployment/${app} >/dev/null 2>&1
     rc=$?
     if [[ $rc -ne 0 ]]; then
-      NEWEST_RS="$(kubectl -n $ns get replicaset -o json -l akash.network/manifest-service --sort-by='{.metadata.creationTimestamp}' | jq -r '(.items | reverse)[0] | .metadata.name')"
-      NEWEST_PODS="$(kubectl -n $ns get pods -l akash.network/manifest-service=$app -o jsonpath='{.items[?(@.metadata.ownerReferences[0].name=="'${NEWEST_RS}'")].metadata.name}')"
-      
-      INSUFFICIENT_RESOURCES=0
-      for pod in $NEWEST_PODS; do
-        if kubectl -n $ns describe pod $pod | grep -q "Insufficient"; then
-          INSUFFICIENT_RESOURCES=1
-          break
-        fi
-      done
-
-      if [[ $INSUFFICIENT_RESOURCES -gt 0 ]]; then
+      if kubectl -n $ns describe pods | grep -q "Insufficient"; then
         OLD="$(kubectl -n $ns get replicaset -o json -l akash.network/manifest-service --sort-by='{.metadata.creationTimestamp}' | jq -r '(.items | reverse)[1:][] | .metadata.name')"
         for i in $OLD; do kubectl -n $ns delete replicaset $i; done
       fi
