@@ -6,12 +6,12 @@ Our review highlights the persistent storage parameters within the larger SDL ex
 
 ### Overview <a href="#overview" id="overview"></a>
 
-Within the profiles > compute > \<profile-name> resources section of the SDL storage profiles are defined. Our review begins with an overview of the section and this is followed by a deep dive into the available parameters.NOTE - a maximum amount of two (2) volumes per profile may be defined. The storage profile could consist of:
+Within the profiles > compute > \<profile-name> resources section of the SDL storage profiles are defined. Our review begins with an overview of the section and this is followed by a deep dive into the available parameters.
+
+_**NOTE**_ - a maximum amount of two (2) volumes per profile may be defined. The storage profile could consist of:
 
 * A mandatory local container volume which is created with only a size key in our example
 * An optional persistent storage volume which is created with the persistent: true attribute in our example
-
-1profiles:2compute:3grafana-profile:4resources:5cpu:6units: 17memory:8size: 1Gi9storage:10- size: 512Mi11- name: data12size: 1Gi13attributes:14persistent: trueCopied!
 
 ### Name <a href="#name" id="name"></a>
 
@@ -19,7 +19,11 @@ Each storage profile has a new and optional field name. The name is used by serv
 
 ### Attributes <a href="#attributes" id="attributes"></a>
 
-A storage volume may have the following attributes._**persistent**_ - determines if the volume requires persistence or not. The default value is set to false._**class**_ - storage class for persistent volumes. Default value is set to default. NOTE - It is invalid to set storage class for non-persistent volumes. Storage volume class types are expanded upon in the subsequent section.
+A storage volume may have the following attributes.
+
+_**persistent**_ - determines if the volume requires persistence or not. The default value is set to false.
+
+_**class**_ - storage class for persistent volumes. Default value is set to default. NOTE - It is invalid to set storage class for non-persistent volumes. Storage volume class types are expanded upon in the subsequent section.
 
 ### Storage Class Types
 

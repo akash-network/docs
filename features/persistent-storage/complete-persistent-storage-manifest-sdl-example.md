@@ -52,8 +52,6 @@ profiles:
               class: beta2
   placement:
     westcoast:
-      attributes:
-        region: us-west
       pricing:
         grafana-profile:
           denom: uakt
