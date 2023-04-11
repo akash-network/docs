@@ -35,6 +35,24 @@ The class allows selection of a storage type.  Only providers capable of deliver
 | beta2      | ssd                               |
 | beta3      | NVMe                              |
 
+```
+profiles:
+  compute:
+    grafana-profile:
+      resources:
+        cpu:
+          units: 1
+        memory:
+          size: 1Gi
+        storage:
+          - size: 512Mi
+          - name: data
+            size: 1Gi
+            attributes:
+              persistent: true
+              class: beta2
+```
+
 ## Services Section
 
 ### Overview
