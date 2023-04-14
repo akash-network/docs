@@ -1,6 +1,6 @@
 # Apply NVIDIA Runtime Engine
 
-> _**NOTE**_ - conduct these steps one of the Kubernetes control plane/master nodes
+> _**NOTE**_ - conduct these steps on the control plane node that Helm was installed on via the previous step
 
 ## Create RuntimeClass
 
@@ -64,14 +64,25 @@ kubectl -n nvidia-device-plugin logs -l app.kubernetes.io/instance=nvdp
 #### Example/Expected Output
 
 ```
+ root@node1:~# kubectl -n nvidia-device-plugin logs -l app.kubernetes.io/instance=nvdp
   "sharing": {
     "timeSlicing": {}
   }
 }
-2023/03/23 11:35:02 Retreiving plugins.
-2023/03/23 11:35:02 Detected NVML platform: found NVML library
-2023/03/23 11:35:02 Detected non-Tegra platform: /sys/devices/soc0/family file not found
-2023/03/23 11:35:02 Starting GRPC server for 'nvidia.com/gpu'
-2023/03/23 11:35:02 Starting to serve 'nvidia.com/gpu' on /var/lib/kubelet/device-plugins/nvidia-gpu.sock
-2023/03/23 11:35:02 Registered device plugin for 'nvidia.com/gpu' with Kubelet
+2023/04/14 14:18:27 Retreiving plugins.
+2023/04/14 14:18:27 Detected NVML platform: found NVML library
+2023/04/14 14:18:27 Detected non-Tegra platform: /sys/devices/soc0/family file not found
+2023/04/14 14:18:27 Starting GRPC server for 'nvidia.com/gpu'
+2023/04/14 14:18:27 Starting to serve 'nvidia.com/gpu' on /var/lib/kubelet/device-plugins/nvidia-gpu.sock
+2023/04/14 14:18:27 Registered device plugin for 'nvidia.com/gpu' with Kubelet
+  "sharing": {
+    "timeSlicing": {}
+  }
+}
+2023/04/14 14:18:29 Retreiving plugins.
+2023/04/14 14:18:29 Detected NVML platform: found NVML library
+2023/04/14 14:18:29 Detected non-Tegra platform: /sys/devices/soc0/family file not found
+2023/04/14 14:18:29 Starting GRPC server for 'nvidia.com/gpu'
+2023/04/14 14:18:29 Starting to serve 'nvidia.com/gpu' on /var/lib/kubelet/device-plugins/nvidia-gpu.sock
+2023/04/14 14:18:29 Registered device plugin for 'nvidia.com/gpu' with Kubelet
 ```

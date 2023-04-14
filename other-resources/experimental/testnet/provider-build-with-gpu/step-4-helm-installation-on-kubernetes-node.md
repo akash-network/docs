@@ -1,6 +1,6 @@
 # Helm Installation on Kubernetes Node
 
-> _**NOTE**_ - conduct these steps one of the Kubernetes control plane/master nodes
+> _**NOTE**_ - conduct these steps from one of the Kubernetes control plane/master nodes
 
 ## Helm Install
 

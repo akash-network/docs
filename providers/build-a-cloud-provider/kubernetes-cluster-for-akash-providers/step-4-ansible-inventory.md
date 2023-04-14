@@ -5,7 +5,7 @@ Ansible will use an inventory file to determine the hosts Kubernetes should be i
 ## **Inventory File**
 
 * Use the following commands on the Ansible host and in the “kubespray” directory
-* Replace the IP addresses in the declare command with the addresses of your Kubernetes hosts **** (master and worker nodes)
+* Replace the IP addresses in the declare command with the addresses of your Kubernetes hosts (master and worker nodes)
 * Running these commands will create a hosts.yaml file within the kubespray/inventory/akash directory
 * NOTE - ensure that you are still within the Python virtual environment when running these commands.  Your cursor should have a “(venv)” prefix.  If needed - re-enter the virtual environment by issuing:
   * `source venv/bin/activate`

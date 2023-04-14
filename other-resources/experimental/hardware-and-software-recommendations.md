@@ -6,11 +6,11 @@
 
 ### **Easy Difficulty**
 
-****[**Praetor**](https://praetorapp.com/) **(Web based setup/Keplr wallet)**
+[**Praetor**](https://praetorapp.com/) **(Web based setup/Keplr wallet)**
 
 Web based setup / Requires [Keplr](https://www.keplr.app/) wallet and uses SSH to install k3s
 
-****[**HandyHost**](https://handyhost.computer/) **(ISO method)**
+[**HandyHost**](https://handyhost.computer/) **(ISO method)**
 
 [OS Based setup](https://github.com/HandyOSS/HandyHost/releases) / take over machine - great for old laptops or unused machines around the house
 
@@ -122,9 +122,9 @@ Recommended System Requirements
 
 CPU: 16 core / 32 threads\
 Memory : 32Gb\
-****Disk: 1Tb ****&#x20;
+Disk: 1Tb&#x20;
 
-****
+
 
 ![](<../../.gitbook/assets/image (15).png>)
 

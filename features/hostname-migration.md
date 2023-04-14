@@ -75,7 +75,7 @@ In the depiction which follows the state of the UpgradedDeployment instance prov
 
 ## **Connectivity Test Validations**
 
-****
+
 
 As discussed prior - in a production environment it may be advantageous to leave the pre-existing deployment (I.e. OriginalDeployment in this guide’s scenario) in place post migration for possible fallback scenarios.  But to validate connectivity has migrated successfully - the legacy deployment will be removed in our example scenario to prove connectivity to the upgraded deployment post hostname migration.
 

@@ -19,7 +19,7 @@ provider.yourdomain.com
 
 > _**NOTE**_ - Instead of the multiple DNS A records for worker nodes, consider using CNAME DNS records such as the example provided below.  CNAME use allows ease of management and introduces higher availability.
 >
-> ``\
+> \
 > `*.ingress 300 IN CNAME nodes.yourdomain.com.`\
 > `nodes 300 IN A x.x.x.x`\
 > `nodes 300 IN A x.x.x.x`\

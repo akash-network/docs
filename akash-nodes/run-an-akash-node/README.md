@@ -1,4 +1,4 @@
-# Run an Akash Node
+# Akash Node CLI Build
 
 We would want our own Akash node when we have one of the following needs:
 
@@ -24,4 +24,4 @@ In this guide we will review the Akash Node setup which includes the following s
 
 
 
-## ****
+##

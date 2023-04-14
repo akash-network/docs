@@ -146,7 +146,7 @@ A comprehensive, open-source framework is in development which will further dece
 
 _**Attributes of Community Providers**_
 
-Community providers vetted by Andy should advertise the following attributes before they can be signed by Akash address `akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63`.  Leases should use these attributes to allow audited _****_ community providers to bid.
+Community providers vetted by Andy should advertise the following attributes before they can be signed by Akash address `akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63`.  Leases should use these attributes to allow audited community providers to bid.
 
 * host: akash
 * tier: community

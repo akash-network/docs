@@ -2,7 +2,7 @@
 
 Ansible will configure the Kubernetes hosts via SSH.  The user Ansible connects with must be root or have the capability of escalating privileges to root.
 
-Commands in this step provide an example of SSH configuration and **** access to Kubernetes hosts and testing those connections.
+Commands in this step provide an example of SSH configuration and access to Kubernetes hosts and testing those connections.
 
 ## Section Overview
 
@@ -51,7 +51,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub root@10.88.94.5
 
 ## **Confirm SSH to the Kubernetes Hosts**
 
-* Ansible should be able to access all **** Kubernetes hosts with no password
+* Ansible should be able to access all Kubernetes hosts with no password
 
 ### **Template**
 

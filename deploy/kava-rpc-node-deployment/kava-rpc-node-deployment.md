@@ -42,7 +42,7 @@
 * Select the cloud provider of your preference
 * Once the cloud provider is selected, select the `Submit Deploy Request` option
 
-> _**NOTE -**_ the _****_ cloud providers available for your deployment may be different than those shown in the example below
+> _**NOTE -**_ the cloud providers available for your deployment may be different than those shown in the example below
 
 <figure><img src="../../.gitbook/assets/akashConsoleSelectProvider.png" alt=""><figcaption></figcaption></figure>
 
