@@ -215,7 +215,7 @@
     * [Testnet](other-resources/experimental/testnet/README.md)
       * [Provider Build With GPU](other-resources/experimental/testnet/provider-build-with-gpu/README.md)
         * [Prepare Kubernetes Hosts](other-resources/experimental/testnet/provider-build-with-gpu/prepare-kubernetes-hosts.md)
-        * [Disable search domains](other-resources/experimental/testnet/provider-build-with-gpu/disable-search-domains.md)
+        * [Disable Search Domains](other-resources/experimental/testnet/provider-build-with-gpu/disable-search-domains.md)
         * [Install NVIDIA Drivers & Toolkit](other-resources/experimental/testnet/provider-build-with-gpu/install-nvidia-drivers-and-toolkit.md)
         * [NVIDIA Runtime Configuration](other-resources/experimental/testnet/provider-build-with-gpu/nvidia-runtime-configuration.md)
         * [Create Kubernetes Cluster](other-resources/experimental/testnet/provider-build-with-gpu/create-kubernetes-cluster.md)

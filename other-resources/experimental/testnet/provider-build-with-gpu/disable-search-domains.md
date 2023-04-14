@@ -1,4 +1,4 @@
-# Disable search domains
+# Disable Search Domains
 
 ## Create Netplan
 
