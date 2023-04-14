@@ -95,7 +95,6 @@ export AKASH_NODE=http://rpc.testnet-02.aksh.pw:26657
 export AKASH_GAS=auto
 export AKASH_GAS_PRICES=0.025uakt
 export AKASH_GAS_ADJUSTMENT=1.5
-export AKASH_BROADCAST_MODE=async
 ```
 
 * Update the following variables with your own values
@@ -141,7 +140,6 @@ EOF
 kubectl delete crd manifests.akash.network
 kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.3.0-rc6/pkg/apis/akash.network/crd.yaml
 
-kubectl annotate crd manifests.akash.network helm.sh/resource-policy=keep
 kubectl annotate crd manifests.akash.network meta.helm.sh/release-name=akash-provider
 kubectl annotate crd manifests.akash.network meta.helm.sh/release-namespace=akash-services
 kubectl label crd manifests.akash.network app.kubernetes.io/managed-by=Helm
