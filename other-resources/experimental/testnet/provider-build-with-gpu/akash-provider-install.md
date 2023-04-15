@@ -135,16 +135,20 @@ EOF
 ## Create Provider Via Helm
 
 ```
-kubectl delete crd manifests.akash.network
+export CRDS="leaseparamsservices.akash.network manifests.akash.network providerhosts.akash.network providerleasedips.akash.network"
+
+kubectl delete crd $CRDS
+
 kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.3.0-rc6/pkg/apis/akash.network/crd.yaml
 
-kubectl annotate crd manifests.akash.network meta.helm.sh/release-name=akash-provider
-kubectl annotate crd manifests.akash.network meta.helm.sh/release-namespace=akash-services
-kubectl label crd manifests.akash.network app.kubernetes.io/managed-by=Helm
+for CRD in $CRDS; do
+  kubectl annotate crd $CRD helm.sh/resource-policy=keep
+  kubectl annotate crd $CRD meta.helm.sh/release-name=akash-provider
+  kubectl annotate crd $CRD meta.helm.sh/release-namespace=akash-services
+  kubectl label crd $CRD app.kubernetes.io/managed-by=Helm
+done
 
-cd ~/provider
-helm repo add akash https://akash-network.github.io/helm-charts
-helm install akash-provider akash/provider -n akash-services -f provider.yaml --set chainid=testnet-02 --set image.tag=0.3.0-rc6
+helm install akash-provider akash/provider -n akash-services -f provider.yaml --set chainid=testnet-01 --set image.tag=0.3.0-rc6
 ```
 
 ## Create Akash Hostname Operator

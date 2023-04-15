@@ -224,6 +224,8 @@
         * [Apply NVIDIA Runtime Engine](other-resources/experimental/testnet/provider-build-with-gpu/apply-nvidia-runtime-engine.md)
         * [Test GPUs](other-resources/experimental/testnet/provider-build-with-gpu/test-gpus.md)
         * [Akash Provider Install](other-resources/experimental/testnet/provider-build-with-gpu/akash-provider-install.md)
+        * [Ingress Controller Install](other-resources/experimental/testnet/provider-build-with-gpu/ingress-controller-install.md)
+        * [GPU Test Deployments](other-resources/experimental/testnet/provider-build-with-gpu/gpu-test-deployments.md)
     * [Akash Provider Streamlined Build with Rancher K3s](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/README.md)
       * [STEP 1 - Install K3s and Initial Cluster Config](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/step-1-install-k3s-and-initial-cluster-config.md)
       * [STEP 2 - Install Akash CLI](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/step-2-install-akash-cli.md)
