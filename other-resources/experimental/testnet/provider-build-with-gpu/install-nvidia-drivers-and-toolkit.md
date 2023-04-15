@@ -18,7 +18,10 @@ apt autoremove
 
 ```
 apt install ubuntu-drivers-common
+
 ubuntu-drivers devices
+
+ubuntu-drivers autoinstall
 ```
 
 ## Install nvidia-cuda-toolkit

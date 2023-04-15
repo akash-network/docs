@@ -17,6 +17,8 @@ ansible-playbook -i inventory/akash/hosts.yaml -b -v --private-key=~/.ssh/id_rsa
 
 ## Kubernetes Configurations
 
+> _**NOTE**_ - these configurations should be entered on a Kubernetes master/control plane node
+
 ```
 kubectl create ns akash-services
 kubectl label ns akash-services akash.network/name=akash-services akash.network=true

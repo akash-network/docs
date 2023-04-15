@@ -1,6 +1,6 @@
 # NVIDIA Runtime Configuration
 
-This step should be completed on the Kubespray host
+> _**NOTE**_ - This step should be completed on the Kubespray host
 
 ```
 cat > ~/kubespray/inventory/akash/group_vars/all/akash.yml <<'EOF'

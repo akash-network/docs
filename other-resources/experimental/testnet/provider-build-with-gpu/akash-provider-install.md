@@ -2,8 +2,6 @@
 
 > _**NOTE**_ - all steps in this guide should be performed from a Kubernetes control plane node
 
-##
-
 ## Install Akash Provider
 
 ```

@@ -4,7 +4,7 @@ A couple of quick Kubernetes cluster checks are in order before moving into next
 
 ## SSH into Kubernetes Master Node
 
-* The verifications in this section must be completed on a master node with kubectl access to the cluster.
+> _**NOTE**_ - the verifications in this section must be completed on a master node with Kubectl access to the cluster.
 
 ## Confirm Kubernetes Nodes
 
