@@ -13,6 +13,10 @@ spec:
   runtimeClassName: nvidia
   containers:
     - name: cuda-container
+    # Nvidia cuda compatibility https://docs.nvidia.com/deploy/cuda-compatibility/
+    # for nvidia 510 drivers
+    ## image: nvcr.io/nvidia/k8s/cuda-sample:vectoradd-cuda10.2
+    # for nvidia 525 drivers use below image
       image: nvcr.io/nvidia/k8s/cuda-sample:vectoradd-cuda11.6.0
       resources:
         limits:

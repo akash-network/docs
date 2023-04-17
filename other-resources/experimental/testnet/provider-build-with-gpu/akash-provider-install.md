@@ -121,14 +121,10 @@ domain: "$DOMAIN"
 node: "$AKASH_NODE"
 withdrawalperiod: 12h
 attributes:
-  - key: region
-    value: "ord1"
   - key: host
     value: akash
   - key: tier
     value: community
-  - key: organization
-    value: "overclock"
 EOF
 ```
 

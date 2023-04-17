@@ -15,7 +15,7 @@ services:
     # Nvidia cuda compatibility https://docs.nvidia.com/deploy/cuda-compatibility/
     # for nvidia 510 drivers
     ## image: nvcr.io/nvidia/k8s/cuda-sample:vectoradd-cuda10.2
-    # for nvidia 525 drivers
+    # for nvidia 525 drivers use below image
     image: nvcr.io/nvidia/k8s/cuda-sample:vectoradd-cuda11.6.0
     command:
       - "sh"
@@ -52,7 +52,66 @@ deployment:
       count: 1
 ```
 
+### Testing of Deployment/GPU Example #1
+
+Conduct the following tests from the deployment's shell.
+
+#### Test 1
+
+```
+/tmp/sample
+```
+
+#### Expected/Example Output
+
+```
+root@gpu-test-6d4f545b6f-f95zk:/# /tmp/sample
+
+[Vector addition of 50000 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 196 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Test PASSED
+Done
+```
+
+#### Test 2
+
+```
+nvidia-smi
+```
+
+#### Expected/Example Output
+
+```
+root@gpu-test-6d4f545b6f-f95zk:/# nvidia-smi 
+
+Fri Apr 14 09:23:33 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.85.12    Driver Version: 525.85.12    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA RTX A4000    Off  | 00000000:05:00.0 Off |                  Off |
+| 41%   44C    P8    13W / 140W |      0MiB / 16376MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+root@gpu-test-6d4f545b6f-f95zk:/# 
+```
+
 ## Example GPU SDL #2
+
+> _**NOTE**_ - the CUDA version necessary for this image is `11.7` currently.  Check the image documentation page [here](https://github.com/fboulnois/stable-diffusion-docker/pkgs/container/stable-diffusion-docker) for possible updates.
 
 ```
 ---
@@ -60,7 +119,7 @@ version: "2.0"
 
 services:
   gpu-test:
-    image: ghcr.io/akash-network/stable-diffusion-docker
+    image: ghcr.io/fboulnois/stable-diffusion-docker
     expose:
       - port: 3000
         as: 80
