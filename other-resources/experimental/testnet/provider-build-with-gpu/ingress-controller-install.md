@@ -5,16 +5,17 @@
 ## Build the Kubernetes Ingress Controller
 
 ```
-helm install akash-ingress akash/akash-ingress -n ingress-nginx --set domain=$DOMAIN
+helm install akash-ingress akash/akash-ingress -n ingress-nginx --set domain=$DOMAIN --set chainid=testnet-02 --set image.tag=0.3.0-rc6
 ```
 
 #### Expected/Example Output
 
-```
-NAME: akash-ingress
-LAST DEPLOYED: Thu Apr 28 19:08:45 2022
+<pre><code>root@node1:~# helm install akash-ingress akash/akash-ingress -n ingress-nginx --set domain=$DOMAIN --set chainid=testnet-02 --set image.tag=0.3.0-rc6
+<strong>
+</strong><strong>NAME: akash-ingress
+</strong>LAST DEPLOYED: Mon Apr 17 13:06:20 2023
 NAMESPACE: ingress-nginx
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
-```
+</code></pre>

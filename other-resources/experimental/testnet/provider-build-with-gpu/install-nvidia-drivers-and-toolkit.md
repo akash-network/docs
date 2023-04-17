@@ -14,13 +14,42 @@ DEBIAN_FRONTEND=noninteractive apt -y -o Dpkg::Options::="--force-confdef" -o Dp
 apt autoremove
 ```
 
-## Install Latest NVIDIA Drivers&#x20;
+## Install Latest NVIDIA Drivers
+
+The `ubuntu-drivers devices` command detects your GPU and determines which version of the NVIDIA drivers is best.
 
 ```
 apt install ubuntu-drivers-common
 
 ubuntu-drivers devices
+```
 
+#### Expected/Example Output
+
+```
+root@node1:~# ubuntu-drivers devices
+
+== /sys/devices/pci0000:00/0000:00:1e.0 ==
+modalias : pci:v000010DEd00001EB8sv000010DEsd000012A2bc03sc02i00
+vendor   : NVIDIA Corporation
+model    : TU104GL [Tesla T4]
+driver   : nvidia-driver-450-server - distro non-free
+driver   : nvidia-driver-418-server - distro non-free
+driver   : nvidia-driver-470-server - distro non-free
+driver   : nvidia-driver-515 - distro non-free
+driver   : nvidia-driver-510 - distro non-free
+driver   : nvidia-driver-525-server - distro non-free
+driver   : nvidia-driver-525 - distro non-free recommended
+driver   : nvidia-driver-515-server - distro non-free
+driver   : nvidia-driver-470 - distro non-free
+driver   : xserver-xorg-video-nouveau - distro free builtin
+```
+
+#### Driver Install Based on Output
+
+Either run `ubuntu-drivers autoinstall` or `apt install nvidia-driver-525` (based ion the example provided).
+
+```
 ubuntu-drivers autoinstall
 ```
 

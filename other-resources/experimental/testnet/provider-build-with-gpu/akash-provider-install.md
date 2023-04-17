@@ -2,7 +2,7 @@
 
 > _**NOTE**_ - all steps in this guide should be performed from a Kubernetes control plane node
 
-## Install Akash Provider
+## Install Akash Provider Services Binary
 
 ```
 wget https://github.com/akash-network/provider/releases/download/v0.3.0-rc6/provider-services_0.3.0-rc6_linux_amd64.zip
@@ -148,7 +148,7 @@ for CRD in $CRDS; do
   kubectl label crd $CRD app.kubernetes.io/managed-by=Helm
 done
 
-helm install akash-provider akash/provider -n akash-services -f provider.yaml --set chainid=testnet-01 --set image.tag=0.3.0-rc6
+helm install akash-provider akash/provider -n akash-services -f provider.yaml --set chainid=testnet-02 --set image.tag=0.3.0-rc6
 ```
 
 ## Create Akash Hostname Operator
