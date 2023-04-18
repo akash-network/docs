@@ -37,12 +37,8 @@ helm -n akash-services get values akash-provider > provider.yaml
 attributes:
 <keep the existing ones and add the following ones:>
   - key: capabilities/storage/1/class
-    value: default
-  - key: capabilities/storage/1/persistent
-    value: true
-  - key: capabilities/storage/2/class
     value: beta2             # set your storage class here: beta1, beta2 or beta3!
-  - key: capabilities/storage/2/persistent
+  - key: capabilities/storage/1/persistent
     value: true
 ```
 
@@ -74,12 +70,8 @@ attributes:
   - key: organization
     value: "<YOUR ORG>"      # set your organization name here
   - key: capabilities/storage/1/class
-    value: default
-  - key: capabilities/storage/1/persistent
-    value: true
-  - key: capabilities/storage/2/class
     value: beta2             # set your storage class here: beta1, beta2 or beta3!
-  - key: capabilities/storage/2/persistent
+  - key: capabilities/storage/1/persistent
     value: true
 
 bidpricestoragescale: "0.00016,beta2=0.00016" # set your storage class here: beta1, beta2 or beta3!
