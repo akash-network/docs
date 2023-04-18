@@ -40,6 +40,8 @@ services:
 
 ## Attributes
 
+> _**NOTE**_ - it is no longer necessary to specify the `ip-lease` attribute covered in this section as the bid engine now filters out non-IP lease capable providers when an IP endpoint is required by the deployment.  **This is now an optional and not required step**.
+
 Include the attribute key-value pair of `ip-lease: true` in the SDL.  This ensures that only provider advertising this attribute will bid on the workload.
 
 ```
