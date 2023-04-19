@@ -15,3 +15,4 @@ The guide is broken down into the following categories:
 * [Heal Broken Deployment Replicas by Returning Lost command to Manifests](heal-broken-deployment-replicas-by-returning-lost-command-to-manifests.md)
 * [Maintaining and Rotating Kubernetes/etcd Certificates: A How-To Guide](maintaining-and-rotating-kubernetes-etcd-certificates-a-how-to-guide.md)
 * [Force New ReplicaSet Workaround](force-new-replicaset-workaround.md)
+* [Close Leases Based on Image](close-leases-based-on-image.md)
