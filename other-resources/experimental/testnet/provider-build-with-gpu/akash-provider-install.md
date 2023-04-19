@@ -147,6 +147,32 @@ done
 helm install akash-provider akash/provider -n akash-services -f provider.yaml --set chainid=testnet-02 --set image.tag=0.3.0-rc6
 ```
 
+### Error: INSTALLATION FAILED: cannot patch "manifests.akash.network" with kind CustomResourceDefinition
+
+Please ignore the following "cannot patch" errors during Akash Provider Helm install.:
+
+```
+# helm install akash-provider akash/provider -n akash-services -f provider.yaml --set chainid=testnet-02 --set image.tag=0.3.0-rc6
+Error: INSTALLATION FAILED: cannot patch "manifests.akash.network" with kind CustomResourceDefinition: CustomResourceDefinition.apiextensions.k8s.io "manifests.akash.network" is invalid: status.storedVersions[0]: Invalid value: "v2beta2": must appear in spec.versions && cannot patch "providerhosts.akash.network" with kind CustomResourceDefinition: CustomResourceDefinition.apiextensions.k8s.io "providerhosts.akash.network" is invalid: status.storedVersions[0]: Invalid value: "v2beta2": must appear in spec.versions && cannot patch "providerleasedips.akash.network" with kind CustomResourceDefinition: CustomResourceDefinition.apiextensions.k8s.io "providerleasedips.akash.network" is invalid: status.storedVersions[0]: Invalid value: "v2beta2": must appear in spec.versions
+```
+
+The "cannot patch" errors are expected since Helm does not support CRD upgrades as described [here](https://helm.sh/docs/chart\_best\_practices/custom\_resource\_definitions/#some-caveats-and-explanations).
+
+Verify the image is correct by running this command:
+
+```
+kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq -c
+```
+
+#### Expected/Example Output
+
+```
+kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq -c
+      4    image: ghcr.io/akash-network/provider:0.3.0-rc6
+```
+
+
+
 ## Create Akash Hostname Operator
 
 ```

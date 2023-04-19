@@ -15,6 +15,8 @@ rm -rf helm-v3.11.2-linux-amd64.tar.gz linux-amd64
 
 helm repo add nvdp https://nvidia.github.io/k8s-device-plugin
 
+helm repo add akash https://akash-network.github.io/helm-charts
+
 helm repo update
 ```
 
