@@ -109,7 +109,9 @@ Fri Apr 14 09:23:33 2023
 root@gpu-test-6d4f545b6f-f95zk:/# 
 ```
 
-## Example GPU SDL #2
+## Example GPU SDL&#x20;
+
+> _**NOTE**_ - there is currently an issue with GPU deployments closing once their primary process completes.  Due to this issue the example SDL below causes repeated container resarts.  The container will restart when the stable diffusion task has completed.  When this issue has been resolved, GPU containers will remain running perpetually and will not close when the primary process defined in the SDL completes.
 
 > _**NOTE**_ - the CUDA version necessary for this image is `11.7` currently.  Check the image documentation page [here](https://github.com/fboulnois/stable-diffusion-docker/pkgs/container/stable-diffusion-docker) for possible updates.
 
