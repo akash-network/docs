@@ -9,7 +9,7 @@ The recommended minimum number of hosts is four for a production Provider Kubern
 * Three hosts serving as a redundant control plane/master instances
 * One host to serve as Kubernetes worker node to host provider leases
 * NOTE - the number of control plane nodes in the cluster should always be an odd number to allow the cluster to reach consensus.&#x20;
-* NOTE - if you intended to build a provider with persistent storage please refer to host requirements detailed [here](https://docs.akash.network/testnet-technical-docs/provider-persistent-storage-enablement).
+* NOTE - if you intended to build a provider with persistent storage please refer to host requirements detailed [here](../helm-based-provider-persistent-storage-enablement/persistent-storage-requirements.md).
 
 While you could use a single Kubernetes host in testing and dev this would not be recommended for production.
 
