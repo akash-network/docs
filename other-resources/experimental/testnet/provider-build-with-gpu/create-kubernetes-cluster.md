@@ -23,9 +23,6 @@ ansible-playbook -i inventory/akash/hosts.yaml -b -v --private-key=~/.ssh/id_rsa
 kubectl create ns akash-services
 kubectl label ns akash-services akash.network/name=akash-services akash.network=true
 
-kubectl create ns ingress-nginx
-kubectl label ns ingress-nginx app.kubernetes.io/name=ingress-nginx app.kubernetes.io/instance=ingress-nginx
-
 kubectl create ns lease
 kubectl label ns lease akash.network=true
 ```
