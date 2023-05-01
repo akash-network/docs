@@ -12,6 +12,6 @@ Use this guide and follow the sequential steps to build your Testnet Akash Provi
 * [Apply NVIDIA Runtime Engine](apply-nvidia-runtime-engine.md)
 * [Test GPUs](test-gpus.md)
 * [Akash Provider Install](akash-provider-install.md)
-* [Ingress Controller Install](ingress-controller-install.md)
+* [Ingress Controller Install](step-8-ingress-controller-install.md)
 * [GPU Test Deployments](gpu-test-deployments.md)
 

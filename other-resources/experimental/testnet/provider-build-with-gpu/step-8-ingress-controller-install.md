@@ -1,4 +1,4 @@
-# STEP 9 - Ingress Controller Install
+# Ingress Controller Install
 
 ## Create Upstream Ingress-Nginx Config
 

@@ -7,11 +7,17 @@ We recommend using the Kubespray project to deploy a cluster. Kubespray uses Ans
 The recommended minimum number of hosts is four for a production Provider Kubernetes cluster. This is meant to allow:
 
 * Three hosts serving as a redundant control plane/master instances
-* One host to serve as Kubernetes worker node to host provider leases
-* NOTE - the number of control plane nodes in the cluster should always be an odd number to allow the cluster to reach consensus.&#x20;
-* NOTE - if you intended to build a provider with persistent storage please refer to host requirements detailed [here](../helm-based-provider-persistent-storage-enablement/persistent-storage-requirements.md).
+* One host to serve as Kubernetes worker node to host provider leases.&#x20;
 
-While you could use a single Kubernetes host in testing and dev this would not be recommended for production.
+### Additional Cluster Sizing Considerations
+
+> While a production Kubernetes cluster would typically require three redundant control plane nodes, in circumstances in which the control plane node is easily recoverable the use of a single control instance for Akash providers should suffice.
+
+> The number of control plane nodes in the cluster should always be an odd number to allow the cluster to reach consensus.
+
+> We recommend running a single worker node per physical server as CPU is typically the largest resource bottleneck.  The use of a single worker node allows larger workloads to be deployed on your provider.
+
+> If you intended to build a provider with persistent storage please refer to host requirements detailed [here](../helm-based-provider-persistent-storage-enablement/persistent-storage-requirements.md).
 
 ## Kubernetes Cluster Software/Hardware Requirements and Recommendations
 
