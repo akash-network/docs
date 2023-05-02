@@ -105,6 +105,7 @@
       * [Google Cloud OR Cloudflare Configuration](providers/build-a-cloud-provider/tls-certs-for-akash-provider-optional-step/google-cloud-or-cloudflare-configuration.md)
       * [Wildcard Certificate Request](providers/build-a-cloud-provider/tls-certs-for-akash-provider-optional-step/wildcard-certificate-request.md)
       * [Ingress Controller Wildcard Cert Use](providers/build-a-cloud-provider/tls-certs-for-akash-provider-optional-step/ingress-controller-wildcard-cert-use.md)
+      * [Troubleshooting](providers/build-a-cloud-provider/tls-certs-for-akash-provider-optional-step/troubleshooting.md)
       * [Optional Step - Certs for Custom Domains](providers/build-a-cloud-provider/tls-certs-for-akash-provider-optional-step/optional-step-certs-for-custom-domains.md)
     * [IP Leases - Provider Enablement (Optional Step)](providers/build-a-cloud-provider/ip-leases-provider-enablement-optional-step/README.md)
       * [Akash Provider Update](providers/build-a-cloud-provider/ip-leases-provider-enablement-optional-step/akash-provider-update.md)
