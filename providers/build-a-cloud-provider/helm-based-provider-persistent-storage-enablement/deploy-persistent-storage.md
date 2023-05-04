@@ -64,11 +64,11 @@ rook-release/rook-ceph-cluster	v1.10.11       	v1.10.11     	Manages a single Ce
 
 #### **STEP 1 - Install Ceph Operator Helm Chart**
 
-**TESTING**
+#### **Testing**
 
 > For additional Operator chart values refer to [this](https://github.com/rook/rook/blob/v1.9.9/deploy/charts/rook-ceph/values.yaml) page.
 
-#### All In One Previsioner Replicas
+#### All In One Provisioner Replicas
 
 > For all-in-one deployments, you will likely want only one replica of the CSI provisioners.
 >
