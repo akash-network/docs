@@ -4,18 +4,13 @@
 
 * A list of publicly available RPC nodes recommended for use:
 
-#### Akash Maintained RPC Pool
-
-```
-http://akash.c29r3.xyz:80/rpc
-```
-
 #### Trusted Community RPC Nodes
 
 ```
+https://rpc.akashnet.net:443
 https://rpc.akash.forbole.com:443
-http://akash-sentry01.skynetvalidators.com:26657
-https://rpc.akash.smartnodes.one:443
+https://rpc-akash.ecostake.com:443
+https://akash-rpc.polkachu.com:443
 ```
 
 ## RPC Node Repo
