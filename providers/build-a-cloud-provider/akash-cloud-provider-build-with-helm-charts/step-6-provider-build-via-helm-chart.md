@@ -39,7 +39,11 @@ export DOMAIN=test.com
 
 4\.  Set the Akash RPC node for your provider to use
 
-> If you are going to deploy Akash RPC Node using Helm-Charts then set the node to http://akash-node-1:26657 It is recommended that you install your own Akash RPC node. Follow [this guide](../../../akash-nodes/akash-node-via-helm-charts/) to do so.
+> If you are going to deploy Akash RPC Node using Helm-Charts then set the node to http://akash-node-1:26657 It is recommended that you install your own Akash RPC node. Follow [this guide](../../../akash-nodes/akash-node-via-helm-charts/) to do so.  \
+> \
+> Ensure that the RPC node utilized is in sync prior to proceeding with the provider build.\
+> \
+> _**NOTE**_ - in the example provided below the NODE variable is set to `akash-node-1` which is the Kubernetes service name of the RPC node when installed via Helm.  Use `kubectl get svc -n akash-services` to confirm the service name and status.
 
 ```
 export NODE=http://akash-node-1:26657
