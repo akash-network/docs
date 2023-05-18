@@ -8,6 +8,11 @@
   * Update the region value from current `us-west` to an appropriate value such as `us-east` OR `eu-west`
 * Ensure that necessary [environment variables](../akash-cloud-provider-build-with-helm-charts/step-6-provider-build-via-helm-chart.md) are in place prior to issuing
 
+#### Caveat on Attributes Updates in Active Leases
+
+* If your provider has active leases, attributes that were used during the creation of those leases cannot be updated
+* Example - if a lease was created and is active on your provider with `key=region` and `value=us-east`- it would not be possible to update the `region` attribute without closing those active leases prior
+
 #### Helm Chart Update
 
 ```
