@@ -1,4 +1,4 @@
-# Step 8 - Firewall Rule Review
+# Step 10 - Firewall Rule Review
 
 ## External/Internet Firewall Rules
 
@@ -10,7 +10,7 @@ The following firewall rules are applicable to internet-facing Kubernetes compon
 8443/tcp - for manifest uploads
 ```
 
-### **Akash Ingress Controller**
+### **Ingress Controller**
 
 ```
 80/tcp - for web app deployments

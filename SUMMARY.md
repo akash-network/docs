@@ -259,7 +259,7 @@
       * [STEP 5 - Install Helm](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/step-5-install-helm.md)
       * [STEP 6 - Provider Build via Helm Chart](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/step-6-provider-build-via-helm-chart.md)
       * [STEP 7 - Hostname Operator Build](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/step-7-hostname-operator-build.md)
-      * [STEP 8 - Ingress Controller Install](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/step-8-ingress-controller-install.md)
+      * [Step 8 - Ingress Controller Install](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/step-8-ingress-controller-install.md)
       * [STEP 9 - Next Steps - Provider Health Check and Optional Services](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/step-9-next-steps-provider-health-check-and-optional-services.md)
     * [Omnibus](other-resources/experimental/omnibus/README.md)
       * [Akash Validator with TMKMS](other-resources/experimental/omnibus/akash-validator-with-tmkms/README.md)
