@@ -50,8 +50,12 @@ cat your-gcp-service-account-key.json | base64 | tr -d '\n'
 
 > _**NOTE**_ - this step should be performed on one of the Kubernetes control plane nodes of your Akash Provider
 
+#### Create the Service Account Secret Config File
+
+* Replace the service account key field with your own key
+
 ```
-kubectl apply -f - <<EOF
+cat > service-account-secret.yaml << EOF
 apiVersion: v1
 kind: Secret
 metadata:
@@ -61,6 +65,12 @@ type: Opaque
 data:
   key.json: "<your-gcp-service-account-key-json-base64>"
 EOF
+```
+
+#### Apply the Service Account Secret Config
+
+```
+kubectl apply -f service-account-secret.yaml
 ```
 
 ## Create the Cloudflare DNS Cloud Service Account for DNS-01 Challenge

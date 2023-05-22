@@ -6,8 +6,10 @@
 
 > _**NOTE**_ - this step should be performed on one of the Kubernetes control plane nodes of your Akash Provider
 
+#### Create the Wildcard Cert Config
+
 ```
-kubectl apply -f - <<EOF
+cat > wildcard-cert-request.yaml << EOF
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
@@ -23,6 +25,12 @@ spec:
   - '*.yourdomain.com'
   - '*.ingress.yourdomain.com'
 EOF
+```
+
+#### Apply the Wildcard Cert Config
+
+```
+kubectl apply -f wildcard-cert-request.yaml
 ```
 
 ## Additional Detail

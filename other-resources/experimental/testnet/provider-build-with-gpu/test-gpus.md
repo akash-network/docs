@@ -2,8 +2,10 @@
 
 ## Launch GPU Test Pod
 
+#### Create the GPU Test Pod Config
+
 ```
-cat <<EOF | kubectl apply -f -
+cat > gpu-test-pod.yaml << EOF
 apiVersion: v1
 kind: Pod
 metadata:
@@ -26,6 +28,12 @@ spec:
     operator: Exists
     effect: NoSchedule
 EOF
+```
+
+#### Apply the GPU Test Pod Config
+
+```
+kubectl apply -f gpu-test-pod.yaml
 ```
 
 ## Verification of GPU Pod

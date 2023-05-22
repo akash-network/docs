@@ -28,8 +28,10 @@ kubectl -n metallb-system expose deployment metallb-controller --name=controller
 
 > _**NOTE**_ - make sure you replace the example addresses with your IP ranges
 
+#### Create the MetalLB Config
+
 ```
-cat <<EOF | kubectl apply -f -
+cat > metallb-config.yaml << EOF
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
@@ -45,6 +47,12 @@ spec:
   autoAssign: true
   avoidBuggyIPs: false
 EOF
+```
+
+#### Apply the MetalLB Config
+
+```
+kubectl apply -f metallb-config.yaml
 ```
 
 > If you are using MetalLB with a kubernetes version that enforces [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) (which is beta in k8s 1.23), make sure to label the metallb-system namespace with the following labels:

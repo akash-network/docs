@@ -4,8 +4,10 @@
 
 ## Create RuntimeClass
 
+#### Create the NVIDIA Runtime Config
+
 ```
-cat <<'EOF' | kubectl apply -f -
+cat > nvidia-runtime-class.yaml << EOF
 kind: RuntimeClass
 apiVersion: node.k8s.io/v1
 metadata:
@@ -14,17 +16,10 @@ handler: nvidia
 EOF
 ```
 
-#### Expected/Example Output
+#### Apply the NVIDIA Runtime Config
 
 ```
-root@ip-172-31-8-172:~# cat <<'EOF' | kubectl apply -f -
-kind: RuntimeClass
-apiVersion: node.k8s.io/v1
-metadata:
-  name: nvidia
-handler: nvidia
-EOF
-runtimeclass.node.k8s.io/nvidia created
+kubectl apply -f nvidia-runtime-class.yaml
 ```
 
 ## Upgrade/Install the NVIDIA Device Plug In Via Helm
