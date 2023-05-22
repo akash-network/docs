@@ -90,8 +90,10 @@ Zone Resources:
 
 > _**NOTE**_ - this step should be performed on one of the Kubernetes control plane nodes of your Akash Provider
 
+#### Create the DNS Challenge Config
+
 ```
-kubectl apply -f - <<EOF
+cat > dns-challenge-config.yaml << EOF
 apiVersion: v1
 kind: Secret
 metadata:
@@ -101,4 +103,10 @@ type: Opaque
 stringData:
   api-token: <API token>
 EOF
+```
+
+#### Apply the DNS Challenge Config
+
+```
+kubectl apply -f dns-challenge-config.yaml
 ```
