@@ -27,4 +27,5 @@ Please consider using the [Praetor](../../community-solutions/praetor.md) applic
 * [Provider Ephemeral Storage Config](step-6-provider-ephemeral-storage-config.md)
 * [Create Kubernetes Cluster](step-6-create-kubernetes-cluster.md)
 * [Confirm Kubernetes Cluster](step-7-confirm-kubernetes-cluster.md)
+* [Custom Kernel Parameters](step-9-custom-kernel-parameters.md)
 * [Review Firewall Policies](step-9-review-firewall-policies.md)
