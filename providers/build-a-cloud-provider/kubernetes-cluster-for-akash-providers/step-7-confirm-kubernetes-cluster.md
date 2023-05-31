@@ -1,4 +1,4 @@
-# STEP 8 - Confirm Kubernetes Cluster
+# STEP 9 - Confirm Kubernetes Cluster
 
 A couple of quick Kubernetes cluster checks are in order before moving into next steps.
 
@@ -62,6 +62,21 @@ nodelocaldns-7znkj                        1/1     Running   0               4m28
 nodelocaldns-g8dqm                        1/1     Running   0               4m27s
 nodelocaldns-gf58m                        1/1     Running   0               4m28s
 nodelocaldns-n88fj                        1/1     Running   0               4m28s
+```
+
+## Confirm DNS
+
+### Verify DNS Health
+
+```
+kubectl -n kube-system get cm coredns -o yaml | grep forward
+```
+
+### Verify All DNS Related Pods Are in a Running State
+
+```
+kubectl -n kube-system get pods -l k8s-app=kube-dns
+kubectl -n kube-system get pods -l k8s-app=nodelocaldns
 ```
 
 ## Verify etcd Status and Health
