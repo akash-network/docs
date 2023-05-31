@@ -68,6 +68,8 @@ nodelocaldns-n88fj                        1/1     Running   0               4m28
 
 ### Verify DNS Health
 
+> This is to verify that Kubespray properly set the expected upstream servers in the DNS Configuration previous step
+
 ```
 kubectl -n kube-system get cm coredns -o yaml | grep forward
 ```
