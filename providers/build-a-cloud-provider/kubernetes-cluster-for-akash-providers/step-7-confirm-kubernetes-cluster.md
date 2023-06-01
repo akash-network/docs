@@ -66,7 +66,7 @@ nodelocaldns-n88fj                        1/1     Running   0               4m28
 
 ## Confirm DNS
 
-### Verify DNS Health
+### Verify CoreDNS Config
 
 > This is to verify that Kubespray properly set the expected upstream servers in the DNS Configuration previous step
 
