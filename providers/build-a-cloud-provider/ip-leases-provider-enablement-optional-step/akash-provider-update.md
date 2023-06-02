@@ -4,9 +4,9 @@ description: Update your pre-existing Akash provider to support IP Leases
 
 # Akash Provider Update
 
-### Attribute Update
+### IP Leases Provider Setting
 
-Update your provider to advertise the necessary IP Leases  attribute.  The attribute will be added via an edit of your `provider.yaml` file and subsequent provider Helm update as detailed in this section.
+Update your provider configuration with the  necessary IP Leases  setting.  The setting will be added via an edit of your `provider.yaml` file and subsequent provider Helm update as detailed in this section.
 
 #### Capture Current Provider Settings to File
 
@@ -76,7 +76,7 @@ TEST SUITE: None
 
 ## Verification
 
-Run the following command to verify that the IP Operator attribute is set
+Run the following command to verify the the IP Operator setting
 
 ```
 kubectl -n akash-services get statefulsets akash-provider -o yaml | grep -i -A1 ip_oper
