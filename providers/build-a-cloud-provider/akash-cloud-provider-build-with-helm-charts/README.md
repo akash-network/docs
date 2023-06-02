@@ -18,3 +18,4 @@ This guide uses a single Kubernetes master node.
 * [Hostname Operator Build](step-7-hostname-operator-build.md)
 * [Ingress Controller Install](step-8-ingress-controller-install.md)
 * [Firewall Rule Review](step-9-firewall-rule-review.md)
+* [Extras](step-11-extras.md)

@@ -6,6 +6,14 @@ The steps outlined in this guide provide a workaround for known issue which occu
 \
 GitHub issue description can be found [here](https://github.com/akash-network/support/issues/82).
 
+## Requirements
+
+#### Install JQ
+
+```
+apt -y install jq
+```
+
 ## Steps to Implement
 
 ### 1). Create \`/usr/local/bin/akash-force-new-replicasets.sh\` file

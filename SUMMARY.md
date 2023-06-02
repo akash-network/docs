@@ -91,6 +91,7 @@
       * [Step 8 - Hostname Operator Build](providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-7-hostname-operator-build.md)
       * [STEP 9 - Ingress Controller Install](providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-8-ingress-controller-install.md)
       * [Step 10 - Firewall Rule Review](providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-9-firewall-rule-review.md)
+      * [STEP 11 - Extras](providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-11-extras.md)
     * [Akash Provider Checkup](providers/build-a-cloud-provider/akash-provider-checkup/README.md)
       * [Prerequisites](providers/build-a-cloud-provider/akash-provider-checkup/prerequisites.md)
       * [STEP 1 - Launch a Test Deployment on Provider](providers/build-a-cloud-provider/akash-provider-checkup/step-1-launch-a-test-deployment-on-provider.md)

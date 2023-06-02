@@ -1,23 +1,67 @@
-# Akash Provider Update
+---
+description: Update your pre-existing Akash provider to support IP Leases
+---
 
-Update your pre-existing Akash provider to support IP Leases.
+# Akash Provider Update
 
 ### Attribute Update
 
-Update your provider to advertise the following attribute.  This attribute can be used (by users deploying on Akash) to select providers supporting the IP Lease.
+Update your provider to advertise the necessary IP Leases  attribute.  The attribute will be added via an edit of your `provider.yaml` file and subsequent provider Helm update as detailed in this section.
+
+#### Capture Current Provider Settings to File
+
+* Issue this command to capture current provider settings and write to file
 
 ```
-- key: ip-lease
-  value: true
+cd ~
+
+helm -n akash-services get values akash-provider | grep -v ^USER > provider.yaml
 ```
 
-### Command Template
+#### Update Provider Settings
+
+Open the file containing the current provider settings
 
 ```
-helm upgrade akash-provider akash/provider -n akash-services -f provider.yaml --set ipoperator=true
+cd ~
+
+vi provider.yaml
 ```
 
-### Expected/Example Output
+#### Add the IP Operator Key-Value Pair
+
+```
+ipoperator: true
+```
+
+#### Example Provider YAML Post Update
+
+```
+attributes:
+- key: region
+  value: eu-west
+- key: host
+  value: akash
+- key: tier
+  value: community
+- key: organization
+  value: chainzero
+domain: akashtesting.xyz
+from: akash1xmz9es9ay9ln9x2m3q8dlu0alxf0ltce7ykjfx
+key: <redacted>
+keysecret: <redacted>
+node: http://akash.c29r3.xyz:80/rpc
+withdrawalperiod: 24h
+ipoperator: true
+```
+
+### Update Provider Command Template
+
+```
+helm upgrade akash-provider akash/provider -n akash-services -f provider.yaml
+```
+
+#### Expected/Example Output
 
 ```
 root@node1:~/provider# helm upgrade akash-provider akash/provider -n akash-services -f provider.yaml --set ipoperator=true
@@ -28,4 +72,20 @@ NAMESPACE: akash-services
 STATUS: deployed
 REVISION: 2
 TEST SUITE: None
+```
+
+## Verification
+
+Run the following command to verify that the IP Operator attribute is set
+
+```
+kubectl -n akash-services get statefulsets akash-provider -o yaml | grep -i -A1 ip_oper
+```
+
+#### Expected/Example Output
+
+```
+# kubectl -n akash-services get statefulsets akash-provider -o yaml | grep -i -A1 ip_oper
+        - name: AKASH_IP_OPERATOR
+          value: "true"
 ```
