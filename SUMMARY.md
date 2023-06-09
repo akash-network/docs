@@ -255,6 +255,7 @@
           * [Send the Manifest](other-resources/experimental/testnet/gpu-testnet-client-instructions/detailed-steps/part-10.-send-the-manifest.md)
           * [Update the Deployment](other-resources/experimental/testnet/gpu-testnet-client-instructions/detailed-steps/part-11.-update-the-deployment.md)
           * [Close Deployment](other-resources/experimental/testnet/gpu-testnet-client-instructions/detailed-steps/close-deployment.md)
+      * [GPU Testnet Submission Instructions](other-resources/experimental/testnet/gpu-testnet-submission-instructions.md)
     * [Akash Provider Streamlined Build with Rancher K3s](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/README.md)
       * [STEP 1 - Install K3s and Initial Cluster Config](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/step-1-install-k3s-and-initial-cluster-config.md)
       * [STEP 2 - Install Akash CLI](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/step-2-install-akash-cli.md)
