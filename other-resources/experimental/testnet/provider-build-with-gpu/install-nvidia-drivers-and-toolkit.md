@@ -47,7 +47,7 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 
 #### Driver Install Based on Output
 
-Either run `ubuntu-drivers autoinstall` or `apt install nvidia-driver-525` (based on the example provided).
+Either run `ubuntu-drivers autoinstall` or `apt install nvidia-driver-525` (based on the example provided and the `recommended` version indicated which may be different in your use).
 
 ```
 ubuntu-drivers autoinstall
