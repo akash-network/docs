@@ -26,6 +26,8 @@ export AKASH_KEYRING_BACKEND=test
 
 > _**NOTE**_ - in the provided syntax we are creating an account with the key name of `default`
 
+> _**NOTE**_ - the Akash Provider's address (I.e. account that begins with akash1XXXXXXXX) is required in the Testnet submission form which is to be completed when the provider is fully built and tested.  Capture the address output in the following command for your Provider Account submission later.
+
 ```
 provider-services keys add default
 ```
