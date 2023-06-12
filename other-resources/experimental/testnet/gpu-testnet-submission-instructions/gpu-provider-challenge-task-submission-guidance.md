@@ -17,7 +17,7 @@ The timestamp of your Akash Testnet Provider build completion will be the form s
 
 During your Provider build a dedicated account was created in this [step](https://docs.akash.network/other-resources/experimental/testnet/provider-build-with-gpu/akash-provider-install#create-provider-account).  Use this Akash address for submission as the `Akash GPU Testnet Provider Address`.
 
-## Tenant Address
+## Tenant/Deployment Address
 
 Provide the tenant Akash address of the account that is used to launch your Testnet verification deployments (detailed further below).
 
