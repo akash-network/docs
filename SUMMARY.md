@@ -244,6 +244,8 @@
         * [Akash Console](other-resources/experimental/testnet/gpu-testnet-client-instructions/akash-console/README.md)
           * [Akash Console Access](other-resources/experimental/testnet/gpu-testnet-client-instructions/akash-console/akash-console-access.md)
           * [GPU Testnet Settings](other-resources/experimental/testnet/gpu-testnet-client-instructions/akash-console/gpu-testnet-settings.md)
+          * [Keplr Account Selection and Funding](other-resources/experimental/testnet/gpu-testnet-client-instructions/akash-console/keplr-account-selection-and-funding.md)
+          * [Minesweeper Deployment Example](other-resources/experimental/testnet/gpu-testnet-client-instructions/akash-console/minesweeper-deployment-example.md)
         * [Cloudmos Deploy](other-resources/experimental/testnet/gpu-testnet-client-instructions/cloudmos-deploy.md)
         * [Akash CLI for GPU Testnet](other-resources/experimental/testnet/gpu-testnet-client-instructions/detailed-steps/README.md)
           * [Install Akash CLI](other-resources/experimental/testnet/gpu-testnet-client-instructions/detailed-steps/part-1.-install-akash.md)
