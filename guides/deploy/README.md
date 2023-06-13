@@ -7,7 +7,7 @@ Akash Console is a web based application that makes it easy to deploy applicatio
 This guide will cover the following topics:
 
 * [Akash Console Access](akash-console-access.md)
-* [Example Access Deployment via Akash Console](minesweeper-deployment-example.md)
+* [Example Deployment via Akash Console](minesweeper-deployment-example.md)
 * [Deployment Management via Akash Console](deployment-management.md)
 * [Settings](settings.md)
 

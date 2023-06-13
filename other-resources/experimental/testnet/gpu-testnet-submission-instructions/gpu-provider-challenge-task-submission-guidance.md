@@ -31,6 +31,8 @@ The address/account used to launch the deployment will be used in Testnet task g
 
 As described in the Testnet Submission form, a deployment much be launched on your provider using this [SDL](https://gist.github.com/chainzero/86402b1ab2cef63a7e83d4fbad73b0e0).
 
+Use these [Deployment Guides](../gpu-testnet-client-instructions/) for further details on launching Testnet deployments.
+
 The deployment will be used to verify that your provider is fully functional and satisfies a healthy, running state.
 
 The deployment log output will also be used to verify the GPU resources of your provider as described in this [section](gpu-provider-challenge-task-submission-guidance.md#provide-screenshot-of-test-deployment).
