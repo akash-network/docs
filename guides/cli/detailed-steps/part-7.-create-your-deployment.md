@@ -6,6 +6,8 @@ Only x86\_64 processors are officially supported for Akash deployments. This may
 
 ## Akash Deployment
 
+> _**NOTE**_ - if your current terminal session has been used to create prior deployments, issue the command `unset AKASH_DSEQ` to prevent receipt of error message `Deployment Exists`
+
 To deploy on Akash, run:
 
 ```
