@@ -6,6 +6,8 @@ Test your provider's ability to host GPU related deployments via the SDLs provid
 
 ## Example GPU SDL #1
 
+> _**NOTE**_ - in this example the deployer is requesting bids from only Akash Providers that have available NVIDIA A4000 GPUs
+
 ```
 ---
 version: "2.0"
@@ -37,6 +39,10 @@ profiles:
           size: 1Gi
         gpu:
           units: 1
+          attributes:
+            vendor:
+              nvidia:
+                - model: a4000
         storage:
           - size: 512Mi
   placement:
@@ -115,6 +121,8 @@ root@gpu-test-6d4f545b6f-f95zk:/#
 
 > _**NOTE**_ - the CUDA version necessary for this image is `11.7` currently.  Check the image documentation page [here](https://github.com/fboulnois/stable-diffusion-docker/pkgs/container/stable-diffusion-docker) for possible updates.
 
+> _**NOTE**_ - in this example the deployer is requesting bids from only Akash Providers that have available NVIDIA A4000 GPUs
+
 ```
 ---
 version: "2.0"
@@ -142,7 +150,11 @@ profiles:
         memory:
           size: 20Gi
         gpu:
-          units: 2
+          units: 1
+          attributes:
+            vendor:
+              nvidia:
+                - model: a4000
         storage:
           - size: 100Gi
   placement:

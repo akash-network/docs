@@ -15,7 +15,28 @@ cd ~/kubespray
 ansible-playbook -i inventory/akash/hosts.yaml -b -v --private-key=~/.ssh/id_rsa cluster.yml
 ```
 
-## Kubernetes Configurations
+## GPU Node Label (Kubernetes)
+
+Each node that provides GPUs must be labeled correctly.
+
+### Labels Template
+
+```
+akash.network/capabilities.gpu.vendor.<vendor name>.model.<model name>: true
+```
+
+### Example/Expected Output
+
+```
+root@node1:~/provider# kubectl label node node1 akash.network/capabilities.gpu.vendor.nvidia.model.a4000=true
+node/node1 labeled
+root@node1:~/provider# kubectl describe node node1 | grep -A10 Labels
+Labels:             akash.network/capabilities.gpu.vendor.nvidia.model.a4000=true
+...
+...
+```
+
+## Additional Kubernetes Configurations
 
 > _**NOTE**_ - these configurations should be entered on a Kubernetes master/control plane node
 
