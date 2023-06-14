@@ -145,8 +145,6 @@ EOF
 ## Create Provider Via Helm
 
 ```
-export CRDS="leaseparamsservices.akash.network manifests.akash.network providerhosts.akash.network providerleasedips.akash.network"
-
 kubectl delete crd $CRDS
 
 kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.3.0-rc17/pkg/apis/akash.network/crd.yaml
@@ -191,4 +189,21 @@ kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq 
 
 ```
 helm install akash-hostname-operator akash/akash-hostname-operator -n akash-services --set image.tag=0.3.0-rc17
+```
+
+## Verify Akash Provider and Hostname Operator Status
+
+* Use the following command to verify the health of the Akash Provider and Hostname Operator pods
+
+```
+kubectl get pods -n akash-services
+```
+
+#### Example/Expected Output
+
+```
+root@node1:~/provider# kubectl get pods -n akash-services
+NAME                                       READY   STATUS    RESTARTS   AGE
+akash-hostname-operator-5c59757fcc-kt7dl   1/1     Running   0          17s
+akash-provider-0                           1/1     Running   0          59s
 ```
