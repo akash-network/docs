@@ -145,6 +145,7 @@ EOF
 ## Create Provider Via Helm
 
 ```
+export CRDS="manifests.akash.network providerhosts.akash.network providerleasedips.akash.network"
 kubectl delete crd $CRDS
 
 kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.3.0-rc17/pkg/apis/akash.network/crd.yaml
