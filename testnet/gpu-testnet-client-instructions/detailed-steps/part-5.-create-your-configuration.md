@@ -40,6 +40,10 @@ profiles:
           size: 1Gi
         gpu:
           units: 1
+          attributes:
+            vendor:
+              nvidia:
+                - model: a4000
         storage:
           - size: 512Mi
   placement:
