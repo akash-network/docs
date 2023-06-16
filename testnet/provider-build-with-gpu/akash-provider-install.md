@@ -5,13 +5,13 @@
 ## Install Akash Provider Services Binary
 
 ```
-wget https://github.com/akash-network/provider/releases/download/v0.3.0-rc17/provider-services_0.3.0-rc17_linux_amd64.zip
+wget https://github.com/akash-network/provider/releases/download/v0.3.0-rc19/provider-services_0.3.0-rc19_linux_amd64.zip
 
-unzip provider-services_0.3.0-rc17_linux_amd64.zip 
+unzip provider-services_0.3.0-rc19_linux_amd64.zip 
 
 install provider-services /usr/local/bin/
 
-rm provider-services provider-services_0.3.0-rc17_linux_amd64.zip 
+rm provider-services provider-services_0.3.0-rc19_linux_amd64.zip 
 ```
 
 ## Specify Provider Account Keyring Location
@@ -148,7 +148,7 @@ EOF
 export CRDS="manifests.akash.network providerhosts.akash.network providerleasedips.akash.network"
 kubectl delete crd $CRDS
 
-kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.3.0-rc17/pkg/apis/akash.network/crd.yaml
+kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.3.0-rc19/pkg/apis/akash.network/crd.yaml
 
 for CRD in $CRDS; do
   kubectl annotate crd $CRD helm.sh/resource-policy=keep
@@ -157,7 +157,7 @@ for CRD in $CRDS; do
   kubectl label crd $CRD app.kubernetes.io/managed-by=Helm
 done
 
-helm install akash-provider akash/provider -n akash-services -f provider.yaml --set chainid=testnet-02 --set image.tag=0.3.0-rc17
+helm install akash-provider akash/provider -n akash-services -f provider.yaml --set chainid=testnet-02 --set image.tag=0.3.0-rc19
 ```
 
 ### Error: INSTALLATION FAILED: cannot patch "manifests.akash.network" with kind CustomResourceDefinition
@@ -165,7 +165,7 @@ helm install akash-provider akash/provider -n akash-services -f provider.yaml --
 Please ignore the following "cannot patch" errors during Akash Provider Helm install.:
 
 ```
-# helm install akash-provider akash/provider -n akash-services -f provider.yaml --set chainid=testnet-02 --set image.tag=0.3.0-rc17
+# helm install akash-provider akash/provider -n akash-services -f provider.yaml --set chainid=testnet-02 --set image.tag=0.3.0-rc19
 Error: INSTALLATION FAILED: cannot patch "manifests.akash.network" with kind CustomResourceDefinition: CustomResourceDefinition.apiextensions.k8s.io "manifests.akash.network" is invalid: status.storedVersions[0]: Invalid value: "v2beta2": must appear in spec.versions && cannot patch "providerhosts.akash.network" with kind CustomResourceDefinition: CustomResourceDefinition.apiextensions.k8s.io "providerhosts.akash.network" is invalid: status.storedVersions[0]: Invalid value: "v2beta2": must appear in spec.versions && cannot patch "providerleasedips.akash.network" with kind CustomResourceDefinition: CustomResourceDefinition.apiextensions.k8s.io "providerleasedips.akash.network" is invalid: status.storedVersions[0]: Invalid value: "v2beta2": must appear in spec.versions
 ```
 
@@ -181,7 +181,7 @@ kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq 
 
 ```
 kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq -c
-      4    image: ghcr.io/akash-network/provider:0.3.0-rc17
+      4    image: ghcr.io/akash-network/provider:0.3.0-rc19
 ```
 
 
@@ -189,7 +189,7 @@ kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq 
 ## Create Akash Hostname Operator
 
 ```
-helm install akash-hostname-operator akash/akash-hostname-operator -n akash-services --set image.tag=0.3.0-rc17
+helm install akash-hostname-operator akash/akash-hostname-operator -n akash-services --set image.tag=0.3.0-rc19
 ```
 
 ## Verify Akash Provider and Hostname Operator Status
