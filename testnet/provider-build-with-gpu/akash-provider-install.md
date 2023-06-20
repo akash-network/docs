@@ -167,6 +167,7 @@ done
 
 helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml \
 --set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)" \
+--set chainid=testnet-02 \
 --set whitelist_url=https://some-site.com/whitelist.txt \
 --set image.tag=0.3.1-rc0
 ```
