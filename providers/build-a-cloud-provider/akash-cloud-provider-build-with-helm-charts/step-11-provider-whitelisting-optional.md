@@ -12,7 +12,7 @@
 helm repo update akash
 ```
 
-## Verify Akash/Provider Helm Chart is 4.3.0 Version or Higher
+## Verify Akash/Provider Helm Chart is 4.3.2 Version or Higher
 
 ```
 helm search repo akash/provider
@@ -23,13 +23,13 @@ helm search repo akash/provider
 ```
 # helm search repo akash/provider
 NAME              CHART VERSION    APP VERSION    DESCRIPTION                          
-akash/provider    4.3.0            0.2.1          Installs an Akash provider (required)
+akash/provider    4.3.2            0.2.1          Installs an Akash provider (required)
 ```
 
 ## Download Bid Price Script Which Supports Whitelisting
 
 ```
-wget https://raw.githubusercontent.com/akash-network/helm-charts/provider-4.3.0/charts/akash-provider/scripts/price_script_generic.sh
+wget https://raw.githubusercontent.com/akash-network/helm-charts/provider-4.3.2/charts/akash-provider/scripts/price_script_generic.sh
 ```
 
 ## Prepare the Whitelist
