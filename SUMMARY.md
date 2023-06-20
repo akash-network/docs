@@ -247,7 +247,6 @@
       * [Close Deployment](testnet/gpu-testnet-client-instructions/detailed-steps/close-deployment.md)
   * [GPU Testnet Submission Instructions](testnet/gpu-testnet-submission-instructions/README.md)
     * [GPU Provider Challenge - Task Submission Guidance](testnet/gpu-testnet-submission-instructions/gpu-provider-challenge-task-submission-guidance.md)
-    * [SDL Build Challenge Submission Details](testnet/gpu-testnet-submission-instructions/sdl-build-challenge-submission-details.md)
   * [Provider Build With GPU](testnet/provider-build-with-gpu/README.md)
     * [Prepare Kubernetes Hosts](testnet/provider-build-with-gpu/prepare-kubernetes-hosts.md)
     * [Disable Search Domains](testnet/provider-build-with-gpu/disable-search-domains.md)
