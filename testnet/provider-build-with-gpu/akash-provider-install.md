@@ -152,8 +152,6 @@ wget https://raw.githubusercontent.com/akash-network/helm-charts/provider-4.3.0/
 
 ## Create Provider Via Helm
 
-> _**NOTE**_ - the script below uses a temporary whitelist URL.  This URL will be updated to permanent link prior to start of the GPU Testnet Provider Build Task
-
 ```
 export CRDS="manifests.akash.network providerhosts.akash.network providerleasedips.akash.network"
 kubectl delete crd $CRDS
@@ -170,7 +168,7 @@ done
 helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml \
 --set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)" \
 --set chainid=testnet-02 \
---set whitelist_url=https://some-site.com/whitelist.txt \
+--set whitelist_url=https://raw.githubusercontent.com/akash-network/net/master/testnet-02/whitelist.txt \
 --set image.tag=0.3.1-rc0
 ```
 
