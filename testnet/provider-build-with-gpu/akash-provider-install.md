@@ -144,13 +144,15 @@ EOF
 
 ## Download Provider Pricing Script
 
-> NOTE - the Akash pricing script used for the GPU Testnet includes address whitelisting.  The whitelist is maintained by the Akash core team and will ensure that only authorized Akash addresses will be allowed to deploy workloads onto your provider
+> _**NOTE**_ - the Akash pricing script used for the GPU Testnet includes address whitelisting.  The whitelist is maintained by the Akash core team and will ensure that only authorized Akash addresses will be allowed to deploy workloads onto your provider
 
 ```
 wget https://raw.githubusercontent.com/akash-network/helm-charts/provider-4.3.0/charts/akash-provider/scripts/price_script_generic.sh
 ```
 
 ## Create Provider Via Helm
+
+> _**NOTE**_ - the script below uses a temporary whitelist URL.  This URL will be updated to permanent link prior to start of the GPU Testnet Provider Build Task
 
 ```
 export CRDS="manifests.akash.network providerhosts.akash.network providerleasedips.akash.network"
