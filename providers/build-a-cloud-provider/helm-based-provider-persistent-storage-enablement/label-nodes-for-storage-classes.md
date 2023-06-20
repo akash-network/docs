@@ -7,6 +7,16 @@ Each node serving persistent storage should have `akash.network/storageclasses` 
 * Ensure that this command is issued - one at a time - for all nodes serving persistent storage
 * Replace the `storageclasses` value with the proper storage class and as clarified in the example command
 
+## List Kubernetes Node Names
+
+* Use this command to capture the node names for the subsequent step
+
+```
+kubectl get nodes
+```
+
+## Apply Node Labels
+
 > _**NOTE**_ - ensure ALL nodes in the Kubernetes cluster receive this label
 
 ```

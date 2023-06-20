@@ -175,6 +175,17 @@ bidpriceendpointscale: "0" # endpoint pricing scale in uakt per endpoint
 bidpricestoragescale: "0.00016" # storage pricing scale in uakt per megabyte
 ```
 
+## **Provider CRD Installations**
+
+* Kubernetes CRDs are no longer delivered by the Helm as of chart `v4.3.0`.&#x20;
+* CRDs are now installed manually using this step.
+
+> _**NOTE**_ - You do not need to run this command if you previously installed the Akash Provider and are now performing an upgrade.
+
+```
+kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.2.1/pkg/apis/akash.network/crd.yaml
+```
+
 ## **Install the Provider Helm Chart**
 
 ```
