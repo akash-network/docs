@@ -167,19 +167,9 @@ done
 
 helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml \
 --set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)" \
---set whitelist_url=https://some-site.com/whitelist.txt
+--set whitelist_url=https://some-site.com/whitelist.txt \
+--set image.tag=0.3.1-rc0
 ```
-
-### Error: INSTALLATION FAILED: cannot patch "manifests.akash.network" with kind CustomResourceDefinition
-
-Please ignore the following "cannot patch" errors during Akash Provider Helm install.:
-
-```
-# helm install akash-provider akash/provider -n akash-services -f provider.yaml --set chainid=testnet-02 --set image.tag=0.3.1-rc0
-Error: INSTALLATION FAILED: cannot patch "manifests.akash.network" with kind CustomResourceDefinition: CustomResourceDefinition.apiextensions.k8s.io "manifests.akash.network" is invalid: status.storedVersions[0]: Invalid value: "v2beta2": must appear in spec.versions && cannot patch "providerhosts.akash.network" with kind CustomResourceDefinition: CustomResourceDefinition.apiextensions.k8s.io "providerhosts.akash.network" is invalid: status.storedVersions[0]: Invalid value: "v2beta2": must appear in spec.versions && cannot patch "providerleasedips.akash.network" with kind CustomResourceDefinition: CustomResourceDefinition.apiextensions.k8s.io "providerleasedips.akash.network" is invalid: status.storedVersions[0]: Invalid value: "v2beta2": must appear in spec.versions
-```
-
-The "cannot patch" errors are expected since Helm does not support CRD upgrades as described [here](https://helm.sh/docs/chart\_best\_practices/custom\_resource\_definitions/#some-caveats-and-explanations).
 
 Verify the image is correct by running this command:
 
