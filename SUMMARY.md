@@ -261,6 +261,8 @@
     * [Akash Provider Install](testnet/provider-build-with-gpu/akash-provider-install.md)
     * [Ingress Controller Install](testnet/provider-build-with-gpu/step-8-ingress-controller-install.md)
     * [GPU Test Deployments](testnet/provider-build-with-gpu/gpu-test-deployments.md)
+  * [Testnet Issue Reporting](testnet/testnet-issue-reporting/README.md)
+    * [Provider Log Collection](testnet/testnet-issue-reporting/provider-log-collection.md)
   * [Example GPU SDLs](testnet/example-gpu-sdls/README.md)
     * [Specific GPU Vendor](testnet/example-gpu-sdls/specific-gpu-vendor.md)
     * [Specific GPU Vendor & Model](testnet/example-gpu-sdls/specific-gpu-vendor-and-model.md)
