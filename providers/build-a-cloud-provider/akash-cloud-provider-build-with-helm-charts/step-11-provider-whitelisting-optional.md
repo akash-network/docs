@@ -38,10 +38,11 @@ wget https://raw.githubusercontent.com/akash-network/helm-charts/provider-4.3.2/
 
 ## Specify the Bid Price Script and Whitelist URL
 
-> _**NOTE**_ - Whitelist will only work when `bidpricescript` is also set.
+> _**NOTE**_ - Whitelist will only work when `bidpricescript` is also set.  
+> _**NOTE**_ - You need to specify the direct link to the whitelit (with Github Gist you need to click Raw button to get it)
 
 ```
 helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml \
 --set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)" \
---set whitelist_url=https://gist.githubusercontent.com/andy108369/1fa6cfa81674bce438a450d6c14395ea/raw/bc9f564ff9223bb8abf2c521fe330ed7348e6c76/whitelist.txt
+--set whitelist_url=https://gist.githubusercontent.com/andy108369/1fa6cfa81674bce438a450d6c14395ea/raw/9181887be8e3e019b58e5dc8e7fce4ae0a66eeec/whitelist.txt
 ```
