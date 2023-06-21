@@ -8,14 +8,14 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 
 #### Download Akash Binary
 
-_**NOTE**_ - in the commands below we download the Akash binary for version `0.3.0-rc6` and the `darwin_all`.  If an alternate binary is needed, visit this [GitHub Release](https://github.com/akash-network/provider/releases/tag/v0.3.0-rc6) page and find/replace the link used appropriately
+_**NOTE**_ - in the commands below we download the Akash binary for version `0.3.1-rc0` and the `darwin_all`.  If an alternate binary is needed, visit this [GitHub Release](https://github.com/akash-network/provider/releases/tag/v0.3.1-rc0) page and find/replace the link used appropriately
 
 ```
 cd ~/Downloads
 
-wget https://github.com/akash-network/provider/releases/download/v0.3.0-rc6/provider-services_0.3.0-rc6_darwin_all.zip
+wget https://github.com/akash-network/provider/releases/download/v0.3.1-rc0/provider-services_0.3.1-rc0_darwin_all.zip
 
-unzip provider-services_0.3.0-rc6_darwin_all.zip
+unzip provider-services_0.3.1-rc0_darwin_all.zip
 ```
 
 #### Move the Akash Binary
@@ -37,14 +37,14 @@ provider-services version
 #### Expect/Example Output
 
 ```
-v0.3.0-rc6
+v0.3.1-rc0
 ```
 {% endtab %}
 
 {% tab title="Linux" %}
 #### Download Akash Binary
 
-> _**NOTE**_ - in the commands below we download the Akash binary for version `0.3.0-rc6` and a `AMD-64` architecture.  If an alternate binary is needed, visit this [GitHub Release](https://github.com/akash-network/provider/releases/tag/v0.3.0-rc6) page and find/replace the link used appropriately.
+> _**NOTE**_ - in the commands below we download the Akash binary for version `0.3.1-rc0` and a `AMD-64` architecture.  If an alternate binary is needed, visit this [GitHub Release](https://github.com/akash-network/provider/releases/tag/v0.3.1-rc0) page and find/replace the link used appropriately.
 
 ```
 cd ~
@@ -53,9 +53,9 @@ apt install jq -y
 
 apt install unzip -y
 
-wget https://github.com/akash-network/provider/releases/download/v0.3.0-rc6/provider-services_0.3.0-rc6_linux_amd64.zip
+wget https://github.com/akash-network/provider/releases/download/v0.3.1-rc0/provider-services_0.3.1-rc0_linux_amd64.zip
 
-unzip provider-services_0.3.0-rc6_linux_amd64.zip
+unzip provider-services_0.3.1-rc0_linux_amd64.zip
 
 mkdir bin; mv provider-services /root/bin/
 ```
@@ -107,7 +107,7 @@ provider-services version
 #### Expected/Example Result
 
 ```
-v0.3.0-rc6
+v0.3.1-rc0
 ```
 {% endtab %}
 {% endtabs %}
