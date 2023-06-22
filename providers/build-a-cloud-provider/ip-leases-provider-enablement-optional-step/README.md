@@ -15,9 +15,9 @@ Please be aware of the following prerequisites prior to getting started.&#x20;
 
 * [Create the MetalLB Namespace](create-the-metallb-namespace.md)
 * [MetalLB Install](metallb-install.md)
+* [Enable strictARP in kube-proxy](enable-strictarp-in-kube-proxy.md)
 * [Akash Provider Update](akash-provider-update.md)
 * [IP Operator](ip-operator.md)
-* [Enable strictARP in kube-proxy](enable-strictarp-in-kube-proxy.md)
 * [Additional notes on the IP Operator](additional-notes-on-the-ip-operator.md)
 * [Troubleshooting IP Leases Issues](troubleshooting-ip-leases-issues.md)
 
