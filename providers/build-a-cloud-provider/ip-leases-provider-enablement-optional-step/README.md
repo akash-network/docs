@@ -8,15 +8,16 @@ Please be aware of the following prerequisites prior to getting started.&#x20;
 
 ## Prerequisites&#x20;
 
-* Provider IP Leases enablement is only supported for Akash providers built using [Helm Charts](../../../../providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/)
+* Provider IP Leases enablement is only supported for Akash providers built using [Helm Charts](../akash-cloud-provider-build-with-helm-charts/)
 * Available pool of unallocated public IP addresses
 
 ## Sections in this Guide
 
-* [Akash Provider Update](akash-provider-update.md)
-* [IP Operator](ip-operator.md)
 * [Create the MetalLB Namespace](create-the-metallb-namespace.md)
 * [MetalLB Install](metallb-install.md)
+* [Akash Provider Update](akash-provider-update.md)
+* [IP Operator](ip-operator.md)
 * [Enable strictARP in kube-proxy](enable-strictarp-in-kube-proxy.md)
 * [Additional notes on the IP Operator](additional-notes-on-the-ip-operator.md)
+* [Troubleshooting IP Leases Issues](troubleshooting-ip-leases-issues.md)
 
