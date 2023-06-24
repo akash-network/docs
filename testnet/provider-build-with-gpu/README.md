@@ -13,5 +13,6 @@ Use this guide and follow the sequential steps to build your Testnet Akash Provi
 * [Test GPUs](test-gpus.md)
 * [Akash Provider Install](akash-provider-install.md)
 * [Ingress Controller Install](step-8-ingress-controller-install.md)
+* [Domain Name Review](step-5-domain-name-review.md)
 * [GPU Test Deployments](gpu-test-deployments.md)
 

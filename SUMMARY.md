@@ -261,6 +261,7 @@
     * [Test GPUs](testnet/provider-build-with-gpu/test-gpus.md)
     * [Akash Provider Install](testnet/provider-build-with-gpu/akash-provider-install.md)
     * [Ingress Controller Install](testnet/provider-build-with-gpu/step-8-ingress-controller-install.md)
+    * [Domain Name Review](testnet/provider-build-with-gpu/step-5-domain-name-review.md)
     * [GPU Test Deployments](testnet/provider-build-with-gpu/gpu-test-deployments.md)
   * [Testnet Issue Reporting](testnet/testnet-issue-reporting/README.md)
     * [Provider Log Collection](testnet/testnet-issue-reporting/provider-log-collection.md)
