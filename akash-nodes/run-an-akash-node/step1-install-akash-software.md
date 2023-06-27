@@ -15,6 +15,6 @@ apt install jq -y
 
 apt install unzip -y
 
-curl -sfL https://raw.githubusercontent.com/akash-network/node/master/install.sh | bash
+curl -sSfL https://raw.githubusercontent.com/akash-network/node/main/install.sh | sh
 ```
 
