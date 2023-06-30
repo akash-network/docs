@@ -1,6 +1,6 @@
 # GPU Provider Challenge - Task Submission Guidance
 
-Ensure proper Testnet Form submission for the GPU Provider Challenge via additionala guidance provided in these sections:
+Ensure proper Testnet Form submission for the GPU Provider Challenge via additional guidance provided in these sections:
 
 * [Overview](gpu-provider-challenge-task-submission-guidance.md#overview)
 * [Provider Address](gpu-provider-challenge-task-submission-guidance.md#provider-address)
