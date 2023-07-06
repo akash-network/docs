@@ -32,6 +32,7 @@ kubectl -n metallb-system expose deployment metallb-controller --name=controller
 
 ```
 cat > metallb-config.yaml << EOF
+---
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
@@ -46,6 +47,16 @@ spec:
   - 194.28.98.219-194.28.98.222
   autoAssign: true
   avoidBuggyIPs: false
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  creationTimestamp: null
+  name: l2advertisement1
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - default
 EOF
 ```
 
