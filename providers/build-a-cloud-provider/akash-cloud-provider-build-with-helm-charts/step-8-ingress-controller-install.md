@@ -22,7 +22,7 @@ controller:
     port: 7443
   config:
     allow-snippet-annotations: false
-    enable-real-ip: true
+    compute-full-forwarded-for: true
     proxy-buffer-size: "16k"
   metrics:
     enabled: true
@@ -53,7 +53,7 @@ controller:
     port: 7443
   config:
     allow-snippet-annotations: false
-    enable-real-ip: true
+    compute-full-forwarded-for: true
     proxy-buffer-size: "16k"
   metrics:
     enabled: true
