@@ -74,7 +74,7 @@ Fetch the testnet's `genesis.json` file into `akash`'s config directory.
 curl -s "$AKASH_NET/genesis.json" > $HOME/.akash/config/genesis.json
 ```
 
-Note we use the `$AKASH_NET` variable - see the [net repo](https://github.com/ovrclk/net) for how to set this variable for the network you're connecting to.
+Note we use the `$AKASH_NET` variable - see the [net repo](https://github.com/akash-network/net) for how to set this variable for the network you're connecting to.
 
 To verify the correctness of the configuration run:
 
@@ -88,7 +88,7 @@ akash validate-genesis
 
 ### Add Seed Nodes
 
-Your node needs to know how to find peers. You'll need to add healthy seed nodes or persistent peers to `$HOME/.akash/config/config.toml`. As with installing [`genesis.json`](./#copy-the-genesis-file), consult the [net repo](https://github.com/ovrclk/net/) for how to obtain seeds to connect to.
+Your node needs to know how to find peers. You'll need to add healthy seed nodes or persistent peers to `$HOME/.akash/config/config.toml`. As with installing [`genesis.json`](./#copy-the-genesis-file), consult the [net repo](https://github.com/akash-network/net/) for how to obtain seeds to connect to.
 
 For more information on the how and why of seeds and peers, you can [read this](https://docs.tendermint.com/master/spec/p2p/peer.html) great documentation from the Tendermint maintainers.
 
@@ -156,7 +156,7 @@ Start the full node with this command:
 akash start
 ```
 
-If you would like to run your node via `systemd` please see [this guide](https://github.com/ovrclk/docs/tree/5de597cc071f0dec49919e331bc5589f97af6854/guides/node/systemd.md).
+If you would like to run your node via `systemd` please see [this guide](https://github.com/akash-network/docs/tree/5de597cc071f0dec49919e331bc5589f97af6854/guides/node/systemd.md).
 
 You can use `akash` to check that everything is running smoothly:
 

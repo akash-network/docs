@@ -32,7 +32,7 @@ Please wait up to 60 seconds to see bids from all the providers.
 
 1. Install [Keplr](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en) wallet as a browser plugin
 2. Install [Cloudmos Deploy](https://cloudmos.io/cloud-deploy) and import your AKT wallet address from Keplr.
-3. [Fund your wallet](https://github.com/ovrclk/awesome-akash/tree/chia/chia#Quickest-way-to-get-more-AKT)
+3. [Fund your wallet](https://github.com/akash-network/awesome-akash/tree/chia/chia#Quickest-way-to-get-more-AKT)
 
 For additional help we recommend you [follow our full deployment guide](broken-reference) in parallel with this guide.
 

@@ -26,7 +26,7 @@ If you have not used Cloudmos Deploy previously, please use [this guide](https:/
 
 ![](<../.gitbook/assets/manifestSelectInitial (1).png>)
 
-* Copy and paste the SDL from [this site](https://github.com/ovrclk/cosmos-omnibus/blob/master/akash/deploy.yml) into the Cloudmos SDL editor window
+* Copy and paste the SDL from [this site](https://github.com/akash-network/cosmos-omnibus/blob/master/akash/deploy.yml) into the Cloudmos SDL editor window
 * **NOTE -** the SDL within GitHub currently has a storage > size value of 120Gi. Omnibus uses a compressed snapshot of the blockchain and when expanded 120GB of storage for the deployment will not be enough. At the time of this writing adjusting the storage size to 350GB will suffice and allow some growth. Please adjust the storage appropriately and as shown in the screenshot below.
 
 ![](<../.gitbook/assets/sdlWithStorageAdjustment (1).png>)
@@ -119,15 +119,15 @@ With the install of the Akash node complete, it must sync with the blockchain. O
 
 ### Cosmos Omnibus Repository
 
-* The repository for the [Akash Cosmos Omnibus ](https://github.com/ovrclk/cosmos-omnibus)project.
+* The repository for the [Akash Cosmos Omnibus ](https://github.com/akash-network/cosmos-omnibus)project.
 
 ### Akash SDL
 
-* The Akash manifest/SDL used in this [guide](https://github.com/ovrclk/cosmos-omnibus/blob/master/akash/deploy.yml).
+* The Akash manifest/SDL used in this [guide](https://github.com/akash-network/cosmos-omnibus/blob/master/akash/deploy.yml).
 
 ### Chain JSON Config File
 
-* The [config file](https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json) used for the genesis URL, seed nodes, etc.
+* The [config file](https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json) used for the genesis URL, seed nodes, etc.
 
 ### Cosmos Chain Registry
 

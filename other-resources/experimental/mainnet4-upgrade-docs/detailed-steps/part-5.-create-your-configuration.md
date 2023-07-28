@@ -1,11 +1,11 @@
 # Create your Configuration
 
-Create a deployment configuration [deploy.yaml](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](https://github.com/ovrclk/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/sdl/README.md).
+Create a deployment configuration [deploy.yaml](https://github.com/akash-network/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/guides/deploy/deploy.yml) to deploy the `ovrclk/lunie-light` for [Lunie Light](https://github.com/ovrclk/lunie-light) Node app container using [SDL](https://github.com/akash-network/docs/tree/b65f668b212ad1976fb976ad84a9104a9af29770/sdl/README.md).
 
 You can use cURL to download the file:
 
 ```
-curl -s https://raw.githubusercontent.com/ovrclk/docs/master/guides/deploy/deploy.yml > deploy.yml
+curl -s https://raw.githubusercontent.com/akash-network/docs/master/guides/deploy/deploy.yml > deploy.yml
 ```
 
 ### Modify your Configuration

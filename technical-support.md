@@ -12,7 +12,7 @@ The Akash Support Forum \([forum.akash.network](http://forum.akash.network/)\) i
 * Your deploy.yaml file
 * Provider address if it is specific to a provider
 
-Please post on the forum before submitting your issue to the [Akash project on GitHub.](https://github.com/ovrclk/akash)
+Please post on the forum before submitting your issue to the [Akash project on GitHub.](https://github.com/akash-network/node)
 
 ## Support Chat on Discord
 

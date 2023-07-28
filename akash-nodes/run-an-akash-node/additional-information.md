@@ -18,7 +18,7 @@ Akash Node configurations are found within these files:
 
 ## Akash Networks
 
-Within this guide the Akash mainnet is used and as specified in the AKASH\_NET value.  To launch a node on the testnet or edgenet and for additional network information, use this [guide](https://github.com/ovrclk/net).
+Within this guide the Akash mainnet is used and as specified in the AKASH\_NET value.  To launch a node on the testnet or edgenet and for additional network information, use this [guide](https://github.com/akash-network/net).
 
 ## State Pruning
 

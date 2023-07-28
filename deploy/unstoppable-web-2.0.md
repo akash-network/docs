@@ -235,7 +235,7 @@ You can now **visit** [**http://localhost:3000**](http://localhost:3000) in the 
 **Akash**
 
 * [Akash deployment documentation](https://docs.akash.network/guides/deploy)
-* [SDL examples](https://github.com/ovrclk/awesome-akash)
+* [SDL examples](https://github.com/akash-network/awesome-akash)
 * [In-depth walkthrough guide](https://medium.com/coinmonks/guide-to-deploying-applications-to-akash-decloud-b35dc97e5ca4)
 * [Akash Discord](https://discord.com/invite/DxftX67)
 

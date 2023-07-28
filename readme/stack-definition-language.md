@@ -12,7 +12,7 @@ A complete deployment has the following sections:
 * [deployment](stack-definition-language.md#deployment)
 * [persistent storage](../features/persistent-storage/)
 
-An example deployment configuration can be found [here](https://github.com/ovrclk/docs/tree/62714bb13cfde51ce6210dba626d7248847ba8c1/sdl/deployment.yaml).
+An example deployment configuration can be found [here](https://github.com/akash-network/docs/tree/62714bb13cfde51ce6210dba626d7248847ba8c1/sdl/deployment.yaml).
 
 #### Networking
 

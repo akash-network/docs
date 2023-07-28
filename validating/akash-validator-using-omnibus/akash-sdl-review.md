@@ -4,7 +4,7 @@ Akash deployments are created using [Stack Definition Language (SDL)](../../read
 
 ## Akash Validator SDL Template
 
-The SDL template for the Akash Validator build is located in this [GitHub repository](https://github.com/ovrclk/cosmos-omnibus/blob/master/\_examples/validator-and-private-sentries/deploy.yml).
+The SDL template for the Akash Validator build is located in this [GitHub repository](https://github.com/akash-network/cosmos-omnibus/blob/master/\_examples/validator-and-private-sentries/deploy.yml).
 
 Copy the SDL located in the repository into a local editor for customizations covered in upcoming steps.
 
@@ -40,10 +40,10 @@ KEY_PATH=akashvalidator
 
 ```
 validator:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-akash-v0.16.3
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.42-akash-v0.22.7
     env:
       - MONIKER=validator
-      - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v2
       - AKASH_MODE=validator
@@ -84,10 +84,10 @@ KEY_PATH=akashnode1
 
 ```
   node1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-akash-v0.16.3
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.42-akash-v0.22.7
     env:
       - MONIKER=private_node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v2
       - AKASH_MODE=full
@@ -127,10 +127,10 @@ KEY_PATH=akashnode2
 
 ```
   node2:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-akash-v0.16.3
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.42-akash-v0.22.7
     env:
       - MONIKER=private_node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v2
       - AKASH_MODE=full

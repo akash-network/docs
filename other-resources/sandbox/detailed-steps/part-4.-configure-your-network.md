@@ -82,5 +82,5 @@ pagination:
 Please note the balance indicated is denominated in uAKT (AKT x 10^-6), in the above example, the account has a balance of 25 _AKT_. We're now setup to deploy.
 
 {% hint style="info" %}
-Your account must have a minimum balance of 5 AKT to create a deployment. This 5 AKT funds the escrow account associated with the deployment and is used to pay the provider for their services. It is recommended you have more than this minimum balance to pay for transaction fees. For more information on escrow accounts, see [here](https://github.com/ovrclk/docs/blob/master/guides/cli/detailed-steps/broken-reference/README.md)
+Your account must have a minimum balance of 5 AKT to create a deployment. This 5 AKT funds the escrow account associated with the deployment and is used to pay the provider for their services. It is recommended you have more than this minimum balance to pay for transaction fees. For more information on escrow accounts, see [here](https://github.com/akash-network/docs/blob/master/guides/cli/detailed-steps/broken-reference/README.md)
 {% endhint %}

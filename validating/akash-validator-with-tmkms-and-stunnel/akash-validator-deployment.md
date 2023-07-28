@@ -28,7 +28,7 @@
 * Reference the [Populated Editor](akash-validator-deployment.md#populated-editor) section of this guide for further clarity
 * Note that the SDL is using persistent storage to allow data residency should your deployment restart.  Data will only persist thru the life of the associated Akash lease.
 
-> To ensure the most to update SDL is utilized, view the latest version [here](https://github.com/ovrclk/cosmos-omnibus/blob/09679171d513586b5e1a9aafe73db55ebdbf5098/\_examples/validator-and-tmkms/deploy.yml).
+> To ensure the most to update SDL is utilized, view the latest version [here](https://github.com/akash-network/cosmos-omnibus/blob/09679171d513586b5e1a9aafe73db55ebdbf5098/\_examples/validator-and-tmkms/deploy.yml).
 
 #### SDL Edits
 
@@ -44,10 +44,10 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.2-akash-v0.16.3
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.42-akash-v0.22.7
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
