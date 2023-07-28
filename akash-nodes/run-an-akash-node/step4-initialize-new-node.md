@@ -5,7 +5,7 @@ In this step we will initialize our new Akash Node.  In the background several c
 _**Before starting the node, we specify the Akash network and chain ID**_
 
 ```
-AKASH_NET="https://raw.githubusercontent.com/akash-network/net/master/mainnet"
+AKASH_NET="https://raw.githubusercontent.com/akash-network/net/main/mainnet"
 
 export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
 ```

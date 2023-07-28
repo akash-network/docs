@@ -3,7 +3,7 @@
 First configure the base URL (`$AKASH_NET`) for the Akash Network; copy and paste the command below:
 
 ```bash
-AKASH_NET="https://raw.githubusercontent.com/akash-network/net/master/sandbox"
+AKASH_NET="https://raw.githubusercontent.com/akash-network/net/main/sandbox"
 ```
 
 ## Version

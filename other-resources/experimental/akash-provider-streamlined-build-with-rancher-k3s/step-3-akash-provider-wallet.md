@@ -25,7 +25,7 @@ provider-services keys add $AKASH_KEY_NAME --recover
 ## Configure Network And Account Settings
 
 ```
-export AKASH_NET="https://raw.githubusercontent.com/akash-network/net/master/mainnet"
+export AKASH_NET="https://raw.githubusercontent.com/akash-network/net/main/mainnet"
 export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
 export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)"
 
