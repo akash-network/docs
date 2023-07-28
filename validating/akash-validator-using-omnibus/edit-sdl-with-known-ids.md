@@ -13,10 +13,10 @@ In this step we will revisit and edit our initial SDL file with the known Valida
 
 ```
    validator:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-akash-v0.16.3
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.42-akash-v0.22.7
     env:
       - MONIKER=validator
-      - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v2
       - AKASH_MODE=validator
@@ -46,10 +46,10 @@ In this step we will revisit and edit our initial SDL file with the known Valida
 
 ```
   node1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-akash-v0.16.3
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.42-akash-v0.22.7
     env:
       - MONIKER=private_node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v2
       - AKASH_MODE=full

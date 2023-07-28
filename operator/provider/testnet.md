@@ -6,23 +6,23 @@ At any given time, there are a number of different Akash networks running for us
 
 | Network | Description |
 | :--- | :--- |
-| [mainnet](https://github.com/ovrclk/net/tree/master/mainnet) | Akash Network mainnet network. |
-| [testnet](https://github.com/ovrclk/net/tree/master/testnet) | **No providers available to bid at this time.** |
-| [edgenet](https://github.com/ovrclk/net/tree/master/edgenet) | Testing the next mainnet version. |
+| [mainnet](https://github.com/akash-network/net/tree/main/mainnet) | Akash Network mainnet network. |
+| [testnet](https://github.com/akash-network/net/tree/main/testnet) | **No providers available to bid at this time.** |
+| [edgenet](https://github.com/akash-network/net/tree/main/edgenet) | Testing the next mainnet version. |
 
-The [ovrclk/net](https://github.com/ovrclk/net) GitHub repository contains metadata about each available network. The format is standardized across the networks so that you can use the same method to fetch the information for any of them. 
+The [akash-network/net](https://github.com/akash-network/net) GitHub repository contains metadata about each available network. The format is standardized across the networks so that you can use the same method to fetch the information for any of them. 
 
 First determine the base URL \(`$AKASH_NET`\) for the network you want to connect to - use the line from below that corresponds with the network you want to connect to:
 
 ```bash
 # mainnet
-AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
+AKASH_NET="https://raw.githubusercontent.com/akash-network/net/main/mainnet"
 
 # testnet
-AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/testnet"
+AKASH_NET="https://raw.githubusercontent.com/akash-network/net/main/testnet"
 
 # edgenet
-AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/edgenet"
+AKASH_NET="https://raw.githubusercontent.com/akash-network/net/main/edgenet"
 ```
 
 ### Version

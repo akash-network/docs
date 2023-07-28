@@ -23,7 +23,7 @@ export AKASH_KEYRING_BACKEND=os
 export AKASH_FROM=<keyname>
 export AKASH_OWNER=akash1<redacted>
 
-export AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
+export AKASH_NET="https://raw.githubusercontent.com/akash-network/net/main/mainnet"
 export AKASH_CHAIN_ID="$(curl -s "$AKASH_NET/chain-id.txt")"
 export AKASH_NODE="$(curl -s "$AKASH_NET/rpc-nodes.txt" | shuf -n 1)"
 

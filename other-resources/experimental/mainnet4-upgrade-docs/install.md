@@ -55,7 +55,7 @@ v0.1.0
 {% tab title="Linux" %}
 ### Linux
 
-Download the archive for your system from the [release page](https://github.com/ovrclk/akash/releases), extract it, and install the `akash` binary into your path.
+Download the archive for your system from the [release page](https://github.com/akash-network/node/releases), extract it, and install the `akash` binary into your path.
 
 **GoDownloader**
 
@@ -81,7 +81,7 @@ Installing Akash suite from source
 ```
 $ go get -d github.com/akash-network/provider
 $ cd $GOPATH/src/github.com/akash-network/provider
-$ AKASH_NET="https://raw.githubusercontent.com/ovrclk/net/master/mainnet"
+$ AKASH_NET="https://raw.githubusercontent.com/akash-network/net/main/mainnet"
 $ AKASH_VERSION="$(curl -s https://api.github.com/repos/akash-network/provider/releases/latest | jq -r '.tag_name')"
 $ git checkout "v$AKASH_VERSION"
 $ make deps-install

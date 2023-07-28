@@ -4,7 +4,7 @@ Create a deployment configuration `deploy.yml` to deploy an example GPU enabled 
 
 ### Akash GPU Enabled Manifest/SDL
 
-You may use the sample deployment file as-is or modify it for your own needs as described in our [SDL (Stack Definition Language)](https://github.com/ovrclk/docs/blob/master/sdl/README.md) documentation.
+You may use the sample deployment file as-is or modify it for your own needs as described in our [SDL (Stack Definition Language)](https://github.com/akash-network/docs/blob/master/sdl/README.md) documentation.
 
 #### EXAMPLE GPU ENABLED SDL:
 

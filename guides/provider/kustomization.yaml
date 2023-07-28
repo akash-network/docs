@@ -1,5 +1,5 @@
 bases:
-  - github.com/ovrclk/akash/_docs/kustomize/akash-provider?ref=master
+  - github.com/akash-network/provider/_docs/kustomize/akash-provider?ref=master
   # local location: - ../../kustomize/akash-provider
 
 namespace: akash-services

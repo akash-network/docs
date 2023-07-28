@@ -6,7 +6,7 @@ In this guide, we will deploy a multi-tier web application on Akash. The example
 
 ### Before We Begin
 
-This guide is to be considered an extension of the [Deploy an Application](https://github.com/ovrclk/docs/blob/master/deploy/broken-reference/README.md) guide. Please ensure you have successfully completed all steps leading up to the "Create the Deployment Configuration" step in said guide, as they will not be discussed here.
+This guide is to be considered an extension of the [Deploy an Application](https://github.com/akash-network/docs/blob/master/deploy/broken-reference/README.md) guide. Please ensure you have successfully completed all steps leading up to the "Create the Deployment Configuration" step in said guide, as they will not be discussed here.
 
 ## Create the Deployment Configuration
 
@@ -153,7 +153,7 @@ profiles:
 
 The `profiles` entries contain named compute and placement profiles to be used in the deployment.
 
-Since we have 2 services to deploy, details for each of them must be specified here. This section is very similar to a standard deployment, so it won't be covered in detail here. An important item to note, however, is that the named compute/placement profiles here (`redis` and `goosebin`) must match the names we had specified in the `services` section. [Additional mappings](https://github.com/ovrclk/docs/tree/a8e7a472b43ec742a03bc5063f6c5a82ca3ca2ea/sdl/README.md#profiles) can also be specified within `profiles` such as audited attributes and data center attributes.
+Since we have 2 services to deploy, details for each of them must be specified here. This section is very similar to a standard deployment, so it won't be covered in detail here. An important item to note, however, is that the named compute/placement profiles here (`redis` and `goosebin`) must match the names we had specified in the `services` section. [Additional mappings](https://github.com/akash-network/docs/tree/a8e7a472b43ec742a03bc5063f6c5a82ca3ca2ea/sdl/README.md#profiles) can also be specified within `profiles` such as audited attributes and data center attributes.
 
 #### Deployments
 
@@ -175,7 +175,7 @@ Similar to the `profiles` entries, we must specify deployment criteria for both 
 
 #### Deployment
 
-Now that we have the SDL configured, let's deploy this application and see what happens. A more detailed guide on this process can be found in the [Deploy an Application](https://github.com/ovrclk/docs/blob/master/deploy/broken-reference/README.md) guide.
+Now that we have the SDL configured, let's deploy this application and see what happens. A more detailed guide on this process can be found in the [Deploy an Application](https://github.com/akash-network/docs/blob/master/deploy/broken-reference/README.md) guide.
 
 **Create the Deployment**
 

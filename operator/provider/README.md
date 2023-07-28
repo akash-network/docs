@@ -184,7 +184,7 @@ On your local machine,set the `KUBECONFIG` environmental variable to the path of
 
 Akash uses a custom resource definition to store each deployment in Kubernetes. You must load this CRD by downloading the following file:
 
-Files: 1. \[[https://raw.githubusercontent.com/ovrclk/akash/master/pkg/apis/akash.network/v1/crd.yaml](https://raw.githubusercontent.com/ovrclk/akash/master/pkg/apis/akash.network/v1/crd.yaml)\]
+Files: 1. \[[https://raw.githubusercontent.com/akash-network/provider/main/pkg/apis/akash.network/crd.yaml](https://raw.githubusercontent.com/akash-network/provider/main/pkg/apis/akash.network/crd.yaml)\]
 
 and applying it by using the `kubectl` command like this
 
@@ -204,7 +204,7 @@ then the `KUBECONFIG` variable is likely set incorrectly.
 
 Akash supplies networking configuration which must be applied to the Kubernetes cluster. You must load this file by downloading it and applying it
 
-Files: 1. \[[https://raw.githubusercontent.com/ovrclk/akash/master/\_docs/kustomize/networking/network-policy-default-ns-deny.yaml](https://raw.githubusercontent.com/ovrclk/akash/master/_docs/kustomize/networking/network-policy-default-ns-deny.yaml)\]
+Files: 1. \[[https://raw.githubusercontent.com/akash-network/provider/master/\_docs/kustomize/networking/network-policy-default-ns-deny.yaml](https://raw.githubusercontent.com/akash-network/provider/master/_docs/kustomize/networking/network-policy-default-ns-deny.yaml)\]
 
 You can apply it using the `kubectl` command like this
 
@@ -216,7 +216,7 @@ kubectl apply -f ./network-policy-default-ns-deny.yaml
 
 Akash requires that a Kubernetes ingress controller be created. You must load this file by downloading it and applying it
 
-Files: 1. \[[https://raw.githubusercontent.com/ovrclk/akash/master/\_run/ingress-nginx.yaml](https://raw.githubusercontent.com/ovrclk/akash/master/_run/ingress-nginx.yaml)\]
+Files: 1. \[[https://raw.githubusercontent.com/akash-network/provider/master/\_run/ingress-nginx.yaml](https://raw.githubusercontent.com/akash-network/provider/master/_run/ingress-nginx.yaml)\]
 
 You can apply it using the `kubectl` command like this
 

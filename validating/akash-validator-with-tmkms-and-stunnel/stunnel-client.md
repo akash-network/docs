@@ -10,7 +10,7 @@
 
 ### Stunnel Repository with Docker Files
 
-* The Stunnel Dockerfile and Docker Compose files used in this section are located [here](https://github.com/ovrclk/stunnel-proxy) for your review
+* The Stunnel Dockerfile and Docker Compose files used in this section are located [here](https://github.com/akash-network/stunnel-proxy) for your review
 
 ### Pull Down a Copy of the Stunnel Repo
 
@@ -19,7 +19,7 @@
 ```
 mkdir ~/stunnel
 cd ~/stunnel
-git clone https://github.com/ovrclk/stunnel-proxy
+git clone https://github.com/akash-network/stunnel-proxy
 ```
 
 ## Customize the Stunnel Client Docker Compose File

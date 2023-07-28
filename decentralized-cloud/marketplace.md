@@ -12,7 +12,7 @@ Contents:
 
 The Akash Marketplace revolves around [Deployments](marketplace.md#deployment), which fully describe the resources that a tenant is requesting from the network. [Deployments](marketplace.md#deployment) contain [Groups](marketplace.md#group), which is a grouping of resources that are meant to be leased together from a single provider.
 
-Deploying applications onto [Akash](https://github.com/ovrclk/akash) involves two types of users:
+Deploying applications onto [Akash](https://github.com/akash-network/node) involves two types of users:
 
 1. The **Tenant**: the entity that deploys the application.
 2. The **Provider**: the entity that hosts the application.

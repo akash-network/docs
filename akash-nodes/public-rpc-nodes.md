@@ -16,4 +16,4 @@ https://akash-rpc.polkachu.com:443
 ## RPC Node Repo
 
 * The list of public RPC nodes recommended at the time of this writing are listed in the Available Nodes section
-* While we seek to ensure that this documentation is always up to date, visit the [`Akash RPC list` ](https://raw.githubusercontent.com/ovrclk/net/master/mainnet/rpc-nodes.txt)in our GitHub repo for possible recent additions
+* While we seek to ensure that this documentation is always up to date, visit the [`Akash RPC list` ](https://raw.githubusercontent.com/akash-network/net/main/mainnet/rpc-nodes.txt)in our GitHub repo for possible recent additions
