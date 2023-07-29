@@ -1,4 +1,4 @@
-<!-- PROJECT LOGO -->
+
 <br />
 <p align="center">
   <a href="https://github.com/ovrclk/docs">
