@@ -88,10 +88,10 @@ Audited attributes allow users deploying applications to be more selective about
 
 ## On-Chain Parameters
 
-| Name                     | Initial Value | Description                                        |
-| ------------------------ | ------------- | -------------------------------------------------- |
-| `deployment_min_deposit` | `5akt`        | Minimum deposit to make deployments. Target: \~$10 |
-| `bid_min_deposit`        | `50akt`       | Deposit amount required to bid. Target: \~$100     |
+| Name                     | Initial Value | Description                         |
+| ------------------------ | ------------- | ----------------------------------- |
+| `deployment_min_deposit` | `5akt`        | Minimum deposit to make deployments |
+| `bid_min_deposit`        | `5akt`        | Deposit amount required to bid      |
 
 ## Transactions
 
