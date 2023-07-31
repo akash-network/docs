@@ -81,6 +81,12 @@ kubectl -n kube-system get pods -l k8s-app=kube-dns
 kubectl -n kube-system get pods -l k8s-app=nodelocaldns
 ```
 
+With kubespray version >= `2.22.x`:
+
+```
+kubectl -n kube-system get pods -l k8s-app=node-local-dns
+```
+
 ## Verify etcd Status and Health
 
 > &#x20;Commands should be run on the control plane node to ensure health of the Kubernetes `etcd` database
