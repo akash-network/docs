@@ -4,7 +4,7 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 
 {% tabs %}
 {% tab title="MacOS" %}
-### MacOS
+#### MacOS
 
 The simplest way to install Akash is using Homebrew using:
 
@@ -16,7 +16,7 @@ brew install akash-provider-services
 
 If you do not have homebrew, follow the below steps for installing the Akash Binary.
 
-#### Download Akash Binary
+**Download Akash Binary**
 
 These commands will retrieve the latest, stable version of the Akash software, store the version in a local variable, and install that version.
 
@@ -27,7 +27,7 @@ cd ~/Downloads
 curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash
 ```
 
-#### Move the Akash Binary
+**Move the Akash Binary**
 
 Move the binary file into a directory included in your path
 
@@ -35,7 +35,7 @@ Move the binary file into a directory included in your path
 sudo mv ./bin/provider-services /usr/local/bin
 ```
 
-#### Verify Akash Installation
+**Verify Akash Installation**
 
 Verify the installation by using a simple command to check the Akash version
 
@@ -43,7 +43,7 @@ Verify the installation by using a simple command to check the Akash version
 provider-services version
 ```
 
-#### Expect/Example Output
+**Expect/Example Output**
 
 ```
 v0.2.1
@@ -61,7 +61,7 @@ brew install akash-provider-services
 
 If you do not have homebrew, follow the below steps for installing the Akash Binary.
 
-#### Download Akash Binary
+**Download Akash Binary**
 
 These commands will retrieve the latest, stable version of the Akash software, store the version in a local variable, and install that version.
 
@@ -75,7 +75,7 @@ apt install unzip -y
 curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash
 ```
 
-#### Add Akash Install Location to User’s Path
+**Add Akash Install Location to User’s Path**
 
 Add the software’s install location to the user’s path for easy use of Akash commands.
 
@@ -105,13 +105,13 @@ View within the text editor following the update:
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/root/bin"
 ```
 
-### Make the Path Active in the Current Session
+#### Make the Path Active in the Current Session
 
 ```
 . /etc/environment
 ```
 
-### Verify Akash Install
+#### Verify Akash Install
 
 Display the version of Akash software installed. This confirms the software installed and that the new user path addition worked.
 
@@ -119,7 +119,7 @@ Display the version of Akash software installed. This confirms the software inst
 provider-services version
 ```
 
-#### Expected/Example Result
+**Expected/Example Result**
 
 ```
 v0.2.1
@@ -127,7 +127,7 @@ v0.2.1
 {% endtab %}
 
 {% tab title="Source" %}
-### From Source
+#### From Source
 
 Installing Akash suite from source:
 

@@ -14,9 +14,9 @@ Select a tab below to view instructions for MacOS, Linux, or compiling from sour
 
 {% tabs %}
 {% tab title="MacOS" %}
-## MacOS
+### MacOS
 
-### 1. Download and Install Akash
+#### 1. Download and Install Akash
 
 * These commands will retrieve the latest, stable version of the Akash software, store the version in a local variable, and install that version.
 
@@ -27,7 +27,7 @@ cd ~/Downloads
 curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.sh | bash
 ```
 
-### 2. Move the Akash Binary
+#### 2. Move the Akash Binary
 
 * Move the binary file into a directory included in your path
 
@@ -35,7 +35,7 @@ curl -sfL https://raw.githubusercontent.com/akash-network/provider/main/install.
 sudo mv ./bin/provider-services /usr/local/bin
 ```
 
-### 3. Verify Akash Installation
+#### 3. Verify Akash Installation
 
 * Verify the installation by using a simple command to check the Akash version
 
@@ -53,7 +53,7 @@ v0.1.0
 {% endtab %}
 
 {% tab title="Linux" %}
-### Linux
+#### Linux
 
 Download the archive for your system from the [release page](https://github.com/akash-network/node/releases), extract it, and install the `akash` binary into your path.
 
@@ -74,7 +74,7 @@ The final step is to make sure that the akash binaries are available in your she
 {% endtab %}
 
 {% tab title="Source" %}
-### Source
+#### Source
 
 Installing Akash suite from source
 
