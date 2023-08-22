@@ -40,7 +40,7 @@ Akash Providers have been tested on Ubuntu 22.04 with the default Linux kernel. 
 
 * Minimum Specs
   * 4 CPU
-  * 8 GB
+  * 8 GB RAM
   * 100 GB disk
 * Recommendations
   * The more resources the better depending on your goal of maximum number of concurrent deployments.&#x20;
