@@ -8,7 +8,7 @@ At Akash we use the Kubernetes Rook Operator coupled with the Ceph distributed f
 
 Refer to the [ Akash Provider](../akash-cloud-provider-build-with-helm-charts/) guide if your provider has not yet been built.
 
-We encourage becoming familiar with Rook and Ceph prior to configuring Akash persistent storage via this [guide](https://rook.github.io/docs/rook/v1.9/).  The current persistent storage use is based on Rook version 1.9.
+We encourage becoming familiar with Rook and Ceph prior to configuring Akash persistent storage via this [guide](https://rook.github.io/docs/rook/v1.9/).  The current persistent storage use is based on the Rook Ceph helm chart.
 
 Please take into consideration the following Akash recommendations:
 
