@@ -47,17 +47,17 @@ helm repo add rook-release https://charts.rook.io/release
 * Verify the Rook repo has been added
 
 ```
-helm search repo rook-release --version v1.10.11
+helm search repo rook-release --version v1.12.2
 ```
 
 * Expected/Example Result
 
 ```
-# helm search repo rook-release --version v1.10.11
+# helm search repo rook-release --version v1.12.2
 
 NAME                          	CHART VERSION	APP VERSION	DESCRIPTION                                       
-rook-release/rook-ceph        	v1.10.11       	v1.10.11     	File, Block, and Object Storage Services for yo...
-rook-release/rook-ceph-cluster	v1.10.11       	v1.10.11     	Manages a single Ceph cluster namespace for Rook  
+rook-release/rook-ceph        	v1.12.2       	v1.12.2     	File, Block, and Object Storage Services for yo...
+rook-release/rook-ceph-cluster	v1.12.2       	v1.12.2     	Manages a single Ceph cluster namespace for Rook
 ```
 
 ### **Deployment Steps**
@@ -100,7 +100,7 @@ EOF
 ### Install the Operator Chart
 
 ```
-helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.10.11 -f rook-ceph-operator.values.yml
+helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.12.2 -f rook-ceph-operator.values.yml
 ```
 
 **PRODUCTION**
@@ -110,7 +110,7 @@ helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/ro
 * Install the Operator chart:
 
 ```
-helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.10.11
+helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.12.2
 ```
 
 #### STEP 2 - Install Ceph Cluster Helm Chart
@@ -352,7 +352,7 @@ EOF
 
 ```
 helm upgrade --install --create-namespace -n rook-ceph rook-ceph-cluster \
-   --set operatorNamespace=rook-ceph rook-release/rook-ceph-cluster --version 1.10.11 -f rook-ceph-cluster.values.yml
+   --set operatorNamespace=rook-ceph rook-release/rook-ceph-cluster --version 1.12.2 -f rook-ceph-cluster.values.yml
 ```
 
 #### STEP 3 - Label the storageClass
