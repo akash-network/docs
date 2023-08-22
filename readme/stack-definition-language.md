@@ -50,8 +50,8 @@ env:
 #### Notes Regarding Port Use in the Expose Stanza
 
 * HTTPS is possible in Akash deployments but only self signed certs are generated.
-* To implement signed certs the deployment must be front ended via a solution such as Cloudflare.  If interested in this path, we have created docs for [Cloudflare with Akash](../deploy/tls-termination-of-akash-deployments/).
-* You can expose any other port besides 80 as the ingress port (HTTP, HTTPS) port using as: 80 directive if the app understands HTTP / HTTPS.  Example of exposing a React web app using this method:
+* To implement signed certs the deployment must be front ended via a solution such as Cloudflare. If interested in this path, we have created docs for [Cloudflare with Akash](../deploy/tls-termination-of-akash-deployments/).
+* You can expose any other port besides 80 as the ingress port (HTTP, HTTPS) port using as: 80 directive if the app understands HTTP / HTTPS. Example of exposing a React web app using this method:
 
 ```
       - port: 3000
@@ -71,14 +71,14 @@ env:
 | `port`   | Yes      | Container port to expose                                                                                       |
 | `as`     | No       | Port number to expose the container port as                                                                    |
 | `accept` | No       | List of hosts to accept connections for                                                                        |
-| `proto`  | No       | Protocol type (`tcp, udp, or http`)                                                                            |
+| `proto`  | No       | Protocol type. Valid values = `tcp` or `udp`                                                                   |
 | `to`     | No       | List of entities allowed to connect. See [services.expose.to](stack-definition-language.md#services.expose.to) |
 
 The `as` value governs the default `proto` value as follows:
 
 > _**NOTE**_ - when as is not set, it will default to the value set by the port mandatory directive.
 
-> _**NOTE**_ - when one exposes as: 80 (HTTP), the Kubernetes ingress controler makes the application available over HTTPS as well, though with the default self-signed ingress certs.
+> _**NOTE**_ - when one exposes as: 80 (HTTP), the Kubernetes ingress controller makes the application available over HTTPS as well, though with the default self-signed ingress certs.
 
 | `port`     | `proto` default |
 | ---------- | --------------- |
