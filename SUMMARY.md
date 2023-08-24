@@ -151,6 +151,7 @@
     * [Close Leases Based on Image](providers/akash-provider-troubleshooting/close-leases-based-on-image.md)
   * [Community Solutions](providers/community-solutions/README.md)
     * [Praetor](providers/community-solutions/praetor.md)
+    * [AkashDash - Provider Earnings Portal](providers/community-solutions/akashdash-provider-earnings-portal.md)
   * [Custom Kubernetes Cluster Settings](providers/custom-kubernetes-cluster-settings/README.md)
     * [VMware Tanzu](providers/custom-kubernetes-cluster-settings/vmware-tanzu.md)
   * [Akash Audited Attributes](providers/akash-audited-attributes.md)
