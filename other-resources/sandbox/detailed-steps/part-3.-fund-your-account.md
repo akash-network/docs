@@ -6,5 +6,5 @@ We will verify that the faucet properly funded the account in an upcoming, later
 
 > _**NOTE**_ - account and funds are only valid for sandbox network use.
 
-* [Sandbox Faucet](http://faucet.sandbox.ny.aksh.pw/)
+* [Sandbox Faucet](https://faucet.sandbox-01.aksh.pw/)
 
