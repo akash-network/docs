@@ -22,7 +22,7 @@ export ACCOUNT_ADDRESS=akash1XXXX
 2\.  Set the password you have entered upon akash keys export > key.pem
 
 ```
-export KEY_PASSWORD=12341234
+export KEY_PASSWORD='12341234'
 ```
 
 3\.  Set your domain. Register DNS A and wildcard address as specified in previous step, i.e. `provider.test.com` DNS A record and `*.ingress.test.com` DNS wildcard record.
