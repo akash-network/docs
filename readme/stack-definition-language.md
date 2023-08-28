@@ -82,8 +82,8 @@ The `as` value governs the default `proto` value as follows:
 
 | `port`     | `proto` default |
 | ---------- | --------------- |
-| 80         | http, https     |
-| all others | tcp             |
+| 80         | http & https    |
+| all others | tcp & udp       |
 
 ### services.expose.to
 
