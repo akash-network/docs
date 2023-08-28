@@ -61,7 +61,7 @@ We can use either Google Cloud or Cloudflare as the DNS solver.  Subsequent sect
 
 #### CloudFlare DNS Additions
 
-> Additional details from CloudFlare on DNS usage are found [here](https://cert-manager.io/docs/configuration/acme/dns01/google/).
+> Additional details from CloudFlare on DNS usage are found [here](https://cert-manager.io/docs/configuration/acme/dns01/cloudflare/).
 
 * Add the following section in the `solvers` section of your `cert-manager-values.yaml` file.
 
