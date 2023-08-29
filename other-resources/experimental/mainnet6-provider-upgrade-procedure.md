@@ -98,6 +98,8 @@ v0.4.0
 
 > _**NOTE**_: --dry-run=true by default
 
+> _**NOTE**_ - for the `from` switch used in the command sets, issue `provider-services keys list` if unsure what the key name should be
+
 ```
 cd ~
 provider-services migrate v2beta2 \
@@ -105,7 +107,7 @@ provider-services migrate v2beta2 \
   --crd-v2beta1=https://raw.githubusercontent.com/akash-network/provider/v0.2.1/pkg/apis/akash.network/crd.yaml \
   --crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.0/pkg/apis/akash.network/crd.yaml \
   --node=https://akash-rpc.polkachu.com:443 \
-  --from=<AKASH_KEY_NAME>
+  --from=<PROVIDER_KEY_NAME>
 ```
 
 #### 3.3. Migrate the CRDs (now for real)
@@ -118,7 +120,7 @@ provider-services migrate v2beta2 \
   --crd-v2beta1=https://raw.githubusercontent.com/akash-network/provider/v0.2.1/pkg/apis/akash.network/crd.yaml \
   --crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.0/pkg/apis/akash.network/crd.yaml \
   --node=https://akash-rpc.polkachu.com:443
-  --from=<AKASH_KEY_NAME>
+  --from=<PROVIDER_KEY_NAME>
 ```
 
 ### STEP 4 - Upgrade the Helm Charts
