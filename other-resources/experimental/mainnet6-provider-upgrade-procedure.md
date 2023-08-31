@@ -72,7 +72,7 @@ v0.4.1
 
 > _**IMPORTANT**_: If the following commands returns any error, please seek the support in the #providers Akash Network Devs Discord room [here](https://discord.akash.network/)!
 
-> _**NOTE**_: --dry-run=true by default
+> _**NOTE**_: `--crd-dry-run=true` by default
 
 > _**NOTE**_ - for the `from` switch used in the command sets, issue `provider-services keys list` if unsure what the key name should be
 
@@ -90,7 +90,7 @@ provider-services migrate v2beta2 \
 
 ```
 provider-services migrate v2beta2 \
---dry-run=false \
+--crd-dry-run=false \
 --crd-v2beta1=https://raw.githubusercontent.com/akash-network/provider/v0.2.1/pkg/apis/akash.network/crd.yaml \
 --crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.1/pkg/apis/akash.network/crd.yaml \
 --crd-backup-path=./crd \
