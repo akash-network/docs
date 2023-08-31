@@ -69,7 +69,7 @@ ls -la
 cd ..
 ```
 
-### STEP 3 - Upgrade the CRDs
+### STEP 3 - Akash Provider Migration
 
 #### 3.1. Get the new provider-services binary file, which supports the migration
 
@@ -90,7 +90,7 @@ Expected output:
 v0.4.0
 ```
 
-#### 3.2. Migrate the CRDs (dry-run first!)
+#### 3.2. Dry-run Provider Migration
 
 > _**IMPORTANT**_: If the following commands returns any error, please seek the support in the #providers Akash Network Devs Discord room [here](https://discord.akash.network/)!
 
