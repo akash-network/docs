@@ -22,11 +22,11 @@ export AKASH_KEYRING_BACKEND=test
 
 ## Create Provider Account
 
-> _**NOTE**_ -  capture the mnemonic phrase for the account to restore later - if it becomes necessary - using `provider-services keys add default --recover` command
+> _**NOTE**_ - capture the mnemonic phrase for the account to restore later - if it becomes necessary - using `provider-services keys add default --recover` command
 
 > _**NOTE**_ - in the provided syntax we are creating an account with the key name of `default`
 
-> _**NOTE**_ - the Akash Provider's address (I.e. account that begins with akash1XXXXXXXX) is required in the Testnet submission form which is to be completed when the provider is fully built and tested.  Capture the address output in the following command for your Provider Account submission later.
+> _**NOTE**_ - the Akash Provider's address (I.e. account that begins with akash1XXXXXXXX) is required in the Testnet submission form which is to be completed when the provider is fully built and tested. Capture the address output in the following command for your Provider Account submission later.
 
 ```
 provider-services keys add default
@@ -64,7 +64,7 @@ REDACTED
 
 * Copy the contents of the prior step into the `key.pem` file
 
-> _**NOTE -**_ file should contain only what's between `-----BEGIN TENDERMINT PRIVATE KEY-----` and  `-----END TENDERMINT PRIVATE KEY-----` (including the `BEGIN` and `END` lines):
+> _**NOTE -**_ file should contain only what's between `-----BEGIN TENDERMINT PRIVATE KEY-----` and `-----END TENDERMINT PRIVATE KEY-----` (including the `BEGIN` and `END` lines):
 
 #### Expected/Example File
 
@@ -81,7 +81,7 @@ REDACTED
 
 ## Fund Provider Account via Faucet
 
-Visit the Testnet faucet [here](http://faucet.testnet-02.aksh.pw/) to fund your provider account. &#x20;
+Visit the Testnet faucet [here](http://faucet.testnet-02.aksh.pw/) to fund your provider account.
 
 Enter the address of the `default` account created in previous steps as prompted by the faucet.
 
@@ -144,9 +144,9 @@ EOF
 
 ## Download Provider Pricing Script
 
-> _**NOTE**_ - the Akash pricing script used for the GPU Testnet includes address whitelisting.  The whitelist is maintained by the Akash core team and will ensure that only authorized Akash addresses will be allowed to deploy workloads onto your provider
+> _**NOTE**_ - the Akash pricing script used for the GPU Testnet includes address whitelisting. The whitelist is maintained by the Akash core team and will ensure that only authorized Akash addresses will be allowed to deploy workloads onto your provider
 
-> _**NOTE**_ - the Provider Pricing script as downloaded will not allow from your own testing account.  During initial Provider testing un-comment these [four lines](https://github.com/akash-network/helm-charts/blob/provider-4.3.4/charts/akash-provider/scripts/price\_script\_generic.sh#L12-L15) of the script and replace the `akash1XXXXX` addresses with your own test accounts.&#x20;
+> _**NOTE**_ - the Provider Pricing script as downloaded will not allow from your own testing account. During initial Provider testing un-comment these [four lines](https://github.com/akash-network/helm-charts/blob/provider-4.3.4/charts/akash-provider/scripts/price\_script\_generic.sh#L12-L15) of the script and replace the `akash1XXXXX` addresses with your own test accounts.
 
 ```
 wget https://raw.githubusercontent.com/akash-network/helm-charts/main/charts/akash-provider/scripts/price_script_generic.sh
@@ -186,8 +186,6 @@ kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq 
 kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq -c
       4    image: ghcr.io/akash-network/provider:0.3.1-rc1
 ```
-
-
 
 ## Create Akash Hostname Operator
 
