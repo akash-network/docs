@@ -28,4 +28,4 @@ provider.yourdomain.com
 
 ## Example DNS Configuration
 
-![](../../.gitbook/assets/namecheapCapture.png)
+![](../../../.gitbook/assets/namecheapCapture.png)
