@@ -21,26 +21,24 @@ This is a comprehensive guide that covers the steps necessary to upgrade from Ma
 * `provider-services`: `0.4.0`
 * `node`: `0.24.0` (akash network `0.24.0`)
 
-In order to upgrade your Akash Provider, you will need to migrate the CRD's first. Before the migration it is advisable to stop the Akash Provider and backup the CRDs first.
+## Prerequisites
 
-Akash Providers normally have these three CRD's:
-
-```
-manifests.akash.network
-providerhosts.akash.network
-providerleasedips.akash.network
-```
-
-## Preparation
-
-* Make sure Helm is installed and configured.
-* Make sure you have access to your Kubernetes cluster and the `kubectl` command is working.
+* ENSURE TO EXAMINE ENTIRE GUIDE PRIOR DOING ANYTHING
+* Ensure Helm installed and configured
+* Ensure `kubectl` is installed
+* Ensure `kubectl` is configured to access your provider(s) cluster(s)
+* Provider(s) key(s) imported on your local machine
+* Environment is configured:
+  * `AKASH_NODE` is set to your preferable RPC node
+  * `AKASH_CHAIN_ID=akashnet-2`
+* Install provider-services `v0.4.0` on your local machine
+* Some steps have `<YOUR ...>` this means it has to be substituted with your environment things like keys
 
 ## Upgrade Procedure
 
-IMPORTANT! Seek help if you encounter an issue at any step or have doubts! Please seek the support in the #providers Akash Network Devs Discord room [here](https://discord.akash.network/).
+IMPORTANT! Seek help if you encounter an issue at any step or have doubts! Please seek the support in the `#providers` Akash Network Devs Discord room [here](https://discord.akash.network/).
 
-### STEP 1 - Stop the akash-provider Pod
+### STEP 1 - Scale down to 0 replicas the akash-provider
 
 This step is crucial to prevent unexpected behavior during the upgrade.
 
@@ -101,26 +99,24 @@ v0.4.0
 > _**NOTE**_ - for the `from` switch used in the command sets, issue `provider-services keys list` if unsure what the key name should be
 
 ```
-cd ~
 provider-services migrate v2beta2 \
-  --crd-backup-path=./ \
-  --crd-v2beta1=https://raw.githubusercontent.com/akash-network/provider/v0.2.1/pkg/apis/akash.network/crd.yaml \
-  --crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.0/pkg/apis/akash.network/crd.yaml \
-  --node=https://akash-rpc.polkachu.com:443 \
-  --from=<PROVIDER_KEY_NAME>
+--crd-v2beta1=https://raw.githubusercontent.com/akash-network/provider/v0.2.1/pkg/apis/akash.network/crd.yaml \
+--crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.0/pkg/apis/akash.network/crd.yaml \
+--crd-backup-path=./crd \
+--from=<KEY NAME>
 ```
 
-#### 3.3. Migrate the CRDs (now for real)
+#### 3.3. If Previous Step Succeeded - Run Actual Migration
+
+> _**NOTE**_ - Dry-run step above make backup of existing CRDs, you'll be prompted to replace it, press y and hit Enter
 
 ```
-cd ~
 provider-services migrate v2beta2 \
-  --dry-run=false \
-  --crd-backup-path=./ \
-  --crd-v2beta1=https://raw.githubusercontent.com/akash-network/provider/v0.2.1/pkg/apis/akash.network/crd.yaml \
-  --crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.0/pkg/apis/akash.network/crd.yaml \
-  --node=https://akash-rpc.polkachu.com:443
-  --from=<PROVIDER_KEY_NAME>
+--dry-run=false \
+--crd-v2beta1=https://raw.githubusercontent.com/akash-network/provider/v0.2.1/pkg/apis/akash.network/crd.yaml \
+--crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.0/pkg/apis/akash.network/crd.yaml \
+--crd-backup-path=./crd \
+--from=<KEY NAME>
 ```
 
 ### STEP 4 - Upgrade the Helm Charts
