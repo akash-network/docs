@@ -48,27 +48,6 @@ This step is crucial to prevent unexpected behavior during the upgrade.
 kubectl -n akash-services scale statefulsets akash-provider --replicas=0
 ```
 
-### STEP 2 - Backup the CRDs
-
-> _**NOTE:**_: `provider-service` does backup these CRDs during the migration in the next steps. However you can still perform it manually if you wish so.
-
-Creating backups of the CRDs is crucial for being able to restore to a previous state in case the upgrade does not go as expected.
-
-> _**IMPORTANT**_: If you encounter any issues during the migration, you will be able to revert to the old CRDs using the backup files. But first please seek the support in the `#providers` Akash Network Devs Discord room [here](https://discord.akash.network/)!
-
-```
-mkdir pre-mainnet6-crds
-cd pre-mainnet6-crds
-
-for i in manifests providerhosts providerleasedips; do
-  kubectl get crd $i.akash.network -o yaml > $i-backup.crd.yaml
-  kubectl -n lease get $i -o yaml > $i-backup.yaml
-done
-
-ls -la
-cd ..
-```
-
 ### STEP 3 - Akash Provider Migration
 
 #### 3.1. Get the new provider-services binary file, which supports the migration
