@@ -128,11 +128,11 @@ Verify you can see the correct chart/app versions:
 ```
 # helm search repo akash
 NAME                          	CHART VERSION	APP VERSION	DESCRIPTION                                       
-akash/akash-hostname-operator 	6.0.0        	0.4.1      	An operator to map Ingress objects to Akash dep...
-akash/akash-inventory-operator	6.0.0        	0.4.1      	An operator required for persistent storage (op...
-akash/akash-ip-operator       	6.0.0        	0.4.1      	An operator required for ip marketplace (optional)
+akash/akash-hostname-operator 	6.0.1        	0.4.1      	An operator to map Ingress objects to Akash dep...
+akash/akash-inventory-operator	6.0.1        	0.4.1      	An operator required for persistent storage (op...
+akash/akash-ip-operator       	6.0.1        	0.4.1      	An operator required for ip marketplace (optional)
 akash/akash-node              	6.0.0        	0.24.0     	Installs an Akash RPC node (required)             
-akash/provider                	6.0.0        	0.4.1      	Installs an Akash provider (required)      
+akash/provider                	6.0.1        	0.4.1      	Installs an Akash provider (required)      
 ```
 
 #### 3.2. akash-node Chart
