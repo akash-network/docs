@@ -27,12 +27,11 @@ This is a comprehensive guide that covers the steps necessary to upgrade from Ma
 * Ensure Helm installed and configured
 * Ensure `kubectl` is installed
 * Ensure `kubectl` is configured to access your provider(s) cluster(s)
-* Provider(s) key(s) imported on your local machine
+* Provider key imported on your local machine
 * Environment is configured:
   * `AKASH_NODE` is set to your preferable RPC node
   * `AKASH_CHAIN_ID=akashnet-2`
 * Install provider-services `v0.4.0` on your local machine
-* Some steps have `<YOUR ...>` this means it has to be substituted with your environment things like keys
 
 ## Upgrade Procedure
 
@@ -48,9 +47,9 @@ This step is crucial to prevent unexpected behavior during the upgrade.
 kubectl -n akash-services scale statefulsets akash-provider --replicas=0
 ```
 
-### STEP 3 - Akash Provider Migration
+### STEP 2 - Akash Provider Migration
 
-#### 3.1. Get the new provider-services binary file, which supports the migration
+#### 2.1. Get the new provider-services binary file, which supports the migration
 
 > The link to the binary files in case if you have other than x86\_64 (amd64) architecture [https://github.com/akash-network/provider/releases/tag/v0.4.0](https://github.com/akash-network/provider/releases/tag/v0.4.0)
 
@@ -69,7 +68,7 @@ Expected output:
 v0.4.0
 ```
 
-#### 3.2. Dry-run Provider Migration
+#### 2.2. Dry-run Provider Migration
 
 > _**IMPORTANT**_: If the following commands returns any error, please seek the support in the #providers Akash Network Devs Discord room [here](https://discord.akash.network/)!
 
@@ -85,7 +84,7 @@ provider-services migrate v2beta2 \
 --from=<KEY NAME>
 ```
 
-#### 3.3. If Previous Step Succeeded - Run Actual Migration
+#### 2.3. If Previous Step Succeeded - Run Actual Migration
 
 > _**NOTE**_ - Dry-run step above make backup of existing CRDs, you'll be prompted to replace it, press y and hit Enter
 
@@ -98,7 +97,7 @@ provider-services migrate v2beta2 \
 --from=<KEY NAME>
 ```
 
-### STEP 4 - Upgrade the Helm Charts
+### STEP 3 - Upgrade the Helm Charts
 
 > Follow these steps to upgrade various Helm charts. Make sure you've backed up your existing Helm chart configurations.
 
@@ -118,7 +117,7 @@ mkdir mainnet6-chart-configs
 cd mainnet6-chart-configs
 ```
 
-#### 4.1. Upgrade the Repo
+#### 3.1. Upgrade the Repo
 
 ```
 helm repo update akash
@@ -136,7 +135,7 @@ akash/akash-node              	6.0.0        	0.24.0     	Installs an Akash RPC n
 akash/provider                	6.0.0        	0.4.0      	Installs an Akash provider (required)      
 ```
 
-#### 4.2. akash-node Chart
+#### 3.2. akash-node Chart
 
 Take the current `akash-node` chart values:
 
@@ -152,7 +151,7 @@ Upgrade your `akash-node` chart:
 helm upgrade akash-node akash/akash-node -n akash-services -f akash-node-values.yml
 ```
 
-#### 4.3 akash-provider Chart
+#### 3.3 akash-provider Chart
 
 Take the current `akash-provider` chart values:
 
@@ -168,13 +167,13 @@ helm upgrade akash-provider akash/provider -n akash-services -f akash-provider-v
 
 > _**IMPORTANT**_: Make sure your provider is using the latest bid price script! Here is the guide that tells you how you can set it for your akash-provider chart. [https://docs.akash.network/providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-6-provider-bid-customization](https://docs.akash.network/providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-6-provider-bid-customization)
 
-#### 4.4 akash-hostname-operator Chart
+#### 3.4 akash-hostname-operator Chart
 
 ```
 helm upgrade akash-hostname-operator akash/akash-hostname-operator -n akash-services
 ```
 
-#### 4.5 akash-inventory-operator Chart
+#### 3.5 akash-inventory-operator Chart
 
 > Skip this section if your provider does not provide persistent storage.
 
@@ -184,7 +183,7 @@ helm upgrade akash-hostname-operator akash/akash-hostname-operator -n akash-serv
 helm upgrade inventory-operator akash/akash-inventory-operator -n akash-services
 ```
 
-#### 4.6 akash-ip-operator Chart
+#### 3.6 akash-ip-operator Chart
 
 > Skip this section if your provider does not provide IP leasing.
 
@@ -200,7 +199,7 @@ helm -n akash-services get values akash-ip-operator | grep -v '^USER-SUPPLIED VA
 helm upgrade akash-ip-operator akash/akash-ip-operator -n akash-services -f akash-ip-operator-values.yml
 ```
 
-### STEP 5 - Verify the Charts Have Been Upgraded
+### STEP 4 - Verify the Charts Have Been Upgraded
 
 Perform these checks to ensure the upgrade was successful.
 
