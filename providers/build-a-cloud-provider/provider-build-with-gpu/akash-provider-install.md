@@ -5,13 +5,13 @@
 ## Install Akash Provider Services Binary
 
 ```
-wget https://github.com/akash-network/provider/releases/download/v0.3.1-rc1/provider-services_0.3.1-rc1_linux_amd64.zip
+wget https://github.com/akash-network/provider/releases/download/v0.4.4/provider-services_0.4.4_linux_amd64.zip
 
-unzip provider-services_0.3.1-rc1_linux_amd64.zip
+unzip provider-services_0.4.4_linux_amd64.zip
 
 install provider-services /usr/local/bin/
 
-rm provider-services provider-services_0.3.1-rc1_linux_amd64.zip
+rm provider-services provider-services_0.4.4_linux_amd64.zip
 ```
 
 ## Specify Provider Account Keyring Location
@@ -31,6 +31,12 @@ export AKASH_KEYRING_BACKEND=test
 ```
 provider-services keys add default
 ```
+
+## Fund Provider Account via Faucet
+
+Ensure that the provider wallet - created in the prior step - is funded.
+
+Guidance on obtaining AKT and funding the wallet can be found [here](https://docs.akash.network/guides/cli/detailed-steps/part-3.-fund-your-account).
 
 ## Export Provider Key for Build Process
 
@@ -79,19 +85,19 @@ REDACTED
 -----END TENDERMINT PRIVATE KEY-----
 ```
 
-## Fund Provider Account via Faucet
+## Provider RPC Node
 
-Visit the Testnet faucet [here](http://faucet.testnet-02.aksh.pw/) to fund your provider account.
+Akash Providers need to run their own blockchain RPC node to remove dependence on public nodes.  This is a strict requirement.&#x20;
 
-Enter the address of the `default` account created in previous steps as prompted by the faucet.
+We have recently released documentation guiding thru the process of building a [RPC node via Helm Charts](../../../akash-nodes/akash-node-via-helm-charts/) with state sync.
 
-## Declare Testnet Relevant Environment Variables
+## Declare Relevant Environment Variables
 
 * The following variables may be used with no need to edit
 
 ```
-export AKASH_CHAIN_ID=testnet-02
-export AKASH_NODE=http://rpc.testnet-02.aksh.pw:26657
+export AKASH_CHAIN_ID=akashnet-2
+export AKASH_NODE=<RPC-NODE-ADDRESS>
 export AKASH_GAS=auto
 export AKASH_GAS_PRICES=0.025uakt
 export AKASH_GAS_ADJUSTMENT=1.5
@@ -101,9 +107,9 @@ export AKASH_GAS_ADJUSTMENT=1.5
 * The `KEY_PASSWORD` value should be the passphrase of used during the account export step
 
 ```
-export ACCOUNT_ADDRESS=akash13n9ka8hxewpj9596ugyml9a94gcewl036a7gyf
-export KEY_PASSWORD=akash123
-export DOMAIN=akashwebapp.xyz
+export ACCOUNT_ADDRESS=<AKASH_PROVIDER_ADDRESS>
+export KEY_PASSWORD=<PASSPHASE>
+export DOMAIN=<PROVIDER_DOMAIN>
 ```
 
 ## Create Provider Configuration File
@@ -142,14 +148,17 @@ attributes:
 EOF
 ```
 
-## Download Provider Pricing Script
+## **Provider Bid Defaults**
 
-> _**NOTE**_ - the Akash pricing script used for the GPU Testnet includes address whitelisting. The whitelist is maintained by the Akash core team and will ensure that only authorized Akash addresses will be allowed to deploy workloads onto your provider
-
-> _**NOTE**_ - the Provider Pricing script as downloaded will not allow from your own testing account. During initial Provider testing un-comment these [four lines](https://github.com/akash-network/helm-charts/blob/provider-4.3.4/charts/akash-provider/scripts/price\_script\_generic.sh#L12-L15) of the script and replace the `akash1XXXXX` addresses with your own test accounts.
+* When a provider is created the default bid engine settings are used.  If desired these settings could be updated and added to the `provider.yaml` file.  But we would recommend initially using the default values.
+* Note -  the `bidpricestoragescale` value will get overridden by `-f provider-storage.yaml` covered in [Provider Persistent Storage](../helm-based-provider-persistent-storage-enablement/) documentation.
+* Note -  if you want to use a shellScript bid price strategy, pass the bid price script via `bidpricescript` variable detailed in the [bid pricing script doc](../akash-provider-bid-pricing/).  This will automatically suppress all `bidprice<cpu|memory|endpoint|storage>scale` settings.
 
 ```
-wget https://raw.githubusercontent.com/akash-network/helm-charts/main/charts/akash-provider/scripts/price_script_generic.sh
+bidpricecpuscale: "0.004" # cpu pricing scale in uakt per millicpu
+bidpricememoryscale: "0.0016" # memory pricing scale in uakt per megabyte
+bidpriceendpointscale: "0" # endpoint pricing scale in uakt per endpoint
+bidpricestoragescale: "0.00016" # storage pricing scale in uakt per megabyte
 ```
 
 ## Create Provider Via Helm
@@ -158,7 +167,7 @@ wget https://raw.githubusercontent.com/akash-network/helm-charts/main/charts/aka
 export CRDS="manifests.akash.network providerhosts.akash.network providerleasedips.akash.network"
 kubectl delete crd $CRDS
 
-kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.3.1-rc1/pkg/apis/akash.network/crd.yaml
+kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.4.4/pkg/apis/akash.network/crd.yaml
 
 for CRD in $CRDS; do
   kubectl annotate crd $CRD helm.sh/resource-policy=keep
@@ -169,9 +178,8 @@ done
 
 helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml \
 --set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)" \
---set chainid=testnet-02 \
---set whitelist_url=https://raw.githubusercontent.com/akash-network/net/main/testnet-02/whitelist.txt \
---set image.tag=0.3.1-rc1
+--set chainid=akashnet-2 \
+--set image.tag=0.4.4
 ```
 
 Verify the image is correct by running this command:
@@ -184,16 +192,15 @@ kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq 
 
 ```
 kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq -c
-      4    image: ghcr.io/akash-network/provider:0.3.1-rc1
+      2     image: ghcr.io/akash-network/provider:0.4.4
+      2   - image: ghcr.io/akash-network/provider:0.4.4
 ```
 
 ## Create Akash Hostname Operator
 
 ```
-helm upgrade --install akash-hostname-operator akash/akash-hostname-operator -n akash-services --set image.tag=0.3.1-rc1
+helm upgrade --install akash-hostname-operator akash/akash-hostname-operator -n akash-services --set image.tag=0.4.4
 ```
-
-## Verify Akash Provider and Hostname Operator Status
 
 * Use the following command to verify the health of the Akash Provider and Hostname Operator pods
 
