@@ -18,7 +18,7 @@ This is a comprehensive guide that covers the steps necessary to upgrade from Ma
 
 ### Mainnet6 Versions
 
-* `provider-services`: `0.4.3`
+* `provider-services`: `0.4.4`
 * `node`: `0.24.0` (akash network `0.24.0`)
 
 ## Prerequisites
@@ -31,7 +31,7 @@ This is a comprehensive guide that covers the steps necessary to upgrade from Ma
 * Environment is configured:
   * `AKASH_NODE` is set to your preferable RPC node
   * `AKASH_CHAIN_ID=akashnet-2`
-* Install provider-services `v0.4.3` on your local machine
+* Install provider-services `v0.4.4` on your local machine
 
 ## Upgrade Procedure
 
@@ -51,9 +51,9 @@ kubectl -n akash-services scale statefulsets akash-provider --replicas=0
 
 #### 2.1. Get the new provider-services binary file, which supports the migration
 
-> The link to the binary files in case if you have other than x86\_64 (amd64) architecture [https://github.com/akash-network/provider/releases/tag/v0.4.3](https://github.com/akash-network/provider/releases/tag/v0.4.3)
+> The link to the binary files in case if you have other than x86\_64 (amd64) architecture [https://github.com/akash-network/provider/releases/tag/v0.4.4](https://github.com/akash-network/provider/releases/tag/v0.4.4)
 
-To install `provider-services` `v0.4.3` follow this doc [https://docs.akash.network/other-resources/sandbox/detailed-steps/part-1.-install-akash](https://docs.akash.network/other-resources/sandbox/detailed-steps/part-1.-install-akash)
+To install `provider-services` `v0.4.4` follow this doc [https://docs.akash.network/other-resources/sandbox/detailed-steps/part-1.-install-akash](https://docs.akash.network/other-resources/sandbox/detailed-steps/part-1.-install-akash)
 
 Verify you have installed the `provider-services` properly:
 
@@ -65,7 +65,7 @@ Expected output:
 
 ```
 # provider-services version
-v0.4.3
+v0.4.4
 ```
 
 #### 2.2. Dry-run Provider Migration
@@ -79,7 +79,7 @@ v0.4.3
 ```
 provider-services migrate v2beta2 \
 --crd-v2beta1=https://raw.githubusercontent.com/akash-network/provider/v0.2.1/pkg/apis/akash.network/crd.yaml \
---crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.3/pkg/apis/akash.network/crd.yaml \
+--crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.4/pkg/apis/akash.network/crd.yaml \
 --crd-backup-path=./crd \
 --from=<KEY NAME>
 ```
@@ -92,7 +92,7 @@ provider-services migrate v2beta2 \
 provider-services migrate v2beta2 \
 --crd-dry-run=false \
 --crd-v2beta1=https://raw.githubusercontent.com/akash-network/provider/v0.2.1/pkg/apis/akash.network/crd.yaml \
---crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.3/pkg/apis/akash.network/crd.yaml \
+--crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.4/pkg/apis/akash.network/crd.yaml \
 --crd-backup-path=./crd \
 --from=<KEY NAME>
 ```
@@ -128,11 +128,11 @@ Verify you can see the correct chart/app versions:
 ```
 # helm search repo akash
 NAME                          	CHART VERSION	APP VERSION	DESCRIPTION                                       
-akash/akash-hostname-operator 	6.0.3        	0.4.3      	An operator to map Ingress objects to Akash dep...
-akash/akash-inventory-operator	6.0.3        	0.4.3      	An operator required for persistent storage (op...
-akash/akash-ip-operator       	6.0.3        	0.4.3      	An operator required for ip marketplace (optional)
+akash/akash-hostname-operator 	6.0.4        	0.4.4      	An operator to map Ingress objects to Akash dep...
+akash/akash-inventory-operator	6.0.4        	0.4.4      	An operator required for persistent storage (op...
+akash/akash-ip-operator       	6.0.4        	0.4.4      	An operator required for ip marketplace (optional)
 akash/akash-node              	6.0.0        	0.24.0     	Installs an Akash RPC node (required)             
-akash/provider                	6.0.3        	0.4.3      	Installs an Akash provider (required)      
+akash/provider                	6.0.4        	0.4.4      	Installs an Akash provider (required)      
 ```
 
 #### 3.2. akash-node Chart
@@ -212,7 +212,7 @@ kubectl -n akash-services get pods -o custom-columns='NAME:.metadata.name,IMAGE:
 
 The charts upgrade went well, if you are seeing these images and versions:
 
-* provider and operator image is: `ghcr.io/akash-network/provider:0.4.3`
+* provider and operator image is: `ghcr.io/akash-network/provider:0.4.4`
 * node image is: `ghcr.io/akash-network/node:0.24.0`
 
 Example Result:
@@ -220,11 +220,11 @@ Example Result:
 ```
 # kubectl -n akash-services get pods -o custom-columns='NAME:.metadata.name,IMAGE:.spec.containers[*].image'
 NAME                                        IMAGE
-akash-hostname-operator-86d4596d6c-pwbt8    ghcr.io/akash-network/provider:0.4.3
-akash-inventory-operator-69464fbdff-dxkk5   ghcr.io/akash-network/provider:0.4.3
-akash-ip-operator-6f6ddc47f8-498kj          ghcr.io/akash-network/provider:0.4.3
+akash-hostname-operator-86d4596d6c-pwbt8    ghcr.io/akash-network/provider:0.4.4
+akash-inventory-operator-69464fbdff-dxkk5   ghcr.io/akash-network/provider:0.4.4
+akash-ip-operator-6f6ddc47f8-498kj          ghcr.io/akash-network/provider:0.4.4
 akash-node-1-0                              ghcr.io/akash-network/node:0.24.0
-akash-provider-0                            ghcr.io/akash-network/provider:0.4.3
+akash-provider-0                            ghcr.io/akash-network/provider:0.4.4
 ```
 
 \
