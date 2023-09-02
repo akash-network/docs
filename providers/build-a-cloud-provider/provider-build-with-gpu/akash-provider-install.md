@@ -5,13 +5,13 @@
 ## Install Akash Provider Services Binary
 
 ```
-wget https://github.com/akash-network/provider/releases/download/v0.4.4/provider-services_0.4.4_linux_amd64.zip
+wget https://github.com/akash-network/provider/releases/download/v0.4.6/provider-services_0.4.6_linux_amd64.zip
 
-unzip provider-services_0.4.4_linux_amd64.zip
+unzip provider-services_0.4.6_linux_amd64.zip
 
 install provider-services /usr/local/bin/
 
-rm provider-services provider-services_0.4.4_linux_amd64.zip
+rm provider-services provider-services_0.4.6_linux_amd64.zip
 ```
 
 ## Specify Provider Account Keyring Location
@@ -167,7 +167,7 @@ bidpricestoragescale: "0.00016" # storage pricing scale in uakt per megabyte
 export CRDS="manifests.akash.network providerhosts.akash.network providerleasedips.akash.network"
 kubectl delete crd $CRDS
 
-kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.4.4/pkg/apis/akash.network/crd.yaml
+kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.4.6/pkg/apis/akash.network/crd.yaml
 
 for CRD in $CRDS; do
   kubectl annotate crd $CRD helm.sh/resource-policy=keep
@@ -179,7 +179,7 @@ done
 helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml \
 --set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)" \
 --set chainid=akashnet-2 \
---set image.tag=0.4.4
+--set image.tag=0.4.6
 ```
 
 Verify the image is correct by running this command:
@@ -192,14 +192,14 @@ kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq 
 
 ```
 kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq -c
-      2     image: ghcr.io/akash-network/provider:0.4.4
-      2   - image: ghcr.io/akash-network/provider:0.4.4
+      2     image: ghcr.io/akash-network/provider:0.4.6
+      2   - image: ghcr.io/akash-network/provider:0.4.6
 ```
 
 ## Create Akash Hostname Operator
 
 ```
-helm upgrade --install akash-hostname-operator akash/akash-hostname-operator -n akash-services --set image.tag=0.4.4
+helm upgrade --install akash-hostname-operator akash/akash-hostname-operator -n akash-services --set image.tag=0.4.6
 ```
 
 * Use the following command to verify the health of the Akash Provider and Hostname Operator pods

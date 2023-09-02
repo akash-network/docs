@@ -1,7 +1,5 @@
 # Mainnet6 Provider Upgrade Procedure
 
-> _**IMPORTANT - THE MAINNET6 PROVIDER UPGRADE STEPS DETAILED IN THIS GUIDE CANNOT COMMENCE UNTIL THE NETWORK IS UPGRADED TO VERSION 0.24.0.  PLEASE VISIT OUR**_ [_**DISCORD SERVER**_ ](https://discord.akash.network/)_**FOR EXPLICIT ANNOUNCEMENT REGARDING NETWORK UPGRADE COMPLETION PRIOR TO CONDUCTING THE STEPS IN THIS GUIDE.**_
-
 ## Overview
 
 This is a comprehensive guide that covers the steps necessary to upgrade from Mainnet5 to Mainnet6 of Akash Network and Akash Provider components in a Kubernetes cluster.
