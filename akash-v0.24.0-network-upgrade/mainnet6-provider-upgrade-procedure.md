@@ -47,6 +47,12 @@ kubectl -n akash-services scale statefulsets akash-provider --replicas=0
 
 ### STEP 2 - Akash Provider Migration
 
+
+
+> _**NOTE**_ - the migration procedure covered in this step is only necessary if your provider has active leases which need to be migrated for Mainnet6 provider use.  If you provider has no active leases - proeed directly to Step 3.
+
+> _**NOTE**_ - when the dry run migration step (2.1) is run the command should output text stating "loaded CRDs" and "loaded active leases for provider".  If blank output is received instead this indicates that no active leases were found for your provider.  If the provider does in fact have active leases - please check the RPC node used for possible issue.
+
 #### 2.1. Get the new provider-services binary file, which supports the migration
 
 > The link to the binary files in case if you have other than x86\_64 (amd64) architecture [https://github.com/akash-network/provider/releases/tag/v0.4.6](https://github.com/akash-network/provider/releases/tag/v0.4.6)
