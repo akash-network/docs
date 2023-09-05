@@ -150,7 +150,7 @@
       * [Example Command Use](providers/build-a-cloud-provider/akash-provider-bid-pricing/example-command-use.md)
     * [Akash Provider Attribute Updates](providers/build-a-cloud-provider/akash-provider-attribute-updates.md)
     * [gVisor Issue - No system-cgroup v2 Support](providers/build-a-cloud-provider/gvisor-issue-no-system-cgroup-v2-support.md)
-  * [Akash Provider Provider Maintenance/FAQ/Troubleshooting](providers/akash-provider-troubleshooting/README.md)
+  * [Akash Provider Maintenance/FAQ/Troubleshooting](providers/akash-provider-troubleshooting/README.md)
     * [Provider Maintenance](providers/akash-provider-troubleshooting/provider-maintenance.md)
     * [How to terminate the workload from the Akash Provider using CLI](providers/akash-provider-troubleshooting/how-to-terminate-the-workload-from-the-akash-provider-using-cli.md)
     * [Provider Logs](providers/akash-provider-troubleshooting/provider-logs.md)
