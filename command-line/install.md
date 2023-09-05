@@ -48,7 +48,7 @@ provider-services version
 ```
 provider-services version
 
-v0.1.0
+v0.4.6
 ```
 {% endtab %}
 
