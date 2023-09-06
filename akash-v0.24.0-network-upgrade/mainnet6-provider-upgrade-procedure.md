@@ -80,12 +80,15 @@ v0.4.6
 
 > _**NOTE**_ - for the `from` switch used in the command sets, issue `provider-services keys list` if unsure what the key name should be
 
+> _**NOTE**_ - in the command syntax we include the `--kubeconfig` switch.  The default location checked for `kubeconfig` is `/<home-directory>/.kube/config`  The explicit switch can be removed if `kubeconfig` exists in the default directory.
+
 ```
 provider-services migrate v2beta2 \
 --crd-v2beta1=https://raw.githubusercontent.com/akash-network/provider/v0.2.1/pkg/apis/akash.network/crd.yaml \
 --crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.6/pkg/apis/akash.network/crd.yaml \
 --crd-backup-path=./crd \
---from=<KEY NAME>
+--from=<KEY NAME> \
+--kubeconfig=<full-path-to-kubeconfig>
 ```
 
 #### 2.3. If Previous Step Succeeded - Run Actual Migration
@@ -98,7 +101,8 @@ provider-services migrate v2beta2 \
 --crd-v2beta1=https://raw.githubusercontent.com/akash-network/provider/v0.2.1/pkg/apis/akash.network/crd.yaml \
 --crd-v2beta2=https://raw.githubusercontent.com/akash-network/provider/v0.4.6/pkg/apis/akash.network/crd.yaml \
 --crd-backup-path=./crd \
---from=<KEY NAME>
+--from=<KEY NAME> \
+--kubeconfig=<full-path-to-kubeconfig>
 ```
 
 ### STEP 3 - Upgrade the Helm Charts
