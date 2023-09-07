@@ -14,6 +14,21 @@ install provider-services /usr/local/bin/
 rm provider-services provider-services_0.4.6_linux_amd64.zip
 ```
 
+## Confirm Akash Provider Services Install
+
+* Issue the following command to confirm successful installation of the binary:
+
+```
+provider-services version
+```
+
+#### Expected/Example Output
+
+```
+root@node1:~# provider-services version
+v0.4.6
+```
+
 ## Specify Provider Account Keyring Location
 
 ```
@@ -22,11 +37,16 @@ export AKASH_KEYRING_BACKEND=test
 
 ## Create Provider Account
 
-> _**NOTE**_ - capture the mnemonic phrase for the account to restore later - if it becomes necessary - using `provider-services keys add default --recover` command
+The wallet created in this step used will be used for the following purposes:
+
+* Pay for provider transaction gas fees
+* Pay for bid collateral which is discussed further in this section
+
+> _**NOTE**_ - Make sure to create a new Akash account for the provider and do not reuse an account used for deployment purposes.  Bids will not be generated from your provider if the deployment orders are created with the same key as the provider.
+
+> _**NOTE**_ - capture the mnemonic phrase for the account to restore later if necessary
 
 > _**NOTE**_ - in the provided syntax we are creating an account with the key name of `default`
-
-> _**NOTE**_ - the Akash Provider's address (I.e. account that begins with akash1XXXXXXXX) is required in the Testnet submission form which is to be completed when the provider is fully built and tested. Capture the address output in the following command for your Provider Account submission later.
 
 ```
 provider-services keys add default
@@ -34,9 +54,7 @@ provider-services keys add default
 
 ## Fund Provider Account via Faucet
 
-Ensure that the provider wallet - created in the prior step - is funded.
-
-Guidance on obtaining AKT and funding the wallet can be found [here](https://docs.akash.network/guides/cli/detailed-steps/part-3.-fund-your-account).
+Ensure that the provider account - created in the prior step - is funded.  Avenues to fund an account are discussed in this [document](https://docs.akash.network/guides/cli/detailed-steps/part-3.-fund-your-account).
 
 ## Export Provider Key for Build Process
 
@@ -72,6 +90,16 @@ REDACTED
 
 > _**NOTE -**_ file should contain only what's between `-----BEGIN TENDERMINT PRIVATE KEY-----` and `-----END TENDERMINT PRIVATE KEY-----` (including the `BEGIN` and `END` lines):
 
+```
+vim key.pem
+```
+
+#### Verification of key.pem File
+
+```
+cat key.pem
+```
+
 #### Expected/Example File
 
 ```
@@ -93,7 +121,7 @@ We have recently released documentation guiding thru the process of building a [
 
 ## Declare Relevant Environment Variables
 
-* The following variables may be used with no need to edit
+* Update `RPC-NODE-ADDRESS` with your own value
 
 ```
 export AKASH_CHAIN_ID=akashnet-2
@@ -105,6 +133,7 @@ export AKASH_GAS_ADJUSTMENT=1.5
 
 * Update the following variables with your own values
 * The `KEY_PASSWORD` value should be the passphrase of used during the account export step
+* Further discussion of the Akash provider domain is available [here](step-5-domain-name-review.md)
 
 ```
 export ACCOUNT_ADDRESS=<AKASH_PROVIDER_ADDRESS>
@@ -118,13 +147,19 @@ export DOMAIN=<PROVIDER_DOMAIN>
 
 ### GPU Attributes Template
 
+* GPU model template is used in the subsequent `Provider Configuration File`
+* Multiple such entries should be included in the `Provider Configuration File` if the providers has multiple GPU types
+* Currently Akash providers may only host one GPU type per worker node.  But different GPU models/types may be hosted on separate Kubernetes nodes.
+
 ```
 capabilities/gpu/vendor/<vendor name>/model/<model name>: true
 ```
 
 ### Example Provider Configuration File
 
-* In the example configuration file below the Akash Provider will advertise avaialbility of NVIDIA GPU model A4000
+* In the example configuration file below the Akash Provider will advertise availability of NVIDIA GPU model A4000
+* Steps included in this code block create the necessary `provider.yaml` file in the expected directory
+* Ensure that the attributes section is updated witih your own values
 
 ```
 cd ~
@@ -150,7 +185,7 @@ EOF
 
 ## **Provider Bid Defaults**
 
-* When a provider is created the default bid engine settings are used.  If desired these settings could be updated and added to the `provider.yaml` file.  But we would recommend initially using the default values.
+* When a provider is created the default bid engine settings are used which are used to derive pricing per workload.  If desired these settings could be updated and added to the `provider.yaml` file.  But we would recommend initially using the default values.
 * Note -  the `bidpricestoragescale` value will get overridden by `-f provider-storage.yaml` covered in [Provider Persistent Storage](../helm-based-provider-persistent-storage-enablement/) documentation.
 * Note -  if you want to use a shellScript bid price strategy, pass the bid price script via `bidpricescript` variable detailed in the [bid pricing script doc](../akash-provider-bid-pricing/).  This will automatically suppress all `bidprice<cpu|memory|endpoint|storage>scale` settings.
 
@@ -182,7 +217,9 @@ helm upgrade --install akash-provider akash/provider -n akash-services -f provid
 --set image.tag=0.4.6
 ```
 
-Verify the image is correct by running this command:
+#### Verification
+
+* Verify the image is correct by running this command:
 
 ```
 kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq -c
@@ -191,9 +228,8 @@ kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq 
 #### Expected/Example Output
 
 ```
-kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq -c
-      2     image: ghcr.io/akash-network/provider:0.4.6
-      2   - image: ghcr.io/akash-network/provider:0.4.6
+root@node1:~/provider# kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq -c
+      4     image: ghcr.io/akash-network/provider:0.4.6
 ```
 
 ## Create Akash Hostname Operator
@@ -201,6 +237,8 @@ kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq 
 ```
 helm upgrade --install akash-hostname-operator akash/akash-hostname-operator -n akash-services --set image.tag=0.4.6
 ```
+
+## Verify Health of Akash Provider
 
 * Use the following command to verify the health of the Akash Provider and Hostname Operator pods
 

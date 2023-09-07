@@ -1,5 +1,7 @@
 # Test GPUs
 
+> _**NOTE**_ - conduct the steps in this section on a Kubernetes control plane node
+
 ## Launch GPU Test Pod
 
 #### Create the GPU Test Pod Config

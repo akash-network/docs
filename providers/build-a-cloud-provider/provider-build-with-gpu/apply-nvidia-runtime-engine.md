@@ -24,7 +24,7 @@ kubectl apply -f nvidia-runtime-class.yaml
 
 ## Upgrade/Install the NVIDIA Device Plug In Via Helm - GPUs on All Nodes
 
-> _**NOTE**_ - in some scenarios a provider may host GPUs only on a subset of Kubernetes worker nodes.  Use the instructions in this section if ALL Kubernetes worker nodes have available GPU resources.  If only a subset of worker nodes host GPU resources - use the section "Upgrade/Install the NVIDIA Device Plug In Via Helm - GPUs on Subset of Nodes" instead.  Only one of these two sections should be completed.
+> _**NOTE**_ - in some scenarios a provider may host GPUs only on a subset of Kubernetes worker nodes.  Use the instructions in this section if ALL Kubernetes worker nodes have available GPU resources.  If only a subset of worker nodes host GPU resources - use the section `Upgrade/Install the NVIDIA Device Plug In Via Helm - GPUs on Subset of Nodes` instead.  Only one of these two sections should be completed.
 
 ```
 helm upgrade -i nvdp nvdp/nvidia-device-plugin \
@@ -56,12 +56,15 @@ TEST SUITE: None
 
 > _**NOTE**_ - use the instructions in this section if only a subset of Kubernetes worker nodes have available GPU resources.
 
-> By default, the `nvidia-device-plugin` DaemonSet may run on all nodes in your Kubernetes cluster. If you want to restrict its deployment to only GPU-enabled nodes, you can leverage Kubernetes node labels and selectors. Specifically, you can use the allow-nvdp=true label to limit where the DaemonSet is scheduled.
+* By default, the nvidia-device-plugin DaemonSet may run on all nodes in your Kubernetes cluster. If you want to restrict its deployment to only GPU-enabled nodes, you can leverage Kubernetes node labels and selectors.&#x20;
+* Specifically, you can use the `allow-nvdp=true label` to limit where the DaemonSet is scheduled.
 
 #### STEP 1: Label the GPU Nodes
 
 * First, identify your GPU nodes and label them with `allow-nvdp=true`. You can do this by running the following command for each GPU node
 * Replace `node-name` of the node you're labeling
+
+> _**NOTE**_ - if you are unsure of the `<node-name>` to be used in this command - issue `kubectl get nodes` from one of your Kubernetes control plane nodes to obtain via the `NAME` column of this command output
 
 ```
 kubectl label nodes <node-name> allow-nvdp=true
@@ -91,11 +94,10 @@ _**Expected/Example Output**_
 * In this example only nodes: node1, node3 and node4 have the `allow-nvdp=true` labels and that's where `nvidia-device-plugin` pods spawned at:
 
 ```
-root@control1:~# kubectl -n nvidia-device-plugin get pods -o wide
-NAME                              READY   STATUS    RESTARTS   AGE   IP               NODE    NOMINATED NODE   READINESS GATES
-nvdp-nvidia-device-plugin-gjvrd   1/1     Running   0          24m   10.233.72.112    node4   <none>           <none>
-nvdp-nvidia-device-plugin-s48rp   1/1     Running   0          24m   10.233.73.27     node3   <none>           <none>
-nvdp-nvidia-device-plugin-w94kl   1/1     Running   0          24m   10.233.105.189   node1   <none> 
+root@node1:~# kubectl -n nvidia-device-plugin get pods -o wide
+
+NAME                              READY   STATUS    RESTARTS   AGE   IP            NODE    NOMINATED NODE   READINESS GATES
+nvdp-nvidia-device-plugin-gqnm2   1/1     Running   0          11s   10.233.75.1   node2   <none>           <none>
 ```
 
 ## Verification - Applicable to all Environments

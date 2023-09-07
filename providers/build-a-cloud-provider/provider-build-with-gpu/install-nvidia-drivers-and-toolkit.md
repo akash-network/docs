@@ -1,10 +1,10 @@
 # Install NVIDIA Drivers & Toolkit
 
-> _**NOTE**_ - The steps in this guide should be completed on all Kubernetes worker nodes of the Akash Provider cluster.
+> _**NOTE**_ - The steps in this section should be completed on all Kubernetes nodes hosting GPU resources
 
 ## Prepare Environment
 
-> _**NOTE**_ - reboot the servers following the completion of these steps
+> _**NOTE**_ - reboot the servers following the completion of this step
 
 ```
 apt update
@@ -49,13 +49,17 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 
 #### Driver Install Based on Output
 
-Either run `ubuntu-drivers autoinstall` or `apt install nvidia-driver-525` (based on the example provided and the `recommended` version indicated which may be different in your use).
+Run either `ubuntu-drivers autoinstall` or `apt install nvidia-driver-525` (driver names may be different in your environment).
+
+The `autoinnstall` option installs the recommended version and is appropriate in most instances.
+
+The `apt install <driver-name>`alternatively allows the install of preferred driver instead of the recommended version.
 
 ```
 ubuntu-drivers autoinstall
 ```
 
-## Install nvidia-cuda-toolkit
+## Install the NVIDIA CUDA Toolkit
 
 ```
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
