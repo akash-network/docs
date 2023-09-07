@@ -4,9 +4,13 @@
 
 Test your provider's ability to host GPU related deployments via the SDLs provided in this section.
 
+Use any of the Akash deployment tools covered [here](../../../guides/) for your Provider test deployments.
+
+> _**NOTE**_ - this section covers GPU specific deployment testing and verificaiton of your Akash Provider.  In addition, general Provider verifications can be made via this [Provider Checkup](../akash-provider-checkup/) guide.
+
 ## Example GPU SDL #1
 
-> _**NOTE**_ - in this example the deployer is requesting bids from only Akash Providers that have available NVIDIA A4000 GPUs
+> _**NOTE**_ - in this example the deployer is requesting bids from only Akash Providers that have available NVIDIA A4000 GPUs.  Adjust accordingly for your provider testing.
 
 ```
 ---

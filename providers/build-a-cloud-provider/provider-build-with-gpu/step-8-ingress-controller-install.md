@@ -2,7 +2,13 @@
 
 ## Create Upstream Ingress-Nginx Config
 
-* Create an `ingress-nginx-custom.yaml` file with the following contents:
+* Create an `ingress-nginx-custom.yaml` file&#x20;
+
+```
+vim ingress-nginx-custom.yaml
+```
+
+* Populate the `ingress-nginx-custom.yaml`file with the following contents:
 
 ```
 controller:
@@ -40,7 +46,7 @@ helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
 
 ## Apply Necessary Labels
 
-* Label the `ingress-nginx` namespace and the `akash-ingress-class` ingressclass
+* Label the `ingress-nginx` namespace and the `akash-ingress-class` ingress class
 
 ```
 kubectl label ns ingress-nginx app.kubernetes.io/name=ingress-nginx app.kubernetes.io/instance=ingress-nginx
