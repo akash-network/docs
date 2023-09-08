@@ -31,7 +31,7 @@ Each node that provides GPUs must be labeled correctly.
 
 * Use this label template in the `kubectl label` command in the subsequent sub-section below
 
-> _**NOTE**_ - please do not assign any value other than `true` to these labels.  Setting the value to `false` may have unexpected consequences on the Akash provider.  If GPU resources are removed from a node, simply remove the Kubernetes completely and do not set value to `false`.
+> _**NOTE**_ - please do not assign any value other than `true` to these labels.  Setting the value to `false` may have unexpected consequences on the Akash provider.  If GPU resources are removed from a node, simply remove the Kubernetes label completely from that node.
 
 ```
 akash.network/capabilities.gpu.vendor.<vendor name>.model.<model name>: true
