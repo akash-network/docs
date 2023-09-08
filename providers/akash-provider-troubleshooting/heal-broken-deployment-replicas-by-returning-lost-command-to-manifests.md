@@ -15,7 +15,7 @@ This was leading to their replica pods running in `CrashLoopBackOff` state on th
 
 The good news is that both issues can be fixed without the customer intervention.
 
-Once you have updated your provider to 0.2.1 version following the instructions, you can patch the manifests with the correct command which will get rid of the deployments left in `CrashLoopBackOff` state.
+Once you have updated your provider to 0.2.1 version or greater following the instructions, you can patch the manifests with the correct command which will get rid of the deployments left in `CrashLoopBackOff` state.
 
 **STEP1** - Backup manifests
 

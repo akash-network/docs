@@ -23,7 +23,7 @@ helm search repo akash/provider
 ```
 # helm search repo akash/provider
 NAME              CHART VERSION    APP VERSION    DESCRIPTION                          
-akash/provider    4.3.4            0.2.1          Installs an Akash provider (required)
+akash/provider    4.3.4            0.4.6          Installs an Akash provider (required)
 ```
 
 ## Download Bid Price Script Which Supports Whitelisting
@@ -38,7 +38,7 @@ wget https://raw.githubusercontent.com/akash-network/helm-charts/main/charts/aka
 
 ## Specify the Bid Price Script and Whitelist URL
 
-> _**NOTE**_ - Whitelist will only work when `bidpricescript` is also set.  
+> _**NOTE**_ - Whitelist will only work when `bidpricescript` is also set.\
 > _**NOTE**_ - You need to specify the direct link to the whitelit (with Github Gist you need to click Raw button to get it)
 
 ```
