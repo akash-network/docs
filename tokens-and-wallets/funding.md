@@ -7,4 +7,4 @@ If you need tokens to experiment with your first deployment, please make a reque
 ### Next Steps
 
 * [Install Akash and create an account](../guides/cli/detailed-steps/)
-* [Join our Discord Server](https://discord.com/invite/DxftX67)
+* [Join our Discord Server](https://discord.gg/akash)
