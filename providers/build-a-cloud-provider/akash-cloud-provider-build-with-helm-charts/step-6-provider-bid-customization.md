@@ -5,6 +5,8 @@
 * **Note -** When the provider deployment is created the bid script should return the price in under 5 seconds . If the script does not execute in this time period the following error message will be seen in the provider pod logs.  Such a report would suggest that there is an error/issue with script customizations that should be reviewed.  Following review and adjustment, uninstall the provider deployment (via helm uninstall) and reinstall.
 * **Note** - there is further discussion on the bid script and deployer address whitelisting in this [section](step-11-provider-whitelisting-optional.md).
 
+> _**USDC Stable Payment Support**_ - note that the current, default bid script enables stable payment support on the Akash Provider.  Akash deployments using stable payments are taxed at a slightly higher rate than deployments using AKT payment.  If you choose not to support stable payments on your provider, remove stable payment support from the default bid script.
+
 ### **Example Bid/Price Script syntax:**
 
 ```

@@ -28,6 +28,8 @@ akash/provider    4.3.4            0.4.6          Installs an Akash provider (re
 
 ## Download Bid Price Script Which Supports Whitelisting
 
+> _**USDC Stable Payment Support**_ - note that the current, default bid script downloaded in this step enables stable payment support on the Akash Provider.  Akash deployments using stable payments are taxed at a slightly higher rate than deployments using AKT payment.  If you choose not to support stable payments on your provider, remove stable payment support from the default bid script.
+
 ```
 wget https://raw.githubusercontent.com/akash-network/helm-charts/main/charts/akash-provider/scripts/price_script_generic.sh
 ```
