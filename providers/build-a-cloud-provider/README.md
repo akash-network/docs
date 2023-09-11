@@ -12,6 +12,21 @@ Our curated guide to building your decentralized provider follows these sequenti
 * **STEP 6** - [Provider Troubleshooting](../akash-provider-troubleshooting/)
 * **STEP 7** - [What's Next (Provider Care and Maintenance)](../akash-provider-troubleshooting/maintaining-and-rotating-kubernetes-etcd-certificates-a-how-to-guide.md)
 
+#### OPTIONAL STEPS
+
+> _**NOTE**_ - the following features are not requirements of an Akash Provider but the enablement of such features may increase demand and tenant lease activity.  Consider adding such functionality to your Akash Provider either in initial build or at a later stage.
+
+* [TLS Certs for Akash Providers](tls-certs-for-akash-provider-optional-step/)
+* [IP Leases](ip-leases-provider-enablement-optional-step/)
+* [Persistent Storage](helm-based-provider-persistent-storage-enablement/persistent-storage-requirements.md)
+
+#### VERIFICATIONS AND TROUBLESHOOTING
+
+> _**NOTE**_ - utilize these guides post Akash Provider build to ensure the provider is fully operational and during troubleshooting/maintenance needs.
+
+* [Akash Provider Checkup](akash-provider-checkup/)
+* [Akash Provider Maintenance/FAQ/Troubleshooting](../akash-provider-troubleshooting/)
+
 ## Helm Chart Repository for Akash Providers
 
 The steps outlined above will guide the user through the creation of an Akash Provider and necessary components.  The table below clarifies required and optional Helm Charts in the Provider build process.
