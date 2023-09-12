@@ -11,6 +11,8 @@ A complete deployment has the following sections:
 * [profiles](stack-definition-language.md#profiles)
 * [deployment](stack-definition-language.md#deployment)
 * [persistent storage](../features/persistent-storage/)
+* [gpu support](stack-definition-language.md#gpu-support)
+* [stable payment](stack-definition-language.md#stable-payment)
 
 An example deployment configuration can be found [here](https://github.com/akash-network/docs/tree/62714bb13cfde51ce6210dba626d7248847ba8c1/sdl/deployment.yaml).
 
@@ -18,11 +20,11 @@ An example deployment configuration can be found [here](https://github.com/akash
 
 Networking - allowing connectivity to and between workloads - can be configured via the Stack Definition Language (SDL) file for a deployment. By default, workloads in a deployment group are isolated - nothing else is allowed to connect to them. This restriction can be relaxed.
 
-## version
+## Version
 
 Indicates version of Akash configuration file. Currently only `"2.0"` is accepted.
 
-## services
+## Services
 
 The top-level `services` entry contains a map of workloads to be ran on the Akash deployment. Each key is a service name; values are a map containing the following keys:
 
@@ -179,7 +181,7 @@ This defines a profile named `westcoast` having required attributes `{region="us
 
 The `signedBy` section allows you to state attributes that must be signed by one or more accounts of your choosing. This allows for requiring a third-party certification of any provider that you deploy to.
 
-## deployment
+## Deployment
 
 The `deployment` section defines how to deploy the services. It is a mapping of service name to deployment configuration.
 
@@ -195,3 +197,85 @@ web:
 ```
 
 This says that the 20 instances of the `web` service should be deployed to a datacenter matching the `westcoast` datacenter profile. Each instance will have the resources defined in the `web` [compute profile](stack-definition-language.md#profiles.compute) available to it.
+
+## GPU Support
+
+GPUs can be added to your workload via inclusion the compute profile section.  The placement of the GPU stanza can be viewed in the full compute profile example shown below.
+
+> _**NOTE**_ - currently the only accepted vendor is `nvidia` but others will be added soon
+
+```
+profiles:
+  compute:
+    obtaingpu:
+      resources:
+        cpu:
+          units: 1.0
+        memory:
+          size: 1Gi
+        gpu:
+          units: 1
+          attributes:
+            vendor:
+              nvidia:
+                - model: 4090
+        storage:
+          size: 1Gi
+
+```
+
+### Additional GPU Use Notes
+
+#### Full GPU SDL Example
+
+To view an example GPU enabled SDL in full for greater context, review this [example](https://github.com/akash-network/awesome-akash/blob/c24af5335be2bccb9d47c95bdd6ab68645fcd679/torchbench/torchbench\_gpu\_sdl\_cuda12\_0.yaml#L3) which utilized the declaration of several GPU models.
+
+#### Model Specification Optional
+
+The declaration of a GPU model is optional in the SDL.  If your deployment does not require a specific GPU model, leave the model declaration blank as seen in the following example.
+
+```
+        gpu:
+          units: 1
+          attributes:
+            vendor:
+              nvidia:
+```
+
+#### Multiple Models Declared
+
+If your deployment is optimized to run on multiple GPU models, include the appropriate list of models as seen in the following example.  In this usage, any Akash provider that has a model in the list will bid on the deployment.
+
+
+
+```
+        gpu:
+          units: 1
+          attributes:
+            vendor:
+              nvidia:
+                - model: 4090
+                - model: t4
+```
+
+## Stable Payment
+
+Use of Stable Payments is supported in the Akash SDL and is declared in the placement section of the SDL as shown in the example below.
+
+> _**NOTE**_ - currently only `Axelar USDC (uusdc)` is supported and `denom` must be specified as the precise IBC channel name shown in the example.
+
+```
+  placement:
+    global:
+      pricing:
+        web:
+          denom: ibc/170C677610AC31DF0904FFE09CD3B5C657492170E7E52372E48756B71E56F2F1
+          amount: 100
+        bew:
+          denom: ibc/170C677610AC31DF0904FFE09CD3B5C657492170E7E52372E48756B71E56F2F1
+          amount: 100
+```
+
+#### Full GPU SDL Example&#x20;
+
+To view an example Stable Payment enabled SDL in full for greater context, review this [example](https://gist.github.com/chainzero/040d19bdb20d632009b8ae206fb548f5).
