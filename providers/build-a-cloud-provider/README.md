@@ -20,6 +20,12 @@ Our curated guide to building your decentralized provider follows these sequenti
 * [IP Leases](ip-leases-provider-enablement-optional-step/)
 * [Persistent Storage](helm-based-provider-persistent-storage-enablement/persistent-storage-requirements.md)
 
+#### GPU PROVIDER
+
+Use the guide below to build an Akash provider hosting GPU resources:
+
+* [Provider Build With GPU](provider-build-with-gpu/)
+
 #### VERIFICATIONS AND TROUBLESHOOTING
 
 > _**NOTE**_ - utilize these guides post Akash Provider build to ensure the provider is fully operational and during troubleshooting/maintenance needs.
