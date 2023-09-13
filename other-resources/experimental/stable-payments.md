@@ -51,15 +51,11 @@ We find the using the Leap Wallet to be the simplest method of transferring Axel
 
 #### IBC Transfer of USDC onto Akash
 
-
-
 * Open the Leap Wallet from your browser plug in
 * Ensure that the Osmosis network is selected in the top right hand corner of the Leap Wallet plug as shown below
 * Select the `IBC` icon
 
 <figure><img src="../../.gitbook/assets/intitiateIBCTransfer.png" alt=""><figcaption></figcaption></figure>
-
-##
 
 * Complete the IBC transfer by entering the destination Akash address
 * Select `USDC` in the `Amount to Send` section
@@ -80,8 +76,6 @@ provider-services query bank balances <akash-address>
 
 _**Expected/Example Output**_
 
-
-
 * Note the appearance and balance of denom `ibc/170C677610AC31DF0904FFE09CD3B5C657492170E7E52372E48756B71E56F2F1`
 * This demon represents available Axelar USDC and indicates availability of stable payment funds to utilize for Akash deployments
 
@@ -100,12 +94,28 @@ pagination:
 
 ## Akash Deployment Creation using Stable Payments
 
-In this sections we will cover using the following clients to create an Akash deployment using Stable Payments
+In this section we will cover using the following clients to create an Akash deployment using Stable Payments.
+
+> NOTE - when creating an Akash deployment using Stable Payment - ensure that the SDL pricing section reflects the correct denomination as covered [here](https://docs.akash.network/readme/stack-definition-language#stable-payment).
 
 * [Cloudmos Deploy](stable-payments.md#cloudmos-deploy-stable-payment-use)
 * [Akash CLI](stable-payments.md#akash-cli-stable-payment-use)
 
 ### Cloudmos Deploy Stable Payment Use
 
+* When using Cloudmos Deploy no change is necessary in the deployment creation when using Stable Payments.
+* When the associated SDL uses the USDC denomination, Cloudmos Deploy will create the deployment with Stable Payment.
+* An indication that Stable Payments are being used in the deployment creation is provided in the `Deployment Deposit` dialog box as shown below.
+
+<figure><img src="../../.gitbook/assets/cloudmosStable.png" alt=""><figcaption></figcaption></figure>
+
 ### Akash CLI Stable Payment Use
 
+* When creating a deployment via the Akash CLI, all steps in the typical deployment creation steps (as covered [here](../../guides/cli/detailed-steps/)) remain applicable and valid with the only edit in such steps being this syntax in the `deployment create` step.
+* As shown in this Stable Payment relevant `deployment create` command we must specify the `deposit` switch as the USDC denomination.
+
+#### Create Deployment Command for USDC Stable Payment Use
+
+```
+provider-services tx deployment create deploy.yml --from $AKASH_KEY_NAME --deposit=5000000ibc/170C677610AC31DF0904FFE09CD3B5C657492170E7E52372E48756B71E56F2F1
+```
