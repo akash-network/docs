@@ -1,5 +1,7 @@
 # STEP 1 - Prerequisites of an Akash Provider
 
+> _**NOTE**_ - the commands in this section and in all remaining sections of this guide assume that the `root` user is used.  For ease we suggest using the `root` user for the Kubernetes and Akash Provider install.  If a non-root user is used instead, minor command adjustments may be necessary such as using `sudo` command prefixes and updating the home directory in command syntaxes.
+
 ## Akash Wallet
 
 Placing a bid on an order requires a 5 AKT deposit placed into collateral per bid won. If the provider desired 2 concurrent leases, the provider’s wallet would need minimum funding of 10AKT.
