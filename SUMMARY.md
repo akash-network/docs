@@ -163,6 +163,7 @@
     * [Maintaining and Rotating Kubernetes/etcd Certificates: A How-To Guide](providers/akash-provider-troubleshooting/maintaining-and-rotating-kubernetes-etcd-certificates-a-how-to-guide.md)
     * [Force New ReplicaSet Workaround](providers/akash-provider-troubleshooting/force-new-replicaset-workaround.md)
     * [Close Leases Based on Image](providers/akash-provider-troubleshooting/close-leases-based-on-image.md)
+    * [Provider Bid Script Migration - GPU Models](providers/akash-provider-troubleshooting/provider-bid-script-migration-gpu-models.md)
   * [Community Solutions](providers/community-solutions/README.md)
     * [Praetor](providers/community-solutions/praetor.md)
     * [AkashDash - Provider Earnings Portal](providers/community-solutions/akashdash-provider-earnings-portal.md)
