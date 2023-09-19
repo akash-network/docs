@@ -44,15 +44,15 @@ TARGET_GPU_UNIT="100"      # USD/GPU unit a month
 
 ### STEP 3 - Backup Akash/Provider Config
 
-> This command will backup your akash/provider config in `akash-provider-values.yml` file (excluding the old bid price script)
+> This command will backup your akash/provider config in the  `provider.yaml` file (excluding the old bid price script)
 
 ```
-helm -n akash-services get values akash-provider | grep -v '^USER-SUPPLIED VALUES' | grep -v ^bidpricescript > akash-provider-values.yml
+helm -n akash-services get values akash-provider | grep -v '^USER-SUPPLIED VALUES' | grep -v ^bidpricescript > provider.yaml
 ```
 
-### STEP 4 - Update akash-provider-values.yml File Accordingly
+### STEP 4 - Update provider.yaml File Accordingly
 
-> Update your `akash-provider-values.yml` file with the price targets you want. If you don't specify these keys, the bid price script will default values shown below
+> Update your `provider.yaml` file with the price targets you want. If you don't specify these keys, the bid price script will default values shown below
 
 `price_target_gpu_mappings` sets the GPU price in the following way and in the example provided:
 
@@ -101,7 +101,7 @@ akash/provider	6.0.5        	0.4.6      	Installs an Akash provider (required)
 ### STEP 7 - Upgrade akash-provider Deployment with New Bid Script
 
 ```
-helm upgrade akash-provider akash/provider -n akash-services -f akash-provider-values.yml  --set bidpricescript="$(cat price_script_generic.sh | openssl base64 -A)"
+helm upgrade akash-provider akash/provider -n akash-services -f provider.yaml --set bidpricescript="$(cat price_script_generic.sh | openssl base64 -A)"
 ```
 
 #### Verification of Bid Script Update
