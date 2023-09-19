@@ -5,7 +5,6 @@
 > _**NOTE**_ - if you are updating your provider bid script from a previous version use this [bid script migration guide](../../providers/akash-provider-troubleshooting/provider-bid-script-migration-gpu-models.md).
 
 * If there is a desire to manipulate the provider bid engine, include the `--set bidpricescript` switch .  The pricing script used in this switch is detailed in the [Akash Provider Bid Pricing](../../providers/build-a-cloud-provider/akash-provider-bid-pricing/) section of this guide.
-* Edit the `price_script_generic.sh` file detailed in [Akash Provider Bid Pricing](../../providers/build-a-cloud-provider/akash-provider-bid-pricing/) with preferred resource pricing level
 * **Note -** When the provider deployment is created the bid script should return the price in under 5 seconds . If the script does not execute in this time period the following error message will be seen in the provider pod logs.  Such a report would suggest that there is an error/issue with script customizations that should be reviewed.  Following review and adjustment, uninstall the provider deployment (via helm uninstall) and reinstall.
 * **Note** - there is further discussion on the bid script and deployer address whitelisting in this [section](../../providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-11-provider-whitelisting-optional.md).
 
