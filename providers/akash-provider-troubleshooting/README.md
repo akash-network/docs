@@ -1,4 +1,4 @@
-# Akash Provider Provider Maintenance/FAQ/Troubleshooting
+# Akash Provider Maintenance/FAQ/Troubleshooting
 
 Use the techniques detailed in this guide to verify Akash Provider functionality and troubleshoot issues as they appear.
 
@@ -16,3 +16,4 @@ The guide is broken down into the following categories:
 * [Maintaining and Rotating Kubernetes/etcd Certificates: A How-To Guide](maintaining-and-rotating-kubernetes-etcd-certificates-a-how-to-guide.md)
 * [Force New ReplicaSet Workaround](force-new-replicaset-workaround.md)
 * [Close Leases Based on Image](close-leases-based-on-image.md)
+* [Provider Bid Script Migration for GPU Model Pricing](provider-bid-script-migration-gpu-models.md)
