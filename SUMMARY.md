@@ -306,7 +306,6 @@
       * [Close Akash Deployment](other-resources/experimental/akash-deployments-via-terraform/close-akash-deployment.md)
       * [Terraform Manifest - Complete Example](other-resources/experimental/akash-deployments-via-terraform/terraform-manifest-complete-example.md)
     * [Stable Payments](other-resources/experimental/stable-payments.md)
-    * [Copy of STEP 7 - Provider Bid Customization](other-resources/experimental/step-6-provider-bid-customization.md)
   * [Security](other-resources/security.md)
   * [Containers](other-resources/platform.md)
   * [Marketplace](other-resources/marketplace.md)
