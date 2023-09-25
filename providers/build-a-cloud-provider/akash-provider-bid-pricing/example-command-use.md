@@ -109,8 +109,18 @@ vim ibc-gpu-3-services-1-gpu-each-different.jq
 
 ### Execute Order Pricing Estimation
 
-* Note that in this example we are feeding desired per resource USD pricing within the command
-* Example - `PRICE_TARGET_CPU=1.60` - in this command line provided value we are specifiying our desired CPU core price as `$1.60/month`.
+
+
+> _**NOTE**_ - that in this example we are feeding desired per resource USD pricing within the command
+
+> _**NOTE**_ - the outputted value is the UAKT block rate.  In the example below this would be:
+>
+> * `982.378419` X `429909` - calculate price in UAKT/Month with approx `429909` blocks/month
+> * `422333323.733871` - UAKT/Month calculated using formula above
+> * `422` - AKT/Month approximately
+> * `Current AKT price` X `422` -  USD/Month
+
+* Example - `PRICE_TARGET_CPU=1.60` - in this command line provided value we are specifying our desired CPU core price as `$1.60/month`.
 * In a subsequent section we outline the use of environment variables for resource pricing instead of defining within a single command.
 
 ```
@@ -121,7 +131,7 @@ PRICE_TARGET_CPU=1.60 PRICE_TARGET_MEMORY=0.80 PRICE_TARGET_HD_EPHEMERAL=0.02 PR
 
 _**Example/Expected Output**_
 
-* In this example the script is executed and the output suggests that the monthly cost of the example order is `$982.37`.
+* In this example the script is executed and the output suggests that the monthly cost of the example order is `982` UAKT/block
 
 ```
 PRICE_TARGET_CPU=1.60 PRICE_TARGET_MEMORY=0.80 PRICE_TARGET_HD_EPHEMERAL=0.02 PRICE_TARGET_HD_PERS_HDD=0.01 PRICE_TARGET_HD_PERS_SSD=0.03 PRICE_TARGET_HD_PERS_NVME=0.04 PRICE_TARGET_ENDPOINT=0.05 PRICE_TARGET_IP=5 PRICE_TARGET_GPU_MAPPINGS="a100=120,t4=80,*=130" ./price_script_generic.sh <<< $(cat ibc-gpu-3-services-1-gpu-each-different.jq) ; echo
@@ -147,8 +157,6 @@ PRICE_TARGET_GPU_MAPPINGS
 ```
 
 #### Default Values
-
-
 
 * If certain pricing variables are not defined the following defaults are used
 * Note that the GPU mappings variable can be expanded to include more than three models as necessitated
