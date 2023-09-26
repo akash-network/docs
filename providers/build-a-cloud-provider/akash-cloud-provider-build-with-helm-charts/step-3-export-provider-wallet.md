@@ -47,13 +47,13 @@ provider-services keys list
 ```
 cd ~
 
-provider-services keys export mykey1
+provider-services keys export default
 ```
 
 #### Expected/Example Output
 
 ```
-provider-services keys export mykey1
+provider-services keys export default
 
 Enter passphrase to encrypt the exported key:                          
 Enter keyring passphrase:                                              
