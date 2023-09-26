@@ -4,9 +4,9 @@ Become an Akash provider and make profit on your spare compute made available fo
 
 Our curated guide to building your decentralized provider follows these sequential steps.
 
-* **STEP 1** - [Build the Kubernetes Cluster for your Provider](../../../providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/)
-* **STEP 2** - [Build your Cloud Provider via Helm Charts](../../../providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/)
-* **STEP 3** - [Complete a CheckUp of your New Provider](../../../providers/build-a-cloud-provider/akash-provider-checkup/)
+* **STEP 1** - [Build the Kubernetes Cluster for your Provider](kubernetes-cluster-for-akash-providers/)
+* **STEP 2** -[ Build your Cloud Provider via Helm Charts](akash-cloud-provider-build-with-helm-charts/)
+* **STEP 3** - [Complete a CheckUp of your New Provider](akash-provider-checkup/)
 * **STEP 4** - [Enable Persistent Storage on your Cloud Provider](../../../providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/)
 * **STEP 5** - [Provider Maintenance](../../../providers/akash-provider-troubleshooting/provider-maintenance.md)
 * **STEP 6** - [Provider Troubleshooting](../../../providers/akash-provider-troubleshooting/)
@@ -19,12 +19,6 @@ Our curated guide to building your decentralized provider follows these sequenti
 * [TLS Certs for Akash Providers](../../../providers/build-a-cloud-provider/tls-certs-for-akash-provider-optional-step/)
 * [IP Leases](../../../providers/build-a-cloud-provider/ip-leases-provider-enablement-optional-step/)
 * [Persistent Storage](../../../providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/persistent-storage-requirements.md)
-
-#### GPU PROVIDER
-
-Use the guide below to build an Akash provider hosting GPU resources:
-
-* [Provider Build With GPU](../../../providers/build-a-cloud-provider/provider-build-with-gpu/)
 
 #### VERIFICATIONS AND TROUBLESHOOTING
 
