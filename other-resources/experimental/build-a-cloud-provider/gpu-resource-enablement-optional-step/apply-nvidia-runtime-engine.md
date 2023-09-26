@@ -1,10 +1,10 @@
-# Step 6 -Apply NVIDIA Runtime Engine (OPTIONAL)
+# Apply NVIDIA Runtime Engine
 
 ## Overview
 
 Prior to beginning the Akash Provider build, in this section we will complete steps applicable only to providers that will be hosting GPU resources.
 
-If you are not hosting GPU resources in your Akash Provider, skip to [STEP 7 - Provider Build via Helm Chart](step-6-provider-build-via-helm-chart.md).
+If you are not hosting GPU resources in your Akash Provider, skip to [STEP 7 - Provider Build via Helm Chart](../akash-cloud-provider-build-with-helm-charts/step-6-provider-build-via-helm-chart.md).
 
 ## Create RuntimeClass
 

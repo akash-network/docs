@@ -26,7 +26,6 @@ Please consider using the [Praetor](../../../../providers/community-solutions/pr
 * [Additional Verifications](../../../../providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-5-enable-gvisor.md)
 * [DNS Configuration](../../../../providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-6-dns-configuration.md)
 * [Provider Ephemeral Storage Config](../../../../providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-6-provider-ephemeral-storage-config.md)
-* [GPU Provider Build](step-8-gpu-provider-configuration-optional.md)
 * [Create Kubernetes Cluster](../../../../providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-6-create-kubernetes-cluster.md)
 * [Confirm Kubernetes Cluster](../../../../providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-7-confirm-kubernetes-cluster.md)
 * [Custom Kernel Parameters](../../../../providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-10-custom-kernel-parameters.md)

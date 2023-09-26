@@ -1,15 +1,15 @@
-# STEP 8 - GPU Provider Configuration (OPTIONAL)
+# GPU Provider Configuration
 
 ## Overview
 
 Prior to beginning the Akash Provider Kubernetes cluster build, in this section we will complete steps applicable only to providers that will be hosting GPU resources.
 
-If you are not hosting GPU resources in your Akash Provider, skip to [Step 9 - Create Kubernetes Cluster](step-6-create-kubernetes-cluster.md).
+If you are not hosting GPU resources in your Akash Provider, skip to [Step 9 - Create Kubernetes Cluster](../kubernetes-cluster-for-akash-providers/step-6-create-kubernetes-cluster.md).
 
 Sections specifically related to Akash GPU Provider builds and included in these guide:
 
-* [Install NVIDIA Drivers & Toolkit](step-8-gpu-provider-configuration-optional.md#install-nvidia-drivers-and-toolkit)
-* [NVIDIA Runtime Configuration](step-8-gpu-provider-configuration-optional.md#nvidia-runtime-configuration)
+* [Install NVIDIA Drivers & Toolkit](gpu-provider-configuration.md#install-nvidia-drivers-and-toolkit)
+* [NVIDIA Runtime Configuration](gpu-provider-configuration.md#nvidia-runtime-configuration)
 
 ## Install NVIDIA Drivers & Toolkit
 
