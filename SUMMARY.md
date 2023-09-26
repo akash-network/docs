@@ -251,7 +251,7 @@
   * [Hostname Migration](features/hostname-migration.md)
 * [Akash v0.24.0 Network Upgrade](akash-v0.24.0-network-upgrade/README.md)
   * [Akash v0.24.0 Node Upgrade Guide](akash-v0.24.0-network-upgrade/v0.24.0-upgrade-docs.md)
-  * [Akash v0.26.1 Node Upgrade Guide](akash-v0.24.0-network-upgrade/v0.24.0-upgrade-docs-1.md)
+  * [Akash v0.26.1 Node Upgrade Guide](akash-v0.24.0-network-upgrade/v0.26.1-upgrade-docs.md)
   * [Mainnet6 Provider Upgrade Procedure](akash-v0.24.0-network-upgrade/mainnet6-provider-upgrade-procedure.md)
 * [Testnet](testnet/README.md)
   * [GPU Testnet Client Instructions](testnet/gpu-testnet-client-instructions/README.md)
