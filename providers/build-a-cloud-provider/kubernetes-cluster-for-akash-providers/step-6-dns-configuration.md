@@ -13,7 +13,7 @@ cd ~/kubespray
 ### Verify Current Upstream DNS Server Config
 
 ```
-kubespray$ grep -A2 upstream_dns_servers inventory/akash/group_vars/all/all.yml
+grep -A2 upstream_dns_servers inventory/akash/group_vars/all/all.yml
 ```
 
 _**Expected/Example Output**_
