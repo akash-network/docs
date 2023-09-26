@@ -2,11 +2,7 @@
 
 ## Overview
 
-Prior to beginning the Akash Provider Kubernetes cluster build, in this section we will complete steps applicable only to providers that will be hosting GPU resources.
-
-If you are not hosting GPU resources in your Akash Provider, skip to [Step 9 - Create Kubernetes Cluster](../kubernetes-cluster-for-akash-providers/step-6-create-kubernetes-cluster.md).
-
-Sections specifically related to Akash GPU Provider builds and included in these guide:
+Sections in this guide cover the installation of the following packages necessary for Akash Provider GPU hosting:
 
 * [Install NVIDIA Drivers & Toolkit](gpu-provider-configuration.md#install-nvidia-drivers-and-toolkit)
 * [NVIDIA Runtime Configuration](gpu-provider-configuration.md#nvidia-runtime-configuration)
@@ -92,9 +88,11 @@ apt-get install -y nvidia-cuda-toolkit nvidia-container-toolkit nvidia-container
 
 ## NVIDIA Runtime Configuration
 
-> _**NOTE**_ - This step should be completed on the Kubespray host only
+> _**NOTE**_ - The steps in this sub-section should be completed on the Kubespray host only
 
 In this step we add the NVIDIA runtime confguration into the Kubespray inventory.  The runtime will be applied to necessary Kubernetes hosts when Kubespray builds the cluster in the subsequent step.
+
+### Create NVIDIA Runtime File for Kubespray Use
 
 ```
 cat > ~/kubespray/inventory/akash/group_vars/all/akash.yml <<'EOF'
@@ -110,4 +108,17 @@ containerd_additional_runtimes:
     options:
       BinaryName: '"/usr/bin/nvidia-container-runtime"'
 EOF
+```
+
+### Kubespray the Kubernetes Cluster
+
+```
+cd ~/kubespray
+
+###Execute following command if not already in the Python virtual environment
+###Creation and activation of virtual evironment described further here:
+###https://docs.akash.network/providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-2-install-ansible
+source venv/bin/activate
+
+ansible-playbook -i inventory/akash/hosts.yaml -b -v --private-key=~/.ssh/id_rsa cluster.yml
 ```

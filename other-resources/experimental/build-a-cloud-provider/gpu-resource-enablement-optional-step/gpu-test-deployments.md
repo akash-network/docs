@@ -1,8 +1,6 @@
-# STEP 12 -GPU Test Deployments (OPTIONAL)
+# GPU Test Deployments
 
 ## Overview
-
-> _**NOTE**_ - If you are not hosting GPU resources in your Akash Provider, skip this step.
 
 Use any of the Akash deployment tools covered [here](../../../../guides/) for your Provider test deployments.
 

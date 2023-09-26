@@ -1,14 +1,16 @@
 # GPU Node Label
 
-> _**NOTE**_ - this section is only applicable to Akash Providers hosting GPU resources.  If your provider does not host GPU resources, please skip this section and proceed to [STEP 10 - Confirm Kubernetes Cluster](../kubernetes-cluster-for-akash-providers/step-7-confirm-kubernetes-cluster.md)
+## Overview
 
 Each node that provides GPUs must be labeled correctly.
 
 > _**NOTE**_ - these configurations should be completed on a Kubernetes master/control plane node
 
-### Label Template
+## Label Template
 
 * Use this label template in the `kubectl label` command in the subsequent Label Appliction sub-section below
+
+> _**NOTE**_ - this section is information only.  The template displayed will be used in a subsequent sections.
 
 ```
 akash.network/capabilities.gpu.vendor.<vendor name>.model.<model name>=true
@@ -35,14 +37,28 @@ kubectl label node node1 akash.network/capabilities.gpu.vendor.nvidia.model.a400
 #### Expected Output using Example
 
 ```
-###Apply labels
 root@node1:~/provider# kubectl label node node1 akash.network/capabilities.gpu.vendor.nvidia.model.a4000=true
-node/node1 labeled
 
-###Verification of applied labels
-root@node1:~/provider# kubectl describe node node1 | grep -A10 Labels
-Labels:             akash.network/capabilities.gpu.vendor.nvidia.model.a4000=true
-...
-...
+node/node1 labeled
 ```
 
+### Verification of Node Labels
+
+* Replace `<node-name>` with the node of interest
+
+```
+kubectl describe node <node-name> | grep -A10 Labels
+```
+
+#### Expected Output using Example
+
+```
+kubectl describe node node2 | grep -A10 Labels
+
+Labels:             akash.network/capabilities.gpu.vendor.nvidia.model.a4000=true
+                    beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=node2
+                    kubernetes.io/os=linux
+```

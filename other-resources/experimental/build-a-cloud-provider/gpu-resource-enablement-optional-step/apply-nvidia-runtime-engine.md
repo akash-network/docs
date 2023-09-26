@@ -1,11 +1,5 @@
 # Apply NVIDIA Runtime Engine
 
-## Overview
-
-Prior to beginning the Akash Provider build, in this section we will complete steps applicable only to providers that will be hosting GPU resources.
-
-If you are not hosting GPU resources in your Akash Provider, skip to [STEP 7 - Provider Build via Helm Chart](../akash-cloud-provider-build-with-helm-charts/step-6-provider-build-via-helm-chart.md).
-
 ## Create RuntimeClass
 
 > _**NOTE**_ - conduct these steps on the control plane node that Helm was installed on via the previous step
@@ -32,13 +26,16 @@ kubectl apply -f nvidia-runtime-class.yaml
 
 > _**NOTE**_ - in some scenarios a provider may host GPUs only on a subset of Kubernetes worker nodes.  Use the instructions in this section if ALL Kubernetes worker nodes have available GPU resources.  If only a subset of worker nodes host GPU resources - use the section `Upgrade/Install the NVIDIA Device Plug In Via Helm - GPUs on Subset of Nodes` instead.  Only one of these two sections should be completed.
 
-```
-helm upgrade -i nvdp nvdp/nvidia-device-plugin \
-  --namespace nvidia-device-plugin \
+<pre><code>helm repo add nvdp https://nvidia.github.io/k8s-device-plugin
+
+helm repo update
+<strong>
+</strong><strong>helm upgrade -i nvdp nvdp/nvidia-device-plugin \
+</strong>  --namespace nvidia-device-plugin \
   --create-namespace \
   --version 0.14.1 \
   --set runtimeClassName="nvidia"
-```
+</code></pre>
 
 #### Expected/Example Output
 
@@ -81,6 +78,10 @@ kubectl label nodes <node-name> allow-nvdp=true
 * By setting the node selector, you are ensuring that the `nvidia-device-plugin` DaemonSet will only be scheduled on nodes with the `allow-nvdp=true` label.
 
 ```
+helm repo add nvdp https://nvidia.github.io/k8s-device-plugin
+
+helm repo update
+
 helm upgrade -i nvdp nvdp/nvidia-device-plugin \
   --namespace nvidia-device-plugin \
   --create-namespace \
@@ -142,7 +143,7 @@ kubectl -n nvidia-device-plugin logs -l app.kubernetes.io/instance=nvdp
 
 > _**NOTE**_ - conduct the steps in this section on a Kubernetes control plane node
 
-## Launch GPU Test Pod
+### Launch GPU Test Pod
 
 #### Create the GPU Test Pod Config
 
