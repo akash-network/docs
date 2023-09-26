@@ -68,7 +68,15 @@ REDACTED
 
 ### &#x20;STEP 2 - Create key.pem and Copy Output Into File
 
-* Copy the contents of the prior step into the `key.pem` file
+* Create a `key.pem` file
+
+```
+cd ~
+
+vim key.pem
+```
+
+* Copy the output of the prior command (`provider-services keys export default`) into the `key.pem` file
 
 > _**NOTE -**_ file should contain only what's between `-----BEGIN TENDERMINT PRIVATE KEY-----` and  `-----END TENDERMINT PRIVATE KEY-----` (including the `BEGIN` and `END` lines):
 
