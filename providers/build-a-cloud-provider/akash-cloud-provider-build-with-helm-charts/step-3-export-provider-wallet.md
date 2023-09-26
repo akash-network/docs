@@ -19,6 +19,8 @@ provider-services keys list
 
 ### Example/Expected Output
 
+> _**NOTE**_ - in this example the provider key name is `default` and this key name will be used in the subsequent sections of this documentation.  Please adjust the key nane as necessary to suit your needs and preferences.
+
 ```
 provider-services keys list
 - name: ""
@@ -26,7 +28,7 @@ provider-services keys list
   address: akash1<redacted>
   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"<redacted>"}'
   mnemonic: ""
-- name: mykey
+- name: default
   type: local
   address: akash1<redacted>
   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"<redacted>"}'
