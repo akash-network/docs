@@ -4,7 +4,7 @@ Create a deployment configuration [deploy.yaml](https://github.com/akash-network
 
 ### Modify your Configuration
 
-You may use the sample deployment file as-is or modify it for your own needs as described in our [SDL (Stack Definition Language)](https://github.com/akash-network/docs/blob/master/sdl/README.md) documentation. A typical modification would be to reference your own image instead of our demo app image.
+You may use the sample deployment file as-is or modify it for your own needs as described in our [SDL (Stack Definition Language)](../../../sdl/) documentation. A typical modification would be to reference your own image instead of our demo app image.
 
 #### EXAMPLE CONFIGURATION:
 
@@ -37,7 +37,7 @@ profiles:
       pricing:
         web: 
           denom: uakt
-          amount: 10000
+          amount: 1000000
 
 deployment:
   web:

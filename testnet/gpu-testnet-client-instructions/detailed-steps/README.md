@@ -11,7 +11,7 @@ Explore detailed steps and options of the Akash CLI.  In this guide we will defi
 * [Create your Configuration](part-5.-create-your-configuration.md)
 * [Create your Certificate](part-6.-create-your-certificate.md)
 * [Create your Deployment](part-7.-create-your-deployment.md)
-* [View your Bids](../../../other-resources/sandbox/detailed-steps/part-8.-view-your-bids.md)
+* [View your Bids](../../../guides/sandbox/detailed-steps/part-8.-view-your-bids.md)
 * [Create a Lease](../../../guides/cli/detailed-steps/part-9.-create-a-lease.md)
 * [Send the Manifest](part-10.-send-the-manifest.md)
 * [Update the Deployment](part-7.-create-your-deployment.md)

@@ -5,7 +5,7 @@ Applications can be deployed onto the Akash network using a platform that best s
 * [Akash Console (web app)](deploy/)
 * [Cloudmos Deploy (web app)](cloudmos-deploy/)
 * [Using the Command Line for Akash Deployments ](cli/)
-* [Akash Sandbox Use](../other-resources/sandbox/)
+* [Akash Sandbox Use](sandbox/)
 * [Awesome Akash Example Distributed Applications](apps-on-akash.md)
 
 ## Best Practices
