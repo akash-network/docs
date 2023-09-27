@@ -9,19 +9,21 @@ We could let our node catch up to the current block but this would take a very l
 ```
 rm -rf ~/.akash/data; \
 mkdir -p ~/.akash/data; \
-cd ~/.akash/data
+cd ~/.akash
 ```
 
 ### Download Snapshot&#x20;
 
-> _**NOTE**_ - if any issues are encountered with the steps below and during snapshot download attempt - visit `https://cosmos-snapshots.s3.filebase.com` directly to isolate a pruned Akash snapshot for use and download.  After the isolation of a desired, recent snapshot - perform the `wget` step for the URL associated with that snapshot and then proceed to the `tar` command to unpack.
+> NOTE - in the `Example Steps` provided below a specific snapshot version is used (`12992214`).  In your use the current/latest snapshot version should be used.  The latest Akash snapshot version - made available via Polkachu - can be found [here](https://polkachu.com/tendermint\_snapshots/akash).  Replace all references to example snapshot version `12992214` with the current/latest version found on this site.
+
+#### Example Steps
 
 ```
-SNAP_URL="$(curl -s -o - https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json | jq -r '.latest')"
+wget -O akash_12992214.tar.lz4 https://snapshots.polkachu.com/snapshots/akash/akash_12992214.tar.lz4 --inet4-only
 
-wget -c "$SNAP_URL"
+apt-get install lz4
 
-SNAP="${SNAP_URL##*/}"
+lz4 -d akash_12992214.tar.lz4
 
-tar xzvf "$SNAP" --force-local
+tar -xvf akash_12992214.tar
 ```

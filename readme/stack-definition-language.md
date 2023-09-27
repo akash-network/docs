@@ -262,7 +262,7 @@ If your deployment is optimized to run on multiple GPU models, include the appro
 
 Use of Stable Payments is supported in the Akash SDL and is declared in the placement section of the SDL as shown in the example below.
 
-> _**NOTE**_ - currently only `Axelar USDC (uusdc)` is supported and `denom` must be specified as the precise IBC channel name shown in the example.
+> _**NOTE**_ - currently only `Axelar USDC (usdc)` is supported and `denom` must be specified as the precise IBC channel name shown in the example.
 
 ```
   placement:

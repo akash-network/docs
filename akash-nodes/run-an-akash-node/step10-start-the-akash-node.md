@@ -60,8 +60,8 @@ systemctl enable akash-node
 
 ## Check the Status of the Node
 
-* At first the node will show it is catching up.&#x20;
-* Eventually the node will show the height of the latest block.&#x20;
+* Initially the node will show a status of `"catching_up":true` within the output of the status command
+* Eventually the node will show the height of the latest block and should indicate `"catching_up":false`
 *   The latest block number can be found on the [Mintscan](https://www.mintscan.io/akash) website for comparison.
 
     ```
