@@ -186,7 +186,7 @@ EOF
 ## **Provider Bid Defaults**
 
 * When a provider is created the default bid engine settings are used which are used to derive pricing per workload.  If desired these settings could be updated.  But we would recommend initially using the default values.
-* For a through discussion on customized pricing please visit this [guide](../../../providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-6-provider-bid-customization.md).
+* For a through discussion on customized pricing please visit this [guide](../akash-cloud-provider-build-with-helm-charts/step-6-provider-bid-customization.md).
 
 ## Create Provider Via Helm
 
