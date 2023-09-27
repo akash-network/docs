@@ -88,7 +88,9 @@ apt-get install -y nvidia-cuda-toolkit nvidia-container-toolkit nvidia-container
 
 ## NVIDIA Runtime Configuration
 
-> _**NOTE**_ - The steps in this sub-section should be completed on the Kubespray host only
+> _**NOTE**_ - the steps in this sub-section should be completed on the Kubespray host only
+
+> _**NOTE**_ - skip this sub-section if these steps were completed during your Kubernetes build process
 
 In this step we add the NVIDIA runtime confguration into the Kubespray inventory.  The runtime will be applied to necessary Kubernetes hosts when Kubespray builds the cluster in the subsequent step.
 

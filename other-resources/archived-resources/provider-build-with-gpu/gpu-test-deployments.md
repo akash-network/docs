@@ -6,7 +6,7 @@ Test your provider's ability to host GPU related deployments via the SDLs provid
 
 Use any of the Akash deployment tools covered [here](../../../guides/) for your Provider test deployments.
 
-> _**NOTE**_ - this section covers GPU specific deployment testing and verificaiton of your Akash Provider.  In addition, general Provider verifications can be made via this [Provider Checkup](../akash-provider-checkup/) guide.
+> _**NOTE**_ - this section covers GPU specific deployment testing and verificaiton of your Akash Provider.  In addition, general Provider verifications can be made via this [Provider Checkup](../../../providers/build-a-cloud-provider/akash-provider-checkup/) guide.
 
 ## Example GPU SDL #1
 

@@ -7,10 +7,11 @@ Our curated guide to building your decentralized provider follows these sequenti
 * **STEP 1** - [Build the Kubernetes Cluster for your Provider](kubernetes-cluster-for-akash-providers/)
 * **STEP 2** - [Build your Cloud Provider via Helm Charts](akash-cloud-provider-build-with-helm-charts/)
 * **STEP 3** - [Complete a CheckUp of your New Provider](akash-provider-checkup/)
-* **STEP 4** - [Enable Persistent Storage on your Cloud Provider](helm-based-provider-persistent-storage-enablement/)
-* **STEP 5** - [Provider Maintenance](../akash-provider-troubleshooting/provider-maintenance.md)
-* **STEP 6** - [Provider Troubleshooting](../akash-provider-troubleshooting/)
-* **STEP 7** - [What's Next (Provider Care and Maintenance)](../akash-provider-troubleshooting/maintaining-and-rotating-kubernetes-etcd-certificates-a-how-to-guide.md)
+* **STEP 4** - [Enable GPU Resources on your Cloud Provider](gpu-resource-enablement-optional-step/)
+* **STEP 5** - [Enable Persistent Storage on your Cloud Provider](helm-based-provider-persistent-storage-enablement/)
+* **STEP 6** - [Provider Maintenance](../akash-provider-troubleshooting/provider-maintenance.md)
+* **STEP 7** - [Provider Troubleshooting](../akash-provider-troubleshooting/)
+* **STEP 8** - [What's Next (Provider Care and Maintenance)](../akash-provider-troubleshooting/maintaining-and-rotating-kubernetes-etcd-certificates-a-how-to-guide.md)
 
 #### OPTIONAL STEPS
 
@@ -24,7 +25,7 @@ Our curated guide to building your decentralized provider follows these sequenti
 
 Use the guide below to build an Akash provider hosting GPU resources:
 
-* [Provider Build With GPU](provider-build-with-gpu/)
+* [Provider Build With GPU](../../other-resources/archived-resources/provider-build-with-gpu/)
 
 #### VERIFICATIONS AND TROUBLESHOOTING
 
