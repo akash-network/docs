@@ -17,3 +17,4 @@ The guide is broken down into the following categories:
 * [Force New ReplicaSet Workaround](force-new-replicaset-workaround.md)
 * [Close Leases Based on Image](close-leases-based-on-image.md)
 * [Provider Bid Script Migration for GPU Model Pricing](provider-bid-script-migration-gpu-models.md)
+* [GPU Provider Troubleshooting](gpu-provider-troubleshooting.md)

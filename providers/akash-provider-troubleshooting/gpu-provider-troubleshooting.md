@@ -116,6 +116,9 @@ nvdp    nvidia-device-plugin    1           2023-09-23 14:30:34.18183027 +0200 C
 
 * In rare circumstances it has been found that the CUDA Drivers Fabric Manager needs to be installed on worker nodes hosting GPU resources
 * If the output of the `torch.cuda.is_available()` command - covered in prior section in this doc - is an error condition, consider installing the CUDA Drivers Fabric Manager to resolve issue
+* Frequently encountered error message encounter when issue exists:\
+  \
+  `torch.cuda.is_available() function: Error 802: system not yet initialized (Triggered internally at ../c10/cuda/CUDAFunctions.cpp:109.)`
 * Further details on the CUDA Drivers Fabric Manager are available [here](https://forums.developer.nvidia.com/t/error-802-system-not-yet-initialized-cuda-11-3/234955)
 
 > _**NOTE**_ - replace `525` in the following command with the NVIDIA driver version used on your host
