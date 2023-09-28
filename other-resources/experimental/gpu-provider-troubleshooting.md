@@ -4,7 +4,7 @@
 
 Should your Akash Provider encounter issues during the installation process or in post install hosting of GPU resources, follow the troubleshooting steps in this guide to isolate the issue.
 
-> _**NOTE**_ - these steps should be conducted on each Akask Provider/Kubernetes worker nodes that host GPU resources
+> _**NOTE**_ - these steps should be conducted on each Akask Provider/Kubernetes worker nodes that host GPU resources unless stated otherwise within the step
 
 * [Basic GPU Resource Verifications](gpu-provider-troubleshooting.md#basic-gpu-resource-verifications)
 * [Examine Linux Kernel Logs for GPU Resource Errors and Mismatches](gpu-provider-troubleshooting.md#examine-linux-kernel-logs-for-gpu-resource-errors-and-mismatches)
@@ -96,6 +96,8 @@ dmesg -T | grep -Ei 'nvidia|nvml|cuda|mismatch'
 ```
 
 ## Ensure Correct Version/Presence of NVIDIA Device Plugin
+
+> _**NOTE**_ - conduct this verification step on the Kubernetes master node on which Helm was installed during your Akash Provider build
 
 ```
 helm -n nvidia-device-plugin list
