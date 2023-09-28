@@ -2,7 +2,7 @@
 
 ## Overview
 
-In your Akash Provider encounters issues during the installation process or in post install hosting of GPU resources, follow the troubleshooting steps in this guide to isolate the issue.
+Should your Akash Provider encounter issues during the installation process or in post install hosting of GPU resources, follow the troubleshooting steps in this guide to isolate the issue.
 
 > _**NOTE**_ - these steps should be conducted on each Akask Provider/Kubernetes worker nodes that host GPU resources
 
