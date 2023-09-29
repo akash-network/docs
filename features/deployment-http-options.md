@@ -7,6 +7,8 @@ Akash deployment SDL services stanza definitions have been augmented to include 
 The following “http\_options” have been introduced in this version.  In subsequent sections of this guide the placement of “http\_options” within the SDL services stanza will be detailed.\
 
 
+> NOTE - the default HTTP option settings can be found [here](https://github.com/akash-network/node/blob/main/sdl/v2.go#L18..L37)
+
 * _**Max\_body\_size**_ - sets the maximum size of an individual HTTP request body
 * _**Read\_timeout**_ - duration the proxy will wait for a response from the service&#x20;
 * _**Send\_timeout**_ - duration the proxy will wait for the service to accept a request
