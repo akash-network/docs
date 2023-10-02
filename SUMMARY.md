@@ -121,6 +121,7 @@
       * [GPU Provider Configuration](other-resources/experimental/build-a-cloud-provider/gpu-resource-enablement-optional-step/gpu-provider-configuration.md)
       * [GPU Node Label](other-resources/experimental/build-a-cloud-provider/gpu-resource-enablement-optional-step/gpu-node-label.md)
       * [Apply NVIDIA Runtime Engine](other-resources/experimental/build-a-cloud-provider/gpu-resource-enablement-optional-step/apply-nvidia-runtime-engine.md)
+      * [Update Akash Provider](providers/build-a-cloud-provider/gpu-resource-enablement-optional-step/update-akash-provider.md)
       * [GPU Test Deployments](other-resources/experimental/build-a-cloud-provider/gpu-resource-enablement-optional-step/gpu-test-deployments.md)
     * [TLS Certs for Akash Provider (Optional Step)](providers/build-a-cloud-provider/tls-certs-for-akash-provider-optional-step/README.md)
       * [Install Let's Encrypt Cert Manager](providers/build-a-cloud-provider/tls-certs-for-akash-provider-optional-step/install-lets-encrypt-cert-manager.md)
