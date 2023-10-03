@@ -8,4 +8,4 @@ The [Akash server on Discord](https://discord.akash.network) is a great place to
 
 * **Deployments:** Message the **#deployments** channel
 * **Providers:** Message the **#providers** channel
-* **Validators:** Message the **#validators-mainnet** channel
+* **Validators:** Message the **#validators** channel
