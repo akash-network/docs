@@ -13,7 +13,7 @@ In this guide we will review:
 
 * Axelar USDC (axlUSDC)
 
-## Methods to Transfer USDC onto Akash for Stable Payments
+## Transfer USDC onto Akash using Leap Wallet
 
 ### Section Overview
 
@@ -22,8 +22,6 @@ In this section we will detail methods to transfer Axelar USDC into your Akash a
 ### Leap Wallet
 
 We find that using Leap Wallet to be the simplest method of transferring Axelar USDC into the Akash network and associated accounts as no manual specification of the IBC is necessary.
-
-#### Leap Wallet Overview
 
 In the steps that follow we will swap Akash AKT for Axelar USDC.  Other methods are possible but if you would like to follow these instructions explictly, ensure that you have some available AKT.
 
@@ -65,7 +63,7 @@ In the steps that follow we will swap Akash AKT for Axelar USDC.  Other methods 
 
 <figure><img src="../../.gitbook/assets/sendOntoAkash.png" alt=""><figcaption></figcaption></figure>
 
-### Verify IBC Transfer and Availability of USDC on Akask Network
+### Verify IBC Transfer and Availability of USDC on Akash Network
 
 * The simplest means of verifying the IBC transfer of USDC was successful and is available in your account on the Akash network is via the Akash CLI.
 * USDC balances can also be verified in Cloudmos Deploy of preferred.
