@@ -5,4 +5,4 @@ Developers can begin experimenting with Akash Deployments within our Sandbox net
 ### Next Steps
 
 * [Create First Akash Deployment on the Sandbox Network](../guides/sandbox/)
-* [Join our Discord Server](https://discord.com/invite/DxftX67)
+* [Join our Discord Server](https://discord.gg/akash)
