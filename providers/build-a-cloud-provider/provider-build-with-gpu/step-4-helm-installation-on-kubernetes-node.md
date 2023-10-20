@@ -20,8 +20,6 @@ helm repo add akash https://akash-network.github.io/helm-charts
 helm repo update
 ```
 
-
-
 ## **Confirmation of Helm Install**
 
 **Print Helm Version**

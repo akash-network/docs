@@ -30,7 +30,7 @@ kubectl apply -f nvidia-runtime-class.yaml
 helm upgrade -i nvdp nvdp/nvidia-device-plugin \
   --namespace nvidia-device-plugin \
   --create-namespace \
-  --version 0.13.0 \
+  --version 0.14.1 \
   --set runtimeClassName="nvidia"
 ```
 
@@ -40,7 +40,7 @@ helm upgrade -i nvdp nvdp/nvidia-device-plugin \
 root@ip-172-31-8-172:~# helm upgrade -i nvdp nvdp/nvidia-device-plugin \
   --namespace nvidia-device-plugin \
   --create-namespace \
-  --version 0.13.0 \
+  --version 0.14.1 \
   --set runtimeClassName="nvidia"
   
 Release "nvdp" does not exist. Installing it now.
@@ -78,7 +78,7 @@ kubectl label nodes <node-name> allow-nvdp=true
 helm upgrade -i nvdp nvdp/nvidia-device-plugin \
   --namespace nvidia-device-plugin \
   --create-namespace \
-  --version 0.13.0 \
+  --version 0.14.1 \
   --set runtimeClassName="nvidia" \
   --set-string nodeSelector.allow-nvdp="true"
 ```

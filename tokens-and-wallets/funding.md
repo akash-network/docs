@@ -1,10 +1,8 @@
 # Developer Tokens
 
-Developers can request funding by joining the Akash Community. &#x20;
-
-If you need tokens to experiment with your first deployment, please make a request via our Discord server and in the `general-chat` channel.
+Developers can begin experimenting with Akash Deployments within our Sandbox network.  The Sandbox allows short-term - deployments may be destroyed after 24 hour of run time - without needing to spend actual funds to get started.&#x20;
 
 ### Next Steps
 
-* [Install Akash and create an account](../guides/cli/detailed-steps/)
+* [Create First Akash Deployment on the Sandbox Network](../guides/sandbox/)
 * [Join our Discord Server](https://discord.gg/akash)

@@ -1,5 +1,7 @@
 # STEP 1 - Prerequisites of an Akash Provider
 
+> _**NOTE**_ - the commands in this section and in all remaining sections of this guide assume that the `root` user is used.  For ease we suggest using the `root` user for the Kubernetes and Akash Provider install.  If a non-root user is used instead, minor command adjustments may be necessary such as using `sudo` command prefixes and updating the home directory in command syntaxes.
+
 ## Akash Wallet
 
 Placing a bid on an order requires a 5 AKT deposit placed into collateral per bid won. If the provider desired 2 concurrent leases, the provider’s wallet would need minimum funding of 10AKT.
@@ -8,7 +10,8 @@ As every deployment request bid requires 5 AKT to be deposited in the escrow acc
 
 The steps to create an Akash wallet are covered in the following documentation sections:
 
-* [Create an Account](../../../other-resources/sandbox/detailed-steps/part-2.-create-an-account.md)
+* [Install Akash CLI](../../../guides/cli/detailed-steps/part-1.-install-akash.md)
+* [Create an Account](../../../guides/sandbox/detailed-steps/part-2.-create-an-account.md)
 * [Fund Your Account](../../../guides/cli/detailed-steps/part-3.-fund-your-account.md)
 
 ## **Kubernetes Cluster**

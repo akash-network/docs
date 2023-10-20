@@ -19,6 +19,8 @@ provider-services keys list
 
 ### Example/Expected Output
 
+> _**NOTE**_ - in this example the provider key name is `default` and this key name will be used in the subsequent sections of this documentation.  Please adjust the key nane as necessary to suit your needs and preferences.
+
 ```
 provider-services keys list
 - name: ""
@@ -26,7 +28,7 @@ provider-services keys list
   address: akash1<redacted>
   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"<redacted>"}'
   mnemonic: ""
-- name: mykey
+- name: default
   type: local
   address: akash1<redacted>
   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"<redacted>"}'
@@ -45,13 +47,13 @@ provider-services keys list
 ```
 cd ~
 
-provider-services keys export mykey1
+provider-services keys export default
 ```
 
 #### Expected/Example Output
 
 ```
-provider-services keys export mykey1
+provider-services keys export default
 
 Enter passphrase to encrypt the exported key:                          
 Enter keyring passphrase:                                              
@@ -66,7 +68,15 @@ REDACTED
 
 ### &#x20;STEP 2 - Create key.pem and Copy Output Into File
 
-* Copy the contents of the prior step into the `key.pem` file
+* Create a `key.pem` file
+
+```
+cd ~
+
+vim key.pem
+```
+
+* Copy the output of the prior command (`provider-services keys export default`) into the `key.pem` file
 
 > _**NOTE -**_ file should contain only what's between `-----BEGIN TENDERMINT PRIVATE KEY-----` and  `-----END TENDERMINT PRIVATE KEY-----` (including the `BEGIN` and `END` lines):
 

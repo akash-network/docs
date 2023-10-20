@@ -138,7 +138,7 @@ You should see a response similar to:
 Find the Deployment Sequence (DSEQ) in the deployment you just created. You will need to replace the AKASH\_DSEQ with the number from your deployment to configure a shell variable.
 
 ```bash
-export AKASH_DSEQ=CHANGETHIS
+export AKASH_DSEQ=<CHANGETHIS>
 ```
 
 Now set the Order Sequence (OSEQ) and Group Sequence (GSEQ). Note that if this is your first time deploying on Akash, OSEQ and GSEQ will be 1.

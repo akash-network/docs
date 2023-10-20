@@ -18,5 +18,6 @@ This guide uses a single Kubernetes master node.
 * [Hostname Operator Build](step-7-hostname-operator-build.md)
 * [Ingress Controller Install](step-8-ingress-controller-install.md)
 * [Firewall Rule Review](step-9-firewall-rule-review.md)
+* [Disable Unattended Upgrades](step-11-disable-unattended-upgrades.md)
 * [Provider Whitelisting (Optional)](step-11-provider-whitelisting-optional.md)
 * [Extras](step-12-extras.md)

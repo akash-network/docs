@@ -101,3 +101,58 @@ kubectl exec --stdin --tty -n akash-services akash-node-1-78954d745c-g46pf -- /b
 root@akash-node-1-78954d745c-g46pf:/# akash status
 {"NodeInfo":{"protocol_version":{"p2p":"8","block":"11","app":"0"},"id":"330603b82b2e0dbeadf84b13d00d81ff19017854","listen_addr":"tcp://0.0.0.0:26656","network":"akashnet-2","version":"0.34.19","channels":"40202122233038606100","moniker":"mynode-1","other":{"tx_index":"on","rpc_address":"tcp://0.0.0.0:26657"}},"SyncInfo":{"latest_block_hash":"826995C3E57B5D5B56F2EB5B47C3F9315F87795F078063DE9E6C736064C3A6C3","latest_app_hash":"1B3DCEFCFA1752777FBEC5B1E26DCB29484D22518C86492D50E8FCE02560D1B5","latest_block_height":"6260678","latest_block_time":"2022-06-10T16:51:26.696963875Z","earliest_block_hash":"1957CBF8018B0819880ADB44402AE837E170FAD47FF5F745F9872D622F037816","earliest_app_hash":"2A0D0C3541D399D24C26A4098A5741C628B28AC15EFEA6947DF6D3D71FD24B1F","earliest_block_height":"6260001","earliest_block_time":"2022-06-10T15:42:43.877575807Z","catching_up":false},"ValidatorInfo":{"Address":"3410C9951968DA68145D8A4F06B3C7BA962D6926","PubKey":{"type":"tendermint/PubKeyEd25519","value":"tHKKYDHdV3VoWtRHzOu5vUP94vGc98QD8bxytH1Jlwo="},"VotingPower":"0"}}
 ```
+
+## Additional Node Verification
+
+### STEP 1 - From the K8s Control-Plane Node
+
+```
+export AKASH_NODE="http://$(kubectl -n akash-services get ep akash-node-1 -o jsonpath='{.subsets[0].addresses[0].ip}'):26657"
+
+curl -s "$AKASH_NODE/status" | jq -r .
+```
+
+### STEP 2 - From a Remote Address (Outside the K8s Network)
+
+* Use `kubectl port-forward` for forwarding the akash node (RPC) port 26657/tcp to your local station.
+
+#### Forward 26657 to 127.0.0.1:26657
+
+```
+kubectl -n akash-services port-forward service/akash-node-1 26657:26657
+```
+
+_Expected/Example Output_
+
+```
+$ kubectl -n akash-services port-forward service/akash-node-1 26657:26657
+Forwarding from 127.0.0.1:26657 -> 26657
+Forwarding from [::1]:26657 -> 26657
+```
+
+#### Put the kubectl port-forward Process into Background
+
+* Press Ctrl+Z and type bg + Enter as follows:
+
+```
+^Z
+[1]+  Stopped                 kubectl -n akash-services port-forward service/akash-node-1 26657:26657
+$ bg
+[1]+ kubectl -n akash-services port-forward service/akash-node-1 26657:26657 &
+```
+
+#### Access the RPC as if it were Running Locally
+
+```
+curl -s http://127.0.0.1:26657/status | jq -r .
+```
+
+#### Stop kubectl port-forward When Done Testing
+
+```
+$ jobs
+[1]+  Running                 kubectl -n akash-services port-forward service/akash-node-1 26657:26657 &
+$ kill %1
+$ jobs
+[1]+  Terminated              kubectl -n akash-services port-forward service/akash-node-1 26657:26657
+```

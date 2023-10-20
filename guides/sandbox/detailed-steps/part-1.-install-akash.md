@@ -46,6 +46,8 @@ provider-services version
 **Expect/Example Output**
 
 ```
+provider-services version
+
 v0.4.6
 ```
 {% endtab %}
@@ -122,7 +124,9 @@ provider-services version
 **Expected/Example Result**
 
 ```
-v0.2.1
+provider-services version
+
+v0.4.6
 ```
 {% endtab %}
 

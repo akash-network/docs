@@ -6,7 +6,5 @@
 cd ~
 
 git clone https://github.com/akash-network/helm-charts.git
-
-cd ~/helm-charts
 ```
 

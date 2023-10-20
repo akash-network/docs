@@ -39,7 +39,7 @@ tcp:
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 
 helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
-  --version 4.7.1 \
+  --version 4.7.2 \
   --namespace ingress-nginx --create-namespace \
   -f ingress-nginx-custom.yaml
 ```

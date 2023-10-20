@@ -1,23 +1,19 @@
 # STEP 4 - Helm Installation on Kubernetes Node
 
+## Install Helm on a Kubernetes Master Node
 
+```
+wget https://get.helm.sh/helm-v3.11.0-linux-amd64.tar.gz
 
-*   Install Helm on a Kubernetes Master Node
+tar -zxvf helm-v3.11.0-linux-amd64.tar.gz
 
-    ```
-    wget https://get.helm.sh/helm-v3.11.0-linux-amd64.tar.gz
+install linux-amd64/helm /usr/local/bin/helm
 
-    tar -zxvf helm-v3.11.0-linux-amd64.tar.gz
+###Remove any potential prior repo instances
+helm repo remove akash
 
-    install linux-amd64/helm /usr/local/bin/helm
-
-    ###Remove any potential prior repo instances
-    helm repo remove akash
-
-    helm repo add akash https://akash-network.github.io/helm-charts
-    ```
-
-
+helm repo add akash https://akash-network.github.io/helm-charts
+```
 
 ## **Confirmation of Helm Install**
 

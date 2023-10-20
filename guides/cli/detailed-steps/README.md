@@ -14,15 +14,15 @@ This is a great opportunity to connect with the team at Akash Network and to spo
 
 ### Overview of Verbose Steps
 
-* [Install Akash](../../../other-resources/sandbox/detailed-steps/part-1.-install-akash.md)
-* [Create an Account](../../../other-resources/sandbox/detailed-steps/part-2.-create-an-account.md)
+* [Install Akash](../../sandbox/detailed-steps/part-1.-install-akash.md)
+* [Create an Account](../../sandbox/detailed-steps/part-2.-create-an-account.md)
 * [Fund your Account](part-3.-fund-your-account.md)
 * [Configure your Network](part-4.-configure-your-network.md)
 * [Create your Configuration](part-5.-create-your-configuration.md)
-* [Create your Certificate](../../../other-resources/sandbox/detailed-steps/part-6.-create-your-certificate.md)
+* [Create your Certificate](../../sandbox/detailed-steps/part-6.-create-your-certificate.md)
 * [Create your Deployment](part-7.-create-your-deployment.md)
 * [View your Bids](part-8.-view-your-bids.md)
 * [Create a Lease](../../../testnet/gpu-testnet-client-instructions/detailed-steps/part-9.-create-a-lease.md)
 * [Send the Manifest](part-10.-send-the-manifest.md)
 * [Update the Deployment](part-11.-update-the-deployment.md)
-* [Close Deployment](../../../other-resources/sandbox/detailed-steps/close-deployment.md)
+* [Close Deployment](../../sandbox/detailed-steps/close-deployment.md)

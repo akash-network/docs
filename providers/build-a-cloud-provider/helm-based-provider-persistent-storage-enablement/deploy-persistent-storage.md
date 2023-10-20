@@ -16,7 +16,7 @@ The Helm charts are intended to simplify deployment and upgrades.
 ## Persistent Storage Deployment
 
 * **Note** - if any issues are encountered during the Rook deployment, tear down the Rook-Ceph components via the steps listed [here](teardown.md) and begin anew.
-* Deployment typically takes approximately 10 minutes to complete**.**
+* Deployment typically takes approximately 10 minutes to complete\*\*.\*\*
 
 ### Migration procedure
 
@@ -47,17 +47,17 @@ helm repo add rook-release https://charts.rook.io/release
 * Verify the Rook repo has been added
 
 ```
-helm search repo rook-release --version v1.12.2
+helm search repo rook-release --version v1.12.4
 ```
 
 * Expected/Example Result
 
 ```
-# helm search repo rook-release --version v1.12.2
+# helm search repo rook-release --version v1.12.4
 
 NAME                          	CHART VERSION	APP VERSION	DESCRIPTION                                       
-rook-release/rook-ceph        	v1.12.2       	v1.12.2     	File, Block, and Object Storage Services for yo...
-rook-release/rook-ceph-cluster	v1.12.2       	v1.12.2     	Manages a single Ceph cluster namespace for Rook
+rook-release/rook-ceph        	v1.12.4       	v1.12.4     	File, Block, and Object Storage Services for yo...
+rook-release/rook-ceph-cluster	v1.12.4       	v1.12.4     	Manages a single Ceph cluster namespace for Rook
 ```
 
 ### **Deployment Steps**
@@ -72,7 +72,7 @@ rook-release/rook-ceph-cluster	v1.12.2       	v1.12.2     	Manages a single Ceph
 
 > For all-in-one deployments, you will likely want only one replica of the CSI provisioners.
 >
-> * Add following to  `rook-ceph-operator.values.yml` created in the subsequent step
+> * Add following to `rook-ceph-operator.values.yml` created in the subsequent step
 > * By setting `provisionerReplicas` to `1`, you ensure that only a single replica of the CSI provisioner is deployed. This defaults to `2` when it is not explicitly set.
 
 ```
@@ -100,7 +100,7 @@ EOF
 ### Install the Operator Chart
 
 ```
-helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.12.2 -f rook-ceph-operator.values.yml
+helm install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.12.4 -f rook-ceph-operator.values.yml
 ```
 
 **PRODUCTION**
@@ -110,7 +110,7 @@ helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/ro
 * Install the Operator chart:
 
 ```
-helm upgrade --install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.12.2
+helm install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.12.4
 ```
 
 #### STEP 2 - Install Ceph Cluster Helm Chart
@@ -171,36 +171,6 @@ cephBlockPools:
       enabled: true
       name: beta3
       isDefault: true
-      reclaimPolicy: Delete
-      allowVolumeExpansion: true
-      parameters:
-        # RBD image format. Defaults to "2".
-        imageFormat: "2"
-        # RBD image features. Available for imageFormat: "2". CSI RBD currently supports only `layering` feature.
-        imageFeatures: layering
-        # The secrets contain Ceph admin credentials.
-        csi.storage.k8s.io/provisioner-secret-name: rook-csi-rbd-provisioner
-        csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph
-        csi.storage.k8s.io/controller-expand-secret-name: rook-csi-rbd-provisioner
-        csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph
-        csi.storage.k8s.io/node-stage-secret-name: rook-csi-rbd-node
-        csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
-        # Specify the filesystem type of the volume. If not specified, csi-provisioner
-        # will set default as `ext4`. Note that `xfs` is not recommended due to potential deadlock
-        # in hyperconverged settings where the volume is mounted on the same node as the osds.
-        csi.storage.k8s.io/fstype: ext4
-
-  - name: akash-nodes
-    spec:
-      failureDomain: host
-      replicated:
-        size: 1
-      parameters:
-        min_size: "1"
-    storageClass:
-      enabled: true
-      name: akash-nodes
-      isDefault: false
       reclaimPolicy: Delete
       allowVolumeExpansion: true
       parameters:
@@ -307,36 +277,6 @@ cephBlockPools:
         # in hyperconverged settings where the volume is mounted on the same node as the osds.
         csi.storage.k8s.io/fstype: ext4
 
-  - name: akash-nodes
-    spec:
-      failureDomain: host
-      replicated:
-        size: 3
-      parameters:
-        min_size: "2"
-    storageClass:
-      enabled: true
-      name: akash-nodes
-      isDefault: false
-      reclaimPolicy: Delete
-      allowVolumeExpansion: true
-      parameters:
-        # RBD image format. Defaults to "2".
-        imageFormat: "2"
-        # RBD image features. Available for imageFormat: "2". CSI RBD currently supports only `layering` feature.
-        imageFeatures: layering
-        # The secrets contain Ceph admin credentials.
-        csi.storage.k8s.io/provisioner-secret-name: rook-csi-rbd-provisioner
-        csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph
-        csi.storage.k8s.io/controller-expand-secret-name: rook-csi-rbd-provisioner
-        csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph
-        csi.storage.k8s.io/node-stage-secret-name: rook-csi-rbd-node
-        csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
-        # Specify the filesystem type of the volume. If not specified, csi-provisioner
-        # will set default as `ext4`. Note that `xfs` is not recommended due to potential deadlock
-        # in hyperconverged settings where the volume is mounted on the same node as the osds.
-        csi.storage.k8s.io/fstype: ext4
-
 # Do not create default Ceph file systems, object stores
 cephFileSystems:
 cephObjectStores:
@@ -351,8 +291,8 @@ EOF
 * Install the Cluster chart:
 
 ```
-helm upgrade --install --create-namespace -n rook-ceph rook-ceph-cluster \
-   --set operatorNamespace=rook-ceph rook-release/rook-ceph-cluster --version 1.12.2 -f rook-ceph-cluster.values.yml
+helm install --create-namespace -n rook-ceph rook-ceph-cluster \
+   --set operatorNamespace=rook-ceph rook-release/rook-ceph-cluster --version 1.12.4 -f rook-ceph-cluster.values.yml
 ```
 
 #### STEP 3 - Label the storageClass
@@ -362,7 +302,6 @@ helm upgrade --install --create-namespace -n rook-ceph rook-ceph-cluster \
 * Change beta3 to your storageClass you have picked before
 
 ```
-kubectl label sc akash-nodes akash.network=true
 kubectl label sc beta3 akash.network=true
 ```
 

@@ -2,7 +2,7 @@
 description: Configure provider to offer sufficient ephemeral storage
 ---
 
-# STEP 6 - Provider Ephemeral Storage Config (OPTIONAL)
+# STEP 7 - Provider Ephemeral Storage Config (OPTIONAL)
 
 ## Overview
 
@@ -193,6 +193,8 @@ mv /var/lib/containerd /data/containerd
 ```
 
 ### STEP 13 - kubespray the cluster with the following config
+
+* This configuration entry should be made in the file of `group_vars/k8s_cluster/k8s-cluster.yml` on the Kubespray host
 
 ```
 containerd_storage_dir: "/data/containerd"

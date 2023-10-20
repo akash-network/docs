@@ -1,6 +1,6 @@
 # MetalLB Install
 
-In this guide we present paths to install MetalLB both via Helm Charts and Kubespray.  Please follow only the path applicable, ideal to your environment.
+In this guide we present paths to install MetalLB both via Helm Charts and Kubespray. Please follow only the path applicable, ideal to your environment.
 
 Sections within this guide:
 
@@ -15,7 +15,7 @@ Sections within this guide:
 ```
 helm repo add metallb https://metallb.github.io/metallb
 
-helm -n metallb-system install metallb metallb/metallb --version 0.13.7
+helm -n metallb-system install metallb metallb/metallb --version 0.13.11
 ```
 
 ### Expose your MetalLB Controller to the Akash IP Operator
@@ -79,7 +79,7 @@ kubectl apply -f metallb-config.yaml
 
 Based on MetalLB via Kubespray guidance documented [here](https://github.com/kubernetes-sigs/kubespray/blob/v2.20.0/docs/metallb.md)
 
-The Kubespray flags provided bellow should go into your Provider's Kubespray inventory file and under the vars section.  Our reference Provider Kubespray inventory file - used during initial Provider Kubernetes cluster build - is located [here](https://docs.akash.network/providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-4-ansible-inventory#manual-edits-insertions-of-the-hosts.yaml-inventory-file).
+The Kubespray flags provided bellow should go into your Provider's Kubespray inventory file and under the vars section. Our reference Provider Kubespray inventory file - used during initial Provider Kubernetes cluster build - is located [here](https://docs.akash.network/providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-4-ansible-inventory#manual-edits-insertions-of-the-hosts.yaml-inventory-file).
 
 ```
 # akash provider needs metallb pool name set to `default` - https://github.com/akash-network/provider/blob/v0.1.0-rc13/cluster/kube/metallb/client.go#L43

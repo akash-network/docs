@@ -7,11 +7,14 @@ Akash deployment SDL services stanza definitions have been augmented to include 
 The following “http\_options” have been introduced in this version.  In subsequent sections of this guide the placement of “http\_options” within the SDL services stanza will be detailed.\
 
 
-* _**Max\_body\_size**_ - sets the maximum size of an individual HTTP request body
-* _**Read\_timeout**_ - duration the proxy will wait for a response from the service&#x20;
-* _**Send\_timeout**_ - duration the proxy will wait for the service to accept a request
-* _**Next\_cases**_ - defines the cases where the proxy will try another replica in the service.  Reference the upcoming “Next Cases Attribute Usage” section for details pertaining to allowed values.
-* _**Next\_tries**_ - number of attempts the proxy will attempt another replica
+> NOTE - the default HTTP option settings can be found [here](https://github.com/akash-network/node/blob/main/sdl/v2.go#L18..L37)
+
+* _**max\_body\_size**_ - sets the maximum size of an individual HTTP request body
+* _**read\_timeout**_ - duration the proxy will wait for a response from the service&#x20;
+* _**send\_timeout**_ - duration the proxy will wait for the service to accept a request
+* _**next\_cases**_ - defines the cases where the proxy will try another replica in the service.  Reference the upcoming “Next Cases Attribute Usage” section for details pertaining to allowed values.
+* _**next\_tries**_ - number of attempts the proxy will attempt another replica
+* _**next\_timeout**_ - amount of time the proxy will wait before considering a timeout has occurred
 
 ## **Example HTTP Options Usage**
 
