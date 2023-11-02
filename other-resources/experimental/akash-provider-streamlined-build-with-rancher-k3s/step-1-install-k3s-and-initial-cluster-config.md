@@ -48,4 +48,4 @@ kubectl label ns lease akash.network=true
 
 ## Removing K3s
 
-To uninstall K3s follow this link https://docs.k3s.io/installation/uninstall
+To uninstall K3s follow [this link](https://docs.k3s.io/installation/uninstall)
