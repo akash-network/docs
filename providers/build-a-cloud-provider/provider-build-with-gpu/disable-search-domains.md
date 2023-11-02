@@ -22,6 +22,8 @@ Apply the following to all Kubernetes master and worker nodes.
 
 > _**IMPORTANT**_ - Make sure you do not have any other config files under the `/etc/netplan` directory, otherwise it could cause unexpected networking issues / issues with booting up your node.
 
+> If you aren't using the DHCP or want to add additional configuration, please refer to the netplan documentation [here](https://netplan.readthedocs.io/en/stable/netplan-yaml/) for additional config options.
+
 ```
 cat > /etc/netplan/01-netcfg.yaml <<'EOF'
 network:
