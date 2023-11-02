@@ -45,3 +45,7 @@ kubectl label ns ingress-nginx app.kubernetes.io/name=ingress-nginx app.kubernet
 kubectl create ns lease
 kubectl label ns lease akash.network=true
 ```
+
+## Removing K3s
+
+To uninstall K3s follow this link https://docs.k3s.io/installation/uninstall
