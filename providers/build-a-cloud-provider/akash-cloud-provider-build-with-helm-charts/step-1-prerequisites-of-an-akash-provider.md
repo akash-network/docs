@@ -58,6 +58,8 @@ In this section we perform the following DNS adjustments:
 
 Apply the following to all Kubernetes master and worker nodes.
 
+> _**IMPORTANT**_ - Make sure you do not have any other config files under the `/etc/netplan` directory, otherwise it could cause unexpected networking issues / issues with booting up your node.
+
 ```
 cat > /etc/netplan/01-netcfg.yaml <<'EOF'
 network:
