@@ -70,6 +70,9 @@ ubuntu-drivers autoinstall
 
 ### Install the NVIDIA CUDA Toolkit
 
+> _**NOTE**_ - The steps in this sub-section should be completed on all Kubernetes nodes hosting GPU resources
+
+
 ```
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | apt-key add -
@@ -87,6 +90,25 @@ apt-get install -y nvidia-cuda-toolkit nvidia-container-toolkit nvidia-container
 * [https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
 
 ## NVIDIA Runtime Configuration
+
+### Worker nodes
+
+> _**NOTE**_ - The steps in this sub-section should be completed on all Kubernetes nodes hosting GPU resources
+
+Update the nvidia-container-runtime config in order to prevent `NVIDIA_VISIBLE_DEVICES=all` abuse where tenants could access more GPU's than they requested.
+
+> _**NOTE**_ - This will only work with `nvdp/nvidia-device-plugin` helm chart installed with `--set deviceListStrategy=volume-mounts` (you'll get there in the next steps)
+
+Make sure the config file `/etc/nvidia-container-runtime/config.toml` contains these line uncommmented and set to these values:
+
+```
+accept-nvidia-visible-devices-envvar-when-unprivileged = false
+accept-nvidia-visible-devices-as-volume-mounts = true
+```
+
+> _**NOTE**_ - `/etc/nvidia-container-runtime/config.toml` is part of `nvidia-container-toolkit-base` package; so it won't override the customer-set parameters there since it is part of the `/var/lib/dpkg/info/nvidia-container-toolkit-base.conffiles`
+
+### Kubespray
 
 > _**NOTE**_ - the steps in this sub-section should be completed on the Kubespray host only
 
