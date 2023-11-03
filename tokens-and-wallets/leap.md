@@ -12,8 +12,9 @@ For **Google chrome**:
 
    ![image](https://github.com/Dimokus88/docs/assets/23629420/4443a3f0-70fa-4e82-a732-fcc4552561a4)
    
-4\. Click the puzzle piece icon in the top right corner of the browser. These are your extensions.![image](https://github.com/Dimokus88/docs/assets/23629420/e2a09fbf-9cab-4fe2-af15-e3990b789800)
+4\. Click the puzzle piece icon in the top right corner of the browser. These are your extensions.
 
+![image](https://github.com/Dimokus88/docs/assets/23629420/e2a09fbf-9cab-4fe2-af15-e3990b789800)
 
 5\. Pin Leap Cosmos Wallet.
 
