@@ -24,7 +24,7 @@ For **Google chrome**:
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/2168c244-2253-4e37-9d00-bc29a50e1dbb)
 
-7\. Click “Create new account”
+7\. Click “Create new wallet”
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/d6c722fc-e526-479b-ae63-f83ce0696dd9)
 
