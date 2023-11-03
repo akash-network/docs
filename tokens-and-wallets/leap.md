@@ -34,7 +34,9 @@ Click "**I have saved it somewhere safe.**".
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/08048f1c-4293-48a3-91fa-e0ec16c199f4)
 
-9\. Go through the procedure of checking the record of your mnemonic phrase, add the missing words to the fields.
+9\. Go through the procedure of checking the record of your mnemonic phrase, add the missing words to the fields. 
+
+Click "Confirm".
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/42638118-746d-40e0-ba07-e4fcb5bdfb0a)
 
