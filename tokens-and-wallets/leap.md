@@ -50,7 +50,8 @@ Click "**Confirm**".
 
 12\. Set Akash Network.
 
-![image](https://github.com/Dimokus88/docs/assets/23629420/d91ce569-467d-4129-86c2-c7840f8928d3)![image](https://github.com/Dimokus88/docs/assets/23629420/6cb03209-a7f3-422e-9bb6-917f27d91d9c)
+![image](https://github.com/Dimokus88/docs/assets/23629420/d0479e4e-ddeb-4374-a6d5-27fd34ec4b3a)
+![image](https://github.com/Dimokus88/docs/assets/23629420/6cb03209-a7f3-422e-9bb6-917f27d91d9c)
 
 13\. You have now downloaded Leap Cosmos Wallet!
 
