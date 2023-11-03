@@ -52,7 +52,7 @@ Click "**Confirm**".
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/d91ce569-467d-4129-86c2-c7840f8928d3)![image](https://github.com/Dimokus88/docs/assets/23629420/6cb03209-a7f3-422e-9bb6-917f27d91d9c)
 
-13\. You have now downloaded Leap Cosmos Wallet and are ready to fund your wallet with Akash!
+13\. You have now downloaded Leap Cosmos Wallet!
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/7aec000f-7d80-48d1-a905-af4b7d890be3)
 
