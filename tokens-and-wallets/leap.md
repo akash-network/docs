@@ -8,7 +8,7 @@ For **Google chrome**:
 
 2\. Search for [Leap Cosmos Wallet](https://chrome.google.com/webstore/detail/leap-cosmos-wallet/fcfcfllfndlomdhbehjjcoimbgofdncg).
 
-3\. Click “Install”
+3\. Click “**Install**”
 
    ![image](https://github.com/Dimokus88/docs/assets/23629420/4443a3f0-70fa-4e82-a732-fcc4552561a4)
    
@@ -24,7 +24,7 @@ For **Google chrome**:
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/2168c244-2253-4e37-9d00-bc29a50e1dbb)
 
-7\. Click “Create new wallet”
+7\. Click “**Create new wallet**”
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/d6c722fc-e526-479b-ae63-f83ce0696dd9)
 
@@ -36,7 +36,7 @@ Click "**I have saved it somewhere safe.**".
 
 9\. Go through the procedure of checking the record of your mnemonic phrase, add the missing words to the fields. 
 
-Click "Confirm".
+Click "**Confirm**".
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/42638118-746d-40e0-ba07-e4fcb5bdfb0a)
 
@@ -44,7 +44,7 @@ Click "Confirm".
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/5972f45b-7034-4dc0-85b4-1f8b92992fdf)
 
-11\. Click the  Leap Cosmos Wallet icon.
+11\. Click the Leap Cosmos Wallet icon.
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/2168c244-2253-4e37-9d00-bc29a50e1dbb)
 
@@ -56,6 +56,6 @@ Click "Confirm".
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/7aec000f-7d80-48d1-a905-af4b7d890be3)
 
-14\. Get address AKT and fund your wallet.
+14\. Get address **AKT** and fund your wallet.
 
 All that is left is to send AKT tokens to the wallet address provided by Leap Cosmos Wallet.
