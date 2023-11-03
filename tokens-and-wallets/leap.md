@@ -54,7 +54,7 @@ Click "**Confirm**".
 
 13\. You have now downloaded Leap Cosmos Wallet!
 
-![image](https://github.com/Dimokus88/docs/assets/23629420/7aec000f-7d80-48d1-a905-af4b7d890be3)
+![image](https://github.com/Dimokus88/docs/assets/23629420/511254dc-9cf7-4b1e-ba21-5dca3c831a08)
 
 14\. Get address **AKT** and fund your wallet.
 
