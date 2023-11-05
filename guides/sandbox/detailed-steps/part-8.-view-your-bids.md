@@ -1,7 +1,5 @@
 # View your Bids
 
-> _**NOTE**_ - a majority of Akash Sandbox providers implement a whitelist and only bid on deployments from known addresses.  Please visit the [Akash Discord server](https://discord.akash.network/) and within the `general-chat` channel request that your Akash account is added to the whitelist.
-
 After a short time, you should see bids from providers for this deployment with the following command:
 
 ```bash
