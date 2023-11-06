@@ -7,6 +7,7 @@
   * [Developer Tokens](tokens-and-wallets/funding.md)
   * [Buy Akash Tokens](tokens-and-wallets/buy.md)
   * [Keplr Wallet](tokens-and-wallets/keplr.md)
+  * Leap Cosmos wallet](tokens-and-wallets/leap.md)
   * [Mixin Messenger for AKT](tokens-and-wallets/mixin-messenger-for-akt.md)
 * [Deployments](guides/README.md)
   * [Cloudmos Deploy](guides/cloudmos-deploy/README.md)
