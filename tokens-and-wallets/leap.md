@@ -30,7 +30,9 @@ We are using **Google Chrome** in this example:
 
 ![image](https://github.com/Dimokus88/docs/assets/23629420/d6c722fc-e526-479b-ae63-f83ce0696dd9)
 
-7\.  ⚠️ ✍️ **Write down your Mnemonic Seed 12 word phrase on a piece of paper.** ✍️⚠️  You’ll need these for the next step and if you loose your account information the mnemonic is the only way to get it back. 
+7\.  ⚠️ ✍️ **Write down your Mnemonic Seed 12 word phrase on a piece of paper.** ✍️⚠️  
+
+You’ll need these for the next step and if you lose your account information the mnemonic is the only way to get it back. 
 
 Click "**I have saved it somewhere safe.**".
 
