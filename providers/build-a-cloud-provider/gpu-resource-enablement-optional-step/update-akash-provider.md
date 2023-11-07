@@ -64,8 +64,7 @@ attributes:
 ```
 
 helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml \
---set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)" \
---set chainid=akashnet-2
+--set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)"
 ```
 
 ## Verify Health of Akash Provider
