@@ -16,6 +16,9 @@ To disable unattended upgrades, execute these two commands on your Kubernetes wo
 echo -en 'APT::Periodic::Update-Package-Lists "0";\nAPT::Periodic::Unattended-Upgrade "0";\n' | tee /etc/apt/apt.conf.d/20auto-upgrades
 
 apt remove unattended-upgrades
+
+systemctl stop unattended-upgrades.service
+systemctl mask unattended-upgrades.service
 ```
 
 ## Verify

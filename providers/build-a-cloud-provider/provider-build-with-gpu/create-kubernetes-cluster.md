@@ -13,9 +13,6 @@ With inventory in place we are ready to build the Kubernetes cluster via Ansible
 ```
 cd ~/kubespray
 
-###Execute following command if not already in the Python virtual environment
-###Creation and activation of virtual evironment described further here:
-###https://docs.akash.network/providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-2-install-ansible
 source venv/bin/activate
 
 ansible-playbook -i inventory/akash/hosts.yaml -b -v --private-key=~/.ssh/id_rsa cluster.yml
@@ -25,7 +22,7 @@ ansible-playbook -i inventory/akash/hosts.yaml -b -v --private-key=~/.ssh/id_rsa
 
 Each node that provides GPUs must be labeled correctly.
 
-> _**NOTE**_ - these configurations should be completed on a Kubernetes master/control plane node
+> _**NOTE**_ - these configurations should be completed on a Kubernetes control plane node
 
 ### Label Template
 
@@ -71,7 +68,7 @@ Labels:             akash.network/capabilities.gpu.vendor.nvidia.model.a4000=tru
 
 ## Additional Kubernetes Configurations
 
-> _**NOTE**_ - these configurations should be completed on a Kubernetes master/control plane node
+> _**NOTE**_ - these configurations should be completed on a Kubernetes control plane node
 
 ```
 kubectl create ns akash-services

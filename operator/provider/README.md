@@ -32,7 +32,7 @@ At ths point you would be left with a Kubernetes cluster that is ready to be a p
 
 The recommended method for setting up a Kubernetes cluster is to use the [Kubespray](https://github.com/kubernetes-sigs/kubespray) project. This project is a collection of ansible resources for setting up a Kubernetes cluster.
 
-The recommended minimum number of machines is three. One machine hosts the Kubernetes master node & provider, with the other machines hosting the compute nodes. It is possible however to provision a single-machine cluster if you choose to, but this configuration is not recommended.
+The recommended minimum number of machines is three. One machine hosts the Kubernetes control plane node & provider, with the other machines hosting the compute nodes. It is possible however to provision a single-machine cluster if you choose to, but this configuration is not recommended.
 
 ### Getting kubespray & setup
 
@@ -67,7 +67,6 @@ Example single node configuration \(not recommended\)
 ```text
 all:
   vars:
-    cluster_id: "1.0.0.1"
     ansible_user: root
   hosts:
     mynode:
@@ -97,14 +96,11 @@ This Ansible inventory file defines a single node file with a host named "mynode
 
 The host is placed into the groups `kube-master`, `etcd`, `kube-node`, and `calico-rr`. All hosts in those groups are then placed into the `k8s-cluster` group. This is similar to a standard configuration for a Kubernetes cluster, but utilizes Calico for networking. Calico is the only networking solution for the Kubernetes cluster that Akash officially supports at this time.
 
-One important detail is the value `cluster_id` which is assigned to all nodes by using the `all` group under `vars` in the YAML file. This value is used by Calico to uniquely identify a set of resources. For a more in depth explanation [see this document](https://hub.docker.com/r/calico/routereflector/).
-
 Example multinode configuration, with a single master
 
 ```text
 all:
   vars:
-    cluster_id: "1.0.0.1"
     ansible_user: root
   hosts:
     mymaster:

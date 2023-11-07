@@ -2,7 +2,7 @@
 
 Create Provider namespaces on your Kubernetes cluster.
 
-Run these commands from a Kubernetes master node which has kubectl access to cluster.
+Run these commands from a Kubernetes control plane node which has kubectl access to cluster.
 
 ```
 kubectl create ns akash-services

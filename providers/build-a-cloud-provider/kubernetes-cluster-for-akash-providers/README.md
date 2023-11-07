@@ -2,7 +2,7 @@
 
 ## **Overview**
 
-Akash leases are deployed via Kubernetes pods on provider clusters.  This guide details the build of the provider’s Kubernetes control plane and worker nodes.
+Akash leases are deployed as Kubernetes pods on provider clusters.  This guide details the build of the provider’s Kubernetes control plane and worker nodes.
 
 The setup of a Kubernetes cluster is the responsibility of the provider. This guide provides best practices and recommendations for setting up a Kubernetes cluster. This document is not a comprehensive guide and assumes pre-existing Kubernetes knowledge.
 
@@ -15,7 +15,7 @@ The Kubernetes instructions in this guide are intended for audiences that have t
 * **Server Administration Skills** - necessary for setting up servers/network making up the Kubernetes cluster
 * **Kubernetes Experience** - a base level of Kubernetes administration is highly recommended
 
-Please consider using the [Praetor](../../community-solutions/praetor.md) application to build an Akash Provider for small and medium sized environments which require little customization.
+> Please consider using the [Praetor](../../community-solutions/praetor.md) application to build an Akash Provider for small and medium sized environments which require little customization.
 
 ## Guide Sections
 
