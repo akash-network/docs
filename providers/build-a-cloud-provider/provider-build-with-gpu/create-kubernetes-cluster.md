@@ -13,9 +13,6 @@ With inventory in place we are ready to build the Kubernetes cluster via Ansible
 ```
 cd ~/kubespray
 
-###Execute following command if not already in the Python virtual environment
-###Creation and activation of virtual evironment described further here:
-###https://docs.akash.network/providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers/step-2-install-ansible
 source venv/bin/activate
 
 ansible-playbook -i inventory/akash/hosts.yaml -b -v --private-key=~/.ssh/id_rsa cluster.yml
