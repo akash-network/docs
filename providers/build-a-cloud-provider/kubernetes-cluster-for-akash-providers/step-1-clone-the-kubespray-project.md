@@ -6,26 +6,26 @@ We recommend using the Kubespray project to deploy a cluster. Kubespray uses Ans
 
 The recommended minimum number of hosts is four for a production Provider Kubernetes cluster. This is meant to allow:
 
-* Three hosts serving as a redundant control plane/master instances
+* Three hosts serving as a redundant control plane (aka master)/etcd instances
 * One host to serve as Kubernetes worker node to host provider leases.
 
 ### Additional Cluster Sizing Considerations
 
-> While a production Kubernetes cluster would typically require three redundant control plane nodes, in circumstances in which the control plane node is easily recoverable the use of a single control instance for Akash providers should suffice.
+* While a production Kubernetes cluster would typically require three redundant control plane nodes, in circumstances in which the control plane node is easily recoverable the use of a single control instance for Akash providers should suffice.
 
-> The number of control plane nodes in the cluster should always be an odd number to allow the cluster to reach consensus.
+* The number of control plane nodes in the cluster should always be an odd number to allow the cluster to reach consensus.
 
-> We recommend running a single worker node per physical server as CPU is typically the largest resource bottleneck. The use of a single worker node allows larger workloads to be deployed on your provider.
+* We recommend running a single worker node per physical server as CPU is typically the largest resource bottleneck. The use of a single worker node allows larger workloads to be deployed on your provider.
 
-> If you intended to build a provider with persistent storage please refer to host requirements detailed [here](../helm-based-provider-persistent-storage-enablement/persistent-storage-requirements.md).
+* If you intended to build a provider with persistent storage please refer to host storage requirements detailed [here](../helm-based-provider-persistent-storage-enablement/persistent-storage-requirements.md).
 
 ## Kubernetes Cluster Software/Hardware Requirements and Recommendations
 
 ### Software Recommendation
 
-Akash Providers have been tested on Ubuntu 22.04 with the default Linux kernel. Your experience may vary should install be attempted using a different Linux distro/kernel.
+Akash Providers have been tested on **Ubuntu 22.04** with the default Linux kernel. Your experience may vary should install be attempted using a different Linux distro/kernel.
 
-### Kubernetes Master Node Requirements
+### Kubernetes Control Plane Node Requirements
 
 * Minimum Specs
   * 2 CPU
@@ -36,7 +36,7 @@ Akash Providers have been tested on Ubuntu 22.04 with the default Linux kernel. 
   * 8 GB RAM
   * 40 GB disk
 
-### Kubernetes Work Node Requirements
+### Kubernetes Worker Node Requirements
 
 * Minimum Specs
   * 4 CPU
@@ -48,7 +48,7 @@ Akash Providers have been tested on Ubuntu 22.04 with the default Linux kernel. 
 
 ## **etcd Hardware Recommendations**
 
-* Use this [guide](https://etcd.io/docs/v3.3/op-guide/hardware) to ensure Kubernetes control plane nodes meet the recommendations for hosting a `etcd` database.
+* Use this [guide](https://etcd.io/docs/v3.5/op-guide/hardware) to ensure Kubernetes control plane nodes meet the recommendations for hosting a `etcd` database.
 
 ## **Kubespray Clone**
 
