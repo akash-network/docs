@@ -32,7 +32,7 @@ At ths point you would be left with a Kubernetes cluster that is ready to be a p
 
 The recommended method for setting up a Kubernetes cluster is to use the [Kubespray](https://github.com/kubernetes-sigs/kubespray) project. This project is a collection of ansible resources for setting up a Kubernetes cluster.
 
-The recommended minimum number of machines is three. One machine hosts the Kubernetes master node & provider, with the other machines hosting the compute nodes. It is possible however to provision a single-machine cluster if you choose to, but this configuration is not recommended.
+The recommended minimum number of machines is three. One machine hosts the Kubernetes control plane node & provider, with the other machines hosting the compute nodes. It is possible however to provision a single-machine cluster if you choose to, but this configuration is not recommended.
 
 ### Getting kubespray & setup
 

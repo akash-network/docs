@@ -6,7 +6,7 @@ Use the steps covered in this section to verify the current settings of your run
 
 > Steps in this section assume the provider was installed via Akash Provider Helm Charts.
 >
-> Conduct the steps from a Kubernetes master node with `kubectl` access to the cluster.
+> Conduct the steps from a Kubernetes control plane node with `kubectl` access to the cluster.
 
 ## View Provider Current Settings
 

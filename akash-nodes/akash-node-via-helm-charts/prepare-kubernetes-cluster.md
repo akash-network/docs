@@ -16,7 +16,7 @@ kubectl label ns akash-services akash.network/name=akash-services akash.network=
 ## Install Helm
 
 * Install Helm for Kubernetes package management if not done so prior
-* Execute on these steps on a Kubernetes master node
+* Execute on these steps on a Kubernetes control plane node
 
 ```
 wget https://get.helm.sh/helm-v3.11.0-linux-amd64.tar.gz

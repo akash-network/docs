@@ -56,7 +56,7 @@ In this section we perform the following DNS adjustments:
 
 > _**NOTE**_ - the DNS resolution issue & the Netplan fix addressed in this step are described [here](https://github.com/akash-network/support/issues/80)
 
-Apply the following to all Kubernetes master and worker nodes.
+Apply the following to all Kubernetes control plane and worker nodes.
 
 > _**IMPORTANT**_ - Make sure you do not have any other config files under the `/etc/netplan` directory, otherwise it could cause unexpected networking issues / issues with booting up your node.
 
