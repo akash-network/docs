@@ -120,10 +120,6 @@ In this step we add the NVIDIA runtime confguration into the Kubespray inventory
 
 ```
 cat > ~/kubespray/inventory/akash/group_vars/all/akash.yml <<'EOF'
-ansible_user: root
-
-ansible_connection: ssh
-
 containerd_additional_runtimes:
   - name: nvidia
     type: "io.containerd.runc.v2"
