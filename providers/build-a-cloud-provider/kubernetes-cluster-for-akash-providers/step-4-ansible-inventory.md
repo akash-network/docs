@@ -118,7 +118,6 @@ vi ~/kubespray/inventory/akash/hosts.yaml
 ```
 
 * Within the YAML file’s “all” stanza and prior to the “hosts” sub-stanza level  - insert the following vars stanza
-* We currently recommend disabling TCP offloading on vxlan.calico interface until calico fixes a related bug. This only applies when Calico is configured to use VXLAN encapsulation.  Read more about this bug [here](https://github.com/kubernetes-sigs/kubespray/pull/9261#issuecomment-1248844913).
 
 ```
 vars:
