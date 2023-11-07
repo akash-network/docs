@@ -37,7 +37,8 @@ export DOMAIN=test.com
 
 4\. Set the Akash RPC node for your provider to use
 
-> If you are going to deploy Akash RPC Node using Helm-Charts then set the node to http://akash-node-1:26657 It is recommended that you install your own Akash RPC node. Follow [this guide](../../../akash-nodes/akash-node-via-helm-charts/) to do so.\
+- If you are going to deploy Akash RPC Node using Helm-Charts then set the node to http://akash-node-1:26657 It is recommended that you install your own Akash RPC node. Follow [this guide](../../../akash-nodes/akash-node-via-helm-charts/) to do so.
+
 > \
 > Ensure that the RPC node utilized is in sync prior to proceeding with the provider build.\
 > \
