@@ -205,8 +205,7 @@ done
 
 helm upgrade --install akash-provider akash/provider -n akash-services -f provider.yaml \
 --set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)" \
---set chainid=akashnet-2 \
---set image.tag=0.4.6
+--set chainid=akashnet-2
 ```
 
 #### Verification
@@ -227,7 +226,7 @@ root@node1:~/provider# kubectl -n akash-services get pod akash-provider-0 -o yam
 ## Create Akash Hostname Operator
 
 ```
-helm upgrade --install akash-hostname-operator akash/akash-hostname-operator -n akash-services --set image.tag=0.4.6
+helm upgrade --install akash-hostname-operator akash/akash-hostname-operator -n akash-services
 ```
 
 ## Verify Health of Akash Provider
