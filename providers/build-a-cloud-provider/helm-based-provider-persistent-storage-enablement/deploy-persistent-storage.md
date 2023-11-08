@@ -4,7 +4,7 @@
 
 Install Helm and add the Akash repo if not done previously by following the steps in this [guide](../akash-cloud-provider-build-with-helm-charts/step-4-helm-installation-on-kubernetes-node.md)**.**
 
-All steps in this section should be conducted from the Kubernetes master node on which Helm has been installed.
+All steps in this section should be conducted from the Kubernetes control plane node on which Helm has been installed.
 
 Rook has published the following Helm charts for the Ceph storage provider:
 

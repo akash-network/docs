@@ -97,7 +97,7 @@ dmesg -T | grep -Ei 'nvidia|nvml|cuda|mismatch'
 
 ## Ensure Correct Version/Presence of NVIDIA Device Plugin
 
-> _**NOTE**_ - conduct this verification step on the Kubernetes master node on which Helm was installed during your Akash Provider build
+> _**NOTE**_ - conduct this verification step on the Kubernetes control plane node on which Helm was installed during your Akash Provider build
 
 ```
 helm -n nvidia-device-plugin list

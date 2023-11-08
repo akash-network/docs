@@ -43,7 +43,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub <username>@<ip-address>
 
 ### **Example**
 
-* Conduct this step for every Kubernetes master and worker node in the cluster
+* Conduct this step for every Kubernetes control plane and worker node in the cluster
 
 ```
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@10.88.94.5
@@ -63,7 +63,7 @@ ssh -i ~/.ssh/id_rsa <username>@<ip-address>
 
 ### **Example**
 
-* Conduct this access test for every Kubernetes master and worker node in the cluster
+* Conduct this access test for every Kubernetes control plane and worker node in the cluster
 
 ```
 ssh -i ~/.ssh/id_rsa root@10.88.94.5

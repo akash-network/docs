@@ -4,7 +4,7 @@
 
 An Akash Provider leases compute to users launching new deployments. Follow the steps in this guide to build your own provider.
 
-This guide uses a single Kubernetes master node.
+This guide uses a single Kubernetes control plane node.
 
 ## Overview and links to the steps involved in Akash Provider Build:
 

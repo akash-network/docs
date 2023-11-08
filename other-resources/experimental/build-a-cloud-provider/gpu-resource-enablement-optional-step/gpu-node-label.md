@@ -4,7 +4,7 @@
 
 Each node that provides GPUs must be labeled correctly.
 
-> _**NOTE**_ - these configurations should be completed on a Kubernetes master/control plane node
+> _**NOTE**_ - these configurations should be completed on a Kubernetes control plane node
 
 ## Label Template
 
