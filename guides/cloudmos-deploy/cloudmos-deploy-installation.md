@@ -22,4 +22,4 @@ Ensure that an Akash account with sufficient AKT balance is selected in Keplr pr
 
 Ensure that an Akash account with sufficient AKT balance is selected in Leap prior to proceeding with subsequent steps.
 
-<figure><img src="../../.gitbook/assets/leapwallet.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/leap_wallet.png" alt=""><figcaption></figcaption></figure>
