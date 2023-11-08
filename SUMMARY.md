@@ -169,6 +169,7 @@
     * [Heal Broken Deployment Replicas by Returning Lost command to Manifests](providers/akash-provider-troubleshooting/heal-broken-deployment-replicas-by-returning-lost-command-to-manifests.md)
     * [Maintaining and Rotating Kubernetes/etcd Certificates: A How-To Guide](providers/akash-provider-troubleshooting/maintaining-and-rotating-kubernetes-etcd-certificates-a-how-to-guide.md)
     * [Force New ReplicaSet Workaround](providers/akash-provider-troubleshooting/force-new-replicaset-workaround.md)
+    * [Kill zombie processes](providers/akash-provider-troubleshooting/kill-zombie-processes.md)
     * [Close Leases Based on Image](providers/akash-provider-troubleshooting/close-leases-based-on-image.md)
     * [Provider Bid Script Migration - GPU Models](providers/akash-provider-troubleshooting/provider-bid-script-migration-gpu-models.md)
     * [GPU Provider Troubleshooting](providers/akash-provider-troubleshooting/gpu-provider-troubleshooting.md)
