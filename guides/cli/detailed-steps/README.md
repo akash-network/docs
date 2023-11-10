@@ -21,7 +21,7 @@ This is a great opportunity to connect with the team at Akash Network and to spo
 * [Create your Configuration](part-5.-create-your-configuration.md)
 * [Create your Certificate](part-7.-create-your-deployment.md)
 * [Create your Deployment](part-7.-create-your-deployment.md)
-* [View your Bids](part-8.-view-your-bids.md)
+* [View your Bids](../../sandbox/detailed-steps/part-8.-view-your-bids.md)
 * [Create a Lease](part-9.-create-a-lease.md)
 * [Send the Manifest](part-10.-send-the-manifest.md)
 * [Update the Deployment](part-11.-update-the-deployment.md)
