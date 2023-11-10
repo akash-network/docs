@@ -37,7 +37,7 @@ export DOMAIN=test.com
 
 4\. Set the Akash RPC node for your provider to use
 
-- If you are going to deploy Akash RPC Node using Helm-Charts then set the node to http://akash-node-1:26657 It is recommended that you install your own Akash RPC node. Follow [this guide](../../../akash-nodes/akash-node-via-helm-charts/) to do so.
+* If you are going to deploy Akash RPC Node using Helm-Charts then set the node to http://akash-node-1:26657 It is recommended that you install your own Akash RPC node. Follow [this guide](../../../akash-nodes/akash-node-via-helm-charts/) to do so.
 
 > \
 > Ensure that the RPC node utilized is in sync prior to proceeding with the provider build.\
@@ -182,7 +182,7 @@ bidpricestoragescale: "0.00016" # storage pricing scale in uakt per megabyte
 > _**NOTE**_ - You do not need to run this command if you previously installed the Akash Provider and are now performing an upgrade.
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.4.6/pkg/apis/akash.network/crd.yaml
+kubectl apply -f https://raw.githubusercontent.com/akash-network/provider/v0.4.7/pkg/apis/akash.network/crd.yaml
 ```
 
 ## **Install the Provider Helm Chart**

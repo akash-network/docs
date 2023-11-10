@@ -48,7 +48,7 @@ provider-services version
 ```
 provider-services version
 
-v0.4.6
+v0.4.7
 ```
 {% endtab %}
 
@@ -126,7 +126,7 @@ provider-services version
 ```
 provider-services version
 
-v0.4.6
+v0.4.7
 ```
 {% endtab %}
 
