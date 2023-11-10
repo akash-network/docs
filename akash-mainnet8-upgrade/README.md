@@ -9,5 +9,5 @@ Documentation related to Akash Network upgrade to version `0.28.0`:
 
 ### Upgrade Details
 
-* Upgrade Height: `XXXXX`
-* Upgrade Timer
+* Upgrade Height: `13759618`
+* [Upgrade Timer](https://www.mintscan.io/akash/block/13759618)
