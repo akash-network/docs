@@ -11,12 +11,12 @@ This is a comprehensive guide that covers the steps necessary to upgrade from Ma
 
 ### Mainnet6 Versions (Pre-Upgrade)
 
-* `provider-services`: `0.4.6`
+* `provider-services`: `0.4.7`
 * `node`: `0.26.0`
 
 ### Mainnet8 Versions  (Post-Upgrade)
 
-* `provider-services`: X.X.X
+* `provider-services`: `0.4.8`
 * `node`: `0.28.0`
 
 ## Upgrade Procedure
@@ -54,11 +54,11 @@ VERSIONS NEED UPDATING
 ```
 # helm search repo akash
 NAME                          	CHART VERSION	APP VERSION	DESCRIPTION                                       
-akash/akash-hostname-operator 	6.0.4        	0.4.6      	An operator to map Ingress objects to Akash dep...
-akash/akash-inventory-operator	6.0.4        	0.4.6      	An operator required for persistent storage (op...
-akash/akash-ip-operator       	6.0.4        	0.4.6      	An operator required for ip marketplace (optional)
-akash/akash-node              	6.0.0        	0.24.0     	Installs an Akash RPC node (required)             
-akash/provider                	6.0.4        	0.4.6      	Installs an Akash provider (required)      
+akash/akash-hostname-operator 	8.0.0        	0.4.8      	An operator to map Ingress objects to Akash dep...
+akash/akash-inventory-operator	8.0.0        	0.4.8      	An operator required for persistent storage (op...
+akash/akash-ip-operator       	8.0.0        	0.4.8      	An operator required for ip marketplace (optional)
+akash/akash-node              	8.0.0        	0.28.0     	Installs an Akash RPC node (required)
+akash/provider                	8.0.0        	0.4.8      	Installs an Akash provider (required)
 ```
 
 #### 2.2. akash-node Chart
@@ -71,8 +71,6 @@ helm -n akash-services get values akash-node | grep -v '^USER-SUPPLIED VALUES' >
 
 Upgrade your `akash-node` chart:
 
-> Prior to executing the Helm Upgrade command - inspect `akash-node-values.yml` for `image` tag and remove it if present.
-
 ```
 helm upgrade akash-node akash/akash-node -n akash-services -f akash-node-values.yml
 ```
@@ -82,13 +80,11 @@ helm upgrade akash-node akash/akash-node -n akash-services -f akash-node-values.
 Take the current `akash-provider` chart values:
 
 ```
-helm -n akash-services get values akash-provider | grep -v '^USER-SUPPLIED VALUES' > akash-provider-values.yml
+helm -n akash-services get values akash-provider | grep -v '^USER-SUPPLIED VALUES' > provider.yaml
 ```
 
-> Prior to executing the Helm Upgrade command - inspect `akash-provider-values.yml` for `image` tag and remove it if present.
-
 ```
-helm upgrade akash-provider akash/provider -n akash-services -f akash-provider-values.yml
+helm upgrade akash-provider akash/provider -n akash-services -f provider.yaml
 ```
 
 > _**IMPORTANT**_: Make sure your provider is using the latest bid price script! Here is the guide that tells you how you can set it for your akash-provider chart. [https://docs.akash.network/providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-6-provider-bid-customization](https://docs.akash.network/providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-6-provider-bid-customization)
@@ -119,8 +115,6 @@ Take the current akash-ip-operator chart values:
 helm -n akash-services get values akash-ip-operator | grep -v '^USER-SUPPLIED VALUES' > akash-ip-operator-values.yml
 ```
 
-> Prior to executing the Helm Upgrade command - inspect `akash-ip-operator-values.yml` for `image` tag and remove it if present.
-
 ```
 helm upgrade akash-ip-operator akash/akash-ip-operator -n akash-services -f akash-ip-operator-values.yml
 ```
@@ -138,7 +132,7 @@ kubectl -n akash-services get pods -o custom-columns='NAME:.metadata.name,IMAGE:
 
 The charts upgrade went well, if you are seeing these images and versions:
 
-* provider and operator image is: `ghcr.io/akash-network/provider:0.4.6`
+* provider and operator image is: `ghcr.io/akash-network/provider:0.4.8`
 * node image is: `ghcr.io/akash-network/node:0.28.0`
 
 Example Result:
@@ -150,11 +144,11 @@ VERSIONS NEED TO BE UPDATED
 ```
 # kubectl -n akash-services get pods -o custom-columns='NAME:.metadata.name,IMAGE:.spec.containers[*].image'
 NAME                                        IMAGE
-akash-hostname-operator-86d4596d6c-pwbt8    ghcr.io/akash-network/provider:0.4.6
-akash-inventory-operator-69464fbdff-dxkk5   ghcr.io/akash-network/provider:0.4.6
-akash-ip-operator-6f6ddc47f8-498kj          ghcr.io/akash-network/provider:0.4.6
-akash-node-1-0                              ghcr.io/akash-network/node:0.24.0
-akash-provider-0                            ghcr.io/akash-network/provider:0.4.6
+akash-hostname-operator-86d4596d6c-pwbt8    ghcr.io/akash-network/provider:0.4.8
+akash-inventory-operator-69464fbdff-dxkk5   ghcr.io/akash-network/provider:0.4.8
+akash-ip-operator-6f6ddc47f8-498kj          ghcr.io/akash-network/provider:0.4.8
+akash-node-1-0                              ghcr.io/akash-network/node:0.28.0
+akash-provider-0                            ghcr.io/akash-network/provider:0.4.8
 ```
 
 \
