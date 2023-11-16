@@ -14,7 +14,7 @@ This is a comprehensive guide that covers the steps necessary to upgrade from Ma
 * `provider-services`: `0.4.7`
 * `node`: `0.26.0`
 
-### Mainnet8 Versions  (Post-Upgrade)
+### Mainnet8 Versions (Post-Upgrade)
 
 * `provider-services`: `0.4.8`
 * `node`: `0.28.0`
@@ -46,10 +46,6 @@ helm repo update akash
 ```
 
 Verify you can see the correct chart/app versions:
-
-
-
-VERSIONS NEED UPDATING
 
 ```
 # helm search repo akash
@@ -137,10 +133,6 @@ The charts upgrade went well, if you are seeing these images and versions:
 
 Example Result:
 
-
-
-VERSIONS NEED TO BE UPDATED
-
 ```
 # kubectl -n akash-services get pods -o custom-columns='NAME:.metadata.name,IMAGE:.spec.containers[*].image'
 NAME                                        IMAGE
@@ -151,4 +143,4 @@ akash-node-1-0                              ghcr.io/akash-network/node:0.28.0
 akash-provider-0                            ghcr.io/akash-network/provider:0.4.8
 ```
 
-\
+\\
