@@ -17,7 +17,7 @@ This is a comprehensive guide that covers the steps necessary to upgrade from Ma
 ### Mainnet8 Versions (Post-Upgrade)
 
 * `provider-services`: `0.4.8`
-* `node`: `0.28.0`
+* `node`: `0.28.2`
 
 ## Upgrade Procedure
 
@@ -53,7 +53,7 @@ NAME                          	CHART VERSION	APP VERSION	DESCRIPTION
 akash/akash-hostname-operator 	8.0.0        	0.4.8      	An operator to map Ingress objects to Akash dep...
 akash/akash-inventory-operator	8.0.0        	0.4.8      	An operator required for persistent storage (op...
 akash/akash-ip-operator       	8.0.0        	0.4.8      	An operator required for ip marketplace (optional)
-akash/akash-node              	8.0.0        	0.28.0     	Installs an Akash RPC node (required)
+akash/akash-node              	8.0.0        	0.28.2     	Installs an Akash RPC node (required)
 akash/provider                	8.0.0        	0.4.8      	Installs an Akash provider (required)
 ```
 
@@ -129,7 +129,7 @@ kubectl -n akash-services get pods -o custom-columns='NAME:.metadata.name,IMAGE:
 The charts upgrade went well, if you are seeing these images and versions:
 
 * provider and operator image is: `ghcr.io/akash-network/provider:0.4.8`
-* node image is: `ghcr.io/akash-network/node:0.28.0`
+* node image is: `ghcr.io/akash-network/node:0.28.2`
 
 Example Result:
 
@@ -139,7 +139,7 @@ NAME                                        IMAGE
 akash-hostname-operator-86d4596d6c-pwbt8    ghcr.io/akash-network/provider:0.4.8
 akash-inventory-operator-69464fbdff-dxkk5   ghcr.io/akash-network/provider:0.4.8
 akash-ip-operator-6f6ddc47f8-498kj          ghcr.io/akash-network/provider:0.4.8
-akash-node-1-0                              ghcr.io/akash-network/node:0.28.0
+akash-node-1-0                              ghcr.io/akash-network/node:0.28.2
 akash-provider-0                            ghcr.io/akash-network/provider:0.4.8
 ```
 
