@@ -4,6 +4,12 @@
 
 This is a comprehensive guide that covers the steps necessary to upgrade from Mainnet5 to Mainnet6 of Akash Network and Akash Provider components in a Kubernetes cluster.
 
+## IMPORTANT
+
+### This procedure does not apply to Praetor providers!
+
+Praetor providers should wait for further upgrade instructions from Praetor team!
+
 ## Provider Components to be Upgraded
 
 * `provider-services` is the main binary of the `akash-provider`, `akash-hostname-operator`, `akash-inventory-operator`, and `akash-ip-operator` helm charts
