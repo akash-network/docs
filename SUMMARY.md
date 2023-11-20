@@ -250,7 +250,7 @@
   * [Akash v0.28.0 Node Upgrade Guide](akash-mainnet8-upgrade/v0.28.0-upgrade-docs.md)
   * [Mainnet8 Provider Upgrade Procedure](akash-mainnet8-upgrade/mainnet8-provider-upgrade-procedure.md)
 * [Akash Mainnet9 Upgrade](akash-mainnet9-upgrade/README.md)
-  * [Akash v0.30.0 Node Upgrade Guide](akash-mainnet9-upgrade/v0.28.0-upgrade-docs.md)
+  * [Akash v0.30.0 Node Upgrade Guide](akash-mainnet9-upgrade/v0.30.0-upgrade-docs.md)
 * [Testnet](testnet/README.md)
   * [GPU Testnet Client Instructions](testnet/gpu-testnet-client-instructions/README.md)
     * [Akash Console](testnet/gpu-testnet-client-instructions/akash-console/README.md)

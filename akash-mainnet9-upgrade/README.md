@@ -4,7 +4,7 @@
 
 Documentation related to Akash Network upgrade to version `v0.30.0`:
 
-* [Node Upgrade Instructions](v0.28.0-upgrade-docs.md)
+* [Node Upgrade Instructions](v0.30.0-upgrade-docs.md)
 
 ### Upgrade Details
 
