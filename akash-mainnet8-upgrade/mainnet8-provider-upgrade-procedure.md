@@ -149,9 +149,9 @@ akash-node-1-0                              ghcr.io/akash-network/node:0.28.2
 akash-provider-0                            ghcr.io/akash-network/provider:0.4.8
 ```
 
-## Upgrade your provider-services client
+## Update your provider-services client
 
-Make sure to upgrade your local provider-services binary (aka the Akash client) if you had it installed.
+Make sure to update your local `provider-services` binary (aka the Akash client) if you had it installed.
 
 Verify the version and the location using these two commands:
 
@@ -160,6 +160,4 @@ provider-services version
 type -p provider-services
 ```
 
-If you get anything below `0.4.8`, then get the right binary from https://github.com/akash-network/provider/releases/tag/v0.4.8 page.
-
-\\
+If you get anything below `0.4.8`, then get the right binary from [this page](https://github.com/akash-network/provider/releases/tag/v0.4.8).
