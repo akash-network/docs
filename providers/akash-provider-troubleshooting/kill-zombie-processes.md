@@ -2,7 +2,10 @@
 
 ## Issue
 
-There's a possibility that some pods initiate processes without correctly using the `wait()` function, leading to the creation of `<defunct>` processes, commonly known as "zombie" processes. These could potentially occupy all available process slots.
+It is possible for certain deployments to initiate subprocesses that do not properly implement the `wait()` function.
+This improper handling can result in the formation of `<defunct>` processes, also known as "zombie" processes.
+Zombie processes occur when a subprocess completes its task but still remains in the system's process table due to the parent process not reading its exit status.
+Over time, if not managed correctly, these zombie processes have the potential to accumulate and occupy all available process slots in the system, leading to resource exhaustion.
 
 These zombie processes aren't too harmful much (they don't occupy cpu/mem / nor impact cgroup cpu/mem limits) unless they take up the whole process table space so no new processes will be able to spawn, i.e. the limit:
 
