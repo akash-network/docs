@@ -4,6 +4,13 @@
 
 There's a possibility that some pods initiate processes without correctly using the `wait()` function, leading to the creation of `<defunct>` processes, commonly known as "zombie" processes. These could potentially occupy all available process slots.
 
+These zombie processes aren't too harmful much (they don't occupy cpu/mem / nor impact cgroup cpu/mem limits) unless they take up the whole process table space so no new processes will be able to spawn, i.e. the limit:
+
+```
+$ cat /proc/sys/kernel/pid_max
+4194304
+```
+
 To address this issue, tenants should ensure they manage and terminate child processes appropriately to prevent them from becoming zombie processes.
 
 One of the correct ways to approach that would be this example:
