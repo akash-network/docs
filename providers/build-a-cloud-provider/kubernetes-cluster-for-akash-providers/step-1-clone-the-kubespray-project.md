@@ -68,6 +68,10 @@ cd ~
 git clone -b v2.23.1 --depth=1 https://github.com/kubernetes-sigs/kubespray.git
 
 cd kubespray
+
+# make sure to run the following sed command in order to address https://github.com/kubernetes-sigs/kubespray/issues/10688 "The conditional check 'groups.get('kube_control_plane')' failed. The error was: Conditional is marked as unsafe, and cannot be evaluated." issue
+
+sed -i "/- name: Stop if either kube_control_plane or kube_node group is empty/,/with_items:/s/that: \"groups.get('{{ item }}')\"/that: \"groups.get( item )\"/" roles/kubernetes/preinstall/tasks/0040-verify-settings.yml
 ```
 
 ## Cluster Updates
