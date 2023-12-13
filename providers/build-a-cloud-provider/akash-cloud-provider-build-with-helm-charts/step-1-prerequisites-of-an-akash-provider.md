@@ -62,8 +62,13 @@ Apply the following to all Kubernetes control plane and worker nodes.
 
 > If you aren't using the DHCP or want to add additional configuration, please refer to the netplan documentation [here](https://netplan.readthedocs.io/en/stable/netplan-yaml/) for additional config options.
 
+**Example**
+
+- File: `/etc/netplan/01-netcfg.yaml`
+
+> Note that this is only an example of the netplan configuration file to show you how to disable the DNS search domain overriding and IPv6 Router Advertisement (RA). Do not blindly copy the entire config but rather use it as a reference for your convenience!
+
 ```
-cat > /etc/netplan/01-netcfg.yaml <<'EOF'
 network:
   version: 2
   renderer: networkd
@@ -78,7 +83,6 @@ network:
       # refs https://bugs.launchpad.net/netplan/+bug/1858503
       accept-ra: false
       optional: true
-EOF
 ```
 
 ### Test and Apply Netplan
