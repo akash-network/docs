@@ -71,6 +71,7 @@
     * [Akash Console Access and Initial Setup](deploy/kava-rpc-node-deployment/akash-console-access-and-initial-setup.md)
     * [Kava RPC Node Deployment](deploy/kava-rpc-node-deployment/kava-rpc-node-deployment.md)
     * [Kava RPC Node Health Check](deploy/kava-rpc-node-deployment/kava-rpc-node-health-check.md)
+  * [Subquery and Akash](deploy/subquery-indexer.md)
   * [Chia on Akash](deploy/chia-on-akash.md)
   * [Polygon on Akash](deploy/polygon-on-akash.md)
   * [Mine Raptoreum on Akash Network](deploy/mine-raptoreum-on-akash-network.md)
