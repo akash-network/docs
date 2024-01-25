@@ -1,5 +1,15 @@
 # AMD GPU Support Documentation
 
+## Introduction
+
+Welcome to the specialized guide designed to assist Akash Providers in enabling AMD GPU support within their Kubernetes clusters. This documentation is particularly crafted for system administrators, developers, and DevOps professionals who manage and operate their Akash Providers. The focus here is to guide you through the process of integrating AMD GPUs into your Kubernetes/Akash setup, ensuring that they can be utilized in the Akash Network.
+
+Throughout this guide, you will find step-by-step instructions on installing the necessary AMD drivers, configuring Kubernetes to acknowledge and leverage AMD GPUs.
+
+This documentation is vital for Akash Providers and Clients who aim to deploy advanced workloads such as machine learning models, high-performance computing tasks, or any applications that benefit from GPU acceleration. By following this guide, you will be able to enhance your service offerings on the Akash Network, catering to a wider range of computational needs with AMD GPU support.
+
+> **NOTE**: To effectively enable AMD GPU support, ensure that your `akash-provider` and `provider-services` (CLI) are updated to version `0.4.9-rc0` or higher. This is a prerequisite for proper integration and functionality of AMD GPUs on your Akash Provider.
+
 ## Limitations
 
 Current constraints dictate that combining NVIDIA and AMD GPU vendors within the same Kubernetes worker node is not allowed. However, it is permissible to have different GPU vendors within the same Kubernetes cluster, as long as each individual worker node exclusively uses GPUs from a single vendor, be it NVIDIA or AMD.
