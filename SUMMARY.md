@@ -280,6 +280,7 @@
     * [Specific GPU Vendor & List of Acceptable Models](testnet/example-gpu-sdls/specific-gpu-vendor-and-list-of-acceptable-models.md)
 * [Other Resources](other-resources/README.md)
   * [Experimental](other-resources/experimental/README.md)
+    * [AMD GPU support](other-resources/experimental/amd-gpu-support.md)
     * [Akash Provider Streamlined Build with Rancher K3s](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/README.md)
       * [STEP 1 - Install K3s and Initial Cluster Config](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/step-1-install-k3s-and-initial-cluster-config.md)
       * [STEP 2 - Install Akash CLI](other-resources/experimental/akash-provider-streamlined-build-with-rancher-k3s/step-2-install-akash-cli.md)
