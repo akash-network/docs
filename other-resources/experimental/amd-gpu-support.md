@@ -54,7 +54,7 @@ Follow these steps to install the AMD driver and ROCM:
 - Add the helm repository and install the chart:
     ```bash
     helm repo add amd-gpu-helm https://radeonopencompute.github.io/k8s-device-plugin/
-    helm install --create-namespace --namespace amd-device-plugin --set namespace=amd-device-plugin amd-gpu amd-gpu-helm/amd-gpu --version 0.10.0
+    helm install --create-namespace --namespace amd-device-plugin --set namespace=amd-device-plugin amd-gpu amd-gpu-helm/amd-gpu --version 0.12.0
     ```
 
 - Verify the installation:
