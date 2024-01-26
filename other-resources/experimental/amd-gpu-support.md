@@ -18,46 +18,44 @@ Current constraints dictate that combining NVIDIA and AMD GPU vendors within the
 - **Vendor Homogeneity:** It is permissible to mix different GPU vendors on the same Kubernetes cluster. However, this mixing is not allowed within a single worker node.
 - **Vendor Exclusivity:** Each worker node must exclusively use GPUs from a single vendor, either NVIDIA or AMD. This means a single node cannot have a mix of NVIDIA and AMD GPUs, but different nodes within the same cluster can use different vendors.
 
-## Installing the AMD Driver and ROCM
+## Installing the AMD GPU Driver
 
-Follow these steps to install the AMD driver and ROCM:
+Follow these steps to install the AMD GPU Driver:
 
-1. Update package lists:
-    ```bash
+1. Install AMD GPU drivers using DKMS
+
+- Apply these commands on your node with AMD GPU:
+    > based on https://rocm.docs.amd.com/projects/install-on-linux/en/latest/how-to/native-install/ubuntu.html
+    ```
+    mkdir --parents --mode=0755 /etc/apt/keyrings
+    
+    wget https://repo.radeon.com/rocm/rocm.gpg.key -O - | \
+      gpg --dearmor | tee /etc/apt/keyrings/rocm.gpg > /dev/null
+    
+    echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/rocm.gpg] https://repo.radeon.com/amdgpu/6.0.1/ubuntu jammy main" \
+      | tee /etc/apt/sources.list.d/amdgpu.list
     apt update
-    ```
-
-2. Download the AMD GPU installation package:
-    ```bash
-    wget -c https://repo.radeon.com/amdgpu-install/5.7.1/ubuntu/jammy/amdgpu-install_5.7.50701-1_all.deb
-    ```
-
-3. Install the downloaded package:
-    ```bash
-    apt install -y ./amdgpu-install_5.7.50701-1_all.deb
-    ```
-
-4. Install AMD GPU driver:
-    ```bash
     apt -y install amdgpu-dkms
     ```
 
-5. Make sure it is loaded:
-    > You can either reboot or directly load the AMD GPU driver.
-    ```bash
-    modprobe amdgpu
+2. Make sure the right driver is loaded:
+
+- Reboot the node:
+    By default `/lib/modules/<version>/kernel/drivers/gpu/drm/amd/amdgpu/amdgpu.ko` is loaded, however you cannot simply `modprobe -r amdgpu` and then `modprobe amdgpu`.  
+    You need to reboot to make sure the correct AMD GPU driver (DKMS `/lib/modules/<version>/updates/dkms/amdgpu.ko`) is properly loaded.  
+
+- Verify correct version is loaded (you may see a higher version, that's okay):
     ```
-    Verify:
-    > you should be able to see the amdgpu driver is loaded
-    ```
-    # lsmod |grep -i amdgpu
-    amdgpu              13590528  0
-    ...
+    # dmesg -T |grep 'amdgpu version'
+    [Fri Jan 26 22:47:18 2024] [drm] amdgpu version: 6.3.6
+    
+    # dmesg -T |grep -i 'Initialized amdgpu'
+    [Fri Jan 26 22:47:19 2024] [drm] Initialized amdgpu 3.56.0 20150101 for 0000:1b:00.0 on minor 1
     ```
 
 ## Enabling AMD GPU Support in Akash Provider
 
-### 1. Install `RadeonOpenCompute/k8s-device-plugin` helm-chart
+### 1. Install `ROCm/k8s-device-plugin` helm-chart
 
 - Add the helm repository and install the chart:
     ```bash
@@ -75,16 +73,24 @@ Follow these steps to install the AMD driver and ROCM:
 - Example output:
     ```bash
     # kubectl -n amd-device-plugin logs ds/amd-gpu-device-plugin-daemonset
-    I1222 11:59:36.830615       1 main.go:305] AMD GPU device plugin for Kubernetes
-    I1222 11:59:36.830754       1 main.go:305] ./k8s-device-plugin version v1.18.1-27-g5eb0a0f
-    I1222 11:59:36.830762       1 main.go:305] hwloc: _VERSION: 2.9.2, _API_VERSION: 0x00020800, _COMPONENT_ABI: 7, Runtime: 0x00020800
-    I1222 11:59:36.830777       1 manager.go:42] Starting device plugin manager
-    ...
-    I1222 11:59:46.834386       1 plugin.go:128] gpu: Registering the DPI with Kubelet
-    I1222 11:59:46.835364       1 plugin.go:140] gpu: Registration for endpoint amd.com_gpu
-    I1222 11:59:46.840807       1 amdgpu.go:100] /sys/module/amdgpu/drivers/pci:amdgpu/0000:1b:00.0
-    I1222 11:59:46.921498       1 main.go:149] Watching GPU with bus ID: 0000:1b:00.0 NUMA Node: [0]
-
+    I0126 22:47:52.227295       1 main.go:305] AMD GPU device plugin for Kubernetes
+    I0126 22:47:52.227493       1 main.go:305] ./k8s-device-plugin version v1.25.2.7-0-g4503704
+    I0126 22:47:52.227506       1 main.go:305] hwloc: _VERSION: 2.10.0, _API_VERSION: 0x00020800, _COMPONENT_ABI: 7, Runtime: 0x00020800
+    I0126 22:47:52.227524       1 manager.go:42] Starting device plugin manager
+    I0126 22:47:52.227543       1 manager.go:46] Registering for system signal notifications
+    I0126 22:47:52.228216       1 manager.go:52] Registering for notifications of filesystem changes in device plugin directory
+    I0126 22:47:52.228421       1 manager.go:60] Starting Discovery on new plugins
+    I0126 22:47:52.228446       1 manager.go:66] Handling incoming signals
+    I0126 22:47:52.228491       1 manager.go:71] Received new list of plugins: [gpu]
+    I0126 22:47:52.228555       1 manager.go:110] Adding a new plugin "gpu"
+    I0126 22:47:52.228594       1 plugin.go:64] gpu: Starting plugin server
+    I0126 22:47:52.228605       1 plugin.go:94] gpu: Starting the DPI gRPC server
+    I0126 22:47:52.229986       1 plugin.go:112] gpu: Serving requests...
+    I0126 22:48:02.237090       1 plugin.go:128] gpu: Registering the DPI with Kubelet
+    I0126 22:48:02.238870       1 plugin.go:140] gpu: Registration for endpoint amd.com_gpu
+    I0126 22:48:02.246025       1 amdgpu.go:100] /sys/module/amdgpu/drivers/pci:amdgpu/0000:1b:00.0
+    I0126 22:48:02.323568       1 main.go:149] Watching GPU with bus ID: 0000:1b:00.0 NUMA Node: [0]
+    
     # kubectl describe node node1 | grep -B1 -Ei 'nvidia.com/gpu|amd.com/gpu'
     Capacity:
       amd.com/gpu:        1
@@ -93,7 +99,7 @@ Follow these steps to install the AMD driver and ROCM:
       amd.com/gpu:        1
     --
       hugepages-2Mi      0 (0%)         0 (0%)
-      amd.com/gpu        1              1
+      amd.com/gpu        0              0
     ```
 
 ### 2. Label AMD GPU Node
@@ -113,7 +119,7 @@ To deploy and test the TensorFlow environment on AMD GPUs, follow these steps:
 
 1. Create the pod using the provided YAML file:
     ```bash
-    kubectl create -f https://raw.githubusercontent.com/RadeonOpenCompute/k8s-device-plugin/master/example/pod/alexnet-gpu.yaml
+    kubectl create -f https://raw.githubusercontent.com/ROCm/k8s-device-plugin/c9fc007f07fca4ea1c495ab57f54e10ffa9e2a6b/example/pod/alexnet-gpu.yaml
     ```
 
 2. Check the logs to verify successful deployment and operation:
@@ -125,11 +131,14 @@ To deploy and test the TensorFlow environment on AMD GPUs, follow these steps:
     Example output:
     ```
     $ kubectl logs alexnet-tf-gpu-pod
-    TensorFlow:  2.13
+    ...
+    2024-01-26 22:50:28.771404: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1886] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 63950 MB memory:  -> device: 0, name: AMD Instinct MI210, pci bus id: 0000:1b:00.0
+    ...
+    TensorFlow:  2.14
     ...
     Devices:     ['/gpu:0']
     ...
-    total images/sec: 5876.64
+    total images/sec: 5849.31
     ```
 
 3. Once testing is complete, delete the pod:
@@ -157,7 +166,7 @@ To test TensorFlow with AMD GPU in Akash Deployment:
 - Override the `command` & `args` in the SDL.
 - Execute the benchmarking command:
     ```bash
-    python3 benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --model=alexnet
+    python3 /benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --model=alexnet
     ```
 
 ### Example SDL
