@@ -12,3 +12,4 @@ A known issue exists which occurs when a tenant creates a deployment which doesn
 These could potentially occupy all available process slots.
 
 Follow the steps in the [Kill Zombie Processes](../../akash-provider-troubleshooting/kill-zombie-processes.md) document to address this issue.
+
