@@ -37,14 +37,22 @@ Follow these steps to install the AMD driver and ROCM:
     apt install -y ./amdgpu-install_5.7.50701-1_all.deb
     ```
 
-4. Install ROCM:
+4. Install AMD GPU driver:
     ```bash
-    amdgpu-install -y --usecase=rocm
+    apt -y install amdgpu-dkms
     ```
 
-5. Install the required package for running rccl-test:
+5. Make sure it is loaded:
+    > You can either reboot or directly load the AMD GPU driver.
     ```bash
-    apt install -y libstdc++-12-dev
+    modprobe amdgpu
+    ```
+    Verify:
+    > you should be able to see the amdgpu driver is loaded
+    ```
+    # lsmod |grep -i amdgpu
+    amdgpu              13590528  0
+    ...
     ```
 
 ## Enabling AMD GPU Support in Akash Provider
@@ -53,7 +61,7 @@ Follow these steps to install the AMD driver and ROCM:
 
 - Add the helm repository and install the chart:
     ```bash
-    helm repo add amd-gpu-helm https://radeonopencompute.github.io/k8s-device-plugin/
+    helm repo add amd-gpu-helm https://rocm.github.io/k8s-device-plugin/
     helm install --create-namespace --namespace amd-device-plugin --set namespace=amd-device-plugin amd-gpu amd-gpu-helm/amd-gpu --version 0.12.0
     ```
 
