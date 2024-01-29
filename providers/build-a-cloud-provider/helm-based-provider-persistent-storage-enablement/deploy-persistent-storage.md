@@ -131,7 +131,8 @@ helm install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --
 > When planning all-in-one production provider (or a single storage node) with multiple storage drives (minimum 3 drives or 2 drives if `osdsPerDevice` = 2):
 >
 > * Set `failureDomain` to `osd`
-> * Set `min_size` & `osd_pool_default_min_size` to `2`and `size` & `osd_pool_default_size` to `3`
+> * `size`/`osd_pool_default_size` should be always set to `osdsPerDevice+1` when `failureDomain = osd`
+> * Set `min_size` & `osd_pool_default_min_size` to `2`and `size` & `osd_pool_default_size` to `3` (the latter can be set to `2` if you have minimum 3 drives and `osdsPerDevice = 1`)
 > * Comment or remove `resources:` field to make sure Ceph services will get enough resources before running them
 
 ```
@@ -213,7 +214,8 @@ EOF
 > * Add your nodes you want the Ceph storage to use the disks on under the `nodes` section; (make sure to change `node1`, `node2`, ... to your K8s node names!
 > * When planning a single storage node with multiple storage drives (minimum 3 drives or 2 drives if `osdsPerDevice` = 2):
 >   * Set `failureDomain` to `osd`
->   * Set `min_size` & `osd_pool_default_min_size` to `2`and `size` & `osd_pool_default_size` to `3`
+>   * `size`/`osd_pool_default_size` should be always set to `osdsPerDevice+1` when `failureDomain = osd`
+>   * Set `min_size` & `osd_pool_default_min_size` to `2`and `size` & `osd_pool_default_size` to `3` (the latter can be set to `2` if you have minimum 3 drives and `osdsPerDevice = 1`)
 
 ```
 cat > rook-ceph-cluster.values.yml << 'EOF'
