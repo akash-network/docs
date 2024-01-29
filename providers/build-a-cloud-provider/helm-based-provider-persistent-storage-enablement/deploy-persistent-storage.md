@@ -103,7 +103,7 @@ EOF
 helm install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.12.4 -f rook-ceph-operator.values.yml
 ```
 
-**PRODUCTION**
+## PRODUCTION
 
 > No customization is required by default.
 
@@ -118,16 +118,16 @@ helm install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --
 > For additional Cluster chart values refer to [this](https://github.com/rook/rook/blob/v1.9.9/deploy/charts/rook-ceph-cluster/values.yaml) page.\
 > For custom storage configuration refer to [this](https://rook.io/docs/rook/v1.9/ceph-cluster-crd.html#storage-configuration-specific-devices) example.
 
-**TESTING / ALL-IN-ONE**
+## TESTING / ALL-IN-ONE
 
 > * Update `deviceFilter` to match your disks
 > * Change storageClass name from `beta3` to one you are planning to use based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
 > * Add your nodes you want the Ceph storage to use the disks on under the `nodes` section; (make sure to change `node1`, `node2`, ... to your K8s node names!
 >
-> When planning all-in-one production provider (or a single storage node) with multiple storage drives (minimum 3):
+> When planning all-in-one production provider (or a single storage node) with multiple storage drives (minimum 3 drives or 2 drives if `osdsPerDevice` = 2):
 >
-> * Change `failureDomain` to `osd`
-> * Change `min_size` to `2`and size to `3`
+> * Set `failureDomain` to `osd`
+> * Set `min_size` & `osd_pool_default_min_size` to `2`and `size` & `osd_pool_default_size` to `3`
 > * Comment or remove `resources:` field to make sure Ceph services will get enough resources before running them
 
 ```
@@ -207,8 +207,9 @@ EOF
 > * Change storageClass name from `beta3` to one you are planning to use based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
 > * Update `osdsPerDevice` based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
 > * Add your nodes you want the Ceph storage to use the disks on under the `nodes` section; (make sure to change `node1`, `node2`, ... to your K8s node names!
-> * When planning a single storage node with multiple storage drives (minimum 3):
->   * Change `failureDomain` to `osd`
+> * When planning a single storage node with multiple storage drives (minimum 3 drives or 2 drives if `osdsPerDevice` = 2):
+>   * Set `failureDomain` to `osd`
+>   * Set `min_size` & `osd_pool_default_min_size` to `2`and `size` & `osd_pool_default_size` to `3`
 
 ```
 cat > rook-ceph-cluster.values.yml << 'EOF'
@@ -299,7 +300,7 @@ helm install --create-namespace -n rook-ceph rook-ceph-cluster \
 
 > This label is mandatory and is [used](https://github.com/ovrclk/k8s-inventory-operator/blob/v0.1.4/ceph.go#L185) by the Akash's `inventory-operator` for searching the storageClass.
 
-* Change beta3 to your storageClass you have picked before
+* Change `beta3` to your `storageClass` you have picked before
 
 ```
 kubectl label sc beta3 akash.network=true
