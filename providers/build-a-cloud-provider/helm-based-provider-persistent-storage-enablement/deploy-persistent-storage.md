@@ -120,20 +120,25 @@ helm install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --
 > For additional Cluster chart values refer to [this](https://github.com/rook/rook/blob/v1.9.9/deploy/charts/rook-ceph-cluster/values.yaml) page.\
 > For custom storage configuration refer to [this](https://rook.io/docs/rook/v1.9/ceph-cluster-crd.html#storage-configuration-specific-devices) example.
 
-## TESTING / ALL-IN-ONE
 
-> Scroll further for **PRODUCTION**
+## TESTING / ALL-IN-ONE SETUP
 
-> * Update `deviceFilter` to match your disks
-> * Change storageClass name from `beta3` to one you are planning to use based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
-> * Add your nodes you want the Ceph storage to use the disks on under the `nodes` section; (make sure to change `node1`, `node2`, ... to your K8s node names!
->
-> When planning all-in-one production provider (or a single storage node) with multiple storage drives (minimum 3 drives or 2 drives if `osdsPerDevice` = 2):
->
-> * Set `failureDomain` to `osd`
-> * `size`/`osd_pool_default_size` should be always set to `osdsPerDevice+1` when `failureDomain = osd`
-> * Set `min_size` & `osd_pool_default_min_size` to `2`and `size` & `osd_pool_default_size` to `3` (the latter can be set to `2` if you have minimum 3 drives and `osdsPerDevice = 1`)
-> * Comment or remove `resources:` field to make sure Ceph services will get enough resources before running them
+> For production multi-node setup, please skip this section and scroll further for **PRODUCTION SETUP**
+
+## Preliminary Steps
+1. **Device Filter**: Update `deviceFilter` to correspond with your specific disk configurations.
+2. **Storage Class**: Modify the `storageClass` name from `beta3` to an appropriate one, as outlined in the [Storage Class Types table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types).
+3. **Node Configuration**: Under the `nodes` section, list the nodes designated for Ceph storage, replacing placeholders like `node1`, `node2`, etc., with your Kubernetes node names.
+
+## Configuration for All-in-One or Single Storage Node
+When setting up an **all-in-one production** provider or a single storage node with multiple storage drives (minimum requirement: 3 drives, or 2 drives if `osdsPerDevice` is set to 2):
+
+1. **Failure Domain**: Set `failureDomain` to `osd`.
+2. **Size Settings**:
+   - The `size` and `osd_pool_default_size` should always be set to `osdsPerDevice + 1` when `failureDomain` is set to `osd`.
+   - Set `min_size` and `osd_pool_default_min_size` to `2`.
+   - Set `size` and `osd_pool_default_size` to `3`. Note: These can be set to `2` if you have a minimum of 3 drives and `osdsPerDevice` is `1`.
+3. **Resource Allocation**: To ensure Ceph services receive sufficient resources, comment out or remove the `resources:` field before execution.
 
 ```
 cat > rook-ceph-cluster.values.yml << 'EOF'
@@ -206,16 +211,22 @@ toolbox:
 EOF
 ```
 
-## PRODUCTION
+## PRODUCTION SETUP
 
-> * Update `deviceFilter` to match your disks
-> * Change storageClass name from `beta3` to one you are planning to use based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
-> * Update `osdsPerDevice` based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
-> * Add your nodes you want the Ceph storage to use the disks on under the `nodes` section; (make sure to change `node1`, `node2`, ... to your K8s node names!
-> * When planning a single storage node with multiple storage drives (minimum 3 drives or 2 drives if `osdsPerDevice` = 2):
->   * Set `failureDomain` to `osd`
->   * `size`/`osd_pool_default_size` should be always set to `osdsPerDevice+1` when `failureDomain = osd`
->   * Set `min_size` & `osd_pool_default_min_size` to `2`and `size` & `osd_pool_default_size` to `3` (the latter can be set to `2` if you have minimum 3 drives and `osdsPerDevice = 1`)
+### Core Configuration
+1. **Device Filter**: Update `deviceFilter` to match your disk specifications.
+2. **Storage Class**: Change the `storageClass` name from `beta3` to a suitable one, as specified in the [Storage Class Types table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types).
+3. **OSDs Per Device**: Adjust `osdsPerDevice` according to the guidelines provided in the aforementioned table.
+4. **Node Configuration**: In the `nodes` section, add your nodes for Ceph storage, ensuring to replace `node1`, `node2`, etc., with the actual names of your Kubernetes nodes.
+
+### Configuration for a Single Storage Node
+For a setup involving a single storage node with multiple storage drives (minimum: 3 drives, or 2 drives if `osdsPerDevice` = 2):
+
+1. **Failure Domain**: Set `failureDomain` to `osd`.
+2. **Size Settings**:
+   - The `size` and `osd_pool_default_size` should always be set to `osdsPerDevice + 1` when `failureDomain` is set to `osd`.
+   - Set `min_size` and `osd_pool_default_min_size` to `2`.
+   - Set `size` and `osd_pool_default_size` to `3`. Note: These can be set to `2` if you have a minimum of 3 drives and `osdsPerDevice` is `1`.
 
 ```
 cat > rook-ceph-cluster.values.yml << 'EOF'
