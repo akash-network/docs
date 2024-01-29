@@ -64,7 +64,9 @@ rook-release/rook-ceph-cluster	v1.12.4       	v1.12.4     	Manages a single Ceph
 
 #### **STEP 1 - Install Ceph Operator Helm Chart**
 
-#### **Testing**
+## TESTING
+
+> Scroll further for **PRODUCTION**
 
 > For additional Operator chart values refer to [this](https://github.com/rook/rook/blob/v1.9.9/deploy/charts/rook-ceph/values.yaml) page.
 
@@ -119,6 +121,8 @@ helm install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --
 > For custom storage configuration refer to [this](https://rook.io/docs/rook/v1.9/ceph-cluster-crd.html#storage-configuration-specific-devices) example.
 
 ## TESTING / ALL-IN-ONE
+
+> Scroll further for **PRODUCTION**
 
 > * Update `deviceFilter` to match your disks
 > * Change storageClass name from `beta3` to one you are planning to use based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
@@ -201,7 +205,7 @@ toolbox:
 EOF
 ```
 
-**PRODUCTION**
+## PRODUCTION
 
 > * Update `deviceFilter` to match your disks
 > * Change storageClass name from `beta3` to one you are planning to use based on this [table](https://docs.akash.network/providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/storage-class-types)
