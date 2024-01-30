@@ -30,6 +30,7 @@ controller:
     enable-ssl-passthrough: true
 tcp:
   "8443": "akash-services/akash-provider:8443"
+  "8444": "akash-services/akash-provider:8444"
 EOF
 ```
 
@@ -62,6 +63,7 @@ controller:
 tcp:
   "1317": "akash-services/akash-node-1:1317"
   "8443": "akash-services/akash-provider:8443"
+  "8444": "akash-services/akash-provider:8444"
   "9090":  "akash-services/akash-node-1:9090"
   "26656": "akash-services/akash-node-1:26656"
   "26657": "akash-services/akash-node-1:26657"
