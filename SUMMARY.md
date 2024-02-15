@@ -315,6 +315,7 @@
       * [Create Akash Deployment](other-resources/experimental/akash-deployments-via-terraform/create-akash-deployment.md)
       * [Close Akash Deployment](other-resources/experimental/akash-deployments-via-terraform/close-akash-deployment.md)
       * [Terraform Manifest - Complete Example](other-resources/experimental/akash-deployments-via-terraform/terraform-manifest-complete-example.md)
+    * [Akash Provider Feature Discovery Upgrade/Enablement](other-resources/experimental/akash-provider-feature-discovery-upgrade-enablement.md)
   * [Security](other-resources/security.md)
   * [Containers](other-resources/platform.md)
   * [Marketplace](other-resources/marketplace.md)
