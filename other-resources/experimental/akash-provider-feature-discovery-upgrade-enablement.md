@@ -4,29 +4,77 @@
 
 ## Overview
 
-The following provides an overview of the steps necessary to upgrade your Akash provider to version _**X.X.X**_ and to enable Feature Discovery:
+The following provides an overview of the steps necessary to upgrade your Akash provider to version `0.5.0-rc14` and to enable Feature Discovery:
 
+* [Download Helm Chart and Use Feature Discovery Branch](akash-provider-feature-discovery-upgrade-enablement.md#download-helm-chart-and-use-feature-discovery-branch)
 * [Akash Hostname Operator Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-hostname-operator-upgrade)
 * [Akash Provider Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-provider-upgrade)
 * [Akash Inventory Operator Install/Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-inventory-operator-install-upgrade)
 * [Akash IP Operator Upgrade (If Applicable)](akash-provider-feature-discovery-upgrade-enablement.md#akash-ip-operator-upgrade-if-applicable)
+* [Update Ingress Controller](akash-provider-feature-discovery-upgrade-enablement.md#update-ingress-controller)
+* [Testing](akash-provider-feature-discovery-upgrade-enablement.md#testing)
+
+### Download Helm Chart and Use Feature Discovery Branch
+
+#### Clone Akash Helm Chart Repository
+
+```
+cd ~
+
+git clone https://github.com/akash-network/helm-charts.git
+```
+
+#### Checkout Feature Discovery Branch of Helm Chart Repo
+
+```
+cd ~/helm-charts
+
+helm repo update
+
+git checkout feature-discovery
+
+### Ensure the working branch has been updated to feature-discovery
+git branch
+```
+
+#### Expected Output
+
+```
+git checkout feature-discovery
+Branch 'feature-discovery' set up to track remote branch 'feature-discovery' from 'origin'.
+Switched to a new branch 'feature-discovery'
+
+git branch
+* feature-discovery
+  main
+```
 
 ### Akash Hostname Operator Upgrade
 
 ```
-helm update
+cd ~/helm-charts/charts/akash-hostname-operator
 
 helm uninstall akash-hostname-operator -n akash-services
 
-helm install akash-hostname-operator -n akash-services
+helm package .
+
+helm install akash-hostname-operator akash-hostname-operator-8.0.0.tgz -n akash-services --set image.tag=0.5.0-rc14
 ```
 
 ### Akash Provider Upgrade
 
+> NOTE - these instructions assume your Akash Provider settings are stored in `/root/provider/provider.yaml`.  If this is not the cause - dump current provider settings prior to initiating this process via the following command and ensure the `helm install` command points to the location of this file.\
+> \
+> `helm -n akash-services get values akash-provider > provider.yaml`
+
 ```
+cd ~/helm-charts/charts/akash-provider
+
 helm uninstall akash-provider -n akash-services
 
-helm install -n akash-services -f /root/provider/provider.yaml
+helm package .
+
+helm install akash-provider provider-8.0.1.tgz -n akash-services -f /root/provider/provider.yaml --set image.tag=0.5.0-rc14
 ```
 
 ### Akash Inventory Operator Install/Upgrade
@@ -34,9 +82,13 @@ helm install -n akash-services -f /root/provider/provider.yaml
 > _**NOTE**_ - the Inventory Operator is now required on ALL Akash Providers.  Previously this operator was only required when the Provider hosted persistent storage.  But the operator is now mandated on all providers.
 
 ```
+cd ~/helm-charts/charts/akash-inventory-operator
+
 helm uninstall inventory-operator -n akash-services
 
-helm install inventory-operator akash-inventory-operator-8.0.0.tgz -n akash-services --set image.tag=0.5.0-rc13
+helm package .
+
+helm install inventory-operator akash-inventory-operator-8.0.0.tgz -n akash-services --set image.tag=0.5.0-rc14
 ```
 
 ### Akash IP Operator Upgrade (If Applicable)
@@ -44,7 +96,324 @@ helm install inventory-operator akash-inventory-operator-8.0.0.tgz -n akash-serv
 > _**NOTE**_ - the IP Operator is only necessary if your Akash Provider provides IP Leases
 
 ```
+cd ~/helm-charts/charts/akash-ip-operator
+
 helm uninstall akash-ip-operator -n akash-services
 
-helm install akash-ip-operator akash/akash-ip-operator -n akash-services --set provider_address=<provider-address>
+helm package .
+
+helm install akash-ip-operator-8.0.0.tgz -n akash-services --set provider_address=<provider-address>
+```
+
+### Update Ingress Controller
+
+The Ingress Controller rules have been updated to include Feature Discovery destinations and mainly port `8444`.  Update your ingress controller to ensure they are current via the instructions in this doc [section](https://docs.akash.network/providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-8-ingress-controller-install).
+
+### Testing
+
+Test your Akash Provider's Feature Discovery functionality via the use of gRPC CuRL such as:
+
+#### Template
+
+* Replace `<PROVIDER-IP-ADDRESS>` with actual
+
+```
+grpcurl -insecure <PROVIDER-IP-ADDRESS>:8444 akash.provider.v1.ProviderRPC.GetStatus
+```
+
+#### Example/Expected Output
+
+```
+grpcurl -insecure 34.28.236.4:8444 akash.provider.v1.ProviderRPC.GetStatus
+{
+  "cluster": {
+    "leases": {},
+    "inventory": {
+      "cluster": {
+        "nodes": [
+          {
+            "name": "node1",
+            "resources": {
+              "cpu": {
+                "quantity": {
+                  "allocatable": {
+                    "string": "8"
+                  },
+                  "allocated": {
+                    "string": "3720m"
+                  }
+                },
+                "info": [
+                  {
+                    "id": "0",
+                    "vendor": "GenuineIntel",
+                    "model": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+                    "vcores": 8
+                  }
+                ]
+              },
+              "memory": {
+                "quantity": {
+                  "allocatable": {
+                    "string": "33538080768"
+                  },
+                  "allocated": {
+                    "string": "4535332Ki"
+                  }
+                }
+              },
+              "gpu": {
+                "quantity": {
+                  "allocatable": {
+                    "string": "0"
+                  },
+                  "allocated": {
+                    "string": "0"
+                  }
+                }
+              },
+              "ephemeralStorage": {
+                "allocatable": {
+                  "string": "233966001789"
+                },
+                "allocated": {
+                  "string": "0"
+                }
+              },
+              "volumesAttached": {
+                "allocatable": {
+                  "string": "0"
+                },
+                "allocated": {
+                  "string": "0"
+                }
+              },
+              "volumesMounted": {
+                "allocatable": {
+                  "string": "0"
+                },
+                "allocated": {
+                  "string": "0"
+                }
+              }
+            },
+            "capabilities": {
+              "storageClasses": [
+                "beta2"
+              ]
+            }
+          },
+          {
+            "name": "node2",
+            "resources": {
+              "cpu": {
+                "quantity": {
+                  "allocatable": {
+                    "string": "8"
+                  },
+                  "allocated": {
+                    "string": "4205m"
+                  }
+                },
+                "info": [
+                  {
+                    "id": "0",
+                    "vendor": "GenuineIntel",
+                    "model": "Intel(R) Xeon(R) CPU @ 2.30GHz",
+                    "vcores": 8
+                  }
+                ]
+              },
+              "memory": {
+                "quantity": {
+                  "allocatable": {
+                    "string": "31424155648"
+                  },
+                  "allocated": {
+                    "string": "7715418Ki"
+                  }
+                }
+              },
+              "gpu": {
+                "quantity": {
+                  "allocatable": {
+                    "string": "1"
+                  },
+                  "allocated": {
+                    "string": "1"
+                  }
+                },
+                "info": [
+                  {
+                    "vendor": "nvidia",
+                    "name": "t4",
+                    "modelid": "1eb8",
+                    "interface": "PCIe",
+                    "memorySize": "16Gi"
+                  }
+                ]
+              },
+              "ephemeralStorage": {
+                "allocatable": {
+                  "string": "233966001789"
+                },
+                "allocated": {
+                  "string": "268435456"
+                }
+              },
+              "volumesAttached": {
+                "allocatable": {
+                  "string": "0"
+                },
+                "allocated": {
+                  "string": "0"
+                }
+              },
+              "volumesMounted": {
+                "allocatable": {
+                  "string": "0"
+                },
+                "allocated": {
+                  "string": "0"
+                }
+              }
+            },
+            "capabilities": {
+              "storageClasses": [
+                "beta2"
+              ]
+            }
+          },
+          {
+            "name": "node3",
+            "resources": {
+              "cpu": {
+                "quantity": {
+                  "allocatable": {
+                    "string": "8"
+                  },
+                  "allocated": {
+                    "string": "5875m"
+                  }
+                },
+                "info": [
+                  {
+                    "id": "0",
+                    "vendor": "GenuineIntel",
+                    "model": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+                    "vcores": 8
+                  }
+                ]
+              },
+              "memory": {
+                "quantity": {
+                  "allocatable": {
+                    "string": "33538080768"
+                  },
+                  "allocated": {
+                    "string": "13674038Ki"
+                  }
+                }
+              },
+              "gpu": {
+                "quantity": {
+                  "allocatable": {
+                    "string": "0"
+                  },
+                  "allocated": {
+                    "string": "0"
+                  }
+                }
+              },
+              "ephemeralStorage": {
+                "allocatable": {
+                  "string": "233966001789"
+                },
+                "allocated": {
+                  "string": "0"
+                }
+              },
+              "volumesAttached": {
+                "allocatable": {
+                  "string": "0"
+                },
+                "allocated": {
+                  "string": "0"
+                }
+              },
+              "volumesMounted": {
+                "allocatable": {
+                  "string": "0"
+                },
+                "allocated": {
+                  "string": "0"
+                }
+              }
+            },
+            "capabilities": {
+              "storageClasses": [
+                "beta2"
+              ]
+            }
+          }
+        ],
+        "storage": [
+          {
+            "quantity": {
+              "allocatable": {
+                "string": "101796855808"
+              },
+              "allocated": {
+                "string": "0"
+              }
+            },
+            "info": {
+              "class": "beta2"
+            }
+          }
+        ]
+      },
+      "reservations": {
+        "pending": {
+          "resources": {
+            "cpu": {
+              "string": "0"
+            },
+            "memory": {
+              "string": "0"
+            },
+            "gpu": {
+              "string": "0"
+            },
+            "ephemeralStorage": {
+              "string": "0"
+            }
+          }
+        },
+        "active": {
+          "resources": {
+            "cpu": {
+              "string": "0"
+            },
+            "memory": {
+              "string": "0"
+            },
+            "gpu": {
+              "string": "0"
+            },
+            "ephemeralStorage": {
+              "string": "0"
+            }
+          }
+        }
+      }
+    }
+  },
+  "bidEngine": {},
+  "manifest": {},
+  "publicHostnames": [
+    "provider.akashtestprovider.xyz"
+  ],
+  "timestamp": "2024-02-16T17:20:20.054534655Z"
+}
 ```
