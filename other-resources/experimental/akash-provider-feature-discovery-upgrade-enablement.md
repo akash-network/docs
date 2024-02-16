@@ -12,6 +12,7 @@ The following provides an overview of the steps necessary to upgrade your Akash 
 * [Akash Inventory Operator Install/Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-inventory-operator-install-upgrade)
 * [Akash IP Operator Upgrade (If Applicable)](akash-provider-feature-discovery-upgrade-enablement.md#akash-ip-operator-upgrade-if-applicable)
 * [Update Ingress Controller](akash-provider-feature-discovery-upgrade-enablement.md#update-ingress-controller)
+* [Verifications](akash-provider-feature-discovery-upgrade-enablement.md#verifications)
 * [Testing](akash-provider-feature-discovery-upgrade-enablement.md#testing)
 
 ### Download Helm Chart and Use Feature Discovery Branch
@@ -109,9 +110,33 @@ helm install akash-ip-operator-8.0.0.tgz -n akash-services --set provider_addres
 
 The Ingress Controller rules have been updated to include Feature Discovery destinations and mainly port `8444`.  Update your ingress controller to ensure they are current via the instructions in this doc [section](https://docs.akash.network/providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-8-ingress-controller-install).
 
+### Verifications
+
+* Verify the status of the Akash Provider and Akash Operators following the upgrade
+
+```
+kubectl get pods -n akash-services
+```
+
+#### Example/Expected Output
+
+> Note - pay particular attention to the presence of the `operator-inventory-hardware-discovery`.  One such pod should be spawned for each Kubernetes worker node.
+
+```
+kubectl get pods -n akash-services
+NAME                                          READY   STATUS    RESTARTS       AGE
+akash-node-1-0                                1/1     Running   2 (2d2h ago)   2d21h
+akash-provider-0                              1/1     Running   0              3m48s
+operator-hostname-6f9d7cb465-bdrpb            1/1     Running   0              4m42s
+operator-inventory-6f6986496b-8dljm           1/1     Running   0              3m41s
+operator-inventory-hardware-discovery-node1   1/1     Running   0              3m39s
+operator-inventory-hardware-discovery-node2   1/1     Running   0              3m39s
+operator-inventory-hardware-discovery-node3   1/1     Running   0              3m38s
+```
+
 ### Testing
 
-Test your Akash Provider's Feature Discovery functionality via the use of gRPC CuRL such as:
+Test your Akash Provider's Feature Discovery functionality via the use of gRPC CuRL and examples provided below.  If you do not have gRPC CuRL installed - follow the instructions in this [guide](https://github.com/fullstorydev/grpcurl) to install via brew.
 
 #### Template
 
