@@ -104,7 +104,7 @@ helm uninstall akash-ip-operator -n akash-services
 helm package .
 
 ### Update the `<provider-address>` placeholder with the address of your provider
-helm install akash-ip-operator-8.0.0.tgz -n akash-services --set provider_address=<provider-address> --set image.tag=0.5.0-rc14
+helm install akash-ip-operator akash-ip-operator-8.0.0.tgz -n akash-services --set provider_address=<provider-address> --set image.tag=0.5.0-rc14
 ```
 
 ### Update Ingress Controller
