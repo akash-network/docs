@@ -32,7 +32,7 @@ root@node1:~# kubectl -n lease get manifest --show-labels --sort-by='.metadata.c
 #### STEP 2 - Close the bid
 
 ```
-root@node1:~# kubectl -n akash-services exec -i $(kubectl -n akash-services get pods -l app=akash-provider --output jsonpath='{.items[0].metadata.name}') -- bash -c "akash tx market bid close --owner akash1h24fljt7p0nh82cq0za0uhsct3sfwsfu9w3c9h --dseq 8438017 --oseq 1 --gseq 1 -y"
+kubectl -n akash-services exec -i $(kubectl -n akash-services get pods -l app=akash-provider --output jsonpath='{.items[0].metadata.name}') -- bash -c "provider-services tx market bid close --owner akash1h24fljt7p0nh82cq0za0uhsct3sfwsfu9w3c9h --dseq 8438017 --oseq 1 --gseq 1 -y"
 ```
 
 #### STEP 3 - Verification
