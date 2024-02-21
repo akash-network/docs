@@ -47,17 +47,17 @@ helm repo add rook-release https://charts.rook.io/release
 * Verify the Rook repo has been added
 
 ```
-helm search repo rook-release --version v1.12.4
+helm search repo rook-release --version v1.13.4
 ```
 
 * Expected/Example Result
 
 ```
-# helm search repo rook-release --version v1.12.4
+# helm search repo rook-release --version v1.13.4
 
 NAME                          	CHART VERSION	APP VERSION	DESCRIPTION                                       
-rook-release/rook-ceph        	v1.12.4       	v1.12.4     	File, Block, and Object Storage Services for yo...
-rook-release/rook-ceph-cluster	v1.12.4       	v1.12.4     	Manages a single Ceph cluster namespace for Rook
+rook-release/rook-ceph        	v1.13.4       	v1.13.4     	File, Block, and Object Storage Services for yo...
+rook-release/rook-ceph-cluster	v1.13.4       	v1.13.4     	Manages a single Ceph cluster namespace for Rook
 ```
 
 ### **Deployment Steps**
@@ -102,7 +102,7 @@ EOF
 ### Install the Operator Chart
 
 ```
-helm install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.12.4 -f rook-ceph-operator.values.yml
+helm install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.13.4 -f rook-ceph-operator.values.yml
 ```
 
 ## PRODUCTION
@@ -112,7 +112,7 @@ helm install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --
 * Install the Operator chart:
 
 ```
-helm install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.12.4
+helm install --create-namespace -n rook-ceph rook-ceph rook-release/rook-ceph --version 1.13.4
 ```
 
 #### STEP 2 - Install Ceph Cluster Helm Chart
@@ -310,7 +310,7 @@ EOF
 
 ```
 helm install --create-namespace -n rook-ceph rook-ceph-cluster \
-   --set operatorNamespace=rook-ceph rook-release/rook-ceph-cluster --version 1.12.4 -f rook-ceph-cluster.values.yml
+   --set operatorNamespace=rook-ceph rook-release/rook-ceph-cluster --version 1.13.4 -f rook-ceph-cluster.values.yml
 ```
 
 #### STEP 3 - Label the storageClass
