@@ -4,7 +4,7 @@
 
 ## Overview
 
-The following provides an overview of the steps necessary to upgrade your Akash provider to version `0.5.0-rc15` and to enable Feature Discovery:
+The following provides an overview of the steps necessary to upgrade your Akash provider to version `0.5.0-rc16` and to enable Feature Discovery:
 
 * [Download Helm Chart and Use Feature Discovery Branch](akash-provider-feature-discovery-upgrade-enablement.md#download-helm-chart-and-use-feature-discovery-branch)
 * [Akash Hostname Operator Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-hostname-operator-upgrade)
@@ -59,7 +59,7 @@ helm uninstall akash-hostname-operator -n akash-services
 
 helm package .
 
-helm install akash-hostname-operator akash-hostname-operator-8.0.0.tgz -n akash-services --set image.tag=0.5.0-rc15
+helm install akash-hostname-operator akash-hostname-operator-8.0.0.tgz -n akash-services --set image.tag=0.5.0-rc16
 ```
 
 ### Akash Provider Upgrade
@@ -75,7 +75,7 @@ helm uninstall akash-provider -n akash-services
 
 helm package .
 
-helm install akash-provider provider-8.0.1.tgz -n akash-services -f /root/provider/provider.yaml --set image.tag=0.5.0-rc15
+helm install akash-provider provider-8.0.1.tgz -n akash-services -f /root/provider/provider.yaml --set image.tag=0.5.0-rc16
 ```
 
 ### Akash Inventory Operator Install/Upgrade
@@ -89,7 +89,7 @@ helm uninstall inventory-operator -n akash-services
 
 helm package .
 
-helm install inventory-operator akash-inventory-operator-8.0.0.tgz -n akash-services --set image.tag=0.5.0-rc15
+helm install inventory-operator akash-inventory-operator-8.0.0.tgz -n akash-services --set image.tag=0.5.0-rc16
 ```
 
 ### Akash IP Operator Upgrade (If Applicable)
@@ -104,7 +104,7 @@ helm uninstall akash-ip-operator -n akash-services
 helm package .
 
 ### Update the `<provider-address>` placeholder with the address of your provider
-helm install akash-ip-operator akash-ip-operator-8.0.0.tgz -n akash-services --set provider_address=<provider-address> --set image.tag=0.5.0-rc15
+helm install akash-ip-operator akash-ip-operator-8.0.0.tgz -n akash-services --set provider_address=<provider-address> --set image.tag=0.5.0-rc16
 ```
 
 ### Update Ingress Controller
