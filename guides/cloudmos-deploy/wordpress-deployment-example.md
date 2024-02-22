@@ -20,7 +20,7 @@ In this section we will use Cloudmos Deploy to launch an example Minecraft deplo
 * The tool provides several sample templates launch of popular applications
 * Select the `Minecraft` template for our initial deployment
 
-<figure><img src="../../.gitbook/assets/cloudmosSelectTemplate (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/cloudmosSelectTemplate.png" alt=""><figcaption></figcaption></figure>
 
 #### **STEP 4 - Proceed with Deployment**
 

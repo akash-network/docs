@@ -23,16 +23,16 @@ In the steps to come we will take the journey from App Store download through in
 * A prompt will allow confirmation of the phone number after entry
 * Input the confirmation code received via text to this phone number when requested
 
-![](<../.gitbook/assets/phoneNumberEntry (2).png>)
+![](<../.gitbook/assets/phoneNumberEntry (3).png>)
 
 * Make a selection to allow or don’t allow Mixin Messenger notifications
 * The choice regarding notifications will not change the experience when using the app
 
-![](../.gitbook/assets/notificationConfirm.png)
+![](<../.gitbook/assets/notificationConfirm (1).png>)
 
 * The Mixin Messenger home screen following initial setup
 
-![](<../.gitbook/assets/mixinInitialScreen (1).png>)
+![](../.gitbook/assets/mixinInitialScreen.png)
 
 ### Transfer of ATOM into Wallet
 
@@ -55,7 +55,7 @@ In this series of steps we will transfer ATOM into Mixin Messenger with the even
 
 * Enter a search of “atom” and select “ATOM/Cosmos” from the search results
 
-![](<../.gitbook/assets/searchATOM (1).png>)
+![](../.gitbook/assets/searchATOM.png)
 
 * Press the Receive button
 * Our goal in this step is to receive ATOM from another account that holds some (I.e. an external wallet or exchange account you hold with ATOM)
@@ -75,7 +75,7 @@ In this series of steps we will transfer ATOM into Mixin Messenger with the even
 
 * You should now see the ATOM in your Mixin Messenger wallet
 
-![](../.gitbook/assets/atomDepositComplete.png)
+![](<../.gitbook/assets/atomDepositComplete (1).png>)
 
 ### Mixin Messenger Bot - 4Swap
 
@@ -83,11 +83,11 @@ In the following steps we will install a bot named 4Swap to change the ATOM into
 
 * We begin the bot install by pressing the Contacts button from the Mixin Messenger home screen
 
-![](../.gitbook/assets/contactsInitial.png)
+![](<../.gitbook/assets/contactsInitial (1).png>)
 
 * Select the “Add Contact” option
 
-![](<../.gitbook/assets/contactsAdd (1).png>)
+![](../.gitbook/assets/contactsAdd.png)
 
 * Bots are added within the app via Mixin IDs
 * The ID for the 4SWAP bot is:
@@ -107,7 +107,7 @@ In the following steps we will install a bot named 4Swap to change the ATOM into
 
 * We are presented with an authorization screen. Choose the Authorize button to allow 4Swap access to our wallet.
 
-![](<../.gitbook/assets/authorizeWallet (1).png>)
+![](../.gitbook/assets/authorizeWallet.png)
 
 * Follow these steps to swap ATOM for AKT
   1. Select the drop down arrow next to the first currency and search/select ATOM
@@ -119,7 +119,7 @@ In the following steps we will install a bot named 4Swap to change the ATOM into
 
 * Exit the 4Swap bot
 
-![](../.gitbook/assets/fourSwapExitScreen.png)
+![](<../.gitbook/assets/fourSwapExitScreen (1).png>)
 
 * You will now be brought back to the Mixin wallet home screen where you should see the new balances.
 

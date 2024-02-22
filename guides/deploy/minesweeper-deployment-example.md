@@ -90,4 +90,4 @@ Access the Deployment's URL via the exposed link.
 
 Example display of the Minesweeper web app within the Akash Deployment.
 
-<figure><img src="../../.gitbook/assets/akashConsoleAccess.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/akashConsoleAccess (1).png" alt=""><figcaption></figcaption></figure>

@@ -7,7 +7,7 @@ Our curated guide to building your decentralized provider follows these sequenti
 * **STEP 1** - [Build the Kubernetes Cluster for your Provider](kubernetes-cluster-for-akash-providers/)
 * **STEP 2** - [Build your Cloud Provider via Helm Charts](akash-cloud-provider-build-with-helm-charts/)
 * **STEP 3** - [Complete a CheckUp of your New Provider](akash-provider-checkup/)
-* **STEP 4** - [Enable GPU Resources on your Cloud Provider](../../other-resources/experimental/build-a-cloud-provider/gpu-resource-enablement-optional-step/)
+* **STEP 4** - [Enable GPU Resources on your Cloud Provider](gpu-resource-enablement-optional-step/)
 * **STEP 5** - [Enable Persistent Storage on your Cloud Provider](helm-based-provider-persistent-storage-enablement/)
 * **STEP 6** - [Provider Maintenance](../akash-provider-troubleshooting/provider-maintenance.md)
 * **STEP 7** - [Provider Troubleshooting](../akash-provider-troubleshooting/)
@@ -20,7 +20,7 @@ Our curated guide to building your decentralized provider follows these sequenti
 * [TLS Certs for Akash Providers](tls-certs-for-akash-provider-optional-step/)
 * [IP Leases](ip-leases-provider-enablement-optional-step/)
 * [Persistent Storage](helm-based-provider-persistent-storage-enablement/persistent-storage-requirements.md)
-* [Akash Provider GPU Resource Enablement](../../other-resources/experimental/build-a-cloud-provider/gpu-resource-enablement-optional-step/)
+* [Akash Provider GPU Resource Enablement](gpu-resource-enablement-optional-step/)
 
 #### VERIFICATIONS AND TROUBLESHOOTING
 

@@ -24,12 +24,12 @@ If you have not used Cloudmos Deploy previously, please use [this guide](https:/
 * To install the Akash Node we will use a custom SDL file
 * Select the “Empty” option so that we can copy/paste the Akash Node SDL in the next step
 
-![](<../.gitbook/assets/manifestSelectInitial (1).png>)
+![](../.gitbook/assets/manifestSelectInitial.png)
 
 * Copy and paste the SDL from [this site](https://github.com/akash-network/cosmos-omnibus/blob/master/akash/deploy.yml) into the Cloudmos SDL editor window
 * **NOTE -** the SDL within GitHub currently has a storage > size value of 120Gi. Omnibus uses a compressed snapshot of the blockchain and when expanded 120GB of storage for the deployment will not be enough. At the time of this writing adjusting the storage size to 350GB will suffice and allow some growth. Please adjust the storage appropriately and as shown in the screenshot below.
 
-![](../.gitbook/assets/sdlWithStorageAdjustment.png)
+![](<../.gitbook/assets/sdlWithStorageAdjustment (1).png>)
 
 * Accept the initial deposit of 5 AKT into the deployment’s escrow account
 * The escrow can be refilled easily within Cloudmos Deploy at any time
@@ -38,7 +38,7 @@ If you have not used Cloudmos Deploy previously, please use [this guide](https:/
 
 * Approve the transaction fee to allow the deployment to continue
 
-![](../.gitbook/assets/transactionFeeDeployAccept.png)
+![](<../.gitbook/assets/transactionFeeDeployAccept (1).png>)
 
 * Select a provider from the bid list
 
@@ -46,13 +46,13 @@ If you have not used Cloudmos Deploy previously, please use [this guide](https:/
 
 * Accept the transaction fee to create a lease with the provider
 
-![](<../.gitbook/assets/bidTransactionFee (1).png>)
+![](../.gitbook/assets/bidTransactionFee.png)
 
 ### Cloudmos Deploy Complete
 
 * Once the deployment is complete the lease details are shown
 
-![](../.gitbook/assets/deploymentComplete.png)
+![](<../.gitbook/assets/deploymentComplete (2).png>)
 
 * After some time the Available/Ready Replicas fields will update to show the current node count. It may be necessary to refresh the screen for this count to update.
 
@@ -67,14 +67,14 @@ With the install of the Akash node complete, it must sync with the blockchain. O
 * While the blockchain snapshot is downloading, the following logs should be visible within Cloudmos
 * We can know that the snapshot download is not yet complete if we see this message in the logs
 
-![](../.gitbook/assets/snapshotDownloading.png)
+![](<../.gitbook/assets/snapshotDownloading (1).png>)
 
 ### Snapshot Download Completed
 
 * After the snapshot download completes the logs will begin showing blockchain sync activity
 * Example output shown should look something like this but with the current blocks on the chain
 
-![](../.gitbook/assets/snapshotDownloadComplete.png)
+![](<../.gitbook/assets/snapshotDownloadComplete (1).png>)
 
 ### Akash Node Verifications
 
@@ -84,7 +84,7 @@ With the install of the Akash node complete, it must sync with the blockchain. O
 
 * Begin by capturing the deployment’s public URI from Cloudmos
 
-![](../.gitbook/assets/nodeUIR.png)
+![](<../.gitbook/assets/nodeUIR (1).png>)
 
 #### Confirm Blockchain Sync
 
@@ -101,7 +101,7 @@ With the install of the Akash node complete, it must sync with the blockchain. O
 * Open [Mintscan](https://www.mintscan.io/akash), a popular blockchain explorer, to compare the captured “latest\_block\_height” value to the latest block displayed in the explorer
 * The block height from the Akash Node and Mintscan will not be exactly match but should be close to each other
 
-![](../.gitbook/assets/mintscanBlockHeight.png)
+![](<../.gitbook/assets/mintscanBlockHeight (1).png>)
 
 #### Confirm Peer Nodes
 

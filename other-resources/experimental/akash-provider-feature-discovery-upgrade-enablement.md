@@ -17,6 +17,8 @@ The following provides an overview of the steps necessary to upgrade your Akash 
 
 ### Download Helm Chart and Use Feature Discovery Branch
 
+### STEP1
+
 #### Clone Akash Helm Chart Repository
 
 ```
@@ -82,10 +84,38 @@ helm install akash-provider provider-8.0.1.tgz -n akash-services -f /root/provid
 
 > _**NOTE**_ - the Inventory Operator is now required on ALL Akash Providers.  Previously this operator was only required when the Provider hosted persistent storage.  But the operator is now mandated on all providers.
 
+#### STEP 1
+
+> _**NOTE**_ - if you do not have a prior installation of the inventory operator the uninstall command will produce an error.  Disregard the error and proceed to next step.
+
+```
+helm uninstall inventory-operator -n akash-services
+```
+
+#### STEP 2
+
+> _**NOTE**_ - this step is only necessary for providers hosting persistent storage
+
 ```
 cd ~/helm-charts/charts/akash-inventory-operator
 
-helm uninstall inventory-operator -n akash-services
+vi values.yaml
+```
+
+Within the `values.yaml` file ensure that the `inventoryConfig` section is updated with your persistent storage type - I.e. `beta1`, `beta2`, or `beta3`.&#x20;
+
+```
+inventoryConfig:
+  # Allow users to specify cluster storage options
+  cluster_storage:
+    - default
+    - beta2
+```
+
+#### STEP 3
+
+```
+cd ~/helm-charts/charts/akash-inventory-operator
 
 helm package .
 

@@ -20,7 +20,7 @@ For the following providers who are participating in the sale, expect to see the
 
 ### Required SDL
 
-To make sure you get the sale price from the providers, please Copy and Paste the SDL into [Cloudmos](broken-reference) :
+To make sure you get the sale price from the providers, please Copy and Paste the SDL into [Cloudmos](broken-reference/) :
 
 [BladeBit Summer Sale SDL](chia-on-akash.md#bladebit-ram-plotting)
 
@@ -34,7 +34,7 @@ Please wait up to 60 seconds to see bids from all the providers.
 2. Install [Cloudmos Deploy](https://cloudmos.io/cloud-deploy) and import your AKT wallet address from Keplr.
 3. [Fund your wallet](https://github.com/akash-network/awesome-akash/tree/chia/chia#Quickest-way-to-get-more-AKT)
 
-For additional help we recommend you [follow our full deployment guide](broken-reference) in parallel with this guide.
+For additional help we recommend you [follow our full deployment guide](broken-reference/) in parallel with this guide.
 
 ## How does this work?
 
@@ -275,7 +275,7 @@ deployment:
 To access the Chia Plot Manager, click on the \`Uri\` link on the deployment detail page.\
 To download plots, click an invididual plot in the Chia Plot Manager and click on Download/Open.
 
-![Chia Plot Manager](<../.gitbook/assets/image (13).png>)
+![Chia Plot Manager](<../.gitbook/assets/image (7).png>)
 
 \*Once your download has finished - Delete the plot from the container - to make room for new plots! Plots will continue to be created as long as there is enough free space available in the container (Max 32Tb) and the deployment is fully funded.
 
@@ -334,7 +334,7 @@ Upload your plots to any SSH destination by modifying the `env:`
 
 ### Rclone
 
-Upload your plots to any [Rclone](https://rclone.org/) endpoint! You need to first create a connection to your endpoint on a standard client so that you have a valid configuration in `~/.config/rclone/rclone.conf` You need to modify this block and add  to the end of each line to make it valid for Akash. Below you can find examples of how the `env:` should look.
+Upload your plots to any [Rclone](https://rclone.org/) endpoint! You need to first create a connection to your endpoint on a standard client so that you have a valid configuration in `~/.config/rclone/rclone.conf` You need to modify this block and add to the end of each line to make it valid for Akash. Below you can find examples of how the `env:` should look.
 
 ### Rclone to Dropbox
 

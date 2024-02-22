@@ -82,7 +82,7 @@ CPU: 6 core / 12 threads\
 Memory : 32Gb\
 Disk: 1Tb
 
-![](<../../.gitbook/assets/image (14).png>)
+![](<../../.gitbook/assets/image (2).png>)
 
 [PCPartPicker Part List](https://pcpartpicker.com/list/WsvYW4)
 
@@ -104,7 +104,7 @@ CPU: 10 core / 20 threads\
 Memory : 32Gb\
 Disk: 1Tb
 
-![](../../.gitbook/assets/image.png)
+![](<../../.gitbook/assets/image (5).png>)
 
 Configure and Buy: Dell R630 | Xeon 2650L v3 | 128Gb DDD4 | 2.5" SSD/HD SAS
 
@@ -126,7 +126,7 @@ Disk: 1Tb&#x20;
 
 
 
-![](<../../.gitbook/assets/image (15).png>)
+![](<../../.gitbook/assets/image (12).png>)
 
 [PCPartPicker Part List](https://pcpartpicker.com/list/mgpRFg)
 
@@ -150,7 +150,7 @@ CPU: 20 Core / 40 Thread Intel Xeon\
 Memory : 128GB DDR4\
 Disk: 4TB SSD/SAS
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (11).png>)
 
 Dell R720 | 128Gb DDD4 | 3.5" SSD/HD SAS&#x20;
 
@@ -167,7 +167,7 @@ Recommended System Requirements
 128GB DDR4\
 4TB NVMe / 2x 18TB HDD
 
-![](<../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (15).png>)
 
 [PCPartPicker Part List](https://pcpartpicker.com/list/jJBbC6)
 
@@ -192,7 +192,7 @@ Recommended System Requirements
 128GB DDR4\
 4TB SSD / 2TB NVMe / 8TB HD SAS
 
-![](<../../.gitbook/assets/image (17).png>)
+![](<../../.gitbook/assets/image (13).png>)
 
 [AsRock Rack ROMED6U-2L2T](https://www.asrockrack.com/general/productdetail.asp?Model=ROMED6U-2L2T#Specifications)
 
@@ -210,7 +210,7 @@ Recommended System Requirements
 512GB DDR4\
 4TB SSD / 2TB NVMe / 8TB HD SAS
 
-![](<../../.gitbook/assets/image (9).png>)
+![](<../../.gitbook/assets/image (14).png>)
 
 Buy on [Newegg](https://www.newegg.com/supermicro-mbd-h11dsi-n702-ma015-o-dual-amd-epyc-7000-series/p/N82E16813183691)
 

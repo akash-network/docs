@@ -48,7 +48,7 @@
 
 * Accept the Keplr prompt to approve small blockchain fee for lease creation with the selected cloud provider
 
-<figure><img src="../../.gitbook/assets/akashConsoleLeaseFees.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/akashConsoleLeaseFees (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Kava RPC Node Deployment Complete
 
