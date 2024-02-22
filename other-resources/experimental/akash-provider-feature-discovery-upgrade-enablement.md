@@ -66,9 +66,13 @@ helm install akash-hostname-operator akash-hostname-operator-8.0.0.tgz -n akash-
 
 ### Akash Provider Upgrade
 
-> NOTE - these instructions assume your Akash Provider settings are stored in `/root/provider/provider.yaml`.  If this is not the cause - dump current provider settings prior to initiating this process via the following command and ensure the `helm install` command points to the location of this file.\
+> _**NOTE**_ - these instructions assume your Akash Provider settings are stored in `/root/provider/provider.yaml`.  If this is not the cause - dump current provider settings prior to initiating this process via the following command and ensure the `helm install` command points to the location of this file.\
 > \
 > `helm -n akash-services get values akash-provider > provider.yaml`
+
+> _**NOTE**_ - if your provider uses a custom price script -  ensure to add pointer to that script in the `helm install` command such as the following.  Note that this syntax assumes the pricing script resides in the `/root/provider` directory.\
+> \
+> `--set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)"`
 
 ```
 cd ~/helm-charts/charts/akash-provider
@@ -138,6 +142,8 @@ helm install akash-ip-operator akash-ip-operator-8.0.0.tgz -n akash-services --s
 ```
 
 ### Update Ingress Controller
+
+> _**NOTE**_ - this step must be completed by all providers to expose the Feature Discovery gRPC port
 
 The Ingress Controller rules have been updated to include Feature Discovery destinations and mainly port `8444`.  Update your ingress controller to ensure they are current via the instructions in this doc [section](https://docs.akash.network/providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-8-ingress-controller-install).
 
