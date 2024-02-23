@@ -1,4 +1,4 @@
-# Step 10 - Firewall Rule Review
+# STEP 10 - Firewall Rule Review
 
 ## External/Internet Firewall Rules
 
@@ -8,6 +8,7 @@ The following firewall rules are applicable to internet-facing Kubernetes compon
 
 ```
 8443/tcp - for manifest uploads
+8444/tcp - gRPC port for Feature Discovery
 ```
 
 ### **Ingress Controller**

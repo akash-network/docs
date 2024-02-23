@@ -7,6 +7,8 @@ Sections in this guide cover the installation of the following packages necessar
 * [Install NVIDIA Drivers & Toolkit](gpu-provider-configuration.md#install-nvidia-drivers-and-toolkit)
 * [NVIDIA Runtime Configuration](gpu-provider-configuration.md#nvidia-runtime-configuration)
 
+> _**GPU PROVIDERS -**_ ensure that your GPU models exist in this [database/JSON file](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json) before proceeding.  If your GPU models do not yet exist in this file - please first follow the procedure outlined in this [Discord post](https://discord.com/channels/747885925232672829/1111749248527114322/1200519060845252650) (view directly in the Akash Discord Server > Provider Announcement channel) to capture your GPU vendor/model IDs and then allow the Akash core team to populate the JSON file prior to updating your provider.
+
 ## Install NVIDIA Drivers & Toolkit
 
 > _**NOTE**_ - The steps in this section should be completed on all Kubernetes nodes hosting GPU resources
@@ -27,7 +29,7 @@ apt autoremove
 
 The `ubuntu-drivers devices` command detects your GPU and determines which version of the NVIDIA drivers is best.
 
-> _**NOTE**_ - the NVIDIA drivers detailed and installed in this section have known compatibility issues with some `6.X` lLinux kernels as discussed [here](https://forums.developer.nvidia.com/t/390-154-driver-no-longer-works-with-kernel-6-0/230959/7).  In our experience, when such compatibility issue occur the driver will install with no errors generated but will not functionality properly.  If you encounter Linux kernel and NVIDIA driver compatibility issues, consider downgrading the Kernel to the officially supported Ubuntu 22.04 kernel which at the time of this writing is `5.15.0-73`
+> _**NOTE**_ - the NVIDIA drivers detailed and installed in this section have known compatibility issues with some `6.X` lLinux kernels as discussed [here](https://forums.developer.nvidia.com/t/390-154-driver-no-longer-works-with-kernel-6-0/230959/7). In our experience, when such compatibility issue occur the driver will install with no errors generated but will not functionality properly. If you encounter Linux kernel and NVIDIA driver compatibility issues, consider downgrading the Kernel to the officially supported Ubuntu 22.04 kernel which at the time of this writing is `5.15.0-73`
 
 ```
 apt install ubuntu-drivers-common
@@ -72,7 +74,6 @@ ubuntu-drivers autoinstall
 
 > _**NOTE**_ - The steps in this sub-section should be completed on all Kubernetes nodes hosting GPU resources
 
-
 ```
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | apt-key add -
@@ -84,7 +85,7 @@ apt-get install -y nvidia-cuda-toolkit nvidia-container-toolkit nvidia-container
 
 ### Additional References for Node Configurations
 
-> _**NOTE -**_ references are for additional info only.  No actions are necessary and the Kubernetes nodes should be all set to proceed to next step based on configurations enacted in prior steps on this doc.
+> _**NOTE -**_ references are for additional info only. No actions are necessary and the Kubernetes nodes should be all set to proceed to next step based on configurations enacted in prior steps on this doc.
 
 * [https://github.com/NVIDIA/k8s-device-plugin#prerequisites](https://github.com/NVIDIA/k8s-device-plugin#prerequisites)
 * [https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
@@ -114,7 +115,7 @@ accept-nvidia-visible-devices-envvar-when-unprivileged = false
 
 > _**NOTE**_ - skip this sub-section if these steps were completed during your Kubernetes build process
 
-In this step we add the NVIDIA runtime confguration into the Kubespray inventory.  The runtime will be applied to necessary Kubernetes hosts when Kubespray builds the cluster in the subsequent step.
+In this step we add the NVIDIA runtime confguration into the Kubespray inventory. The runtime will be applied to necessary Kubernetes hosts when Kubespray builds the cluster in the subsequent step.
 
 ### Create NVIDIA Runtime File for Kubespray Use
 
