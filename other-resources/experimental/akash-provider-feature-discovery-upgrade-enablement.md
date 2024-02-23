@@ -61,7 +61,7 @@ helm uninstall akash-hostname-operator -n akash-services
 
 helm package .
 
-helm install akash-hostname-operator akash-hostname-operator-8.0.0.tgz -n akash-services --set image.tag=0.5.0
+helm install akash-hostname-operator akash-hostname-operator-9.0.0.tgz -n akash-services --set image.tag=0.5.0
 ```
 
 ### Akash Provider Upgrade
@@ -81,7 +81,7 @@ helm uninstall akash-provider -n akash-services
 
 helm package .
 
-helm install akash-provider provider-8.0.1.tgz -n akash-services -f /root/provider/provider.yaml --set image.tag=0.5.0
+helm install akash-provider provider-9.0.0.tgz -n akash-services -f /root/provider/provider.yaml --set image.tag=0.5.0
 ```
 
 ### Akash Inventory Operator Install/Upgrade
@@ -120,13 +120,12 @@ inventoryConfig:
 
 #### STEP 3
 
-```
-cd ~/helm-charts/charts/akash-inventory-operator
+<pre><code>cd ~/helm-charts/charts/akash-inventory-operator
 
 helm package .
 
-helm install inventory-operator akash-inventory-operator-8.0.0.tgz -n akash-services --set image.tag=0.5.0
-```
+<strong>helm install inventory-operator akash-inventory-operator-9.0.0.tgz -n akash-services --set image.tag=0.5.0
+</strong></code></pre>
 
 ### Akash IP Operator Upgrade (If Applicable)
 
@@ -140,7 +139,7 @@ helm uninstall akash-ip-operator -n akash-services
 helm package .
 
 ### Update the `<provider-address>` placeholder with the address of your provider
-helm install akash-ip-operator akash-ip-operator-8.0.0.tgz -n akash-services --set provider_address=<provider-address> --set image.tag=0.5.0
+helm install akash-ip-operator akash-ip-operator-9.0.0.tgz -n akash-services --set provider_address=<provider-address> --set image.tag=0.5.0
 ```
 
 ### Update Ingress Controller
