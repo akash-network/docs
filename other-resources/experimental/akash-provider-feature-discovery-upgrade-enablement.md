@@ -9,15 +9,15 @@ The following provides an overview of the steps necessary to upgrade your Akash 
 * [Download Helm Chart and Use Feature Discovery Branch](akash-provider-feature-discovery-upgrade-enablement.md#download-helm-chart-and-use-feature-discovery-branch)
 * [Akash Hostname Operator Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-hostname-operator-upgrade)
 * [Akash Provider Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-provider-upgrade)
-* [Akash Inventory Operator Install/Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-inventory-operator-install-upgrade)
 * [Akash IP Operator Upgrade (If Applicable)](akash-provider-feature-discovery-upgrade-enablement.md#akash-ip-operator-upgrade-if-applicable)
+* [Akash Inventory Operator Install/Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-inventory-operator-install-upgrade)
 * [Update Ingress Controller](akash-provider-feature-discovery-upgrade-enablement.md#update-ingress-controller)
 * [Verifications](akash-provider-feature-discovery-upgrade-enablement.md#verifications)
 * [Testing](akash-provider-feature-discovery-upgrade-enablement.md#testing)
 
-### Download Helm Chart and Use Feature Discovery Branch
+> _**NOTE**_ - complete the steps in this guide in the order presented
 
-### STEP1
+### Download Helm Chart and Use Feature Discovery Branch
 
 #### Clone Akash Helm Chart Repository
 
@@ -84,6 +84,21 @@ helm package .
 helm install akash-provider provider-9.0.0.tgz -n akash-services -f /root/provider/provider.yaml --set image.tag=0.5.0
 ```
 
+### Akash IP Operator Upgrade (If Applicable)
+
+> _**NOTE**_ - the IP Operator is only necessary if your Akash Provider provides IP Leases
+
+```
+cd ~/helm-charts/charts/akash-ip-operator
+
+helm uninstall akash-ip-operator -n akash-services
+
+helm package .
+
+### Update the `<provider-address>` placeholder with the address of your provider
+helm install akash-ip-operator akash-ip-operator-9.0.0.tgz -n akash-services --set provider_address=<provider-address> --set image.tag=0.5.0
+```
+
 ### Akash Inventory Operator Install/Upgrade
 
 > _**NOTE**_ - the Inventory Operator is now required on ALL Akash Providers.  Previously this operator was only required when the Provider hosted persistent storage.  But the operator is now mandated on all providers.
@@ -126,21 +141,6 @@ helm package .
 
 <strong>helm install inventory-operator akash-inventory-operator-9.0.0.tgz -n akash-services --set image.tag=0.5.0
 </strong></code></pre>
-
-### Akash IP Operator Upgrade (If Applicable)
-
-> _**NOTE**_ - the IP Operator is only necessary if your Akash Provider provides IP Leases
-
-```
-cd ~/helm-charts/charts/akash-ip-operator
-
-helm uninstall akash-ip-operator -n akash-services
-
-helm package .
-
-### Update the `<provider-address>` placeholder with the address of your provider
-helm install akash-ip-operator akash-ip-operator-9.0.0.tgz -n akash-services --set provider_address=<provider-address> --set image.tag=0.5.0
-```
 
 ### Update Ingress Controller
 
