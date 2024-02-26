@@ -70,6 +70,8 @@ helm install akash-hostname-operator akash-hostname-operator-9.0.0.tgz -n akash-
 > \
 > `helm -n akash-services get values akash-provider > provider.yaml`
 
+> _**NOTE**_ - provider GPU attributes must now adhere to the naming conventions in this [JSON file](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json).  Your attributes may need to be updated to follow these standards.  If your provider attributes do not adhere to the naming conventions in this JSON file it may not bid when specific models are included in the SDL.
+
 > _**NOTE**_ - if your provider uses a custom price script -  ensure to add pointer to that script in the `helm install` command such as the following.  Note that this syntax assumes the pricing script resides in the `/root/provider` directory.\
 > \
 > `--set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)"`
