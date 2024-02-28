@@ -1,4 +1,4 @@
-# STEP 7 - Provider Bid Customization
+# STEP 9 - Provider Bid Customization
 
 ## Overview
 
@@ -32,6 +32,7 @@ vim provider.yaml
 * `t4` nvidia models will be charged by `80` USD/GPU unit a month
 * Unspecified nvidia models will be charged `130` USD/GPU unit a month (if `*` is not explicitly set in the mapping it will default to `100` USD/GPU unit a month)
 * Extend with more models your provider is offering if necessary with syntax of `<model>=<USD/GPU unit a month>`
+* If your GPU model has different possible RAM specs - use this type of convention: `a100.40Gi=900,a100.80Gi=1000`
 
 ```
 price_target_cpu: 1.60

@@ -13,6 +13,7 @@ This guide uses a single Kubernetes control plane node.
 * [Domain Name Review](step-5-domain-name-review.md)
 * [Hostname Operator Build](step-7-hostname-operator-build.md)
 * [Provider Build via Helm Chart](step-6-provider-build-via-helm-chart.md)
+* [Inventory Operator Install](step-8-inventory-operator-install.md)
 * [Provider Bid Customization](step-6-provider-bid-customization.md)
 * [Firewall Rule Review](step-9-firewall-rule-review.md)
 * [Disable Unattended Upgrades](step-11-disable-unattended-upgrades.md)

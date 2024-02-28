@@ -1,32 +1,34 @@
-# Label Nodes For Storage Classes
+# Verify Node Labels For Storage Classes
 
-Each node serving persistent storage should have `akash.network/storageclasses` label set.&#x20;
+## Overview
+
+Each node serving persistent storage should have `akash.network/storageclasses` label set.  These labels are automatically applied and this section we will verify proper labeling.
 
 > _**NOTE**_ - currently the Helm Charts for persistent storage support only a single storageclass per cluster.  All nodes in the cluster should be marked as `beta2` - as an example - and cannot have a mix of `beta2` and `beta3` nodes.
 
-* Ensure that this command is issued - one at a time - for all nodes serving persistent storage
-* Replace the `storageclasses` value with the proper storage class and as clarified in the example command
 
-## List Kubernetes Node Names
 
-* Use this command to capture the node names for the subsequent step
+## Node Label Verification
 
-```
-kubectl get nodes
-```
+### Verification Template
 
-## Apply Node Labels
-
-> _**NOTE**_ - ensure ALL nodes in the Kubernetes cluster receive this label
+* Replace `<node-name>` with actual node name as gathered via `kubectl get nodes`
 
 ```
-kubectl label node <node-name> akash.network/storageclasses=<beta1|beta2|beta3> --overwrite
+kubectl describe node <node-name> | grep -A10 Labels
 ```
 
-#### Example Label Command
+### Example/Expected Output
 
-*   In our example with a single node serving persistent storage with the storage class of beta2, the following label syntax would be applied.
+```
+root@node1:~# kubectl describe node node2 | grep -A10 Labels
+Labels:             akash.network=true
+                    akash.network/capabilities.storage.class.beta2=1
+                    akash.network/capabilities.storage.class.default=1
+                    allow-nvdp=true
+                    beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=node2
+```
 
-    ```
-    kubectl label node node2 akash.network/storageclasses=beta2 --overwrite
-    ```

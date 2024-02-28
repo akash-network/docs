@@ -1,46 +1,8 @@
 # GPU Node Label
 
-## Overview
+### Overview
 
-Each node that provides GPUs must be labeled correctly.
-
-> _**NOTE**_ - these configurations should be completed on a Kubernetes control plane node
-
-## Label Template
-
-* Use this label template in the `kubectl label` command in the subsequent Label Appliction sub-section below
-
-> _**NOTE**_ - this section is information only.  The template displayed will be used in a subsequent sections.
-
-```
-akash.network/capabilities.gpu.vendor.<vendor name>.model.<model name>=true
-```
-
-### Label Application
-
-#### Template
-
-> _**NOTE**_ - if you are unsure of the `<node-name>` to be used in this command - issue `kubectl get nodes` from one of your Kubernetes control plane nodes to obtain via the `NAME` column of this command output
-
-```
-kubectl label node <node-name> <label>
-```
-
-#### Example
-
-> _**NOTE**_ - issue this command/label application for all nodes hosting GPU resources
-
-```
-kubectl label node node1 akash.network/capabilities.gpu.vendor.nvidia.model.a4000=true
-```
-
-#### Expected Output using Example
-
-```
-root@node1:~/provider# kubectl label node node1 akash.network/capabilities.gpu.vendor.nvidia.model.a4000=true
-
-node/node1 labeled
-```
+In this section we verify that necessary Kubernetes node labels have been applied for your GPUs.  The labeling of nodes is an automated process and here we only verify proper labels have been applied.
 
 ### Verification of Node Labels
 
@@ -52,13 +14,19 @@ kubectl describe node <node-name> | grep -A10 Labels
 
 #### Expected Output using Example
 
-```
-kubectl describe node node2 | grep -A10 Labels
+* Note the presence of the GPU model, interface, and ram expected values.
 
-Labels:             akash.network/capabilities.gpu.vendor.nvidia.model.a4000=true
+```
+root@node1:~# kubectl describe node node2 | grep -A10 Labels
+Labels:             akash.network=true
+                    akash.network/capabilities.gpu.vendor.nvidia.model.t4=1
+                    akash.network/capabilities.gpu.vendor.nvidia.model.t4.interface.PCIe=1
+                    akash.network/capabilities.gpu.vendor.nvidia.model.t4.ram.16Gi=1
+                    akash.network/capabilities.storage.class.beta2=1
+                    akash.network/capabilities.storage.class.default=1
+                    allow-nvdp=true
                     beta.kubernetes.io/arch=amd64
                     beta.kubernetes.io/os=linux
                     kubernetes.io/arch=amd64
                     kubernetes.io/hostname=node2
-                    kubernetes.io/os=linux
 ```

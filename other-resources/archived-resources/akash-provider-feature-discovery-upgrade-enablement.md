@@ -1,31 +1,67 @@
-# PRODUCTION USE - Akash Provider Feature Discovery Upgrade/Enablement
+# Akash Provider Feature Discovery Upgrade/Enablement
+
+> _**NOTE**_ - do NOT use these instructions until they have been migrated out of experimental and the Akash core team has communicated it is safe to execute.
 
 ## Overview
 
 The following provides an overview of the steps necessary to upgrade your Akash provider to version `0.5.0` and to enable Feature Discovery:
 
+* [Download Helm Chart and Use Feature Discovery Branch](akash-provider-feature-discovery-upgrade-enablement.md#download-helm-chart-and-use-feature-discovery-branch)
 * [Akash Hostname Operator Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-hostname-operator-upgrade)
 * [Akash Provider Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-provider-upgrade)
-* [Akash Inventory Operator Install/Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-inventory-operator-install-upgrade)
 * [Akash IP Operator Upgrade (If Applicable)](akash-provider-feature-discovery-upgrade-enablement.md#akash-ip-operator-upgrade-if-applicable)
+* [Akash Inventory Operator Install/Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-inventory-operator-install-upgrade)
 * [Update Ingress Controller](akash-provider-feature-discovery-upgrade-enablement.md#update-ingress-controller)
 * [Verifications](akash-provider-feature-discovery-upgrade-enablement.md#verifications)
 * [Testing](akash-provider-feature-discovery-upgrade-enablement.md#testing)
 
-> _**GPU PROVIDERS -**_ ensure that your GPU models exist in this [database/JSON file](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json) before proceeding.  If your GPU models do not yet exist in this file - please first follow the procedure outlined in this [Discord post](https://discord.com/channels/747885925232672829/1111749248527114322/1200519060845252650) (view directly in the Akash Discord Server > Provider Announcement channel) to capture your GPU vendor/model IDs and then allow the Akash core team to populate the JSON file prior to upgrading your provider.
+> _**NOTE**_ - complete the steps in this guide in the order presented
+
+### Download Helm Chart and Use Feature Discovery Branch
+
+#### Clone Akash Helm Chart Repository
+
+```
+cd ~
+
+git clone https://github.com/akash-network/helm-charts.git
+```
+
+#### Checkout Feature Discovery Branch of Helm Chart Repo
+
+```
+cd ~/helm-charts
+
+helm repo update
+
+git checkout feature-discovery
+
+### Ensure the working branch has been updated to feature-discovery
+git branch
+```
+
+#### Expected Output
+
+```
+git checkout feature-discovery
+Branch 'feature-discovery' set up to track remote branch 'feature-discovery' from 'origin'.
+Switched to a new branch 'feature-discovery'
+
+git branch
+* feature-discovery
+  main
+```
 
 ### Akash Hostname Operator Upgrade
 
 ```
-# If this is being executed on machine that does not yet have the Akash 
-# Helm Chart repo, first clone the repo via:
-# git clone https://github.com/akash-network/helm-charts.git
-
-helm repo update
+cd ~/helm-charts/charts/akash-hostname-operator
 
 helm uninstall akash-hostname-operator -n akash-services
 
-helm install akash-hostname-operator akash/akash-hostname-operator -n akash-services
+helm package .
+
+helm install akash-hostname-operator akash-hostname-operator-9.0.0.tgz -n akash-services --set image.tag=0.5.0
 ```
 
 ### Akash Provider Upgrade
@@ -34,16 +70,35 @@ helm install akash-hostname-operator akash/akash-hostname-operator -n akash-serv
 > \
 > `helm -n akash-services get values akash-provider > provider.yaml`
 
+> _**NOTE**_ - provider GPU attributes must now adhere to the naming conventions in this [JSON file](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json).  Your attributes may need to be updated to follow these standards.  If your provider attributes do not adhere to the naming conventions in this JSON file it may not bid when specific models are included in the SDL.
+
 > _**NOTE**_ - if your provider uses a custom price script -  ensure to add pointer to that script in the `helm install` command such as the following.  Note that this syntax assumes the pricing script resides in the `/root/provider` directory.\
 > \
 > `--set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)"`
 
 ```
-cd /root/provider
+cd ~/helm-charts/charts/akash-provider
 
 helm uninstall akash-provider -n akash-services
 
-helm install akash-provider akash/provider -n akash-services -f provider.yaml
+helm package .
+
+helm install akash-provider provider-9.0.0.tgz -n akash-services -f /root/provider/provider.yaml --set image.tag=0.5.0
+```
+
+### Akash IP Operator Upgrade (If Applicable)
+
+> _**NOTE**_ - the IP Operator is only necessary if your Akash Provider provides IP Leases
+
+```
+cd ~/helm-charts/charts/akash-ip-operator
+
+helm uninstall akash-ip-operator -n akash-services
+
+helm package .
+
+### Update the `<provider-address>` placeholder with the address of your provider
+helm install akash-ip-operator akash-ip-operator-9.0.0.tgz -n akash-services --set provider_address=<provider-address> --set image.tag=0.5.0
 ```
 
 ### Akash Inventory Operator Install/Upgrade
@@ -52,53 +107,42 @@ helm install akash-provider akash/provider -n akash-services -f provider.yaml
 
 > _**NOTE**_ - if your provider hosts persistent storage, ensure that the CEPH cluster is in a healthy state prior to upgrading the Akash Inventory Operator
 
-#### Default Helm Chart -  values.yaml file
+#### STEP 1
 
-* The `values.yaml` file for the inventory operator defaults are as follows
+> _**NOTE**_ - if you do not have a prior installation of the inventory operator the uninstall command will produce an error.  Disregard the error and proceed to next step.
 
 ```
-# Default values for inventory-operator.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+helm uninstall inventory-operator -n akash-services
+```
 
-image:
-  repository: ghcr.io/akash-network/provider
-  pullPolicy: IfNotPresent
+#### STEP 2
 
+> _**NOTE**_ - this step is only necessary for providers hosting persistent storage
+
+```
+cd ~/helm-charts/charts/akash-inventory-operator
+
+vi values.yaml
+```
+
+Within the `values.yaml` file ensure that the `inventoryConfig` section is updated with your persistent storage type - I.e. `beta1`, `beta2`, or `beta3`.&#x20;
+
+```
 inventoryConfig:
   # Allow users to specify cluster storage options
   cluster_storage:
     - default
     - beta2
-  exclude:
-    nodes: []
-    node_storage: []
 ```
 
-#### Update Cluster Storage Cluster Setting
+#### STEP 3
 
-* Use these commands to install the inventory operator with the correct cluster storage settings
-* In the following command example we are updating the chart with `beta3` persistent storage type such as - `inventoryConfig.cluster_storage[1]=beta3`.  Adjust as necessary for your needs.
-* The `default` label can be used and left as is in all circumstances.
+<pre><code>cd ~/helm-charts/charts/akash-inventory-operator
 
-```
-# Note - the uninstall command will produce an error if there was no prior install.
-# Safely disregard this error and proceed.
-helm uninstall inventory-operator -n akash-services
+helm package .
 
-helm install inventory-operator akash/akash-inventory-operator -n akash-services --set inventoryConfig.cluster_storage[0]=default,inventoryConfig.cluster_storage[1]=beta3
-```
-
-### Akash IP Operator Upgrade (If Applicable)
-
-> _**NOTE**_ - the IP Operator is only necessary if your Akash Provider provides IP Leases
-
-```
-helm uninstall akash-ip-operator -n akash-services
-
-### Update the `<provider-address>` placeholder with the address of your provider
-helm install akash-ip-operator akash/akash-ip-operator -n akash-services --set provider_address=<provider-address> --set image.tag=0.5.0-rc16
-```
+<strong>helm install inventory-operator akash-inventory-operator-9.0.0.tgz -n akash-services --set image.tag=0.5.0
+</strong></code></pre>
 
 ### Update Ingress Controller
 
@@ -141,15 +185,13 @@ Test your Akash Provider's Feature Discovery functionality via the use of gRPC C
 * Replace `<PROVIDER-IP-ADDRESS>` with actual
 
 ```
-grpcurl -insecure <PROVIDER-DOMAIN>:8444 akash.provider.v1.ProviderRPC.GetStatus
+grpcurl -insecure <PROVIDER-IP-ADDRESS>:8444 akash.provider.v1.ProviderRPC.GetStatus
 ```
 
 #### Example/Expected Output
 
-````
 ```
-grpcurl -insecure provider.akashtesting.xyz:8444 akash.provider.v1.ProviderRPC.GetStatus
-```
+grpcurl -insecure 34.28.236.4:8444 akash.provider.v1.ProviderRPC.GetStatus
 {
   "cluster": {
     "leases": {},
@@ -441,4 +483,4 @@ grpcurl -insecure provider.akashtesting.xyz:8444 akash.provider.v1.ProviderRPC.G
   ],
   "timestamp": "2024-02-16T17:20:20.054534655Z"
 }
-````
+```
