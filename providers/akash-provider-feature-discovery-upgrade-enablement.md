@@ -83,7 +83,17 @@ inventoryConfig:
     node_storage: []
 ```
 
-#### Update Cluster Storage Cluster Setting
+#### Non-Persistent Storage Providers
+
+```
+# Note - the uninstall command will produce an error if there was no prior install.
+# Safely disregard this error and proceed.
+helm uninstall inventory-operator -n akash-services
+
+helm install inventory-operator akash/akash-inventory-operator -n akash-services
+```
+
+#### Persistent Storage Providers
 
 * Use these commands to install the inventory operator with the correct cluster storage settings
 * In the following command example we are updating the chart with `beta3` persistent storage type such as - `inventoryConfig.cluster_storage[1]=beta3`.  Adjust as necessary for your needs.
