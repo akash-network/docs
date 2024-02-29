@@ -126,7 +126,7 @@ containerd_additional_runtimes:
     engine: ""
     root: ""
     options:
-      BinaryName: '"/usr/bin/nvidia-container-runtime"'
+      BinaryName: '/usr/bin/nvidia-container-runtime'
 EOF
 ```
 
