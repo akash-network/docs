@@ -5,10 +5,10 @@
 The following provides an overview of the steps necessary to upgrade your Akash provider to version `0.5.3-rc1` and to enable Feature Discovery:
 
 * [Akash Hostname Operator Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-hostname-operator-upgrade)
-* [Akash Provider Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-provider-upgrade)
 * [Akash Inventory Operator Install/Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-inventory-operator-install-upgrade)
 * [Akash IP Operator Upgrade (If Applicable)](akash-provider-feature-discovery-upgrade-enablement.md#akash-ip-operator-upgrade-if-applicable)
 * [Update Ingress Controller](akash-provider-feature-discovery-upgrade-enablement.md#update-ingress-controller)
+* [Akash Provider Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-provider-upgrade)
 * [Verifications](akash-provider-feature-discovery-upgrade-enablement.md#verifications)
 * [Testing](akash-provider-feature-discovery-upgrade-enablement.md#testing)
 
@@ -27,31 +27,6 @@ helm repo update
 helm uninstall akash-hostname-operator -n akash-services
 
 helm install akash-hostname-operator akash/akash-hostname-operator -n akash-services
-```
-
-### Akash Provider Upgrade
-
-> _**NOTE**_ - these instructions assume your Akash Provider settings are stored in `/root/provider/provider.yaml`.  If this is not the cause - dump current provider settings prior to initiating this process via the following command and ensure the `helm install` command points to the location of this file.\
-> \
-> `helm -n akash-services get values akash-provider > provider.yaml`
-
-> _**NOTE**_ - provider GPU attributes must now adhere to the naming conventions in this [JSON file](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json).  Your attributes may need to be updated to follow these standards.  If your provider attributes do not adhere to the naming conventions in this JSON file it may not bid when specific models are included in the SDL.  If the GPU model has multiple memory options the attributes should be in the form such as the following where again the model and the RAM spec use the nomenclatures of the JSON file.
-
-```
-  - key: capabilities/gpu/vendor/nvidia/model/a100/ram/40Gi
-    value: true
-```
-
-> _**NOTE**_ - if your provider uses a custom price script -  ensure to add pointer to that script in the `helm install` command such as the following.  Note that this syntax assumes the pricing script resides in the `/root/provider` directory.\
-> \
-> `--set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)"`
-
-```
-cd /root/provider
-
-helm uninstall akash-provider -n akash-services
-
-helm install akash-provider akash/provider -n akash-services -f provider.yaml
 ```
 
 ### Akash Inventory Operator Install/Upgrade
@@ -125,6 +100,45 @@ helm install akash-ip-operator akash/akash-ip-operator -n akash-services --set p
 > _**NOTE**_ - ensure to open port `8444` on your firewall if necessary as well
 
 The Ingress Controller rules have been updated to include Feature Discovery destinations and mainly port `8444`.  Update your ingress controller to ensure they are current via the instructions in this doc [section](https://docs.akash.network/providers/build-a-cloud-provider/akash-cloud-provider-build-with-helm-charts/step-8-ingress-controller-install).
+
+### Akash Provider Upgrade
+
+> _**NOTE**_ - these instructions assume your Akash Provider settings are stored in `/root/provider/provider.yaml`.  If this is not the cause - dump current provider settings prior to initiating this process via the following command and ensure the `helm install` command points to the location of this file.\
+> \
+> `helm -n akash-services get values akash-provider > provider.yaml`
+
+> _**NOTE**_ - provider GPU attributes must now adhere to the naming conventions in this [JSON file](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json).  Your attributes may need to be updated to follow these standards.  If your provider attributes do not adhere to the naming conventions in this JSON file it may not bid when specific models are included in the SDL.  If the GPU model has multiple memory options the attributes should be in the form such as the following where again the model and the RAM spec use the nomenclatures of the JSON file.
+
+```
+  - key: capabilities/gpu/vendor/nvidia/model/a100/ram/40Gi
+    value: true
+```
+
+> _**NOTE**_ - if your provider uses a custom price script -  ensure to add pointer to that script in the `helm install` command such as the following.  Note that this syntax assumes the pricing script resides in the `/root/provider` directory.
+>
+>
+>
+> Begin by replacing the bid price script with the latest version:\
+> \
+> `mv price_script_generic.sh price_script_generic.sh.old`&#x20;
+>
+>
+>
+> `wget https://raw.githubusercontent.com/akash-network/helm-charts/main/charts/akash-provider/scripts/price_script_generic.sh`
+>
+>
+>
+> And then use `set` option below in the `helm install` command\
+> \
+> `--set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)"`
+
+```
+cd /root/provider
+
+helm uninstall akash-provider -n akash-services
+
+helm install akash-provider akash/provider -n akash-services -f provider.yaml
+```
 
 ### Verifications
 
