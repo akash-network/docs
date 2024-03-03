@@ -7,7 +7,7 @@ Sections in this guide cover the installation of the following packages necessar
 * [Install NVIDIA Drivers & Toolkit](gpu-provider-configuration.md#install-nvidia-drivers-and-toolkit)
 * [NVIDIA Runtime Configuration](gpu-provider-configuration.md#nvidia-runtime-configuration)
 
-> _**GPU PROVIDERS -**_ ensure that your GPU models exist in this [database/JSON file](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json) before proceeding.  If your GPU models do not yet exist in this file - please first follow the procedure outlined in this [Discord post](https://discord.com/channels/747885925232672829/1111749248527114322/1200519060845252650) (view directly in the Akash Discord Server > Provider Announcement channel) to capture your GPU vendor/model IDs and then allow the Akash core team to populate the JSON file prior to updating your provider.
+> _**GPU PROVIDERS -**_ ensure that your GPU models exist in this [database/JSON file](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json) before proceeding. If your GPU models do not yet exist in this file - please first follow the procedure outlined in this [GPU Configuration Integration Guide](../../provider-feature-discovery-gpu-configuration-integration-guide.md) to capture your GPU vendor/model IDs and then allow the Akash core team to populate the JSON file prior to updating your provider.
 
 ## Install NVIDIA Drivers & Toolkit
 

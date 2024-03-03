@@ -182,6 +182,7 @@
     * [VMware Tanzu](providers/custom-kubernetes-cluster-settings/vmware-tanzu.md)
   * [Akash Audited Attributes](providers/akash-audited-attributes.md)
   * [Akash Provider Feature Discovery Upgrade/Enablement](providers/akash-provider-feature-discovery-upgrade-enablement.md)
+  * [Provider Feature Discovery - GPU Configuration Integration Guide](providers/provider-feature-discovery-gpu-configuration-integration-guide.md)
 * [Akash Nodes](akash-nodes/README.md)
   * [Akash Node Via Helm Charts](akash-nodes/akash-node-via-helm-charts/README.md)
     * [Prepare Kubernetes Cluster](akash-nodes/akash-node-via-helm-charts/prepare-kubernetes-cluster.md)

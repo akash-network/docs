@@ -12,7 +12,7 @@ The following provides an overview of the steps necessary to upgrade your Akash 
 * [Verifications](akash-provider-feature-discovery-upgrade-enablement.md#verifications)
 * [Testing](akash-provider-feature-discovery-upgrade-enablement.md#testing)
 
-> _**GPU PROVIDERS -**_ ensure that your GPU models exist in this [database/JSON file](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json) before proceeding.  If your GPU models do not yet exist in this file - please first follow the procedure outlined in this [Discord post](https://discord.com/channels/747885925232672829/1111749248527114322/1200519060845252650) (view directly in the Akash Discord Server > Provider Announcement channel) to capture your GPU vendor/model IDs and then allow the Akash core team to populate the JSON file prior to upgrading your provider.
+> _**GPU PROVIDERS -**_ ensure that your GPU models exist in this [database/JSON file](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json) before proceeding.  If your GPU models do not yet exist in this file - please first follow the procedure outlined in this [GPU Configuration Integration Guide](provider-feature-discovery-gpu-configuration-integration-guide.md) to capture your GPU vendor/model IDs and then allow the Akash core team to populate the JSON file prior to upgrading your provider.
 
 ### Akash Hostname Operator Upgrade
 
