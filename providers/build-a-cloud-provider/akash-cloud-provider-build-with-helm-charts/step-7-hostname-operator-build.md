@@ -32,7 +32,7 @@ NOTES:
 kubectl get pods -n akash-services
 ```
 
-#### **Expected output (example and name following akash-provider will differ)**
+#### **Expected output (pod mame will differ)**
 
 <pre><code>root@node1:~# kubectl get pods -n akash-services
 
