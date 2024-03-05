@@ -22,7 +22,7 @@ apt update && apt -y install python3-venv
 
 python3 -m venv /venv
 source /venv/bin/activate
-pip install torch
+pip install torch numpy
 ```
 
 ### Confirm GPU Resources Available on Host
