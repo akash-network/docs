@@ -114,7 +114,7 @@ nvdp    nvidia-device-plugin    1           2023-09-23 14:30:34.18183027 +0200 C
 
 ## CUDA Drivers Fabric Manager
 
-* In rare circumstances it has been found that the CUDA Drivers Fabric Manager needs to be installed on worker nodes hosting GPU resources
+* In some circumstances it has been found that the CUDA Drivers Fabric Manager needs to be installed on worker nodes hosting GPU resources (e.g. non-PCIe GPU configurations such as those using SXM form factors)
 * If the output of the `torch.cuda.is_available()` command - covered in prior section in this doc - is an error condition, consider installing the CUDA Drivers Fabric Manager to resolve issue
 * Frequently encountered error message encounter when issue exists:\
   \
