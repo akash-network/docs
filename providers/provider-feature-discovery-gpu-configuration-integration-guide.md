@@ -18,7 +18,7 @@ Before proceeding with the installation and data collection, verify if your GPU 
 
 ### Step 2: Install `provider-services`
 
-Ensure that `provider-services` version 0.5.4 or higher is installed on every node. This software is essential for listing your GPU details and submitting them to our repository. Download links are available at [provider-services releases](https://github.com/akash-network/provider-services/releases).
+Ensure that `provider-services` version 0.5.4 or higher is installed on every node. This software is essential for listing your GPU details and submitting them to our repository. Download links are available at [provider-services releases](https://github.com/akash-network/provider/releases).
 
 ### Step 3: List GPU Details
 
