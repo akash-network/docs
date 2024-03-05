@@ -9,7 +9,7 @@ In this guide we present paths to install MetalLB both via Helm Charts and Kubes
 ```
 helm repo add metallb https://metallb.github.io/metallb
 
-helm -n metallb-system install metallb metallb/metallb --version 0.13.7
+helm -n metallb-system install metallb metallb/metallb --version 0.14.3
 ```
 
 ### Expose your MetalLB Controller to the Akash IP Operator
