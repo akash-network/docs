@@ -91,6 +91,42 @@ akash-hostname-operator-5c59757fcc-kt7dl   1/1     Running   0          17s
 akash-provider-0                           1/1     Running   0          59s
 ```
 
+## Verify Provider Attributes On Chain
+
+* In this step we ensure that your updated Akash Provider Attributes have been updated on the blockchain.  Ensure that the GPU model related attributes are now in place via this step.
+
+> _**NOTE**_ - conduct this verification from your Kubernetes control plane node
+
+```
+# Ensure that a RPC node environment variable is present for query
+export AKASH_NODE=https://rpc.akashnet.net:443
+
+# Replace the provider address with your own value
+provider-services query provider get <provider-address>
+```
+
+#### Example/Expected Output
+
+<pre><code>provider-services query provider get akash1mtnuc449l0mckz4cevs835qg72nvqwlul5wzyf
+<strong>
+</strong><strong>attributes:
+</strong>- key: region
+  value: us-central
+- key: host
+  value: akash
+- key: tier
+  value: community
+- key: organization
+  value: akash test provider
+- key: capabilities/gpu/vendor/nvidia/model/t4
+  value: "true"
+host_uri: https://provider.akashtestprovider.xyz:8443
+info:
+  email: ""
+  website: ""
+owner: akash1mtnuc449l0mckz4cevs835qg72nvqwlul5wzyf
+</code></pre>
+
 ## Verify Akash Provider Image
 
 Verify the Provider image is correct by running this command:
@@ -103,5 +139,5 @@ kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq 
 
 ```
 root@node1:~/provider# kubectl -n akash-services get pod akash-provider-0 -o yaml | grep image: | uniq -c
-      4     image: ghcr.io/akash-network/provider:0.4.6
+      4     image: ghcr.io/akash-network/provider:0.5.4
 ```
