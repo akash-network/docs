@@ -70,6 +70,18 @@ apt-get update
 apt-get install -y nvidia-cuda-toolkit nvidia-container-toolkit nvidia-container-runtime
 ```
 
+## For non-PCIe, e.g. SXM* GPUs
+
+In some circumstances it has been found that the CUDA Drivers Fabric Manager needs to be installed on worker nodes hosting GPU resources (typically, non-PCIe GPU configurations such as those using SXM form factors).
+
+> Replace `525` with your nvidia driver version installed in the previous steps
+
+```
+apt-get install cuda-drivers-fabricmanager-525
+```
+
+[Reference](https://docs.akash.network/providers/akash-provider-troubleshooting/gpu-provider-troubleshooting)
+
 ## Additional References for Node Configurations
 
 > _**NOTE -**_ references are for additional info only.  No actions are necessary and the Kubernetes nodes should be all set to proceed to next step based on configurations enacted in prior steps on this doc.
