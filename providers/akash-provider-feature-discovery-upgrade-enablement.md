@@ -2,7 +2,7 @@
 
 ## Overview
 
-The following provides an overview of the steps necessary to upgrade your Akash provider to version `0.5.3-rc1` and to enable Feature Discovery:
+The following provides an overview of the steps necessary to upgrade your Akash provider to version `0.5.4` and to enable Feature Discovery:
 
 * [Akash Hostname Operator Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-hostname-operator-upgrade)
 * [Akash Inventory Operator Install/Upgrade](akash-provider-feature-discovery-upgrade-enablement.md#akash-inventory-operator-install-upgrade)
