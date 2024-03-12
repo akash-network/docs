@@ -251,7 +251,7 @@
   * [Deployment HTTP Options](features/deployment-http-options.md)
   * [Hostname Migration](features/hostname-migration.md)
 * [Akash Mainnet10 Upgrade](akash-mainnet10-upgrade/README.md)
-  * [Akash v0.32.0 Node Upgrade Guide](akash-mainnet10-upgrade/v0.32.0-upgrade-docs.md)
+  * [Akash v0.32.1 Node Upgrade Guide](akash-mainnet10-upgrade/v0.32.0-upgrade-docs.md)
 * [Testnet](testnet/README.md)
   * [GPU Testnet Client Instructions](testnet/gpu-testnet-client-instructions/README.md)
     * [Akash Console](testnet/gpu-testnet-client-instructions/akash-console/README.md)
