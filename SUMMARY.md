@@ -154,6 +154,7 @@
       * [Verify Node Labels For Storage Classes](providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/label-nodes-for-storage-classes.md)
       * [Additional Verifications](providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/verifications.md)
       * [Teardown](providers/build-a-cloud-provider/helm-based-provider-persistent-storage-enablement/teardown.md)
+    * [Shared Memory (SHM) Enablement](providers/build-a-cloud-provider/shared-memory-shm-enablement.md)
     * [Akash Provider Bid Pricing Calculation](providers/build-a-cloud-provider/akash-provider-bid-pricing/README.md)
       * [Download Git Repository](providers/build-a-cloud-provider/akash-provider-bid-pricing/download-git-repository.md)
       * [Calculate Pricing](providers/build-a-cloud-provider/akash-provider-bid-pricing/example-command-use.md)

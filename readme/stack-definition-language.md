@@ -13,6 +13,7 @@ A complete deployment has the following sections:
 * [persistent storage](../features/persistent-storage/)
 * [gpu support](stack-definition-language.md#gpu-support)
 * [stable payment](stack-definition-language.md#stable-payment)
+* [shared memory (shm)](stack-definition-language.md#shared-memory-shm)
 
 An example deployment configuration can be found [here](https://github.com/akash-network/docs/tree/62714bb13cfde51ce6210dba626d7248847ba8c1/sdl/deployment.yaml).
 
@@ -200,7 +201,7 @@ This says that the 20 instances of the `web` service should be deployed to a dat
 
 ## GPU Support
 
-GPUs can be added to your workload via inclusion the compute profile section.  The placement of the GPU stanza can be viewed in the full compute profile example shown below.
+GPUs can be added to your workload via inclusion the compute profile section. The placement of the GPU stanza can be viewed in the full compute profile example shown below.
 
 > _**NOTE**_ - currently the only accepted vendor is `nvidia` but others will be added soon
 
@@ -232,7 +233,7 @@ To view an example GPU enabled SDL in full for greater context, review this [exa
 
 #### Model Specification Optional
 
-The declaration of a GPU model is optional in the SDL.  If your deployment does not require a specific GPU model, leave the model declaration blank as seen in the following example.
+The declaration of a GPU model is optional in the SDL. If your deployment does not require a specific GPU model, leave the model declaration blank as seen in the following example.
 
 ```
         gpu:
@@ -244,9 +245,7 @@ The declaration of a GPU model is optional in the SDL.  If your deployment does 
 
 #### Multiple Models Declared
 
-If your deployment is optimized to run on multiple GPU models, include the appropriate list of models as seen in the following example.  In this usage, any Akash provider that has a model in the list will bid on the deployment.
-
-
+If your deployment is optimized to run on multiple GPU models, include the appropriate list of models as seen in the following example. In this usage, any Akash provider that has a model in the list will bid on the deployment.
 
 ```
         gpu:
@@ -276,6 +275,38 @@ Use of Stable Payments is supported in the Akash SDL and is declared in the plac
           amount: 100
 ```
 
-#### Full GPU SDL Example&#x20;
+#### Full GPU SDL Example
 
 To view an example Stable Payment enabled SDL in full for greater context, review this [example](https://gist.github.com/chainzero/040d19bdb20d632009b8ae206fb548f5).
+
+## Shared Memory (SHM)
+
+A new storage class named `ram`  may be added to the SDL to enable shared memory access for multiple services running in the same container.&#x20;
+
+> _**NOTE**_ - SHM must not be persistent. The SDL validations  will error if SHM is defined as persistent.&#x20;
+
+```
+profiles:
+  compute:
+    grafana:
+      resources:
+        cpu:
+          units: 1
+        memory:
+          size: 1Gi
+        storage:
+          - size: 512Mi
+          - name: data
+            size: 1Gi
+            attributes:
+              persistent: true
+              class: beta2
+          - name: shm
+            size: 1Gi
+            attributes:
+              class: ram
+```
+
+#### Full SHM SDL Example
+
+To view an example SHM enabled SDL in full for greater context, review this[ example](https://gist.github.com/chainzero/0dea9f2e1c4241d2e4d490b37153ec86).
