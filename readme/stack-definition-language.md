@@ -236,11 +236,11 @@ To view an example GPU enabled SDL in full for greater context, review this [exa
 The declaration of a GPU model is optional in the SDL. If your deployment does not require a specific GPU model, leave the model declaration blank as seen in the following example.
 
 ```
-        gpu:
-          units: 1
-          attributes:
-            vendor:
-              nvidia:
+gpu:
+  units: 1
+  attributes:
+    vendor:
+      nvidia:
 ```
 
 #### Multiple Models Declared
@@ -248,13 +248,29 @@ The declaration of a GPU model is optional in the SDL. If your deployment does n
 If your deployment is optimized to run on multiple GPU models, include the appropriate list of models as seen in the following example. In this usage, any Akash provider that has a model in the list will bid on the deployment.
 
 ```
-        gpu:
-          units: 1
-          attributes:
-            vendor:
-              nvidia:
-                - model: 4090
-                - model: t4
+gpu:
+  units: 1
+  attributes:
+    vendor:
+      nvidia:
+        - model: 4090
+        - model: t4
+```
+
+#### GPU Interface Specification
+
+Optionally the SDL may include a GPU interface requirement such as the example below.
+
+> _**NOTE**_ - only values of `pcie` or `sxm` should be used in the Akash SDL. There are several variants of the SXM interface but only the simple `sxm` value should be used in the SDL.
+
+```
+gpu:
+  units: 1
+  attributes:
+    vendor:
+      nvidia:
+        - model: a100
+          interface: sxm
 ```
 
 ## Stable Payment
