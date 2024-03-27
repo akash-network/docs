@@ -6,7 +6,7 @@
 To install `cosmovisor`, run the following command:
 
 ```bash
-go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0
+go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 ```
 
 Check to ensure the installation was successful:
