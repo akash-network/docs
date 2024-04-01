@@ -203,7 +203,7 @@ This says that the 20 instances of the `web` service should be deployed to a dat
 
 GPUs can be added to your workload via inclusion the compute profile section. The placement of the GPU stanza can be viewed in the full compute profile example shown below.
 
-> _**NOTE**_ - currently the only accepted vendor is `nvidia` but others will be added soon
+> _**NOTE**_  - when declaring the GPU model - I.e. in this example `rtx4090` - ensure that the model name aligns with the conventions found in this [list](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json).
 
 ```
 profiles:
@@ -219,7 +219,7 @@ profiles:
           attributes:
             vendor:
               nvidia:
-                - model: 4090
+                - model: rtx4090
         storage:
           size: 1Gi
 
@@ -253,7 +253,7 @@ gpu:
   attributes:
     vendor:
       nvidia:
-        - model: 4090
+        - model: rtx4090
         - model: t4
 ```
 
@@ -299,6 +299,8 @@ To view an example Stable Payment enabled SDL in full for greater context, revie
 
 A new storage class named `ram`  may be added to the SDL to enable shared memory access for multiple services running in the same container.&#x20;
 
+#### SHM Defintion
+
 > _**NOTE**_ - SHM must not be persistent. The SDL validations  will error if SHM is defined as persistent.&#x20;
 
 ```
@@ -321,6 +323,31 @@ profiles:
             size: 1Gi
             attributes:
               class: ram
+```
+
+#### SHM Use
+
+Use the defined SHM profile within a service:
+
+```
+services:
+  web:
+    image: <docker image>
+    expose:
+      - port: 80
+        as: 80
+        http_options:
+          max_body_size: 2097152
+          next_cases:
+            - off
+        accept:
+          - hello.localhost
+        to:
+          - global: true
+    params:
+      storage:
+        shm:
+          mount: /dev/shm
 ```
 
 #### Full SHM SDL Example
