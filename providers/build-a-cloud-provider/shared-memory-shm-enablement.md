@@ -59,6 +59,57 @@ helm upgrade --install akash-provider akash/provider -n akash-services -f provid
 --set bidpricescript="$(cat /root/provider/price_script_generic.sh | openssl base64 -A)"
 ```
 
+## Update the Inventory Operator with SHM Support
+
+> _**NOTE**_ - when your Akash Provider was initially installed a step was included to also install the Akash Inventory Operator. In this step we will make any necessary changes to the inventory operator for SHM support.
+
+### Helm Chart -  values.yaml file
+
+* The `values.yaml` file for the inventory operator defaults are as follows
+* To support SHM we must update the inventory operator to include SHM/ram class.  We will update the inventory operator with such support in the subsequent step.
+
+```
+# Default values for inventory-operator.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  repository: ghcr.io/akash-network/provider
+  pullPolicy: IfNotPresent
+
+inventoryConfig:
+  # Allow users to specify cluster storage options
+  cluster_storage:
+    - default
+    - beta2
+  exclude:
+    nodes: []
+    node_storage: []
+```
+
+#### Update Cluster Storage Cluster Setting
+
+* Use this command to update the cluster storage settings with SHM support
+
+> NOTE - in the example we include the support of persistent storage type of `beta3` as well.  Adjust this section appropriately based on your provider's support of persistent storage.
+
+```
+helm upgrade --install inventory-operator akash/akash-inventory-operator -n akash-services --set inventoryConfig.cluster_storage[0]=default,inventoryConfig.cluster_storage[1]=beta3,inventoryConfig.cluster_storage[2]=ram
+```
+
+#### Expected Output
+
+```
+root@node1:~/helm-charts/charts# helm install inventory-operator akash/akash-inventory-operator -n akash-services
+
+NAME: inventory-operator
+LAST DEPLOYED: Thu May  5 18:15:57 2022
+NAMESPACE: akash-services
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+```
+
 ## Verify Health of Akash Provider
 
 Use the following command to verify the health of the Akash Provider and Hostname Operator pods
