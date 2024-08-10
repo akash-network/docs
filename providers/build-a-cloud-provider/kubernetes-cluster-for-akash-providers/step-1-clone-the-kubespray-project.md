@@ -72,4 +72,4 @@ cd kubespray
 
 ## Cluster Updates
 
-To update the Kubernetes cluster in the future, review the[ latest Kubespray documentation](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/upgrades.md) to take advantage of recent bug fixes and enhancements.
+To update the Kubernetes cluster in the future, review the[ latest Kubespray documentation](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/operations/upgrades.md) to take advantage of recent bug fixes and enhancements.
